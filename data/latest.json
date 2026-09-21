@@ -1,543 +1,101 @@
 {
   "schemaVersion": 3,
-  "reportId": "2026-09-21-2000",
-  "updatedAt": "2026-09-21 20:00",
-  "marketState": "Risk-on / Short Squeeze",
-  "overview": "BTC 强势突破并伴随大规模空头清算，美股科技盘前偏强，油价回落缓解通胀尾部风险，但美联储鹰派表态仍构成潜在反压。",
+  "reportId": "2026-09-21-2300",
+  "updatedAt": "2026-09-21 22:58",
+  "marketState": "Risk-on / AI + BTC squeeze；Fed仍偏鹰",
+  "overview": "本轮相较20:00最大的新增是：美股现金盘已确认risk-on而非仅盘前，Nasdaq一度约+1.48%、AI/半导体领涨；CFNAI 8月降至-0.04但仍接近趋势增速；BTC仍在84.4k–85k高位消化逼空，油价跌超3%继续压低通胀尾部风险，而Fed官员仍强调需求型通胀，形成“价格先risk-on、政策仍偏鹰”的核心张力。",
   "changes": [
-    {
-      "tag": "BTC",
-      "title": "逼空从辅助因素升级为主导因素",
-      "detail": "空头清算显著扩大，同时 OI 仍在抬升，说明旧空头被动平仓之后又有新杠杆追入。"
-    },
-    {
-      "tag": "FED",
-      "title": "鹰派风险没有消失，只是暂时被风险偏好盖住",
-      "detail": "Fed 仍强调通胀压力，但 BTC 与科技盘前继续上涨，利率逻辑暂时让位于仓位与风险偏好。"
-    },
-    {
-      "tag": "OIL",
-      "title": "原油继续回落，宏观压力边际减轻",
-      "detail": "油价下降正在削弱通胀尾部风险，并给长久期资产提供喘息空间。"
-    }
+    {"tag":"美股","title":"盘前强势已被现金盘确认","detail":"截至美东10:24（UTC+8 22:24），Dow约+0.47%、S&P 500约+0.92%、Nasdaq约+1.48%；上涨家数占优，AI/半导体是主导，而能源板块因油价下跌领跌。"},
+    {"tag":"宏观","title":"CFNAI实际值已发布：8月-0.04","detail":"较7月+0.08回落，显示活动略低于历史趋势但远非衰退信号。公开日历对预期值存在冲突，本轮不硬填单一共识，以实际值和前值为主。"},
+    {"tag":"BTC","title":"冲高后进入高位消化，逼空逻辑仍在但边际加速减弱","detail":"BTC日内高点约85.2k，最新可核实报价仍在84.4k–85k区间；24h清算约7.47亿美元、空头约6.48亿美元，OI反而升至约1560亿美元，说明去空之后杠杆仍在重建。"},
+    {"tag":"油/债","title":"油价继续跌，10Y回到5%下方","detail":"Brent约101.18美元、WTI 10月约97.61美元，均处11日低位附近；10Y约4.97%、2Y约4.74%，为科技和高beta资产提供短线金融条件缓和。"}
   ],
   "metrics": [
-    {
-      "name": "BTC",
-      "value": "$85,166",
-      "changeLabel": "+6.3%",
-      "tone": "up",
-      "asOf": "20:00",
-      "sourceIds": [
-        "coinglass"
-      ]
-    },
-    {
-      "name": "Nasdaq 100 Futures",
-      "value": "+1.09%",
-      "changeLabel": "盘前偏强",
-      "tone": "up",
-      "asOf": "20:00",
-      "sourceIds": [
-        "reuters"
-      ]
-    },
-    {
-      "name": "Gold",
-      "value": "$4,350",
-      "changeLabel": "-0.6%",
-      "tone": "down",
-      "asOf": "18:46",
-      "sourceIds": [
-        "reuters"
-      ]
-    },
-    {
-      "name": "WTI",
-      "value": "$94.2",
-      "changeLabel": "约 -2.0%",
-      "tone": "down",
-      "asOf": "近月",
-      "sourceIds": [
-        "reuters"
-      ]
-    },
-    {
-      "name": "上证指数",
-      "value": "3949.91",
-      "changeLabel": "+0.97%",
-      "tone": "up",
-      "asOf": "收盘",
-      "sourceIds": [
-        "sse"
-      ]
-    },
-    {
-      "name": "US 10Y",
-      "value": "4.96%",
-      "changeLabel": "回落",
-      "tone": "flat",
-      "asOf": "20:00",
-      "sourceIds": [
-        "treasury"
-      ]
-    },
-    {
-      "name": "DXY",
-      "value": "100.3",
-      "changeLabel": "偏强",
-      "tone": "flat",
-      "asOf": "20:00",
-      "sourceIds": [
-        "reuters"
-      ]
-    },
-    {
-      "name": "BTC OI",
-      "value": "$156B",
-      "changeLabel": "+7.59%",
-      "tone": "up",
-      "asOf": "24h",
-      "sourceIds": [
-        "coinglass"
-      ]
-    }
+    {"name":"BTC","value":"~$84.4k–85.0k","changeLabel":"约 +5% / 24h","tone":"up","asOf":"22:30–22:58","sourceIds":["coindesk","reuters"]},
+    {"name":"Nasdaq","value":"26,915.76","changeLabel":"+1.48%","tone":"up","asOf":"22:24","sourceIds":["reuters"]},
+    {"name":"S&P 500","value":"7,720.88","changeLabel":"+0.92%","tone":"up","asOf":"22:24","sourceIds":["reuters"]},
+    {"name":"Dow","value":"51,923.89","changeLabel":"+0.47%","tone":"up","asOf":"22:24","sourceIds":["reuters"]},
+    {"name":"Gold","value":"$4,361.96","changeLabel":"-0.3%","tone":"down","asOf":"21:20","sourceIds":["reuters_gold"]},
+    {"name":"Brent","value":"$101.18","changeLabel":"跌超3%","tone":"down","asOf":"盘中","sourceIds":["reuters_oil"]},
+    {"name":"US 10Y","value":"~4.97%","changeLabel":"低于5%","tone":"flat","asOf":"盘中","sourceIds":["wsj_rates","reuters"]},
+    {"name":"DXY","value":"~100.23","changeLabel":"仍偏强","tone":"flat","asOf":"盘中","sourceIds":["reuters_yuan"]}
   ],
   "assets": [
-    {
-      "name": "BTC / 加密",
-      "signal": "强势 / 拥挤",
-      "tone": "up",
-      "summary": "突破后的 short squeeze 已成为短线主导，主动买盘开始接力，但杠杆同步堆积。",
-      "detail": "重点看清算退潮后能否守住 85k，以及 ETF 是否接力。",
-      "sourceIds": [
-        "coinglass",
-        "farside"
-      ]
-    },
-    {
-      "name": "美股",
-      "signal": "偏强",
-      "tone": "up",
-      "summary": "科技与高贝塔资产盘前偏强，交易油价回落和 AI 风险偏好修复。",
-      "detail": "现金盘是否能顶住偏鹰利率叙事，是今晚最重要的验证。",
-      "sourceIds": [
-        "reuters",
-        "treasury",
-        "cme"
-      ]
-    },
-    {
-      "name": "黄金",
-      "signal": "偏弱",
-      "tone": "down",
-      "summary": "地缘溢价下降、美元偏强和 Fed 偏鹰共同压制黄金。",
-      "detail": "与 BTC 方向背离，显示 BTC 当前更像风险资产。",
-      "sourceIds": [
-        "reuters",
-        "treasury"
-      ]
-    },
-    {
-      "name": "A股",
-      "signal": "轮动",
-      "tone": "flat",
-      "summary": "指数普涨但高位科技分化，资金向医药、地产和部分金融方向轮动。",
-      "detail": "指数涨幅与个股广度较好，但成交未显著放大。",
-      "sourceIds": [
-        "sse",
-        "szse"
-      ]
-    },
-    {
-      "name": "原油",
-      "signal": "回落",
-      "tone": "down",
-      "summary": "Brent / WTI 连续回落，市场在交易供应恢复和外交窗口。",
-      "detail": "地缘风险并未消失，若外交预期逆转，风险溢价仍可能快速回补。",
-      "sourceIds": [
-        "reuters"
-      ]
-    }
+    {"name":"BTC / 加密","signal":"强势但拥挤","tone":"up","summary":"日内高点约85.2k后仍维持84.4k–85k高位，短线从加速逼空转为逼空后高位消化。","detail":"24h总清算约7.466亿美元，其中空头约6.479亿美元；全市场OI约1560亿美元、+7.59%，成交量约2240亿美元、+39%。这不是单纯去杠杆，而是旧空头被清后新仓继续进入。现货ETF最近完整交易日（9月18日）净流入约4.33亿美元；9月21日当日ETF最终流量尚未形成完整收盘数据。资金费率本轮未取得可靠聚合快照，因此不硬填。","sourceIds":["coindesk","farside","reuters"]},
+    {"name":"美股","signal":"AI驱动的risk-on","tone":"up","summary":"现金盘确认盘前强势，Nasdaq领涨，说明这轮不是纯粹期货流动性行情。","detail":"截至10:24 ET，Dow +0.47%、S&P +0.92%、Nasdaq +1.48%；7/11个S&P行业上涨，通信服务约+2.3%，能源领跌。AMD约+8.5%并一度突破1万亿美元市值，Intel约+9%，Micron约+3%，Meta约+6.2%，Accenture约+3.5%；Coinbase约+5%、Strategy约+8%。NYSE上涨/下跌约1.61:1，Nasdaq约1.78:1，广度支持上涨，但新高/新低结构仍不算极端强势。","sourceIds":["reuters","reuters_amd","wsj_rates"]},
+    {"name":"黄金","signal":"偏弱","tone":"down","summary":"黄金继续没有跟随BTC的risk-on上涨，反而受美元偏强和进一步加息预期压制。","detail":"现货金约4361.96美元/盎司、-0.3%，美金期货约4400美元、-0.6%。Reuters援引FedWatch称12月加息概率约88%。这说明BTC上涨更像风险偏好与仓位结构，不是避险资产共振。","sourceIds":["reuters_gold","cme"]},
+    {"name":"A股","signal":"普涨但结构轮动","tone":"up","summary":"A股收盘数据较20:00无变化，但结构仍值得保留：指数普涨、个股广度强，科技弹性却不是最强。","detail":"上证3949.91（+0.97%）、深成13730.02（+0.65%）、创业板3399.59（+0.80%）、科创50 1657.48（+0.29%）；两市约2.03万亿元，较前一日缩量约456亿元；约4536涨、936跌。医药/CRO、地产等强，贵金属偏弱。人民币在岸一度约6.6950、收盘约6.6955，处多年强位。另据Reuters，中国监管层正放缓部分人形机器人企业IPO节奏，提示具身智能仍是政策支持方向，但资本市场开始更强调商业化质量。","sourceIds":["ashare","reuters_yuan","reuters_robot"]},
+    {"name":"原油","signal":"风险溢价继续回吐","tone":"down","summary":"油价跌超3%，成为这轮risk-on最重要的上游变量之一。","detail":"Brent约101.18美元/桶，WTI 10月约97.61美元，均接近11日低位。驱动来自对美伊外交窗口的押注、沙特出口恢复和经霍尔木兹海峡流量改善。注意：这并不等于中东风险消失；同时全球柴油/中间馏分供应仍偏紧，油价下行与成品油紧张可以并存。","sourceIds":["reuters_oil","reuters_diesel"]}
   ],
   "coreAnalysis": {
-    "mainTheme": "油价下降 → 通胀尾部风险下降 → 美债收益率回落 → 科技股与 BTC 风险偏好修复。\nBTC 又叠加空头清算，形成机械性加速。",
-    "expectationGap": "原本更鹰的 Fed 与中东风险应压制风险资产，但实际 BTC 与 Nasdaq 期货仍强。预期差来自坏消息已被部分计价，而仓位与清算结构在短期压过宏观约束。",
-    "divergence": "美元仍偏强、Fed 表态偏鹰，但 BTC 极强；黄金同时走弱。这更像加密自身仓位结构 + risk-on，而不是“数字黄金”式避险交易。",
-    "regime": "BTC：突破 + short squeeze + momentum chase。\n美股：事件驱动下的风险偏好修复，而不是简单的“降息交易”。",
-    "priceIn": "已较充分计价：9 月加息、中东持续紧张、油价高位回落。\n仍可能未充分计价：Fed 是否形成更一致的需求型通胀判断、ETF 是否持续接力、10Y 是否重新站上 5%。",
-    "bullCase": "价格对利空钝化；油价下行与收益率回落形成宏观配合；若 ETF 延续净流入，BTC 可能从逼空进一步转向现货资金驱动。",
-    "bullInvalidation": "清算退潮后 BTC 跌回 82–83k，ETF 不接力，同时 10Y 重回 5% 上方。",
-    "bearCase": "上涨高度依赖清算与杠杆；OI 同步抬升；若美元继续走强或收益率反弹，高位可能快速转为拥挤交易。",
-    "bearInvalidation": "清算量下降后 BTC 仍稳站 85k 上方，ETF 继续大额净流入，且 10Y 不再上行。"
+    "mainTheme":"A. 当前真正交易的主线已经很清楚：\n1）油价下跌 → 通胀尾部风险边际下降 → 美债收益率回落；\n2）AI资本开支/盈利叙事重新占上风 → 半导体和通信服务领涨；\n3）BTC自身又叠加short squeeze与ETF资金恢复。\n因此，市场交易的不是Fed转鸽，而是Fed仍鹰，但边际金融条件和仓位结构短线更有利。",
+    "expectationGap":"B. 最大预期差：\n市场原本面对Fed刚加息 + Goolsbee更鹰 + 中东冲突的组合，按机械逻辑风险资产应弱；实际却是油价跌、10Y回落、Nasdaq现金盘确认上涨、BTC守在85k附近。\nCFNAI -0.04也没有给出经济过热加剧的新证据，反而显示活动略低于趋势，这在边际上削弱了纯需求过热叙事，但不足以推翻Fed对通胀的担忧。",
+    "divergence":"C. 跨资产大部分联动是正常的：油↓ → 10Y↓ → 科技↑；黄金在美元偏强/加息预期下↓。\n最明显的背离仍是：Fed语言偏鹰、DXY偏强，但BTC和高beta科技很强。这说明短线仓位、清算和AI盈利预期压过了货币政策约束。\n另一个次级背离是：原油大跌，但柴油与中间馏分供应仍紧，意味着能源通胀风险解除还不能下结论。",
+    "regime":"D. BTC：更像突破后的short squeeze进入高位消化阶段；如果清算退潮后仍守住83–85k，才更接近趋势延续。\n美股：更像AI主线修复 + 油/债缓和驱动的事件型risk-on，目前现金盘已确认，不再只是盘前反弹。\nA股：更像广度很好的板块轮动，而非单一科技趋势加速。",
+    "priceIn":"E. 已较多price-in：9月Fed加息、中东持续冲突、油价高位风险、CLARITY法案受挫。\n可能仍未充分price-in：\n1）需求型通胀是否会成为更多Fed官员共识；\n2）10Y是否会重新稳定在5%上方；\n3）9月21日BTC ETF当日流量能否继续显著为正；\n4）美伊外交是否从预期变成可验证进展；\n5）中美峰会是否给AI/贸易带来实质性政策信号。",
+    "bullCase":"F. 多头最强逻辑：价格对已知利空钝化；油价和收益率回落；AI股现金盘强势并有良好市场广度；BTC的ETF资金在上周五恢复，且高位没有立刻回吐。",
+    "bullInvalidation":"BTC跌回82–83k以下且清算退潮后无现货接力；Nasdaq高开低走、10Y重新站上5%；油价重新快速冲回104–105美元以上。",
+    "bearCase":"F. 空头最强逻辑：BTC上涨仍有很强的机械逼空成分，OI却继续上升，杠杆重新堆积；Fed并未转鸽，Goolsbee甚至强化需求型通胀风险；美元仍偏强，10Y只是暂时回到5%下方。",
+    "bearInvalidation":"BTC在低清算环境下继续稳于85k上方，且ETF继续明显净流入；10Y持续低于5%，AI/半导体的上涨从少数龙头扩展到更广市场。"
   },
   "macroEvents": [
-    {
-      "title": "Chicago Fed National Activity Index",
-      "eventAt": "2026-09-21 20:30",
-      "publishedAt": null,
-      "actual": null,
-      "expected": null,
-      "previous": "-0.08",
-      "revised": null,
-      "analysis": "本轮报告生成时尚未发布。若明显偏强，会支持“需求仍强、利率维持高位”的叙事；偏弱则缓和鹰派压力。",
-      "sourceIds": [
-        "fed"
-      ]
-    },
-    {
-      "title": "Fed 官员讲话：通胀与需求风险",
-      "eventAt": "2026-09-21 18:30",
-      "publishedAt": "2026-09-21 18:30 后",
-      "actual": "偏鹰",
-      "expected": "市场已知 Fed 偏鹰",
-      "previous": "—",
-      "revised": null,
-      "analysis": "重要预期差在于：讲话偏鹰，但 BTC 与科技盘前并未同步转弱，显示仓位和油价回落暂时压过利率冲击。",
-      "sourceIds": [
-        "fed",
-        "reuters"
-      ]
-    }
+    {"title":"Chicago Fed National Activity Index（8月）","eventAt":"2026-09-21 20:30","publishedAt":"2026-09-21 20:35前后","actual":"-0.04","expected":"公开日历口径冲突，本轮不采用单一共识值","previous":"+0.08（7月）","revised":"未见本轮可靠修正值","analysis":"8月从+0.08回落到-0.04，说明经济活动略低于历史趋势，但三个月均值接近零附近，远未给出衰退式下行信号。相对市场交易而言，这一数据没有强化Goolsbee所担心的需求过热，因此发布后没有打断股市risk-on。","sourceIds":["fred_cfnai","chicagofed_calendar"]},
+    {"title":"Goolsbee：强需求可能正推动通胀","eventAt":"2026-09-21 18:30前后","publishedAt":"2026-09-21 当日","actual":"偏鹰","expected":"市场已知Fed整体偏鹰","previous":"—","revised":"—","analysis":"他强调若通胀从供给冲击转向需求过热，Fed在方向上没有模糊空间，可能需要更高/更前置的利率。重要的是价格反应：讲话后油价和收益率的回落仍主导风险资产，说明该鹰派信息短线没有成为边际定价主线。","sourceIds":["reuters_goolsbee"]},
+    {"title":"FedWatch利率路径","eventAt":"2026-09-21 盘中","publishedAt":"2026-09-21","actual":"10月再加息概率约50%；12月前加息概率约88%（不同观察时点）","expected":"—","previous":"—","revised":"概率实时变化","analysis":"这不是市场转鸽。风险资产上涨发生在继续加息概率仍高的背景下，因此应解读为仓位/油价/盈利叙事压过利率，而不是利率风险消失。","sourceIds":["reuters","reuters_gold","cme"]}
   ],
   "news": [
-    {
-      "title": "BTC 逼空加速，价格触及约 85k",
-      "eventAt": "2026-09-21 盘中",
-      "publishedAt": "2026-09-21 20:00 前",
-      "summary": "24 小时清算以空头为主，同时 OI 继续上升。上涨并非单纯去杠杆，而是去空之后又有新杠杆追入。",
-      "sourceIds": [
-        "coinglass"
-      ]
-    },
-    {
-      "title": "原油延续回落",
-      "eventAt": "2026-09-21 盘中",
-      "publishedAt": "2026-09-21 20:00 前",
-      "summary": "供应恢复与外交窗口预期压低风险溢价，油价下降也同步缓解通胀尾部风险。",
-      "sourceIds": [
-        "reuters"
-      ]
-    },
-    {
-      "title": "A股收盘普涨但板块轮动",
-      "eventAt": "2026-09-21 收盘",
-      "publishedAt": "2026-09-21 收盘后",
-      "summary": "主要指数上涨，但高位科技分化，医药、地产与部分金融方向更强。",
-      "sourceIds": [
-        "sse",
-        "szse"
-      ]
-    }
+    {"title":"美股现金盘确认AI主导的risk-on","eventAt":"2026-09-21 21:30后","publishedAt":"2026-09-21 22:24前后","summary":"截至10:24 ET，Nasdaq约+1.48%、S&P约+0.92%、Dow约+0.47%；AMD、Intel、Meta等领涨，能源板块因油价下跌承压。","sourceIds":["reuters","reuters_amd"]},
+    {"title":"BTC维持85k附近，逼空后高位消化","eventAt":"2026-09-21 盘中","publishedAt":"2026-09-21 22:00后","summary":"BTC日内高点约85.2k，最新可核实报价仍在84.4k–85k区间；空头清算占24h清算大多数，但OI不降反升，显示新杠杆继续进入。","sourceIds":["coindesk"]},
+    {"title":"油价跌至11日低位附近","eventAt":"2026-09-21 盘中","publishedAt":"2026-09-21 当日","summary":"Brent约101.18美元、WTI 10月约97.61美元，市场押注美伊外交窗口、沙特出口恢复和物流改善。","sourceIds":["reuters_oil"]},
+    {"title":"人民币触及多年高位","eventAt":"2026-09-21 亚洲时段","publishedAt":"2026-09-21","summary":"在岸人民币一度约6.6950，PBOC中间价6.7487，为2023年2月以来最强水平；市场解读为峰会前政策对人民币升值阻力减弱。","sourceIds":["reuters_yuan"]}
   ],
   "deepDive": [
-    {
-      "title": "2）BTC / 加密市场",
-      "oneLine": "逼空 + 新杠杆追入",
-      "analysis": "BTC 已不只是普通反弹。核心结构是旧空头被强平、主动买盘增强，同时 OI 继续上升。也就是说，空头被清掉之后，市场并没有降杠杆，反而继续有人追进来。\n\n这提高了趋势动能，但也提高了后续反转时再次发生杠杆踩踏的风险。真正能把这轮行情从“逼空”升级成“更健康趋势”的证据，是清算退潮后价格仍稳、ETF 资金继续接力。",
-      "facts": [
-        {
-          "label": "BTC 高点",
-          "value": "约 $85,166",
-          "meaning": "突破近期关键区域"
-        },
-        {
-          "label": "24h 总清算",
-          "value": "约 $746.6M",
-          "meaning": "空头占绝大多数"
-        },
-        {
-          "label": "BTC OI",
-          "value": "约 $156B / +7.59%",
-          "meaning": "去空后新杠杆继续进入"
-        }
-      ],
-      "sourceIds": [
-        "coinglass",
-        "farside"
-      ]
-    },
-    {
-      "title": "3）美股",
-      "oneLine": "Risk-on，但要过现金盘这一关",
-      "analysis": "盘前科技与高贝塔资产偏强，逻辑主要来自油价下行、收益率边际回落以及 AI 风险偏好修复。\n\n真正的验证不是盘前，而是现金盘。如果偏鹰讲话之后 Nasdaq 仍能维持强势，说明市场暂时选择忽略利率压力；若高开低走，则利率叙事可能重新接管。",
-      "facts": [
-        {
-          "label": "Nasdaq 100 期货",
-          "value": "约 +1.09%",
-          "meaning": "盘前 risk-on"
-        },
-        {
-          "label": "US 10Y",
-          "value": "约 4.96%",
-          "meaning": "暂时低于 5%"
-        },
-        {
-          "label": "DXY",
-          "value": "约 100.3",
-          "meaning": "美元仍偏强"
-        }
-      ],
-      "sourceIds": [
-        "reuters",
-        "treasury",
-        "cme"
-      ]
-    },
-    {
-      "title": "4）黄金",
-      "oneLine": "避险逻辑暂时退潮",
-      "analysis": "黄金走弱与 BTC 上涨同时发生，是一个很有信息量的背离。它说明今天 BTC 主要交易的是风险偏好、清算和加密内部资金结构，而不是传统避险逻辑。\n\n如果美元与实际利率继续偏强，黄金仍会受压；若地缘风险突然升温或收益率明显下行，黄金才更容易重新获得支撑。",
-      "facts": [
-        {
-          "label": "现货黄金",
-          "value": "约 $4,350",
-          "meaning": "本轮偏弱"
-        },
-        {
-          "label": "方向",
-          "value": "约 -0.6%",
-          "meaning": "与 BTC 形成背离"
-        }
-      ],
-      "sourceIds": [
-        "reuters",
-        "treasury"
-      ]
-    },
-    {
-      "title": "5）A股",
-      "oneLine": "指数普涨，结构偏轮动",
-      "analysis": "A股今天不是单一科技主线全面推进，而是指数上涨、板块轮动。医药、地产和部分金融更强，高位科技存在分化。\n\n这意味着指数层面 risk-on 尚可，但资金更偏向政策确定性和相对低位方向。后续要看成交是否放大、人民币强势是否持续，以及高位科技是否重新获得增量资金。",
-      "facts": [
-        {
-          "label": "上证",
-          "value": "3949.91 / +0.97%",
-          "meaning": "指数偏强"
-        },
-        {
-          "label": "成交",
-          "value": "约 2.03 万亿元",
-          "meaning": "未出现爆量"
-        },
-        {
-          "label": "结构",
-          "value": "医药/地产偏强",
-          "meaning": "板块轮动明显"
-        }
-      ],
-      "sourceIds": [
-        "sse",
-        "szse"
-      ]
-    },
-    {
-      "title": "6）原油",
-      "oneLine": "风险溢价回落，但没消失",
-      "analysis": "油价连续回落，市场在交易供应恢复与外交窗口，而不是认为中东风险已经结束。\n\n因此油价是当前跨资产链条里非常重要的上游变量。若 Brent 继续向 100 一带回落，会进一步压低通胀尾部风险；若突然重新冲高，则利率与风险资产叙事可能一起反转。",
-      "facts": [
-        {
-          "label": "WTI 近月",
-          "value": "约 $94.2",
-          "meaning": "换月阶段需注意合约口径"
-        },
-        {
-          "label": "方向",
-          "value": "约 -2%",
-          "meaning": "风险溢价继续释放"
-        }
-      ],
-      "sourceIds": [
-        "reuters"
-      ]
-    },
-    {
-      "title": "7）宏观 / 政策",
-      "oneLine": "Fed 仍鹰，市场暂时不怕",
-      "analysis": "Fed 的核心风险仍是通胀可能不只来自供给冲击，而是需求本身也偏强。如果这一判断成为更广泛共识，市场就不能只靠“油跌了”来推导通胀自动回落。\n\n当前真正值得观察的是：收益率是否会对鹰派讲话重新定价。如果 10Y 重新站上 5%，科技与 BTC 都会重新面对估值与资金成本压力。",
-      "facts": [
-        {
-          "label": "US 10Y",
-          "value": "约 4.96%",
-          "meaning": "关键阈值是 5%"
-        },
-        {
-          "label": "政策倾向",
-          "value": "偏鹰",
-          "meaning": "但风险资产暂未明显响应"
-        }
-      ],
-      "sourceIds": [
-        "fed",
-        "treasury",
-        "cme",
-        "reuters"
-      ]
-    }
+    {"title":"2）BTC / 加密市场","oneLine":"85k附近从加速逼空转入高位消化","analysis":"20:00到本轮最大的变化不是BTC又多涨了多少，而是加速阶段开始转成能否站稳的验证阶段。日内高点约85.2k后，价格仍在84.4k–85k附近，说明并未出现快速瀑布式回吐。\n\n但结构依然偏拥挤：24h总清算约7.466亿美元，其中空头约6.479亿美元；OI却升约7.59%至1560亿美元，24h成交量约2240亿美元、+39%。这说明市场并没有因为强平而降杠杆，而是在旧仓被清后继续重建新仓。\n\nETF方面，最近完整交易日9月18日净流入约4.33亿美元，其中FBTC约+3.107亿、IBIT约+1.084亿。9月21日ETF日终数据尚未完整，因此当前不能把本轮全部上涨归因于今日ETF现货买盘。","facts":[{"label":"日内高点","value":"约 $85.2k","meaning":"重新进入85k供需密集区"},{"label":"24h清算","value":"$746.6M","meaning":"空头约$647.9M，占主导"},{"label":"全市场OI","value":"~$156B / +7.59%","meaning":"杠杆重新堆积"},{"label":"最近完整ETF流","value":"+$433M（9/18）","meaning":"现货需求恢复，但今日尚未收盘"}],"sourceIds":["coindesk","farside"]},
+    {"title":"3）美股","oneLine":"现金盘把盘前risk-on坐实","analysis":"与20:00相比，美股最大的新增是现金盘验证。10:24 ET，Nasdaq约+1.48%，S&P约+0.92%，Dow约+0.47%。AI/半导体是核心主线：AMD约+8.5%、Intel约+9%、Micron约+3%，Meta约+6.2%，Accenture约+3.5%。\n\n市场广度也不是只有少数巨头抬指数：NYSE上涨/下跌约1.61:1，Nasdaq约1.78:1，7个S&P行业上涨。不过新低数量仍不低，因此更像一次有广度的风险偏好修复，而不是无差别全面牛市。\n\n宏观配合来自油价跌超3%和10Y回到5%下方。真正风险仍是：如果收益率重新上破5%，AI长久期估值会再次被压缩。","facts":[{"label":"Nasdaq","value":"+1.48%","meaning":"主导上涨"},{"label":"S&P 500","value":"+0.92%","meaning":"广泛risk-on"},{"label":"AMD","value":"约 +8.5%","meaning":"AI/半导体核心领涨"},{"label":"10Y","value":"约 4.97%","meaning":"重新低于5%"}],"sourceIds":["reuters","reuters_amd","wsj_rates"]},
+    {"title":"4）黄金","oneLine":"继续交易高利率/强美元，而不是跟BTC走","analysis":"现货黄金约4361.96美元/盎司、-0.3%。FedWatch在Reuters观察时点显示12月加息概率约88%，美元也维持两个月高位附近。\n\nBTC强、黄金弱的组合仍在强化一个结论：本轮BTC不是避险买盘，而是风险偏好、ETF恢复和清算结构驱动。若10Y继续回落但黄金仍不反弹，说明美元和政策利率预期仍是更强约束。","facts":[{"label":"现货黄金","value":"$4,361.96","meaning":"盘中约-0.3%"},{"label":"12月加息概率","value":"约88%","meaning":"政策路径仍明显偏鹰"}],"sourceIds":["reuters_gold","cme"]},
+    {"title":"5）A股","oneLine":"普涨和强广度不变，新关注机器人IPO监管","analysis":"A股已收盘，因此20:00到23:00指数本身没有新增变化。上证+0.97%、深成+0.65%、创业板+0.80%、科创50+0.29%，成交约2.03万亿元、缩量约456亿元，超过4500只个股上涨。\n\n结构上医药、CRO、地产等强于高位科技。人民币维持多年强位，为中国资产的外部金融条件提供支持。\n\n新消息是Reuters报道监管层正在放缓部分人形机器人企业IPO节奏，重点审查估值与收入质量。这不是对具身智能产业方向的否定，更像从概念融资转向商业化质量筛选，对高估值纯概念标的构成分化压力。","facts":[{"label":"上证","value":"3949.91 / +0.97%","meaning":"指数偏强"},{"label":"两市成交","value":"约2.03万亿元","meaning":"高位但较前一日缩量"},{"label":"市场广度","value":"4536涨 / 936跌","meaning":"赚钱效应较强"},{"label":"CNY","value":"约6.6950–6.6955","meaning":"多年强位"}],"sourceIds":["ashare","reuters_yuan","reuters_robot"]},
+    {"title":"6）原油","oneLine":"油跌继续给风险资产松绑，但成品油仍紧","analysis":"Brent约101.18美元/桶，WTI 10月约97.61美元，均跌超3%、接近11日低位。核心原因是市场对美伊外交窗口的押注、沙特出口恢复以及霍尔木兹周边物流改善。\n\n但这里不能简单写成能源问题解决。Reuters另有报道显示全球柴油库存仍异常紧张，供应短缺可能延续到2027。也就是说，原油风险溢价回吐和成品油结构性紧张可以同时成立。如果柴油裂解价继续高企，通胀压力未必会与原油同步快速消退。","facts":[{"label":"Brent","value":"$101.18","meaning":"11日低位附近"},{"label":"WTI 10月","value":"$97.61","meaning":"跌超3%"},{"label":"结构风险","value":"柴油库存偏紧","meaning":"能源通胀并未完全解除"}],"sourceIds":["reuters_oil","reuters_diesel"]},
+    {"title":"7）宏观 / 政策","oneLine":"Fed鹰派没变，但CFNAI没有强化过热叙事","analysis":"Goolsbee强调如果需求过热正在推动通胀，Fed方向上没有模糊空间，可能需要进一步收紧。另一方面，刚公布的8月CFNAI为-0.04，较7月+0.08回落，显示经济活动略低于历史趋势。\n\n这两条信息并不矛盾：CFNAI是广义活动指标，Goolsbee关心的是需求结构与价格压力。市场当前选择交易的是油价下降和收益率回落，而不是把CFNAI理解成马上转鸽。\n\n因此最关键的验证仍是债券：如果10Y重新站上5%，说明Fed/通胀叙事重新夺回定价权；如果持续低于5%，风险资产会继续获得估值喘息。","facts":[{"label":"CFNAI（8月）","value":"-0.04","meaning":"略低于趋势"},{"label":"前值（7月）","value":"+0.08","meaning":"活动边际降温"},{"label":"10Y","value":"约4.97%","meaning":"关键阈值仍是5%"}],"sourceIds":["fred_cfnai","reuters_goolsbee","reuters","wsj_rates"]}
   ],
   "narrativeTriggers": [
-    {
-      "trigger": "BTC：85k 上方能否在低清算环境继续站稳",
-      "why": "决定这轮究竟只是 short squeeze，还是现货资金开始接棒。"
-    },
-    {
-      "trigger": "US 10Y：是否重新突破 5%",
-      "why": "这是科技股、黄金和 BTC 的共同宏观压力阈值。"
-    },
-    {
-      "trigger": "BTC ETF：是否继续大额净流入",
-      "why": "能验证机构/现货资金是否真正接力杠杆驱动。"
-    },
-    {
-      "trigger": "Brent：是否重回 104–105",
-      "why": "若油价反弹，通胀与地缘风险会重新夺回跨资产定价权。"
-    },
-    {
-      "trigger": "美股现金盘：盘前涨幅能否守住",
-      "why": "用于验证风险偏好修复是否只是盘前流动性现象。"
-    }
+    {"trigger":"BTC：84–85k在清算明显降温后能否继续守住","why":"决定本轮从short squeeze向现货/趋势驱动转化的程度。"},
+    {"trigger":"BTC ETF：9月21日收盘后是否继续大额净流入","why":"这是验证今日涨幅是否有现货机构资金接棒的最直接证据之一。"},
+    {"trigger":"US 10Y：是否重新站上5%","why":"会同步影响AI科技估值、黄金机会成本和BTC风险偏好。"},
+    {"trigger":"Brent：是否重返104–105美元以上","why":"若风险溢价重新回补，通胀/加息叙事会快速反扑。"},
+    {"trigger":"Nasdaq：午后能否保持>1%的涨幅并维持市场广度","why":"若高开低走，说明早盘risk-on更多是短线仓位修复；若强势延续，AI主线可信度更高。"}
   ],
   "events": [
-    {
-      "at": "2026-09-21T20:30:00+08:00",
-      "time": "20:30",
-      "title": "Chicago Fed National Activity Index",
-      "impact": "强于预期可能抬升利率预期；弱于预期有助于缓解鹰派压力。",
-      "sourceIds": [
-        "fed"
-      ]
-    },
-    {
-      "at": "2026-09-21T21:30:00+08:00",
-      "time": "21:30",
-      "title": "美股现金盘开盘",
-      "impact": "验证 Nasdaq 盘前强势能否延续，也是观察鹰派利率叙事是否重新接管定价的关键。",
-      "sourceIds": [
-        "reuters"
-      ]
-    },
-    {
-      "at": "2026-09-21T23:30:00+08:00",
-      "time": "23:30",
-      "title": "美国短端国债拍卖",
-      "impact": "需求偏弱可能强化高利率叙事，并向长久期科技资产传导压力。",
-      "sourceIds": [
-        "treasury"
-      ]
-    },
-    {
-      "at": "2026-09-22T02:00:00+08:00",
-      "time": "夜间",
-      "title": "美伊 / 联大相关消息",
-      "impact": "谈判进展可能继续压制油价；若局势恶化，风险溢价可能重新回补。",
-      "sourceIds": [
-        "reuters"
-      ]
-    }
+    {"at":"2026-09-22T09:15:00+08:00","time":"09:15","title":"人民币中间价 / 亚洲汇市重新定价","impact":"若人民币继续偏强，可改善中国资产风险偏好；若PBOC重新明显压制升值，则峰会前的汇率稳定信号会弱化。","sourceIds":["reuters_yuan"]},
+    {"at":"2026-09-22T09:30:00+08:00","time":"09:30","title":"A股次日开盘","impact":"验证隔夜美股AI大涨、人民币偏强与机器人IPO收紧消息在国内成长/科技方向上的净影响。","sourceIds":["ashare","reuters_robot"]},
+    {"at":"2026-09-22T22:05:00+08:00","time":"22:05","title":"纽约联储Williams讲话","impact":"市场会重点听他如何平衡高通胀、AI投资和金融条件；任何比Goolsbee更鸽/更鹰的措辞都可能先冲击2Y与美元。","sourceIds":["nyfed_event"]},
+    {"at":"2026-09-22T22:20:00+08:00","time":"22:20","title":"Fed副主席Jefferson讲话","impact":"主题涉及贴现窗口现代化与国债市场运行，重点观察对债市流动性和政策框架的表述。","sourceIds":["fed_calendar","nyfed_event"]},
+    {"at":null,"time":"未来24h","title":"美伊/联合国大会外交消息","impact":"若出现可验证谈判进展，油价风险溢价可能进一步回落；若重回威胁与冲突升级，Brent/黄金/收益率可能迅速反向。","sourceIds":["reuters_oil","reuters"]}
   ],
   "watch": [
-    {
-      "point": "BTC 是否守住 85k",
-      "a": "清算下降后仍守住，趋势开始脱离单纯逼空。",
-      "b": "迅速跌回 82–83k，机械性清算贡献过高。"
-    },
-    {
-      "point": "美国 10Y 是否重回 5%",
-      "a": "继续低于 5%，风险资产金融条件边际改善。",
-      "b": "重新上破 5%，科技、黄金与 BTC 都可能重新承压。"
-    },
-    {
-      "point": "原油是否继续回落",
-      "a": "继续走弱，通胀交易进一步降温。",
-      "b": "快速回升，地缘风险重新夺回定价权。"
-    },
-    {
-      "point": "BTC ETF 是否接力",
-      "a": "持续净流入，现货资金确认接棒。",
-      "b": "流入平淡或转负，85k 上方趋势质量需要打折。"
-    }
+    {"point":"BTC在清算退潮后的表现","a":"仍守84–85k甚至再破高，风险资产叙事升级为趋势延续，COIN/MSTR等高beta可能继续受益。","b":"快速跌回82–83k，说明机械逼空贡献过高，杠杆重新堆积会放大回撤。"},
+    {"point":"10Y与2Y","a":"10Y持续<5%、2Y不重新抬升，科技/BTC估值压力继续缓和，黄金也可能止跌。","b":"10Y>5%且2Y上行，说明Fed鹰派重新接管，Nasdaq/BTC先受压，美元偏强。"},
+    {"point":"原油","a":"Brent继续向100美元或以下回落，通胀尾部风险继续降温，风险资产受益。","b":"Brent迅速回到104–105以上，地缘风险重新price-in，收益率与黄金可能上行、科技承压。"},
+    {"point":"美股午后广度","a":"上涨家数维持优势且半导体领涨扩散，AI risk-on可信度提高。","b":"指数仍涨但广度转差、龙头独撑，说明行情质量下降。"},
+    {"point":"9/21 BTC ETF日终流量","a":"继续大额净流入，证明现货资金接棒逼空。","b":"平淡或净流出，85k附近上涨更依赖衍生品仓位，后续更脆弱。"}
   ],
   "sources": [
-    {
-      "id": "fed",
-      "name": "Federal Reserve",
-      "short": "Fed",
-      "type": "一级来源",
-      "domain": "federalreserve.gov",
-      "use": "FOMC 日历、政策声明、会议纪要与官员公开讲话。",
-      "checkedAt": "20:00",
-      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-    },
-    {
-      "id": "treasury",
-      "name": "U.S. Treasury",
-      "short": "UST",
-      "type": "一级来源",
-      "domain": "home.treasury.gov",
-      "use": "美国国债收益率与期限结构官方数据。",
-      "checkedAt": "20:00",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve"
-    },
-    {
-      "id": "cme",
-      "name": "CME FedWatch",
-      "short": "CME",
-      "type": "市场定价",
-      "domain": "cmegroup.com",
-      "use": "基于 Fed Funds Futures 的 FOMC 利率路径概率。",
-      "checkedAt": "20:00",
-      "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
-    },
-    {
-      "id": "coinglass",
-      "name": "CoinGlass",
-      "short": "CoinGlass",
-      "type": "衍生品数据",
-      "domain": "coinglass.com",
-      "use": "加密清算、未平仓合约、资金费率与衍生品仓位结构。",
-      "checkedAt": "20:00",
-      "url": "https://www.coinglass.com/LiquidationData"
-    },
-    {
-      "id": "farside",
-      "name": "Farside Investors",
-      "short": "Farside",
-      "type": "ETF 资金流",
-      "domain": "farside.co.uk",
-      "use": "美国现货 BTC ETF 每日申购赎回资金流。",
-      "checkedAt": "20:00",
-      "url": "https://farside.co.uk/btc/"
-    },
-    {
-      "id": "sse",
-      "name": "上海证券交易所",
-      "short": "SSE",
-      "type": "一级来源",
-      "domain": "sse.com.cn",
-      "use": "上证、科创板及沪市成交和市场数据。",
-      "checkedAt": "收盘后",
-      "url": "https://www.sse.com.cn/market/publicdata/"
-    },
-    {
-      "id": "szse",
-      "name": "深圳证券交易所",
-      "short": "SZSE",
-      "type": "一级来源",
-      "domain": "szse.cn",
-      "use": "深证、创业板及深市成交和市场统计。",
-      "checkedAt": "收盘后",
-      "url": "https://www.szse.cn/market/"
-    },
-    {
-      "id": "reuters",
-      "name": "Reuters",
-      "short": "Reuters",
-      "type": "主流媒体",
-      "domain": "reuters.com",
-      "use": "跨资产盘中报价、政策讲话、地缘政治与突发事件交叉验证。",
-      "checkedAt": "20:00",
-      "url": "https://www.reuters.com/markets/"
-    }
+    {"id":"reuters","name":"Reuters - Wall Street","short":"Reuters","type":"主流媒体","domain":"reuters.com","use":"美股指数、行业、市场广度、BTC相关股票、10Y<5%与FedWatch盘中背景。","checkedAt":"22:58","url":"https://www.reuters.com/business/wall-st-futures-rise-ai-stocks-gain-oil-prices-slide-2026-09-21/"},
+    {"id":"reuters_amd","name":"Reuters - AMD","short":"Reuters","type":"主流媒体","domain":"reuters.com","use":"AMD与半导体盘中表现、AI主线。","checkedAt":"22:58","url":"https://www.reuters.com/business/amd-becomes-latest-chipmaker-reach-1-trillion-valuation-ai-demand-2026-09-21/"},
+    {"id":"reuters_gold","name":"Reuters - Gold","short":"Reuters","type":"主流媒体","domain":"reuters.com","use":"黄金报价、美元与FedWatch加息概率。","checkedAt":"22:58","url":"https://www.reuters.com/world/india/gold-eases-firmer-dollar-profit-taking-mideast-conflict-focus-2026-09-21/"},
+    {"id":"reuters_oil","name":"Reuters - Oil","short":"Reuters","type":"主流媒体","domain":"reuters.com","use":"Brent/WTI报价、美伊外交与沙特出口。","checkedAt":"22:58","url":"https://www.reuters.com/business/energy/oil-rises-after-houthi-attack-saudi-capital-2026-09-20/"},
+    {"id":"reuters_diesel","name":"Reuters - Diesel supply","short":"Reuters","type":"主流媒体","domain":"reuters.com","use":"全球柴油与中间馏分供应紧张背景。","checkedAt":"22:58","url":"https://www.reuters.com/business/energy/global-diesel-shortage-likely-last-into-2027-storage-tanks-drain-2026-09-21/"},
+    {"id":"reuters_goolsbee","name":"Reuters - Goolsbee","short":"Reuters","type":"主流媒体","domain":"reuters.com","use":"Goolsbee对需求型通胀和进一步加息的表述。","checkedAt":"22:58","url":"https://www.reuters.com/business/feds-goolsbee-strong-demand-may-be-adding-us-inflation-no-ambiguity-how-fed-2026-09-21/"},
+    {"id":"reuters_yuan","name":"Reuters - Yuan","short":"Reuters","type":"主流媒体","domain":"reuters.com","use":"人民币、PBOC中间价与中美元首会晤前政策背景。","checkedAt":"22:58","url":"https://www.reuters.com/world/asia-pacific/yuan-hits-fresh-multi-year-peak-pboc-eases-curb-ahead-trump-xi-summit-2026-09-21/"},
+    {"id":"reuters_robot","name":"Reuters - China humanoid IPOs","short":"Reuters","type":"主流媒体","domain":"reuters.com","use":"人形机器人IPO审核节奏与监管关注点。","checkedAt":"22:58","url":"https://www.reuters.com/business/finance/china-slows-humanoid-robot-ipo-rush-hype-outruns-reality-2026-09-21/"},
+    {"id":"coindesk","name":"CoinDesk / CoinGlass snapshot","short":"CoinDesk","type":"加密市场数据","domain":"coindesk.com","use":"BTC价格、清算、OI、成交量与short squeeze结构。","checkedAt":"22:58","url":"https://www.coindesk.com/markets/2026/09/21/bitcoin-hits-usd85-000-as-short-squeeze-forces-out-usd648-million-of-bearish-bets"},
+    {"id":"farside","name":"Farside Investors","short":"Farside","type":"ETF资金流","domain":"farside.co.uk","use":"美国现货BTC ETF日度净流量，最近完整数据为9月18日。","checkedAt":"22:58","url":"https://farside.co.uk/btc/"},
+    {"id":"fred_cfnai","name":"FRED - CFNAI","short":"FRED","type":"一级/官方数据聚合","domain":"fred.stlouisfed.org","use":"8月CFNAI实际值-0.04与7月+0.08。","checkedAt":"22:58","url":"https://fred.stlouisfed.org/series/CFNAI"},
+    {"id":"chicagofed_calendar","name":"Chicago Fed Release Calendar","short":"ChicagoFed","type":"一级来源","domain":"chicagofed.org","use":"CFNAI发布时间与参考期。","checkedAt":"22:58","url":"https://www.chicagofed.org/research/data/data-release-calendar"},
+    {"id":"cme","name":"CME FedWatch","short":"CME","type":"市场定价","domain":"cmegroup.com","use":"联邦基金期货隐含利率路径；概率为实时值。","checkedAt":"22:58","url":"https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"},
+    {"id":"wsj_rates","name":"Market yield snapshot","short":"Rates","type":"市场数据","domain":"wsj.com","use":"盘中2Y约4.74%、10Y约4.97%的交叉验证。","checkedAt":"22:58","url":"https://www.wsj.com/finance/citi-raises-10-year-u-s-treasury-yield-forecast-ee0a5651"},
+    {"id":"ashare","name":"A股收盘数据","short":"A股","type":"市场数据","domain":"jrj.com.cn","use":"四大指数、成交额、涨跌家数与行业结构。","checkedAt":"22:58","url":"https://m.jrj.com.cn/madapter/finance/2026/09/21153358498772.shtml"},
+    {"id":"fed_calendar","name":"Federal Reserve Calendar","short":"Fed","type":"一级来源","domain":"federalreserve.gov","use":"9月22日Fed官员讲话时间。","checkedAt":"22:58","url":"https://www.federalreserve.gov/newsevents/2026-september.htm"},
+    {"id":"nyfed_event","name":"New York Fed Treasury Market Conference","short":"NYFed","type":"一级来源","domain":"newyorkfed.org","use":"9月22日Williams与Jefferson会议议程。","checkedAt":"22:58","url":"https://www.newyorkfed.org/newsevents/events/markets/2026/0922-2026"}
   ],
-  "methodology": "方法：政策和官方经济数据优先使用央行、交易所、财政部等一级来源；价格、ETF、清算与仓位使用交易所或专业市场数据；突发消息使用主流媒体交叉验证。每轮报告先读取上一轮 latest.json，重点写“新增变化”，没有实质变化时不拿旧闻凑数。不同市场报价可能存在延迟、时区和期货合约月份差异，因此尽量记录数据时点与口径。"
+  "methodology":"本轮先读取20:00的Dashboard快照，再核对22:58前可获得的新数据。政策/宏观优先官方或Fed/FRED；市场与突发使用Reuters、CoinDesk/CoinGlass、Farside等交叉验证。对来源间出现明显冲突的数据（例如CFNAI预期值）不强行选择单一口径；对尚未收盘的数据（例如9月21日BTC ETF流量）明确标为未完成，不用旧数据冒充今日最终值。"
 }
