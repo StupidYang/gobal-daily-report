@@ -1,45 +1,56 @@
 # Global Daily Report
 
-移动端全球市场情报 Dashboard，面向定时任务生成的市场快报。
+移动端全球市场情报 Dashboard。页面采用 **schema v3**：首屏用于 30 秒扫盘，向下保留完整分析，避免定时任务的深度内容被压缩成几句摘要。
 
-## 设计目标
+## 页面结构
 
-- 一个固定 GitHub Pages URL，手机直接打开
-- 所有时间统一为 UTC+8
-- 首页先看资产状态，再看“本轮变化”
-- 重点展示主线、预期差、跨资产背离、行情性质与 price-in
-- 每条资产分析尽量附数据/信息来源
-- 事件雷达显示未来 12–24 小时关键节点
-- 每 10 分钟自动重新读取 `data/latest.json`，也可手动刷新
+1. 核心资产快照
+2. 本轮相对上一轮的关键变化
+3. 核心分析 A-G
+4. 资产状态
+5. 宏观数据与政策事件（实际 / 预期 / 前值 / 修正）
+6. 重要消息时间线（事件时间与发布时间分开）
+7. BTC / 美股 / 黄金 / A股 / 原油 / 宏观完整详报
+8. 最可能改变叙事的触发器
+9. 未来 12–24 小时事件雷达
+10. A/B 情景观察框架
+11. 数据来源与本轮核对时间
 
-## 目录
+## 文件
 
-- `index.html`：固定入口与移动端 UI
+- `index.html`：移动端 UI
 - `data/latest.json`：最新一轮结构化市场报告
 - `history/YYYY-MM-DD/HHmm.json`：历史快照
 - `.nojekyll`：禁用 Jekyll
 
+## schema v3 关键字段
+
+- `changes`：相对上一轮真正新增/改变的叙事
+- `metrics`：资产快照，含 `asOf` 与 `sourceIds`
+- `macroEvents`：实际、预期、前值、修正值与解读
+- `news`：事件时间和发布时间
+- `deepDive`：完整分资产分析
+- `coreAnalysis`：主线、预期差、背离、行情性质、price-in、多空及证伪条件
+- `narrativeTriggers`：最可能改变市场叙事的数据/价位/资金流
+- `events`：未来 12–24 小时事件
+- `watch`：A/B 情景重定价
+- `sources`：一级来源、市场数据与媒体交叉验证
+
 ## 数据源
 
-当前页面支持在 JSON 中配置来源并在卡片内引用，包括：
+Federal Reserve、U.S. Treasury、CME FedWatch、CoinGlass、Farside Investors、SSE、SZSE、Reuters 等。
 
-- Federal Reserve：FOMC / 政策声明
-- U.S. Treasury：美债收益率
-- CME FedWatch：利率预期
-- CoinGlass：加密清算 / OI / 资金费率
-- Farside Investors：BTC ETF 资金流
-- SSE / SZSE：A 股官方市场数据
-- Reuters：跨资产盘中与突发消息交叉验证
+## 定时任务更新协议
 
-## 更新协议
+每轮先读取当前 `data/latest.json` 作为上一轮快照，再搜索最新市场信息。完成分析后：
 
-定时任务更新 `data/latest.json` 时，建议同时：
-
-1. 写入 `updatedAt`
-2. 更新 `changes`（相对上一轮真正发生了什么变化）
-3. 给 `metrics` / `assets` / `events` 填入 `sourceIds`
-4. 同步保存历史快照
-5. 没有实质变化时明确标注“本轮无重大叙事变化”
+1. 覆盖 `data/latest.json`
+2. 保存 `history/YYYY-MM-DD/HHmm.json`
+3. 所有时间使用 UTC+8
+4. 数据与消息尽量记录 `asOf` / `eventAt` / `publishedAt`
+5. 宏观大数据优先填实际 / 预期 / 前值 / 修正值
+6. 每个关键结论尽量附 `sourceIds`
+7. 无重大新增时明确写“本轮无重大叙事变化”
 
 ## GitHub Pages
 
