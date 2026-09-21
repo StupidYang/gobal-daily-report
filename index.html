@@ -29,7 +29,8 @@ a{color:inherit}.wrap{max-width:1060px;margin:auto;padding:14px 14px 34px}
 .up{color:var(--up)}.down{color:var(--down)}.flat{color:var(--muted)}.warn{color:var(--warn)}
 section{margin-top:12px;scroll-margin-top:56px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.section-title{font-size:15px;font-weight:850}.section-kicker{font-size:10px;color:var(--muted)}
-.change-list,.asset-list,.watch-list,.news-list,.macro-list{display:grid;gap:8px}.change{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;background:#0f192b;border:1px solid var(--line);padding:10px;border-radius:14px}.change-badge{padding:4px 7px;border-radius:8px;font-size:10px;font-weight:850;background:#172743;color:#a9c7ff}.change-title{font-size:13px;font-weight:780}.change-detail{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.55}
+.change-list,.asset-list,.watch-list,.news-list,.macro-list{display:grid;gap:8px}
+.evolution{display:grid;gap:0;margin:12px 0 14px}.evo{display:grid;grid-template-columns:58px 16px 1fr;gap:8px;min-width:0}.evo-time{font-size:11px;color:#9bb8e5;text-align:right;padding-top:2px}.evo-rail{position:relative}.evo-dot{width:9px;height:9px;border-radius:50%;background:#77a7ff;border:2px solid #1a2a46;position:absolute;left:3px;top:4px;z-index:2}.evo-rail:after{content:"";position:absolute;left:7px;top:13px;bottom:-7px;width:1px;background:#263a5d}.evo:last-child .evo-rail:after{display:none}.evo-body{padding:0 0 12px;min-width:0}.evo-title{font-size:13px;font-weight:820}.evo-text{font-size:12px;color:#aebdd2;line-height:1.55;margin-top:3px;overflow-wrap:anywhere}.compact-head{margin-top:12px;margin-bottom:8px}.small-title{font-size:13px}.change{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;background:#0f192b;border:1px solid var(--line);padding:10px;border-radius:14px}.change-badge{padding:4px 7px;border-radius:8px;font-size:10px;font-weight:850;background:#172743;color:#a9c7ff}.change-title{font-size:13px;font-weight:780}.change-detail{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.55}
 .analysis-grid{display:grid;grid-template-columns:1fr;gap:9px}.analysis-box{background:#0f192b;border:1px solid var(--line);border-radius:14px;padding:12px}.analysis-box b{display:block;font-size:12px;color:#a9c7ff;margin-bottom:5px}.analysis-box div{white-space:pre-line;line-height:1.62;font-size:13px;color:#dbe5f5}
 .asset{background:#0f192b;border:1px solid var(--line);border-radius:14px;padding:12px}.asset-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}.asset-name{font-size:14px;font-weight:820}.signal{font-size:10px;padding:4px 7px;border-radius:999px;background:#17233b;border:1px solid var(--line)}.asset-summary{font-size:13px;line-height:1.6}.asset-detail{font-size:11px;line-height:1.55;color:var(--muted);margin-top:5px}
 .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}.chip{display:inline-flex;align-items:center;gap:4px;font-size:10px;padding:4px 7px;border-radius:999px;background:var(--chip);border:1px solid var(--line);color:#aec2df;text-decoration:none}
@@ -48,7 +49,7 @@ section{margin-top:12px;scroll-margin-top:56px}.card{background:var(--panel);bor
 <body>
 <div class="wrap">
 <nav class="topbar">
-<a class="navbtn" href="#market">市场</a><a class="navbtn" href="#changes">变化</a><a class="navbtn" href="#analysis">分析</a><a class="navbtn" href="#macro">宏观</a><a class="navbtn" href="#detail">详报</a><a class="navbtn" href="#events">事件</a><a class="navbtn" href="#sources">来源</a>
+<a class="navbtn" href="#market">市场</a><a class="navbtn" href="#rolling24h">24h演化</a><a class="navbtn" href="#recent">最新变化</a><a class="navbtn" href="#analysis">分析</a><a class="navbtn" href="#macro">宏观</a><a class="navbtn" href="#detail">详报</a><a class="navbtn" href="#events">事件</a><a class="navbtn" href="#sources">来源</a>
 <button class="refresh" id="refreshBtn">↻ 刷新</button>
 </nav>
 
@@ -58,7 +59,17 @@ section{margin-top:12px;scroll-margin-top:56px}.card{background:var(--panel);bor
 <div class="grid" id="metrics"></div>
 </section>
 
-<section class="card" id="changes"><div class="section-head"><div class="section-title" id="changeTitle">本轮最重要的变化</div><div class="section-kicker" id="changeKicker">变化窗口读取中</div></div><div class="change-list" id="changeList"></div></section>
+<section class="card" id="rolling24h">
+    <div class="section-head"><div class="section-title">过去24小时市场演化</div><div class="section-kicker" id="rollingLabel">窗口读取中</div></div>
+    <div class="logic" id="rollingSummary"></div>
+    <div class="evolution" id="evolutionList"></div>
+    <div class="section-head compact-head"><div class="section-title small-title">24小时累计变化</div><div class="section-kicker" id="coverageNote"></div></div>
+    <div class="change-list" id="changeList"></div>
+  </section>
+  <section class="card" id="recent">
+    <div class="section-head"><div class="section-title">最近一轮新增</div><div class="section-kicker" id="recentLabel">最近更新区间</div></div>
+    <div class="change-list" id="recentList"></div>
+  </section>
 
 <section class="card" id="analysis">
 <div class="section-head"><div class="section-title">核心分析</div><div class="section-kicker">主线 / 预期差 / 背离 / Price-in</div></div>
@@ -105,11 +116,18 @@ async function load(){
 const btn=qs("#refreshBtn");btn.disabled=true;btn.textContent="刷新中…";
 try{
 const r=await fetch("./data/latest.json?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);const d=await r.json(),sm=sourceMap(d);
-qs("#status").textContent=fmt(d.marketState,"已更新");qs("#updatedAt").textContent="更新 "+fmt(d.updatedAt)+" UTC+8";qs("#freshness").textContent="新鲜度 "+ageText(d.updatedAt);qs("#reportId").textContent=fmt(d.reportId,"schema v"+fmt(d.schemaVersion));qs("#overview").textContent=fmt(d.overview);qs("#changeTitle").textContent=fmt(d.period?.title,"本轮最重要的变化");qs("#changeKicker").textContent=fmt(d.period?.label,"相对上一轮");qs("#eventNow").textContent="当前 "+new Date().toLocaleTimeString("zh-CN",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Asia/Singapore"});
+qs("#status").textContent=fmt(d.marketState,"已更新");qs("#updatedAt").textContent="更新 "+fmt(d.updatedAt)+" UTC+8";qs("#freshness").textContent="新鲜度 "+ageText(d.updatedAt);qs("#reportId").textContent=fmt(d.reportId,"schema v"+fmt(d.schemaVersion));qs("#overview").textContent=fmt(d.overview);
+qs("#rollingLabel").textContent=fmt(d.period?.label,"滚动24小时");
+qs("#coverageNote").textContent=d.period?.isFull24h===false?"当前历史覆盖 "+fmt(d.period?.coverageHours)+"h，数据积累后自动变为完整24h":"完整24小时";
+qs("#rollingSummary").textContent=fmt(d.rolling24hSummary,"");
+qs("#recentLabel").textContent=fmt(d.recentPeriod?.label,"最近一轮");
+qs("#eventNow").textContent="当前 "+new Date().toLocaleTimeString("zh-CN",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Asia/Singapore"});
 
 const metrics=qs("#metrics");metrics.textContent="";(d.metrics||[]).forEach(m=>{const c=E("div","metric"),h=E("div","metric-head");h.append(E("div","name",m.name));const s=sm.get((m.sourceIds||[])[0]);if(s){const a=E("a","source-mini",s.short||s.name);a.href=safeUrl(s.url);a.target="_blank";a.rel="noopener noreferrer";h.append(a)}c.append(h,E("div","value",fmt(m.value)));const b=E("div","bottom");b.append(E("span","chg "+tone(m.tone),fmt(m.changeLabel,m.changeText)),E("span","note",fmt(m.asOf||m.note,"")));c.append(b);metrics.append(c)});
 
+const evo=qs("#evolutionList");evo.textContent="";(d.evolution24h||[]).forEach(x=>{const row=E("div","evo");row.append(E("div","evo-time",fmt(x.time)));const rail=E("div","evo-rail");rail.append(E("span","evo-dot"));row.append(rail);const body=E("div","evo-body");body.append(E("div","evo-title",fmt(x.title)),E("div","evo-text",fmt(x.detail)));row.append(body);evo.append(row)});
 const changes=qs("#changeList");changes.textContent="";(d.changes||[]).forEach(x=>{const row=E("div","change");row.append(E("div","change-badge",fmt(x.tag,"变化")));const b=E("div");b.append(E("div","change-title",x.title),E("div","change-detail",x.detail));row.append(b);changes.append(row)});
+const recent=qs("#recentList");recent.textContent="";(d.recentChanges||[]).forEach(x=>{const row=E("div","change");row.append(E("div","change-badge",fmt(x.tag,"新增")));const b=E("div");b.append(E("div","change-title",x.title),E("div","change-detail",x.detail));row.append(b);recent.append(row)});if(!(d.recentChanges||[]).length)recent.append(E("div","change-detail","最近一轮无重大新增，当前主线未发生实质变化。"));
 
 qs("#mainTheme").textContent=fmt(d.coreAnalysis?.mainTheme);qs("#expectationGap").textContent=fmt(d.coreAnalysis?.expectationGap);qs("#divergence").textContent=fmt(d.coreAnalysis?.divergence);qs("#regime").textContent=[d.coreAnalysis?.regime,d.coreAnalysis?.priceIn].filter(Boolean).join("\n\n");
 qs("#bull").textContent=[d.coreAnalysis?.bullCase,d.coreAnalysis?.bullInvalidation&&"证伪："+d.coreAnalysis.bullInvalidation].filter(Boolean).join("\n\n");
