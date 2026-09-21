@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Global Daily Report</title>
+  <style>
+    :root{
+      --bg:#0b1020;--panel:#121a2f;--panel2:#0f1628;--text:#edf2ff;--muted:#94a3b8;
+      --line:#24324d;--up:#22c55e;--down:#ef4444;--warn:#f59e0b;--accent:#60a5fa;
+      --chip:#1b2742;--shadow:0 12px 30px rgba(0,0,0,.24)
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0a0f1d,#0b1020 40%,#09101c);color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .wrap{max-width:980px;margin:auto;padding:16px}
+    .hero{padding:18px;border:1px solid var(--line);background:linear-gradient(135deg,#111a31,#0d1426);border-radius:20px;box-shadow:var(--shadow)}
+    h1{font-size:24px;margin:0 0 8px}
+    .sub{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}
+    .metric .name{font-size:12px;color:var(--muted)}
+    .metric .value{font-size:24px;font-weight:800;margin-top:4px}
+    .metric .chg{font-size:13px;margin-top:4px}
+    .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--muted)}
+    section{margin-top:14px}
+    .section-title{font-size:16px;font-weight:800;margin:0 0 10px}
+    .pill{display:inline-block;padding:4px 8px;border-radius:999px;background:var(--chip);color:#cbd5e1;font-size:12px;margin:2px 4px 2px 0}
+    .list{display:grid;gap:8px}
+    .item{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px}
+    .item strong{display:block;margin-bottom:4px}
+    .item small{color:var(--muted)}
+    .cols{display:grid;grid-template-columns:1fr;gap:10px}
+    .logic{white-space:pre-line;line-height:1.55}
+    .footer{color:var(--muted);font-size:12px;text-align:center;padding:24px 0 10px}
+    .status{font-size:12px;padding:4px 8px;border-radius:999px;background:#17233d;color:#dbeafe;margin-left:6px}
+    .error{color:#fecaca;background:#3b1118;border-color:#7f1d1d}
+    @media (min-width:760px){
+      .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+      .cols{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>全球市场情报 <span class="status" id="status">加载中</span></h1>
+    <div class="sub" id="updatedAt">正在读取最新数据…</div>
+    <div class="grid" id="metrics"></div>
+  </div>
+
+  <section class="card">
+    <div class="section-title">一句话总览</div>
+    <div id="overview" class="logic"></div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <div class="section-title">当前市场主线</div>
+      <div id="mainTheme" class="logic"></div>
+    </div>
+    <div class="card">
+      <div class="section-title">跨资产背离</div>
+      <div id="divergence" class="logic"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">资产分析</div>
+    <div class="list" id="assets"></div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <div class="section-title">多头逻辑</div>
+      <div id="bull" class="logic"></div>
+    </div>
+    <div class="card">
+      <div class="section-title">空头逻辑</div>
+      <div id="bear" class="logic"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">未来 12–24 小时事件雷达</div>
+    <div class="list" id="events"></div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">当前观察框架</div>
+    <div class="list" id="watch"></div>
+  </section>
+
+  <div class="footer">Global Daily Report · UTC+8 · 数据仅供信息参考</div>
+</div>
+
+<script>
+const fmt = (x) => x ?? "—";
+const cls = (v) => v > 0 ? "up" : v < 0 ? "down" : "flat";
+const sign = (v) => (v > 0 ? "+" : "") + v;
+
+fetch("./data/latest.json?ts=" + Date.now())
+  .then(r => { if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(d => {
+    document.querySelector("#status").textContent = d.marketState || "已更新";
+    document.querySelector("#updatedAt").textContent = "最后更新时间：" + fmt(d.updatedAt) + " UTC+8";
+    document.querySelector("#overview").textContent = fmt(d.overview);
+    document.querySelector("#mainTheme").textContent = fmt(d.coreAnalysis?.mainTheme);
+    document.querySelector("#divergence").textContent = fmt(d.coreAnalysis?.divergence);
+    document.querySelector("#bull").textContent = fmt(d.coreAnalysis?.bullCase);
+    document.querySelector("#bear").textContent = fmt(d.coreAnalysis?.bearCase);
+
+    const metrics = document.querySelector("#metrics");
+    (d.metrics || []).forEach(m => {
+      const el = document.createElement("div");
+      el.className = "card metric";
+      el.innerHTML = `<div class="name">${m.name}</div><div class="value">${m.value}</div>
+        <div class="chg ${cls(m.change)}">${typeof m.change==="number" ? sign(m.change)+"%" : fmt(m.changeText)}</div>`;
+      metrics.appendChild(el);
+    });
+
+    const assets = document.querySelector("#assets");
+    (d.assets || []).forEach(a => {
+      const el = document.createElement("div"); el.className="item";
+      el.innerHTML = `<strong>${a.name}</strong><div>${a.summary}</div>
+      <small>${a.detail || ""}</small>`;
+      assets.appendChild(el);
+    });
+
+    const events = document.querySelector("#events");
+    (d.events || []).forEach(e => {
+      const el = document.createElement("div"); el.className="item";
+      el.innerHTML = `<strong>${e.time} · ${e.title}</strong><div>${e.impact}</div><small>${e.note || ""}</small>`;
+      events.appendChild(el);
+    });
+
+    const watch = document.querySelector("#watch");
+    (d.watch || []).forEach(w => {
+      const el = document.createElement("div"); el.className="item";
+      el.innerHTML = `<strong>${w.point}</strong><div>A：${w.a}</div><div>B：${w.b}</div>`;
+      watch.appendChild(el);
+    });
+  })
+  .catch(err => {
+    const s = document.querySelector("#status"); s.textContent="数据加载失败"; s.classList.add("error");
+    document.querySelector("#overview").textContent = "无法读取 data/latest.json：" + err.message;
+  });
+</script>
+</body>
+</html>
