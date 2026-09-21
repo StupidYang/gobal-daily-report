@@ -55,3 +55,23 @@ Federal Reserve、U.S. Treasury、CME FedWatch、CoinGlass、Farside Investors�
 ## GitHub Pages
 
 Settings → Pages → Deploy from a branch → `main` / `(root)`
+
+
+## 时间窗口与累计变化
+
+夜间报告使用累计窗口，而不是只比较上一轮：
+
+- 02:00：23:00 → 02:00
+- 04:00：23:00 → 04:00
+- 08:00：23:00 → 08:00，作为完整隔夜回顾
+- 12:00 / 16:00 / 20:00 / 23:00：默认与上一主要时点比较，同时仍输出完整市场分析
+
+JSON 可包含可选字段 `period`：
+
+- `mode`: `overnight-cumulative` 或 `incremental`
+- `title`: 页面变化区标题
+- `label`: 展示的时间窗口
+- `from` / `to`
+- `baselineReportId`
+
+所有 Dashboard 时间必须统一使用 UTC+8；不要在展示字段混入 ET / PT 等第二时区。
