@@ -1,124 +1,306 @@
 {
+  "schemaVersion": 2,
   "updatedAt": "2026-09-21 20:00",
   "marketState": "Risk-on / Short Squeeze",
   "overview": "BTC 强势突破并伴随大规模空头清算，美股科技盘前偏强，油价回落缓解通胀尾部风险，但美联储鹰派表态仍构成潜在反压。",
+  "changes": [
+    {
+      "tag": "BTC",
+      "title": "逼空从辅助因素升级为主导因素",
+      "detail": "空头清算显著扩大，同时 OI 仍在抬升，说明旧空头被动平仓之后又有新杠杆追入。"
+    },
+    {
+      "tag": "FED",
+      "title": "鹰派风险没有消失，只是暂时被风险偏好盖住",
+      "detail": "近期政策表态继续强调通胀压力，市场却仍在买科技与 BTC，这构成当前最值得观察的预期差。"
+    },
+    {
+      "tag": "OIL",
+      "title": "原油继续回落，宏观压力边际减轻",
+      "detail": "油价下降正在削弱通胀尾部风险，并给长久期资产提供喘息空间。"
+    }
+  ],
   "metrics": [
     {
       "name": "BTC",
       "value": "$85,166",
-      "change": 6.3
+      "changeLabel": "+6.3%",
+      "tone": "up",
+      "note": "24h",
+      "sourceIds": [
+        "coinglass"
+      ]
     },
     {
       "name": "Nasdaq 100 Futures",
       "value": "+1.09%",
-      "change": 1.09
+      "changeLabel": "盘前偏强",
+      "tone": "up",
+      "note": "期货",
+      "sourceIds": [
+        "reuters"
+      ]
     },
     {
       "name": "Gold",
       "value": "$4,350",
-      "change": -0.6
+      "changeLabel": "-0.6%",
+      "tone": "down",
+      "note": "现货",
+      "sourceIds": [
+        "reuters"
+      ]
     },
     {
       "name": "WTI",
       "value": "$94.2",
-      "change": -2
+      "changeLabel": "约 -2.0%",
+      "tone": "down",
+      "note": "近月",
+      "sourceIds": [
+        "reuters"
+      ]
     },
     {
-      "name": "SSE",
+      "name": "上证指数",
       "value": "3949.91",
-      "change": 0.97
+      "changeLabel": "+0.97%",
+      "tone": "up",
+      "note": "收盘",
+      "sourceIds": [
+        "sse"
+      ]
     },
     {
       "name": "US 10Y",
       "value": "4.96%",
-      "changeText": "回落"
+      "changeLabel": "回落",
+      "tone": "flat",
+      "note": "收益率",
+      "sourceIds": [
+        "treasury"
+      ]
     },
     {
       "name": "DXY",
       "value": "100.3",
-      "changeText": "偏强"
+      "changeLabel": "偏强",
+      "tone": "flat",
+      "note": "美元",
+      "sourceIds": [
+        "reuters"
+      ]
     },
     {
       "name": "BTC OI",
       "value": "$156B",
-      "change": 7.59
+      "changeLabel": "+7.59%",
+      "tone": "up",
+      "note": "24h",
+      "sourceIds": [
+        "coinglass"
+      ]
     }
   ],
   "assets": [
     {
       "name": "BTC / 加密",
+      "signal": "强势 / 拥挤",
+      "tone": "up",
       "summary": "短期主导为突破后的 short squeeze，主动买盘开始接力，但杠杆同步堆积。",
-      "detail": "若清算退潮后仍能守住 85k，趋势质量明显提高。"
+      "detail": "若清算退潮后仍能守住 85k，趋势质量明显提高；若 ETF 不接力，则高位拥挤风险上升。",
+      "sourceIds": [
+        "coinglass",
+        "farside"
+      ]
     },
     {
       "name": "美股",
+      "signal": "偏强",
+      "tone": "up",
       "summary": "科技与高贝塔资产盘前偏强，交易油价回落和 AI 风险偏好修复。",
-      "detail": "现金盘是否顶住鹰派讲话，是今晚关键验证。"
+      "detail": "现金盘是否能顶住偏鹰的利率叙事，是今晚最重要的价格验证。",
+      "sourceIds": [
+        "reuters",
+        "treasury",
+        "cme"
+      ]
     },
     {
       "name": "黄金",
+      "signal": "偏弱",
+      "tone": "down",
       "summary": "地缘溢价下降、美元偏强和 Fed 偏鹰共同压制黄金。",
-      "detail": "与 BTC 方向背离，说明 BTC 当前更像风险资产而非避险资产。"
+      "detail": "与 BTC 方向背离，说明 BTC 当前更像风险资产，而不是同步交易避险逻辑。",
+      "sourceIds": [
+        "reuters",
+        "treasury"
+      ]
     },
     {
       "name": "A股",
+      "signal": "轮动",
+      "tone": "flat",
       "summary": "指数普涨但高位科技分化，资金向医药、地产和部分金融方向轮动。",
-      "detail": "人民币走强改善外部金融环境。"
+      "detail": "上交所与深交所官方市场数据用于核对指数与成交信息。",
+      "sourceIds": [
+        "sse",
+        "szse"
+      ]
     },
     {
       "name": "原油",
+      "signal": "回落",
+      "tone": "down",
       "summary": "Brent / WTI 连续回落，市场在交易供应恢复和外交窗口。",
-      "detail": "若地缘风险重新恶化，风险溢价可能迅速回补。"
+      "detail": "若地缘风险重新恶化，风险溢价仍可能快速回补。",
+      "sourceIds": [
+        "reuters"
+      ]
     }
   ],
   "coreAnalysis": {
     "mainTheme": "油价下降 → 通胀尾部风险下降 → 美债收益率回落 → 科技股与 BTC 风险偏好修复。\n同时 BTC 叠加空头清算形成机械性加速。",
-    "divergence": "最明显背离：美元仍偏强、Fed 表态偏鹰，但 BTC 极强。\n这说明短期加密自身仓位结构和清算机制压过了传统宏观约束。",
-    "bullCase": "利空环境下价格仍强；油价下行与收益率回落配合；若 ETF 继续净流入，可能从逼空升级为现货资金接棒。",
-    "bearCase": "上涨高度依赖清算与杠杆；OI 同步抬升；若 10Y 重回 5% 上方或 ETF 不接力，85k 上方可能迅速转为拥挤交易。"
+    "expectationGap": "原本更鹰的 Fed 与中东风险应压制风险资产，但实际 BTC 与 Nasdaq 期货仍强。当前预期差来自：坏消息已被部分计价，而仓位与清算结构在短期压过宏观约束。",
+    "divergence": "最明显背离：美元仍偏强、Fed 表态偏鹰，但 BTC 极强；黄金同时走弱。\n这更像加密自身仓位结构 + risk-on，而不是“数字黄金”式避险交易。",
+    "regime": "行情性质：BTC 更接近突破 + short squeeze + momentum chase；美股更像事件驱动下的风险偏好修复。",
+    "priceIn": "已较充分计价：9 月加息、中东持续紧张、油价高位回落。\n仍可能未充分计价：Fed 是否形成更一致的需求型通胀判断、ETF 是否持续接力、10Y 是否重新站上 5%。",
+    "bullCase": "价格对利空钝化；油价下行与收益率回落形成宏观配合；若 ETF 延续净流入，BTC 可能从逼空进一步转向现货资金驱动。",
+    "bearCase": "上涨高度依赖清算与杠杆；OI 同步抬升；若 10Y 重回 5% 上方、美元继续走强或 ETF 资金不接力，当前高位可能快速变成拥挤交易。"
   },
   "events": [
     {
+      "at": "2026-09-21T20:30:00+08:00",
       "time": "20:30",
-      "title": "美国 Chicago Fed National Activity Index",
-      "impact": "强于预期可能抬升利率预期，弱于预期有利于缓解鹰派压力。"
+      "title": "Chicago Fed National Activity Index",
+      "impact": "强于预期可能抬升利率预期；弱于预期有助于缓解鹰派压力。",
+      "sourceIds": [
+        "fed"
+      ]
     },
     {
+      "at": "2026-09-21T21:30:00+08:00",
       "time": "21:30",
       "title": "美股现金盘开盘",
-      "impact": "验证 Nasdaq 盘前强势能否延续，也是判断 Fed 鹰派讲话是否被市场忽略的关键。"
+      "impact": "验证 Nasdaq 盘前强势能否延续，也是观察鹰派利率叙事是否重新接管定价的关键。",
+      "sourceIds": [
+        "reuters"
+      ]
     },
     {
+      "at": "2026-09-21T23:30:00+08:00",
       "time": "23:30",
       "title": "美国短端国债拍卖",
-      "impact": "需求偏弱可能强化高利率叙事。"
+      "impact": "需求偏弱可能强化高利率叙事，并向长久期科技资产传导压力。",
+      "sourceIds": [
+        "treasury"
+      ]
     },
     {
+      "at": "2026-09-22T02:00:00+08:00",
       "time": "夜间",
       "title": "美伊 / 联大相关消息",
-      "impact": "任何谈判进展都可能继续压制油价；若局势恶化则相反。"
+      "impact": "任何谈判进展都可能继续压制油价；若局势恶化，则风险溢价可能重新回补。",
+      "sourceIds": [
+        "reuters"
+      ]
     }
   ],
   "watch": [
     {
       "point": "BTC 是否守住 85k",
-      "a": "清算下降后仍守住，趋势质量提高。",
-      "b": "迅速跌回 82–83k，说明主要由逼空驱动。"
+      "a": "清算下降后仍守住，说明趋势开始脱离单纯逼空。",
+      "b": "迅速跌回 82–83k，说明机械性清算贡献过高。"
     },
     {
       "point": "美国 10Y 是否重回 5%",
-      "a": "继续低于 5%，风险资产环境改善。",
-      "b": "重新上破 5%，科技、黄金与 BTC 可能同时受压。"
+      "a": "继续低于 5%，风险资产金融条件边际改善。",
+      "b": "重新上破 5%，科技、黄金与 BTC 都可能重新承压。"
     },
     {
-      "point": "油价是否继续回落",
-      "a": "继续走弱，通胀交易降温。",
+      "point": "原油是否继续回落",
+      "a": "继续走弱，通胀交易进一步降温。",
       "b": "快速回升，地缘风险重新夺回定价权。"
     },
     {
-      "point": "BTC ETF 资金",
-      "a": "持续净流入，现货资金接棒。",
-      "b": "流入平淡或转负，85k 含金量下降。"
+      "point": "BTC ETF 资金是否接力",
+      "a": "持续净流入，现货资金确认接棒。",
+      "b": "流入平淡或转负，85k 上方的趋势质量需要打折。"
     }
-  ]
+  ],
+  "sources": [
+    {
+      "id": "fed",
+      "name": "Federal Reserve",
+      "short": "Fed",
+      "type": "一级来源",
+      "domain": "federalreserve.gov",
+      "use": "FOMC 日历、政策声明、会议纪要与官员公开讲话。",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "treasury",
+      "name": "U.S. Treasury",
+      "short": "UST",
+      "type": "一级来源",
+      "domain": "home.treasury.gov",
+      "use": "美国国债收益率与期限结构的官方日度数据。",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve"
+    },
+    {
+      "id": "cme",
+      "name": "CME FedWatch",
+      "short": "CME",
+      "type": "市场定价",
+      "domain": "cmegroup.com",
+      "use": "基于 Fed Funds Futures 的 FOMC 利率路径概率。",
+      "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+    },
+    {
+      "id": "coinglass",
+      "name": "CoinGlass",
+      "short": "CoinGlass",
+      "type": "衍生品数据",
+      "domain": "coinglass.com",
+      "use": "加密清算、未平仓合约、资金费率与衍生品仓位结构。",
+      "url": "https://www.coinglass.com/LiquidationData?rel=outbound"
+    },
+    {
+      "id": "farside",
+      "name": "Farside Investors",
+      "short": "Farside",
+      "type": "ETF 资金流",
+      "domain": "farside.co.uk",
+      "use": "美国现货 BTC ETF 每日申购赎回资金流。",
+      "url": "https://farside.co.uk/btc/"
+    },
+    {
+      "id": "sse",
+      "name": "上海证券交易所",
+      "short": "SSE",
+      "type": "一级来源",
+      "domain": "sse.com.cn",
+      "use": "上证指数、科创板及沪市成交与市场数据核对。",
+      "url": "https://www.sse.com.cn/market/publicdata/"
+    },
+    {
+      "id": "szse",
+      "name": "深圳证券交易所",
+      "short": "SZSE",
+      "type": "一级来源",
+      "domain": "szse.cn",
+      "use": "深证、创业板及深市成交与市场统计。",
+      "url": "https://www.szse.cn/market/"
+    },
+    {
+      "id": "reuters",
+      "name": "Reuters",
+      "short": "Reuters",
+      "type": "主流媒体",
+      "domain": "reuters.com",
+      "use": "跨资产盘中报价、政策讲话、地缘政治与突发事件交叉验证。",
+      "url": "https://www.reuters.com/markets/"
+    }
+  ],
+  "methodology": "方法：优先使用央行、交易所、财政部等一级来源核对政策和官方数据；价格与资金面使用交易所/市场数据提供商；突发消息用主流媒体交叉验证。不同市场的报价可能存在延迟、时区、近月/次月合约差异，报告会尽量明确数据时点与合约口径。"
 }
