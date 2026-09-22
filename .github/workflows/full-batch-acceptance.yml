@@ -1,22 +1,17 @@
 name: Seven-role native batch acceptance
+# Incident containment: this is a one-off final acceptance, not a per-publication check.
+# Missing batch dependencies must not trigger a failing audit after every healthy publish.
+# Run explicitly after the seven batch receipts exist. All strict checks remain enabled.
+# Routine publication still runs its own validation and public-browser checks.
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ['Validate and publish candidates']
-    types: [completed]
-  push:
-    branches: [main]
-    paths: ['.github/workflows/full-batch-acceptance.yml']
 permissions:
   contents: read
-# Read-only verification must never occupy or replace the publisher's pending slot.
-# New publications supersede older read-only checks; only the matching live build can pass.
 concurrency:
   group: gdr-batch-acceptance
   cancel-in-progress: true
 jobs:
   progress:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
