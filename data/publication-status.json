@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-22T08:19:58.330Z",
+  "checkedAt": "2026-09-22T16:48:23.472+08:00",
   "latestReportId": "2026-09-22-1558",
   "modules": {
     "quotes": {
@@ -22,21 +22,23 @@
       }
     },
     "asia-equities": {
-      "runId": "20260922T153643-asia-equities",
-      "generatedAt": "2026-09-22T15:36:43+08:00",
-      "dataAsOf": "2026-09-22T15:00:00+08:00",
+      "runId": "20260922T163335-asia-equities",
+      "generatedAt": "2026-09-22T16:33:35+08:00",
+      "dataAsOf": "2026-09-22T16:18:00+08:00",
       "status": "partial",
       "lastAttempt": {
         "role": "asia-equities",
-        "runId": "20260922T153643-asia-equities",
-        "inputHash": "fb25eada2bb3afa835340298ec1e18c83029d69078346a6426ca5339913559ec",
-        "processedAt": "2026-09-22T07:45:03.183Z",
+        "runId": "20260922T163335-asia-equities",
+        "inputHash": "e5d77d0cbba6452dd02c86fe2ebe27d0381f51dfe61df81d431ac5752144e44f",
+        "processedAt": "2026-09-22T16:48:23.472+08:00",
         "status": "published",
         "errors": [],
+        "attempts": 1,
+        "execution": null,
         "module": {
           "status": "published-module",
-          "path": "data/runs/asia-equities/20260922T153643-asia-equities.json",
-          "sha256": "06bd6190ed66071760be5b2fc470002633b7fa6aad8936922a6dc1fdf12647b7"
+          "path": "data/runs/asia-equities/20260922T163335-asia-equities.json",
+          "sha256": "bfb97a136f3b30b9d8d6d7ba65b4028d1f9de5d1c90d7b81556c6faa74e92e12"
         }
       }
     },
@@ -47,15 +49,18 @@
       "status": "partial",
       "lastAttempt": {
         "role": "us-equities",
-        "runId": "20260922T143000-recovery-us-equities",
-        "inputHash": "c5de48c9e97c560d3743191b6c727e71c0b2b81dda8aa4361b55fa089609aece",
-        "processedAt": "2026-09-22T06:49:23.158Z",
-        "status": "published",
-        "errors": [],
-        "module": {
-          "status": "published-module",
-          "path": "data/runs/us-equities/20260922T143000-recovery-us-equities.json",
-          "sha256": "59bafb4c2a720da6163da5156b5443d5a7b4ab66d8806b31fc59d41a40ff5b6f"
+        "runId": "20260922T164118-acceptance-us-equities",
+        "inputHash": "50cdc1466e73dee55b646a742e202e86b59e80ae04357c2067c276be1ba9eb74",
+        "processedAt": "2026-09-22T16:48:23.472+08:00",
+        "status": "rejected",
+        "errors": [
+          "非数值 volumeRatio20d\n非数值 turnoverPct\n非数值 avgDailyValue20d"
+        ],
+        "attempts": 1,
+        "execution": {
+          "batchId": "acceptance-r5-20260922",
+          "mode": "native-task-replay",
+          "role": "us-equities"
         }
       }
     },
