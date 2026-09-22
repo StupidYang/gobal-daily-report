@@ -9,9 +9,11 @@ on:
     paths: ['.github/workflows/full-batch-acceptance.yml']
 permissions:
   contents: read
+# Read-only verification must never occupy or replace the publisher's pending slot.
+# New publications supersede older read-only checks; only the matching live build can pass.
 concurrency:
-  group: gdr-candidate-publisher
-  cancel-in-progress: false
+  group: gdr-batch-acceptance
+  cancel-in-progress: true
 jobs:
   progress:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
