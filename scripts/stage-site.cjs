@@ -10,10 +10,14 @@ function copy(rel){const src=path.join(root,rel);if(!fs.existsSync(src))return;c
 for(const rel of ['index.html','.nojekyll','assets','config','docs','history','data/latest.json','data/history-index.json','data/publication-status.json','data/modules','data/runs','data/receipts'])copy(rel);
 for(const f of fs.readdirSync(path.join(root,'data')))if(/^editorial-[\w-]+\.json$/.test(f))copy('data/'+f);
 const report=JSON.parse(fs.readFileSync(path.join(dest,'data/latest.json'),'utf8'));
-const files={};function inventory(dir){for(const name of fs.readdirSync(dir)){const file=path.join(dir,name);if(fs.statSync(file).isDirectory())inventory(file);else files[path.relative(dest,file).split(path.sep).join('/')]=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');}}
-for(const rel of ['assets','data/modules'])inventory(path.join(dest,rel));
-files['index.html']=crypto.createHash('sha256').update(fs.readFileSync(path.join(dest,'index.html'))).digest('hex');
-files['data/latest.json']=crypto.createHash('sha256').update(fs.readFileSync(path.join(dest,'data/latest.json'))).digest('hex');
+const files={};function inventory(dir){for(const name of fs.readdirSync(dir).sort()){const file=path.join(dir,name);if(fs.statSync(file).isDirectory())inventory(file);else files[path.relative(dest,file).split(path.sep).join('/')]=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');}}
+for(const rel of ['assets','data/modules','config','docs'])inventory(path.join(dest,rel));
+for(const rel of ['index.html','data/latest.json'])files[rel]=crypto.createHash('sha256').update(fs.readFileSync(path.join(dest,rel))).digest('hex');
 let commit=null;try{commit=cp.execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();}catch{}
-fs.writeFileSync(path.join(dest,'data/build.json'),JSON.stringify({buildVersion:1,commit,builtAt:new Date().toISOString(),reportId:report.reportId,files,note:'Build identity and byte hashes; not proof of financial source truth.'},null,2)+'\n');
-console.log(JSON.stringify({dest,reportId:report.reportId,commit,files:Object.keys(files).length}));
+const buildId=crypto.createHash('sha256').update(JSON.stringify(files)).digest('hex');let old=null;
+try{old=JSON.parse(fs.readFileSync(path.join(root,'data/build.json'),'utf8'));}catch{}
+const build=old?.buildId===buildId?old:{buildVersion:1,buildId,commit,builtAt:new Date().toISOString(),reportId:report.reportId,files,note:'commit is the source context before a possible publication commit; buildId and file hashes identify the actual public bytes. Not proof of market source truth.'};
+const text=JSON.stringify(build,null,2)+'\n';
+if(process.env.GDR_PERSIST_BUILD==='1'){const file=path.join(root,'data/build.json'),tmp=file+'.tmp-'+process.pid;fs.writeFileSync(tmp,text);fs.renameSync(tmp,file);}
+fs.writeFileSync(path.join(dest,'data/build.json'),text);
+console.log(JSON.stringify({dest,reportId:report.reportId,commit:build.commit,buildId,files:Object.keys(files).length}));
