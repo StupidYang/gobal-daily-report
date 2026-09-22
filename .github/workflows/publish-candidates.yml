@@ -1,0 +1,94 @@
+name: Validate and publish candidates
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/inbox/**'
+      - '.github/workflows/publish-candidates.yml'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: gdr-candidate-publisher
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply reviewed recovery once, verifying every base file and bundle hash
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),z=require('node:zlib');
+          const marker='maintenance/recovery-20260922/applied.json';
+          if(fs.existsSync(marker))process.exit(0);
+          const encoded=[0,1,2,3].map(i=>fs.readFileSync(`maintenance/recovery-20260922/part${i}.b64`,'utf8').trim()).join('');
+          const bytes=z.brotliDecompressSync(Buffer.from(encoded,'base64'));
+          const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+          const digest='eb7d098dd285265968ae618c4d27e4b2972b6f4485912037200c7246b28de965';
+          if(hash(bytes)!==digest)throw Error('Recovery bundle integrity check failed');
+          const bundle=JSON.parse(bytes),writes=[];
+          const allowed=new Set(['assets/watchlist-core.js','assets/watchlist.js','assets/watchlist.css','index.html','lib/pipeline.cjs','scripts/promote-candidates.cjs','scripts/check-published.cjs','tests/recovery.test.cjs','docs/RECOVERY-20260922.md','automation/manifest.json','automation/prompts/common.md','automation/task-export.json','automation/bindings.json']);
+          for(const f of bundle.files){
+            if(!allowed.has(f.path)&&!/^data\/inbox\/(quotes|asia-equities|us-equities|news|macro|research|synthesis)\/20260922T143000-recovery-[a-z-]+\.json$/.test(f.path))throw Error('Unapproved bundle path: '+f.path);
+            const exists=fs.existsSync(f.path),old=exists?fs.readFileSync(f.path):null;
+            if(f.baseSha256===null&&exists||f.baseSha256!==null&&(!exists||hash(old)!==f.baseSha256))throw Error('Base changed; refusing overwrite: '+f.path);
+            let text;
+            if(f.edits){const lines=old.toString('utf8').match(/[^\n]*\n|[^\n]+$/g)||[];for(const [a,b,replacement] of [...f.edits].reverse())lines.splice(a,b-a,...replacement);text=lines.join('');}
+            else text=f.text!==undefined?f.text:JSON.stringify(f.json,null,2)+'\n';
+            writes.push([f.path,text]);
+          }
+          for(const [p,text] of writes){fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,text);}
+          fs.writeFileSync(marker,JSON.stringify({bundleSha256:digest,appliedAt:new Date().toISOString(),files:writes.map(x=>x[0]),note:'Applied only; successful publication requires the following validation steps.'},null,2)+'\n');
+          JS
+      - name: Run code and real-candidate checks before publishing
+        run: |
+          node scripts/gdr.cjs check-config
+          node --check assets/watchlist.js
+          node --check assets/watchlist-core.js
+          node --check scripts/promote-candidates.cjs
+          node --test tests/*.test.cjs
+          node scripts/promote-candidates.cjs
+          node scripts/check-published.cjs
+          node scripts/gdr.cjs export-tasks > /tmp/current-export.json
+          node - <<'JS'
+          const fs=require('node:fs');
+          const a=JSON.parse(fs.readFileSync('automation/task-export.json')),b=JSON.parse(fs.readFileSync('/tmp/current-export.json'));
+          if(JSON.stringify(a)!==JSON.stringify(b))throw Error('Task export does not match manifest/entry compiler');
+          JS
+      - name: Commit one validated snapshot without force push
+        run: |
+          git config user.name 'gdr-publisher[bot]'
+          git config user.email 'gdr-publisher@users.noreply.github.com'
+          git add assets/watchlist-core.js assets/watchlist.js assets/watchlist.css index.html lib/pipeline.cjs scripts/promote-candidates.cjs scripts/check-published.cjs tests/recovery.test.cjs docs/RECOVERY-20260922.md automation/manifest.json automation/prompts/common.md automation/task-export.json automation/bindings.json maintenance/recovery-20260922/applied.json data/inbox data/modules data/runs data/receipts data/publication-status.json data/latest.json data/history-index.json history
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix: publish validated recovery and module candidates'
+            git push origin HEAD:main
+          fi
+      - name: Stage only validated public site assets
+        run: |
+          mkdir -p /tmp/gdr-site
+          cp index.html .nojekyll /tmp/gdr-site/
+          cp -R assets config history /tmp/gdr-site/
+          mkdir -p /tmp/gdr-site/data
+          cp data/latest.json data/history-index.json data/publication-status.json /tmp/gdr-site/data/
+          cp -R data/modules data/runs data/receipts /tmp/gdr-site/data/
+          find data -maxdepth 1 -name 'editorial-*.json' -exec cp {} /tmp/gdr-site/data/ \;
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: /tmp/gdr-site
+      - name: Deploy validated files, not unchecked candidate data
+        id: deployment
+        uses: actions/deploy-pages@v4
