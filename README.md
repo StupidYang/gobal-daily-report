@@ -95,3 +95,28 @@ JSON 可包含可选字段 `period`：
 如果历史不足24小时，必须设置 `period.isFull24h=false` 和实际 `coverageHours`，不得伪装成完整24小时。
 
 这样用户无论漏掉多少次推送，打开任意一轮都能看到完整24小时演化 + 最近新增 + 当前市场分析。
+
+
+## schema v5：可信度与可审计判断
+
+v5 在 v4 的滚动24小时基础上增加：
+
+- `canonicalFacts`：关键数字只保存一份，包含 scope / window / asOf / verifiedAt / dataStatus / sourceIds。指标卡、详报和判断证据通过 factId 引用，避免清算、ETF 等数字在不同栏目被重写成不同口径。
+- 数据状态：live / closed / delayed / stale / partial / missing / error / window-unclear。报告更新时间与指标时间分离。
+- `worldEvents`：独立记录“全球发生了什么”，再单独说明市场传导，不强行把所有时事解释成行情原因。
+- `analysisTheses`：每条主要判断拆成已观察事实、倾向解释、替代解释、验证条件和证据。
+- `judgmentRevisions`：记录原判断、新证据、本轮修订、未解决问题、验证状态。
+- `marketCoverage`：A股、港股、美股、BTC、黄金、原油最低覆盖检查；数据缺失与“已检查无重大变化”必须区分。
+- `dataDefinitions`：禁止裸用“站稳 / 放量 / 广度改善 / 稳定跌破”等不可复核表述。
+- `data/history-index.json`：页面可选择历史报告。
+- 页面只在 JSON 内容变化时重建 DOM，保留已展开详报；“刷新”改为“检查新报告”。
+- `ageText` 支持标准 ISO 和 UTC+8 文本格式；未来时间不再显示为“刚刚”。
+- 指标颜色使用 `direction` 表示数值方向，`impactTone` 表示解释层影响，二者不再混用。
+
+### ETF 与披露状态
+
+对于部分披露数据，只能写“已披露基金净流量合计为 X；部分基金尚未披露，最终全市场净流量待确认”。禁止使用“至少净流入 X”来暗示最终值一定不低于当前值。
+
+### 清算口径
+
+总清算、空头清算、多头清算必须分别存为独立 canonicalFacts，明确资产范围、统计窗口与截止时间。若旧来源没有精确截止时间，设置 dataStatus=window-unclear，不得编造。
