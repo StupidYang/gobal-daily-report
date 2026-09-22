@@ -70,6 +70,47 @@ function validate(m, expected, now=Date.now()){
  if(m.module==='synthesis'&&(!m.payload?.report||m.payload.report.schemaVersion!==5))errors.push('synthesis需完整schema5报告');
  return [...new Set(errors)];
 }
+
+// Read-side isolation only. Strict validate() is never weakened for publication.
+// Invalid values are quarantined, not repaired, interpolated or shown as current quotes.
+function projectModule(input, expected, now=Date.now()) {
+ const originalErrors=validate(input,expected,now);
+ if(!originalErrors.length)return {module:input,issues:[],quarantined:[]};
+ if(!input||typeof input!=='object')return {module:null,issues:originalErrors,quarantined:[]};
+ const m=JSON.parse(JSON.stringify(input)),quarantined=[];
+ const blank={quotes:{items:[]},macro:{canonicalFacts:[],macroEvents:[],events:[]},research:{records:[],checks:[]},'asia-equities':{groups:[]},'us-equities':{groups:[]},news:{}};
+ if(!blank[expected])return {module:null,issues:originalErrors,quarantined};
+ const envelope=validate({...m,payload:blank[expected]},expected,now);
+ if(envelope.length)return {module:null,issues:envelope,quarantined};
+ if(expected==='quotes'){
+  if(!Array.isArray(m.payload?.items))return {module:null,issues:originalErrors,quarantined};
+  const seen=new Set();
+  m.payload.items=m.payload.items.map((q,i)=>{
+   const errors=validate({...m,payload:{items:[q]}},expected,now);
+   if(q?.instrumentId&&seen.has(q.instrumentId))errors.push('重复资产身份');
+   if(q?.instrumentId)seen.add(q.instrumentId);
+   if(!errors.length)return q;
+   quarantined.push({path:`payload.items[${i}]`,instrumentId:q?.instrumentId||null,errors,original:q});
+   if(!q?.instrumentId||errors.includes('重复资产身份'))return null;
+   return {instrumentId:q.instrumentId,symbol:q.symbol,name:q.name,market:q.market,group:q.group,currency:q.currency,
+    price:null,displayValue:'异常记录已隔离',changePct:null,asOf:null,status:'error',sourceIds:[],contract:null,
+    note:'原始记录未通过校验：'+errors.join('；')+'。其他合格资产仍正常展示。'};
+  }).filter(Boolean);
+ } else if(expected==='macro'){
+  for(const key of ['canonicalFacts','macroEvents','events'])if(Array.isArray(m.payload?.[key])){
+   m.payload[key]=m.payload[key].filter((row,i)=>{
+    const errors=validate({...m,payload:{[key]:[row]}},expected,now);
+    if(!errors.length)return true;
+    quarantined.push({path:`payload.${key}[${i}]`,errors,original:row});return false;
+   });
+  }
+ } else return {module:null,issues:originalErrors,quarantined};
+ const remaining=validate(m,expected,now);
+ if(remaining.length)return {module:null,issues:remaining,quarantined};
+ m.status='partial';
+ return {module:m,issues:originalErrors,quarantined};
+}
+
 function nValue(n,max=20){const v=Number(n);return Number.isInteger(v)?Math.max(1,Math.min(max,v)):5;}
 function median(v){const a=v.filter(finite).sort((a,b)=>a-b);return a.length?a.length%2?a[(a.length-1)/2]:(a[a.length/2-1]+a[a.length/2])/2:null;}
 function percentile(a,value){if(a.length<2)return .5;const lo=a.filter(x=>x<value).length,eq=a.filter(x=>x===value).length;return (lo+(eq-1)/2)/(a.length-1);}
@@ -104,6 +145,6 @@ function priceText(q){if(!finite(q.price))return q.displayValue||'待采集';if(
 function freshness(m,ttl,now=Date.now()) {if(!m)return 'missing';if(m.status==='error'||m.status==='missing')return m.status;const t=time(m.generatedAt);return t===null?'unknown':now-t>ttl*3600000?'stale':m.status;}
 function researchFingerprint(r){return JSON.stringify([r.instrumentId,r.eventType,r.period,r.documentId,r.documentUrl,r.sourceHash||'']);}
 function selectResearch(records,cutoff=Infinity){const map=new Map();arr(records).forEach(r=>{const t=time(r.analyzedAt);if(t===null||t>cutoff)return;const old=map.get(r.instrumentId);if(!old||t>time(old.analyzedAt))map.set(r.instrumentId,r);});return [...map.values()];}
-const api={arr,finite,MODULES,STATUSES,time,stamp,safeUrl,validate,nValue,median,percentile,rankGroup,quoteRows,priceText,freshness,researchFingerprint,selectResearch};
+const api={arr,finite,MODULES,STATUSES,time,stamp,safeUrl,validate,projectModule,nValue,median,percentile,rankGroup,quoteRows,priceText,freshness,researchFingerprint,selectResearch};
 if(typeof module!=='undefined')module.exports=api;root.GDRWatch=api;
 })(typeof globalThis!=='undefined'?globalThis:window);

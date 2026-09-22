@@ -18,7 +18,11 @@
       ],
       "ui": "必看资产 / 独立报价时点",
       "maxMinutes": 12,
-      "prompt": "执行GDR模块 quotes。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/quotes.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+      "submissionPaths": [
+        "data/inbox/quotes/"
+      ],
+      "publicationReceipt": "data/receipts/quotes/<runId>.json",
+      "prompt": "执行GDR模块 quotes。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/quotes.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/quotes/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/quotes/<runId>.json；只有status=published并回读正式产物才叫发布成功，pending/rejected必须如实报告。调度已配置，不创建或修改任务，不修改代码与提示词。"
     },
     {
       "role": "asia-equities",
@@ -38,7 +42,11 @@
       ],
       "ui": "A股31行业 / 港股12行业热弱榜",
       "maxMinutes": 20,
-      "prompt": "执行GDR模块 asia-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/asia-equities.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+      "submissionPaths": [
+        "data/inbox/asia-equities/"
+      ],
+      "publicationReceipt": "data/receipts/asia-equities/<runId>.json",
+      "prompt": "执行GDR模块 asia-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/asia-equities.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/asia-equities/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/asia-equities/<runId>.json；只有status=published并回读正式产物才叫发布成功，pending/rejected必须如实报告。调度已配置，不创建或修改任务，不修改代码与提示词。"
     },
     {
       "role": "us-equities",
@@ -58,7 +66,11 @@
       ],
       "ui": "美股科技 / 投资公司候选池与排名",
       "maxMinutes": 15,
-      "prompt": "执行GDR模块 us-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/us-equities.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+      "submissionPaths": [
+        "data/inbox/us-equities/"
+      ],
+      "publicationReceipt": "data/receipts/us-equities/<runId>.json",
+      "prompt": "执行GDR模块 us-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/us-equities.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/us-equities/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/us-equities/<runId>.json；只有status=published并回读正式产物才叫发布成功，pending/rejected必须如实报告。调度已配置，不创建或修改任务，不修改代码与提示词。"
     },
     {
       "role": "news",
@@ -76,7 +88,11 @@
       ],
       "ui": "综合时事库，保留非财经增量",
       "maxMinutes": 15,
-      "prompt": "执行GDR模块 news。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/news.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+      "submissionPaths": [
+        "data/inbox/news/"
+      ],
+      "publicationReceipt": "data/receipts/news/<runId>.json",
+      "prompt": "执行GDR模块 news。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/news.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/news/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/news/<runId>.json；只有status=published并回读正式产物才叫发布成功，pending/rejected必须如实报告。调度已配置，不创建或修改任务，不修改代码与提示词。"
     },
     {
       "role": "macro",
@@ -95,7 +111,11 @@
       ],
       "ui": "央行 / 经济数据 / ETF / 清算",
       "maxMinutes": 15,
-      "prompt": "执行GDR模块 macro。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/macro.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+      "submissionPaths": [
+        "data/inbox/macro/"
+      ],
+      "publicationReceipt": "data/receipts/macro/<runId>.json",
+      "prompt": "执行GDR模块 macro。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/macro.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/macro/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/macro/<runId>.json；只有status=published并回读正式产物才叫发布成功，pending/rejected必须如实报告。调度已配置，不创建或修改任务，不修改代码与提示词。"
     },
     {
       "role": "research",
@@ -117,7 +137,11 @@
       ],
       "ui": "事件触发研究 / 沿用原分析",
       "maxMinutes": 20,
-      "prompt": "执行GDR模块 research。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/research.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+      "submissionPaths": [
+        "data/inbox/research/"
+      ],
+      "publicationReceipt": "data/receipts/research/<runId>.json",
+      "prompt": "执行GDR模块 research。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/research.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/research/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/research/<runId>.json；只有status=published并回读正式产物才叫发布成功，pending/rejected必须如实报告。调度已配置，不创建或修改任务，不修改代码与提示词。"
     },
     {
       "role": "synthesis",
@@ -143,7 +167,11 @@
       ],
       "ui": "首屏结论 / 完整24h报告 / 唯一报告发布者",
       "maxMinutes": 20,
-      "prompt": "执行GDR模块 synthesis。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/synthesis.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是综合报告唯一发布者，保留每4小时完整报告、全部时事与研究。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+      "submissionPaths": [
+        "data/inbox/synthesis/"
+      ],
+      "publicationReceipt": "data/receipts/synthesis/<runId>.json",
+      "prompt": "执行GDR模块 synthesis。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/synthesis.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/synthesis/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。候选payload.report必须包含完整schema5/reader-r2报告，不能只有报告编号、路径或发布计划。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/synthesis/<runId>.json；只有status=published并回读正式产物才叫发布成功，pending/rejected必须如实报告。调度已配置，不创建或修改任务，不修改代码与提示词。"
     }
   ]
 }

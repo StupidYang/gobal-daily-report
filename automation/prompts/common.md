@@ -23,3 +23,16 @@
 拆任务是为降低职责耦合，不保证降低总额度。没有重大新增，数据生产者只发简短状态通知，不重写整篇报告。每次研究遵守预算，无法完成的公司/板块明确列待处理，失败不用无穷重试。不要读取与本模块无关的全部历史来浪费上下文。生产者晚到时由综合任务展示依赖时点/缺口，不声称任务之间存在严格DAG调度。
 
 复制到其他AI时，输出相同JSON和文件即可；模型名称、API key、ChatGPT个人记忆不属于项目协议。模型不可用/额度不足要记录失败，不能悄悄改成确定性较强的劣质结论。
+
+
+## 生效覆盖规则：candidate-gate-v1（2026-09-22事故修复）
+
+本节取代上面和各角色文档中的“通过连接器直接写正式模块/首页”流程。逻辑ownedPaths保留给本地代码发布器；远程AI只提交该角色的 `data/inbox/<role>/<runId>.json`，文件内容仍为完整moduleVersion=1包络。一个候选写入后不可修改，修订换新runId。绝不直接覆盖data/modules、data/runs、latest、history或索引。
+
+GitHub的Candidate publication工作流会真实执行校验、保留不可变run、更新模块；只有synthesis的完整payload.report才能发布首页。工作流生成 `data/receipts/<role>/<runId>.json`，状态published才表示实际发布；rejected必须读errors并在预算内修一次新候选，不能把提交候选说成发布成功。没有回执只能说已提交待校验。
+
+不能将日期只有YYYY-MM-DD的值伪装成精确asOf。保留sourceDate或asOfLabel；asOf=null，数值报价price=null，原始文字保留displayValue并标partial/unknown，不能猜开盘/收盘时刻。精确源时点可转UTC+8。单条缺失不删整个资产模块，不能通过放宽校验制造可用率。
+
+synthesis必须输出完整payload.report，包括reader-r2全字段、白话影响、多框架、实际时点、sources及合法moduleRefs。reportId、publishPaths和gaps不是报告替代品。若依赖缺失仍完成有证据的完整部分报告，逐资产说明缺口，禁止空标题/状态清单假交付。
+
+任务完成条件：候选提交、代码校验、正式产物回执与首页引用分别表述。Pages部署和数据采集时间也分开。整个协议不依赖某个模型：clone后可用node scripts/promote-candidates.cjs处理候选。
