@@ -1,0 +1,12 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
+const D=require('../assets/display-core.js');
+test('human names never use scope or provider protocol labels',()=>{assert.equal(D.name({id:'quotes:INDEX:CN:SSE',scope:'INDEX:CN:SSE / provider regular session'}),'上证指数');assert.equal(D.name({label:'科创50',scope:'provider regular session'}),'科创50');});
+test('price, yield and FX retain distinct units and precision',()=>{assert.equal(D.format({rawValue:85308.22,unit:'USD'}),'$85,308.22');assert.equal(D.format({rawValue:4.963,unit:'%'}),'4.963%');assert.equal(D.format({instrumentId:'FX:USDCNY',price:6.6969,currency:'CNY'}),'6.6969');assert.equal(D.format({rawValue:3955.442,unit:'index'}),'3,955.44');});
+test('tiny PEPE remains a decimal, not zero or 5.15e-6',()=>{assert.equal(D.format({price:.00000515,currency:'USD'}),'$0.000005150');});
+test('unknown quotes are not invented and approximate quotes remain approximate',()=>{assert.equal(D.format({price:null,displayValue:'待核验'}),'待核验');assert.equal(D.format({price:87000,displayValue:'超过87000'}),'超过87000');assert.equal(D.format({rawValue:4350,displayValue:'约4350'}),'约4350');});
+test('same percentage value is not reinterpreted as fraction or direction',()=>{assert.equal(D.change({changePct:1.4}),'+1.40%');assert.equal(D.change({changeLabel:'-4.5bp'}),'-4.5bp');assert.equal(D.change({changePct:null}),'涨跌幅未提供');});
+test('one point must communicate insufficient trend, not draw phantom line',()=>{assert.match(D.pointCaption(1),/仅1次观测/);assert.match(D.pointCaption(0),/暂无/);});
+test('raw basis translations preserve access to original distinct definitions',()=>{assert.match(D.basis('provider-regular-session-change'),/行情源常规前收/);assert.notEqual(D.basis('24h'),D.basis('previous-official-close'));});
+test('structured research has readable text and retains all entries',()=>{const s=D.prose([{metric:'营收',value:4.5,unit:'亿美元'},'利润率下降']);assert.match(s,/指标：营收/);assert.match(s,/4.5/);assert.match(s,/利润率下降/);assert.doesNotMatch(s,/object Object|\{"/);});
+test('real 1430 publication can be formatted without mutating its facts',()=>{const r=JSON.parse(fs.readFileSync('history/2026-09-22/1430.json','utf8'));const original=JSON.stringify(r);for(const f of r.canonicalFacts){D.name(f);D.format(f);D.change(f);}assert.equal(JSON.stringify(r),original);assert.equal(r.canonicalFacts.filter(f=>D.group(f)&&!D.hasValue(f)).length,4);});
