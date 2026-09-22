@@ -1,103 +1,38 @@
-name: Seven-role native batch acceptance
-# Incident containment: this is a one-off final acceptance, not a per-publication check.
-# Missing batch dependencies must not trigger a failing audit after every healthy publish.
-# Run explicitly after the seven batch receipts exist. All strict checks remain enabled.
-# Routine publication still runs its own validation and public-browser checks.
+name: Manual production batch audit
 on:
   workflow_dispatch:
+    inputs:
+      batch_id:
+        description: Published production atomic batch ID (never a fixture)
+        required: true
+        type: string
 permissions:
   contents: read
 concurrency:
-  group: gdr-batch-acceptance
-  cancel-in-progress: true
+  group: gdr-manual-audit
+  cancel-in-progress: false
 jobs:
-  progress:
+  audit:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    outputs:
-      ready: ${{ steps.batch.outputs.ready }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Require seven actual published replay receipts, not only configured tasks
-        id: batch
+      - name: Audit exact requested production batch
+        env:
+          BATCH_ID: ${{ inputs.batch_id }}
         run: |
-          mkdir -p /tmp/gdr-batch
-          git rev-parse HEAD > /tmp/gdr-batch/commit.txt
-          if node scripts/check-acceptance.cjs acceptance-r5-20260922 > /tmp/gdr-batch/acceptance.json; then
-            echo 'ready=true' >> "$GITHUB_OUTPUT"
-            cat /tmp/gdr-batch/acceptance.json
-          else
-            echo 'ready=false' >> "$GITHUB_OUTPUT"
-            cat /tmp/gdr-batch/acceptance.json
-            echo '::error::Batch incomplete or rejected. This is NOT a successful final acceptance.'
-            exit 1
-          fi
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: native-batch-progress-not-a-success-certificate
-          path: /tmp/gdr-batch/
-          retention-days: 14
-  browser-acceptance:
-    needs: progress
-    if: needs.progress.outputs.ready == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-          persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Recheck actual seven-role evidence and installed source
-        run: |
-          mkdir -p /tmp/gdr-final
-          node scripts/check-acceptance.cjs acceptance-r5-20260922 > /tmp/gdr-final/acceptance.json
+          mkdir -p /tmp/gdr-audit
+          node scripts/check-batch.cjs "$BATCH_ID" > /tmp/gdr-audit/batch.json
           node scripts/check-runtime.cjs
           node scripts/check-published.cjs
-          node --test tests/*.test.cjs > /tmp/gdr-final/unit-tests.tap
-          cp data/build.json /tmp/gdr-final/build.json
-          git rev-parse HEAD > /tmp/gdr-final/commit.txt
-          git archive --format=zip HEAD > /tmp/gdr-final/tested-repository.zip
-      - name: Browser and Chinese fonts
-        run: |
-          mkdir -p "$RUNNER_TEMP/gdr-browser"
-          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
-          sudo apt-get update -qq
-          sudo apt-get install -y fonts-noto-cjk >/dev/null
-          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
-      - name: Confirm exact public build is ready
-        env:
-          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
-        run: node scripts/wait-site.cjs data/build.json > /tmp/gdr-final/readiness.json
-      - name: Four-viewports public interactions and exact deployed file hashes
-        env:
-          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
-          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
-          GDR_EXPECT_BUILD: data/build.json
-          GDR_TEST_WIDTHS: '320,390,768,1440'
-          GDR_UI_OUTPUT: /tmp/gdr-final/live
-        run: node tests/ui-real-data.cjs
-      - name: Expand every article and verify complete news, analysis and evidence navigation
-        env:
-          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
-          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
-          GDR_EXPECT_BUILD: data/build.json
-          GDR_TEST_WIDTHS: '320,390,768,1440'
-          GDR_UI_OUTPUT: /tmp/gdr-final/expanded
-        run: node tests/ui-expanded.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: seven-native-roles-and-public-browser-proof
-          path: /tmp/gdr-final/
-          retention-days: 30
-          if-no-files-found: error
+          name: production-batch-audit
+          path: /tmp/gdr-audit/
+          retention-days: 14

@@ -78,10 +78,12 @@ jobs:
             node --test tests/*.test.cjs > /tmp/gdr-publication/unit-tests.tap
             node scripts/promote-candidates.cjs > /tmp/gdr-publication/receipts.json
             node scripts/check-published.cjs
+            node scripts/build-demo.cjs > /tmp/gdr-publication/demo.json
+            cp automation/control.json data/runtime-control.json
             GDR_PERSIST_BUILD=1 node scripts/stage-site.cjs /tmp/gdr-site
             node tests/ui-real-data.cjs
             GDR_UI_OUTPUT=/tmp/gdr-publication/staged-expanded node tests/ui-expanded.cjs
-            git add -- data/modules data/runs data/receipts data/publication-status.json data/latest.json data/history-index.json data/build.json history
+            git add -- data/modules data/runs data/receipts data/publication-status.json data/latest.json data/history-index.json data/build.json data/runtime-control.json history demo
             if git diff --cached --quiet; then complete=1; break; fi
             git commit -m 'data: publish tested candidates and matching public build identity'
             if git push origin HEAD:main; then complete=1; break; fi
@@ -103,10 +105,7 @@ jobs:
         if: steps.pages.outputs.mode == 'legacy'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          if ! gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" > /tmp/gdr-publication/build-request.json; then
-            echo '::warning::Build request failed or was already queued; only verified public bytes establish readiness.'
-          fi
+        run: node scripts/request-pages.cjs /tmp/gdr-site/data/build.json
       - name: Wait for exact public build identity
         env:
           GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
@@ -127,6 +126,16 @@ jobs:
           GDR_TEST_WIDTHS: '390,1440'
           GDR_UI_OUTPUT: /tmp/gdr-publication/live-expanded
         run: node tests/ui-expanded.cjs
+      - name: Verify deployed synthetic demonstration separately
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/demo/
+          GDR_EXPECT_BUILD: /tmp/gdr-site/demo/data/build.json
+          GDR_TEST_WIDTHS: '390,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-publication/live-demo
+        run: |
+          node tests/ui-real-data.cjs
+          GDR_UI_OUTPUT=/tmp/gdr-publication/live-demo-expanded node tests/ui-expanded.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

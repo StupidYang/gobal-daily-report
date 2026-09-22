@@ -1,50 +1,28 @@
 name: Isolated regression checks
 on:
+  workflow_dispatch:
   push:
     branches: ['repair/staging-20260922']
-    paths: ['.repair-update.json', '.github/workflows/ci.yml']
+  pull_request:
+    branches: [main]
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: gdr-repair-apply
-  cancel-in-progress: false
+  group: gdr-ci-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  verify:
-    if: github.ref == 'refs/heads/repair/staging-20260922'
+  regression:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply exact reviewed source delta on isolated repair branch
+      - name: Validate and build deterministic isolated demonstration
         run: |
-          python3 - <<'PY'
-          import base64,lzma,hashlib,json,subprocess,pathlib
-          bundle=json.loads(pathlib.Path('.repair-update.json').read_text())
-          raw=lzma.decompress(base64.b64decode(''.join(pathlib.Path(part).read_text() for part in bundle['parts'])))
-          assert len(raw)<2000000 and hashlib.sha256(raw).hexdigest()==bundle['sha256']
-          payload=json.loads(raw)
-          for op in payload['operations']:
-              name=op['path'];p=pathlib.Path(name)
-              assert not p.is_absolute() and '..' not in p.parts
-              assert name=='README.md' or name=='index.html' or name=='data/runtime-control.json' or p.parts[0] in ['assets','automation','docs','lib','scripts','tests']
-              assert not p.is_symlink()
-              actual=subprocess.check_output(['git','hash-object',str(p)],text=True).strip() if p.exists() else None
-              assert actual==op['oldsha'], 'Source changed since review: '+name
-              if actual is None: text=op['content']
-              else:
-                  text=p.read_text()
-                  for start,end,replacement in reversed(op['edits']):
-                      assert 0<=start<=end<=len(text)
-                      text=text[:start]+replacement+text[end:]
-              assert hashlib.sha256(text.encode()).hexdigest()==op['sha256'], 'Delta integrity mismatch: '+name
-              p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
-          PY
-      - name: Validate, run regression, build isolated deterministic demonstration
-        run: |
-          set -euo pipefail
           mkdir -p /tmp/gdr-regression
           node scripts/gdr.cjs check-config
           node scripts/check-runtime.cjs
@@ -52,19 +30,19 @@ jobs:
           node --test tests/*.test.cjs > /tmp/gdr-regression/unit-tests.tap
           node scripts/build-demo.cjs > /tmp/gdr-regression/demo.json
           cp demo/data/build.json /tmp/gdr-regression/first-build.json
-          node scripts/build-demo.cjs >/dev/null
+          node scripts/build-demo.cjs > /dev/null
           cmp demo/data/build.json /tmp/gdr-regression/first-build.json
           BATCH_ID=$(node -p "require('./demo/synthetic-manifest.json').snapshots.at(-1).batchId")
           GDR_ROOT=demo node scripts/check-batch.cjs "$BATCH_ID" --fixture > /tmp/gdr-regression/fixture-batch.json
           git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
-          GDR_PERSIST_BUILD=1 node scripts/stage-site.cjs /tmp/gdr-staged > /tmp/gdr-regression/build.json
-      - name: Browser dependencies
+          git rev-parse HEAD > /tmp/gdr-regression/commit.txt
+      - name: Install browser and Chinese fonts
         run: |
           npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
           sudo apt-get update -qq
           sudo apt-get install -y fonts-noto-cjk >/dev/null
           if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
-      - name: Real HTTP, four widths, full interactions and expanded details
+      - name: Real HTTP browser tests on all four viewport widths
         env:
           NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
           GDR_TEST_URL: http://127.0.0.1:8181/
@@ -74,19 +52,8 @@ jobs:
           python3 -m http.server 8181 --bind 127.0.0.1 --directory demo >/tmp/gdr-http.log 2>&1 &
           node tests/ui-real-data.cjs
           GDR_UI_OUTPUT=/tmp/gdr-regression/expanded node tests/ui-expanded.cjs
-      - name: Commit tested code and demonstration only to repair branch
+      - name: Export tested source and demo
         run: |
-          set -euo pipefail
-          test "${GITHUB_REF}" = 'refs/heads/repair/staging-20260922'
-          git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
-          rm .repair-update.json
-          rm -rf .repair-payload
-          git config user.name 'gdr-repair[bot]'
-          git config user.email 'gdr-repair@users.noreply.github.com'
-          git add -- README.md assets automation docs index.html lib scripts tests data/runtime-control.json data/build.json demo .repair-update.json .repair-payload
-          git commit -m 'fix: verified atomic publication and isolated synthetic demo; keep schedules paused [skip ci]'
-          git push origin HEAD:repair/staging-20260922
-          git rev-parse HEAD > /tmp/gdr-regression/commit.txt
           git archive --format=zip --output=/tmp/gdr-regression/source.zip HEAD
           cd demo && zip -qr /tmp/gdr-regression/demo.zip .
       - uses: actions/upload-artifact@v4
