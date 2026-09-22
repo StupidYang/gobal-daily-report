@@ -42,6 +42,11 @@ section{margin-top:12px;scroll-margin-top:56px}.card{background:var(--panel);bor
 .deep-list{display:grid;gap:9px}.deep{background:#0f192b;border:1px solid var(--line);border-radius:14px;overflow:hidden}.deep summary{list-style:none;cursor:pointer;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}.deep summary::-webkit-details-marker{display:none}.deep-title{font-size:14px;font-weight:850}.deep-one{font-size:11px;color:var(--muted);text-align:right}.deep-content{padding:0 12px 12px;border-top:1px solid var(--line)}.deep-text{font-size:13px;line-height:1.67;white-space:pre-line;margin-top:10px}.facts{display:grid;grid-template-columns:1fr;gap:7px;margin-top:10px}.fact{background:#111d32;border:1px solid var(--line);border-radius:10px;padding:8px}.fact .label{font-size:9px;color:var(--muted)}.fact .value{font-size:13px;font-weight:800;margin-top:2px}.fact .meaning{font-size:10px;color:#aab9ce;margin-top:2px;line-height:1.45}
 .trigger-list{display:grid;gap:8px}.trigger{background:#0f192b;border:1px solid var(--line);border-radius:14px;padding:11px}.trigger b{font-size:13px}.trigger div{font-size:12px;line-height:1.55;color:#d4deed;margin-top:4px}
 .sources{display:grid;grid-template-columns:1fr;gap:8px}.source{display:block;text-decoration:none;background:#0f192b;border:1px solid var(--line);border-radius:14px;padding:11px}.source-head{display:flex;justify-content:space-between;gap:10px}.source-name{font-size:13px;font-weight:800}.source-type{font-size:9px;padding:3px 6px;border-radius:999px;background:#17243c;color:#a9c7ff;white-space:nowrap}.source-use{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.45}.source-domain{font-size:10px;color:#7199d5;margin-top:6px}.source-check{font-size:9px;color:#71819a;margin-top:4px}
+.history-control{display:flex;align-items:center;gap:8px;margin-top:10px}.history-control label{font-size:11px;color:var(--muted)}.history-control select{max-width:260px;background:#111b2f;color:#dbe6f7;border:1px solid var(--line);border-radius:10px;padding:6px 8px;font-size:11px}
+.more-metrics{margin-top:10px}.more-metrics summary{cursor:pointer;font-size:12px;color:#b7c8e2;font-weight:750}.more-metrics .grid{margin-top:10px}
+.data-badge{font-size:9px;padding:3px 6px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}.data-live,.data-complete,.data-closed{color:#9be3bb;background:#112b24}.data-partial,.data-window-unclear{color:#ffd993;background:#382b14}.data-stale,.data-delayed{color:#c9b6ff;background:#261f3d}.data-missing,.data-error{color:#ffb1b1;background:#3a171b}.data-unknown{color:#aebbcf;background:#192338}
+.fact-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}.fact-chip{font-size:10px;padding:4px 7px;border-radius:8px;background:#111d32;border:1px solid var(--line);color:#c6d4e8}.fact-chip em{font-style:normal;color:#879ab6;margin-left:4px}
+.thesis-list,.revision-list{display:grid;gap:9px}.thesis,.revision{background:#0f192b;border:1px solid var(--line);border-radius:14px;padding:12px}.thesis h3,.revision h3{font-size:13px;margin:0 0 7px}.thesis-row,.revision-row{font-size:12px;line-height:1.55;margin-top:6px}.thesis-row b,.revision-row b{color:#9fbff2}.confidence{font-size:9px;padding:3px 6px;border-radius:999px;background:#17243c;color:#a9c7ff;margin-left:6px}.new-evo{background:rgba(119,167,255,.07);border-radius:10px;padding:6px}
 .method{font-size:11px;color:var(--muted);line-height:1.55;margin-top:9px}.footer{color:#6f819d;font-size:10px;text-align:center;padding:22px 0 4px;line-height:1.6}.error{color:#fecaca!important;background:#3b1118!important;border-color:#7f1d1d!important}
 @media(max-width:520px){.news-top,.macro-top{display:grid;grid-template-columns:1fr}.news-time,.macro-time{text-align:left;white-space:pre-line;max-width:100%;width:100%;flex:none}.section-head{align-items:flex-start}.section-kicker{text-align:right;max-width:48%}}@media(min-width:760px){.wrap{padding:22px}.topbar{margin:-22px -22px 16px;padding:10px 22px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.cols,.analysis-grid{grid-template-columns:1fr 1fr}.sources{grid-template-columns:repeat(2,minmax(0,1fr))}.facts{grid-template-columns:repeat(3,minmax(0,1fr))}.macro-values{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{padding:22px}.hero h1{font-size:30px}}
 </style>
@@ -49,15 +54,17 @@ section{margin-top:12px;scroll-margin-top:56px}.card{background:var(--panel);bor
 <body>
 <div class="wrap">
 <nav class="topbar">
-<a class="navbtn" href="#market">市场</a><a class="navbtn" href="#rolling24h">24h演化</a><a class="navbtn" href="#recent">最新变化</a><a class="navbtn" href="#analysis">分析</a><a class="navbtn" href="#macro">宏观</a><a class="navbtn" href="#detail">详报</a><a class="navbtn" href="#events">事件</a><a class="navbtn" href="#sources">来源</a>
-<button class="refresh" id="refreshBtn">↻ 刷新</button>
+<a class="navbtn" href="#market">市场</a><a class="navbtn" href="#rolling24h">24h演化</a><a class="navbtn" href="#recent">最新变化</a><a class="navbtn" href="#world">全球时事</a><a class="navbtn" href="#analysis">分析</a><a class="navbtn" href="#revisions">判断修订</a><a class="navbtn" href="#detail">详报</a><a class="navbtn" href="#events">事件</a><a class="navbtn" href="#sources">来源</a>
+<button class="refresh" id="refreshBtn">↻ 检查新报告</button>
 </nav>
 
 <section class="hero" id="market">
 <div class="eyebrow">GLOBAL DAILY REPORT · UTC+8</div><h1>全球市场情报</h1><div class="headline" id="overview">正在读取最新数据…</div>
-<div class="meta"><span class="status"><span class="dot"></span><span id="status">加载中</span></span><span class="tag" id="updatedAt">更新时间读取中</span><span class="tag" id="freshness">新鲜度读取中</span><span class="tag" id="reportId">报告编号读取中</span></div>
+<div class="meta"><span class="status"><span class="dot"></span><span id="status">加载中</span></span><span class="tag" id="updatedAt">更新时间读取中</span><span class="tag" id="freshness">新鲜度读取中</span><span class="tag" id="dataQuality">数据状态读取中</span><span class="tag" id="nextEvent">下一事件读取中</span><span class="tag" id="reportId">报告编号读取中</span></div>
+<div class="history-control"><label for="historySelect">报告</label><select id="historySelect"><option value="./data/latest.json">最新报告</option></select></div>
 <div class="grid" id="metrics"></div>
 </section>
+<details class="card more-metrics" id="moreMetricsBox"><summary>更多市场指标</summary><div class="grid" id="moreMetrics"></div></details>
 
 <section class="card" id="rolling24h">
     <div class="section-head"><div class="section-title">过去24小时市场演化</div><div class="section-kicker" id="rollingLabel">窗口读取中</div></div>
@@ -71,6 +78,9 @@ section{margin-top:12px;scroll-margin-top:56px}.card{background:var(--panel);bor
     <div class="change-list" id="recentList"></div>
   </section>
 
+<section class="card" id="world"><div class="section-head"><div class="section-title">全球发生了什么</div><div class="section-kicker">事件本身 ≠ 市场解释</div></div><div class="news-list" id="worldList"></div></section>
+<section class="card" id="theses"><div class="section-head"><div class="section-title">判断与证据</div><div class="section-kicker">事实 / 解释 / 替代解释 / 验证</div></div><div class="thesis-list" id="thesisList"></div></section>
+<section class="card" id="revisions"><div class="section-head"><div class="section-title">判断修订记录</div><div class="section-kicker">记住以前说过什么</div></div><div class="revision-list" id="revisionList"></div></section>
 <section class="card" id="analysis">
 <div class="section-head"><div class="section-title">核心分析</div><div class="section-kicker">主线 / 预期差 / 背离 / Price-in</div></div>
 <div class="analysis-grid">
@@ -104,42 +114,57 @@ section{margin-top:12px;scroll-margin-top:56px}.card{background:var(--panel);bor
 </div>
 
 <script>
-const qs=s=>document.querySelector(s),fmt=(x,f="—")=>x===undefined||x===null||x===""?f:x,tone=t=>t==="up"?"up":t==="down"?"down":t==="warn"?"warn":"flat";
+const qs=s=>document.querySelector(s),fmt=(x,f="—")=>x===undefined||x===null||x===""?f:x,tone=t=>t==="up"?"up":t==="down"?"down":t==="warn"?"warn":"flat";let activePath="./data/latest.json",lastPayload="",previousSeenAt=localStorage.getItem("gdr:lastSeenAt")||null;
 function E(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
 function safeUrl(url){try{const u=new URL(url);return["http:","https:"].includes(u.protocol)?u.href:"#"}catch{return"#"}}
 function sourceMap(d){return new Map((d.sources||[]).map(s=>[s.id,s]))}
+function factMap(d){return new Map((d.canonicalFacts||[]).map(f=>[f.id,f]))}
+function statusText(s){return({live:"实时",complete:"完整",closed:"已收盘",partial:"部分披露",stale:"较旧",delayed:"延迟",missing:"缺失",error:"读取失败","window-unclear":"窗口待核","unknown":"未知"})[s]||s||"未知"}
+function factsChips(ids,fm){const w=E("div","fact-chips");(ids||[]).forEach(id=>{const f=fm.get(id);if(!f)return;const q=E("span","fact-chip",f.label+" "+fmt(f.displayValue));q.append(E("em","",statusText(f.dataStatus)));w.append(q)});return w}
+function saveOpenDetails(){return new Set([...document.querySelectorAll("details.deep[open]")].map(x=>x.dataset.key).filter(Boolean))}
+function restoreOpenDetails(keys){document.querySelectorAll("details.deep").forEach(x=>{if(keys.has(x.dataset.key))x.open=true})}
 function chips(ids,map){const w=E("div","chips");(ids||[]).forEach(id=>{const s=map.get(id);if(!s)return;const a=E("a","chip","↗ "+(s.short||s.name));a.href=safeUrl(s.url);a.target="_blank";a.rel="noopener noreferrer";w.append(a)});return w}
-function ageText(v){if(!v)return"未知";const t=new Date(v.replace(" ","T")+":00+08:00"),m=Math.max(0,Math.round((Date.now()-t)/60000));return m<1?"刚刚":m<60?m+" 分钟前":m<1440?Math.floor(m/60)+" 小时前":Math.floor(m/1440)+" 天前"}
+function parseTime(v){if(!v)return null;if(v instanceof Date)return v;if(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(v))return new Date(v.replace(" ","T")+":00+08:00");const d=new Date(v);return Number.isNaN(d.getTime())?null:d}
+function ageText(v){const t=parseTime(v);if(!t)return"时间未知";const m=Math.round((Date.now()-t.getTime())/60000);if(m<0){const a=Math.abs(m);return a<60?"未来 "+a+" 分钟":a<1440?"未来 "+Math.floor(a/60)+" 小时":"未来 "+Math.floor(a/1440)+" 天"}return m<1?"刚刚":m<60?m+" 分钟前":m<1440?Math.floor(m/60)+" 小时前":Math.floor(m/1440)+" 天前"}
 function eventState(at){if(!at)return"";const d=Math.round((new Date(at)-Date.now())/60000);return Math.abs(d)<=20?"临近":d<-20?"已发生":d<=120?"即将":"待观察"}
 function addText(parent,tag,cls,text){if(text!==undefined&&text!==null&&text!=="")parent.append(E(tag,cls,text))}
-async function load(){
-const btn=qs("#refreshBtn");btn.disabled=true;btn.textContent="刷新中…";
+async function load(path=activePath,force=false){
+const btn=qs("#refreshBtn");const opened=saveOpenDetails();btn.disabled=true;btn.textContent="检查中…";
 try{
-const r=await fetch("./data/latest.json?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);const d=await r.json(),sm=sourceMap(d);
+activePath=path;const r=await fetch(path+"?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);const d=await r.json(),raw=JSON.stringify(d);if(!force&&raw===lastPayload){qs("#freshness").textContent="新鲜度 "+ageText(d.updatedAt);btn.disabled=false;btn.textContent="↻ 检查新报告";return}lastPayload=raw;const sm=sourceMap(d),fm=factMap(d);qs("#status").parentElement.classList.remove("error");
 qs("#status").textContent=fmt(d.marketState,"已更新");qs("#updatedAt").textContent="更新 "+fmt(d.updatedAt)+" UTC+8";qs("#freshness").textContent="新鲜度 "+ageText(d.updatedAt);qs("#reportId").textContent=fmt(d.reportId,"schema v"+fmt(d.schemaVersion));qs("#overview").textContent=fmt(d.overview);
 qs("#rollingLabel").textContent=fmt(d.period?.label,"滚动24小时");
-qs("#coverageNote").textContent=d.period?.isFull24h===false?"当前历史覆盖 "+fmt(d.period?.coverageHours)+"h，数据积累后自动变为完整24h":"完整24小时";
+qs("#coverageNote").textContent=d.period?.isFull24h===true?"完整24小时":d.period?.isFull24h===false?"当前历史覆盖 "+fmt(d.period?.coverageHours)+"h":"覆盖信息未知";
+const q=(d.canonicalFacts||[]).reduce((a,f)=>(a[f.dataStatus]=(a[f.dataStatus]||0)+1,a),{});qs("#dataQuality").textContent="数据："+(q.partial||0)+"部分 / "+(q.stale||0)+"较旧 / "+(q.missing||0)+"缺失";
+const next=(d.events||[]).map(e=>({...e,_t:parseTime(e.at)})).filter(e=>e._t&&e._t>Date.now()).sort((a,b)=>a._t-b._t)[0];qs("#nextEvent").textContent=next?"下一事件 "+next.time+" "+next.title:"未来事件未标注";
 qs("#rollingSummary").textContent=fmt(d.rolling24hSummary,"");
 qs("#recentLabel").textContent=fmt(d.recentPeriod?.label,"最近一轮");
 qs("#eventNow").textContent="当前 "+new Date().toLocaleTimeString("zh-CN",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Asia/Singapore"});
 
-const metrics=qs("#metrics");metrics.textContent="";(d.metrics||[]).forEach(m=>{const c=E("div","metric"),h=E("div","metric-head");h.append(E("div","name",m.name));const s=sm.get((m.sourceIds||[])[0]);if(s){const a=E("a","source-mini",s.short||s.name);a.href=safeUrl(s.url);a.target="_blank";a.rel="noopener noreferrer";h.append(a)}c.append(h,E("div","value",fmt(m.value)));const b=E("div","bottom");b.append(E("span","chg "+tone(m.tone),fmt(m.changeLabel,m.changeText)),E("span","note",fmt(m.asOf||m.note,"")));c.append(b);metrics.append(c)});
+const metrics=qs("#metrics"),moreMetrics=qs("#moreMetrics");metrics.textContent="";moreMetrics.textContent="";
+(d.metrics||[]).forEach(m=>{const f=m.factId?fm.get(m.factId):null,c=E("div","metric"),h=E("div","metric-head");h.append(E("div","name",m.name));const s=sm.get(((f?.sourceIds)||m.sourceIds||[])[0]);if(s){const a=E("a","source-mini",s.short||s.name);a.href=safeUrl(s.url);a.target="_blank";a.rel="noopener noreferrer";h.append(a)}c.append(h,E("div","value",fmt(f?.displayValue??m.value)));const b=E("div","bottom");b.append(E("span","chg "+tone(f?.direction??m.direction??m.tone),fmt(f?.changeLabel??m.changeLabel??m.changeText)),E("span","note",fmt(f?.asOf??m.asOf??m.note,"")));c.append(b);if(f?.dataStatus)c.append(E("div","data-badge data-"+f.dataStatus,statusText(f.dataStatus)+(f.disclosureNote?" · "+f.disclosureNote:"")));(m.primary?metrics:moreMetrics).append(c)});
+qs("#moreMetricsBox").style.display=moreMetrics.children.length?"block":"none";
 
-const evo=qs("#evolutionList");evo.textContent="";(d.evolution24h||[]).forEach(x=>{const row=E("div","evo");row.append(E("div","evo-time",fmt(x.time)));const rail=E("div","evo-rail");rail.append(E("span","evo-dot"));row.append(rail);const body=E("div","evo-body");body.append(E("div","evo-title",fmt(x.title)),E("div","evo-text",fmt(x.detail)));row.append(body);evo.append(row)});
+const evo=qs("#evolutionList");evo.textContent="";const seen=parseTime(previousSeenAt);(d.evolution24h||[]).forEach(x=>{const row=E("div","evo"),xt=parseTime(x.at);if(seen&&xt&&xt>seen)row.classList.add("new-evo");row.append(E("div","evo-time",fmt(x.at||x.time)));const rail=E("div","evo-rail");rail.append(E("span","evo-dot"));row.append(rail);const body=E("div","evo-body");body.append(E("div","evo-title",fmt(x.title)),E("div","evo-text",fmt(x.detail)));row.append(body);evo.append(row)});
 const changes=qs("#changeList");changes.textContent="";(d.changes||[]).forEach(x=>{const row=E("div","change");row.append(E("div","change-badge",fmt(x.tag,"变化")));const b=E("div");b.append(E("div","change-title",x.title),E("div","change-detail",x.detail));row.append(b);changes.append(row)});
 const recent=qs("#recentList");recent.textContent="";(d.recentChanges||[]).forEach(x=>{const row=E("div","change");row.append(E("div","change-badge",fmt(x.tag,"新增")));const b=E("div");b.append(E("div","change-title",x.title),E("div","change-detail",x.detail));row.append(b);recent.append(row)});if(!(d.recentChanges||[]).length)recent.append(E("div","change-detail","最近一轮无重大新增，当前主线未发生实质变化。"));
+
+const world=qs("#worldList");world.textContent="";(d.worldEvents||[]).forEach(n=>{const box=E("div","news"),top=E("div","news-top");top.append(E("div","news-title",n.title),E("div","news-time",fmt(n.eventAt)));box.append(top,E("div","news-body",n.summary));if(n.marketImpact)box.append(E("div","news-body","市场传导："+n.marketImpact));box.append(chips(n.sourceIds,sm));world.append(box)});if(!(d.worldEvents||[]).length)world.append(E("div","change-detail","已检查，当前快照未单独记录全球时事层。"));
+
+const theses=qs("#thesisList");theses.textContent="";(d.analysisTheses||[]).forEach(t=>{const box=E("div","thesis");const h=E("h3","",t.title);h.append(E("span","confidence",fmt(t.confidence,"")));box.append(h);[["已观察到",t.observed],["倾向解释",t.interpretation],["替代解释",(t.alternatives||[]).join("；")],["验证条件",t.validation]].forEach(([l,v])=>{if(v)box.append(E("div","thesis-row",l+"："+v))});box.append(factsChips(t.evidenceFactIds,fm),chips(t.sourceIds,sm));theses.append(box)});
+const revisions=qs("#revisionList");revisions.textContent="";(d.judgmentRevisions||[]).forEach(r=>{const box=E("div","revision");box.append(E("h3","",r.topic+" · "+fmt(r.status)));[["原判断",r.previous],["新增证据",r.newEvidence],["本轮修订",r.revised],["仍未解决",r.unresolved],["时间",fmt(r.firstSeenAt)+" → "+fmt(r.updatedAt)]].forEach(([l,v])=>{if(v)box.append(E("div","revision-row",l+"："+v))});box.append(factsChips(r.evidenceFactIds,fm));revisions.append(box)});if(!(d.judgmentRevisions||[]).length)revisions.append(E("div","change-detail","暂无判断修订记录。"));
 
 qs("#mainTheme").textContent=fmt(d.coreAnalysis?.mainTheme);qs("#expectationGap").textContent=fmt(d.coreAnalysis?.expectationGap);qs("#divergence").textContent=fmt(d.coreAnalysis?.divergence);qs("#regime").textContent=[d.coreAnalysis?.regime,d.coreAnalysis?.priceIn].filter(Boolean).join("\n\n");
 qs("#bull").textContent=[d.coreAnalysis?.bullCase,d.coreAnalysis?.bullInvalidation&&"证伪："+d.coreAnalysis.bullInvalidation].filter(Boolean).join("\n\n");
 qs("#bear").textContent=[d.coreAnalysis?.bearCase,d.coreAnalysis?.bearInvalidation&&"证伪："+d.coreAnalysis.bearInvalidation].filter(Boolean).join("\n\n");
 
-const assets=qs("#assets");assets.textContent="";(d.assets||[]).forEach(a=>{const box=E("div","asset"),top=E("div","asset-top");top.append(E("div","asset-name",a.name),E("span","signal "+tone(a.tone),fmt(a.signal)));box.append(top,E("div","asset-summary",a.summary),E("div","asset-detail",a.detail));box.append(chips(a.sourceIds,sm));assets.append(box)});
+const assets=qs("#assets");assets.textContent="";(d.assets||[]).forEach(a=>{const box=E("div","asset"),top=E("div","asset-top");top.append(E("div","asset-name",a.name),E("span","signal "+tone(a.tone),fmt(a.signal)));box.append(top,E("div","asset-summary",a.summary),E("div","asset-detail",a.detail));box.append(factsChips(a.factIds,fm),chips(a.sourceIds,sm));assets.append(box)});
 
 const macros=qs("#macroList");macros.textContent="";(d.macroEvents||[]).forEach(m=>{const box=E("div","macro"),top=E("div","macro-top");top.append(E("div","macro-title",m.title),E("div","macro-time",[m.eventAt&&"事件 "+m.eventAt,m.publishedAt&&"发布 "+m.publishedAt].filter(Boolean).join("\n")));box.append(top);const vals=E("div","macro-values");[["实际",m.actual],["预期",m.expected],["前值",m.previous],["修正",m.revised]].forEach(([l,v])=>{if(v===undefined||v===null||v==="")return;const q=E("div","macro-val");q.append(E("span","",l),E("b","",v));vals.append(q)});if(vals.children.length)box.append(vals);addText(box,"div","macro-analysis",m.analysis);box.append(chips(m.sourceIds,sm));macros.append(box)});
 
 const news=qs("#newsList");news.textContent="";(d.news||[]).forEach(n=>{const box=E("div","news"),top=E("div","news-top");top.append(E("div","news-title",n.title),E("div","news-time",[n.eventAt&&"事件 "+n.eventAt,n.publishedAt&&"发布 "+n.publishedAt].filter(Boolean).join(" · ")));box.append(top,E("div","news-body",n.summary));box.append(chips(n.sourceIds,sm));news.append(box)});
 
-const deep=qs("#deepList");deep.textContent="";(d.deepDive||[]).forEach(s=>{const det=document.createElement("details");det.className="deep";const sum=document.createElement("summary");sum.append(E("div","deep-title",s.title),E("div","deep-one",fmt(s.oneLine,"展开")));det.append(sum);const body=E("div","deep-content");body.append(E("div","deep-text",fmt(s.analysis)));if((s.facts||[]).length){const facts=E("div","facts");s.facts.forEach(f=>{const box=E("div","fact");box.append(E("div","label",f.label),E("div","value",f.value),E("div","meaning",fmt(f.meaning,"")));facts.append(box)});body.append(facts)}body.append(chips(s.sourceIds,sm));det.append(body);deep.append(det)});
+const deep=qs("#deepList");deep.textContent="";(d.deepDive||[]).forEach(s=>{const det=document.createElement("details");det.className="deep";det.dataset.key=s.id||s.title;const sum=document.createElement("summary");sum.append(E("div","deep-title",s.title),E("div","deep-one",fmt(s.oneLine,"展开")));det.append(sum);const body=E("div","deep-content");body.append(E("div","deep-text",fmt(s.analysis)));if((s.factIds||[]).length){const facts=E("div","facts");s.factIds.forEach(id=>{const f=fm.get(id);if(!f)return;const box=E("div","fact");box.append(E("div","label",f.label),E("div","value",f.displayValue),E("div","meaning",statusText(f.dataStatus)+" · "+fmt(f.scope)+" · "+fmt(f.asOf,"时间未知")));facts.append(box)});body.append(facts)}else if((s.facts||[]).length){const facts=E("div","facts");s.facts.forEach(f=>{const box=E("div","fact");box.append(E("div","label",f.label),E("div","value",f.value),E("div","meaning",fmt(f.meaning,"")));facts.append(box)});body.append(facts)}body.append(chips(s.sourceIds,sm));det.append(body);deep.append(det)});restoreOpenDetails(opened);
 
 const tr=qs("#triggerList");tr.textContent="";(d.narrativeTriggers||[]).forEach(t=>{const box=E("div","trigger");box.append(E("b","",t.trigger),E("div","",t.why));tr.append(box)});
 
