@@ -1,0 +1,94 @@
+name: Seven-role native batch acceptance
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Validate and publish candidates']
+    types: [completed]
+  push:
+    branches: [main]
+    paths: ['.github/workflows/full-batch-acceptance.yml']
+permissions:
+  contents: read
+concurrency:
+  group: gdr-candidate-publisher
+  cancel-in-progress: false
+jobs:
+  progress:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      ready: ${{ steps.batch.outputs.ready }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Record actual batch progress, never count missing roles as passed
+        id: batch
+        run: |
+          mkdir -p /tmp/gdr-batch
+          if node scripts/check-acceptance.cjs acceptance-r5-20260922 > /tmp/gdr-batch/acceptance.json; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo 'Batch is incomplete or rejected. Public final acceptance will NOT run or be marked passed.'
+          fi
+          cat /tmp/gdr-batch/acceptance.json
+          git rev-parse HEAD > /tmp/gdr-batch/commit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-batch-progress-not-a-success-certificate
+          path: /tmp/gdr-batch/
+          retention-days: 14
+  browser-acceptance:
+    needs: progress
+    if: needs.progress.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Recheck actual seven-role evidence and installed source
+        run: |
+          mkdir -p /tmp/gdr-final
+          node scripts/check-acceptance.cjs acceptance-r5-20260922 > /tmp/gdr-final/acceptance.json
+          node scripts/check-runtime.cjs
+          node scripts/check-published.cjs
+          node --test tests/*.test.cjs > /tmp/gdr-final/unit-tests.tap
+          cp data/build.json /tmp/gdr-final/build.json
+          git rev-parse HEAD > /tmp/gdr-final/commit.txt
+      - name: Browser and Chinese fonts
+        run: |
+          mkdir -p "$RUNNER_TEMP/gdr-browser"
+          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk >/dev/null
+          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
+      - name: Confirm exact public build is ready
+        env:
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
+        run: node scripts/wait-site.cjs data/build.json > /tmp/gdr-final/readiness.json
+      - name: Four-viewports public interactions and exact deployed file hashes
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
+          GDR_EXPECT_BUILD: data/build.json
+          GDR_TEST_WIDTHS: '320,390,768,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-final/live
+        run: node tests/ui-real-data.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seven-native-roles-and-public-browser-proof
+          path: /tmp/gdr-final/
+          retention-days: 30
+          if-no-files-found: error
