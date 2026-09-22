@@ -31,16 +31,17 @@ function validate(m, expected, now=Date.now()){
  if(!Array.isArray(m.sources))errors.push('sources 必须是数组');
  const sources=new Set();
  arr(m.sources).forEach(s=>{if(!s||!s.id||sources.has(s.id)||!safeUrl(s.url)){errors.push('来源重复或缺id/url');return;}sources.add(s.id);});
- function scan(x){
+ function scan(x,catalog=sources){
+  if(x===m.payload?.report&&m.module==='synthesis')catalog=new Set(arr(x.sources).map(s=>s?.id));
   if(!x||typeof x!=='object')return;
-  if(Array.isArray(x)){x.forEach(scan);return;}
-  if(x.sourceIds!==undefined){if(!Array.isArray(x.sourceIds))errors.push('sourceIds必须是数组');else x.sourceIds.forEach(id=>{if(!sources.has(id))errors.push('来源不存在: '+id);});}
+  if(Array.isArray(x)){x.forEach(v=>scan(v,catalog));return;}
+  if(x.sourceIds!==undefined){if(!Array.isArray(x.sourceIds))errors.push('sourceIds必须是数组');else x.sourceIds.forEach(id=>{if(!catalog.has(id))errors.push('来源不存在: '+id);});}
   for(const [k,v] of Object.entries(x)){
    if(['price','changePct','rawValue','volumeRatio20d','turnoverPct','valueTraded','avgDailyValue20d'].includes(k)&&v!==null&&!finite(v))errors.push('非数值 '+k);
-   if(k==='rawValue'&&finite(v)&&/[<>≥≤]/.test(String(x.displayValue||'')))errors.push('阈值文字不能当精确数值');
+   if(['rawValue','price'].includes(k)&&finite(v)&&/[<>≥≤]/.test(String(x.displayValue||'')))errors.push('阈值文字不能当精确数值');
    if(k==='asOf'&&v!==null&&time(v)===null)errors.push('asOf必须精确或null');
    if(k==='asOf'&&generated!==null&&time(v)!==null&&time(v)>generated+300000)errors.push('asOf不能在未来');
-   scan(v);
+   scan(v,catalog);
   }
  }
  scan(m.payload);
@@ -57,12 +58,13 @@ function validate(m, expected, now=Date.now()){
    if(m.module==='asia-equities'&&g?.market==='US'||m.module==='us-equities'&&g?.market!=='US')errors.push('跨模块市场越权');
    if(g?.expectedCount!==null&&(!Number.isInteger(g?.expectedCount)||g.expectedCount<0))errors.push('expectedCount无效');
    if(arr(g?.rows).length&&(!g.comparisonBasis||!g.currency||time(g.asOf)===null))errors.push('榜单需共同基准/币种/asOf');
+   if(g?.membershipSourceId&&!sources.has(g.membershipSourceId))errors.push('板块成员来源不存在');
    const ids=new Set();arr(g?.rows).forEach(q=>{if(!q||!q.instrumentId||ids.has(q.instrumentId))errors.push('板块内证券ID缺失或重复');ids.add(q?.instrumentId);if(!arr(q?.sourceIds).length)errors.push('板块证券需来源');});
   });
  }
  if(m.module==='research'){
   if(!Array.isArray(m.payload?.records)||!Array.isArray(m.payload?.checks))errors.push('研究需records及checks');
-  arr(m.payload?.records).forEach(r=>{if(!r?.instrumentId||!r.eventKey||!r.documentId||!safeUrl(r.documentUrl)||time(r.analyzedAt)===null||!r.analysis?.conclusion)errors.push('研究缺事件身份/原文/分析时间/结论');});
+  arr(m.payload?.records).forEach(r=>{if(!r?.instrumentId||!r.eventKey||!r.documentId||!safeUrl(r.documentUrl)||time(r.analyzedAt)===null||time(r.analyzedAt)>generated+300000||!r.analysis?.conclusion)errors.push('研究缺事件身份/原文/分析时间/结论');});
  }
  if(m.module==='synthesis'&&(!m.payload?.report||m.payload.report.schemaVersion!==5))errors.push('synthesis需完整schema5报告');
  return [...new Set(errors)];
