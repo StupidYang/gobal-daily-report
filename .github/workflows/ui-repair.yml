@@ -1,90 +1,22 @@
-name: Validate reader experience and deploy
+name: Retired UI repair - read-only audit
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/ui-repair.yml'
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-concurrency:
-  group: gdr-candidate-publisher
-  cancel-in-progress: false
+  contents: read
 jobs:
-  repair:
+  audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply bounded source repair, without touching any market data
-        run: python3 maintenance/ux-r4/apply.py
-      - name: Unit and actual publication checks
-        run: |
-          node --check assets/reader.js
-          node --check assets/watchlist.js
-          node --check assets/display-core.js
-          node --check assets/briefing.js
+      - run: |
+          echo 'The old repair bundle has already been applied. This workflow never writes or deploys.'
           node --test tests/*.test.cjs
+          node scripts/check-runtime.cjs
           node scripts/check-published.cjs
-      - name: Browser and Chinese fonts
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y fonts-noto-cjk >/dev/null
-          mkdir -p "$RUNNER_TEMP/gdr-browser"
-          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
-          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
-      - name: Exercise real published report and modules before committing
-        env:
-          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
-          GDR_UI_OUTPUT: /tmp/gdr-ui-after/repository
-        run: |
-          python3 -m http.server 8181 --bind 127.0.0.1 >/tmp/gdr-ui-server.log 2>&1 &
-          node tests/ui-real-data.cjs
-      - name: Commit only the tested UI patch
-        run: |
-          git config user.name 'gdr-publisher[bot]'
-          git config user.email 'gdr-publisher@users.noreply.github.com'
-          git add assets/reader.js assets/watchlist.js index.html maintenance/ux-r4/applied.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'fix: make real report and watchlist readable instead of exposing machine fields'
-            git push origin HEAD:main
-          fi
-          git rev-parse HEAD > /tmp/gdr-ui-after/commit.txt
-      - name: Stage validated website and linked public documentation
-        run: |
-          mkdir -p /tmp/gdr-site/data
-          cp index.html .nojekyll /tmp/gdr-site/
-          cp -R assets config history docs /tmp/gdr-site/
-          cp data/latest.json data/history-index.json data/publication-status.json /tmp/gdr-site/data/
-          cp -R data/modules data/runs data/receipts /tmp/gdr-site/data/
-          find data -maxdepth 1 -name 'editorial-*.json' -exec cp {} /tmp/gdr-site/data/ \;
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: /tmp/gdr-site
-      - name: Deploy tested reader
-        id: deployment
-        uses: actions/deploy-pages@v4
-      - name: Verify actual public Pages with Chromium, not only repository files
-        env:
-          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
-          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
-          GDR_UI_OUTPUT: /tmp/gdr-ui-after/live
-        run: |
-          sleep 8
-          node tests/ui-real-data.cjs
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: gdr-readable-ui-verification
-          path: /tmp/gdr-ui-after
-          retention-days: 3
+          echo 'Use Validate and publish candidates for the sole maintained publication path.'
