@@ -75,8 +75,9 @@
     if(r.newsroom?.items!==undefined&&!Array.isArray(r.newsroom.items))errors.push('newsroom.items必须为数组');
     if(errors.length)return errors;
     if(A(r.canonicalFacts).some(x=>!x||typeof x!=='object'||Array.isArray(x)))return ['canonicalFacts含无效对象'];
-    errors.push(...C.issues(r));
     ['metrics','canonicalFacts','sources','deepDive','worldEvents','analysisTheses','events','judgmentRevisions'].forEach(k=>A(r[k]).forEach(x=>{if(!x||typeof x!=='object'||Array.isArray(x))errors.push(k+'含无效对象');}));
+    if(errors.length)return [...new Set(errors)];
+    errors.push(...C.issues(r));
     A(r.frameworkAnalysis).forEach(x=>{if(!x||typeof x!=='object'){errors.push('分析框架必须为对象');return;}if(!T(x.framework)||!T(x.conclusion))errors.push('框架缺少名称或结论');});
     A(r.newsroom?.items).forEach(x=>{if(!x?.id&&!x?.eventId)errors.push('时事缺少稳定事件ID');if(!T(x?.summary)||!T(x?.title))errors.push('时事缺少事实摘要');});
     return [...new Set(errors)];
