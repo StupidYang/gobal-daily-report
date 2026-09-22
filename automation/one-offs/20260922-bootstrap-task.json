@@ -1,0 +1,20 @@
+{
+  "kind":"one-time-bootstrap",
+  "title":"GDR 首轮全模块初始化",
+  "requestDate":"2026-09-22",
+  "timezone":"Asia/Singapore",
+  "scheduledFor":"2026-09-22T13:05:18+08:00",
+  "schedule":"BEGIN:VEVENT\nDTSTART:20260922T050518Z\nEND:VEVENT",
+  "repeat":false,
+  "rolePlan":["quotes","news","macro","asia-equities","us-equities","research","synthesis"],
+  "promptFile":"automation/one-offs/20260922-bootstrap.md",
+  "recreatePrompt":"执行一次性GDR全模块初始化。先读取StupidYang/gobal-daily-report仓库automation/one-offs/20260922-bootstrap.md并完整执行；按每个角色现有契约逐阶段联网采集、验证和保存，最后发布完整synthesis报告。禁止创建新任务或更改常驻调度。没有真实工具回读结果不得声称完成。",
+  "configurationResult":"automations.create returned SUCCESS; this is scheduling confirmation, not data initialization completion",
+  "completionRecord":"data/initialization/20260922-bootstrap.json",
+  "notes":[
+    "一次性协调器不属于automation/manifest.json中的七个常驻角色。",
+    "真实运行输出以各模块不可变run、综合history、latest和初始化结果清单为准。",
+    "Asia常驻任务现为09:35/12:35/15:35/16:35；15:35补A股收盘，16:35确认港股收盘。",
+    "00/04/08/12/16/20综合发布频率保持不变。计划时刻是触发时间，不保证该分钟完成。"
+  ]
+}
