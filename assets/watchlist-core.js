@@ -54,7 +54,8 @@ function validate(m, expected, now=Date.now()){
  }
  if(['asia-equities','us-equities'].includes(m.module)){
   if(!Array.isArray(m.payload?.groups))errors.push('equities.groups必须是数组');
-  const groupIds=new Set();arr(m.payload?.groups).forEach(g=>{if(!g||!g.id||groupIds.has(g.id)||!['CN','HK','US'].includes(g.market)||!Array.isArray(g.rows))errors.push('板块分组无效');groupIds.add(g?.id);
+  // Industry identifiers are local to a market; CN and HK can both contain 公用事业.
+  const groupIds=new Set();arr(m.payload?.groups).forEach(g=>{const groupKey=JSON.stringify([g?.market,g?.id]);if(!g||!g.id||groupIds.has(groupKey)||!['CN','HK','US'].includes(g.market)||!Array.isArray(g.rows))errors.push('板块分组无效');groupIds.add(groupKey);
    if(m.module==='asia-equities'&&g?.market==='US'||m.module==='us-equities'&&g?.market!=='US')errors.push('跨模块市场越权');
    if(g?.expectedCount!==null&&(!Number.isInteger(g?.expectedCount)||g.expectedCount<0))errors.push('expectedCount无效');
    if(arr(g?.rows).length&&(!g.comparisonBasis||!g.currency||time(g.asOf)===null))errors.push('榜单需共同基准/币种/asOf');
