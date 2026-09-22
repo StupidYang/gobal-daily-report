@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "batchId": "acceptance-r5-20260922",
+  "mode": "native-task-replay",
+  "createdAt": "2026-09-22T16:36:46+08:00",
+  "purpose": "User-requested real replay of all seven roles after repair, followed by actual public browser verification.",
+  "permanentSchedulesChanged": false,
+  "entrySource": "automation/task-export.json; role prompt files and common.md remain authoritative",
+  "requiredCandidateMetadata": {"execution":{"batchId":"acceptance-r5-20260922","mode":"native-task-replay","role":"<this-role>"}},
+  "executionRules": [
+    "Read the same manifest, common prompt, role prompt, modules contract and watchlist config as the permanent role.",
+    "Actually check online sources; retain original asOf/analyzedAt for legitimately reused data.",
+    "Create a unique candidate inbox JSON only. No role may write its own success receipt.",
+    "A published receipt, immutable run and correct content hash are necessary to confirm publication.",
+    "These one-offs do not prove that all future permanent scheduled executions will succeed.",
+    "The synthesis replay is created after the six producers have accepted batch outputs."
+  ],
+  "tasks": [
+    {"role":"quotes","taskId":"6ab23dad652c8191b6e314928b5e040a","scheduledAt":"2026-09-22T16:35:53+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
+    {"role":"news","taskId":"6ab23dc3f9648191beba57ec95ba5d9e","scheduledAt":"2026-09-22T16:36:15+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
+    {"role":"macro","taskId":"6ab23dd802448191ac091f1e85e7fec8","scheduledAt":"2026-09-22T16:36:36+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
+    {"role":"asia-equities","taskId":"6ab23dee0b60819183f71398b401504c","scheduledAt":"2026-09-22T16:36:58+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
+    {"role":"us-equities","taskId":"6ab23e047e448191aad8df19197003a4","scheduledAt":"2026-09-22T16:37:20+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
+    {"role":"research","taskId":"6ab23e1c28188191be3b015dcb47ac4b","scheduledAt":"2026-09-22T16:37:44+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
+    {"role":"synthesis","taskId":null,"scheduledAt":null,"configurationResult":"not-created-yet","executionResult":"waiting-for-producers"}
+  ]
+}
