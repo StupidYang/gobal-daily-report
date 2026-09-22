@@ -1,0 +1,505 @@
+{
+  "moduleVersion": 1,
+  "module": "asia-equities",
+  "runId": "20260922T153643-asia-equities",
+  "generatedAt": "2026-09-22T15:36:43+08:00",
+  "dataAsOf": "2026-09-22T15:00:00+08:00",
+  "status": "partial",
+  "inputVersions": {
+    "asia-equities": "20260922T143000-recovery-asia-equities",
+    "macro": "20260922T143000-recovery-macro",
+    "news": "20260922T143000-recovery-news"
+  },
+  "sources": [
+    {
+      "id": "sws",
+      "name": "申万宏源研究2021行业分类",
+      "url": "https://www.swsresearch.com/institute_sw/allIndex/downloadCenter/industryType",
+      "verifiedAt": "2026-09-22T12:42:14+08:00",
+      "note": "本轮15:36重新访问超时；沿用同日12:42已核验分类入口，不声称重新取到成员表。"
+    },
+    {
+      "id": "hsics",
+      "name": "Hang Seng Industry Classification System",
+      "url": "https://www.hsi.com.hk/eng/our-services/hsics",
+      "verifiedAt": "2026-09-22T15:36:43+08:00"
+    },
+    {
+      "id": "cn-close",
+      "name": "每日经济新闻 A股9月22日收盘",
+      "url": "https://www.nbd.com.cn/articles/2026-09-22/4588674.html",
+      "verifiedAt": "2026-09-22T15:36:43+08:00"
+    },
+    {
+      "id": "cn-midday",
+      "name": "21世纪经济报道 A股午评",
+      "url": "https://www.21jingji.com/article/20260922/herald/8469b36c9c3128e43f8062447e2b2cc2.html",
+      "verifiedAt": "2026-09-22T15:36:43+08:00"
+    },
+    {
+      "id": "cn-midday2",
+      "name": "每日经济新闻 A股午间",
+      "url": "https://www.nbd.com.cn/articles/2026-09-22/4588397.html",
+      "verifiedAt": "2026-09-22T15:36:43+08:00"
+    },
+    {
+      "id": "hk-midday",
+      "name": "东方财富 港股午评",
+      "url": "https://finance.eastmoney.com/a/202609223881088596.html",
+      "verifiedAt": "2026-09-22T15:36:43+08:00"
+    },
+    {
+      "id": "hk-midday2",
+      "name": "新浪 港股午评",
+      "url": "https://finance.sina.com.cn/stock/hkstock/marketalerts/2026-09-22/doc-inissitf7085998.shtml",
+      "verifiedAt": "2026-09-22T15:36:43+08:00"
+    },
+    {
+      "id": "hk-hkej-live",
+      "name": "信报港股360 热炒股页",
+      "url": "https://stock360.hkej.com/marketWatch/Indices/hstech",
+      "verifiedAt": "2026-09-22T15:36:43+08:00",
+      "note": "页面展示当前数值但未在抓取文本中给出对应精确行情时点，因此只保留displayValue，不覆盖带asOf的旧精确快照。"
+    },
+    {
+      "id": "feed-index-cn-sse",
+      "name": "Yahoo Finance public chart · 上证指数",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:23+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    },
+    {
+      "id": "feed-index-cn-szse",
+      "name": "Yahoo Finance public chart · 深证成指",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:23+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    },
+    {
+      "id": "feed-index-cn-chinext",
+      "name": "Yahoo Finance public chart · 创业板指",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:23+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    },
+    {
+      "id": "feed-index-cn-star50",
+      "name": "Yahoo Finance public chart · 科创50",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:24+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    },
+    {
+      "id": "feed-index-cn-csi300",
+      "name": "Yahoo Finance public chart · 沪深300",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:24+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    },
+    {
+      "id": "feed-index-cn-csi500",
+      "name": "Yahoo Finance public chart · 中证500",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:24+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    },
+    {
+      "id": "feed-index-hk-hsi",
+      "name": "Yahoo Finance public chart · 恒生指数",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:24+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    },
+    {
+      "id": "feed-index-hk-hstech",
+      "name": "Yahoo Finance public chart · 恒生科技",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:25+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    },
+    {
+      "id": "feed-index-hk-hscei",
+      "name": "Yahoo Finance public chart · 恒生国企",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+      "verifiedAt": "2026-09-22T14:17:25+08:00",
+      "note": "沿用上一已发布模块中的同日精确asOf延迟行情；本轮未把重新抓取失败改写成新时点。"
+    }
+  ],
+  "payload": {
+    "attemptedAt": "2026-09-22T15:36:43+08:00",
+    "marketState": {
+      "CN": {
+        "state": "closed",
+        "session": "regular-close",
+        "tradingDate": "2026-09-22",
+        "lastVerifiedDataAsOf": "2026-09-22T15:00:00+08:00",
+        "note": "A股常规交易已于15:00收盘；已核验收盘涨跌幅、成交额和广度阈值。"
+      },
+      "HK": {
+        "state": "trading",
+        "session": "afternoon",
+        "tradingDate": "2026-09-22",
+        "lastVerifiedDataAsOf": "2026-09-22T14:02:22+08:00",
+        "note": "15:36仍处港股下午常规交易时段；本轮未取得带精确行情时点的更晚批量源，保留14:02已核验延迟快照。"
+      }
+    },
+    "marketSummary": {
+      "CN": {
+        "asOf": "2026-09-22T15:00:00+08:00",
+        "indices": [
+          {
+            "name": "上证指数",
+            "value": null,
+            "changePct": 0.06,
+            "note": "收盘点位未独立核验，不从前收和四舍五入涨幅反推。"
+          },
+          {
+            "name": "深证成指",
+            "value": null,
+            "changePct": -0.05,
+            "note": "收盘点位未独立核验。"
+          },
+          {
+            "name": "创业板指",
+            "value": null,
+            "changePct": 0.01,
+            "note": "收盘点位未独立核验。"
+          }
+        ],
+        "turnoverCny": 2140000000000,
+        "breadth": {
+          "advancers": null,
+          "decliners": null,
+          "display": "全市场超3000只个股下跌"
+        },
+        "structure": "市场冲高回落，三大指数尾盘显著收窄涨幅；AI应用、算力芯片局部活跃，医药、传媒、端侧AI相对强，航运走弱。",
+        "sourceIds": [
+          "cn-close"
+        ]
+      },
+      "HK": {
+        "asOf": "2026-09-22T14:02:22+08:00",
+        "indices": [
+          {
+            "name": "恒生指数",
+            "value": 25120.94,
+            "changePct": 0.312
+          },
+          {
+            "name": "恒生科技指数",
+            "value": 4444.89,
+            "changePct": 0.488
+          },
+          {
+            "name": "恒生国企指数",
+            "value": 8361.67,
+            "changePct": 0.264
+          }
+        ],
+        "structure": "14:02已核验延迟快照仍为三大指数上涨；午盘科技互联网与存储链偏强。15:36未取得带精确行情时点的新批量源，因此不把网页后续显示值改成新报价。",
+        "sourceIds": [
+          "feed-index-hk-hsi",
+          "feed-index-hk-hstech",
+          "feed-index-hk-hscei"
+        ]
+      }
+    },
+    "unTimestampedObservations": [
+      {
+        "market": "HK",
+        "verifiedAt": "2026-09-22T15:36:43+08:00",
+        "asOf": null,
+        "name": "恒生指数",
+        "displayValue": "25222.96",
+        "sourceIds": [
+          "hk-hkej-live"
+        ],
+        "note": "页面抓取时展示值；来源文本未给出该数值的精确行情时点，因此仅作未定时观察，不覆盖14:02精确快照。"
+      },
+      {
+        "market": "HK",
+        "verifiedAt": "2026-09-22T15:36:43+08:00",
+        "asOf": null,
+        "name": "恒生国企指数",
+        "displayValue": "8400.14",
+        "sourceIds": [
+          "hk-hkej-live"
+        ],
+        "note": "同上；不伪装15:36实时值。"
+      }
+    ],
+    "observedThemes": [
+      {
+        "market": "CN",
+        "theme": "云办公",
+        "asOf": "2026-09-22T11:30:00+08:00",
+        "rows": [
+          {
+            "symbol": "688365.SH",
+            "name": "光云科技",
+            "changePct": 19.99
+          },
+          {
+            "symbol": "603039.SH",
+            "name": "泛微网络",
+            "changePct": 10.0
+          },
+          {
+            "symbol": "002301.SZ",
+            "name": "齐心集团",
+            "changePct": 9.96
+          },
+          {
+            "symbol": "002467.SZ",
+            "name": "二六三",
+            "changePct": 9.94
+          },
+          {
+            "symbol": "300454.SZ",
+            "name": "深信服",
+            "changePct": 6.32
+          }
+        ],
+        "note": "午盘新闻主题样本，不等于SW行业排名；保留原时点。",
+        "sourceIds": [
+          "cn-midday"
+        ]
+      },
+      {
+        "market": "CN",
+        "theme": "航运弱势",
+        "asOf": "2026-09-22T11:30:00+08:00",
+        "rows": [
+          {
+            "symbol": "601872.SH",
+            "name": "招商轮船",
+            "changePct": -5.94
+          },
+          {
+            "symbol": "601975.SH",
+            "name": "招商南油",
+            "changePct": -5.15
+          },
+          {
+            "symbol": "833171.BJ",
+            "name": "国航远洋",
+            "changePct": -4.39
+          },
+          {
+            "symbol": "600026.SH",
+            "name": "中远海能",
+            "changePct": -4.1
+          },
+          {
+            "symbol": "601022.SH",
+            "name": "宁波远洋",
+            "changePct": -3.79
+          }
+        ],
+        "note": "午盘主题样本，不等于交通运输行业Bottom-N；保留原时点。",
+        "sourceIds": [
+          "cn-midday2"
+        ]
+      },
+      {
+        "market": "CN",
+        "theme": "出版传媒",
+        "asOf": "2026-09-22T11:30:00+08:00",
+        "rows": [
+          {
+            "symbol": "601811.SH",
+            "name": "新华文轩",
+            "changePct": 10.01
+          },
+          {
+            "symbol": "603230.SH",
+            "name": "内蒙新华",
+            "changePct": 9.98
+          },
+          {
+            "symbol": "603598.SH",
+            "name": "引力传媒",
+            "changePct": 9.98
+          },
+          {
+            "symbol": "601949.SH",
+            "name": "中国出版",
+            "changePct": 9.97
+          },
+          {
+            "symbol": "600825.SH",
+            "name": "新华传媒",
+            "changePct": 9.93
+          }
+        ],
+        "note": "午盘主题样本，缺真实全行业成员和量比字段；保留原时点。",
+        "sourceIds": [
+          "cn-midday2"
+        ]
+      },
+      {
+        "market": "CN",
+        "theme": "算力芯片/半导体",
+        "asOf": "2026-09-22T11:30:00+08:00",
+        "rows": [
+          {
+            "symbol": "300324.SZ",
+            "name": "旋极信息",
+            "displayChange": "20cm涨停"
+          },
+          {
+            "symbol": "000066.SZ",
+            "name": "中国长城",
+            "displayChange": "涨停"
+          },
+          {
+            "symbol": "600770.SH",
+            "name": "综艺股份",
+            "changePct": 9.95
+          },
+          {
+            "symbol": "603893.SH",
+            "name": "瑞芯微",
+            "changePct": 10.0
+          },
+          {
+            "symbol": "688041.SH",
+            "name": "海光信息",
+            "changePct": 4.53
+          }
+        ],
+        "note": "午盘跨多个SW行业的主题样本，不做行业归类推断；保留原时点。",
+        "sourceIds": [
+          "cn-midday2"
+        ]
+      },
+      {
+        "market": "HK",
+        "theme": "科网/存储",
+        "asOf": "2026-09-22T12:00:00+08:00",
+        "rows": [
+          {
+            "symbol": "00700",
+            "name": "腾讯控股",
+            "displayChange": "涨超6%"
+          },
+          {
+            "symbol": "09988",
+            "name": "阿里巴巴-W",
+            "displayChange": "涨超2%"
+          },
+          {
+            "symbol": "00992",
+            "name": "联想集团",
+            "displayChange": "涨超2%"
+          },
+          {
+            "symbol": "01024",
+            "name": "快手-W",
+            "displayChange": "涨超2%"
+          },
+          {
+            "symbol": "06811",
+            "name": "澜起科技",
+            "displayChange": "涨超9%"
+          }
+        ],
+        "note": "港股午盘主题样本，缺HSICS逐股成员与批量成交字段，不生成行业热度榜。",
+        "sourceIds": [
+          "hk-midday",
+          "hk-midday2"
+        ]
+      },
+      {
+        "market": "CN",
+        "theme": "收盘结构",
+        "asOf": "2026-09-22T15:00:00+08:00",
+        "rows": [],
+        "summary": "A股冲高回落，AI应用、算力芯片局部活跃；医药、传媒、端侧AI表现相对强，航运走弱。三大指数尾盘显著收窄早盘涨幅。",
+        "classificationClaim": false,
+        "note": "收盘新闻结构描述，不等同SW2021-L1行业排序。",
+        "sourceIds": [
+          "cn-close"
+        ]
+      }
+    ],
+    "groups": [
+      {"id":"农林牧渔","name":"农林牧渔","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"基础化工","name":"基础化工","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"钢铁","name":"钢铁","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"有色金属","name":"有色金属","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"电子","name":"电子","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"汽车","name":"汽车","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"家用电器","name":"家用电器","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"食品饮料","name":"食品饮料","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"纺织服饰","name":"纺织服饰","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"轻工制造","name":"轻工制造","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"医药生物","name":"医药生物","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"公用事业","name":"公用事业","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"交通运输","name":"交通运输","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"房地产","name":"房地产","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"商贸零售","name":"商贸零售","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"社会服务","name":"社会服务","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"综合","name":"综合","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"建筑材料","name":"建筑材料","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"建筑装饰","name":"建筑装饰","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"电力设备","name":"电力设备","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"国防军工","name":"国防军工","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"计算机","name":"计算机","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"传媒","name":"传媒","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"通信","name":"通信","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"银行","name":"银行","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"非银金融","name":"非银金融","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"煤炭","name":"煤炭","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"石油石化","name":"石油石化","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"环保","name":"环保","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"美容护理","name":"美容护理","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"机械设备","name":"机械设备","market":"CN","classification":"SW2021-L1","asOf":"2026-09-22T15:00:00+08:00","tradingDate":"2026-09-22","session":"regular","currency":"CNY","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"sws","rows":[],"coverageStatus":"missing","coverageReason":"未取得SW2021-L1真实全量成员及同口径20日量比/换手/成交额输入；不以新闻主题或涨幅榜替代行业Top-N。"},
+      {"id":"能源业","name":"能源业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"原材料业","name":"原材料业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"工业","name":"工业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"非必需性消费","name":"非必需性消费","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"必需性消费","name":"必需性消费","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"医疗保健业","name":"医疗保健业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"电讯业","name":"电讯业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"公用事业","name":"公用事业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"金融业","name":"金融业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"地产建筑业","name":"地产建筑业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"资讯科技业","name":"资讯科技业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"},
+      {"id":"综合企业","name":"综合企业","market":"HK","classification":"HSICS-industry","asOf":"2026-09-22T14:02:22+08:00","tradingDate":"2026-09-22","session":"regular","currency":"HKD","comparisonBasis":"previous-official-close","universeScope":"sample","expectedCount":null,"membershipSourceId":"hsics","rows":[],"coverageStatus":"missing","coverageReason":"15:36重新核验未取得带精确行情时点的HSICS全量成员批量行情；保留14:02精确指数快照，行业排名不编造。"}
+    ],
+    "rankingStatus": {
+      "heat": "missing",
+      "weak": "missing",
+      "reason": "未取得31个SW一级行业和12个HSICS行业的真实全量成员、20日同已交易时长量比、换手率及成交额统一输入；不以新闻主题、涨幅榜或少量股票样本编造Top-N。"
+    },
+    "coverage": {
+      "CN": {"groupsExpected":31,"groupsWithScorableRows":0,"coreCloseSummary":"verified","exactCloseIndexLevels":"missing"},
+      "HK": {"groupsExpected":12,"groupsWithScorableRows":0,"exactIntradayIndexSnapshot":"2026-09-22T14:02:22+08:00","laterPreciseRevalidation":"missing"},
+      "note": "A股收盘核心结构已更新到15:00；港股保留14:02精确快照与12:00主题样本，15:36更晚网页值因缺精确asOf只作display观察。"
+    },
+    "latestIndices": [
+      {"instrumentId":"INDEX:CN:SSE","symbol":"000001.SH","name":"上证指数","market":"CN","currency":"index","price":null,"displayValue":"收盘点位未取得可独立核验值","changePct":0.06,"comparisonBasis":"previous-official-close","asOf":"2026-09-22T15:00:00+08:00","status":"partial","sourceIds":["cn-close"],"contract":null,"note":"已核验收盘涨幅；点位未从独立精确源确认，不从前收和四舍五入涨幅反推。"},
+      {"instrumentId":"INDEX:CN:SZSE","symbol":"399001.SZ","name":"深证成指","market":"CN","currency":"index","price":null,"displayValue":"收盘点位未取得可独立核验值","changePct":-0.05,"comparisonBasis":"previous-official-close","asOf":"2026-09-22T15:00:00+08:00","status":"partial","sourceIds":["cn-close"],"contract":null,"note":"已核验收盘涨跌幅；点位不反推。"},
+      {"instrumentId":"INDEX:CN:CHINEXT","symbol":"399006.SZ","name":"创业板指","market":"CN","currency":"index","price":null,"displayValue":"收盘点位未取得可独立核验值","changePct":0.01,"comparisonBasis":"previous-official-close","asOf":"2026-09-22T15:00:00+08:00","status":"partial","sourceIds":["cn-close"],"contract":null,"note":"已核验收盘涨跌幅；点位不反推。"},
+      {"instrumentId":"INDEX:HK:HSI","symbol":"HSI","name":"恒生指数","market":"HK","currency":"index","price":25120.94,"displayValue":"25120.94","changePct":0.312,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:22+08:00","status":"delayed","sourceIds":["feed-index-hk-hsi"],"contract":null,"verifiedAt":"2026-09-22T14:17:24+08:00","note":"本轮未取得带精确时点的15:35港股行情，按契约保留上一已核验14:02精确快照，不空白覆盖。"},
+      {"instrumentId":"INDEX:HK:HSTECH","symbol":"HSTECH","name":"恒生科技","market":"HK","currency":"index","price":4444.89,"displayValue":"4444.89","changePct":0.488,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:22+08:00","status":"delayed","sourceIds":["feed-index-hk-hstech"],"contract":null,"verifiedAt":"2026-09-22T14:17:25+08:00","note":"本轮未取得带精确时点的15:35港股行情，按契约保留上一已核验14:02精确快照，不空白覆盖。"},
+      {"instrumentId":"INDEX:HK:HSCEI","symbol":"HSCEI","name":"恒生国企","market":"HK","currency":"index","price":8361.67,"displayValue":"8361.67","changePct":0.264,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:22+08:00","status":"delayed","sourceIds":["feed-index-hk-hscei"],"contract":null,"verifiedAt":"2026-09-22T14:17:25+08:00","note":"本轮未取得带精确时点的15:35港股行情，按契约保留上一已核验14:02精确快照，不空白覆盖。"}
+    ],
+    "priorIntradayIndices": [
+      {"instrumentId":"INDEX:CN:SSE","symbol":"000001.SH","name":"上证指数","market":"CN","currency":"index","price":3955.442,"displayValue":"3955.442","changePct":0.14,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:20+08:00","status":"delayed","sourceIds":["feed-index-cn-sse"],"contract":null,"verifiedAt":"2026-09-22T14:17:23+08:00","note":"14:02精确延迟快照，保留原时点；不冒充15:00收盘。"},
+      {"instrumentId":"INDEX:CN:SZSE","symbol":"399001.SZ","name":"深证成指","market":"CN","currency":"index","price":13759.311,"displayValue":"13759.311","changePct":0.213,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:22+08:00","status":"delayed","sourceIds":["feed-index-cn-szse"],"contract":null,"verifiedAt":"2026-09-22T14:17:23+08:00","note":"14:02精确延迟快照，保留原时点；不冒充15:00收盘。"},
+      {"instrumentId":"INDEX:CN:CHINEXT","symbol":"399006.SZ","name":"创业板指","market":"CN","currency":"index","price":3412.459,"displayValue":"3412.459","changePct":0.3786,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:22+08:00","status":"delayed","sourceIds":["feed-index-cn-chinext"],"contract":null,"verifiedAt":"2026-09-22T14:17:23+08:00","note":"14:02精确延迟快照，保留原时点；不冒充15:00收盘。"},
+      {"instrumentId":"INDEX:CN:STAR50","symbol":"000688.SH","name":"科创50","market":"CN","currency":"index","price":1672.5273,"displayValue":"1672.5273","changePct":0.9076,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:20+08:00","status":"delayed","sourceIds":["feed-index-cn-star50"],"contract":null,"verifiedAt":"2026-09-22T14:17:24+08:00","note":"14:02精确延迟快照，保留原时点；不冒充15:00收盘。"},
+      {"instrumentId":"INDEX:CN:CSI300","symbol":"000300.CSI","name":"沪深300","market":"CN","currency":"index","price":4553.7334,"displayValue":"4553.7334","changePct":0.3121,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:20+08:00","status":"delayed","sourceIds":["feed-index-cn-csi300"],"contract":null,"verifiedAt":"2026-09-22T14:17:24+08:00","note":"14:02精确延迟快照，保留原时点；不冒充15:00收盘。"},
+      {"instrumentId":"INDEX:CN:CSI500","symbol":"000905.CSI","name":"中证500","market":"CN","currency":"index","price":7845.176,"displayValue":"7845.176","changePct":-0.068,"comparisonBasis":"provider-regular-session-change","asOf":"2026-09-22T14:02:20+08:00","status":"delayed","sourceIds":["feed-index-cn-csi500"],"contract":null,"verifiedAt":"2026-09-22T14:17:24+08:00","note":"14:02精确延迟快照，保留原时点；不冒充15:00收盘。"}
+    ],
+    "gaps": [
+      "A股上证/深成/创业板15:00精确收盘点位未从独立精确源取得；仅保留可核验收盘涨跌幅，价格不反推。",
+      "科创50、沪深300、中证500的15:00正式收盘值本轮未取得；保留14:02精确延迟快照于priorIntradayIndices。",
+      "港股15:35附近带精确asOf的恒指/恒科/国指批量行情未取得；保留14:02已发布精确快照，网页后续显示值不冒充实时。",
+      "SW2021-L1及HSICS全量成员映射、20日同已交易时长量比、换手率、20日平均成交额缺失，无法生成合法热门/弱势Top-N。"
+    ],
+    "note": "本轮优先完成A股15:00收盘核验，同时遵守港股旧精确数据保留规则。缺项明确标记，未生成虚构行业排名。"
+  }
+}
