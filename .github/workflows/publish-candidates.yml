@@ -80,6 +80,7 @@ jobs:
             node scripts/check-published.cjs
             GDR_PERSIST_BUILD=1 node scripts/stage-site.cjs /tmp/gdr-site
             node tests/ui-real-data.cjs
+            GDR_UI_OUTPUT=/tmp/gdr-publication/staged-expanded node tests/ui-expanded.cjs
             git add -- data/modules data/runs data/receipts data/publication-status.json data/latest.json data/history-index.json data/build.json history
             if git diff --cached --quiet; then complete=1; break; fi
             git commit -m 'data: publish tested candidates and matching public build identity'
@@ -118,6 +119,14 @@ jobs:
           GDR_TEST_WIDTHS: '390,1440'
           GDR_UI_OUTPUT: /tmp/gdr-publication/live
         run: node tests/ui-real-data.cjs
+      - name: Verify all published detailed analyses, complete news and evidence links
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
+          GDR_EXPECT_BUILD: /tmp/gdr-site/data/build.json
+          GDR_TEST_WIDTHS: '390,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-publication/live-expanded
+        run: node tests/ui-expanded.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
