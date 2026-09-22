@@ -174,7 +174,7 @@ const watch=qs("#watch");watch.textContent="";(d.watch||[]).forEach(w=>{const bo
 
 const sources=qs("#sourceList");sources.textContent="";(d.sources||[]).forEach(s=>{const a=E("a","source");a.href=safeUrl(s.url);a.target="_blank";a.rel="noopener noreferrer";const h=E("div","source-head");h.append(E("div","source-name",s.name),E("div","source-type",s.type));a.append(h,E("div","source-use",s.use),E("div","source-domain",s.domain+" ↗"));if(s.checkedAt)a.append(E("div","source-check","本轮核对："+s.checkedAt+" UTC+8"));sources.append(a)});qs("#methodology").textContent=fmt(d.methodology,"");
 }catch(err){qs("#status").textContent="数据加载失败";qs("#status").parentElement.classList.add("error");qs("#overview").textContent="无法读取 data/latest.json："+err.message}
-finally{btn.disabled=false;btn.textContent="↻ 刷新"}
+finally{btn.disabled=false;btn.textContent="↻ 检查新报告"}
 }
 qs("#refreshBtn").addEventListener("click",load);load();setInterval(load,10*60*1000);
 </script>
