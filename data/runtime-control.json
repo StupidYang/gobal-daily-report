@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "productionPaused": true,
-  "reason": "隔离测试与任务审计期间暂停自动发布；旧报告保留。测试成功不等于真实数据源已验收。",
+  "productionPaused": false,
+  "reason": "用户于2026-09-22明确要求启用三个保留任务，按小时进行真实数据运行；首次真实采集与发布仍待回执验证，不将配置启用视为数据验收通过。",
   "maxRecurringTasks": 3,
   "resumeRequires": [
     "isolated fixture suite passes",
@@ -9,5 +9,12 @@
     "three-task inventory matches runtime",
     "live source dry run verified"
   ],
-  "allowAutomaticResume": false
+  "allowAutomaticResume": false,
+  "resumeAuthorization": {
+    "mode": "explicit-user-request",
+    "recordedAt": "2026-09-22T19:33:12+08:00",
+    "firstGlobalRun": "2026-09-22T20:00:00+08:00",
+    "liveSourceValidation": "pending-first-scheduled-run",
+    "note": "The owner explicitly requested resumption now. This is not an assertion that all acceptance conditions have passed. Existing source, synthetic-isolation, atomic-publication and receipt checks remain unchanged."
+  }
 }
