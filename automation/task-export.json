@@ -1,13 +1,150 @@
 {
-  "manifestVersion":"modules-v1",
-  "repository":"StupidYang/gobal-daily-report",
-  "tasks":[
-    {"role":"quotes","title":"GDR 基础行情","timezone":"Asia/Singapore","cron":"40 3,7,11,15,19,23 * * *","rrule":"FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=40;BYSECOND=0","promptFile":"automation/prompts/quotes.md","readModules":["quotes"],"ownedPaths":["data/modules/quotes.json","data/runs/quotes/"],"ui":"必看资产 / 独立报价时点","maxMinutes":12,"prompt":"执行GDR模块 quotes。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/quotes.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"},
-    {"role":"asia-equities","title":"GDR A股港股板块","timezone":"Asia/Singapore","cron":"35 9,12,15,16 * * *","rrule":"FREQ=DAILY;BYHOUR=9,12,15,16;BYMINUTE=35;BYSECOND=0","promptFile":"automation/prompts/asia-equities.md","readModules":["asia-equities","macro","news"],"ownedPaths":["data/modules/asia-equities.json","data/runs/asia-equities/"],"ui":"A股31行业 / 港股12行业热弱榜","maxMinutes":20,"prompt":"执行GDR模块 asia-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/asia-equities.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"},
-    {"role":"us-equities","title":"GDR 美股科技投资","timezone":"America/New_York","cron":"35 9,12,16 * * *","rrule":"FREQ=DAILY;BYHOUR=9,12,16;BYMINUTE=35;BYSECOND=0","promptFile":"automation/prompts/us-equities.md","readModules":["us-equities","macro","news"],"ownedPaths":["data/modules/us-equities.json","data/runs/us-equities/"],"ui":"美股科技 / 投资公司候选池与排名","maxMinutes":15,"prompt":"执行GDR模块 us-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/us-equities.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"},
-    {"role":"news","title":"GDR 中国美国全球新闻","timezone":"Asia/Singapore","cron":"25 3,7,11,15,19,23 * * *","rrule":"FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=25;BYSECOND=0","promptFile":"automation/prompts/news.md","readModules":["news"],"ownedPaths":["data/modules/news.json","data/runs/news/"],"ui":"综合时事库，保留非财经增量","maxMinutes":15,"prompt":"执行GDR模块 news。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/news.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"},
-    {"role":"macro","title":"GDR 宏观与资金","timezone":"Asia/Singapore","cron":"30 3,7,11,15,19,23 * * *","rrule":"FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=30;BYSECOND=0","promptFile":"automation/prompts/macro.md","readModules":["macro","quotes"],"ownedPaths":["data/modules/macro.json","data/runs/macro/"],"ui":"央行 / 经济数据 / ETF / 清算","maxMinutes":15,"prompt":"执行GDR模块 macro。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/macro.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"},
-    {"role":"research","title":"GDR 财报研报事件研究","timezone":"Asia/Singapore","cron":"45 3,7,11,15,19,23 * * *","rrule":"FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=45;BYSECOND=0","promptFile":"automation/prompts/research.md","readModules":["research","asia-equities","us-equities","news","quotes"],"ownedPaths":["data/modules/research.json","data/runs/research/"],"ui":"事件触发研究 / 沿用原分析","maxMinutes":20,"prompt":"执行GDR模块 research。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/research.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"},
-    {"role":"synthesis","title":"GDR 每4小时综合发布","timezone":"Asia/Singapore","cron":"0 0,4,8,12,16,20 * * *","rrule":"FREQ=DAILY;BYHOUR=0,4,8,12,16,20;BYMINUTE=0;BYSECOND=0","promptFile":"automation/prompts/synthesis.md","readModules":["quotes","asia-equities","us-equities","news","macro","research"],"ownedPaths":["data/modules/synthesis.json","data/runs/synthesis/","data/latest.json","data/history-index.json","history/"],"ui":"首屏结论 / 完整24h报告 / 唯一报告发布者","maxMinutes":20,"prompt":"执行GDR模块 synthesis。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/synthesis.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是综合报告唯一发布者，保留每4小时完整报告、全部时事与研究。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"}
+  "manifestVersion": "modules-v1",
+  "repository": "StupidYang/gobal-daily-report",
+  "tasks": [
+    {
+      "role": "quotes",
+      "title": "GDR 基础行情",
+      "timezone": "Asia/Singapore",
+      "cron": "40 3,7,11,15,19,23 * * *",
+      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=40;BYSECOND=0",
+      "promptFile": "automation/prompts/quotes.md",
+      "readModules": [
+        "quotes"
+      ],
+      "ownedPaths": [
+        "data/modules/quotes.json",
+        "data/runs/quotes/"
+      ],
+      "ui": "必看资产 / 独立报价时点",
+      "maxMinutes": 12,
+      "prompt": "执行GDR模块 quotes。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/quotes.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+    },
+    {
+      "role": "asia-equities",
+      "title": "GDR A股港股板块",
+      "timezone": "Asia/Singapore",
+      "cron": "35 9,12,15,16 * * *",
+      "rrule": "FREQ=DAILY;BYHOUR=9,12,15,16;BYMINUTE=35;BYSECOND=0",
+      "promptFile": "automation/prompts/asia-equities.md",
+      "readModules": [
+        "asia-equities",
+        "macro",
+        "news"
+      ],
+      "ownedPaths": [
+        "data/modules/asia-equities.json",
+        "data/runs/asia-equities/"
+      ],
+      "ui": "A股31行业 / 港股12行业热弱榜",
+      "maxMinutes": 20,
+      "prompt": "执行GDR模块 asia-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/asia-equities.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+    },
+    {
+      "role": "us-equities",
+      "title": "GDR 美股科技投资",
+      "timezone": "America/New_York",
+      "cron": "35 9,12,16 * * *",
+      "rrule": "FREQ=DAILY;BYHOUR=9,12,16;BYMINUTE=35;BYSECOND=0",
+      "promptFile": "automation/prompts/us-equities.md",
+      "readModules": [
+        "us-equities",
+        "macro",
+        "news"
+      ],
+      "ownedPaths": [
+        "data/modules/us-equities.json",
+        "data/runs/us-equities/"
+      ],
+      "ui": "美股科技 / 投资公司候选池与排名",
+      "maxMinutes": 15,
+      "prompt": "执行GDR模块 us-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/us-equities.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+    },
+    {
+      "role": "news",
+      "title": "GDR 中国美国全球新闻",
+      "timezone": "Asia/Singapore",
+      "cron": "25 3,7,11,15,19,23 * * *",
+      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=25;BYSECOND=0",
+      "promptFile": "automation/prompts/news.md",
+      "readModules": [
+        "news"
+      ],
+      "ownedPaths": [
+        "data/modules/news.json",
+        "data/runs/news/"
+      ],
+      "ui": "综合时事库，保留非财经增量",
+      "maxMinutes": 15,
+      "prompt": "执行GDR模块 news。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/news.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+    },
+    {
+      "role": "macro",
+      "title": "GDR 宏观与资金",
+      "timezone": "Asia/Singapore",
+      "cron": "30 3,7,11,15,19,23 * * *",
+      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=30;BYSECOND=0",
+      "promptFile": "automation/prompts/macro.md",
+      "readModules": [
+        "macro",
+        "quotes"
+      ],
+      "ownedPaths": [
+        "data/modules/macro.json",
+        "data/runs/macro/"
+      ],
+      "ui": "央行 / 经济数据 / ETF / 清算",
+      "maxMinutes": 15,
+      "prompt": "执行GDR模块 macro。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/macro.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+    },
+    {
+      "role": "research",
+      "title": "GDR 财报研报事件研究",
+      "timezone": "Asia/Singapore",
+      "cron": "45 3,7,11,15,19,23 * * *",
+      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=45;BYSECOND=0",
+      "promptFile": "automation/prompts/research.md",
+      "readModules": [
+        "research",
+        "asia-equities",
+        "us-equities",
+        "news",
+        "quotes"
+      ],
+      "ownedPaths": [
+        "data/modules/research.json",
+        "data/runs/research/"
+      ],
+      "ui": "事件触发研究 / 沿用原分析",
+      "maxMinutes": 20,
+      "prompt": "执行GDR模块 research。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/research.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是数据生产者，不得覆盖data/latest.json或报告历史索引。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+    },
+    {
+      "role": "synthesis",
+      "title": "GDR 每4小时综合发布",
+      "timezone": "Asia/Singapore",
+      "cron": "0 0,4,8,12,16,20 * * *",
+      "rrule": "FREQ=DAILY;BYHOUR=0,4,8,12,16,20;BYMINUTE=0;BYSECOND=0",
+      "promptFile": "automation/prompts/synthesis.md",
+      "readModules": [
+        "quotes",
+        "asia-equities",
+        "us-equities",
+        "news",
+        "macro",
+        "research"
+      ],
+      "ownedPaths": [
+        "data/modules/synthesis.json",
+        "data/runs/synthesis/",
+        "data/latest.json",
+        "data/history-index.json",
+        "history/"
+      ],
+      "ui": "首屏结论 / 完整24h报告 / 唯一报告发布者",
+      "maxMinutes": 20,
+      "prompt": "执行GDR模块 synthesis。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/synthesis.md、docs/modules-contract.md 和 config/watchlist.json；按这些版本化文件执行。只读本角色依赖，只写manifest规定的ownedPaths，禁止写其他模块、前端、配置、提示词。你是综合报告唯一发布者，保留每4小时完整报告、全部时事与研究。联网核验，不编行情/排名/研报；无数据明确缺失，失败不假装成功。最终说明模块时点、采集与覆盖缺口、实际GitHub写入及回读结果。调度已独立配置，不创建或修改任务。"
+    }
   ]
 }
+
