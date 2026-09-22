@@ -32,7 +32,7 @@ function validate(m, expected, now=Date.now()){
  const sources=new Set();
  arr(m.sources).forEach(s=>{if(!s||!s.id||sources.has(s.id)||!safeUrl(s.url)){errors.push('来源重复或缺id/url');return;}sources.add(s.id);});
  function scan(x,catalog=sources){
-  if(x===m.payload?.report&&m.module==='synthesis')catalog=new Set(arr(x.sources).map(s=>s?.id));
+  if(x&&x===m.payload?.report&&m.module==='synthesis')catalog=new Set(arr(x.sources).map(s=>s?.id));
   if(!x||typeof x!=='object')return;
   if(Array.isArray(x)){x.forEach(v=>scan(v,catalog));return;}
   if(x.sourceIds!==undefined){if(!Array.isArray(x.sourceIds))errors.push('sourceIds必须是数组');else x.sourceIds.forEach(id=>{if(!catalog.has(id))errors.push('来源不存在: '+id);});}
