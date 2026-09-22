@@ -3,7 +3,7 @@
   "batchId": "acceptance-r5-20260922",
   "mode": "native-task-replay",
   "createdAt": "2026-09-22T16:36:46+08:00",
-  "updatedAt": "2026-09-22T16:52:08+08:00",
+  "updatedAt": "2026-09-22T17:20:50+08:00",
   "purpose": "User-requested real replay of all seven roles after repair, followed by actual public browser verification.",
   "permanentSchedulesChanged": false,
   "entrySource": "automation/task-export.json; role prompt files and common.md remain authoritative",
@@ -14,8 +14,19 @@
     "Create a unique candidate inbox JSON only. No role may write its own success receipt.",
     "A published receipt, immutable run and correct content hash are necessary to confirm publication.",
     "These one-offs do not prove that all future permanent scheduled executions will succeed.",
-    "Synthesis executes only after six accepted batch inputs exist. Its dependency checks are bounded to three hourly attempts; at most one successful batch report is generated."
+    "Six producer receipts are now confirmed. Existing final synthesis task was changed from hourly dependency polling to one exact execution at 17:25. No permanent schedule changed and no extra task created.",
+    "Before work and before submission, check whether this batch already has a pending or published synthesis candidate. Do not duplicate an in-flight or accepted result.",
+    "Synthesis must freeze the selected six immutable inputs, include complete payload.report and submit through the candidate gate. A manual patch must never impersonate native-task-replay."
   ],
+  "selectedProducerRuns": {
+    "quotes":"20260922T165006-acceptance-quotes",
+    "asia-equities":"20260922T164435-acceptance-asia-equities",
+    "us-equities":"20260922T164906-acceptance-us-equities-r1",
+    "news":"20260922T164220-acceptance-news",
+    "macro":"20260922T164528-acceptance-macro",
+    "research":"20260922T163906-acceptance-research"
+  },
+  "verificationNote": "Selected producers have published receipts. This configuration is not a final seven-role or public-browser success certificate. scripts/check-acceptance.cjs and the final public workflow establish that result.",
   "tasks": [
     {"role":"quotes","taskId":"6ab23dad652c8191b6e314928b5e040a","scheduledAt":"2026-09-22T16:35:53+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
     {"role":"news","taskId":"6ab23dc3f9648191beba57ec95ba5d9e","scheduledAt":"2026-09-22T16:36:15+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
@@ -23,6 +34,6 @@
     {"role":"asia-equities","taskId":"6ab23dee0b60819183f71398b401504c","scheduledAt":"2026-09-22T16:36:58+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
     {"role":"us-equities","taskId":"6ab23e047e448191aad8df19197003a4","scheduledAt":"2026-09-22T16:37:20+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
     {"role":"research","taskId":"6ab23e1c28188191be3b015dcb47ac4b","scheduledAt":"2026-09-22T16:37:44+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
-    {"role":"synthesis","taskId":"6ab241b7795c8191a91f1b08c23ed301","scheduledAt":"2026-09-22T17:05:00+08:00","rrule":"FREQ=HOURLY;COUNT=3","configurationResult":"SUCCESS","executionResult":"verify-receipt"}
+    {"role":"synthesis","taskId":"6ab241b7795c8191a91f1b08c23ed301","scheduledAt":"2026-09-22T17:25:00+08:00","rrule":null,"timingMode":"exact_schedule","configurationResult":"SUCCESS","executionResult":"verify-receipt"}
   ]
 }
