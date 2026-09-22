@@ -10,6 +10,8 @@ for(const role of P.W.MODULES){const m=P.read(path.join(root,'data/modules',role
 const r=P.read(path.join(root,'data/latest.json'));
 if(!r)errors.push('缺少latest');else{
  errors.push(...P.validateReport(r));
+ errors.push(...require('../lib/publication.cjs').references(root,r,Date.now()));
+ const synthesis=P.read(path.join(root,'data/modules/synthesis.json'));if(synthesis?.payload?.report&&P.hash(synthesis.payload.report)!==P.hash(r))errors.push('synthesis模块与latest不一致');
  const rel=`history/${r.reportId.slice(0,10)}/${r.reportId.slice(-4)}.json`;
  if(!fs.existsSync(path.join(root,rel))||fs.readFileSync(path.join(root,rel),'utf8')!==fs.readFileSync(path.join(root,'data/latest.json'),'utf8'))errors.push('latest与对应历史字节不一致');
  const idx=P.read(path.join(root,'data/history-index.json'));if(!idx?.reports?.some(x=>x.reportId===r.reportId&&x.path===rel))errors.push('索引未收录latest');

@@ -12,7 +12,7 @@ q=dict(instrumentId='CRYPTO:BTC:USD',price=100,changePct=2,asOf=AT,currency='USD
 def stock(i,ret):
     return dict(instrumentId=f'EQUITY:CN:60000{i}.SH',symbol=f'60000{i}',name=f'测试公司{i}',price=10,changePct=ret,asOf=AT,currency='CNY',tradingDate='2026-09-22',session='regular',comparisonBasis='previous-official-close',volumeRatio20d=i,volumeBaseline='20-session-same-elapsed',turnoverPct=i,valueTraded=i*50000000,avgDailyValue20d=60000000,listingDays=1000,isST=False,suspended=False,sourceIds=['s'])
 g=dict(id='电子',name='电子',market='CN',classification='SW2021-L1',asOf=AT,tradingDate='2026-09-22',session='regular',currency='CNY',comparisonBasis='previous-official-close',universeScope='sample',expectedCount=None,rows=[stock(1,3),stock(2,-3),stock(3,1)])
-mods={'quotes':mod('quotes',dict(items=[q,{**q,'instrumentId':'CRYPTO:PEPE:USD','price':.0000081234}])),'asia-equities':mod('asia-equities',dict(groups=[g])),'us-equities':mod('us-equities',dict(groups=[])),'research':mod('research',dict(records=[],checks=[])),'news':mod('news',dict(newsroom={'items':[]})),'macro':mod('macro',{})}
+mods={'quotes':mod('quotes',dict(items=[q,{**q,'instrumentId':'CRYPTO:PEPE:USD','price':.0000081234}])),'asia-equities':mod('asia-equities',dict(groups=[g])),'us-equities':mod('us-equities',dict(groups=[])),'research':mod('research',dict(records=[],checks=[])),'news':mod('news',dict(newsroom={'items':[]})),'macro':mod('macro',dict(canonicalFacts=[],macroEvents=[],events=[]))}
 HTML='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
 *{box-sizing:border-box}body{margin:0;font:15px/1.7 system-ui;background:#f8fafc;color:#172033;--ink:#172033;--muted:#64748b;--line:#e2e8f0;--accent:#2962ff;--surface:white;--raised:#f5f7fb}main{max-width:1240px;padding:16px;margin:auto}.library{min-width:0;background:white;border:1px solid #dde3ed;border-radius:10px;margin-top:16px}.library>summary{padding:16px;display:flex;gap:16px;flex-wrap:wrap;cursor:pointer}.library-title{font-weight:700}.library-caption{font-size:12px;color:#64748b}.library-body{padding:16px}.library-count{margin-left:auto}.directory{display:flex;gap:12px;flex-wrap:wrap}.directory a{color:#2962ff;text-decoration:none}.directory span{display:block;font-size:12px}button{border:1px solid #dde3ed;background:white;color:#172033;border-radius:6px;padding:6px 10px;cursor:pointer;font:inherit}h3,h4,p{margin:6px 0}.positive{color:#128269}.negative{color:#c84242}select{font:inherit;max-width:100%}
 </style><link rel="stylesheet" href="/assets/watchlist.css"><script defer src="/assets/watchlist-core.js"></script><script defer src="/assets/watchlist.js"></script><main><h1>自选模块离线验收</h1><p>本页面全部行情是测试夹具，不是真实市场报价。</p><select id="historySelect"><option value="data/latest.json">最新报告</option><option value="history/2026-09-22/0800.json">旧版</option></select><div id="reportRoot"><div class="directory"><a href="#research">原有完整详报</a></div><div id="original">原有市场、时事、白话分析均保留</div></div><div id="watchlistRoot"></div></main></html>'''
@@ -38,18 +38,20 @@ def run():
                 const path=new URL(url,'https://fixture.test/').pathname;
                 let data;
                 if(path==='/config/watchlist.json') data=config;
+                else if(path==='/data/latest.json') data={reportId:'fixture-latest',updatedAt:'2026-09-22 09:35'};
                 else if(path.startsWith('/data/modules/')) data=modules[path.split('/').pop().split('.')[0]];
                 else if(path.startsWith('/history/'))data={updatedAt:'2026-09-22 08:00',reportMeta:{}};
                 return {ok:!!data,status:data?200:404,json:async()=>JSON.parse(JSON.stringify(data))};
               };
             }""", {'config':CONFIG,'modules':mods})
+            page.add_script_tag(content=(ROOT/'assets/display-core.js').read_text())
             page.add_script_tag(content=(ROOT/'assets/watchlist-core.js').read_text())
             page.add_script_tag(content=(ROOT/'assets/watchlist.js').read_text())
             page.wait_for_selector('#watchlist')
             assert page.locator('#watchlist').get_attribute('open') is None
             page.locator('a[data-watch-entry]').click();assert page.locator('#watchlist').get_attribute('open') is not None
             assert page.locator('.wl-table tbody tr').count()==31
-            assert '0.0000081234' in page.locator('#watchlist').inner_text()
+            assert '0.000008123' in page.locator('#watchlist').inner_text()
             page.get_by_role('button',name='加入自选 Bitcoin',exact=True).click()
             page.get_by_role('button',name='我的自选',exact=True).click();assert page.locator('.wl-table tbody tr').count()==1
             page.get_by_role('button',name='板块热 / 弱榜',exact=True).click()

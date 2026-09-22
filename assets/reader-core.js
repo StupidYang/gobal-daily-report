@@ -48,6 +48,7 @@
       const rid=T(r.reportId||r.updatedAt);if(seenReports.has(rid))return;seenReports.add(rid);
       C.facts(r).forEach(f=>{
         let reason=rejectReason(f),at=C.parseTime(f.asOf);
+        if(!reason&&at>rt+59999)reason='观测时点晚于所属报告';
         if(!reason&&(at>cutoff||at<cutoff-86400000))reason='不在本报告24小时窗口';
         if(reason){rejected[reason]=(rejected[reason]||0)+1;return;}
         if(!A(f.sourceIds).every(id=>A(r.sources).some(s=>s?.id===id))){rejected['来源引用不存在']=(rejected['来源引用不存在']||0)+1;return;}

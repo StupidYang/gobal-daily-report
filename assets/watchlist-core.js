@@ -27,7 +27,7 @@ function validate(m, expected, now=Date.now()){
  if(m.dataAsOf!==null&&time(m.dataAsOf)===null)errors.push('dataAsOf 应为精确时点或null');
  if(time(m.dataAsOf)!==null&&generated!==null&&time(m.dataAsOf)>generated+300000)errors.push('数据时点晚于生成时点');
  if(!STATUSES.includes(m.status))errors.push('模块状态无效');
- if(!m.payload||typeof m.payload!=='object'||Array.isArray(m.payload))errors.push('payload 必须是对象');
+ if(!m.payload||typeof m.payload!=='object'||Array.isArray(m.payload))return [...errors,'payload 必须是对象'];
  if(!Array.isArray(m.sources))errors.push('sources 必须是数组');
  const sources=new Set();
  arr(m.sources).forEach(s=>{if(!s||!s.id||sources.has(s.id)||!safeUrl(s.url)){errors.push('来源重复或缺id/url');return;}sources.add(s.id);});
@@ -49,7 +49,7 @@ function validate(m, expected, now=Date.now()){
   if(!Array.isArray(m.payload?.items))errors.push('quotes.items必须是数组');
   const ids=new Set();arr(m.payload?.items).forEach(q=>{if(!q||!q.instrumentId||ids.has(q.instrumentId))errors.push('报价instrumentId缺失或重复');ids.add(q?.instrumentId);
    if(finite(q?.price)&&(!arr(q.sourceIds).length||time(q.asOf)===null))errors.push('数值报价必须有来源和精确asOf');
-   if(/^ENERGY:/.test(q?.instrumentId||'')&&finite(q.price)&&(!/^\d{4}-(0[1-9]|1[0-2])$/.test(q.contract||'')))errors.push('原油必须标明YYYY-MM合约');
+   if(/^ENERGY:/.test(q?.instrumentId||'')&&finite(q?.price)&&(!/^\d{4}-(0[1-9]|1[0-2])$/.test(q.contract||'')))errors.push('原油必须标明YYYY-MM合约');
   });
  }
  if(['asia-equities','us-equities'].includes(m.module)){
@@ -67,6 +67,11 @@ function validate(m, expected, now=Date.now()){
   if(!Array.isArray(m.payload?.records)||!Array.isArray(m.payload?.checks))errors.push('研究需records及checks');
   arr(m.payload?.records).forEach(r=>{if(!r?.instrumentId||!r.eventKey||!r.documentId||!safeUrl(r.documentUrl)||time(r.analyzedAt)===null||time(r.analyzedAt)>generated+300000||!r.analysis?.conclusion)errors.push('研究缺事件身份/原文/分析时间/结论');});
  }
+ if(m.module==='news'){
+  if(!m.payload.newsroom||!Array.isArray(m.payload.newsroom.items))errors.push('newsroom.items必须是数组');
+  const ids=new Set();arr(m.payload.newsroom?.items).forEach(n=>{const id=n?.eventId||n?.id;if(!id||ids.has(id))errors.push('新闻ID缺失或重复');ids.add(id);if(!n?.title||!n?.summary||!arr(n?.sourceIds).length)errors.push('新闻缺标题/摘要/来源');});
+ }
+ if(m.module==='macro')for(const k of ['canonicalFacts','macroEvents','events'])if(!Array.isArray(m.payload[k]))errors.push('macro.'+k+'必须是数组');
  if(m.module==='synthesis'&&(!m.payload?.report||m.payload.report.schemaVersion!==5))errors.push('synthesis需完整schema5报告');
  return [...new Set(errors)];
 }
@@ -78,7 +83,7 @@ function projectModule(input, expected, now=Date.now()) {
  if(!originalErrors.length)return {module:input,issues:[],quarantined:[]};
  if(!input||typeof input!=='object')return {module:null,issues:originalErrors,quarantined:[]};
  const m=JSON.parse(JSON.stringify(input)),quarantined=[];
- const blank={quotes:{items:[]},macro:{canonicalFacts:[],macroEvents:[],events:[]},research:{records:[],checks:[]},'asia-equities':{groups:[]},'us-equities':{groups:[]},news:{}};
+ const blank={quotes:{items:[]},macro:{canonicalFacts:[],macroEvents:[],events:[]},research:{records:[],checks:[]},'asia-equities':{groups:[]},'us-equities':{groups:[]},news:{newsroom:{items:[]}}};
  if(!blank[expected])return {module:null,issues:originalErrors,quarantined};
  const envelope=validate({...m,payload:blank[expected]},expected,now);
  if(envelope.length)return {module:null,issues:envelope,quarantined};
@@ -99,7 +104,7 @@ function projectModule(input, expected, now=Date.now()) {
  } else if(expected==='macro'){
   for(const key of ['canonicalFacts','macroEvents','events'])if(Array.isArray(m.payload?.[key])){
    m.payload[key]=m.payload[key].filter((row,i)=>{
-    const errors=validate({...m,payload:{[key]:[row]}},expected,now);
+    const errors=validate({...m,payload:{canonicalFacts:[],macroEvents:[],events:[],[key]:[row]}},expected,now);
     if(!errors.length)return true;
     quarantined.push({path:`payload.${key}[${i}]`,errors,original:row});return false;
    });
@@ -140,11 +145,28 @@ function rankGroup(group,config,n=5){
   scope:full?'full-sector':'sample',expected:group.expectedCount??null,observed:observed.length,eligible:eligible.length,scorable:scorable.length,excluded,medianChangePct:med,hot,weak,
   note:!full?'仅为已核验样本内排名，不代表全板块。':excluded.length?'全量成员输入；排名已剔除不满足流动性/数据条件的证券。':'全量成员内的条件筛选榜。'};
 }
-function quoteRows(config,module){const map=new Map(arr(module?.payload?.items).map(q=>[q.instrumentId,q]));return arr(config.required).map(i=>({...i,...(map.get(i.id)||{}),instrumentId:i.id,status:map.get(i.id)?.status||'missing',price:map.has(i.id)?map.get(i.id).price:null}));}
+function quoteRows(config,module){const map=new Map(arr(module?.payload?.items).filter(q=>q?.instrumentId).map(q=>[q.instrumentId,q]));return arr(config.required).map(i=>({...i,...(map.get(i.id)||{}),instrumentId:i.id,status:map.get(i.id)?.status||'missing',price:map.has(i.id)?map.get(i.id).price:null}));}
 function priceText(q){if(!finite(q.price))return q.displayValue||'待采集';if(q.price!==0&&Math.abs(q.price)<1e-9)return q.price.toPrecision(4);return new Intl.NumberFormat('en-US',{maximumFractionDigits:Math.abs(q.price)<.001?10:Math.abs(q.price)<1?6:3}).format(q.price);}
-function freshness(m,ttl,now=Date.now()) {if(!m)return 'missing';if(m.status==='error'||m.status==='missing')return m.status;const t=time(m.generatedAt);return t===null?'unknown':now-t>ttl*3600000?'stale':m.status;}
+function freshness(m,ttl,now=Date.now()) {if(!m)return 'missing';if(time(m.generatedAt)===null||time(m.generatedAt)>now+300000)return 'unknown';if(m.status==='error'||m.status==='missing')return m.status;const t=time(m.generatedAt);return t===null?'unknown':now-t>ttl*3600000?'stale':m.status;}
+// A missing/newer record cannot erase an actual known quote or alter its asOf.
+function chooseQuote(old,next){
+ if(!old)return next;if(!next)return old;
+ const ot=time(old.asOf),nt=time(next.asOf),ov=finite(old.price),nv=finite(next.price);
+ if(ov&&!nv)return {...old,status:'previous',note:(old.note||'')+'；新检查未获得合格报价，保留此原时点值。'};
+ if(!ov&&nv)return next;
+ return nt!==null&&(ot===null||nt>=ot)?next:old;
+}
+function combinedQuotes(config,modules){
+ const map=new Map(quoteRows(config,modules.quotes).map(q=>[q.instrumentId,{...q,sourceModule:'quotes'}]));
+ for(const role of ['asia-equities','us-equities'])for(const g of arr(modules[role]?.payload?.groups))for(const q of arr(g?.rows)){
+  if(!q?.instrumentId)continue;
+  const next={...q,group:q.group||g.name,market:g.market,status:q.status||'snapshot',sourceModule:role};
+  map.set(q.instrumentId,chooseQuote(map.get(q.instrumentId),next));
+ }
+ return [...map.values()];
+}
 function researchFingerprint(r){return JSON.stringify([r.instrumentId,r.eventType,r.period,r.documentId,r.documentUrl,r.sourceHash||'']);}
 function selectResearch(records,cutoff=Infinity){const map=new Map();arr(records).forEach(r=>{const t=time(r.analyzedAt);if(t===null||t>cutoff)return;const old=map.get(r.instrumentId);if(!old||t>time(old.analyzedAt))map.set(r.instrumentId,r);});return [...map.values()];}
-const api={arr,finite,MODULES,STATUSES,time,stamp,safeUrl,validate,projectModule,nValue,median,percentile,rankGroup,quoteRows,priceText,freshness,researchFingerprint,selectResearch};
+const api={arr,finite,MODULES,STATUSES,time,stamp,safeUrl,validate,projectModule,nValue,median,percentile,rankGroup,quoteRows,priceText,freshness,chooseQuote,combinedQuotes,researchFingerprint,selectResearch};
 if(typeof module!=='undefined')module.exports=api;root.GDRWatch=api;
 })(typeof globalThis!=='undefined'?globalThis:window);

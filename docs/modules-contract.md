@@ -4,7 +4,7 @@
 
 ## 所有权与时间
 
-automation/manifest.json是唯一角色/调度/提示词路径清单。quotes、asia-equities、us-equities、news、macro、research只写各自data/modules/<role>.json和data/runs/<role>/<runId>.json。synthesis是唯一综合报告发布者。角色划分不意味着所有任务严格按顺序完成；时点错开只是降低碰撞，综合报告必须能使用带日期的旧模块或明确缺口。
+automation/manifest.json是唯一角色/调度/提示词路径清单。AI只向本角色data/inbox提交候选；代码发布器按角色ownedPaths更新modules/runs，只有完整synthesis候选可更新报告。角色划分不意味着所有任务严格按顺序完成；时点错开只是降低碰撞，综合报告必须能使用带日期的旧模块或明确缺口。
 
 包络示例（结构示例，不是实时数据）：
 

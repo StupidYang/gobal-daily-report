@@ -16,6 +16,9 @@ const root=path.resolve(process.env.GDR_ROOT||path.join(__dirname,'..')),role=pr
  });
  const module=JSON.parse(result);if(module.module!==role)throw Error('适配器跨角色输出，拒绝');
  const e=P.W.validate(module,role);if(e.length)throw Error(e.join('\n'));
- const run=P.ingest(root,module);if(role==='synthesis')run.report=P.publishReport(root,module.payload.report);
- console.log(JSON.stringify(run));
+ const Pub=require('../lib/publication.cjs');
+ Pub.submit(root,module);Pub.promote(root);
+ const receipt=P.read(path.join(root,'data/receipts',role,module.runId+'.json'));
+ if(!receipt||!['published','archived-older'].includes(receipt.status))throw Error('候选未发布: '+JSON.stringify(receipt));
+ console.log(JSON.stringify(receipt));
 })().catch(e=>{console.error(e.message);process.exitCode=1;});
