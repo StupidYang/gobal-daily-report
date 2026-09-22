@@ -44,6 +44,12 @@ async function visit(page){
    try{
     await visit(page);await page.waitForSelector('#reportRoot .directory');await page.waitForSelector('#watchlist');
     assert.ok(await page.locator('.readable-metrics .metric').count()<=6,'More than six overview groups');
+    await page.waitForFunction(()=>document.querySelector('#mainlandIndices')?.dataset.loadStatus!=='loading');
+    const cn=page.locator('#mainlandIndices');
+    assert.equal(await cn.locator('.cn-index').count(),6,'Mainland indices disappeared from overview');
+    for(const x of config.required.filter(q=>q.id.startsWith('INDEX:CN:'))){assert.equal(await cn.locator('[data-instrument-id="'+x.id+'"]').count(),1,'Missing mainland identity '+x.id);}
+    if(report.reportMeta?.moduleRefs?.quotes){assert.equal(await cn.getAttribute('data-load-status'),'ready','Frozen mainland quotes failed to load');}
+    checks.push('six-mainland-indices-always-visible');
     assert.doesNotMatch(await page.locator('#reportRoot').innerText(),/\[object Object\]|\bNaN\b|\bundefined\b/);
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));checks.push('overview-layout','no-machine-serialization');
     await page.screenshot({path:path.join(out,width+'-top.png')});
