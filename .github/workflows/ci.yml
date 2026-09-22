@@ -3,82 +3,63 @@ on:
   workflow_dispatch:
   push:
     branches: ['repair/staging-20260922']
+  pull_request:
+    branches: [main]
 permissions:
   contents: read
-  actions: read
 concurrency:
   group: gdr-ci-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  overnight-audit:
+  regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: c16b735c1425d91277f5ba08569d8afc7e35237b
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Export exact production snapshot and read-only execution evidence
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Validate and build deterministic isolated demonstration
         run: |
-          mkdir -p /tmp/gdr-overnight
-          git archive --format=zip --output=/tmp/gdr-overnight/source.zip HEAD
-          git rev-parse HEAD > /tmp/gdr-overnight/commit.txt
-          gh api "repos/$GITHUB_REPOSITORY/actions/runs?per_page=100" --jq '{total_count,workflow_runs:[.workflow_runs[]|{id,name,head_sha,head_branch,display_title,event,status,conclusion,created_at,updated_at,run_started_at,html_url,jobs_url}]}' > /tmp/gdr-overnight/action-runs.json
-          gh api "repos/$GITHUB_REPOSITORY/commits?per_page=100" --jq '[.[]|{sha,html_url,message:.commit.message,date:.commit.committer.date}]' > /tmp/gdr-overnight/commits.json
-          node --test tests/*.test.cjs > /tmp/gdr-overnight/current-tests.tap 2>&1 || echo 'Current tests failed; retain evidence rather than hide the audit.'
-      - name: Install browser
+          mkdir -p /tmp/gdr-regression
+          node scripts/gdr.cjs check-config
+          node scripts/check-runtime.cjs
+          for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
+          node --test tests/*.test.cjs > /tmp/gdr-regression/unit-tests.tap
+          node scripts/build-demo.cjs > /tmp/gdr-regression/demo.json
+          cp demo/data/build.json /tmp/gdr-regression/first-build.json
+          node scripts/build-demo.cjs > /dev/null
+          cmp demo/data/build.json /tmp/gdr-regression/first-build.json
+          BATCH_ID=$(node -p "require('./demo/synthetic-manifest.json').snapshots.at(-1).batchId")
+          GDR_ROOT=demo node scripts/check-batch.cjs "$BATCH_ID" --fixture > /tmp/gdr-regression/fixture-batch.json
+          git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
+          git rev-parse HEAD > /tmp/gdr-regression/commit.txt
+      - name: Install browser and Chinese fonts
         run: |
           npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
           sudo apt-get update -qq
           sudo apt-get install -y fonts-noto-cjk >/dev/null
           if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
-      - name: Inspect live latest and every overnight historical report
+      - name: Real HTTP browser tests on all four viewport widths
         env:
           NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: http://127.0.0.1:8181/
+          GDR_TEST_WIDTHS: '320,390,768,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-regression/browser
         run: |
-          node <<'JS'
-          const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{chromium}=require('playwright');
-          const out='/tmp/gdr-overnight',base='https://stupidyang.github.io/gobal-daily-report/';
-          const save=(n,v)=>fs.writeFileSync(path.join(out,n),typeof v==='string'?v:JSON.stringify(v,null,2));
-          (async()=>{
-            const browser=await chromium.launch(fs.existsSync('/usr/bin/google-chrome')?{executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']}:{args:['--no-sandbox']});
-            const context=await browser.newContext({viewport:{width:1440,height:1100},locale:'zh-CN',timezoneId:'Asia/Singapore'});
-            const page=await context.newPage(),errors=[],network=[];page.on('pageerror',e=>errors.push(String(e)));page.on('requestfailed',r=>network.push({url:r.url(),error:r.failure()}));
-            const hashes={};
-            for(const name of ['data/latest.json','data/history-index.json','data/publication-status.json','data/runtime-control.json','data/build.json']){
-              const res=await context.request.get(base+name+'?audit='+Date.now(),{timeout:20000});const bytes=await res.body();save('live-'+name.replaceAll('/','-'),bytes.toString());hashes[name]={status:res.status(),sha256:crypto.createHash('sha256').update(bytes).digest('hex'),repositorySha256:fs.existsSync(name)?crypto.createHash('sha256').update(fs.readFileSync(name)).digest('hex'):null};
-            }
-            save('live-hashes.json',hashes);
-            await page.goto(base+'?audit='+Date.now(),{waitUntil:'networkidle',timeout:45000});
-            await page.waitForSelector('#reportRoot h1',{timeout:25000});
-            const sections=[];
-            const capture=async(label,full)=>{
-              await page.evaluate(()=>document.querySelectorAll('details').forEach(d=>d.open=true));await page.waitForTimeout(400);
-              save(label+'.txt',await page.locator('body').innerText());
-              sections.push({label,data:await page.evaluate(()=>({title:document.title,scrollWidth:document.documentElement.scrollWidth,width:innerWidth,headings:[...document.querySelectorAll('h1,h2,h3,h4')].map(e=>({tag:e.tagName,text:e.innerText.trim()})),empty:[...document.querySelectorAll('.empty,.muted,.wl-muted,.small,.definition-list dd')].filter(e=>/暂无|未提供|未采集|缺失|待补|待核|未单列|来源读取失败/.test(e.innerText)).map(e=>e.innerText.trim())}))});
-              if(full)await page.screenshot({path:path.join(out,label+'.png'),fullPage:true});
-            };
-            await page.screenshot({path:path.join(out,'live-1440-top.png')});await capture('live-latest-expanded',true);
-            for(const tab of ['板块热 / 弱榜','公司研究']){
-              const button=page.getByRole('button',{name:tab,exact:true});if(await button.count()){await button.click();await page.waitForTimeout(250);if(tab.startsWith('板块'))for(const market of ['CN','HK','US']){await page.getByLabel('榜单市场',{exact:true}).selectOption(market);await capture('live-board-'+market,false);}else await capture('live-company-research',false);}
-            }
-            const history=JSON.parse(fs.readFileSync('data/history-index.json')).reports.filter(r=>r.reportId>='2026-09-22-2000');
-            for(const r of history){
-              try{await page.selectOption('#historySelect',r.path);await page.waitForFunction(label=>document.querySelector('#reportRoot .meta')?.textContent.includes(label),r.label,{timeout:25000});await capture('history-'+r.reportId,false);}catch(e){errors.push(r.reportId+': '+String(e));}
-            }
-            await page.setViewportSize({width:390,height:900});await page.goto(base+'?audit='+Date.now(),{waitUntil:'networkidle',timeout:45000});await page.waitForSelector('#reportRoot h1');await page.screenshot({path:path.join(out,'live-390-top.png')});await capture('live-390-expanded',false);
-            save('browser-findings.json',{checkedAt:new Date().toISOString(),sections,errors,network});await browser.close();
-          })().catch(e=>{save('browser-fatal.txt',String(e.stack||e));process.exitCode=1;});
-          JS
+          python3 -m http.server 8181 --bind 127.0.0.1 --directory demo >/tmp/gdr-http.log 2>&1 &
+          node tests/ui-real-data.cjs
+          GDR_UI_OUTPUT=/tmp/gdr-regression/expanded node tests/ui-expanded.cjs
+      - name: Export tested source and demo
+        run: |
+          git archive --format=zip --output=/tmp/gdr-regression/source.zip HEAD
+          cd demo && zip -qr /tmp/gdr-regression/demo.zip .
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: gdr-overnight-audit
-          path: /tmp/gdr-overnight/
-          retention-days: 7
+          name: gdr-regression-proof
+          path: /tmp/gdr-regression/
+          retention-days: 14
           if-no-files-found: error
