@@ -6,6 +6,8 @@ on:
     paths:
       - 'data/inbox/**'
       - '.github/workflows/publish-candidates.yml'
+      - 'scripts/stage-site.cjs'
+      - 'scripts/wait-site.cjs'
 permissions:
   contents: write
   pages: write
@@ -16,10 +18,10 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://stupidyang.github.io/gobal-daily-report/
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,67 +30,93 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply reviewed recovery once, verifying every base file and bundle hash
+      - name: Inspect actual Pages mode, without changing repository administration
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          node - <<'JS'
-          const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),z=require('node:zlib');
-          const marker='maintenance/recovery-20260922/applied.json';
-          if(fs.existsSync(marker))process.exit(0);
-          const encoded=[0,1,2,3].map(i=>fs.readFileSync(`maintenance/recovery-20260922/part${i}.b64`,'utf8').trim()).join('');
-          const bytes=z.brotliDecompressSync(Buffer.from(encoded,'base64'));
-          const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
-          const digest='eb7d098dd285265968ae618c4d27e4b2972b6f4485912037200c7246b28de965';
-          if(hash(bytes)!==digest)throw Error('Recovery bundle integrity check failed');
-          const bundle=JSON.parse(bytes),writes=[];
-          const allowed=new Set(['assets/watchlist-core.js','assets/watchlist.js','assets/watchlist.css','index.html','lib/pipeline.cjs','scripts/promote-candidates.cjs','scripts/check-published.cjs','tests/recovery.test.cjs','docs/RECOVERY-20260922.md','automation/manifest.json','automation/prompts/common.md','automation/task-export.json','automation/bindings.json']);
-          for(const f of bundle.files){
-            if(!allowed.has(f.path)&&!/^data\/inbox\/(quotes|asia-equities|us-equities|news|macro|research|synthesis)\/20260922T143000-recovery-[a-z-]+\.json$/.test(f.path))throw Error('Unapproved bundle path: '+f.path);
-            const exists=fs.existsSync(f.path),old=exists?fs.readFileSync(f.path):null;
-            if(f.baseSha256===null&&exists||f.baseSha256!==null&&(!exists||hash(old)!==f.baseSha256))throw Error('Base changed; refusing overwrite: '+f.path);
-            let text;
-            if(f.edits){const lines=old.toString('utf8').match(/[^\n]*\n|[^\n]+$/g)||[];for(const [a,b,replacement] of [...f.edits].reverse())lines.splice(a,b-a,...replacement);text=lines.join('');}
-            else text=f.text!==undefined?f.text:JSON.stringify(f.json,null,2)+'\n';
-            writes.push([f.path,text]);
-          }
-          for(const [p,text] of writes){fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,text);}
-          fs.writeFileSync(marker,JSON.stringify({bundleSha256:digest,appliedAt:new Date().toISOString(),files:writes.map(x=>x[0]),note:'Applied only; successful publication requires the following validation steps.'},null,2)+'\n');
+          mkdir -p /tmp/gdr-publication
+          gh api "repos/$GITHUB_REPOSITORY/pages" > /tmp/gdr-publication/pages-config.json
+          node - <<'JS' >> "$GITHUB_OUTPUT"
+          const p=require('/tmp/gdr-publication/pages-config.json');
+          if(!['legacy','workflow'].includes(p.build_type))throw Error('Unsupported Pages build mode');
+          if(p.build_type==='legacy'&&(p.source?.branch!=='main'||p.source?.path!=='/'))throw Error('Branch Pages must serve main root; ask repository owner before changing settings');
+          console.log('mode='+p.build_type);
           JS
-      - name: Run code and real-candidate checks before publishing
+      - name: Validate and atomically commit published bytes; retry on a newer main
         run: |
-          node scripts/gdr.cjs check-config
-          node --check assets/watchlist.js
-          node --check assets/watchlist-core.js
-          node --check scripts/promote-candidates.cjs
-          node --test tests/*.test.cjs
-          node scripts/promote-candidates.cjs
-          node scripts/check-published.cjs
-          node scripts/gdr.cjs export-tasks > /tmp/current-export.json
-          node - <<'JS'
-          const fs=require('node:fs');
-          const a=JSON.parse(fs.readFileSync('automation/task-export.json')),b=JSON.parse(fs.readFileSync('/tmp/current-export.json'));
-          if(JSON.stringify(a)!==JSON.stringify(b))throw Error('Task export does not match manifest/entry compiler');
-          JS
-      - name: Commit one validated snapshot without force push
-        run: |
+          set -euo pipefail
           git config user.name 'gdr-publisher[bot]'
           git config user.email 'gdr-publisher@users.noreply.github.com'
-          git add assets/watchlist-core.js assets/watchlist.js assets/watchlist.css index.html lib/pipeline.cjs scripts/promote-candidates.cjs scripts/check-published.cjs tests/recovery.test.cjs docs/RECOVERY-20260922.md automation/manifest.json automation/prompts/common.md automation/task-export.json automation/bindings.json maintenance/recovery-20260922/applied.json data/inbox data/modules data/runs data/receipts data/publication-status.json data/latest.json data/history-index.json history
-          if ! git diff --cached --quiet; then
-            git commit -m 'fix: publish validated recovery and module candidates'
-            git push origin HEAD:main
-          fi
-      - name: Stage only validated public site assets
+          complete=0
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/gdr.cjs check-config
+            node scripts/check-runtime.cjs
+            for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
+            node --test tests/*.test.cjs > /tmp/gdr-publication/unit-tests.tap
+            node scripts/promote-candidates.cjs > /tmp/gdr-publication/receipts.json
+            node scripts/check-published.cjs
+            GDR_PERSIST_BUILD=1 node scripts/stage-site.cjs /tmp/gdr-site
+            git add -- data/modules data/runs data/receipts data/publication-status.json data/latest.json data/history-index.json data/build.json history
+            if git diff --cached --quiet; then complete=1; break; fi
+            git commit -m 'data: publish validated candidates and matching public build identity'
+            if git push origin HEAD:main; then complete=1; break; fi
+            sleep "$((attempt * 2))"
+          done
+          test "$complete" = 1
+          node scripts/stage-site.cjs /tmp/gdr-site
+          git rev-parse HEAD > /tmp/gdr-publication/commit.txt
+          cp /tmp/gdr-site/data/build.json /tmp/gdr-publication/build.json
+          cp data/publication-status.json /tmp/gdr-publication/publication-status.json
+      - name: Install isolated browser test dependencies
         run: |
-          mkdir -p /tmp/gdr-site
-          cp index.html .nojekyll /tmp/gdr-site/
-          cp -R assets config history /tmp/gdr-site/
-          mkdir -p /tmp/gdr-site/data
-          cp data/latest.json data/history-index.json data/publication-status.json /tmp/gdr-site/data/
-          cp -R data/modules data/runs data/receipts /tmp/gdr-site/data/
-          find data -maxdepth 1 -name 'editorial-*.json' -exec cp {} /tmp/gdr-site/data/ \;
+          mkdir -p "$RUNNER_TEMP/gdr-browser"
+          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk >/dev/null
+          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
+      - name: Exercise staged actual report and modules before explicit deployment
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: http://127.0.0.1:8181/
+          GDR_TEST_WIDTHS: '390,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-publication/staged
+        run: |
+          python3 -m http.server 8181 --bind 127.0.0.1 --directory /tmp/gdr-site >/tmp/gdr-http.log 2>&1 &
+          node tests/ui-real-data.cjs
       - uses: actions/upload-pages-artifact@v4
+        if: steps.pages.outputs.mode == 'workflow'
         with:
           path: /tmp/gdr-site
-      - name: Deploy validated files, not unchecked candidate data
-        id: deployment
+      - name: Deploy artifact only when the repository uses workflow Pages
+        if: steps.pages.outputs.mode == 'workflow'
         uses: actions/deploy-pages@v4
+      - name: Request the existing branch-based Pages build, not a competing artifact deployment
+        if: steps.pages.outputs.mode == 'legacy'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" > /tmp/gdr-publication/build-request.json; then
+            echo '::warning::Explicit build request failed or was already queued; only verified public bytes can establish readiness.'
+          fi
+      - name: Wait for the exact public build identity
+        env:
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
+        run: node scripts/wait-site.cjs /tmp/gdr-site/data/build.json > /tmp/gdr-publication/readiness.json
+      - name: Exercise public site, not only local files
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
+          GDR_EXPECT_BUILD: /tmp/gdr-site/data/build.json
+          GDR_TEST_WIDTHS: '390,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-publication/live
+        run: node tests/ui-real-data.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gdr-publication-proof
+          path: /tmp/gdr-publication/
+          retention-days: 14
+          if-no-files-found: error
