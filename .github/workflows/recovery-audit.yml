@@ -1,0 +1,39 @@
+name: Recovery evidence
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/recovery-audit.yml'
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Capture exact committed files without credentials
+        run: |
+          mkdir -p /tmp/gdr-recovery
+          git archive --format=zip HEAD > /tmp/gdr-recovery/repository.zip
+          git rev-parse HEAD > /tmp/gdr-recovery/commit.txt
+          node - <<'JS' > /tmp/gdr-recovery/validation.json
+          const fs=require('node:fs'),W=require('./assets/watchlist-core.js');
+          const result={commit:process.env.GITHUB_SHA,modules:{}};
+          for(const file of fs.readdirSync('data/modules').filter(f=>f.endsWith('.json'))){
+            try { const m=JSON.parse(fs.readFileSync('data/modules/'+file,'utf8')); result.modules[file]={runId:m.runId,errors:W.validate(m,m.module)}; }
+            catch(e){result.modules[file]={errors:[e.message]};}
+          }
+          console.log(JSON.stringify(result,null,2));
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: recovery-evidence
+          path: /tmp/gdr-recovery/
+          retention-days: 3
+          if-no-files-found: error
