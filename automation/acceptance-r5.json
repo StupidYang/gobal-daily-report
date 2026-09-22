@@ -3,6 +3,7 @@
   "batchId": "acceptance-r5-20260922",
   "mode": "native-task-replay",
   "createdAt": "2026-09-22T16:36:46+08:00",
+  "updatedAt": "2026-09-22T16:52:08+08:00",
   "purpose": "User-requested real replay of all seven roles after repair, followed by actual public browser verification.",
   "permanentSchedulesChanged": false,
   "entrySource": "automation/task-export.json; role prompt files and common.md remain authoritative",
@@ -13,7 +14,7 @@
     "Create a unique candidate inbox JSON only. No role may write its own success receipt.",
     "A published receipt, immutable run and correct content hash are necessary to confirm publication.",
     "These one-offs do not prove that all future permanent scheduled executions will succeed.",
-    "The synthesis replay is created after the six producers have accepted batch outputs."
+    "Synthesis executes only after six accepted batch inputs exist. Its dependency checks are bounded to three hourly attempts; at most one successful batch report is generated."
   ],
   "tasks": [
     {"role":"quotes","taskId":"6ab23dad652c8191b6e314928b5e040a","scheduledAt":"2026-09-22T16:35:53+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
@@ -22,6 +23,6 @@
     {"role":"asia-equities","taskId":"6ab23dee0b60819183f71398b401504c","scheduledAt":"2026-09-22T16:36:58+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
     {"role":"us-equities","taskId":"6ab23e047e448191aad8df19197003a4","scheduledAt":"2026-09-22T16:37:20+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
     {"role":"research","taskId":"6ab23e1c28188191be3b015dcb47ac4b","scheduledAt":"2026-09-22T16:37:44+08:00","configurationResult":"SUCCESS","executionResult":"verify-receipt"},
-    {"role":"synthesis","taskId":null,"scheduledAt":null,"configurationResult":"not-created-yet","executionResult":"waiting-for-producers"}
+    {"role":"synthesis","taskId":"6ab241b7795c8191a91f1b08c23ed301","scheduledAt":"2026-09-22T17:05:00+08:00","rrule":"FREQ=HOURLY;COUNT=3","configurationResult":"SUCCESS","executionResult":"verify-receipt"}
   ]
 }
