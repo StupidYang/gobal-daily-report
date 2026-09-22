@@ -5,9 +5,15 @@ on:
     branches: [main]
     paths:
       - 'data/inbox/**'
+      - 'assets/**'
+      - 'config/**'
+      - 'docs/**'
+      - 'scripts/**'
+      - 'lib/**'
+      - 'tests/**'
+      - 'automation/**'
+      - 'index.html'
       - '.github/workflows/publish-candidates.yml'
-      - 'scripts/stage-site.cjs'
-      - 'scripts/wait-site.cjs'
 permissions:
   contents: write
   pages: write
@@ -30,7 +36,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Inspect actual Pages mode, without changing repository administration
+      - name: Inspect actual Pages mode without changing administration
         id: pages
         env:
           GH_TOKEN: ${{ github.token }}
@@ -40,10 +46,24 @@ jobs:
           node - <<'JS' >> "$GITHUB_OUTPUT"
           const p=require('/tmp/gdr-publication/pages-config.json');
           if(!['legacy','workflow'].includes(p.build_type))throw Error('Unsupported Pages build mode');
-          if(p.build_type==='legacy'&&(p.source?.branch!=='main'||p.source?.path!=='/'))throw Error('Branch Pages must serve main root; ask repository owner before changing settings');
+          if(p.build_type==='legacy'&&(p.source?.branch!=='main'||p.source?.path!=='/'))throw Error('Branch Pages must serve main root; ask owner before changing settings');
           console.log('mode='+p.build_type);
           JS
-      - name: Validate and atomically commit published bytes; retry on a newer main
+      - name: Install isolated browser dependencies before processing candidates
+        run: |
+          mkdir -p "$RUNNER_TEMP/gdr-browser"
+          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk >/dev/null
+          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
+          mkdir -p /tmp/gdr-site
+          python3 -m http.server 8181 --bind 127.0.0.1 --directory /tmp/gdr-site >/tmp/gdr-http.log 2>&1 &
+      - name: Validate and render the complete candidate write set before committing; retry newer main
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: http://127.0.0.1:8181/
+          GDR_TEST_WIDTHS: '390,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-publication/staged
         run: |
           set -euo pipefail
           git config user.name 'gdr-publisher[bot]'
@@ -59,9 +79,10 @@ jobs:
             node scripts/promote-candidates.cjs > /tmp/gdr-publication/receipts.json
             node scripts/check-published.cjs
             GDR_PERSIST_BUILD=1 node scripts/stage-site.cjs /tmp/gdr-site
+            node tests/ui-real-data.cjs
             git add -- data/modules data/runs data/receipts data/publication-status.json data/latest.json data/history-index.json data/build.json history
             if git diff --cached --quiet; then complete=1; break; fi
-            git commit -m 'data: publish validated candidates and matching public build identity'
+            git commit -m 'data: publish tested candidates and matching public build identity'
             if git push origin HEAD:main; then complete=1; break; fi
             sleep "$((attempt * 2))"
           done
@@ -70,42 +91,26 @@ jobs:
           git rev-parse HEAD > /tmp/gdr-publication/commit.txt
           cp /tmp/gdr-site/data/build.json /tmp/gdr-publication/build.json
           cp data/publication-status.json /tmp/gdr-publication/publication-status.json
-      - name: Install isolated browser test dependencies
-        run: |
-          mkdir -p "$RUNNER_TEMP/gdr-browser"
-          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
-          sudo apt-get update -qq
-          sudo apt-get install -y fonts-noto-cjk >/dev/null
-          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
-      - name: Exercise staged actual report and modules before explicit deployment
-        env:
-          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
-          GDR_TEST_URL: http://127.0.0.1:8181/
-          GDR_TEST_WIDTHS: '390,1440'
-          GDR_UI_OUTPUT: /tmp/gdr-publication/staged
-        run: |
-          python3 -m http.server 8181 --bind 127.0.0.1 --directory /tmp/gdr-site >/tmp/gdr-http.log 2>&1 &
-          node tests/ui-real-data.cjs
       - uses: actions/upload-pages-artifact@v4
         if: steps.pages.outputs.mode == 'workflow'
         with:
           path: /tmp/gdr-site
-      - name: Deploy artifact only when the repository uses workflow Pages
+      - name: Deploy artifact only for workflow Pages
         if: steps.pages.outputs.mode == 'workflow'
         uses: actions/deploy-pages@v4
-      - name: Request the existing branch-based Pages build, not a competing artifact deployment
+      - name: Request the existing branch build instead of competing artifact deployment
         if: steps.pages.outputs.mode == 'legacy'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if ! gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" > /tmp/gdr-publication/build-request.json; then
-            echo '::warning::Explicit build request failed or was already queued; only verified public bytes can establish readiness.'
+            echo '::warning::Build request failed or was already queued; only verified public bytes establish readiness.'
           fi
-      - name: Wait for the exact public build identity
+      - name: Wait for exact public build identity
         env:
           GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
         run: node scripts/wait-site.cjs /tmp/gdr-site/data/build.json > /tmp/gdr-publication/readiness.json
-      - name: Exercise public site, not only local files
+      - name: Exercise the actual public site and verify all byte hashes
         env:
           NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
           GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
