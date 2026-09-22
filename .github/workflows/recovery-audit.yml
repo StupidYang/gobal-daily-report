@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Capture exact committed files without credentials
+      - name: Capture source and actual publication contracts for seven-role acceptance
         run: |
           mkdir -p /tmp/gdr-recovery
           git archive --format=zip HEAD > /tmp/gdr-recovery/repository.zip
