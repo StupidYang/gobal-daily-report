@@ -17,18 +17,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Capture source and actual publication contracts for seven-role acceptance
+      - name: Capture source, actual modules, and rejected-candidate field paths
         run: |
           mkdir -p /tmp/gdr-recovery
           git archive --format=zip HEAD > /tmp/gdr-recovery/repository.zip
           git rev-parse HEAD > /tmp/gdr-recovery/commit.txt
           node - <<'JS' > /tmp/gdr-recovery/validation.json
-          const fs=require('node:fs'),W=require('./assets/watchlist-core.js');
-          const result={commit:process.env.GITHUB_SHA,modules:{}};
-          for(const file of fs.readdirSync('data/modules').filter(f=>f.endsWith('.json'))){
-            try { const m=JSON.parse(fs.readFileSync('data/modules/'+file,'utf8')); result.modules[file]={runId:m.runId,errors:W.validate(m,m.module)}; }
-            catch(e){result.modules[file]={errors:[e.message]};}
-          }
+          const fs=require('node:fs'),path=require('node:path'),W=require('./assets/watchlist-core.js');
+          const result={commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),modules:{},candidateErrors:{}};
+          const numeric=new Set(['price','changePct','rawValue','volumeRatio20d','turnoverPct','valueTraded','avgDailyValue20d']);
+          function walk(v,p,out){if(!v||typeof v!=='object')return;for(const[k,x]of Object.entries(v)){const at=p+'/'+k;if(numeric.has(k)&&x!==null&&!(typeof x==='number'&&Number.isFinite(x)))out.push({path:at,type:Array.isArray(x)?'array':typeof x,value:x});walk(x,at,out);}}
+          function files(dir){if(!fs.existsSync(dir))return[];return fs.readdirSync(dir,{withFileTypes:true}).flatMap(x=>x.isDirectory()?files(path.join(dir,x.name)):x.name.endsWith('.json')?[path.join(dir,x.name)]:[]);}
+          for(const file of files('data/modules')){try{const m=JSON.parse(fs.readFileSync(file,'utf8'));result.modules[file]={runId:m.runId,errors:W.validate(m,m.module)};}catch(e){result.modules[file]={errors:[e.message]};}}
+          for(const file of files('data/inbox')){try{const m=JSON.parse(fs.readFileSync(file,'utf8')),errors=W.validate(m,m.module);if(errors.length){const fields=[];walk(m.payload,'/payload',fields);result.candidateErrors[file]={errors,fields};}}catch(e){result.candidateErrors[file]={errors:[e.message]};}}
           console.log(JSON.stringify(result,null,2));
           JS
       - uses: actions/upload-artifact@v4
