@@ -27,19 +27,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Record actual batch progress, never count missing roles as passed
+      - name: Require seven actual published replay receipts, not only configured tasks
         id: batch
         run: |
           mkdir -p /tmp/gdr-batch
+          git rev-parse HEAD > /tmp/gdr-batch/commit.txt
           if node scripts/check-acceptance.cjs acceptance-r5-20260922 > /tmp/gdr-batch/acceptance.json; then
             echo 'ready=true' >> "$GITHUB_OUTPUT"
+            cat /tmp/gdr-batch/acceptance.json
           else
             echo 'ready=false' >> "$GITHUB_OUTPUT"
-            echo 'Batch is incomplete or rejected. Public final acceptance will NOT run or be marked passed.'
+            cat /tmp/gdr-batch/acceptance.json
+            echo '::error::Batch incomplete or rejected. This is NOT a successful final acceptance.'
+            exit 1
           fi
-          cat /tmp/gdr-batch/acceptance.json
-          git rev-parse HEAD > /tmp/gdr-batch/commit.txt
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: native-batch-progress-not-a-success-certificate
           path: /tmp/gdr-batch/
@@ -66,6 +69,7 @@ jobs:
           node --test tests/*.test.cjs > /tmp/gdr-final/unit-tests.tap
           cp data/build.json /tmp/gdr-final/build.json
           git rev-parse HEAD > /tmp/gdr-final/commit.txt
+          git archive --format=zip HEAD > /tmp/gdr-final/tested-repository.zip
       - name: Browser and Chinese fonts
         run: |
           mkdir -p "$RUNNER_TEMP/gdr-browser"
@@ -85,6 +89,14 @@ jobs:
           GDR_TEST_WIDTHS: '320,390,768,1440'
           GDR_UI_OUTPUT: /tmp/gdr-final/live
         run: node tests/ui-real-data.cjs
+      - name: Expand every article and verify complete news, analysis and evidence navigation
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
+          GDR_EXPECT_BUILD: data/build.json
+          GDR_TEST_WIDTHS: '320,390,768,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-final/expanded
+        run: node tests/ui-expanded.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
