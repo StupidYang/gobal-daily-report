@@ -1,0 +1,95 @@
+name: Apply and verify acceptance repair
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/acceptance-repair.yml']
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: gdr-candidate-publisher
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Browser prerequisites
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk >/dev/null
+          mkdir -p "$RUNNER_TEMP/gdr-browser" /tmp/gdr-r5
+          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
+          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
+      - name: Apply source only, validate real data, commit without force or stale rebases
+        run: |
+          set -euo pipefail
+          git config user.name 'gdr-publisher[bot]'
+          git config user.email 'gdr-publisher@users.noreply.github.com'
+          done=0
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 maintenance/acceptance-r5/apply.py
+            for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
+            node scripts/gdr.cjs check-config
+            node scripts/check-runtime.cjs
+            node --test tests/*.test.cjs > /tmp/gdr-r5/unit-tests.tap
+            node scripts/check-published.cjs
+            node - <<'JS'
+          const fs=require('node:fs'),cp=require('node:child_process');
+          const a=JSON.parse(fs.readFileSync('maintenance/acceptance-r5/applied.json'));
+          cp.execFileSync('git',['add','--',...a.sourceFiles,'automation/task-export.json','automation/bindings.json','maintenance/acceptance-r5/applied.json']);
+          JS
+            if git diff --cached --quiet; then done=1; break; fi
+            git commit -m 'fix: transactional publication, resilient quotes and verifiable task contracts'
+            if git push origin HEAD:main; then done=1; break; fi
+            sleep "$((attempt * 2))"
+          done
+          test "$done" = 1
+          git rev-parse HEAD > /tmp/gdr-r5/commit.txt
+          git archive --format=zip HEAD > /tmp/gdr-r5/repository.zip
+      - name: Build one public artifact including documents and byte identity
+        run: node scripts/stage-site.cjs /tmp/gdr-site
+      - name: Test staged actual data with desktop and phone browsers
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: http://127.0.0.1:8181/
+          GDR_TEST_WIDTHS: '390,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-r5/staged
+        run: |
+          python3 -m http.server 8181 --bind 127.0.0.1 --directory /tmp/gdr-site >/tmp/gdr-http.log 2>&1 &
+          node tests/ui-real-data.cjs
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: /tmp/gdr-site
+      - name: Deploy tested artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify public Pages code and data identity and interactions
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/
+          GDR_EXPECT_BUILD: /tmp/gdr-site/data/build.json
+          GDR_TEST_WIDTHS: '390,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-r5/live
+        run: |
+          sleep 8
+          node tests/ui-real-data.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gdr-r5-repair-acceptance
+          path: /tmp/gdr-r5
+          retention-days: 14
