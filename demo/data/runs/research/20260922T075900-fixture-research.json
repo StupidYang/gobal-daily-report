@@ -1,0 +1,67 @@
+{
+  "moduleVersion": 1,
+  "module": "research",
+  "runId": "20260922T075900-fixture-research",
+  "generatedAt": "2026-09-22T07:59:00.000+08:00",
+  "dataAsOf": "2026-09-22T07:58:00.000+08:00",
+  "dataMode": "synthetic",
+  "status": "partial",
+  "sources": [
+    {
+      "id": "research-fixture",
+      "name": "research · 人工合成测试样本",
+      "short": "测试证据",
+      "url": "https://stupidyang.github.io/gobal-daily-report/demo/fixture-evidence.html#research",
+      "use": "测试数据，非真实行情"
+    }
+  ],
+  "execution": {
+    "batchId": "fixture-20260922T080000",
+    "mode": "fixture",
+    "role": "research"
+  },
+  "payload": {
+    "records": [
+      {
+        "instrumentId": "EQUITY:US:AAPL",
+        "eventKey": "synthetic-earnings-v1",
+        "eventType": "earnings",
+        "period": "合成季度",
+        "documentId": "synthetic-document-v1",
+        "documentUrl": "https://stupidyang.github.io/gobal-daily-report/demo/fixture-evidence.html#research",
+        "analyzedAt": "2026-09-20T12:00:00+08:00",
+        "analysis": {
+          "conclusion": "测试研究缓存：同一文件重复检查不改写最初分析时间。",
+          "business": "演示业务",
+          "risk": "所有样本仅供工程验收。"
+        },
+        "sourceIds": [
+          "research-fixture"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "instrumentId": "EQUITY:US:AAPL",
+        "checkedAt": "2026-09-22T07:59:00.000+08:00",
+        "result": "no-new-material",
+        "note": "测试复用原分析"
+      }
+    ],
+    "pendingQueue": [
+      {
+        "instrumentId": "TEST:pending",
+        "reason": "测试待处理队列"
+      }
+    ],
+    "cacheAudit": {
+      "added": [],
+      "reused": [
+        "EQUITY:US:AAPL|synthetic-earnings-v1"
+      ],
+      "note": "同事件沿用原分析及analyzedAt；新财报/指引/重述/研报需新eventKey。"
+    }
+  },
+  "note": "测试数据，非真实行情",
+  "_inputHash": "bc4072c5b402f2acee6908d33d236663540770a229bcbf2ea402507463994820"
+}

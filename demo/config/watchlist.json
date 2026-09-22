@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "defaultN": 5,
+  "maxN": 20,
+  "description": "必看资产 + 动态板块榜 + 用户候选池；候选名单不是实时热门排名。",
+  "required": [
+    {"id":"INDEX:CN:SSE","symbol":"000001.SH","name":"上证指数","group":"指数","market":"CN","currency":"index"},
+    {"id":"INDEX:CN:SZSE","symbol":"399001.SZ","name":"深证成指","group":"指数","market":"CN","currency":"index"},
+    {"id":"INDEX:CN:CHINEXT","symbol":"399006.SZ","name":"创业板指","group":"指数","market":"CN","currency":"index"},
+    {"id":"INDEX:CN:STAR50","symbol":"000688.SH","name":"科创50","group":"指数","market":"CN","currency":"index"},
+    {"id":"INDEX:CN:CSI300","symbol":"000300.CSI","name":"沪深300","group":"指数","market":"CN","currency":"index"},
+    {"id":"INDEX:CN:CSI500","symbol":"000905.CSI","name":"中证500","group":"指数","market":"CN","currency":"index"},
+    {"id":"INDEX:HK:HSI","symbol":"HSI","name":"恒生指数","group":"指数","market":"HK","currency":"index"},
+    {"id":"INDEX:HK:HSTECH","symbol":"HSTECH","name":"恒生科技","group":"指数","market":"HK","currency":"index"},
+    {"id":"INDEX:HK:HSCEI","symbol":"HSCEI","name":"恒生国企","group":"指数","market":"HK","currency":"index"},
+    {"id":"INDEX:US:SP500","symbol":"SPX","name":"标普500","group":"指数","market":"US","currency":"index"},
+    {"id":"INDEX:US:NASDAQ","symbol":"IXIC","name":"纳斯达克综合","group":"指数","market":"US","currency":"index"},
+    {"id":"INDEX:US:NDX","symbol":"NDX","name":"纳斯达克100","group":"指数","market":"US","currency":"index"},
+    {"id":"INDEX:US:DOW","symbol":"DJI","name":"道琼斯","group":"指数","market":"US","currency":"index"},
+    {"id":"INDEX:US:RUSSELL2000","symbol":"RUT","name":"罗素2000","group":"指数","market":"US","currency":"index"},
+    {"id":"INDEX:JP:NIKKEI225","symbol":"N225","name":"日经225","group":"指数","market":"GLOBAL","currency":"index"},
+    {"id":"INDEX:EU:STOXX50","symbol":"SX5E","name":"欧洲斯托克50","group":"指数","market":"GLOBAL","currency":"index"},
+    {"id":"CRYPTO:BTC:USD","symbol":"BTC","name":"Bitcoin","group":"加密","market":"CRYPTO","currency":"USD","coingeckoId":"bitcoin"},
+    {"id":"CRYPTO:ETH:USD","symbol":"ETH","name":"Ethereum","group":"加密","market":"CRYPTO","currency":"USD","coingeckoId":"ethereum"},
+    {"id":"CRYPTO:SOL:USD","symbol":"SOL","name":"Solana","group":"加密","market":"CRYPTO","currency":"USD","coingeckoId":"solana"},
+    {"id":"CRYPTO:PEPE:USD","symbol":"PEPE","name":"Pepe","group":"加密","market":"CRYPTO","currency":"USD","coingeckoId":"pepe"},
+    {"id":"CRYPTO:HYPE:USD","symbol":"HYPE","name":"Hyperliquid","group":"加密","market":"CRYPTO","currency":"USD","coingeckoId":"hyperliquid","note":"现货USD口径；不要用永续mid或包装资产冒充。"},
+    {"id":"FX:DXY","symbol":"DXY","name":"美元指数","group":"汇率","market":"FX","currency":"index"},
+    {"id":"FX:USDCNY","symbol":"USD/CNY","name":"在岸人民币","group":"汇率","market":"FX","currency":"CNY","note":"数值上升表示人民币相对美元贬值。"},
+    {"id":"FX:USDCNH","symbol":"USD/CNH","name":"离岸人民币","group":"汇率","market":"FX","currency":"CNH"},
+    {"id":"METAL:XAUUSD","symbol":"XAU/USD","name":"现货黄金","group":"商品","market":"GLOBAL","currency":"USD/oz"},
+    {"id":"METAL:XAGUSD","symbol":"XAG/USD","name":"现货白银","group":"商品","market":"GLOBAL","currency":"USD/oz"},
+    {"id":"ENERGY:WTI","symbol":"WTI","name":"WTI原油","group":"商品","market":"GLOBAL","currency":"USD/bbl","requiresContract":true},
+    {"id":"ENERGY:BRENT","symbol":"BRENT","name":"Brent原油","group":"商品","market":"GLOBAL","currency":"USD/bbl","requiresContract":true},
+    {"id":"RATE:US2Y","symbol":"US2Y","name":"美国2年期收益率","group":"利率","market":"US","currency":"%"},
+    {"id":"RATE:US10Y","symbol":"US10Y","name":"美国10年期收益率","group":"利率","market":"US","currency":"%"},
+    {"id":"VOL:VIX","symbol":"VIX","name":"波动率指数","group":"指数","market":"US","currency":"index"}
+  ],
+  "sectors": {
+    "CN": {"classification":"SW2021-L1","source":"https://www.swsresearch.com/","names":["农林牧渔","基础化工","钢铁","有色金属","电子","汽车","家用电器","食品饮料","纺织服饰","轻工制造","医药生物","公用事业","交通运输","房地产","商贸零售","社会服务","综合","建筑材料","建筑装饰","电力设备","国防军工","计算机","传媒","通信","银行","非银金融","煤炭","石油石化","环保","美容护理","机械设备"]},
+    "HK": {"classification":"HSICS-industry","source":"https://www.hsi.com.hk/eng/our-services/hsics","names":["能源业","原材料业","工业","非必需性消费","必需性消费","医疗保健业","电讯业","公用事业","金融业","地产建筑业","资讯科技业","综合企业"]}
+  },
+  "ranking": {
+    "heatMethod":"activity-percentile-v1",
+    "heatWeights":{"volumeRatio20d":0.5,"turnoverPct":0.3,"valueTraded":0.2},
+    "weakMethod":"changePct-minus-sector-median-v1",
+    "maxAsOfSkewMinutes":15,
+    "excludeST":true,
+    "minListingDays":20,
+    "minAvgDailyValue20d":{"CN":20000000,"HK":5000000,"US":10000000},
+    "note":"热度是成交关注度，不是看多；最弱是同板块当日相对表现，不是公司质量。"
+  },
+  "usPools": {
+    "technology": ["AAPL","MSFT","NVDA","GOOGL","AMZN","META","TSLA","AVGO","AMD","INTC","MU","ARM","TSM","ASML","ORCL","CRM","ADBE","NOW","PLTR","SNOW","NET","CRWD","DDOG","COIN","MSTR"],
+    "investment": ["BRK.B","BLK","BX","KKR","APO","ARES","OWL","BN","BAM","CG","TROW","BEN","SCHW","IBKR","GS","MS"]
+  },
+  "investmentDefinition":"上市投资控股、资管、另类资产管理及券商；不是他们持仓里的所有股票，也不把基金ETF当公司。分类为可编辑候选池，不声称当前排名。",
+  "research":{"maxNewAnalysesPerRun":5,"staleAfterDays":120,"triggers":["earnings","guidance","restatement","material-announcement","research-report","thesis-invalidation"]},
+  "newsroom":{"targetMin":18,"targetMax":30,"regions":["CN","US","WORLD"],"noHardQuota":true},
+  "moduleTtlHours":{"quotes":6,"asia-equities":20,"us-equities":20,"news":6,"macro":8,"research":30,"synthesis":8}
+}

@@ -17,6 +17,8 @@
 <script defer src="./assets/watchlist-core.js?v=20260922-numeric-r5"></script>
 <script defer src="./assets/watchlist.js?v=20260922-acceptance-r5"></script>
 <link rel="stylesheet" href="./assets/readable.css?v=20260922-acceptance-r5">
+<link rel="stylesheet" href="./assets/operations.css?v=repair-r6">
+<script defer src="./assets/operations.js?v=repair-r6"></script>
 </head>
 <body>
 <a class="skip" href="#reportRoot">跳至正文</a>
@@ -26,6 +28,7 @@
 <div class="actions"><button id="themeBtn" aria-pressed="false" title="切换深色外观">深色</button><button id="fontBtn" aria-pressed="false">大字</button><button id="refreshBtn" class="solid">检查新报告</button></div>
 </header>
 <main class="shell">
+<aside id="environmentBanner" class="environment-banner" role="status" hidden></aside>
 <div class="edition-bar"><span>市场与全球情报 <span class="muted">/ UTC+8 · 定时快照</span></span><label>报告 <select id="historySelect" aria-label="选择历史报告"><option value="data/latest.json">最新报告</option></select></label></div>
 <div id="feedback" class="feedback" role="status" aria-live="polite">正在读取已发布报告…</div>
 <div id="pendingBar" class="pending" hidden><span>新报告已就绪，当前阅读位置保持不变。</span><button id="applyBtn">载入新报告</button></div>

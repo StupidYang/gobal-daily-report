@@ -1,0 +1,1876 @@
+{
+  "schemaVersion": 5,
+  "reportId": "2026-09-21-2000",
+  "updatedAt": "2026-09-21 20:00",
+  "reportMeta": {
+    "generatedAt": "2026-09-21T20:00:30.000+08:00",
+    "analysisAsOf": "2026-09-21T20:00:00.000+08:00",
+    "dataMode": "synthetic",
+    "contractVersion": "reader-r2",
+    "pipelineVersion": "candidate-gate-v2",
+    "moduleRefs": {
+      "quotes": {
+        "path": "data/runs/quotes/20260921T195900-fixture-quotes.json",
+        "runId": "20260921T195900-fixture-quotes",
+        "generatedAt": "2026-09-21T19:59:00.000+08:00",
+        "dataAsOf": "2026-09-21T19:58:00.000+08:00"
+      },
+      "asia-equities": {
+        "path": "data/runs/asia-equities/20260921T195900-fixture-asia-equities.json",
+        "runId": "20260921T195900-fixture-asia-equities",
+        "generatedAt": "2026-09-21T19:59:00.000+08:00",
+        "dataAsOf": "2026-09-21T19:58:00.000+08:00"
+      },
+      "us-equities": {
+        "path": "data/runs/us-equities/20260921T195900-fixture-us-equities.json",
+        "runId": "20260921T195900-fixture-us-equities",
+        "generatedAt": "2026-09-21T19:59:00.000+08:00",
+        "dataAsOf": "2026-09-21T19:58:00.000+08:00"
+      },
+      "news": {
+        "path": "data/runs/news/20260921T195900-fixture-news.json",
+        "runId": "20260921T195900-fixture-news",
+        "generatedAt": "2026-09-21T19:59:00.000+08:00",
+        "dataAsOf": "2026-09-21T19:58:00.000+08:00"
+      },
+      "macro": {
+        "path": "data/runs/macro/20260921T195900-fixture-macro.json",
+        "runId": "20260921T195900-fixture-macro",
+        "generatedAt": "2026-09-21T19:59:00.000+08:00",
+        "dataAsOf": "2026-09-21T19:58:00.000+08:00"
+      },
+      "research": {
+        "path": "data/runs/research/20260921T195900-fixture-research.json",
+        "runId": "20260921T195900-fixture-research",
+        "generatedAt": "2026-09-21T19:59:00.000+08:00",
+        "dataAsOf": "2026-09-21T19:58:00.000+08:00"
+      }
+    },
+    "edition": "隔离演示 / 测试数据",
+    "status": "synthetic-partial"
+  },
+  "marketState": "测试环境",
+  "overview": "这是隔离的工程验收页面。报价、新闻与分析均为人工合成，不能用作真实市场信息。",
+  "brief": "只验证系统，不提供真实行情",
+  "rolling24hSummary": "七份四小时测试快照构成24小时样本，用来检查曲线、历史切换和最近新增。",
+  "period": {
+    "mode": "rolling-24h",
+    "from": "2026-09-20 20:00",
+    "to": "2026-09-21 20:00",
+    "label": "合成24小时窗口",
+    "coverageHours": 4,
+    "isFull24h": false,
+    "gaps": [
+      "测试启动阶段，尚未满24小时"
+    ]
+  },
+  "recentPeriod": {
+    "from": "2026-09-21 16:00",
+    "to": "2026-09-21 20:00",
+    "label": "最近一轮测试增量"
+  },
+  "canonicalFacts": [
+    {
+      "id": "fixture-fact-0",
+      "label": "上证指数（测试）",
+      "displayValue": "100.7890297",
+      "rawValue": 100.7890297,
+      "changePct": 1.683,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:CN:SSE",
+      "seriesKey": "INDEX:CN:SSE",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-1",
+      "label": "深证成指（测试）",
+      "displayValue": "184.53081",
+      "rawValue": 184.53081,
+      "changePct": 1.819,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:CN:SZSE",
+      "seriesKey": "INDEX:CN:SZSE",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-2",
+      "label": "创业板指（测试）",
+      "displayValue": "266.7947655",
+      "rawValue": 266.7947655,
+      "changePct": 0.282,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:CN:CHINEXT",
+      "seriesKey": "INDEX:CN:CHINEXT",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-3",
+      "label": "科创50（测试）",
+      "displayValue": "347.8491315",
+      "rawValue": 347.8491315,
+      "changePct": -1.514,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:CN:STAR50",
+      "seriesKey": "INDEX:CN:STAR50",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-4",
+      "label": "沪深300（测试）",
+      "displayValue": "429.964213",
+      "rawValue": 429.964213,
+      "changePct": -1.918,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:CN:CSI300",
+      "seriesKey": "INDEX:CN:CSI300",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-5",
+      "label": "中证500（测试）",
+      "displayValue": "515.0227071",
+      "rawValue": 515.0227071,
+      "changePct": -0.559,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:CN:CSI500",
+      "seriesKey": "INDEX:CN:CSI500",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-6",
+      "label": "恒生指数（测试）",
+      "displayValue": "601.9461459",
+      "rawValue": 601.9461459,
+      "changePct": 1.314,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:HK:HSI",
+      "seriesKey": "INDEX:HK:HSI",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-7",
+      "label": "恒生科技（测试）",
+      "displayValue": "687.0782708",
+      "rawValue": 687.0782708,
+      "changePct": 1.979,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:HK:HSTECH",
+      "seriesKey": "INDEX:HK:HSTECH",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-8",
+      "label": "恒生国企（测试）",
+      "displayValue": "767.7320097",
+      "rawValue": 767.7320097,
+      "changePct": 0.824,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:HK:HSCEI",
+      "seriesKey": "INDEX:HK:HSCEI",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-9",
+      "label": "标普500（测试）",
+      "displayValue": "845.4684988",
+      "rawValue": 845.4684988,
+      "changePct": -1.088,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:US:SP500",
+      "seriesKey": "INDEX:US:SP500",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-10",
+      "label": "纳斯达克综合（测试）",
+      "displayValue": "925.3500638",
+      "rawValue": 925.3500638,
+      "changePct": -2,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:US:NASDAQ",
+      "seriesKey": "INDEX:US:NASDAQ",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-11",
+      "label": "纳斯达克100（测试）",
+      "displayValue": "1011.221161",
+      "rawValue": 1011.221161,
+      "changePct": -1.073,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:US:NDX",
+      "seriesKey": "INDEX:US:NDX",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-12",
+      "label": "道琼斯（测试）",
+      "displayValue": "1101.415522",
+      "rawValue": 1101.415522,
+      "changePct": 0.84,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:US:DOW",
+      "seriesKey": "INDEX:US:DOW",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-13",
+      "label": "罗素2000（测试）",
+      "displayValue": "1189.533483",
+      "rawValue": 1189.533483,
+      "changePct": 1.981,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:US:RUSSELL2000",
+      "seriesKey": "INDEX:US:RUSSELL2000",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-14",
+      "label": "日经225（测试）",
+      "displayValue": "1270.268643",
+      "rawValue": 1270.268643,
+      "changePct": 1.301,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:JP:NIKKEI225",
+      "seriesKey": "INDEX:JP:NIKKEI225",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-15",
+      "label": "欧洲斯托克50（测试）",
+      "displayValue": "1344.97939",
+      "rawValue": 1344.97939,
+      "changePct": -0.576,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:INDEX:EU:STOXX50",
+      "seriesKey": "INDEX:EU:STOXX50",
+      "valueType": "index",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-16",
+      "label": "Bitcoin（测试）",
+      "displayValue": "1421.245871",
+      "rawValue": 1421.245871,
+      "changePct": -1.923,
+      "changeBasis": "previous-close",
+      "unit": "USD",
+      "scope": "synthetic-only:CRYPTO:BTC:USD",
+      "seriesKey": "CRYPTO:BTC:USD",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-17",
+      "label": "Ethereum（测试）",
+      "displayValue": "1506.078808",
+      "rawValue": 1506.078808,
+      "changePct": -1.502,
+      "changeBasis": "previous-close",
+      "unit": "USD",
+      "scope": "synthetic-only:CRYPTO:ETH:USD",
+      "seriesKey": "CRYPTO:ETH:USD",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-18",
+      "label": "Solana（测试）",
+      "displayValue": "1598.86033",
+      "rawValue": 1598.86033,
+      "changePct": 0.3,
+      "changeBasis": "previous-close",
+      "unit": "USD",
+      "scope": "synthetic-only:CRYPTO:SOL:USD",
+      "seriesKey": "CRYPTO:SOL:USD",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-19",
+      "label": "Pepe（测试）",
+      "displayValue": "1.381495145e-8",
+      "rawValue": 1.381495145e-8,
+      "changePct": 1.826,
+      "changeBasis": "previous-close",
+      "unit": "USD",
+      "scope": "synthetic-only:CRYPTO:PEPE:USD",
+      "seriesKey": "CRYPTO:PEPE:USD",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-20",
+      "label": "Hyperliquid（测试）",
+      "displayValue": "1773.827597",
+      "rawValue": 1773.827597,
+      "changePct": 1.673,
+      "changeBasis": "previous-close",
+      "unit": "USD",
+      "scope": "synthetic-only:CRYPTO:HYPE:USD",
+      "seriesKey": "CRYPTO:HYPE:USD",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-21",
+      "label": "美元指数（测试）",
+      "displayValue": "1846.571809",
+      "rawValue": 1846.571809,
+      "changePct": -0.018,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:FX:DXY",
+      "seriesKey": "FX:DXY",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-22",
+      "label": "在岸人民币（测试）",
+      "displayValue": "1918.443257",
+      "rawValue": 1918.443257,
+      "changePct": -1.692,
+      "changeBasis": "previous-close",
+      "unit": "CNY",
+      "scope": "synthetic-only:FX:USDCNY",
+      "seriesKey": "FX:USDCNY",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-23",
+      "label": "离岸人民币（测试）",
+      "displayValue": "2000.282851",
+      "rawValue": 2000.282851,
+      "changePct": -1.811,
+      "changeBasis": "previous-close",
+      "unit": "CNH",
+      "scope": "synthetic-only:FX:USDCNH",
+      "seriesKey": "FX:USDCNH",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-24",
+      "label": "现货黄金（测试）",
+      "displayValue": "2094.245841",
+      "rawValue": 2094.245841,
+      "changePct": -0.265,
+      "changeBasis": "previous-close",
+      "unit": "USD/oz",
+      "scope": "synthetic-only:METAL:XAUUSD",
+      "seriesKey": "METAL:XAUUSD",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-25",
+      "label": "现货白银（测试）",
+      "displayValue": "2190.959952",
+      "rawValue": 2190.959952,
+      "changePct": 1.525,
+      "changeBasis": "previous-close",
+      "unit": "USD/oz",
+      "scope": "synthetic-only:METAL:XAGUSD",
+      "seriesKey": "METAL:XAGUSD",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-26",
+      "label": "WTI原油（测试）",
+      "displayValue": "2277.632478",
+      "rawValue": 2277.632478,
+      "changePct": 1.913,
+      "changeBasis": "previous-close",
+      "unit": "USD/bbl",
+      "scope": "synthetic-only:ENERGY:WTI",
+      "seriesKey": "ENERGY:WTI",
+      "valueType": "price",
+      "contract": "2026-11",
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-27",
+      "label": "Brent原油（测试）",
+      "displayValue": "2350.121333",
+      "rawValue": 2350.121333,
+      "changePct": 0.542,
+      "changeBasis": "previous-close",
+      "unit": "USD/bbl",
+      "scope": "synthetic-only:ENERGY:BRENT",
+      "seriesKey": "ENERGY:BRENT",
+      "valueType": "price",
+      "contract": "2026-11",
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "up"
+    },
+    {
+      "id": "fixture-fact-28",
+      "label": "美国2年期收益率（测试）",
+      "displayValue": "测试缺失",
+      "rawValue": null,
+      "changePct": null,
+      "changeBasis": "previous-close",
+      "unit": "%",
+      "scope": "synthetic-only:RATE:US2Y",
+      "seriesKey": "RATE:US2Y",
+      "valueType": "yield",
+      "contract": null,
+      "asOf": null,
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "missing",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-29",
+      "label": "美国10年期收益率（测试）",
+      "displayValue": "2.776283742",
+      "rawValue": 2.776283742,
+      "changePct": -1.976,
+      "changeBasis": "previous-close",
+      "unit": "%",
+      "scope": "synthetic-only:RATE:US10Y",
+      "seriesKey": "RATE:US10Y",
+      "valueType": "yield",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    },
+    {
+      "id": "fixture-fact-30",
+      "label": "波动率指数（测试）",
+      "displayValue": "2587.854797",
+      "rawValue": 2587.854797,
+      "changePct": -0.808,
+      "changeBasis": "previous-close",
+      "unit": "index",
+      "scope": "synthetic-only:VOL:VIX",
+      "seriesKey": "VOL:VIX",
+      "valueType": "price",
+      "contract": null,
+      "asOf": "2026-09-21T19:58:00.000+08:00",
+      "verifiedAt": "2026-09-21T19:59:00.000+08:00",
+      "dataStatus": "complete",
+      "marketState": "test",
+      "sourceIds": [
+        "quotes-fixture"
+      ],
+      "evidenceNote": "测试数据，非真实行情",
+      "window": "合成快照",
+      "direction": "down"
+    }
+  ],
+  "sources": [
+    {
+      "id": "quotes-fixture",
+      "name": "quotes · 人工合成测试样本",
+      "short": "测试证据",
+      "url": "https://stupidyang.github.io/gobal-daily-report/demo/fixture-evidence.html#quotes",
+      "use": "测试数据，非真实行情"
+    },
+    {
+      "id": "asia-equities-fixture",
+      "name": "asia-equities · 人工合成测试样本",
+      "short": "测试证据",
+      "url": "https://stupidyang.github.io/gobal-daily-report/demo/fixture-evidence.html#asia-equities",
+      "use": "测试数据，非真实行情"
+    },
+    {
+      "id": "us-equities-fixture",
+      "name": "us-equities · 人工合成测试样本",
+      "short": "测试证据",
+      "url": "https://stupidyang.github.io/gobal-daily-report/demo/fixture-evidence.html#us-equities",
+      "use": "测试数据，非真实行情"
+    },
+    {
+      "id": "news-fixture",
+      "name": "news · 人工合成测试样本",
+      "short": "测试证据",
+      "url": "https://stupidyang.github.io/gobal-daily-report/demo/fixture-evidence.html#news",
+      "use": "测试数据，非真实行情"
+    },
+    {
+      "id": "macro-fixture",
+      "name": "macro · 人工合成测试样本",
+      "short": "测试证据",
+      "url": "https://stupidyang.github.io/gobal-daily-report/demo/fixture-evidence.html#macro",
+      "use": "测试数据，非真实行情"
+    },
+    {
+      "id": "research-fixture",
+      "name": "research · 人工合成测试样本",
+      "short": "测试证据",
+      "url": "https://stupidyang.github.io/gobal-daily-report/demo/fixture-evidence.html#research",
+      "use": "测试数据，非真实行情"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "A股（测试）",
+      "value": "合成样本",
+      "factId": "fixture-fact-0",
+      "primary": true
+    },
+    {
+      "name": "港股（测试）",
+      "value": "合成样本",
+      "factId": "fixture-fact-6",
+      "primary": true
+    },
+    {
+      "name": "美股（测试）",
+      "value": "合成样本",
+      "factId": "fixture-fact-9",
+      "primary": true
+    },
+    {
+      "name": "BTC（测试）",
+      "value": "合成样本",
+      "factId": "fixture-fact-16",
+      "primary": true
+    },
+    {
+      "name": "黄金（测试）",
+      "value": "合成样本",
+      "factId": "fixture-fact-21",
+      "primary": true
+    },
+    {
+      "name": "原油（测试）",
+      "value": "合成样本",
+      "factId": "fixture-fact-23",
+      "primary": true
+    }
+  ],
+  "marketCoverage": [
+    {
+      "market": "A股",
+      "status": "partial",
+      "sessionState": "测试",
+      "note": "人工合成样本，不代表实际交易状态。",
+      "asOf": "2026-09-21T19:58:00.000+08:00"
+    },
+    {
+      "market": "港股",
+      "status": "partial",
+      "sessionState": "测试",
+      "note": "人工合成样本，不代表实际交易状态。",
+      "asOf": "2026-09-21T19:58:00.000+08:00"
+    },
+    {
+      "market": "美股",
+      "status": "partial",
+      "sessionState": "测试",
+      "note": "人工合成样本，不代表实际交易状态。",
+      "asOf": "2026-09-21T19:58:00.000+08:00"
+    },
+    {
+      "market": "BTC",
+      "status": "partial",
+      "sessionState": "测试",
+      "note": "人工合成样本，不代表实际交易状态。",
+      "asOf": "2026-09-21T19:58:00.000+08:00"
+    },
+    {
+      "market": "黄金",
+      "status": "partial",
+      "sessionState": "测试",
+      "note": "人工合成样本，不代表实际交易状态。",
+      "asOf": "2026-09-21T19:58:00.000+08:00"
+    },
+    {
+      "market": "原油",
+      "status": "partial",
+      "sessionState": "测试",
+      "note": "人工合成样本，不代表实际交易状态。",
+      "asOf": "2026-09-21T19:58:00.000+08:00"
+    }
+  ],
+  "assets": [
+    {
+      "name": "A股",
+      "summary": "测试资产摘要",
+      "detail": "检查报价、数据时点和解释是否相互匹配。",
+      "factIds": [
+        "fixture-fact-0"
+      ]
+    },
+    {
+      "name": "港股",
+      "summary": "测试资产摘要",
+      "detail": "检查报价、数据时点和解释是否相互匹配。",
+      "factIds": [
+        "fixture-fact-6"
+      ]
+    },
+    {
+      "name": "美股",
+      "summary": "测试资产摘要",
+      "detail": "检查报价、数据时点和解释是否相互匹配。",
+      "factIds": [
+        "fixture-fact-9"
+      ]
+    },
+    {
+      "name": "BTC",
+      "summary": "测试资产摘要",
+      "detail": "检查报价、数据时点和解释是否相互匹配。",
+      "factIds": [
+        "fixture-fact-16"
+      ]
+    },
+    {
+      "name": "黄金",
+      "summary": "测试资产摘要",
+      "detail": "检查报价、数据时点和解释是否相互匹配。",
+      "factIds": [
+        "fixture-fact-21"
+      ]
+    },
+    {
+      "name": "原油",
+      "summary": "测试资产摘要",
+      "detail": "检查报价、数据时点和解释是否相互匹配。",
+      "factIds": [
+        "fixture-fact-23"
+      ]
+    }
+  ],
+  "coreAnalysis": {
+    "mainTheme": "测试主线：数据先校验，再组装，再发布；任何一步失败都保留旧报告。",
+    "expectationGap": "测试预期差：故意保留一个缺失字段，确认页面不会把它显示为零。",
+    "divergence": "测试背离：不同资产使用独立合成序列，不能混用单位或时点。",
+    "regime": "隔离工程验收，不描述现实市场状态。",
+    "priceIn": "仅有人工合成输入，没有实际市场定价判断。",
+    "bullCase": "测试成功情景：所有依赖齐全并通过校验。",
+    "bullInvalidation": "任一冻结输入缺失、引用错误或发生生产污染。",
+    "bearCase": "测试失败情景：接口报错、格式损坏、历史切换竞态。",
+    "bearInvalidation": "故障恢复后读取正确版本，旧内容未被抹掉。"
+  },
+  "deepDive": [
+    {
+      "name": "A股",
+      "title": "A股（测试详报）",
+      "oneLine": "用途：核对完整正文、事实引用和展开阅读",
+      "analysis": "A股的测试详报不对应现实走势。这里用多段信息验证：首屏摘要不会替代完整正文；每个来源都能定位测试证据；同一时间点的观测不会因为报告刷新而重复造点。\n\n故障注入时保留最后一份有效数据，恢复后清除错误提示。未知数据保持未知，不能用零、编造时间或临时排名填补。",
+      "factIds": [
+        "fixture-fact-0"
+      ],
+      "sourceIds": [
+        "quotes-fixture"
+      ]
+    },
+    {
+      "name": "港股",
+      "title": "港股（测试详报）",
+      "oneLine": "用途：核对完整正文、事实引用和展开阅读",
+      "analysis": "港股的测试详报不对应现实走势。这里用多段信息验证：首屏摘要不会替代完整正文；每个来源都能定位测试证据；同一时间点的观测不会因为报告刷新而重复造点。\n\n故障注入时保留最后一份有效数据，恢复后清除错误提示。未知数据保持未知，不能用零、编造时间或临时排名填补。",
+      "factIds": [
+        "fixture-fact-6"
+      ],
+      "sourceIds": [
+        "quotes-fixture"
+      ]
+    },
+    {
+      "name": "美股",
+      "title": "美股（测试详报）",
+      "oneLine": "用途：核对完整正文、事实引用和展开阅读",
+      "analysis": "美股的测试详报不对应现实走势。这里用多段信息验证：首屏摘要不会替代完整正文；每个来源都能定位测试证据；同一时间点的观测不会因为报告刷新而重复造点。\n\n故障注入时保留最后一份有效数据，恢复后清除错误提示。未知数据保持未知，不能用零、编造时间或临时排名填补。",
+      "factIds": [
+        "fixture-fact-9"
+      ],
+      "sourceIds": [
+        "quotes-fixture"
+      ]
+    },
+    {
+      "name": "BTC",
+      "title": "BTC（测试详报）",
+      "oneLine": "用途：核对完整正文、事实引用和展开阅读",
+      "analysis": "BTC的测试详报不对应现实走势。这里用多段信息验证：首屏摘要不会替代完整正文；每个来源都能定位测试证据；同一时间点的观测不会因为报告刷新而重复造点。\n\n故障注入时保留最后一份有效数据，恢复后清除错误提示。未知数据保持未知，不能用零、编造时间或临时排名填补。",
+      "factIds": [
+        "fixture-fact-16"
+      ],
+      "sourceIds": [
+        "quotes-fixture"
+      ]
+    },
+    {
+      "name": "黄金",
+      "title": "黄金（测试详报）",
+      "oneLine": "用途：核对完整正文、事实引用和展开阅读",
+      "analysis": "黄金的测试详报不对应现实走势。这里用多段信息验证：首屏摘要不会替代完整正文；每个来源都能定位测试证据；同一时间点的观测不会因为报告刷新而重复造点。\n\n故障注入时保留最后一份有效数据，恢复后清除错误提示。未知数据保持未知，不能用零、编造时间或临时排名填补。",
+      "factIds": [
+        "fixture-fact-21"
+      ],
+      "sourceIds": [
+        "quotes-fixture"
+      ]
+    },
+    {
+      "name": "原油",
+      "title": "原油（测试详报）",
+      "oneLine": "用途：核对完整正文、事实引用和展开阅读",
+      "analysis": "原油的测试详报不对应现实走势。这里用多段信息验证：首屏摘要不会替代完整正文；每个来源都能定位测试证据；同一时间点的观测不会因为报告刷新而重复造点。\n\n故障注入时保留最后一份有效数据，恢复后清除错误提示。未知数据保持未知，不能用零、编造时间或临时排名填补。",
+      "factIds": [
+        "fixture-fact-23"
+      ],
+      "sourceIds": [
+        "quotes-fixture"
+      ]
+    }
+  ],
+  "analysisTheses": [
+    {
+      "id": "fixture-thesis",
+      "topic": "测试假设",
+      "observed": "同批六个模块均有不可变快照。",
+      "interpretation": "综合报告应冻结同一批次的准确输入。",
+      "alternatives": "部分模块缺失时应等待，不能伪装完整成功。",
+      "validation": "读取回执、历史、索引和公网字节校验。",
+      "confidence": "high",
+      "evidenceFactIds": [
+        "fixture-fact-0"
+      ]
+    }
+  ],
+  "judgmentRevisions": [
+    {
+      "id": "fixture-revision",
+      "topic": "测试修正记录",
+      "previous": "上一轮含有未知数据。",
+      "newEvidence": "本轮仍故意保留缺口以检查降级显示。",
+      "revised": "不把未知改成零。",
+      "unresolved": "此页面不验证真实数据源。",
+      "updatedAt": "2026-09-21T20:00:00.000+08:00",
+      "status": "待验证"
+    }
+  ],
+  "dataDefinitions": [
+    {
+      "name": "测试数据",
+      "term": "测试数据",
+      "definition": "所有数值与事件来自确定性合成函数，不是市场采集结果。"
+    },
+    {
+      "name": "数据时点",
+      "term": "数据时点",
+      "definition": "asOf是观测时间，generatedAt是生成时间；两者分开。"
+    }
+  ],
+  "macroEvents": [
+    {
+      "title": "测试宏观事件",
+      "actual": "演示数值",
+      "expected": "演示预期",
+      "analysis": "检验事实、预期和判断分栏展示。非真实宏观数据。",
+      "sourceIds": [
+        "macro-fixture"
+      ]
+    }
+  ],
+  "news": [
+    {
+      "id": "synthetic-event-0",
+      "eventId": "synthetic-event-0",
+      "regions": [
+        "CN"
+      ],
+      "kind": "market",
+      "category": "演示科研成果",
+      "priority": "high",
+      "title": "测试事件 01 · 演示科研成果",
+      "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+      "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+      "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+      "affectedGroups": "演示人群 / 演示企业",
+      "marketImpact": "无现实市场影响，本条为人工合成测试。",
+      "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+      "nextWatch": "检查此条是否能通过搜索和分页找到。",
+      "horizon": "测试窗口",
+      "confidence": "low",
+      "eventAt": "2026-09-21T19:58:00.000+08:00",
+      "publishedAt": "2026-09-21T19:58:00.000+08:00",
+      "updatedAt": "2026-09-21T19:58:00.000+08:00",
+      "firstSeenAt": "2026-09-21T19:58:00.000+08:00",
+      "updateType": "new",
+      "sourceIds": [
+        "news-fixture"
+      ]
+    },
+    {
+      "id": "synthetic-event-1",
+      "eventId": "synthetic-event-1",
+      "regions": [
+        "US"
+      ],
+      "kind": "general",
+      "category": "演示交通调整",
+      "priority": "high",
+      "title": "测试事件 02 · 演示交通调整",
+      "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+      "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+      "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+      "affectedGroups": "演示人群 / 演示企业",
+      "marketImpact": "无现实市场影响，本条为人工合成测试。",
+      "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+      "nextWatch": "检查此条是否能通过搜索和分页找到。",
+      "horizon": "测试窗口",
+      "confidence": "low",
+      "eventAt": "2026-09-21T18:58:00.000+08:00",
+      "publishedAt": "2026-09-21T18:58:00.000+08:00",
+      "updatedAt": "2026-09-21T18:58:00.000+08:00",
+      "firstSeenAt": "2026-09-21T18:58:00.000+08:00",
+      "updateType": "new",
+      "sourceIds": [
+        "news-fixture"
+      ]
+    },
+    {
+      "id": "synthetic-event-2",
+      "eventId": "synthetic-event-2",
+      "regions": [
+        "WORLD"
+      ],
+      "kind": "general",
+      "category": "演示服务升级",
+      "priority": "high",
+      "title": "测试事件 03 · 演示服务升级",
+      "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+      "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+      "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+      "affectedGroups": "演示人群 / 演示企业",
+      "marketImpact": "无现实市场影响，本条为人工合成测试。",
+      "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+      "nextWatch": "检查此条是否能通过搜索和分页找到。",
+      "horizon": "测试窗口",
+      "confidence": "low",
+      "eventAt": "2026-09-21T17:58:00.000+08:00",
+      "publishedAt": "2026-09-21T17:58:00.000+08:00",
+      "updatedAt": "2026-09-21T17:58:00.000+08:00",
+      "firstSeenAt": "2026-09-21T17:58:00.000+08:00",
+      "updateType": "new",
+      "sourceIds": [
+        "news-fixture"
+      ]
+    }
+  ],
+  "worldEvents": [],
+  "newsroom": {
+    "windowStart": "2026-09-20T20:00:00.000+08:00",
+    "windowEnd": "2026-09-21T19:58:00.000+08:00",
+    "items": [
+      {
+        "id": "synthetic-event-0",
+        "eventId": "synthetic-event-0",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "category": "演示科研成果",
+        "priority": "high",
+        "title": "测试事件 01 · 演示科研成果",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T19:58:00.000+08:00",
+        "publishedAt": "2026-09-21T19:58:00.000+08:00",
+        "updatedAt": "2026-09-21T19:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T19:58:00.000+08:00",
+        "updateType": "new",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-1",
+        "eventId": "synthetic-event-1",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "category": "演示交通调整",
+        "priority": "high",
+        "title": "测试事件 02 · 演示交通调整",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T18:58:00.000+08:00",
+        "publishedAt": "2026-09-21T18:58:00.000+08:00",
+        "updatedAt": "2026-09-21T18:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T18:58:00.000+08:00",
+        "updateType": "new",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-2",
+        "eventId": "synthetic-event-2",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "category": "演示服务升级",
+        "priority": "high",
+        "title": "测试事件 03 · 演示服务升级",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T17:58:00.000+08:00",
+        "publishedAt": "2026-09-21T17:58:00.000+08:00",
+        "updatedAt": "2026-09-21T17:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T17:58:00.000+08:00",
+        "updateType": "new",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-3",
+        "eventId": "synthetic-event-3",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "category": "演示企业披露",
+        "priority": "normal",
+        "title": "测试事件 04 · 演示企业披露",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T16:58:00.000+08:00",
+        "publishedAt": "2026-09-21T16:58:00.000+08:00",
+        "updatedAt": "2026-09-21T16:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T16:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-4",
+        "eventId": "synthetic-event-4",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "category": "演示设备测试",
+        "priority": "normal",
+        "title": "测试事件 05 · 演示设备测试",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T15:58:00.000+08:00",
+        "publishedAt": "2026-09-21T15:58:00.000+08:00",
+        "updatedAt": "2026-09-21T15:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T15:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-5",
+        "eventId": "synthetic-event-5",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "category": "演示供应变化",
+        "priority": "normal",
+        "title": "测试事件 06 · 演示供应变化",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T14:58:00.000+08:00",
+        "publishedAt": "2026-09-21T14:58:00.000+08:00",
+        "updatedAt": "2026-09-21T14:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T14:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-6",
+        "eventId": "synthetic-event-6",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "category": "演示科研成果",
+        "priority": "normal",
+        "title": "测试事件 07 · 演示科研成果",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T13:58:00.000+08:00",
+        "publishedAt": "2026-09-21T13:58:00.000+08:00",
+        "updatedAt": "2026-09-21T13:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T13:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-7",
+        "eventId": "synthetic-event-7",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "category": "演示交通调整",
+        "priority": "normal",
+        "title": "测试事件 08 · 演示交通调整",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T12:58:00.000+08:00",
+        "publishedAt": "2026-09-21T12:58:00.000+08:00",
+        "updatedAt": "2026-09-21T12:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T12:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-8",
+        "eventId": "synthetic-event-8",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "category": "演示服务升级",
+        "priority": "normal",
+        "title": "测试事件 09 · 演示服务升级",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T11:58:00.000+08:00",
+        "publishedAt": "2026-09-21T11:58:00.000+08:00",
+        "updatedAt": "2026-09-21T11:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T11:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-9",
+        "eventId": "synthetic-event-9",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "category": "演示企业披露",
+        "priority": "normal",
+        "title": "测试事件 10 · 演示企业披露",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T10:58:00.000+08:00",
+        "publishedAt": "2026-09-21T10:58:00.000+08:00",
+        "updatedAt": "2026-09-21T10:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T10:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-10",
+        "eventId": "synthetic-event-10",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "category": "演示设备测试",
+        "priority": "normal",
+        "title": "测试事件 11 · 演示设备测试",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T09:58:00.000+08:00",
+        "publishedAt": "2026-09-21T09:58:00.000+08:00",
+        "updatedAt": "2026-09-21T09:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T09:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-11",
+        "eventId": "synthetic-event-11",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "category": "演示供应变化",
+        "priority": "normal",
+        "title": "测试事件 12 · 演示供应变化",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T08:58:00.000+08:00",
+        "publishedAt": "2026-09-21T08:58:00.000+08:00",
+        "updatedAt": "2026-09-21T08:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T08:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-12",
+        "eventId": "synthetic-event-12",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "category": "演示科研成果",
+        "priority": "normal",
+        "title": "测试事件 13 · 演示科研成果",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T07:58:00.000+08:00",
+        "publishedAt": "2026-09-21T07:58:00.000+08:00",
+        "updatedAt": "2026-09-21T07:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T07:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-13",
+        "eventId": "synthetic-event-13",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "category": "演示交通调整",
+        "priority": "normal",
+        "title": "测试事件 14 · 演示交通调整",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T06:58:00.000+08:00",
+        "publishedAt": "2026-09-21T06:58:00.000+08:00",
+        "updatedAt": "2026-09-21T06:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T06:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-14",
+        "eventId": "synthetic-event-14",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "category": "演示服务升级",
+        "priority": "normal",
+        "title": "测试事件 15 · 演示服务升级",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T05:58:00.000+08:00",
+        "publishedAt": "2026-09-21T05:58:00.000+08:00",
+        "updatedAt": "2026-09-21T05:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T05:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-15",
+        "eventId": "synthetic-event-15",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "category": "演示企业披露",
+        "priority": "normal",
+        "title": "测试事件 16 · 演示企业披露",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T04:58:00.000+08:00",
+        "publishedAt": "2026-09-21T04:58:00.000+08:00",
+        "updatedAt": "2026-09-21T04:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T04:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-16",
+        "eventId": "synthetic-event-16",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "category": "演示设备测试",
+        "priority": "normal",
+        "title": "测试事件 17 · 演示设备测试",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T03:58:00.000+08:00",
+        "publishedAt": "2026-09-21T03:58:00.000+08:00",
+        "updatedAt": "2026-09-21T03:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T03:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      },
+      {
+        "id": "synthetic-event-17",
+        "eventId": "synthetic-event-17",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "category": "演示供应变化",
+        "priority": "normal",
+        "title": "测试事件 18 · 演示供应变化",
+        "summary": "这是为验证长文本、分页、搜索和区域去重而构造的事件。没有对应的现实新闻，不可引用为事实。",
+        "plainImpact": "测试影响说明：展示受影响对象、传导渠道与时间范围。此处只验收内容能否完整到达页面。",
+        "assessment": "测试判断：不从这条虚构事件推导现实投资结论。",
+        "affectedGroups": "演示人群 / 演示企业",
+        "marketImpact": "无现实市场影响，本条为人工合成测试。",
+        "counterRisk": "主要用于验证遗漏、截断和错误引用。",
+        "nextWatch": "检查此条是否能通过搜索和分页找到。",
+        "horizon": "测试窗口",
+        "confidence": "low",
+        "eventAt": "2026-09-21T02:58:00.000+08:00",
+        "publishedAt": "2026-09-21T02:58:00.000+08:00",
+        "updatedAt": "2026-09-21T02:58:00.000+08:00",
+        "firstSeenAt": "2026-09-21T02:58:00.000+08:00",
+        "updateType": "developing",
+        "sourceIds": [
+          "news-fixture"
+        ]
+      }
+    ],
+    "coverage": {
+      "CN": "6条测试事件",
+      "US": "6条测试事件",
+      "WORLD": "6条测试事件"
+    }
+  },
+  "narrativeTriggers": [
+    {
+      "title": "依赖齐全（测试）",
+      "effect": "发布器只在完整校验成功后更新指针。"
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-21T22:00:00.000+08:00",
+      "time": "2026-09-21 22:00",
+      "title": "下一次测试检查点（非真实事件）",
+      "impact": "展示倒计时与未知时间的区别。"
+    },
+    {
+      "at": null,
+      "time": "时间待定",
+      "title": "未确认时点测试",
+      "impact": "不制造假的倒计时。"
+    }
+  ],
+  "watch": [
+    {
+      "point": "测试发布闭环",
+      "a": "依赖齐全：发布完整报告。",
+      "b": "输入错误：拒绝且保持旧数据。"
+    }
+  ],
+  "evolution24h": [
+    {
+      "at": "2026-09-21T20:00:00.000+08:00",
+      "time": "2026-09-21 20:00",
+      "title": "第2份测试快照",
+      "summary": "检查24小时演化、增量和来源。",
+      "observed": "合成数值更新",
+      "interpretation": "工程验收专用",
+      "firstSeenAt": "2026-09-21T20:00:00.000+08:00"
+    }
+  ],
+  "changes": [
+    {
+      "title": "测试变化",
+      "change": "本轮合成序列变化。",
+      "why": "用于验证历史曲线。"
+    }
+  ],
+  "recentChanges": [
+    {
+      "title": "最近测试增量",
+      "summary": "新快照已经进入隔离目录，正式报告保持不变。",
+      "firstSeenAt": "2026-09-21T20:00:00.000+08:00"
+    }
+  ],
+  "plainLanguage": {
+    "verdict": "测试环境：验证完整发布与阅读，不是真实行情",
+    "bottomLine": "这是合成数据演示。七个模块、24小时曲线、行业榜、新闻和研究缓存一起验收；自动任务保持暂停。",
+    "whyNow": "用于发现只测首页无法覆盖的发布和阅读错误。",
+    "horizon": "工程验收窗口",
+    "confidence": "high",
+    "invalidation": "任何测试失败，或测试内容进入正式数据目录。",
+    "impacts": [
+      {
+        "asset": "A股",
+        "effect": "仅供测试",
+        "reason": "该资产使用合成输入展示完整路径。",
+        "takeaway": "不据此形成现实投资判断。",
+        "horizon": "测试窗口",
+        "counterRisk": "真实数据源尚需单独验收。",
+        "invalidation": "字段缺失或引用错误。",
+        "confidence": "low",
+        "evidenceFactIds": [
+          "fixture-fact-0"
+        ]
+      },
+      {
+        "asset": "港股",
+        "effect": "仅供测试",
+        "reason": "该资产使用合成输入展示完整路径。",
+        "takeaway": "不据此形成现实投资判断。",
+        "horizon": "测试窗口",
+        "counterRisk": "真实数据源尚需单独验收。",
+        "invalidation": "字段缺失或引用错误。",
+        "confidence": "low",
+        "evidenceFactIds": [
+          "fixture-fact-6"
+        ]
+      },
+      {
+        "asset": "美股",
+        "effect": "仅供测试",
+        "reason": "该资产使用合成输入展示完整路径。",
+        "takeaway": "不据此形成现实投资判断。",
+        "horizon": "测试窗口",
+        "counterRisk": "真实数据源尚需单独验收。",
+        "invalidation": "字段缺失或引用错误。",
+        "confidence": "low",
+        "evidenceFactIds": [
+          "fixture-fact-9"
+        ]
+      },
+      {
+        "asset": "BTC",
+        "effect": "仅供测试",
+        "reason": "该资产使用合成输入展示完整路径。",
+        "takeaway": "不据此形成现实投资判断。",
+        "horizon": "测试窗口",
+        "counterRisk": "真实数据源尚需单独验收。",
+        "invalidation": "字段缺失或引用错误。",
+        "confidence": "low",
+        "evidenceFactIds": [
+          "fixture-fact-16"
+        ]
+      },
+      {
+        "asset": "黄金",
+        "effect": "仅供测试",
+        "reason": "该资产使用合成输入展示完整路径。",
+        "takeaway": "不据此形成现实投资判断。",
+        "horizon": "测试窗口",
+        "counterRisk": "真实数据源尚需单独验收。",
+        "invalidation": "字段缺失或引用错误。",
+        "confidence": "low",
+        "evidenceFactIds": [
+          "fixture-fact-21"
+        ]
+      },
+      {
+        "asset": "原油",
+        "effect": "仅供测试",
+        "reason": "该资产使用合成输入展示完整路径。",
+        "takeaway": "不据此形成现实投资判断。",
+        "horizon": "测试窗口",
+        "counterRisk": "真实数据源尚需单独验收。",
+        "invalidation": "字段缺失或引用错误。",
+        "confidence": "low",
+        "evidenceFactIds": [
+          "fixture-fact-23"
+        ]
+      }
+    ]
+  },
+  "frameworkAnalysis": [
+    {
+      "id": "source-time",
+      "framework": "数据时点一致性（测试）",
+      "concept": "来源时间与生成时间分别记录。",
+      "observed": "每条测试报价有独立asOf。",
+      "mechanism": "通过冻结引用防止读到后续更新的模块。",
+      "conclusion": "曲线只能连接同口径、不同观测时间的点。",
+      "invalidation": "发生混合时点或单位。"
+    },
+    {
+      "id": "dependency",
+      "framework": "依赖与事务完整性（测试）",
+      "concept": "完整输入先验证，再提交可见结果。",
+      "observed": "六个输入指向不可变run。",
+      "mechanism": "报告、历史、索引和回执构成同一写入集合。",
+      "conclusion": "部分失败不能更新正式指针。",
+      "invalidation": "任一输出和回执不一致。"
+    },
+    {
+      "id": "degradation",
+      "framework": "故障降级（测试）",
+      "concept": "错误发生时保留最后一次有效内容。",
+      "observed": "缺值、损坏JSON和503由测试注入。",
+      "mechanism": "错误与旧值分别显示。",
+      "conclusion": "恢复后清除错误，不重置研究时间。",
+      "invalidation": "发生空白覆盖或残留假成功提示。"
+    }
+  ],
+  "frameworkSynthesis": {
+    "verdict": "这些是工程验收框架，不是对现实市场的预测。",
+    "agreement": "所有检查都要求可重复、可追溯。",
+    "disagreement": "技术通过不等于真实新闻和报价准确。",
+    "weighting": "先检查数据隔离与完整性，再检查布局和交互。",
+    "invalidation": "真实任务与测试状态混淆。"
+  },
+  "methodology": "测试数据，非真实行情。通过与生产相同的校验、不可变快照、历史索引及浏览器代码；测试通过不证明外部来源准确或定时任务已经运行。"
+}

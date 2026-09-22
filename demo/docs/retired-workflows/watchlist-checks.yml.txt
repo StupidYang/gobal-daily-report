@@ -1,0 +1,46 @@
+name: Modules and watchlist checks
+on:
+  push:
+    branches: [main]
+    paths: ['index.html','assets/watchlist*','lib/**','scripts/**','tests/**','config/**','automation/**','data/modules/**','.github/workflows/watchlist-checks.yml']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: gdr-modules-check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/gdr.cjs check-config
+      - run: node --check assets/watchlist.js && node --check assets/watchlist-core.js && node --check lib/pipeline.cjs && node --check scripts/run-agent.cjs
+      - run: node --test tests/*.test.cjs
+      - name: Validate published modules if present
+        run: |
+          for f in data/modules/*.json; do
+            [ -f "$f" ] || continue
+            node scripts/gdr.cjs validate "$f"
+          done
+      - name: Check exported runtime entries are current
+        run: |
+          node scripts/gdr.cjs export-tasks > /tmp/tasks.json
+          diff -u automation/task-export.json /tmp/tasks.json
+      - name: Check binding hashes and schedules
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const exp=JSON.parse(fs.readFileSync('automation/task-export.json'));
+          const bindings=JSON.parse(fs.readFileSync('automation/bindings.json'));
+          for(const task of exp.tasks){
+            const b=bindings.bindings.find(b=>b.role===task.role);
+            const hash=crypto.createHash('sha256').update(task.prompt).digest('hex');
+            if(!b||b.entryPromptSha256!==hash||b.rrule!==task.rrule||b.timezone!==task.timezone)throw Error('Task binding drift: '+task.role);
+          }
+          console.log('Role/entry/schedule backup consistent; this does not query live platform state.');
+          NODE

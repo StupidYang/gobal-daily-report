@@ -1,66 +1,38 @@
 {
   "platform": "ChatGPT Tasks",
-  "manifestVersion": "modules-v1",
-  "configuredAt": "2026-09-22T12:17:27+08:00",
-  "scheduleRevisedAt": "2026-09-22T13:00:04+08:00",
-  "verification": "Repository definitions checked; live platform update calls are verified separately during acceptance.",
-  "migrationNote": "Task IDs are local to this account. Recreate and replace IDs on another account; role is the portable identity.",
+  "manifestVersion": "tasks-v2",
+  "verification": "Three existing native task IDs updated successfully through the connected scheduler on 2026-09-22T18:26:01+08:00. All remain is_enabled=false. Entry prompts and RRULEs match this export; 4 retired recurring and 9 one-off records were not re-enabled.",
   "bindings": [
     {
-      "role": "quotes",
-      "timezone": "Asia/Singapore",
-      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=40;BYSECOND=0",
-      "taskId": "6ab20134cdd08191a3f1921e6aaae3d3",
-      "entryPromptSha256": "4f5905d831e0a7bc82a9b400c0a086132b91e54bd7a56e1314331941119b2b2c",
-      "enabled": true
-    },
-    {
-      "role": "asia-equities",
-      "timezone": "Asia/Singapore",
-      "rrule": "FREQ=DAILY;BYHOUR=9,12,15,16;BYMINUTE=35;BYSECOND=0",
-      "taskId": "6aafc701dc80819187ea120074ccef44",
-      "entryPromptSha256": "fe3989b4dd34ba58cc52fe23963daa7dc8963f1439e952800f2716583a6120f2",
-      "enabled": true
-    },
-    {
-      "role": "us-equities",
-      "timezone": "America/New_York",
-      "rrule": "FREQ=DAILY;BYHOUR=9,12,16;BYMINUTE=35;BYSECOND=0",
-      "taskId": "6ab1cb9983d88191bf0db6340bfe6972",
-      "entryPromptSha256": "269279bd86f6a7666fe2f4bbf07dc052bc18143c5174ae6f88f06a164434245f",
-      "enabled": true
-    },
-    {
-      "role": "news",
-      "timezone": "Asia/Singapore",
-      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=25;BYSECOND=0",
-      "taskId": "6ab2013ceedc8191b470f45364e11ea0",
-      "entryPromptSha256": "f29f7df0b9f23c4251283f5a1ed595c9cb6c58fcbcde2dc77d62e8164a804b15",
-      "enabled": true
-    },
-    {
-      "role": "macro",
-      "timezone": "Asia/Singapore",
-      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=30;BYSECOND=0",
-      "taskId": "6ab20146865c819181927e4af498244c",
-      "entryPromptSha256": "3ba0079410aa86dd8e52f59341696f8e910282f4b6c3a508befb1d2eeb2b945b",
-      "enabled": true
-    },
-    {
-      "role": "research",
-      "timezone": "Asia/Singapore",
-      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=45;BYSECOND=0",
-      "taskId": "6ab2015617a08191ab7c856ed2aa09b0",
-      "entryPromptSha256": "e4884959bb18ff466fd6b4e1539ca7ad80be648dbf5bcc49dfe9993b63accab9",
-      "enabled": true
-    },
-    {
-      "role": "synthesis",
+      "id": "global-main",
+      "taskId": "6ab1dc6f6d6081919ac20591b5ee4988",
       "timezone": "Asia/Singapore",
       "rrule": "FREQ=DAILY;BYHOUR=0,4,8,12,16,20;BYMINUTE=0;BYSECOND=0",
-      "taskId": "6ab1dc6f6d6081919ac20591b5ee4988",
-      "entryPromptSha256": "d74c9ddfb60fab0320473427f722d72bef97e0bdac5cc4b74ec44b6c3145ea8e",
-      "enabled": true
+      "enabled": false,
+      "entryPromptSha256": "d1ac6a9102c42a21634779cba6cb328a96d7f78c9183ba5e24d0e3cc05462e1d"
+    },
+    {
+      "id": "asia-session",
+      "taskId": "6aafc701dc80819187ea120074ccef44",
+      "timezone": "Asia/Singapore",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=9,15,16;BYMINUTE=35;BYSECOND=0",
+      "enabled": false,
+      "entryPromptSha256": "d20c36fad0a06dbe4d990a1ddaa36c2b01738f216d589130a840c4d38902296f"
+    },
+    {
+      "id": "us-session",
+      "taskId": "6ab1cb9983d88191bf0db6340bfe6972",
+      "timezone": "America/New_York",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=9,16;BYMINUTE=35;BYSECOND=0",
+      "enabled": false,
+      "entryPromptSha256": "bca4819bcd3ad80ed6341c62b49c5ad30528afdfb367d0fd95f78502e481f6b7"
     }
-  ]
+  ],
+  "retiredRecurringIds": [
+    "6ab20134cdd08191a3f1921e6aaae3d3",
+    "6ab2013ceedc8191b470f45364e11ea0",
+    "6ab20146865c819181927e4af498244c",
+    "6ab2015617a08191ab7c856ed2aa09b0"
+  ],
+  "oneOffPolicy": "Do not re-enable or recreate historical initialization/acceptance tasks."
 }

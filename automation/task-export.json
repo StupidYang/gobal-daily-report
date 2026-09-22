@@ -1,178 +1,53 @@
 {
-  "manifestVersion": "modules-v1",
+  "manifestVersion": "tasks-v2",
   "repository": "StupidYang/gobal-daily-report",
   "tasks": [
     {
-      "role": "quotes",
-      "title": "GDR 基础行情",
+      "id": "global-main",
+      "title": "GDR 每4小时全球主报告",
       "timezone": "Asia/Singapore",
-      "cron": "40 3,7,11,15,19,23 * * *",
-      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=40;BYSECOND=0",
-      "promptFile": "automation/prompts/quotes.md",
-      "readModules": [
-        "quotes"
-      ],
-      "ownedPaths": [
-        "data/modules/quotes.json",
-        "data/runs/quotes/"
-      ],
-      "ui": "必看资产 / 独立报价时点",
-      "maxMinutes": 12,
-      "submissionPaths": [
-        "data/inbox/quotes/"
-      ],
-      "publicationReceipt": "data/receipts/quotes/<runId>.json",
-      "prompt": "执行GDR模块 quotes。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/quotes.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/quotes/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/quotes/<runId>.json；只有status=published并回读正式产物才叫发布成功，waiting-dependencies/pending/rejected分别说明；完整执行细则以共用及角色文件为准，不以本入口替代。调度已配置，不创建或修改任务，不修改代码与提示词。"
-    },
-    {
-      "role": "asia-equities",
-      "title": "GDR A股港股板块",
-      "timezone": "Asia/Singapore",
-      "cron": "35 9,12,15,16 * * *",
-      "rrule": "FREQ=DAILY;BYHOUR=9,12,15,16;BYMINUTE=35;BYSECOND=0",
-      "promptFile": "automation/prompts/asia-equities.md",
-      "readModules": [
-        "asia-equities",
-        "macro",
-        "news"
-      ],
-      "ownedPaths": [
-        "data/modules/asia-equities.json",
-        "data/runs/asia-equities/"
-      ],
-      "ui": "A股31行业 / 港股12行业热弱榜",
-      "maxMinutes": 20,
-      "submissionPaths": [
-        "data/inbox/asia-equities/"
-      ],
-      "publicationReceipt": "data/receipts/asia-equities/<runId>.json",
-      "prompt": "执行GDR模块 asia-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/asia-equities.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/asia-equities/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/asia-equities/<runId>.json；只有status=published并回读正式产物才叫发布成功，waiting-dependencies/pending/rejected分别说明；完整执行细则以共用及角色文件为准，不以本入口替代。调度已配置，不创建或修改任务，不修改代码与提示词。"
-    },
-    {
-      "role": "us-equities",
-      "title": "GDR 美股科技投资",
-      "timezone": "America/New_York",
-      "cron": "35 9,12,16 * * *",
-      "rrule": "FREQ=DAILY;BYHOUR=9,12,16;BYMINUTE=35;BYSECOND=0",
-      "promptFile": "automation/prompts/us-equities.md",
-      "readModules": [
-        "us-equities",
-        "macro",
-        "news"
-      ],
-      "ownedPaths": [
-        "data/modules/us-equities.json",
-        "data/runs/us-equities/"
-      ],
-      "ui": "美股科技 / 投资公司候选池与排名",
-      "maxMinutes": 15,
-      "submissionPaths": [
-        "data/inbox/us-equities/"
-      ],
-      "publicationReceipt": "data/receipts/us-equities/<runId>.json",
-      "prompt": "执行GDR模块 us-equities。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/us-equities.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/us-equities/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/us-equities/<runId>.json；只有status=published并回读正式产物才叫发布成功，waiting-dependencies/pending/rejected分别说明；完整执行细则以共用及角色文件为准，不以本入口替代。调度已配置，不创建或修改任务，不修改代码与提示词。"
-    },
-    {
-      "role": "news",
-      "title": "GDR 中国美国全球新闻",
-      "timezone": "Asia/Singapore",
-      "cron": "25 3,7,11,15,19,23 * * *",
-      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=25;BYSECOND=0",
-      "promptFile": "automation/prompts/news.md",
-      "readModules": [
-        "news"
-      ],
-      "ownedPaths": [
-        "data/modules/news.json",
-        "data/runs/news/"
-      ],
-      "ui": "综合时事库，保留非财经增量",
-      "maxMinutes": 15,
-      "submissionPaths": [
-        "data/inbox/news/"
-      ],
-      "publicationReceipt": "data/receipts/news/<runId>.json",
-      "prompt": "执行GDR模块 news。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/news.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/news/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/news/<runId>.json；只有status=published并回读正式产物才叫发布成功，waiting-dependencies/pending/rejected分别说明；完整执行细则以共用及角色文件为准，不以本入口替代。调度已配置，不创建或修改任务，不修改代码与提示词。"
-    },
-    {
-      "role": "macro",
-      "title": "GDR 宏观与资金",
-      "timezone": "Asia/Singapore",
-      "cron": "30 3,7,11,15,19,23 * * *",
-      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=30;BYSECOND=0",
-      "promptFile": "automation/prompts/macro.md",
-      "readModules": [
-        "macro",
-        "quotes"
-      ],
-      "ownedPaths": [
-        "data/modules/macro.json",
-        "data/runs/macro/"
-      ],
-      "ui": "央行 / 经济数据 / ETF / 清算",
-      "maxMinutes": 15,
-      "submissionPaths": [
-        "data/inbox/macro/"
-      ],
-      "publicationReceipt": "data/receipts/macro/<runId>.json",
-      "prompt": "执行GDR模块 macro。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/macro.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/macro/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/macro/<runId>.json；只有status=published并回读正式产物才叫发布成功，waiting-dependencies/pending/rejected分别说明；完整执行细则以共用及角色文件为准，不以本入口替代。调度已配置，不创建或修改任务，不修改代码与提示词。"
-    },
-    {
-      "role": "research",
-      "title": "GDR 财报研报事件研究",
-      "timezone": "Asia/Singapore",
-      "cron": "45 3,7,11,15,19,23 * * *",
-      "rrule": "FREQ=DAILY;BYHOUR=3,7,11,15,19,23;BYMINUTE=45;BYSECOND=0",
-      "promptFile": "automation/prompts/research.md",
-      "readModules": [
-        "research",
-        "asia-equities",
-        "us-equities",
-        "news",
-        "quotes"
-      ],
-      "ownedPaths": [
-        "data/modules/research.json",
-        "data/runs/research/"
-      ],
-      "ui": "事件触发研究 / 沿用原分析",
-      "maxMinutes": 20,
-      "submissionPaths": [
-        "data/inbox/research/"
-      ],
-      "publicationReceipt": "data/receipts/research/<runId>.json",
-      "prompt": "执行GDR模块 research。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/research.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/research/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。保留本模块全部合格数据，坏项null加原因，不编行情或排名。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/research/<runId>.json；只有status=published并回读正式产物才叫发布成功，waiting-dependencies/pending/rejected分别说明；完整执行细则以共用及角色文件为准，不以本入口替代。调度已配置，不创建或修改任务，不修改代码与提示词。"
-    },
-    {
-      "role": "synthesis",
-      "title": "GDR 每4小时综合发布",
-      "timezone": "Asia/Singapore",
-      "cron": "0 0,4,8,12,16,20 * * *",
       "rrule": "FREQ=DAILY;BYHOUR=0,4,8,12,16,20;BYMINUTE=0;BYSECOND=0",
-      "promptFile": "automation/prompts/synthesis.md",
-      "readModules": [
+      "roles": [
         "quotes",
         "asia-equities",
         "us-equities",
         "news",
         "macro",
-        "research"
+        "research",
+        "synthesis"
       ],
-      "ownedPaths": [
-        "data/modules/synthesis.json",
-        "data/runs/synthesis/",
-        "data/latest.json",
-        "data/history-index.json",
-        "history/"
+      "promptFile": "automation/tasks/global-main.md",
+      "taskId": "6ab1dc6f6d6081919ac20591b5ee4988",
+      "enabled": false,
+      "prompt": "执行GDR任务 global-main，仓库 StupidYang/gobal-daily-report。首先读取 automation/control.json：productionPaused=true、缺失、格式错误或读取失败立即停止，不采集、不写入、不触发构建。仅在允许生产时读取 automation/manifest.json、automation/tasks/common.md、automation/tasks/global-main.md、对应角色提示词、docs/modules-contract.md、docs/reader-r2-contract.md 和 config/watchlist.json。按 atomic-batch-v2 执行内部角色 quotes, asia-equities, us-equities, news, macro, research, synthesis，必须在一次执行内完成综合报告，仅提交一个 data/inbox/batches/<batchId>.json，包含 batchVersion=1、batchId、taskGroup=global-main 和所有本任务模块；synthesis.payload.report 必须是完整正文并冻结六个正确输入。复用保留原asOf/analyzedAt；测试数据禁止进入生产。提交后读取 data/receipts/batches/<batchId>.json，published且正式产物回读一致才报告成功，否则如实报告pending/waiting-dependencies/rejected。完整细则以仓库文件为准。不创建子任务，不改任何定时任务、代码或正式数据，不进行无限重试。"
+    },
+    {
+      "id": "asia-session",
+      "title": "GDR A股港股交易节点",
+      "timezone": "Asia/Singapore",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=9,15,16;BYMINUTE=35;BYSECOND=0",
+      "roles": [
+        "asia-equities",
+        "synthesis"
       ],
-      "ui": "首屏结论 / 完整24h报告 / 唯一报告发布者",
-      "maxMinutes": 20,
-      "submissionPaths": [
-        "data/inbox/synthesis/"
+      "promptFile": "automation/tasks/asia-session.md",
+      "taskId": "6aafc701dc80819187ea120074ccef44",
+      "enabled": false,
+      "prompt": "执行GDR任务 asia-session，仓库 StupidYang/gobal-daily-report。首先读取 automation/control.json：productionPaused=true、缺失、格式错误或读取失败立即停止，不采集、不写入、不触发构建。仅在允许生产时读取 automation/manifest.json、automation/tasks/common.md、automation/tasks/asia-session.md、对应角色提示词、docs/modules-contract.md、docs/reader-r2-contract.md 和 config/watchlist.json。按 atomic-batch-v2 执行内部角色 asia-equities, synthesis，必须在一次执行内完成综合报告，仅提交一个 data/inbox/batches/<batchId>.json，包含 batchVersion=1、batchId、taskGroup=asia-session 和所有本任务模块；synthesis.payload.report 必须是完整正文并冻结六个正确输入。复用保留原asOf/analyzedAt；测试数据禁止进入生产。提交后读取 data/receipts/batches/<batchId>.json，published且正式产物回读一致才报告成功，否则如实报告pending/waiting-dependencies/rejected。完整细则以仓库文件为准。不创建子任务，不改任何定时任务、代码或正式数据，不进行无限重试。"
+    },
+    {
+      "id": "us-session",
+      "title": "GDR 美股交易节点",
+      "timezone": "America/New_York",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=9,16;BYMINUTE=35;BYSECOND=0",
+      "roles": [
+        "us-equities",
+        "synthesis"
       ],
-      "publicationReceipt": "data/receipts/synthesis/<runId>.json",
-      "prompt": "执行GDR模块 synthesis。仓库：StupidYang/gobal-daily-report。先读取 automation/manifest.json、automation/prompts/common.md、automation/prompts/synthesis.md、docs/modules-contract.md 和 config/watchlist.json。按candidate-gate-v1执行：AI只能新增data/inbox/synthesis/<runId>.json候选，禁止直接写data/modules、data/runs、latest、history或索引；由代码校验器发布。候选payload.report必须包含完整schema5/reader-r2报告，不能只有报告编号、路径或发布计划。先联网采集，复用数据保留真实时点，按契约验证。提交后读取data/receipts/synthesis/<runId>.json；只有status=published并回读正式产物才叫发布成功，waiting-dependencies/pending/rejected分别说明；完整执行细则以共用及角色文件为准，不以本入口替代。调度已配置，不创建或修改任务，不修改代码与提示词。"
+      "promptFile": "automation/tasks/us-session.md",
+      "taskId": "6ab1cb9983d88191bf0db6340bfe6972",
+      "enabled": false,
+      "prompt": "执行GDR任务 us-session，仓库 StupidYang/gobal-daily-report。首先读取 automation/control.json：productionPaused=true、缺失、格式错误或读取失败立即停止，不采集、不写入、不触发构建。仅在允许生产时读取 automation/manifest.json、automation/tasks/common.md、automation/tasks/us-session.md、对应角色提示词、docs/modules-contract.md、docs/reader-r2-contract.md 和 config/watchlist.json。按 atomic-batch-v2 执行内部角色 us-equities, synthesis，必须在一次执行内完成综合报告，仅提交一个 data/inbox/batches/<batchId>.json，包含 batchVersion=1、batchId、taskGroup=us-session 和所有本任务模块；synthesis.payload.report 必须是完整正文并冻结六个正确输入。复用保留原asOf/analyzedAt；测试数据禁止进入生产。提交后读取 data/receipts/batches/<batchId>.json，published且正式产物回读一致才报告成功，否则如实报告pending/waiting-dependencies/rejected。完整细则以仓库文件为准。不创建子任务，不改任何定时任务、代码或正式数据，不进行无限重试。"
     }
   ]
 }
-

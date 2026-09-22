@@ -1,4 +1,4 @@
-/* Actual repository/Pages data, not fabricated market quotes. Offline transport is explicitly labeled. */
+/* Verify served bytes and interactions. Synthetic/production mode and offline transport are explicitly labeled in proof. */
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {chromium}=require('playwright');
@@ -20,7 +20,7 @@ async function visit(page){
   const request=await browser.newContext();
   const build=JSON.parse(await read(request.request,'data/build.json'));proof.build=build;
   if(process.env.GDR_EXPECT_BUILD){const expected=JSON.parse(fs.readFileSync(process.env.GDR_EXPECT_BUILD,'utf8'));assert.equal(build.commit,expected.commit,'Public Pages still serves a different build');assert.equal(build.files['data/latest.json'],expected.files['data/latest.json']);}
-  const reportBytes=await read(request.request,'data/latest.json'),report=JSON.parse(reportBytes);proof.reportId=report.reportId;
+  const reportBytes=await read(request.request,'data/latest.json'),report=JSON.parse(reportBytes);proof.reportId=report.reportId;proof.dataMode=report.reportMeta?.dataMode||'production';
   assert.equal(sum(reportBytes),build.files['data/latest.json']);assert.equal(report.reportId,build.reportId);
   const hp=`history/${report.reportId.slice(0,10)}/${report.reportId.slice(-4)}.json`;
   assert.ok(reportBytes.equals(await read(request.request,hp)),'Public latest and history differ');
@@ -34,7 +34,7 @@ async function visit(page){
    proof.moduleCounts[role]={runId:m.runId,status:m.status,generatedAt:m.generatedAt,dataAsOf:m.dataAsOf};
   }
   for(const [role,ref]of Object.entries(report.reportMeta?.moduleRefs||{})){
-   const m=JSON.parse(await read(request.request,ref.path));assert.equal(m.runId,ref.runId);assert.equal(m.module,role);assert.ok(Date.parse(m.generatedAt)<=require('../assets/watchlist-core.js').time(report.updatedAt),'Future frozen module');
+   const m=JSON.parse(await read(request.request,ref.path));assert.equal(m.runId,ref.runId);assert.equal(m.module,role);assert.ok(Date.parse(m.generatedAt)<=(require('../assets/watchlist-core.js').time(report.reportMeta?.generatedAt)??require('../assets/watchlist-core.js').time(report.updatedAt)+59999),'Future frozen module');
   }
   await request.close();
   const widths=process.env.GDR_TEST_WIDTHS?process.env.GDR_TEST_WIDTHS.split(',').map(Number):[320,390,768,1440];

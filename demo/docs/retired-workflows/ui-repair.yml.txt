@@ -1,0 +1,22 @@
+name: Retired UI repair - read-only audit
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          echo 'The old repair bundle has already been applied. This workflow never writes or deploys.'
+          node --test tests/*.test.cjs
+          node scripts/check-runtime.cjs
+          node scripts/check-published.cjs
+          echo 'Use Validate and publish candidates for the sole maintained publication path.'
