@@ -31,17 +31,36 @@ function validate(m, expected, now=Date.now()){
  if(!Array.isArray(m.sources))errors.push('sources 必须是数组');
  const sources=new Set();
  arr(m.sources).forEach(s=>{if(!s||!s.id||sources.has(s.id)||!safeUrl(s.url)){errors.push('来源重复或缺id/url');return;}sources.add(s.id);});
- function scan(x,catalog=sources){
+ const numberKeys=new Set(['price','changePct','rawValue','volumeRatio20d','turnoverPct','valueTraded','avgDailyValue20d']);
+ const pointerKey=k=>String(k).replace(/~/g,'~0').replace(/\//g,'~1');
+ // This is declared coverage metadata, not an observation. Check its own schema;
+ // never exempt similarly named objects nested inside a quote or a sector row.
+ function gapMetadata(x,p){
+  if(!x||typeof x!=='object'||Array.isArray(x)){errors.push('rankingInputGaps必须是字段到状态的对象 @ '+p);return;}
+  const allowed=new Set(['missing','available','partial','not-applicable','unknown']);
+  const fields=new Set([...numberKeys,'volumeBaseline','listingDays','valueTradedComparable']);
+  for(const [k,v]of Object.entries(x)){
+   const at=p+'/'+pointerKey(k);
+   if(k==='note'){if(typeof v!=='string')errors.push('排名缺口note必须是字符串 @ '+at);continue;}
+   if(['heatRankingGenerated','weakRankingGenerated'].includes(k)){if(typeof v!=='boolean')errors.push('排名生成标记必须是布尔值 @ '+at);continue;}
+   if(k==='missingFields'){if(!Array.isArray(v)||v.some(f=>typeof f!=='string'||!fields.has(f)))errors.push('missingFields必须是已知字段名数组 @ '+at);continue;}
+   if(!fields.has(k))errors.push('未知排名缺口字段 @ '+at);
+   if(typeof v!=='string'||!allowed.has(v))errors.push('排名缺口状态无效 @ '+at);
+  }
+ }
+ function scan(x,catalog=sources,p='/payload'){
   if(x&&x===m.payload?.report&&m.module==='synthesis')catalog=new Set(arr(x.sources).map(s=>s?.id));
   if(!x||typeof x!=='object')return;
-  if(Array.isArray(x)){x.forEach(v=>scan(v,catalog));return;}
-  if(x.sourceIds!==undefined){if(!Array.isArray(x.sourceIds))errors.push('sourceIds必须是数组');else x.sourceIds.forEach(id=>{if(!catalog.has(id))errors.push('来源不存在: '+id);});}
+  if(Array.isArray(x)){x.forEach((v,i)=>scan(v,catalog,p+'/'+i));return;}
+  if(x.sourceIds!==undefined){if(!Array.isArray(x.sourceIds))errors.push('sourceIds必须是数组 @ '+p+'/sourceIds');else x.sourceIds.forEach((id,i)=>{if(!catalog.has(id))errors.push('来源不存在: '+id+' @ '+p+'/sourceIds/'+i);});}
   for(const [k,v] of Object.entries(x)){
-   if(['price','changePct','rawValue','volumeRatio20d','turnoverPct','valueTraded','avgDailyValue20d'].includes(k)&&v!==null&&!finite(v))errors.push('非数值 '+k);
-   if(['rawValue','price'].includes(k)&&finite(v)&&/[<>≥≤]/.test(String(x.displayValue||'')))errors.push('阈值文字不能当精确数值');
-   if(k==='asOf'&&v!==null&&time(v)===null)errors.push('asOf必须精确或null');
-   if(k==='asOf'&&generated!==null&&time(v)!==null&&time(v)>generated+300000)errors.push('asOf不能在未来');
-   scan(v,catalog);
+   const at=p+'/'+pointerKey(k);
+   if(at==='/payload/rankingInputGaps'&&['asia-equities','us-equities'].includes(m.module)){gapMetadata(v,at);continue;}
+   if(numberKeys.has(k)&&v!==null&&!finite(v))errors.push('非数值 '+k+'（必须为有限数字或null） @ '+at);
+   if(['rawValue','price'].includes(k)&&finite(v)&&/[<>≥≤]/.test(String(x.displayValue||'')))errors.push('阈值文字不能当精确数值 @ '+at);
+   if(k==='asOf'&&v!==null&&time(v)===null)errors.push('asOf必须精确或null @ '+at);
+   if(k==='asOf'&&generated!==null&&time(v)!==null&&time(v)>generated+300000)errors.push('asOf不能在未来 @ '+at);
+   scan(v,catalog,at);
   }
  }
  scan(m.payload);
