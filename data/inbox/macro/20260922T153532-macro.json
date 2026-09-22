@@ -1,0 +1,245 @@
+{
+  "moduleVersion": 1,
+  "module": "macro",
+  "runId": "20260922T153532-macro",
+  "generatedAt": "2026-09-22T15:35:32+08:00",
+  "dataAsOf": null,
+  "status": "partial",
+  "inputVersions": {
+    "quotes": {
+      "runId": "20260922T143000-recovery-quotes",
+      "generatedAt": "2026-09-22T14:30:00+08:00"
+    },
+    "previousMacro": {
+      "runId": "20260922T143000-recovery-macro",
+      "generatedAt": "2026-09-22T14:30:00+08:00"
+    }
+  },
+  "sources": [
+    {
+      "id": "fed-statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "name": "Federal Reserve · 2026-09-16 FOMC statement",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    },
+    {
+      "id": "reuters-fed-poll",
+      "url": "https://www.reuters.com/business/fed-rate-hike-wednesday-now-likely-say-economists-least-one-more-follow-2026-09-14/",
+      "name": "Reuters · pre-FOMC economist poll",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    },
+    {
+      "id": "reuters-fed-reaction",
+      "url": "https://www.reuters.com/business/view-markets-steady-after-fed-raises-rates-points-another-hike-this-year-2026-09-16/",
+      "name": "Reuters · post-FOMC market reaction",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    },
+    {
+      "id": "cny-fix",
+      "url": "https://finance.jrj.com.cn/2026/09/22092058504093.shtml",
+      "name": "金融界转引中国人民银行/CFETS · 2026-09-22人民币中间价",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    },
+    {
+      "id": "farside-btc-etf",
+      "url": "https://farside.co.uk/btc/",
+      "name": "Farside Investors · U.S. spot Bitcoin ETF flows",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    },
+    {
+      "id": "farside-eth-etf",
+      "url": "https://farside.co.uk/eth/",
+      "name": "Farside Investors · U.S. spot Ethereum ETF flows",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    },
+    {
+      "id": "fed-sep-calendar",
+      "url": "https://www.federalreserve.gov/newsevents/2026-september.htm",
+      "name": "Federal Reserve · September 2026 calendar",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    },
+    {
+      "id": "nyfed-treasury-conference",
+      "url": "https://www.newyorkfed.org/newsevents/events/markets/2026/0922-2026",
+      "name": "New York Fed · 2026 U.S. Treasury Market Conference",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    },
+    {
+      "id": "ec-consumer-survey",
+      "url": "https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/business-and-consumer-surveys_en",
+      "name": "European Commission · Business and consumer surveys schedule",
+      "verifiedAt": "2026-09-22T15:35:32+08:00"
+    }
+  ],
+  "payload": {
+    "canonicalFacts": [
+      {
+        "id": "fed-target",
+        "label": "联邦基金目标区间",
+        "displayValue": "3.75%–4.00%",
+        "rawValue": null,
+        "unit": "%",
+        "scope": "FOMC联邦基金目标区间",
+        "window": "2026-09-16决定；不是9月22日的新动作",
+        "asOf": "2026-09-17T02:00:00+08:00",
+        "verifiedAt": "2026-09-22T15:35:32+08:00",
+        "dataStatus": "complete",
+        "marketState": "policy",
+        "direction": "tighter",
+        "impactTone": "hawkish",
+        "sourceIds": [
+          "fed-statement",
+          "reuters-fed-poll"
+        ],
+        "evidenceNote": "FOMC于9月16日加息25bp至3.75%–4.00%；Reuters会前调查显示约85%的受访经济学家预期加息25bp，因此方向本身大体被预期，不能机械解释为‘加息=当天必跌’。"
+      },
+      {
+        "id": "cny-midpoint",
+        "label": "美元/人民币中间价",
+        "displayValue": "6.7459",
+        "rawValue": 6.7459,
+        "unit": "CNY/USD",
+        "scope": "中国外汇交易中心中间价，非在岸即期、非离岸CNH",
+        "window": "2026-09-22日值",
+        "asOf": null,
+        "sourceDate": "2026-09-22",
+        "verifiedAt": "2026-09-22T15:35:32+08:00",
+        "dataStatus": "complete",
+        "marketState": "reference",
+        "direction": "CNY-stronger",
+        "impactTone": "mild-supportive",
+        "sourceIds": [
+          "cny-fix"
+        ],
+        "evidenceNote": "较上一交易日6.7487上调28个基点（人民币方向偏强）。发布日期只有日值意义；不能把09:20文章发布时间当成即期汇率时点。"
+      },
+      {
+        "id": "btc-etf-netflow-20260921",
+        "label": "美国现货Bitcoin ETF净流量",
+        "displayValue": "+999.0百万美元",
+        "rawValue": 999.0,
+        "unit": "USDm",
+        "scope": "Farside表列美国现货Bitcoin ETF合计",
+        "window": "2026-09-21完整美股交易日",
+        "asOf": null,
+        "sourceDate": "2026-09-21",
+        "verifiedAt": "2026-09-22T15:35:32+08:00",
+        "dataStatus": "complete",
+        "marketState": "closed-session",
+        "direction": "inflow",
+        "impactTone": "supportive",
+        "sourceIds": [
+          "farside-btc-etf"
+        ],
+        "evidenceNote": "Farside表列9月21日合计+999.0m，前一完整交易日9月18日为+433.0m。9月22日美股尚未开盘，这不是9月22日实时ETF流量。"
+      },
+      {
+        "id": "eth-etf-netflow-20260921",
+        "label": "美国现货Ethereum ETF净流量",
+        "displayValue": "+270.0百万美元",
+        "rawValue": 270.0,
+        "unit": "USDm",
+        "scope": "Farside表列美国现货Ethereum ETF合计",
+        "window": "2026-09-21完整美股交易日",
+        "asOf": null,
+        "sourceDate": "2026-09-21",
+        "verifiedAt": "2026-09-22T15:35:32+08:00",
+        "dataStatus": "complete",
+        "marketState": "closed-session",
+        "direction": "inflow",
+        "impactTone": "supportive",
+        "sourceIds": [
+          "farside-eth-etf"
+        ],
+        "evidenceNote": "Farside表列9月21日合计+270.0m，前一完整交易日9月18日为+143.7m。该值是日终资金流，不等于ETH现货价格或盘中资金费率。"
+      }
+    ],
+    "macroEvents": [
+      {
+        "title": "9月FOMC加息25bp（政策背景，非本轮新发布）",
+        "eventAt": "2026-09-17T02:00:00+08:00",
+        "publishedAt": "2026-09-17T02:00:00+08:00",
+        "actual": "上调25bp至3.75%–4.00%",
+        "expected": "Reuters会前调查约85%的经济学家预期上调25bp",
+        "previous": "3.50%–3.75%",
+        "revised": null,
+        "analysis": "结果方向基本符合临近会议时的主流预期，但点阵图和后续官员口径维持偏鹰。Reuters报道决议后当日美股走弱、短端美债收益率上行；本轮未取得同源1–5分钟价格，因此不伪装成精确‘第一分钟反应’。",
+        "firstReaction": {
+          "status": "partial",
+          "note": "仅有Reuters会后当日反应概述，缺少统一来源的1–5分钟跨资产快照。"
+        },
+        "sourceIds": [
+          "fed-statement",
+          "reuters-fed-poll",
+          "reuters-fed-reaction"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "at": null,
+        "sourceDate": "2026-09-22",
+        "time": "09-22（官方页仅确认日期）",
+        "title": "欧元区9月消费者信心初值",
+        "impact": "若显著偏离市场预期，可能影响欧元与欧洲利率预期；官方日程页本轮只确认发布日期，不猜精确时点。",
+        "sourceIds": [
+          "ec-consumer-survey"
+        ]
+      },
+      {
+        "at": "2026-09-22T22:05:00+08:00",
+        "time": "09-22 22:05",
+        "title": "纽约联储主席John Williams在美国国债市场会议致辞",
+        "impact": "重点看国债市场结构、流动性和政策执行表述，以及2Y/10Y和美元随后真实反应；讲话标题本身不等于新的利率信号。",
+        "sourceIds": [
+          "nyfed-treasury-conference"
+        ]
+      },
+      {
+        "at": "2026-09-22T22:20:00+08:00",
+        "time": "09-22 22:20",
+        "title": "美联储副主席Philip Jefferson谈贴现窗口现代化与国债市场运行",
+        "impact": "更偏市场机制与流动性主题；若涉及准备金、贴现窗口或市场功能，可能影响短端利率与流动性预期。",
+        "sourceIds": [
+          "fed-sep-calendar",
+          "nyfed-treasury-conference"
+        ]
+      },
+      {
+        "at": "2026-09-23T04:25:00+08:00",
+        "time": "09-23 04:25",
+        "title": "SOMA经理Roberto Perli在美国国债市场会议闭幕致辞",
+        "impact": "关注公开市场操作、准备金与国债市场运行细节；需要等正式文本，不能预设鹰鸽方向。",
+        "sourceIds": [
+          "nyfed-treasury-conference"
+        ]
+      }
+    ],
+    "fundingNotes": [
+      "ETF：已取得Farside对美国现货BTC与ETH ETF的9月21日完整表列合计；宏观模块整体ETF覆盖仍为partial，因为未覆盖股票、债券、黄金等全部ETF类别。",
+      "BTC现货ETF 9月21日Farside合计+999.0m美元，较9月18日+433.0m明显增大；ETH现货ETF同期+270.0m，较9月18日+143.7m增大。单日强流入可提供需求支撑，但不能单独推出当日价格必涨。",
+      "OI、永续资金费率和清算：本轮未取得带统一交易所范围、滚动窗口和精确时点的可比数据。Farside衍生品页面公开文本仅暴露指标名，没有可复核的当前数值，因此继续记为missing而不是补0。",
+      "quotes依赖仍使用20260922T143000-recovery-quotes的真实时点；本模块不重复改写2Y/10Y、DXY、人民币即期或油金报价。"
+    ],
+    "coverage": {
+      "ETF": "partial",
+      "OI": "missing",
+      "funding": "missing",
+      "liquidations": "missing"
+    },
+    "interpretation": {
+      "horizon": "未来12–24小时",
+      "plain": "宏观底色仍是9月16日美联储已经完成25bp加息后的偏紧环境，不是今天又加了一次息。9月21日BTC与ETH现货ETF出现较强净流入，为加密资产提供需求侧支撑，但这只是上一完整美股交易日的数据。人民币中间价今日小幅偏强，属于官方参考价，不等于在岸/离岸即期走势。",
+      "watch": [
+        "22:05 Williams、22:20 Jefferson的国债市场与流动性表述，以及讲话后2Y/10Y与DXY的实际反应。",
+        "9月22日美国现货ETF当日流量要等美股交易后逐步完整，盘前不要拿9月21日数据冒充今天。",
+        "若后续取得统一范围的OI、资金费率和清算数据，再判断杠杆是否同步扩张；当前不能用名义OI或单一交易所截图替代。"
+      ],
+      "invalidation": [
+        "若美债短端和美元在官员讲话后不升反降，说明市场可能更关注流动性改善或已充分消化偏鹰政策。",
+        "若9月22日ETF由强流入转为显著净流出，则上一交易日的需求支撑不能外推。"
+      ]
+    },
+    "note": "本轮新增了9月21日BTC/ETH现货ETF日终资金流，并重新核验FOMC、人民币中间价与今晚美联储/纽约联储日程。资金费率、OI、清算仍按缺失处理。"
+  }
+}
