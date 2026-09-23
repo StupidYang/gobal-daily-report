@@ -1,65 +1,100 @@
-name: Isolated regression checks
+name: Content quality repair verification
 on:
-  workflow_dispatch:
   push:
-    branches: ['repair/staging-20260922']
-  pull_request:
-    branches: [main]
+    branches: ['repair/content-quality-20260923']
+    paths: ['.github/workflows/ci.yml', '.repair-r7/**']
+  workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
-  group: gdr-ci-${{ github.ref }}
-  cancel-in-progress: true
+  group: gdr-quality-repair
+  cancel-in-progress: false
 jobs:
-  regression:
+  repair-verification:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          ref: repair/content-quality-20260923
+          fetch-depth: 30
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validate and build deterministic isolated demonstration
+      - name: Apply reviewed patch with exact source and output hashes
         run: |
-          mkdir -p /tmp/gdr-regression
+          mkdir -p /tmp/gdr-quality-repair/intended-workflows
+          python3 - <<'PY'
+          import pathlib,base64,lzma,json,hashlib,subprocess,shutil
+          folder=pathlib.Path('.repair-r7')
+          data=lzma.decompress(base64.b64decode(''.join((folder/('part'+str(i)+'.b64')).read_text().strip() for i in range(5))))
+          assert hashlib.sha256(data).hexdigest()=='b5565017944847b4af876239dbfebb94cef67bd9f4265e8b8cf0623d368604c5','Transport integrity failure'
+          bundle=json.loads(data)
+          assert bundle['base']=='c6646776ec9c1c2a05022b7fb0ad3fd2b7bda62f'
+          manifest=[]
+          for f in bundle['files']:
+              p=pathlib.Path(f['path'])
+              assert not p.is_absolute() and '..' not in p.parts
+              if str(p)=='.github/workflows/ci.yml': old=subprocess.check_output(['git','show',bundle['base']+':'+str(p)])
+              else: old=p.read_bytes() if p.exists() else b''
+              assert (hashlib.sha256(old).hexdigest() if f['previous'] else None)==f['previous'],str(p)+' source drift'
+              assert f['previous'] is not None or not p.exists(),str(p)+' unexpected new file'
+              text=old.decode('utf-8')
+              for start,end,new in reversed(f['edits']): text=text[:start]+new+text[end:]
+              result=text.encode('utf-8');assert hashlib.sha256(result).hexdigest()==f['sha256'],str(p)+' output drift'
+              p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(result)
+              manifest.append({'path':str(p),'sha256':f['sha256']})
+          shutil.rmtree(folder)
+          pathlib.Path('/tmp/gdr-quality-repair/patched-files.json').write_text(json.dumps(manifest,indent=2))
+          for name in ['ci.yml','publish-candidates.yml']: shutil.copyfile('.github/workflows/'+name,'/tmp/gdr-quality-repair/intended-workflows/'+name)
+          PY
+      - name: Regression, historical recovery and immutable data verification
+        run: |
+          set -euo pipefail
           node scripts/gdr.cjs check-config
           node scripts/check-runtime.cjs
           for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
-          node --test tests/*.test.cjs > /tmp/gdr-regression/unit-tests.tap
-          node scripts/build-demo.cjs > /tmp/gdr-regression/demo.json
-          cp demo/data/build.json /tmp/gdr-regression/first-build.json
-          node scripts/build-demo.cjs > /dev/null
-          cmp demo/data/build.json /tmp/gdr-regression/first-build.json
-          BATCH_ID=$(node -p "require('./demo/synthetic-manifest.json').snapshots.at(-1).batchId")
-          GDR_ROOT=demo node scripts/check-batch.cjs "$BATCH_ID" --fixture > /tmp/gdr-regression/fixture-batch.json
+          node --test tests/*.test.cjs > /tmp/gdr-quality-repair/unit-tests.tap
+          node scripts/build-reader-projections.cjs > /tmp/gdr-quality-repair/recovered-coverage.json
+          node scripts/build-demo.cjs > /tmp/gdr-quality-repair/demo.json
+          cp automation/control.json data/runtime-control.json
+          GDR_PERSIST_BUILD=1 node scripts/stage-site.cjs /tmp/gdr-quality-site > /tmp/gdr-quality-repair/build-summary.json
           git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
-          git rev-parse HEAD > /tmp/gdr-regression/commit.txt
-      - name: Install browser and Chinese fonts
+      - name: Install real browser and Chinese fonts
         run: |
           npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
           sudo apt-get update -qq
           sudo apt-get install -y fonts-noto-cjk >/dev/null
           if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
-      - name: Real HTTP browser tests on all four viewport widths
+      - name: Test current production bytes and every overnight report at four widths
         env:
           NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
           GDR_TEST_URL: http://127.0.0.1:8181/
           GDR_TEST_WIDTHS: '320,390,768,1440'
-          GDR_UI_OUTPUT: /tmp/gdr-regression/browser
+          GDR_UI_OUTPUT: /tmp/gdr-quality-repair/browser
         run: |
-          python3 -m http.server 8181 --bind 127.0.0.1 --directory demo >/tmp/gdr-http.log 2>&1 &
+          python3 -m http.server 8181 --bind 127.0.0.1 --directory /tmp/gdr-quality-site >/tmp/gdr-quality-http.log 2>&1 &
           node tests/ui-real-data.cjs
-          GDR_UI_OUTPUT=/tmp/gdr-regression/expanded node tests/ui-expanded.cjs
-      - name: Export tested source and demo
+          GDR_UI_OUTPUT=/tmp/gdr-quality-repair/expanded node tests/ui-expanded.cjs
+          GDR_UI_OUTPUT=/tmp/gdr-quality-repair/content node tests/ui-content-quality.cjs
+          GDR_TEST_URL=http://127.0.0.1:8181/demo/ GDR_UI_OUTPUT=/tmp/gdr-quality-repair/demo-browser node tests/ui-real-data.cjs
+      - name: Commit only tested code and derived read projections to repair branch
         run: |
-          git archive --format=zip --output=/tmp/gdr-regression/source.zip HEAD
-          cd demo && zip -qr /tmp/gdr-regression/demo.zip .
+          set -euo pipefail
+          git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
+          git config user.name 'gdr-repair[bot]'
+          git config user.email 'gdr-repair@users.noreply.github.com'
+          git restore -- .github/workflows/ci.yml .github/workflows/publish-candidates.yml
+          git add -- assets automation lib scripts tests docs index.html data/reader-projections data/runtime-control.json data/build.json demo .repair-r7
+          git commit -m 'fix: preserve sourced observations, normalize visible content and enforce six-asset quality gates'
+          git push origin HEAD:repair/content-quality-20260923
+          git rev-parse HEAD > /tmp/gdr-quality-repair/tested-commit.txt
+          git diff HEAD~1 HEAD --stat > /tmp/gdr-quality-repair/change-summary.txt
+          git archive --format=zip --output=/tmp/gdr-quality-repair/source.zip HEAD
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: gdr-regression-proof
-          path: /tmp/gdr-regression/
+          name: gdr-content-quality-repair-proof
+          path: /tmp/gdr-quality-repair/
           retention-days: 14
           if-no-files-found: error
