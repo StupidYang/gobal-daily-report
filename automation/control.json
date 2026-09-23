@@ -1,25 +1,18 @@
 {
   "version": 1,
-  "productionPaused": true,
-  "reason": "修复原生分析交接契约与区域依赖；三个任务暂时暂停。原始失败记录保留，监督验收不等于连续无人值守通过。",
+  "productionPaused": false,
+  "reason": "修复后的受控端到端验收：三个原生调度仍暂停，仅在本轮人工监督中验证真实请求、分析交接、正式回执与公网。不是恢复持续自动运行。",
   "maxRecurringTasks": 3,
-  "resumeRequires": [
-    "isolated fixture suite passes",
-    "deployed bytes and full reader pass",
-    "three-task inventory matches runtime",
-    "live source dry run verified"
-  ],
+  "resumeRequires": ["isolated fixture suite passes", "deployed bytes and full reader pass", "three-task inventory matches runtime", "live source dry run verified"],
   "allowAutomaticResume": false,
-  "resumeAuthorization": {
-    "mode": "explicit-user-request",
-    "recordedAt": "2026-09-23T14:11:56+08:00",
-    "firstGlobalRun": "2026-09-23T15:00:00+08:00",
-    "liveSourceValidation": "isolated-real-source-acceptance-passed",
-    "nativeEndToEndValidation": "pending-first-resumed-scheduled-run",
-    "continuousRunValidation": "pending",
-    "note": "The owner explicitly authorized restarting the same three retained tasks after the real-source and execution-lease repair. This records authorization and successful scheduler enable responses, not a claim that unattended production or continuous operation has already passed. All source, content, lease, stale-result and receipt checks remain enforced."
-  },
   "qualityPolicy": "content-r3",
   "executionProtocol": "lease-v1",
-  "handoffContract": "editorial-v1"
+  "handoffContract": "editorial-v1",
+  "supervisedAcceptance": {
+    "status": "in-progress",
+    "purpose": "Owner-requested self-check and bug repair",
+    "nativeSchedulesPaused": true,
+    "continuousRunValidation": "pending",
+    "note": "This is an explicitly supervised repair check. Existing source, content, lease and receipt validations are unchanged. No native task is enabled by this file."
+  }
 }
