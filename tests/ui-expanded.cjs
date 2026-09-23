@@ -15,13 +15,16 @@ async function visit(page){
  await page.evaluate(()=>document.addEventListener('click',e=>{if(e.target.closest('a[href^="#"]'))e.preventDefault();},true));
 }
 async function allNews(page){for(let i=0;i<50;i++){const b=page.locator('#world .show-more');if(!await b.isVisible())return;await b.click();}throw Error('News expansion did not terminate');}
+// Legacy articles deliberately remain reachable but do not belong to the live region/search count.
+async function currentNewsCount(page){return page.locator('#world .news-item').evaluateAll(xs=>xs.filter(x=>!x.closest('[data-key="legacy-news"]')).length);}
+async function assertLegacy(page,expected){assert.equal(await page.locator('#world [data-key="legacy-news"] .news-item').count(),expected.length,'Retained historical news was lost');}
 (async()=>{
  const options={headless:true};for(const p of ['/usr/bin/google-chrome','/usr/bin/chromium'])if(fs.existsSync(p)){options.executablePath=p;break;}
  const browser=await chromium.launch(options);
  try{
   const req=await browser.newContext(),report=await read(req.request,'data/latest.json'),build=await read(req.request,'data/build.json');proof.reportId=report.reportId;proof.buildId=build.buildId;
   if(process.env.GDR_EXPECT_BUILD){const expected=JSON.parse(fs.readFileSync(process.env.GDR_EXPECT_BUILD,'utf8'));assert.equal(build.buildId,expected.buildId,'Public UI/data build differs');assert.deepEqual(build.files,expected.files,'Public build inventory differs');}
-  const news=R.newsRows(report);await req.close();
+  const news=R.newsRows(report),legacy=Array.isArray(report.newsroom?.legacyItems)?report.newsroom.legacyItems:[];await req.close();
   for(const width of (process.env.GDR_TEST_WIDTHS||'320,390,768,1440').split(',').map(Number)){
    const context=await browser.newContext({viewport:{width,height:1000},locale:'zh-CN',timezoneId:'Asia/Singapore',reducedMotion:'reduce'}),page=await context.newPage(),errors=[],checks=[];
    page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
@@ -30,15 +33,17 @@ async function allNews(page){for(let i=0;i<50;i++){const b=page.locator('#world 
     await page.locator('#world').evaluate(n=>{n.open=true;});
     for(const region of ['CN','US','WORLD','ALL']){
      const button=page.locator('#world [data-region="'+region+'"]');await button.click();await allNews(page);
-     assert.equal(await page.locator('#world .news-item').count(),news.filter(n=>region==='ALL'||n.regions.includes(region)).length,'Region lost or duplicated stories: '+region);
+     assert.equal(await currentNewsCount(page),news.filter(n=>region==='ALL'||n.regions.includes(region)).length,'Region lost or duplicated current stories: '+region);
+     await assertLegacy(page,legacy);
     }
-    checks.push('all-regions-and-all-news-reachable');
-    await page.getByLabel('筛选新闻',{exact:true}).fill('___NO_SUCH_NEWS___');assert.equal(await page.locator('#world .news-item').count(),0);await page.getByLabel('筛选新闻',{exact:true}).fill('');await allNews(page);checks.push('news-search-empty-and-recovery');
+    checks.push('all-regions-and-all-news-reachable','legacy-excluded-from-active-count');
+    await page.getByLabel('筛选新闻',{exact:true}).fill('___NO_SUCH_NEWS___');assert.equal(await currentNewsCount(page),0);await assertLegacy(page,legacy);await page.getByLabel('筛选新闻',{exact:true}).fill('');await allNews(page);checks.push('news-search-empty-and-recovery');
     await page.evaluate(()=>document.querySelectorAll('#reportRoot details').forEach(n=>{n.open=true;}));
     const text=await page.locator('#reportRoot').innerText();assert.doesNotMatch(text,/\[object Object\]|\bNaN\b|\bundefined\b/,'Hidden details serialize machine objects');
     for(const section of report.deepDive||[])assert.ok(text.includes(section.analysis),'An existing detailed analysis disappeared: '+section.title);
     for(const frame of report.frameworkAnalysis||[])assert.ok(text.includes(frame.framework),'A reasoning framework disappeared');
-    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Expanded content has horizontal overflow');checks.push('full-analysis-retained','all-details-readable');
+    for(const item of legacy){assert.ok(text.includes(item.title),'Legacy title missing');if(item.summary)assert.ok(text.includes(item.summary),'Legacy original summary missing');}
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Expanded content has horizontal overflow');checks.push('full-analysis-retained','all-details-readable','legacy-original-text-retained');
     const ref=page.locator('a[href^="#fact-"]').first();if(await ref.count()){
      const href=await ref.getAttribute('href');await ref.click();assert.ok(await page.evaluate(h=>{const n=document.getElementById(h.slice(1));return n&&!n.hidden&&n.getClientRects().length>0;},href));checks.push('fact-reference-opens-real-evidence');
     }
