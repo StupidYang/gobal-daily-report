@@ -13,29 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: 58dbb0bd07f1fb1b79b9ab592f3fd5abb8498444
-          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Export pinned source and baseline tests
+      - name: Preserve exact public response bodies without publishing
         run: |
-          mkdir -p /tmp/gdr-live-probe
-          git archive --format=zip --output=/tmp/gdr-live-probe/source.zip HEAD
-          git rev-parse HEAD > /tmp/gdr-live-probe/commit.txt
-          node --test tests/*.test.cjs > /tmp/gdr-live-probe/baseline-tests.tap
-      - name: Probe public sources with a hard time budget and no publication
-        run: |
-          date -u +%FT%TZ > /tmp/gdr-live-probe/started.txt
-          timeout 180s node scripts/collect-public-quotes.cjs /tmp/gdr-live-probe/quotes.json > /tmp/gdr-live-probe/collector-summary.json 2>/tmp/gdr-live-probe/collector-errors.txt || echo "$?" > /tmp/gdr-live-probe/collector-exit.txt
-          date -u +%FT%TZ > /tmp/gdr-live-probe/finished.txt
-          git diff --exit-code
+          mkdir -p /tmp/gdr-source-check
+          node <<'JS'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const urls={gold:'https://api.gold-api.com/price/XAU',silver:'https://api.gold-api.com/price/XAG',treasury:'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202609',brent:'https://query1.finance.yahoo.com/v8/finance/chart/BZ%3DF?range=1d&interval=1m',fed:'https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm',cpi:'https://www.bls.gov/news.release/archives/cpi_09112026.htm',un:'https://www.un.org/en/desa/guterres-cracks-have-become-canyons-as-world-faces-four-tests-of-power',disclosure:'https://paper.cnstock.com/html/2026-09/23/content_2271973.htm',chinaClose:'https://www.nbd.com.cn/articles/2026-09-22/4588920.html'};
+          (async()=>{const rows=[];let cursor=0;const jobs=Object.entries(urls);await Promise.all(Array.from({length:3},async()=>{while(cursor<jobs.length){const [id,url]=jobs[cursor++],started=Date.now();try{const r=await fetch(url,{signal:AbortSignal.timeout(10000),headers:{'User-Agent':'GDR-personal-research/2.0'}});const text=await r.text();fs.writeFileSync('/tmp/gdr-source-check/'+id+'.txt',text);rows.push({id,url,status:r.status,bytes:Buffer.byteLength(text),sha256:crypto.createHash('sha256').update(text).digest('hex'),retrievedAt:new Date().toISOString(),durationMs:Date.now()-started});}catch(e){rows.push({id,url,error:e.message,durationMs:Date.now()-started});}}}));fs.writeFileSync('/tmp/gdr-source-check/manifest.json',JSON.stringify(rows,null,2));console.log(rows);})();
+          JS
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: gdr-live-probe-source
-          path: /tmp/gdr-live-probe/
+          name: gdr-source-check
+          path: /tmp/gdr-source-check/
           retention-days: 7
           if-no-files-found: error
