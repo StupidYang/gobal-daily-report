@@ -1,0 +1,4602 @@
+{
+  "config": {
+    "version": 1,
+    "defaultN": 5,
+    "maxN": 20,
+    "description": "必看资产 + 动态板块榜 + 用户候选池；候选名单不是实时热门排名。",
+    "required": [
+      {
+        "id": "INDEX:CN:SSE",
+        "symbol": "000001.SH",
+        "name": "上证指数",
+        "group": "指数",
+        "market": "CN",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:CN:SZSE",
+        "symbol": "399001.SZ",
+        "name": "深证成指",
+        "group": "指数",
+        "market": "CN",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:CN:CHINEXT",
+        "symbol": "399006.SZ",
+        "name": "创业板指",
+        "group": "指数",
+        "market": "CN",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:CN:STAR50",
+        "symbol": "000688.SH",
+        "name": "科创50",
+        "group": "指数",
+        "market": "CN",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:CN:CSI300",
+        "symbol": "000300.CSI",
+        "name": "沪深300",
+        "group": "指数",
+        "market": "CN",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:CN:CSI500",
+        "symbol": "000905.CSI",
+        "name": "中证500",
+        "group": "指数",
+        "market": "CN",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:HK:HSI",
+        "symbol": "HSI",
+        "name": "恒生指数",
+        "group": "指数",
+        "market": "HK",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:HK:HSTECH",
+        "symbol": "HSTECH",
+        "name": "恒生科技",
+        "group": "指数",
+        "market": "HK",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:HK:HSCEI",
+        "symbol": "HSCEI",
+        "name": "恒生国企",
+        "group": "指数",
+        "market": "HK",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:US:SP500",
+        "symbol": "SPX",
+        "name": "标普500",
+        "group": "指数",
+        "market": "US",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:US:NASDAQ",
+        "symbol": "IXIC",
+        "name": "纳斯达克综合",
+        "group": "指数",
+        "market": "US",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:US:NDX",
+        "symbol": "NDX",
+        "name": "纳斯达克100",
+        "group": "指数",
+        "market": "US",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:US:DOW",
+        "symbol": "DJI",
+        "name": "道琼斯",
+        "group": "指数",
+        "market": "US",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:US:RUSSELL2000",
+        "symbol": "RUT",
+        "name": "罗素2000",
+        "group": "指数",
+        "market": "US",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:JP:NIKKEI225",
+        "symbol": "N225",
+        "name": "日经225",
+        "group": "指数",
+        "market": "GLOBAL",
+        "currency": "index"
+      },
+      {
+        "id": "INDEX:EU:STOXX50",
+        "symbol": "SX5E",
+        "name": "欧洲斯托克50",
+        "group": "指数",
+        "market": "GLOBAL",
+        "currency": "index"
+      },
+      {
+        "id": "CRYPTO:BTC:USD",
+        "symbol": "BTC",
+        "name": "Bitcoin",
+        "group": "加密",
+        "market": "CRYPTO",
+        "currency": "USD",
+        "coingeckoId": "bitcoin"
+      },
+      {
+        "id": "CRYPTO:ETH:USD",
+        "symbol": "ETH",
+        "name": "Ethereum",
+        "group": "加密",
+        "market": "CRYPTO",
+        "currency": "USD",
+        "coingeckoId": "ethereum"
+      },
+      {
+        "id": "CRYPTO:SOL:USD",
+        "symbol": "SOL",
+        "name": "Solana",
+        "group": "加密",
+        "market": "CRYPTO",
+        "currency": "USD",
+        "coingeckoId": "solana"
+      },
+      {
+        "id": "CRYPTO:PEPE:USD",
+        "symbol": "PEPE",
+        "name": "Pepe",
+        "group": "加密",
+        "market": "CRYPTO",
+        "currency": "USD",
+        "coingeckoId": "pepe"
+      },
+      {
+        "id": "CRYPTO:HYPE:USD",
+        "symbol": "HYPE",
+        "name": "Hyperliquid",
+        "group": "加密",
+        "market": "CRYPTO",
+        "currency": "USD",
+        "coingeckoId": "hyperliquid",
+        "note": "现货USD口径；不要用永续mid或包装资产冒充。"
+      },
+      {
+        "id": "FX:DXY",
+        "symbol": "DXY",
+        "name": "美元指数",
+        "group": "汇率",
+        "market": "FX",
+        "currency": "index"
+      },
+      {
+        "id": "FX:USDCNY",
+        "symbol": "USD/CNY",
+        "name": "在岸人民币",
+        "group": "汇率",
+        "market": "FX",
+        "currency": "CNY",
+        "note": "数值上升表示人民币相对美元贬值。"
+      },
+      {
+        "id": "FX:USDCNH",
+        "symbol": "USD/CNH",
+        "name": "离岸人民币",
+        "group": "汇率",
+        "market": "FX",
+        "currency": "CNH"
+      },
+      {
+        "id": "METAL:XAUUSD",
+        "symbol": "XAU/USD",
+        "name": "现货黄金",
+        "group": "商品",
+        "market": "GLOBAL",
+        "currency": "USD/oz"
+      },
+      {
+        "id": "METAL:XAGUSD",
+        "symbol": "XAG/USD",
+        "name": "现货白银",
+        "group": "商品",
+        "market": "GLOBAL",
+        "currency": "USD/oz"
+      },
+      {
+        "id": "ENERGY:WTI",
+        "symbol": "WTI",
+        "name": "WTI原油",
+        "group": "商品",
+        "market": "GLOBAL",
+        "currency": "USD/bbl",
+        "requiresContract": true
+      },
+      {
+        "id": "ENERGY:BRENT",
+        "symbol": "BRENT",
+        "name": "Brent原油",
+        "group": "商品",
+        "market": "GLOBAL",
+        "currency": "USD/bbl",
+        "requiresContract": true,
+        "providerSymbol": "BZX26.NYM",
+        "contractSelection": "explicit-2026-11-not-auto-front"
+      },
+      {
+        "id": "RATE:US2Y",
+        "symbol": "US2Y",
+        "name": "美国2年期收益率",
+        "group": "利率",
+        "market": "US",
+        "currency": "%"
+      },
+      {
+        "id": "RATE:US10Y",
+        "symbol": "US10Y",
+        "name": "美国10年期收益率",
+        "group": "利率",
+        "market": "US",
+        "currency": "%"
+      },
+      {
+        "id": "VOL:VIX",
+        "symbol": "VIX",
+        "name": "波动率指数",
+        "group": "指数",
+        "market": "US",
+        "currency": "index"
+      }
+    ],
+    "sectors": {
+      "CN": {
+        "classification": "SW2021-L1",
+        "source": "https://www.swsresearch.com/",
+        "names": [
+          "农林牧渔",
+          "基础化工",
+          "钢铁",
+          "有色金属",
+          "电子",
+          "汽车",
+          "家用电器",
+          "食品饮料",
+          "纺织服饰",
+          "轻工制造",
+          "医药生物",
+          "公用事业",
+          "交通运输",
+          "房地产",
+          "商贸零售",
+          "社会服务",
+          "综合",
+          "建筑材料",
+          "建筑装饰",
+          "电力设备",
+          "国防军工",
+          "计算机",
+          "传媒",
+          "通信",
+          "银行",
+          "非银金融",
+          "煤炭",
+          "石油石化",
+          "环保",
+          "美容护理",
+          "机械设备"
+        ]
+      },
+      "HK": {
+        "classification": "HSICS-industry",
+        "source": "https://www.hsi.com.hk/eng/our-services/hsics",
+        "names": [
+          "能源业",
+          "原材料业",
+          "工业",
+          "非必需性消费",
+          "必需性消费",
+          "医疗保健业",
+          "电讯业",
+          "公用事业",
+          "金融业",
+          "地产建筑业",
+          "资讯科技业",
+          "综合企业"
+        ]
+      }
+    },
+    "ranking": {
+      "heatMethod": "activity-percentile-v1",
+      "heatWeights": {
+        "volumeRatio20d": 0.5,
+        "turnoverPct": 0.3,
+        "valueTraded": 0.2
+      },
+      "weakMethod": "changePct-minus-sector-median-v1",
+      "maxAsOfSkewMinutes": 15,
+      "excludeST": true,
+      "minListingDays": 20,
+      "minAvgDailyValue20d": {
+        "CN": 20000000,
+        "HK": 5000000,
+        "US": 10000000
+      },
+      "note": "热度是成交关注度，不是看多；最弱是同板块当日相对表现，不是公司质量。"
+    },
+    "usPools": {
+      "technology": [
+        "AAPL",
+        "MSFT",
+        "NVDA",
+        "GOOGL",
+        "AMZN",
+        "META",
+        "TSLA",
+        "AVGO",
+        "AMD",
+        "INTC",
+        "MU",
+        "ARM",
+        "TSM",
+        "ASML",
+        "ORCL",
+        "CRM",
+        "ADBE",
+        "NOW",
+        "PLTR",
+        "SNOW",
+        "NET",
+        "CRWD",
+        "DDOG",
+        "COIN",
+        "MSTR"
+      ],
+      "investment": [
+        "BRK.B",
+        "BLK",
+        "BX",
+        "KKR",
+        "APO",
+        "ARES",
+        "OWL",
+        "BN",
+        "BAM",
+        "CG",
+        "TROW",
+        "BEN",
+        "SCHW",
+        "IBKR",
+        "GS",
+        "MS"
+      ]
+    },
+    "investmentDefinition": "上市投资控股、资管、另类资产管理及券商；不是他们持仓里的所有股票，也不把基金ETF当公司。分类为可编辑候选池，不声称当前排名。",
+    "research": {
+      "maxNewAnalysesPerRun": 5,
+      "staleAfterDays": 120,
+      "triggers": [
+        "earnings",
+        "guidance",
+        "restatement",
+        "material-announcement",
+        "research-report",
+        "thesis-invalidation"
+      ]
+    },
+    "newsroom": {
+      "targetMin": 18,
+      "targetMax": 30,
+      "regions": [
+        "CN",
+        "US",
+        "WORLD"
+      ],
+      "noHardQuota": true
+    },
+    "moduleTtlHours": {
+      "quotes": 6,
+      "asia-equities": 20,
+      "us-equities": 20,
+      "news": 6,
+      "macro": 8,
+      "research": 30,
+      "synthesis": 8
+    }
+  },
+  "latest": {
+    "schemaVersion": 5,
+    "reportId": "2026-09-23-0840",
+    "updatedAt": "2026-09-23 08:40",
+    "reportMeta": {
+      "generatedAt": "2026-09-23T08:40:24+08:00",
+      "lastVerifiedAt": "2026-09-23T08:28:02+08:00",
+      "status": "partial",
+      "edition": "08:40全球主报告·深度复核",
+      "contractVersion": "reader-r2",
+      "pipelineVersion": "atomic-batch-v2",
+      "dataMode": "production",
+      "moduleRefs": {
+        "quotes": {
+          "path": "data/runs/quotes/20260923T084024-global-main-quotes.json",
+          "runId": "20260923T084024-global-main-quotes",
+          "generatedAt": "2026-09-23T08:40:24+08:00",
+          "dataAsOf": "2026-09-23T04:00:00+08:00"
+        },
+        "asia-equities": {
+          "path": "data/runs/asia-equities/20260923T084024-global-main-asia-equities.json",
+          "runId": "20260923T084024-global-main-asia-equities",
+          "generatedAt": "2026-09-23T08:40:24+08:00",
+          "dataAsOf": "2026-09-22T16:08:00+08:00"
+        },
+        "us-equities": {
+          "path": "data/runs/us-equities/20260923T084024-global-main-us-equities.json",
+          "runId": "20260923T084024-global-main-us-equities",
+          "generatedAt": "2026-09-23T08:40:24+08:00",
+          "dataAsOf": "2026-09-23T04:00:00+08:00"
+        },
+        "news": {
+          "path": "data/runs/news/20260923T084024-global-main-news.json",
+          "runId": "20260923T084024-global-main-news",
+          "generatedAt": "2026-09-23T08:40:24+08:00",
+          "dataAsOf": "2026-09-23T08:28:02+08:00"
+        },
+        "macro": {
+          "path": "data/runs/macro/20260923T084024-global-main-macro.json",
+          "runId": "20260923T084024-global-main-macro",
+          "generatedAt": "2026-09-23T08:40:24+08:00",
+          "dataAsOf": "2026-09-23T04:00:00+08:00"
+        },
+        "research": {
+          "path": "data/runs/research/20260923T084024-global-main-research.json",
+          "runId": "20260923T084024-global-main-research",
+          "generatedAt": "2026-09-23T08:40:24+08:00",
+          "dataAsOf": "2026-09-22T20:25:00+08:00"
+        }
+      }
+    },
+    "marketState": "美股收盘后科技强、金融弱；亚洲开盘前等待验证；中美会晤与能源运输是下一重定价节点。",
+    "brief": "结构性risk-on未变，深度复核提高中美会晤与台海政策风险权重。",
+    "overview": "08点深度复核没有发现足以翻转主线的新精确价格硬数据。纳指纪录收盘而金融/银行明显偏弱，说明风险偏好仍集中于AI与科技；CoinGecko页面显示BTC约8.64万美元、ETH约2764美元、SOL约118美元，但缺精确源报价时点，只保留文字展示。沙特东西向管线恢复是真实供给缓和证据，不过海峡安全与完整产能尚未恢复。相较07:04，最重要新增是中美元首会晤前台海军售议题升温，以及AI模型和中美制造供应链的新材料。",
+    "period": {
+      "from": "2026-09-22 08:40",
+      "to": "2026-09-23 08:40",
+      "coverageHours": 24,
+      "isFull24h": true
+    },
+    "recentPeriod": {
+      "from": "2026-09-23 07:04",
+      "to": "2026-09-23 08:40"
+    },
+    "rolling24hSummary": "过去24小时从美股盘中AI强势、油价风险溢价回吐，演化到纳指纪录收盘并确认科技强/金融弱的结构分化；能源从谈判预期缓和升级为沙特绕行管线实际恢复但仍降速。08点深度复核新增中美会晤前台海军售摩擦、AI模型成本竞争和制造选址证据，主线仍是结构性risk-on而非全面宽松。",
+    "evolution24h": [
+      {
+        "at": "2026-09-22 15:58",
+        "summary": "亚洲收盘后，A/H数据进入休市冻结；全球主线仍围绕AI、高利率和能源风险。"
+      },
+      {
+        "at": "2026-09-22 22:59",
+        "summary": "美股盘中AI继续领涨，能源风险溢价因供应改善预期回吐。"
+      },
+      {
+        "at": "2026-09-23 04:00",
+        "summary": "美股收盘，纳指27244.28创纪录且涨0.45%，道指-0.36%，金融约-2%、银行约-3%。"
+      },
+      {
+        "at": "2026-09-23 07:04",
+        "summary": "加密页面展示值偏强，中美会晤窗口与前体化学品出口管制进入观察清单。"
+      },
+      {
+        "at": "2026-09-23 08:40",
+        "summary": "深度复核新增台海军售谈判风险、Anthropic模型迭代和EnerVenue常州投产；未发现足以翻转结构性risk-on的新精确行情。"
+      }
+    ],
+    "changes": [
+      {
+        "id": "taiwan-risk-up",
+        "summary": "会晤前台海军售议题升温，增加中美政策尾部风险。",
+        "sourceIds": [
+          "n:xi_taiwan"
+        ]
+      },
+      {
+        "id": "ai-model-competition",
+        "summary": "Anthropic发布Claude Opus 5.5，AI模型性能/成本竞争继续强化。",
+        "sourceIds": [
+          "n:anthropic"
+        ]
+      },
+      {
+        "id": "supply-chain-case",
+        "summary": "EnerVenue在常州投产首座工厂，提供制造供应链与工程人才优势的具体案例。",
+        "sourceIds": [
+          "n:enervenue"
+        ]
+      }
+    ],
+    "recentChanges": [
+      {
+        "id": "r1",
+        "summary": "主线未翻转：科技强、金融弱，高利率约束仍在。"
+      },
+      {
+        "id": "r2",
+        "summary": "能源缓和有实物流支持，但完整产能和海峡安全仍未正常化。"
+      },
+      {
+        "id": "r3",
+        "summary": "中美会晤风险从笼统贸易/AI议题细化到台海军售等更高敏感度议题。"
+      }
+    ],
+    "canonicalFacts": [
+      {
+        "id": "spx",
+        "label": "标普500",
+        "displayValue": "7764.64",
+        "rawValue": 7764.64,
+        "unit": "index",
+        "scope": "S&P 500 close",
+        "window": "收盘",
+        "asOf": "2026-09-23T04:00:00+08:00",
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "closed",
+        "marketState": "已收盘",
+        "direction": "flat",
+        "impactTone": "mixed",
+        "sourceIds": [
+          "q:us"
+        ],
+        "seriesKey": "SP500:index",
+        "valueType": "index"
+      },
+      {
+        "id": "nasdaq",
+        "label": "纳斯达克综合",
+        "displayValue": "27244.28 / +0.45%",
+        "rawValue": 27244.28,
+        "unit": "index",
+        "scope": "Nasdaq Composite close",
+        "window": "收盘",
+        "asOf": "2026-09-23T04:00:00+08:00",
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "closed",
+        "marketState": "已收盘",
+        "direction": "up",
+        "impactTone": "risk-on",
+        "sourceIds": [
+          "q:us"
+        ],
+        "seriesKey": "NASDAQ:composite",
+        "valueType": "index",
+        "changeValue": 0.45,
+        "changeUnit": "%",
+        "comparisonBasis": "previous-official-close"
+      },
+      {
+        "id": "dow",
+        "label": "道琼斯",
+        "displayValue": "51863.69 / -0.36%",
+        "rawValue": 51863.69,
+        "unit": "index",
+        "scope": "Dow Jones Industrial Average close",
+        "window": "收盘",
+        "asOf": "2026-09-23T04:00:00+08:00",
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "closed",
+        "marketState": "已收盘",
+        "direction": "down",
+        "impactTone": "mixed",
+        "sourceIds": [
+          "q:us"
+        ],
+        "seriesKey": "DOW:index",
+        "valueType": "index",
+        "changeValue": -0.36,
+        "changeUnit": "%",
+        "comparisonBasis": "previous-official-close"
+      },
+      {
+        "id": "fin",
+        "label": "标普金融",
+        "displayValue": "约-2%",
+        "rawValue": -2,
+        "unit": "%",
+        "scope": "S&P 500 Financials close",
+        "window": "收盘",
+        "asOf": "2026-09-23T04:00:00+08:00",
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "closed",
+        "marketState": "已收盘",
+        "direction": "down",
+        "impactTone": "risk-off",
+        "sourceIds": [
+          "m:fin"
+        ],
+        "valueType": "return"
+      },
+      {
+        "id": "banks",
+        "label": "美国银行板块",
+        "displayValue": "约-3%",
+        "rawValue": -3,
+        "unit": "%",
+        "scope": "US bank sector close",
+        "window": "收盘",
+        "asOf": "2026-09-23T04:00:00+08:00",
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "closed",
+        "marketState": "已收盘",
+        "direction": "down",
+        "impactTone": "risk-off",
+        "sourceIds": [
+          "m:fin"
+        ],
+        "valueType": "return"
+      },
+      {
+        "id": "btc",
+        "label": "BTC",
+        "displayValue": "约86384.28",
+        "rawValue": null,
+        "unit": "USD",
+        "scope": "BTC/USD CoinGecko page display",
+        "window": "页面快照",
+        "asOf": null,
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "partial",
+        "marketState": "24/7",
+        "direction": "up",
+        "impactTone": "risk-on",
+        "sourceIds": [
+          "q:btc"
+        ],
+        "evidenceNote": "页面本轮显示约86384.28，但缺协议要求的精确源报价时点，故rawValue保持null。"
+      },
+      {
+        "id": "eth",
+        "label": "ETH",
+        "displayValue": "约2763.50",
+        "rawValue": null,
+        "unit": "USD",
+        "scope": "ETH/USD CoinGecko page display",
+        "window": "页面快照",
+        "asOf": null,
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "partial",
+        "marketState": "24/7",
+        "direction": "up",
+        "impactTone": "mixed",
+        "sourceIds": [
+          "q:eth"
+        ]
+      },
+      {
+        "id": "sol",
+        "label": "SOL",
+        "displayValue": "约118.45",
+        "rawValue": null,
+        "unit": "USD",
+        "scope": "SOL/USD CoinGecko page display",
+        "window": "页面快照",
+        "asOf": null,
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "partial",
+        "marketState": "24/7",
+        "direction": "flat",
+        "impactTone": "mixed",
+        "sourceIds": [
+          "q:sol"
+        ]
+      },
+      {
+        "id": "wti",
+        "label": "WTI",
+        "displayValue": "94.99结算（沿用）",
+        "rawValue": null,
+        "unit": "USD/bbl",
+        "scope": "WTI Oct 2026 settlement display",
+        "window": "最近已核验结算",
+        "asOf": null,
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "partial",
+        "marketState": "已结算",
+        "direction": "down",
+        "impactTone": "risk-on",
+        "sourceIds": [
+          "q:oil"
+        ],
+        "contract": "2026-10"
+      },
+      {
+        "id": "pipeline",
+        "label": "沙特东西向管线",
+        "displayValue": "恢复但仍降速",
+        "rawValue": null,
+        "unit": "state",
+        "scope": "Saudi East-West pipeline",
+        "window": "最新进展",
+        "asOf": null,
+        "verifiedAt": "2026-09-23T08:28:02+08:00",
+        "dataStatus": "partial",
+        "marketState": "事件",
+        "direction": "improving",
+        "impactTone": "risk-on",
+        "sourceIds": [
+          "m:pipeline"
+        ]
+      },
+      {
+        "id": "xau",
+        "label": "黄金",
+        "displayValue": "4325.03（沿用）",
+        "rawValue": null,
+        "unit": "USD/oz",
+        "scope": "spot gold display",
+        "window": "最近已核验展示",
+        "asOf": null,
+        "verifiedAt": "2026-09-23T05:59:08+08:00",
+        "dataStatus": "partial",
+        "marketState": "连续市场",
+        "direction": "mixed",
+        "impactTone": "mixed",
+        "sourceIds": [
+          "q:gold"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "name": "纳指",
+        "value": "27244.28 / +0.45%",
+        "factId": "nasdaq",
+        "primary": true
+      },
+      {
+        "name": "标普",
+        "value": "7764.64",
+        "factId": "spx",
+        "primary": true
+      },
+      {
+        "name": "金融",
+        "value": "约-2%",
+        "factId": "fin",
+        "primary": true
+      },
+      {
+        "name": "BTC",
+        "value": "约86384（时点未精确）",
+        "factId": "btc",
+        "primary": true
+      },
+      {
+        "name": "WTI",
+        "value": "94.99结算（沿用）",
+        "factId": "wti",
+        "primary": false
+      },
+      {
+        "name": "黄金",
+        "value": "4325.03（沿用）",
+        "factId": "xau",
+        "primary": false
+      }
+    ],
+    "marketCoverage": [
+      {
+        "market": "A股",
+        "status": "closed",
+        "summary": "08:40仍在开盘前，沿用上一交易日真实收盘时点；缺板块全量成员与排名基准。"
+      },
+      {
+        "market": "港股",
+        "status": "closed",
+        "summary": "上一交易日16:08输入沿用，阿里AI催化与中美会晤是开盘前主要外部变量。"
+      },
+      {
+        "market": "美股",
+        "status": "closed",
+        "summary": "纳指纪录收盘，科技强而金融/银行明显弱，风险偏好集中。"
+      },
+      {
+        "market": "BTC",
+        "status": "partial",
+        "summary": "CoinGecko页面约86384，24/7情绪偏强；精确源报价时点、OI、费率、清算统一窗口仍缺。"
+      },
+      {
+        "market": "黄金",
+        "status": "partial",
+        "summary": "沿用最近核验展示值，高利率和地缘避险继续拉扯；本轮无精确新报价时点。"
+      },
+      {
+        "market": "原油",
+        "status": "partial",
+        "summary": "沙特绕行管线恢复偏空风险溢价，但完整能力与霍尔木兹安全仍需验证。"
+      }
+    ],
+    "worldEvents": [],
+    "analysisTheses": [
+      {
+        "id": "tech-vs-fin",
+        "observed": "纳指创纪录收盘，而金融约跌2%、银行约跌3%。",
+        "interpretation": "风险偏好仍集中于AI/科技，尚未扩展为均匀普涨。",
+        "alternatives": "指数权重集中会放大科技对纳指的贡献。",
+        "validation": "观察亚洲开盘风险偏好、下一美股交易日广度与金融修复。",
+        "confidence": "medium-high",
+        "evidenceFactIds": [
+          "nasdaq",
+          "fin",
+          "banks"
+        ],
+        "sourceIds": [
+          "q:us",
+          "m:fin"
+        ]
+      },
+      {
+        "id": "crypto-strength",
+        "observed": "BTC/ETH/SOL页面展示值保持高位。",
+        "interpretation": "现货情绪偏强，但缺统一衍生品与精确源时点，不能判断是否由新增杠杆驱动。",
+        "alternatives": "可能只是短时现货波动。",
+        "validation": "补齐同一窗口OI、费率、清算与ETF披露。",
+        "confidence": "medium-low",
+        "evidenceFactIds": [
+          "btc",
+          "eth",
+          "sol"
+        ],
+        "sourceIds": [
+          "q:btc",
+          "q:eth",
+          "q:sol"
+        ]
+      },
+      {
+        "id": "energy-normalization",
+        "observed": "沙特东西向管线恢复但仍降速，油价风险溢价此前回吐。",
+        "interpretation": "供给绕行能力改善是真实缓和信号，但航运安全尾部风险仍在。",
+        "alternatives": "新袭击、恢复不及预期或成品油库存紧张都可能重新推升价格。",
+        "validation": "看实物流、库存、船运量与保险成本。",
+        "confidence": "medium-high",
+        "evidenceFactIds": [
+          "pipeline",
+          "wti"
+        ],
+        "sourceIds": [
+          "m:pipeline",
+          "q:oil"
+        ]
+      },
+      {
+        "id": "us-china-event",
+        "observed": "中美元首会晤进入窗口，同时台海军售议题升温。",
+        "interpretation": "会晤可能同时包含合作信号和高敏感度争议，市场不应只定价单向缓和。",
+        "alternatives": "最终文本可能聚焦有限议题，台海分歧未必转化为新限制。",
+        "validation": "等待正式联合表述、出口/关税/军售执行文本。",
+        "confidence": "medium",
+        "evidenceFactIds": [],
+        "sourceIds": [
+          "n:xi",
+          "n:xi_taiwan"
+        ]
+      }
+    ],
+    "judgmentRevisions": [
+      {
+        "id": "jr-energy",
+        "topic": "能源缓和",
+        "previous": "油价回落主要反映谈判和预期。",
+        "newEvidence": "沙特东西向管线恢复提供部分实物流改善证据。",
+        "revised": "缓和判断继续保留，但明确为部分供给恢复，不等于航运与地缘风险归零。",
+        "unresolved": "库存、船运量和完整管线能力恢复进度。",
+        "status": "得到支持",
+        "firstSeenAt": "2026-09-23T04:58:00+08:00",
+        "updatedAt": "2026-09-23T08:40:24+08:00",
+        "evidenceFactIds": [
+          "pipeline",
+          "wti"
+        ],
+        "sourceIds": [
+          "m:pipeline",
+          "q:oil"
+        ]
+      },
+      {
+        "id": "jr-us-china",
+        "topic": "中美会晤",
+        "previous": "会晤可能提供有限合作与风险缓和。",
+        "newEvidence": "台海军售料成为高敏感度谈判议题。",
+        "revised": "不再把会晤简单视为缓和催化，需同时计入台海与技术限制尾部风险。",
+        "unresolved": "最终文本及执行措施。",
+        "status": "待验证",
+        "firstSeenAt": "2026-09-23T08:28:02+08:00",
+        "updatedAt": "2026-09-23T08:40:24+08:00",
+        "evidenceFactIds": [],
+        "sourceIds": [
+          "n:xi_taiwan"
+        ]
+      }
+    ],
+    "dataDefinitions": [
+      {
+        "name": "精确价格",
+        "detail": "只有有限数字、可靠来源与精确asOf同时存在时才进入rawValue和曲线；页面展示值缺源时间时只保留displayValue。"
+      },
+      {
+        "name": "板块榜",
+        "detail": "缺全量成员、20日同口径量比/换手/成交额时不生成热度或弱势榜。"
+      },
+      {
+        "name": "复用",
+        "detail": "休市或无新材料时沿用原asOf/analyzedAt；新报告生成时间不能冒充旧资料更新。"
+      }
+    ],
+    "assets": [
+      {
+        "name": "A股",
+        "summary": "开盘前中性偏分化。",
+        "detail": "中美峰会前既有前体化学品合作信号，也新增台海军售高敏感议题；需等待09:30后真实量价和行业广度。",
+        "factIds": [],
+        "sourceIds": [
+          "n:precursor",
+          "n:xi_taiwan"
+        ]
+      },
+      {
+        "name": "港股",
+        "summary": "AI催化偏正面但政策风险上升。",
+        "detail": "阿里AI模型、芯片和数据中心计划提供催化；同时中美技术与台海议题增加事件波动。",
+        "factIds": [],
+        "sourceIds": [
+          "n:ali",
+          "n:xi_taiwan"
+        ]
+      },
+      {
+        "name": "美股",
+        "summary": "科技强、金融弱的结构行情。",
+        "detail": "纳指创新高但金融和银行显著落后；AI模型竞争继续给科技叙事加材料，但高利率和宽度不足仍是约束。",
+        "factIds": [
+          "nasdaq",
+          "fin",
+          "banks"
+        ],
+        "sourceIds": [
+          "q:us",
+          "m:fin",
+          "n:anthropic"
+        ]
+      },
+      {
+        "name": "BTC",
+        "summary": "页面价格偏强，杠杆结构未知。",
+        "detail": "CoinGecko页面约86384，但缺精确源报价时点；OI/费率/清算未统一，不能把现货高位解释成新增多头。",
+        "factIds": [
+          "btc"
+        ],
+        "sourceIds": [
+          "q:btc"
+        ]
+      },
+      {
+        "name": "黄金",
+        "summary": "高利率与地缘避险继续对冲。",
+        "detail": "本轮没有取得带精确源时点的新黄金报价，沿用最近核验展示值并降低结论强度。",
+        "factIds": [
+          "xau"
+        ],
+        "sourceIds": [
+          "q:gold"
+        ]
+      },
+      {
+        "name": "原油",
+        "summary": "供给改善偏空风险溢价，但安全风险尚未清零。",
+        "detail": "沙特东西向管线恢复是硬证据；完整产能、霍尔木兹通航和中东安全仍是反向风险。",
+        "factIds": [
+          "wti",
+          "pipeline"
+        ],
+        "sourceIds": [
+          "q:oil",
+          "m:pipeline"
+        ]
+      }
+    ],
+    "coreAnalysis": {
+      "mainTheme": "AI/科技与加密情绪偏强，但高利率、金融弱与中美/中东尾部风险仍在。",
+      "expectationGap": "下一预期差来自中美会晤可执行文本、亚洲开盘广度、能源实物流以及美股下一交易日金融修复。",
+      "divergence": "纳指新高而金融/银行弱；加密页面偏强但杠杆证据缺失；能源风险溢价回落但安全风险未消失。",
+      "regime": "结构性risk-on，非全面宽松。",
+      "priceIn": "已发生美股收盘、沙特管线恢复和前体化学品管制；中美会晤结果、台海军售政策与完整航运恢复仍未知。",
+      "bullCase": "AI盈利/采用延续、能源继续正常化、中美出现可执行的有限缓和且利率不再上行。",
+      "bullInvalidation": "利率再急升、AI盈利下修、地缘升级或中美新增实质限制。",
+      "bearCase": "高利率与市场广度差引发估值压缩，台海/中东风险重新推高风险溢价与通胀。",
+      "bearInvalidation": "金融与广度修复、利率回落、能源运输持续恢复且会晤避免新增限制。"
+    },
+    "macroEvents": [
+      {
+        "id": "macro-us-cn",
+        "title": "中美元首会晤窗口",
+        "at": null,
+        "summary": "习近平9月23日至25日访美，贸易、AI、芯片、台海与安全政策进入事件窗口。",
+        "sourceIds": [
+          "n:xi",
+          "n:xi_taiwan"
+        ]
+      },
+      {
+        "id": "macro-energy",
+        "title": "能源供应恢复验证",
+        "at": null,
+        "summary": "继续观察沙特管线恢复速度和霍尔木兹实际通航。",
+        "sourceIds": [
+          "m:pipeline"
+        ]
+      }
+    ],
+    "news": [],
+    "deepDive": [
+      {
+        "id": "dd-a",
+        "title": "A股",
+        "analysis": "08:40仍在开盘前，不能把美股AI强势直接等同于A股普涨。会晤前既有合作信号也有台海军售争议，开盘后先看科技、军工、汽车相关方向的广度和成交，而不是用个别高开替代全市场判断。"
+      },
+      {
+        "id": "dd-hk",
+        "title": "港股",
+        "analysis": "阿里AI投入是直接公司级催化，但港股科技估值仍受高利率与中美科技政策约束。上一交易日数据保留16:08真实时点，等待新交易日再更新。"
+      },
+      {
+        "id": "dd-us",
+        "title": "美股",
+        "analysis": "纳指纪录收盘与金融、银行明显下跌构成最清晰的结构分化。AI主题仍有产品迭代支撑，但广度不足意味着指数强势不能外推到周期、金融和小盘。"
+      },
+      {
+        "id": "dd-btc",
+        "title": "BTC",
+        "analysis": "页面展示约8.64万美元，较前一轮保持强势，但没有精确源报价时点和统一OI/费率/清算窗口，无法区分现货需求、空头回补或杠杆新增。"
+      },
+      {
+        "id": "dd-gold",
+        "title": "黄金",
+        "analysis": "黄金同时受高利率压制和地缘/政策不确定性支撑。本轮没有精确新时点，继续把旧展示值与当前叙事分开。"
+      },
+      {
+        "id": "dd-oil",
+        "title": "原油",
+        "analysis": "沙特东西向管线恢复把此前的谈判缓和推进到部分实物流恢复，但恢复仍降速，霍尔木兹与红海安全、库存和炼化瓶颈决定风险溢价能否继续回吐。"
+      }
+    ],
+    "narrativeTriggers": [
+      {
+        "id": "nt1",
+        "trigger": "中美会晤出现可执行的关税、芯片或台海相关新文本",
+        "impact": "可能迅速改变亚洲科技、军工与人民币风险溢价。",
+        "sourceIds": [
+          "n:xi",
+          "n:xi_taiwan"
+        ]
+      },
+      {
+        "id": "nt2",
+        "trigger": "沙特管线恢复速度或海峡通航显著偏离当前预期",
+        "impact": "直接影响油价、通胀和利率路径。",
+        "sourceIds": [
+          "m:pipeline"
+        ]
+      },
+      {
+        "id": "nt3",
+        "trigger": "下一交易日科技强势扩散到金融/小盘或反向回落",
+        "impact": "用于判断结构性risk-on是否升级为更广泛风险偏好。",
+        "sourceIds": [
+          "m:fin",
+          "q:us"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "ev-us-cn",
+        "at": null,
+        "title": "中美元首会晤及政策文本",
+        "sourceIds": [
+          "n:xi",
+          "n:xi_taiwan"
+        ]
+      },
+      {
+        "id": "ev-energy",
+        "at": null,
+        "title": "沙特管线恢复与霍尔木兹通航",
+        "sourceIds": [
+          "m:pipeline"
+        ]
+      },
+      {
+        "id": "ev-asia-open",
+        "at": "2026-09-23T09:30:00+08:00",
+        "title": "A/H新交易日开盘后的真实量价与广度",
+        "sourceIds": []
+      }
+    ],
+    "watch": [
+      {
+        "id": "w1",
+        "item": "09:30后A/H广度、科技与金融相对强弱",
+        "reason": "验证隔夜AI风险偏好能否传导。"
+      },
+      {
+        "id": "w2",
+        "item": "中美会晤正式文本",
+        "reason": "区分合作信号、台海军售与技术限制的真实执行。"
+      },
+      {
+        "id": "w3",
+        "item": "霍尔木兹通航、沙特管线和成品油库存",
+        "reason": "验证能源风险溢价是否继续下降。"
+      },
+      {
+        "id": "w4",
+        "item": "BTC OI/费率/清算同一窗口数据",
+        "reason": "判断价格高位是否伴随杠杆拥挤。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "q:us",
+        "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-graphic-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "q:btc",
+        "url": "https://www.coingecko.com/en/coins/bitcoin",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "q:eth",
+        "url": "https://www.coingecko.com/en/coins/ethereum",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "q:sol",
+        "url": "https://www.coingecko.com/en/coins/solana",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "q:gold",
+        "url": "https://www.reuters.com/world/india/gold-muted-higher-for-longer-rate-outlook-weighs-2026-09-22/",
+        "verifiedAt": "2026-09-23T05:59:08+08:00"
+      },
+      {
+        "id": "q:oil",
+        "url": "https://www.reuters.com/business/energy/oil-rises-slightly-ahead-potential-us-iran-talks-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "m:fin",
+        "url": "https://www.reuters.com/business/finance/financial-stocks-fall-with-ai-flattening-yield-curve-focus-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "m:pipeline",
+        "url": "https://www.reuters.com/business/energy/saudi-arabia-restarts-east-west-oil-pipeline-resume-exports-yanbu-sources-say-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:us",
+        "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-graphic-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:fin",
+        "url": "https://www.reuters.com/business/finance/financial-stocks-fall-with-ai-flattening-yield-curve-focus-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:pipeline",
+        "url": "https://www.reuters.com/business/energy/saudi-arabia-restarts-east-west-oil-pipeline-resume-exports-yanbu-sources-say-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:ali",
+        "url": "https://www.reuters.com/business/retail-consumer/alibaba-plans-ai-model-with-5-trillion-10-trillion-parameters-unveils-new-chip-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:jp",
+        "url": "https://www.reuters.com/business/environment/torrential-rains-brought-by-japan-typhoon-kill-two-nhk-says-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:aus",
+        "url": "https://www.reuters.com/legal/litigation/anthropic-openai-call-australia-relax-ban-training-ai-models-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:eu",
+        "url": "https://www.reuters.com/world/eu-renews-russia-sanctions-drops-russian-billionaires-usmanov-fridman-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:deep",
+        "url": "https://www.reuters.com/world/asia-pacific/deepseek-brief-un-security-council-ai-this-week-sources-say-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:g7",
+        "url": "https://www.reuters.com/world/americas/g7-foreign-ministers-call-iran-stop-arming-houthis-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:auto",
+        "url": "https://www.reuters.com/world/asia-pacific/china-supports-investment-by-its-automakers-europe-commerce-minister-says-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:xi",
+        "url": "https://www.reuters.com/world/china/chinas-xi-visit-us-september-23-25-2026-09-21/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:precursor",
+        "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/china-expands-export-control-list-drug-precursor-chemicals-ahead-trump-xi-summit-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:vw",
+        "url": "https://www.reuters.com/world/asia-pacific/volkswagen-china-chief-expects-chinas-passenger-car-market-decline-by-20-2026-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:generals",
+        "url": "https://www.reuters.com/world/china/china-expels-two-top-generals-party-military-alleging-disloyalty-corruption-2026-09-21/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:xi_taiwan",
+        "url": "https://www.reuters.com/world/china/chinas-xi-expected-press-trump-halt-taiwan-arms-sales-under-1982-agreement-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:anthropic",
+        "url": "https://www.reuters.com/business/anthropic-unveils-claude-opus-55-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:enervenue",
+        "url": "https://www.reuters.com/world/china/us-battery-startup-that-ditched-kentucky-china-opens-factory-trump-xi-meet-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      },
+      {
+        "id": "n:icc",
+        "url": "https://www.reuters.com/world/china/trump-calls-all-icc-members-resign-immediately-2026-09-22/",
+        "verifiedAt": "2026-09-23T08:28:02+08:00"
+      }
+    ],
+    "methodology": "本报告按atomic-batch-v2在同一批次内冻结quotes、asia-equities、us-equities、news、macro、research六个输入，再生成schemaVersion=5/reader-r2综合报告。休市与复用数据保留原asOf/analyzedAt；缺精确时点的页面值只作displayValue；新闻按滚动24小时去重并区分事实、普通人影响与模型判断。测试数据禁止进入生产。",
+    "plainLanguage": {
+      "verdict": "科技与加密仍偏强，但行情集中；会晤与能源是下一重定价节点。",
+      "bottomLine": "主线仍是结构性risk-on，不是全面宽松。08点复核没有发现翻转主线的新精确价格数据，但中美会晤前台海军售风险需要提高权重。",
+      "whyNow": "纳指纪录收盘与金融弱形成鲜明分化；沙特管线恢复支持能源缓和；中美元首会晤前新增台海军售高敏感议题。",
+      "horizon": "未来12–24小时",
+      "confidence": "medium",
+      "invalidation": "若亚洲开盘广度明显转弱、利率再快速上行、会晤出现新增限制或能源运输再度恶化，则下调风险偏好判断。",
+      "evidenceFactIds": [
+        "nasdaq",
+        "fin",
+        "banks",
+        "pipeline"
+      ],
+      "sourceIds": [
+        "q:us",
+        "m:fin",
+        "m:pipeline",
+        "n:xi_taiwan"
+      ],
+      "impacts": [
+        {
+          "asset": "A股",
+          "effect": "短线分化",
+          "reason": "隔夜科技强，但会晤和台海议题增加政策不确定性。",
+          "takeaway": "先看开盘后广度，不能用单一AI主题替代全市场。",
+          "horizon": "今日开盘至收盘",
+          "sourceIds": [
+            "n:xi_taiwan"
+          ]
+        },
+        {
+          "asset": "港股",
+          "effect": "科技偏利好但波动上升",
+          "reason": "阿里AI催化与中美事件风险并存。",
+          "takeaway": "AI催化真实，但估值仍受政策与利率约束。",
+          "horizon": "今日交易时段",
+          "sourceIds": [
+            "n:ali",
+            "n:xi_taiwan"
+          ]
+        },
+        {
+          "asset": "美股",
+          "effect": "结构性偏利好",
+          "reason": "纳指新高但金融/银行明显弱。",
+          "takeaway": "AI/科技强势可信，但还不是全市场risk-on。",
+          "horizon": "下一交易日",
+          "evidenceFactIds": [
+            "nasdaq",
+            "fin",
+            "banks"
+          ],
+          "sourceIds": [
+            "q:us",
+            "m:fin"
+          ]
+        },
+        {
+          "asset": "BTC",
+          "effect": "偏强但证据不足",
+          "reason": "页面价处高位，但缺精确源时点和杠杆数据。",
+          "takeaway": "不能把价格高位直接解释为新增多头。",
+          "horizon": "未来12–24小时",
+          "evidenceFactIds": [
+            "btc"
+          ],
+          "sourceIds": [
+            "q:btc"
+          ]
+        },
+        {
+          "asset": "黄金",
+          "effect": "中性偏分化",
+          "reason": "高利率压制与地缘避险需求对冲。",
+          "takeaway": "没有精确新报价和实际利率分解前不提高方向性结论。",
+          "horizon": "未来12–24小时",
+          "evidenceFactIds": [
+            "xau"
+          ],
+          "sourceIds": [
+            "q:gold"
+          ]
+        },
+        {
+          "asset": "原油",
+          "effect": "短线偏利空风险溢价",
+          "reason": "沙特绕行管线恢复改善供给。",
+          "takeaway": "供应缓和真实，但风险没有归零。",
+          "horizon": "未来12–24小时至数周",
+          "evidenceFactIds": [
+            "pipeline",
+            "wti"
+          ],
+          "sourceIds": [
+            "m:pipeline",
+            "q:oil"
+          ]
+        }
+      ]
+    },
+    "frameworkAnalysis": [
+      {
+        "id": "fw-rates",
+        "framework": "现金流折现与利率传导",
+        "conclusion": "科技盈利与采用可抵消部分高贴现率压力，但金融弱说明并非全面宽松。",
+        "evidenceFactIds": [
+          "nasdaq",
+          "fin",
+          "banks"
+        ],
+        "sourceIds": [
+          "q:us",
+          "m:fin"
+        ]
+      },
+      {
+        "id": "fw-event",
+        "framework": "预期差与事件研究",
+        "conclusion": "中美会晤同时存在合作和台海军售争议，需等待可执行文本而非预判单向缓和。",
+        "evidenceFactIds": [],
+        "sourceIds": [
+          "n:xi",
+          "n:xi_taiwan"
+        ]
+      },
+      {
+        "id": "fw-micro",
+        "framework": "市场微观结构与融资流动性",
+        "conclusion": "BTC页面偏强但缺OI、费率、清算和精确时点，不升级为杠杆多头确认。",
+        "evidenceFactIds": [
+          "btc"
+        ],
+        "sourceIds": [
+          "q:btc"
+        ]
+      },
+      {
+        "id": "fw-supply",
+        "framework": "供需、库存与风险溢价",
+        "conclusion": "沙特绕行能力恢复支持能源缓和，但完整产能和航运安全未恢复。",
+        "evidenceFactIds": [
+          "pipeline",
+          "wti"
+        ],
+        "sourceIds": [
+          "m:pipeline",
+          "q:oil"
+        ]
+      }
+    ],
+    "frameworkSynthesis": {
+      "verdict": "四个框架共同支持结构性risk-on而非全面宽松，中美事件风险和高利率仍是主要反向约束。",
+      "agreement": "科技与能源改善支持部分风险资产。",
+      "disagreement": "中美事件框架保持等待，BTC微观框架因数据缺口最保守。",
+      "weighting": "优先使用带精确时点的美股收盘和实际管线恢复证据。",
+      "invalidation": "亚洲市场显著risk-off、利率急升、会晤新增实质限制或能源运输再恶化。"
+    },
+    "newsroom": {
+      "windowStart": "2026-09-22T08:40:00+08:00",
+      "windowEnd": "2026-09-23T08:28:02+08:00",
+      "coverage": {
+        "actualEvents": 18,
+        "note": "覆盖中国、美国和全球事件；采集截止08:28，真实不足不以旧闻填充。"
+      },
+      "items": [
+        {
+          "id": "nasdaq-record",
+          "regions": [
+            "US"
+          ],
+          "kind": "market",
+          "title": "纳指纪录收盘",
+          "summary": "纳指27244.28，涨0.45%，AI主题继续支撑。",
+          "plainImpact": "科技强但并非全市场普涨。",
+          "assessment": "支持结构性risk-on。",
+          "sourceIds": [
+            "n:us"
+          ]
+        },
+        {
+          "id": "financials-down",
+          "regions": [
+            "US"
+          ],
+          "kind": "market",
+          "title": "美国金融股明显落后科技",
+          "summary": "标普金融约跌2%，银行约跌3%。",
+          "plainImpact": "金融持仓承压。",
+          "assessment": "是全面风险偏好叙事的反证。",
+          "sourceIds": [
+            "n:fin"
+          ]
+        },
+        {
+          "id": "saudi-pipeline",
+          "regions": [
+            "WORLD"
+          ],
+          "kind": "market",
+          "title": "沙特东西向管线恢复",
+          "summary": "管线恢复但仍降速。",
+          "plainImpact": "供给风险溢价下降。",
+          "assessment": "实物流改善，但风险未归零。",
+          "sourceIds": [
+            "n:pipeline"
+          ]
+        },
+        {
+          "id": "alibaba-ai",
+          "regions": [
+            "CN"
+          ],
+          "kind": "market",
+          "title": "阿里扩大AI模型与芯片投入",
+          "summary": "阿里公布更大模型、新AI芯片和数据中心扩张计划。",
+          "plainImpact": "强化AI产业链竞争。",
+          "assessment": "偏正面但投入回报仍需验证。",
+          "sourceIds": [
+            "n:ali"
+          ]
+        },
+        {
+          "id": "japan-typhoon",
+          "regions": [
+            "WORLD"
+          ],
+          "kind": "general",
+          "title": "日本台风灾情扩大",
+          "summary": "4人死亡、6人失踪，约4.5万户一度停电。",
+          "plainImpact": "居民、交通和电力受影响。",
+          "assessment": "社会影响明确，非全球市场主线。",
+          "sourceIds": [
+            "n:jp"
+          ]
+        },
+        {
+          "id": "australia-ai",
+          "regions": [
+            "WORLD",
+            "US"
+          ],
+          "kind": "general",
+          "title": "澳洲AI训练版权争议升温",
+          "summary": "OpenAI与Anthropic呼吁重新评估AI训练版权限制。",
+          "plainImpact": "影响创作者、AI公司和数据中心投资。",
+          "assessment": "创新与版权保护的政策权衡。",
+          "sourceIds": [
+            "n:aus"
+          ]
+        },
+        {
+          "id": "eu-russia",
+          "regions": [
+            "WORLD"
+          ],
+          "kind": "general",
+          "title": "欧盟续期对俄制裁",
+          "summary": "制裁续期并调整部分个人名单。",
+          "plainImpact": "合规约束延续。",
+          "assessment": "更偏政策延续而非突发冲击。",
+          "sourceIds": [
+            "n:eu"
+          ]
+        },
+        {
+          "id": "deepseek-un",
+          "regions": [
+            "CN",
+            "US",
+            "WORLD"
+          ],
+          "kind": "general",
+          "title": "DeepSeek等参与联合国AI安全讨论",
+          "summary": "多家AI公司参与安理会AI与国际安全讨论。",
+          "plainImpact": "AI治理进入多边安全议程。",
+          "assessment": "短线市场影响有限，长期规则竞争升温。",
+          "sourceIds": [
+            "n:deep"
+          ]
+        },
+        {
+          "id": "g7-houthi",
+          "regions": [
+            "WORLD"
+          ],
+          "kind": "general",
+          "title": "G7要求伊朗停止支持胡塞武装",
+          "summary": "G7称袭击威胁航运和地区稳定。",
+          "plainImpact": "航运与保险尾部风险仍高。",
+          "assessment": "与供应改善证据并存。",
+          "sourceIds": [
+            "n:g7"
+          ]
+        },
+        {
+          "id": "china-auto",
+          "regions": [
+            "CN",
+            "WORLD"
+          ],
+          "kind": "general",
+          "title": "中国支持车企在欧洲扩大投资",
+          "summary": "支持车企赴欧投资并推动对话处理摩擦。",
+          "plainImpact": "为车企提供本地化路径。",
+          "assessment": "效果取决于具体项目和监管。",
+          "sourceIds": [
+            "n:auto"
+          ]
+        },
+        {
+          "id": "trump-xi",
+          "regions": [
+            "CN",
+            "US"
+          ],
+          "kind": "general",
+          "title": "习近平访美窗口开启",
+          "summary": "贸易、AI、芯片与安全议题进入高敏感事件窗口。",
+          "plainImpact": "政策变化可能影响供应链和估值。",
+          "assessment": "等待正式可执行文本。",
+          "sourceIds": [
+            "n:xi"
+          ]
+        },
+        {
+          "id": "china-precursor",
+          "regions": [
+            "CN",
+            "US"
+          ],
+          "kind": "general",
+          "title": "中国新增芬太尼前体化学品出口管制",
+          "summary": "两种前体化学品纳入出口许可。",
+          "plainImpact": "相关化工出口合规门槛上升。",
+          "assessment": "是具体合作信号但非全面缓和。",
+          "sourceIds": [
+            "n:precursor"
+          ]
+        },
+        {
+          "id": "vw-china-demand",
+          "regions": [
+            "CN",
+            "WORLD"
+          ],
+          "kind": "market",
+          "title": "大众中国负责人警告乘用车需求压力",
+          "summary": "预计中国乘用车市场可能明显收缩。",
+          "plainImpact": "汽车产业链价格竞争压力延续。",
+          "assessment": "公司判断重要但不是官方预测。",
+          "sourceIds": [
+            "n:vw"
+          ]
+        },
+        {
+          "id": "china-generals",
+          "regions": [
+            "CN"
+          ],
+          "kind": "general",
+          "title": "中国两名高级将领被开除党籍军籍",
+          "summary": "张又侠、刘振立被开除并移送军事检察机关。",
+          "plainImpact": "影响军队治理与政治观察。",
+          "assessment": "不机械映射为股市方向。",
+          "sourceIds": [
+            "n:generals"
+          ]
+        },
+        {
+          "id": "xi-taiwan-arms",
+          "regions": [
+            "CN",
+            "US"
+          ],
+          "kind": "general",
+          "title": "台海军售料成中美元首会晤焦点",
+          "summary": "习近平预计将要求特朗普停止对台军售。",
+          "plainImpact": "提高会晤谈判难度和政策尾部风险。",
+          "assessment": "本轮最值得提高权重的新变量之一。",
+          "sourceIds": [
+            "n:xi_taiwan"
+          ]
+        },
+        {
+          "id": "anthropic-opus55",
+          "regions": [
+            "US"
+          ],
+          "kind": "market",
+          "title": "Anthropic发布Claude Opus 5.5",
+          "summary": "新旗舰模型主打更低运行成本和软件开发性能。",
+          "plainImpact": "推动模型竞争和企业采用。",
+          "assessment": "支持AI叙事但不证明全行业盈利改善。",
+          "sourceIds": [
+            "n:anthropic"
+          ]
+        },
+        {
+          "id": "enervenue-changzhou",
+          "regions": [
+            "CN",
+            "US",
+            "WORLD"
+          ],
+          "kind": "general",
+          "title": "美国电池初创企业在常州投产首座工厂",
+          "summary": "EnerVenue在常州启动首座工厂。",
+          "plainImpact": "反映供应链密度、人才和成本对制造选址的影响。",
+          "assessment": "是产业竞争案例，不能外推到所有制造业。",
+          "sourceIds": [
+            "n:enervenue"
+          ]
+        },
+        {
+          "id": "trump-icc",
+          "regions": [
+            "US",
+            "WORLD"
+          ],
+          "kind": "general",
+          "title": "特朗普在联合国要求ICC成员退出",
+          "summary": "特朗普批评ICC并呼吁成员国退出。",
+          "plainImpact": "增加国际法和盟友协调摩擦。",
+          "assessment": "直接金融影响证据有限。",
+          "sourceIds": [
+            "n:icc"
+          ]
+        }
+      ]
+    }
+  },
+  "modules": {
+    "quotes": {
+      "moduleVersion": 1,
+      "module": "quotes",
+      "runId": "20260923T084024-global-main-quotes",
+      "generatedAt": "2026-09-23T08:40:24+08:00",
+      "dataAsOf": "2026-09-23T04:00:00+08:00",
+      "status": "partial",
+      "dataMode": "production",
+      "execution": {
+        "batchId": "20260923T084024-global-main",
+        "mode": "scheduled-batch",
+        "role": "quotes"
+      },
+      "sources": [
+        {
+          "id": "us",
+          "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-graphic-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "btc",
+          "url": "https://www.coingecko.com/en/coins/bitcoin",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "eth",
+          "url": "https://www.coingecko.com/en/coins/ethereum",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "sol",
+          "url": "https://www.coingecko.com/en/coins/solana",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "gold",
+          "url": "https://www.reuters.com/world/india/gold-muted-higher-for-longer-rate-outlook-weighs-2026-09-22/",
+          "verifiedAt": "2026-09-23T05:59:08+08:00"
+        },
+        {
+          "id": "oil",
+          "url": "https://www.reuters.com/business/energy/oil-rises-slightly-ahead-potential-us-iran-talks-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        }
+      ],
+      "payload": {
+        "items": [
+          {
+            "instrumentId": "INDEX:CN:SSE",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:CN:SZSE",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:CN:CHINEXT",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:CN:STAR50",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:CN:CSI300",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:CN:CSI500",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:HK:HSI",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:HK:HSTECH",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:HK:HSCEI",
+            "price": null,
+            "asOf": null,
+            "status": "closed",
+            "sourceIds": [],
+            "note": "亚洲开盘前沿用上一交易日状态；本批未取得带精确时点的新指数值"
+          },
+          {
+            "instrumentId": "INDEX:US:SP500",
+            "price": 7764.64,
+            "asOf": "2026-09-23T04:00:00+08:00",
+            "status": "closed",
+            "sourceIds": [
+              "us"
+            ],
+            "comparisonBasis": "previous-official-close"
+          },
+          {
+            "instrumentId": "INDEX:US:NASDAQ",
+            "price": 27244.28,
+            "asOf": "2026-09-23T04:00:00+08:00",
+            "status": "closed",
+            "sourceIds": [
+              "us"
+            ],
+            "changePct": 0.45,
+            "comparisonBasis": "previous-official-close"
+          },
+          {
+            "instrumentId": "INDEX:US:NDX",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "INDEX:US:DOW",
+            "price": 51863.69,
+            "asOf": "2026-09-23T04:00:00+08:00",
+            "status": "closed",
+            "sourceIds": [
+              "us"
+            ],
+            "changePct": -0.36,
+            "comparisonBasis": "previous-official-close"
+          },
+          {
+            "instrumentId": "INDEX:US:RUSSELL2000",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "INDEX:JP:NIKKEI225",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "INDEX:EU:STOXX50",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "CRYPTO:BTC:USD",
+            "price": null,
+            "asOf": null,
+            "status": "partial",
+            "sourceIds": [
+              "btc"
+            ],
+            "displayValue": "86384.28",
+            "note": "CoinGecko页面本轮核对到该展示值，但未提供可用于协议的精确源报价时点；price/asOf保持null"
+          },
+          {
+            "instrumentId": "CRYPTO:ETH:USD",
+            "price": null,
+            "asOf": null,
+            "status": "partial",
+            "sourceIds": [
+              "eth"
+            ],
+            "displayValue": "2763.50",
+            "note": "CoinGecko页面本轮核对；缺协议要求的精确源报价时点，price/asOf保持null"
+          },
+          {
+            "instrumentId": "CRYPTO:SOL:USD",
+            "price": null,
+            "asOf": null,
+            "status": "partial",
+            "sourceIds": [
+              "sol"
+            ],
+            "displayValue": "118.45",
+            "note": "CoinGecko页面本轮核对；缺协议要求的精确源报价时点，price/asOf保持null"
+          },
+          {
+            "instrumentId": "CRYPTO:PEPE:USD",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "CRYPTO:HYPE:USD",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "FX:DXY",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "FX:USDCNY",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "FX:USDCNH",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "METAL:XAUUSD",
+            "price": null,
+            "asOf": null,
+            "status": "partial",
+            "sourceIds": [
+              "gold"
+            ],
+            "displayValue": "4325.03",
+            "note": "沿用最近已核验展示值；本轮未取得精确源时点"
+          },
+          {
+            "instrumentId": "METAL:XAGUSD",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "ENERGY:WTI",
+            "price": null,
+            "asOf": null,
+            "status": "partial",
+            "sourceIds": [
+              "oil"
+            ],
+            "displayValue": "94.99结算",
+            "note": "沿用同一合约最近已核验结算值；本轮复核供应新闻但缺精确结算时点",
+            "contract": "2026-10"
+          },
+          {
+            "instrumentId": "ENERGY:BRENT",
+            "price": null,
+            "asOf": null,
+            "status": "partial",
+            "sourceIds": [
+              "oil"
+            ],
+            "displayValue": "99.25结算",
+            "note": "沿用同一合约最近已核验结算值；本轮复核供应新闻但缺精确结算时点",
+            "contract": "2026-11"
+          },
+          {
+            "instrumentId": "RATE:US2Y",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          },
+          {
+            "instrumentId": "RATE:US10Y",
+            "price": null,
+            "asOf": null,
+            "status": "partial",
+            "sourceIds": [
+              "us"
+            ],
+            "displayValue": "约4.94%",
+            "note": "沿用上一已核验背景值；本轮未取得精确源时点"
+          },
+          {
+            "instrumentId": "VOL:VIX",
+            "price": null,
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": []
+          }
+        ],
+        "coverage": {
+          "expected": 31,
+          "note": "精确数值只使用带asOf数据；页面展示值缺源时点时保留为displayValue。"
+        }
+      },
+      "_inputHash": "32dc1817d31f97351d5c7b005561d7a6e28c12d80023abe2085ade57e5e4bf41"
+    },
+    "asia-equities": {
+      "moduleVersion": 1,
+      "module": "asia-equities",
+      "runId": "20260923T084024-global-main-asia-equities",
+      "generatedAt": "2026-09-23T08:40:24+08:00",
+      "dataAsOf": "2026-09-22T16:08:00+08:00",
+      "status": "no-change",
+      "dataMode": "production",
+      "execution": {
+        "batchId": "20260923T084024-global-main",
+        "mode": "scheduled-batch",
+        "role": "asia-equities"
+      },
+      "sources": [],
+      "payload": {
+        "groups": [],
+        "rankingInputGaps": {
+          "volumeRatio20d": "missing",
+          "turnoverPct": "missing",
+          "valueTraded": "missing",
+          "avgDailyValue20d": "missing",
+          "missingFields": [
+            "volumeRatio20d",
+            "turnoverPct",
+            "valueTraded",
+            "avgDailyValue20d"
+          ],
+          "heatRankingGenerated": false,
+          "weakRankingGenerated": false,
+          "note": "08:40仍处A/H开盘前；缺授权全量成员与同口径排名输入，不生成伪榜单，沿用9月22日真实收盘时点。"
+        }
+      },
+      "_inputHash": "05ffea399ea69fbd64c0c6b3cfdc81da5233de2c4ebdaa466a070edb453ca40e"
+    },
+    "us-equities": {
+      "moduleVersion": 1,
+      "module": "us-equities",
+      "runId": "20260923T084024-global-main-us-equities",
+      "generatedAt": "2026-09-23T08:40:24+08:00",
+      "dataAsOf": "2026-09-23T04:00:00+08:00",
+      "status": "no-change",
+      "dataMode": "production",
+      "execution": {
+        "batchId": "20260923T084024-global-main",
+        "mode": "scheduled-batch",
+        "role": "us-equities"
+      },
+      "sources": [
+        {
+          "id": "us",
+          "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-graphic-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "fin",
+          "url": "https://www.reuters.com/business/finance/financial-stocks-fall-with-ai-flattening-yield-curve-focus-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        }
+      ],
+      "payload": {
+        "groups": [
+          {
+            "id": "technology",
+            "name": "technology",
+            "market": "US",
+            "classification": "configured-pool-v1",
+            "universeScope": "sample",
+            "expectedCount": 25,
+            "rows": []
+          },
+          {
+            "id": "investment",
+            "name": "investment",
+            "market": "US",
+            "classification": "configured-pool-v1",
+            "universeScope": "sample",
+            "expectedCount": 16,
+            "rows": []
+          }
+        ],
+        "rankingInputGaps": {
+          "volumeRatio20d": "missing",
+          "turnoverPct": "missing",
+          "valueTraded": "missing",
+          "avgDailyValue20d": "missing",
+          "missingFields": [
+            "volumeRatio20d",
+            "turnoverPct",
+            "valueTraded",
+            "avgDailyValue20d"
+          ],
+          "heatRankingGenerated": false,
+          "weakRankingGenerated": false,
+          "note": "美股已收盘；未取得两候选池同口径量比、换手、成交额和20日流动性输入，不生成伪热度/弱势榜。"
+        }
+      },
+      "_inputHash": "ba7a861e5947b62b5d0c3f3f19a191ee217f6e5a182c57ffa34012050fc216f2"
+    },
+    "news": {
+      "moduleVersion": 1,
+      "module": "news",
+      "runId": "20260923T084024-global-main-news",
+      "generatedAt": "2026-09-23T08:40:24+08:00",
+      "dataAsOf": "2026-09-23T08:28:02+08:00",
+      "status": "ok",
+      "dataMode": "production",
+      "execution": {
+        "batchId": "20260923T084024-global-main",
+        "mode": "scheduled-batch",
+        "role": "news"
+      },
+      "sources": [
+        {
+          "id": "us",
+          "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-graphic-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "fin",
+          "url": "https://www.reuters.com/business/finance/financial-stocks-fall-with-ai-flattening-yield-curve-focus-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "pipeline",
+          "url": "https://www.reuters.com/business/energy/saudi-arabia-restarts-east-west-oil-pipeline-resume-exports-yanbu-sources-say-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "ali",
+          "url": "https://www.reuters.com/business/retail-consumer/alibaba-plans-ai-model-with-5-trillion-10-trillion-parameters-unveils-new-chip-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "jp",
+          "url": "https://www.reuters.com/business/environment/torrential-rains-brought-by-japan-typhoon-kill-two-nhk-says-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "aus",
+          "url": "https://www.reuters.com/legal/litigation/anthropic-openai-call-australia-relax-ban-training-ai-models-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "eu",
+          "url": "https://www.reuters.com/world/eu-renews-russia-sanctions-drops-russian-billionaires-usmanov-fridman-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "deep",
+          "url": "https://www.reuters.com/world/asia-pacific/deepseek-brief-un-security-council-ai-this-week-sources-say-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "g7",
+          "url": "https://www.reuters.com/world/americas/g7-foreign-ministers-call-iran-stop-arming-houthis-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "auto",
+          "url": "https://www.reuters.com/world/asia-pacific/china-supports-investment-by-its-automakers-europe-commerce-minister-says-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "xi",
+          "url": "https://www.reuters.com/world/china/chinas-xi-visit-us-september-23-25-2026-09-21/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "precursor",
+          "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/china-expands-export-control-list-drug-precursor-chemicals-ahead-trump-xi-summit-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "vw",
+          "url": "https://www.reuters.com/world/asia-pacific/volkswagen-china-chief-expects-chinas-passenger-car-market-decline-by-20-2026-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "generals",
+          "url": "https://www.reuters.com/world/china/china-expels-two-top-generals-party-military-alleging-disloyalty-corruption-2026-09-21/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "xi_taiwan",
+          "url": "https://www.reuters.com/world/china/chinas-xi-expected-press-trump-halt-taiwan-arms-sales-under-1982-agreement-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "anthropic",
+          "url": "https://www.reuters.com/business/anthropic-unveils-claude-opus-55-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "enervenue",
+          "url": "https://www.reuters.com/world/china/us-battery-startup-that-ditched-kentucky-china-opens-factory-trump-xi-meet-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "icc",
+          "url": "https://www.reuters.com/world/china/trump-calls-all-icc-members-resign-immediately-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        }
+      ],
+      "payload": {
+        "newsroom": {
+          "windowStart": "2026-09-22T08:40:00+08:00",
+          "windowEnd": "2026-09-23T08:28:02+08:00",
+          "coverage": {
+            "actualEvents": 18,
+            "note": "滚动24小时覆盖中美、AI、能源、灾害、监管和全球政策；真实不足不凑旧闻。"
+          },
+          "items": [
+            {
+              "id": "nasdaq-record",
+              "title": "纳指纪录收盘",
+              "summary": "纳指27244.28，涨0.45%，AI主题继续支撑。",
+              "sourceIds": [
+                "us"
+              ]
+            },
+            {
+              "id": "financials-down",
+              "title": "美国金融股明显落后科技",
+              "summary": "标普金融板块约跌2%，银行板块约跌3%，市场广度仍呈结构性分化。",
+              "sourceIds": [
+                "fin"
+              ]
+            },
+            {
+              "id": "saudi-pipeline",
+              "title": "沙特东西向管线恢复",
+              "summary": "沙特恢复东西向管线但仍降速，完整产能恢复仍需时间。",
+              "sourceIds": [
+                "pipeline"
+              ]
+            },
+            {
+              "id": "alibaba-ai",
+              "title": "阿里扩大AI模型与芯片投入",
+              "summary": "阿里公布更大参数模型、新AI芯片与数据中心扩张计划。",
+              "sourceIds": [
+                "ali"
+              ]
+            },
+            {
+              "id": "japan-typhoon",
+              "title": "日本台风灾情扩大",
+              "summary": "暴雨和山体滑坡造成4人死亡、6人失踪，约4.5万户一度停电。",
+              "sourceIds": [
+                "jp"
+              ]
+            },
+            {
+              "id": "australia-ai",
+              "title": "澳洲AI训练版权争议升温",
+              "summary": "OpenAI与Anthropic呼吁澳大利亚重新评估AI训练版权限制。",
+              "sourceIds": [
+                "aus"
+              ]
+            },
+            {
+              "id": "eu-russia",
+              "title": "欧盟续期对俄制裁",
+              "summary": "欧盟续期对俄制裁并调整部分个人名单。",
+              "sourceIds": [
+                "eu"
+              ]
+            },
+            {
+              "id": "deepseek-un",
+              "title": "DeepSeek等参与联合国AI安全讨论",
+              "summary": "DeepSeek、OpenAI、Anthropic等参与安理会AI与国际安全讨论。",
+              "sourceIds": [
+                "deep"
+              ]
+            },
+            {
+              "id": "g7-houthi",
+              "title": "G7要求伊朗停止支持胡塞武装",
+              "summary": "G7称相关袭击威胁国际航运和地区稳定。",
+              "sourceIds": [
+                "g7"
+              ]
+            },
+            {
+              "id": "china-auto",
+              "title": "中国支持车企在欧洲扩大投资",
+              "summary": "中国支持车企赴欧投资并推动对话处理贸易摩擦。",
+              "sourceIds": [
+                "auto"
+              ]
+            },
+            {
+              "id": "trump-xi",
+              "title": "习近平访美窗口开启",
+              "summary": "习近平计划9月23日至25日访问美国，中美贸易、AI、芯片与安全议题进入事件窗口。",
+              "sourceIds": [
+                "xi"
+              ]
+            },
+            {
+              "id": "china-precursor",
+              "title": "中国新增芬太尼前体化学品出口管制",
+              "summary": "两种相关前体化学品纳入出口管制，对美国、墨西哥和加拿大出口需许可。",
+              "sourceIds": [
+                "precursor"
+              ]
+            },
+            {
+              "id": "vw-china-demand",
+              "title": "大众中国负责人警告乘用车需求压力",
+              "summary": "大众中国负责人预计2026年中国乘用车市场可能同比明显收缩。",
+              "sourceIds": [
+                "vw"
+              ]
+            },
+            {
+              "id": "china-generals",
+              "title": "中国两名高级将领被开除党籍军籍",
+              "summary": "张又侠、刘振立被开除党籍军籍并移送军事检察机关。",
+              "sourceIds": [
+                "generals"
+              ]
+            },
+            {
+              "id": "xi-taiwan-arms",
+              "title": "台海军售料成中美元首会晤焦点",
+              "summary": "路透引述消息人士称，习近平预计将要求特朗普停止对台军售。",
+              "sourceIds": [
+                "xi_taiwan"
+              ]
+            },
+            {
+              "id": "anthropic-opus55",
+              "title": "Anthropic发布Claude Opus 5.5",
+              "summary": "Anthropic发布新旗舰模型，主打更低运行成本和软件开发性能。",
+              "sourceIds": [
+                "anthropic"
+              ]
+            },
+            {
+              "id": "enervenue-changzhou",
+              "title": "美国电池初创企业在常州投产首座工厂",
+              "summary": "EnerVenue在中国常州启动首座工厂，反映制造供应链与工程人才优势仍有吸引力。",
+              "sourceIds": [
+                "enervenue"
+              ]
+            },
+            {
+              "id": "trump-icc",
+              "title": "特朗普在联合国要求ICC成员退出",
+              "summary": "特朗普在联大批评国际刑事法院并呼吁成员国退出。",
+              "sourceIds": [
+                "icc"
+              ]
+            }
+          ]
+        }
+      },
+      "_inputHash": "b3e7ade5507be6b4afdb07a2329588351958b04f58d6da14eb67e0581cc12893"
+    },
+    "macro": {
+      "moduleVersion": 1,
+      "module": "macro",
+      "runId": "20260923T084024-global-main-macro",
+      "generatedAt": "2026-09-23T08:40:24+08:00",
+      "dataAsOf": "2026-09-23T04:00:00+08:00",
+      "status": "partial",
+      "dataMode": "production",
+      "execution": {
+        "batchId": "20260923T084024-global-main",
+        "mode": "scheduled-batch",
+        "role": "macro"
+      },
+      "sources": [
+        {
+          "id": "fin",
+          "url": "https://www.reuters.com/business/finance/financial-stocks-fall-with-ai-flattening-yield-curve-focus-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "oil",
+          "url": "https://www.reuters.com/business/energy/oil-rises-slightly-ahead-potential-us-iran-talks-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "pipeline",
+          "url": "https://www.reuters.com/business/energy/saudi-arabia-restarts-east-west-oil-pipeline-resume-exports-yanbu-sources-say-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "xi",
+          "url": "https://www.reuters.com/world/china/chinas-xi-visit-us-september-23-25-2026-09-21/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        },
+        {
+          "id": "xi_taiwan",
+          "url": "https://www.reuters.com/world/china/chinas-xi-expected-press-trump-halt-taiwan-arms-sales-under-1982-agreement-2026-09-22/",
+          "verifiedAt": "2026-09-23T08:28:02+08:00"
+        }
+      ],
+      "payload": {
+        "canonicalFacts": [
+          {
+            "id": "fin",
+            "rawValue": -2,
+            "asOf": "2026-09-23T04:00:00+08:00",
+            "sourceIds": [
+              "fin"
+            ]
+          },
+          {
+            "id": "banks",
+            "rawValue": -3,
+            "asOf": "2026-09-23T04:00:00+08:00",
+            "sourceIds": [
+              "fin"
+            ]
+          },
+          {
+            "id": "us10y",
+            "rawValue": null,
+            "asOf": null,
+            "sourceIds": []
+          },
+          {
+            "id": "pipeline",
+            "rawValue": null,
+            "asOf": null,
+            "sourceIds": [
+              "pipeline"
+            ]
+          }
+        ],
+        "macroEvents": [
+          {
+            "id": "xi-us-visit",
+            "title": "中美元首会晤窗口",
+            "at": null,
+            "summary": "习近平访美窗口开启，贸易、AI、芯片、台海与安全政策是未来12–24小时核心事件。",
+            "sourceIds": [
+              "xi",
+              "xi_taiwan"
+            ]
+          }
+        ],
+        "events": [
+          {
+            "id": "watch-energy-shipping",
+            "at": null,
+            "title": "继续核验霍尔木兹实际通航、沙特管线恢复速度与成品油库存",
+            "sourceIds": [
+              "oil",
+              "pipeline"
+            ]
+          }
+        ],
+        "fundingNotes": [
+          "BTC及全加密市场OI、费率、清算仍缺统一交易所范围与同一滚动窗口；页面价格变化不能单独证明新增杠杆多头。"
+        ],
+        "coverage": {
+          "status": "partial",
+          "missing": [
+            "US2Y精确时点",
+            "US10Y精确时点",
+            "DXY/人民币同一时点",
+            "BTC OI/费率/清算统一窗口",
+            "ETF完整披露"
+          ]
+        }
+      },
+      "_inputHash": "b9fb890e437e8a08a26309cccd018d5d0075deef4248260e8d387a575b4c99b6"
+    },
+    "research": {
+      "moduleVersion": 1,
+      "module": "research",
+      "runId": "20260923T084024-global-main-research",
+      "generatedAt": "2026-09-23T08:40:24+08:00",
+      "dataAsOf": "2026-09-22T20:25:00+08:00",
+      "status": "no-change",
+      "dataMode": "production",
+      "execution": {
+        "batchId": "20260923T084024-global-main",
+        "mode": "scheduled-batch",
+        "role": "research"
+      },
+      "sources": [
+        {
+          "id": "amd-q2",
+          "name": "AMD Q2 2026 financial results",
+          "url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+          "verifiedAt": "2026-09-22T13:18:57+08:00"
+        },
+        {
+          "id": "msft-q4",
+          "name": "Microsoft FY2026 Q4 earnings release",
+          "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+          "verifiedAt": "2026-09-22T13:18:57+08:00"
+        },
+        {
+          "id": "meta-q2",
+          "name": "Meta Q2 2026 results",
+          "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/",
+          "verifiedAt": "2026-09-22T13:18:57+08:00"
+        },
+        {
+          "id": "alibaba-ai",
+          "name": "Reuters Alibaba AI roadmap and chip Sep 22",
+          "url": "https://www.reuters.com/business/retail-consumer/alibaba-plans-ai-model-with-5-trillion-10-trillion-parameters-unveils-new-chip-2026-09-22/",
+          "verifiedAt": "2026-09-22T13:18:57+08:00"
+        },
+        {
+          "id": "nvda-q2fy27-sec-release",
+          "name": "NVIDIA Q2 FY2027 earnings release (SEC exhibit)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+          "verifiedAt": "2026-09-22T15:54:02+08:00"
+        },
+        {
+          "id": "nvda-q2fy27-sec-10q",
+          "name": "NVIDIA Q2 FY2027 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+          "verifiedAt": "2026-09-22T15:54:02+08:00"
+        },
+        {
+          "id": "googl-q2-2026-sec-release",
+          "name": "Alphabet Q2 2026 earnings release (SEC exhibit)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+          "verifiedAt": "2026-09-22T15:54:02+08:00"
+        },
+        {
+          "id": "googl-q2-2026-sec-10q",
+          "name": "Alphabet Q2 2026 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+          "verifiedAt": "2026-09-22T15:54:02+08:00"
+        },
+        {
+          "id": "amzn-q2-2026-ir",
+          "name": "Amazon Q2 2026 earnings release",
+          "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx?mode=light",
+          "verifiedAt": "2026-09-22T15:54:02+08:00"
+        },
+        {
+          "id": "brk-chair-20260918-reuters",
+          "name": "Reuters Berkshire chairman transition Sep 18",
+          "url": "https://www.reuters.com/business/retail-consumer/berkshire-hathaway-names-warren-buffett-chairman-emeritus-2026-09-18/",
+          "verifiedAt": "2026-09-22T15:54:02+08:00"
+        },
+        {
+          "id": "blk-q2-2026-sec-release",
+          "name": "BlackRock Q2 2026 earnings release (SEC exhibit)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526304013/blk-ex99_1.htm",
+          "verifiedAt": "2026-09-22T15:54:02+08:00"
+        },
+        {
+          "id": "blk-q2-2026-sec-10q",
+          "name": "BlackRock Q2 2026 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526337177/blk-20260630.htm",
+          "verifiedAt": "2026-09-22T15:54:02+08:00"
+        },
+        {
+          "id": "aapl-q3-2026-apple",
+          "name": "Apple FY2026 Q3 results",
+          "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "aapl-q3-2026-sec10q",
+          "name": "Apple FY2026 Q3 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "avgo-q3-2026-ir",
+          "name": "Broadcom FY2026 Q3 results",
+          "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "avgo-q3-2026-sec10q",
+          "name": "Broadcom FY2026 Q3 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/avgo-20260802.htm",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "tsla-q2-2026-ir",
+          "name": "Tesla Q2 2026 financial results notice",
+          "url": "https://ir.tesla.com/press-release/tesla-releases-second-quarter-2026-financial-results",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "tsla-q2-2026-sec10q",
+          "name": "Tesla Q2 2026 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "tsla-q2-2026-consensus",
+          "name": "Tesla company-compiled Q2 2026 sell-side consensus",
+          "url": "https://ir.tesla.com/press-release/earnings-consensus-second-quarter-2026",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "bx-q2-2026-report",
+          "name": "Blackstone Q2 2026 earnings report",
+          "url": "https://www.blackstone.com/blackstone2q26earningspressrelease/",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "bx-q2-2026-sec10q",
+          "name": "Blackstone Q2 2026 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526340208/d158269d10q.htm",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "kkr-q2-2026-report",
+          "name": "KKR Q2 2026 earnings release",
+          "url": "https://ir.kkr.com/media/document/15a25fa9-8226-4da1-9ff3-027b9803d436/assets/KKR_Q226_Earnings_Release.pdf?disposition=inline",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "kkr-q2-2026-sec10q",
+          "name": "KKR Q2 2026 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1404912/000140491226000027/kkr-20260630.htm",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "ares-q2-2026-sec-release",
+          "name": "Ares Management Q2 2026 earnings release (SEC exhibit)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1176948/000162828026051191/a2026q2-ex991.htm",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "ares-q2-2026-sec10q",
+          "name": "Ares Management Q2 2026 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1176948/000162828026054538/ares-20260630.htm",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "tsla-fsd-eu-20260921-reuters",
+          "name": "Reuters Tesla Czech FSD provisional approval",
+          "url": "https://www.reuters.com/business/czech-republic-approves-teslas-fsd-after-earlier-safety-concerns-2026-09-21/",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "bx-idp-20260922-reuters",
+          "name": "Reuters IDP rejects Blackstone takeover offer",
+          "url": "https://www.reuters.com/world/asia-pacific/australias-idp-rejects-blackstones-494-million-takeover-offer-2026-09-22/",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "kkr-infra-20260803-reuters",
+          "name": "Reuters KKR closes $19.2 billion infrastructure fund",
+          "url": "https://www.reuters.com/legal/transactional/kkr-closes-192-billion-infrastructure-fund-north-america-europe-2026-08-03/",
+          "verifiedAt": "2026-09-22T16:39:06+08:00"
+        },
+        {
+          "id": "reuters-meta-muse-global",
+          "url": "https://www.reuters.com/business/wall-street-expects-metas-ai-agent-shape-into-new-revenue-engine-2026-09-22/",
+          "verifiedAt": "2026-09-22T22:36:35+08:00"
+        }
+      ],
+      "payload": {
+        "records": [
+          {
+            "instrumentId": "EQUITY:US:AMD",
+            "eventKey": "EQUITY:US:AMD|earnings|2026Q2|amd-q2-20260804",
+            "eventType": "earnings",
+            "period": "2026Q2",
+            "documentId": "amd-q2-20260804",
+            "documentUrl": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+            "publishedAt": "2026-08-04",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T13:18:57+08:00",
+            "sourceIds": [
+              "amd-q2"
+            ],
+            "analysis": {
+              "conclusion": "AMD Q2收入和盈利质量明显改善，核心是数据中心业务成为公司收入主体；当前最大问题已经从‘有没有AI增长’转向‘高增长能否持续兑现并支撑快速抬升的估值’。",
+              "plainImpact": "公司Q2营收115.36亿美元，同比+50%；数据中心收入占公司收入58%，管理层称下半年数据中心销售还会加速。",
+              "evidence": [
+                "GAAP收入115.36亿美元，同比+50%",
+                "GAAP毛利率54%，非GAAP毛利率56%",
+                "GAAP EPS 1.38美元，非GAAP EPS 1.66美元",
+                "数据中心收入占季度收入58%"
+              ],
+              "guidance": "公司表示EPYC需求加速、Instinct部署扩大、Helios开始爬坡，并预期下半年数据中心销售加速。未在本次记录中引入第三方一致预期，因此不声称超预期幅度。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "冷启动未获取同一时点的一致预期EPS/FCF与合理倍数，不编PE或目标价。"
+              },
+              "risks": [
+                "AI需求或客户资本开支放缓",
+                "竞争和供应链约束",
+                "出口管制",
+                "股价快速重定价后对执行失误更敏感"
+              ],
+              "invalidation": "若后续数据中心增长显著放缓、毛利率持续恶化或AI系统部署不及管理层路线，当前积极基本面判断需下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:MSFT",
+            "eventKey": "EQUITY:US:MSFT|earnings|FY2026Q4|msft-fy26q4-20260729",
+            "eventType": "earnings",
+            "period": "FY2026Q4",
+            "documentId": "msft-fy26q4-20260729",
+            "documentUrl": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+            "publishedAt": "2026-07-29",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T13:18:57+08:00",
+            "sourceIds": [
+              "msft-q4"
+            ],
+            "analysis": {
+              "conclusion": "微软AI投资已经同时体现为Azure加速、商业合同负债增长和Copilot付费席位增长，基本面证据比单纯AI叙事更扎实；需要继续盯资本开支折旧和回报率。",
+              "plainImpact": "FY26 Q4收入900亿美元，同比+18%；Azure及其他云服务收入+43%，Microsoft Cloud收入593亿美元；商业剩余履约义务6780亿美元，同比+84%。",
+              "evidence": [
+                "季度收入900亿美元，同比+18%",
+                "GAAP净利润357.66亿美元，同比+31%",
+                "Azure及其他云服务收入同比+43%",
+                "Microsoft 365 Copilot超过3000万付费席位",
+                "FY2026 Azure收入首次超过1000亿美元"
+              ],
+              "guidance": "公司强调AI和云需求强劲；本条只引用正式财报披露，不补未核验的卖方一致预期。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "没有同步抓取当前价格与未来一致预期，估值留空。"
+              },
+              "risks": [
+                "AI基础设施资本开支和折旧压力",
+                "云竞争",
+                "OpenAI/Anthropic等投资带来GAAP波动",
+                "企业AI付费增速可能低于基础设施投入速度"
+              ],
+              "invalidation": "若Azure增速明显回落、RPO增长失速或AI相关资本回报恶化，当前高质量增长判断需重新评估。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:META",
+            "eventKey": "EQUITY:US:META|earnings|2026Q2|meta-q2-20260729",
+            "eventType": "earnings",
+            "period": "2026Q2",
+            "documentId": "meta-q2-20260729",
+            "documentUrl": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/",
+            "publishedAt": "2026-07-29",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T13:18:57+08:00",
+            "sourceIds": [
+              "meta-q2"
+            ],
+            "analysis": {
+              "conclusion": "Meta广告收入仍高增长，但AI基础设施投入已经明显压低利润率和自由现金流；Muse等新产品热度可以改善市场对AI ROI的预期，却还不能替代现金流验证。",
+              "plainImpact": "Q2收入608.01亿美元，同比+28%；经营利润同比-8%，经营利润率从43%降到31%；资本开支310.8亿美元，自由现金流仅7.84亿美元。",
+              "evidence": [
+                "收入608.01亿美元，同比+28%",
+                "广告展示量+14%，平均广告价格+12%",
+                "经营利润187.75亿美元，同比-8%",
+                "资本开支310.8亿美元",
+                "自由现金流7.84亿美元"
+              ],
+              "guidance": "公司继续把AI作为核心业务和新产品驱动力；最新Muse行情催化与Q2财务事实分开处理。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "未抓取当前一致预期和可比估值，不以单日+11.4%推导目标价。"
+              },
+              "risks": [
+                "AI资本开支回报不及预期",
+                "自由现金流被高投入持续挤压",
+                "广告周期波动",
+                "监管和法律费用"
+              ],
+              "invalidation": "若AI产品不能带来广告效率/新收入改善，而资本开支继续上升，则市场对AI回报率的乐观需要下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:HK:09988",
+            "eventKey": "EQUITY:HK:09988|material-announcement|20260922|alibaba-ai-roadmap-v900",
+            "eventType": "material-announcement",
+            "period": "2026-09-22",
+            "documentId": "alibaba-ai-roadmap-v900",
+            "documentUrl": "https://www.reuters.com/business/retail-consumer/alibaba-plans-ai-model-with-5-trillion-10-trillion-parameters-unveils-new-chip-2026-09-22/",
+            "publishedAt": "2026-09-22",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T13:18:57+08:00",
+            "sourceIds": [
+              "alibaba-ai"
+            ],
+            "analysis": {
+              "conclusion": "阿里把AI竞争从模型扩到芯片、超节点和数据中心，战略强度继续提高；这是增长期权，也是资本开支和执行压力。",
+              "plainImpact": "公司提出5万亿至10万亿参数模型路线，发布Zhenwu V900，并计划到2032年把全球数据中心容量提升至20GW以上。",
+              "evidence": [
+                "Qwen后续模型规划扩大参数规模",
+                "自研Zhenwu V900芯片计划2027年量产",
+                "全球数据中心容量扩张目标"
+              ],
+              "guidance": "这是公司活动和Reuters报道中的路线图，不是已实现收入。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "缺少同一时点盈利预测和股价输入。"
+              },
+              "risks": [
+                "芯片量产延误",
+                "巨额资本开支回报",
+                "模型规模不等于产品竞争力",
+                "出口限制和供应链"
+              ],
+              "invalidation": "若芯片量产、云客户采用或AI收入转化明显弱于路线图，战略利好需要降级。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:NVDA",
+            "eventKey": "EQUITY:US:NVDA|earnings|FY2027Q2|sec-0001045810-26-000075",
+            "eventType": "earnings",
+            "period": "FY2027Q2",
+            "documentId": "sec-0001045810-26-000075",
+            "documentUrl": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+            "publishedAt": "2026-08-26",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T15:54:02+08:00",
+            "sourceIds": [
+              "nvda-q2fy27-sec-release",
+              "nvda-q2fy27-sec-10q"
+            ],
+            "analysis": {
+              "conclusion": "NVIDIA的AI算力需求仍处在极高增速阶段，Q2收入和数据中心收入均同比翻倍以上；但公司已把供应与产能承诺扩大到2790亿美元，增长越快，对电力、数据中心建设、供应链和客户资本支出的依赖越重。",
+              "plainImpact": "FY2027 Q2收入962.21亿美元，同比+106%；数据中心收入890.23亿美元，同比+117%；GAAP毛利率75.0%，GAAP摊薄EPS 2.46美元。公司给出的Q3收入指引为1080亿美元±2%，且明确未假设来自中国的数据中心计算收入。",
+              "evidence": [
+                "Q2收入962.21亿美元，同比+106%、环比+18%",
+                "数据中心收入890.23亿美元，同比+117%、环比+18%",
+                "GAAP毛利率75.0%，GAAP摊薄EPS 2.46美元",
+                "Q3收入指引1080亿美元±2%，GAAP/非GAAP毛利率指引74.0%±50bp",
+                "供应和产能承诺由上季度1190亿美元增至2790亿美元"
+              ],
+              "guidance": "仅采用公司SEC财报与10-Q中的正式指引，不加入未核验卖方一致预期。Q3指引明确排除了中国数据中心计算收入假设。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "未取得与本研究同一时点的前瞻EPS/FCF一致预期和可比估值口径，不编PE或目标价。"
+              },
+              "risks": [
+                "客户AI资本开支降速或融资能力下降",
+                "电力、土地、机房和网络建设成为交付瓶颈",
+                "供应链与产能承诺过大带来的库存/取消风险",
+                "客户集中和出口限制"
+              ],
+              "invalidation": "若后续数据中心收入增速明显失速、毛利率持续低于公司指引区间，或供应与基础设施约束导致交付和现金转化恶化，应下调当前高增长判断。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:GOOGL",
+            "eventKey": "EQUITY:US:GOOGL|earnings|2026Q2|sec-googexhibit991q22026",
+            "eventType": "earnings",
+            "period": "2026Q2",
+            "documentId": "sec-googexhibit991q22026",
+            "documentUrl": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+            "publishedAt": "2026-07-22",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T15:54:02+08:00",
+            "sourceIds": [
+              "googl-q2-2026-sec-release",
+              "googl-q2-2026-sec-10q"
+            ],
+            "analysis": {
+              "conclusion": "Alphabet Q2的核心不是一次性投资收益，而是Cloud在AI需求推动下显著加速且盈利同步放大；代价是AI基础设施进入超重资本投入阶段，融资、折旧和长期采购承诺都明显抬升。",
+              "plainImpact": "Q2收入1197.96亿美元，同比+24%；Google Cloud收入247.68亿美元，同比+82%，Cloud经营利润88.14亿美元。公司上半年资本开支806亿美元，Q2单季449亿美元，并为扩张AI基础设施进行了大额股权和债务融资。",
+              "evidence": [
+                "Q2总收入1197.96亿美元，同比+24%",
+                "Google Cloud收入247.68亿美元，同比+82%，经营利润88.14亿美元",
+                "Q2经营利润407.70亿美元，经营利润率34%",
+                "上半年资本开支806亿美元，2026年计划显著提高技术基础设施投资",
+                "截至6月30日材料采购与其他合同义务合计8110亿美元，其中主要涉及技术基础设施、库存与能源等"
+              ],
+              "guidance": "Q2净利润受到约980亿美元其他收益影响，主要为权益证券未实现收益，因此不把同比暴增的净利润当作核心经营趋势。公司材料强调继续扩大AI基础设施投资，但本记录不加入卖方一致预期。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "资本结构和一次性权益收益显著变化，且未取得同步一致预期，当前不计算PE或目标价。"
+              },
+              "risks": [
+                "AI资本开支和折旧增长快于商业化回报",
+                "巨额长期采购与能源承诺带来的固定成本风险",
+                "云与AI竞争加剧",
+                "监管罚款、反垄断和潜在股权稀释"
+              ],
+              "invalidation": "若Cloud增速与利润率明显回落，而资本开支、采购承诺和融资继续快速上升，则当前‘AI投入正在转化为经营增长’的判断需要下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:AMZN",
+            "eventKey": "EQUITY:US:AMZN|earnings|2026Q2|amazon-q2-20260730",
+            "eventType": "earnings",
+            "period": "2026Q2",
+            "documentId": "amazon-q2-20260730",
+            "documentUrl": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx?mode=light",
+            "publishedAt": "2026-07-30",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T15:54:02+08:00",
+            "sourceIds": [
+              "amzn-q2-2026-ir"
+            ],
+            "analysis": {
+              "conclusion": "Amazon Q2同时出现了AWS再加速和集团经营利润扩张，但AI基础设施投入已经把TTM自由现金流压成负值；看点从‘云是否恢复’转为‘高额AI资本开支能否维持AWS增长并重新转化为自由现金流’。",
+              "plainImpact": "Q2净销售额2006亿美元，同比+20%；AWS销售422亿美元，同比+37%，AWS经营利润166亿美元。集团经营利润275亿美元，同比+43%。但TTM自由现金流为-76亿美元，主要因AI相关资本支出大增。",
+              "evidence": [
+                "Q2净销售额2006亿美元，同比+20%",
+                "AWS销售422亿美元，同比+37%，为18个季度最快增速",
+                "集团经营利润274.61亿美元，同比+43%；AWS经营利润166亿美元",
+                "TTM经营现金流1614亿美元，同比+33%，但TTM自由现金流降至-76亿美元",
+                "TTM净资本性资产购买1690亿美元，同比+64%，公司称主要反映AI投资"
+              ],
+              "guidance": "Q3销售指引1970亿至2020亿美元，同比+9%至+12%；经营利润指引225亿至265亿美元。Q2净利润包含主要来自Anthropic投资的534亿美元税前其他收益，因此不以净利润增幅判断核心经营改善。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "未取得与当前价格同步的前瞻自由现金流和一致预期，不编目标价。"
+              },
+              "risks": [
+                "AI资本支出长期高于经营现金流增量",
+                "AWS增长重新放缓",
+                "能源、存储芯片和数据中心资源约束",
+                "Anthropic等投资重估造成净利润大幅波动"
+              ],
+              "invalidation": "若AWS增长和经营利润不能继续覆盖快速增加的基础设施投入，且自由现金流持续恶化，则当前积极经营判断应下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:BRK.B",
+            "eventKey": "EQUITY:US:BRK.B|material-announcement|20260918|buffett-chair-transition",
+            "eventType": "material-announcement",
+            "period": "2026-09-18",
+            "documentId": "reuters-berkshire-chair-transition-20260918",
+            "documentUrl": "https://www.reuters.com/business/retail-consumer/berkshire-hathaway-names-warren-buffett-chairman-emeritus-2026-09-18/",
+            "publishedAt": "2026-09-18",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T15:54:02+08:00",
+            "sourceIds": [
+              "brk-chair-20260918-reuters"
+            ],
+            "analysis": {
+              "conclusion": "Berkshire的权力交接继续按既定路线落地：Warren Buffett退出董事长职位并转为荣誉董事长，Howard Buffett任非执行董事长，Greg Abel继续负责经营。短期经营并非突然换帅，但资本配置和‘Buffett溢价’将更依赖制度而非个人。",
+              "plainImpact": "这次变化主要是治理结构完成接班，而不是公司突然更换CEO。Howard Buffett的角色偏文化与董事会监督，实际经营仍由Greg Abel负责。对股东而言，后续更应盯资本配置纪律、并购回报和去Buffett化后的估值溢价。",
+              "evidence": [
+                "Reuters 9月18日报道Warren Buffett正式卸任董事长并成为chairman emeritus",
+                "Howard Buffett接任非执行董事长",
+                "Greg Abel此前已接任CEO并继续负责经营",
+                "Howard长期担任Berkshire董事，接班安排强调延续公司文化与去中心化治理"
+              ],
+              "guidance": "本条为治理事件研究，不把旧财报指标或旧目标价自动更新成当前估值。财务基线仍应结合正式10-Q单独看。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "治理事件本身不构成可可靠量化的估值重估；未取得同步一致预期，故不计算‘Buffett折价/溢价’。"
+              },
+              "risks": [
+                "资本配置质量在创始人淡出后下降",
+                "市场给予的Buffett品牌溢价收缩",
+                "大型并购和现金部署节奏改变",
+                "非执行董事长与管理层之间的治理协调风险"
+              ],
+              "invalidation": "若未来数季资本配置、并购回报、保险纪律和子公司经营表现保持稳定，且治理过渡无明显摩擦，则市场对接班风险的担忧应逐步下降。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:BLK",
+            "eventKey": "EQUITY:US:BLK|earnings|2026Q2|blk-ex99-20260715",
+            "eventType": "earnings",
+            "period": "2026Q2",
+            "documentId": "blk-ex99-20260715",
+            "documentUrl": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526304013/blk-ex99_1.htm",
+            "publishedAt": "2026-07-15",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T15:54:02+08:00",
+            "sourceIds": [
+              "blk-q2-2026-sec-release",
+              "blk-q2-2026-sec-10q"
+            ],
+            "analysis": {
+              "conclusion": "BlackRock Q2的质量来自规模、净流入和费率三项同时改善，而不只是市场上涨推高AUM：AUM升至15.3万亿美元，Q2净流入1920亿美元，过去12个月有机基础费增长10%。需要继续观察并购整合后的费用、杠杆和私募资产扩张质量。",
+              "plainImpact": "公司管理资产达到15.3万亿美元；Q2净流入1920亿美元，上半年净流入3210亿美元。收入同比+31%，经营利润同比+42%，调整后摊薄EPS 13.91美元。",
+              "evidence": [
+                "期末AUM 15.3万亿美元，较上年同期12.5万亿美元提高",
+                "过去12个月净流入8680亿美元；Q2净流入1920亿美元",
+                "长期产品过去12个月净流入7730亿美元，其中ETF净流入6440亿美元",
+                "收入同比+31%，经营利润同比+42%（调整后+39%）",
+                "调整后摊薄EPS 13.91美元，公司把计划季度回购额提高至5.5亿美元"
+              ],
+              "guidance": "公司称Q2有机基础费增长8%，过去12个月为10%；本记录以公司正式披露为准，不加入未核验卖方目标价。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "AUM受市场价格波动影响明显，且HPS等交易改变可比口径；缺少同步前瞻利润与估值输入，不计算目标价。"
+              },
+              "risks": [
+                "资本市场下跌导致AUM和基础管理费同步承压",
+                "HPS、ElmTree等并购整合和费用增长",
+                "私募市场扩张带来的流动性与估值风险",
+                "净流入集中于ETF等低费率产品造成费率结构压力"
+              ],
+              "invalidation": "若净流入明显转弱、有机基础费增长持续下滑，或并购后费用增速长期高于收入增速，则当前‘规模与费率共同改善’的判断需要下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:AAPL",
+            "eventKey": "EQUITY:US:AAPL|earnings|FY2026Q3|sec-0000320193-26-000020",
+            "eventType": "earnings",
+            "period": "FY2026Q3",
+            "documentId": "sec-0000320193-26-000020",
+            "documentUrl": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+            "publishedAt": "2026-07-30",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T16:39:06+08:00",
+            "sourceIds": [
+              "aapl-q3-2026-apple",
+              "aapl-q3-2026-sec10q"
+            ],
+            "analysis": {
+              "conclusion": "Apple FY2026 Q3创下公司六月季度收入与EPS纪录，iPhone、Mac、Services及全部地域均实现双位数增长；但本季毛利率和EPS分别受关税退款约2个百分点和0.11美元提振，判断经营质量时必须剔除这部分一次性帮助。",
+              "plainImpact": "季度收入1094亿美元，同比+16%；摊薄EPS 2.02美元，同比+29%；净利润297.89亿美元。总毛利率50.1%，其中公司明确披露约2个百分点来自关税退款；Services毛利率75.6%，Products毛利率40.1%。",
+              "evidence": [
+                "Apple正式业绩稿：FY2026 Q3收入1094亿美元，同比+16%，摊薄EPS 2.02美元，同比+29%",
+                "Apple正式业绩稿：总毛利率50.1%，约2个百分点来自关税退款，EPS中约0.11美元同样来自退款",
+                "10-Q：季度净利润297.89亿美元",
+                "10-Q：Products毛利率40.1%，Services毛利率75.6%，总毛利率50.1%"
+              ],
+              "guidance": "本轮实际读取的Apple业绩新闻稿与10-Q未取得可复核的下一季数值化收入/毛利率指引，因此不自行补齐管理层口径；也未取得可合法全文读取的卖方研报。下一轮应优先核对电话会原始材料或后续正式指引。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "未同时取得当前股价与同一时点前瞻EPS/FCF一致预期，且本季存在关税退款一次性影响，不编PE、目标价或所谓‘合理溢价’。"
+              },
+              "risks": [
+                "关税退款不可持续，表观毛利率与EPS需要正常化",
+                "iPhone换机与中国等关键地区需求波动",
+                "Services监管、反垄断与平台费率压力",
+                "AI产品投入若不能形成可验证收入或留存改善，估值扩张缺乏经营支撑"
+              ],
+              "invalidation": "若后续剔除关税退款后毛利率明显走弱、iPhone与Services增长同步失速，或AI投入未带来可验证的用户/收入改善，则当前‘高质量广泛增长’判断需要下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:AVGO",
+            "eventKey": "EQUITY:US:AVGO|earnings|FY2026Q3|sec-0001730168-26-000080",
+            "eventType": "earnings",
+            "period": "FY2026Q3",
+            "documentId": "sec-0001730168-26-000080",
+            "documentUrl": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/avgo-20260802.htm",
+            "publishedAt": "2026-09-02",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T16:39:06+08:00",
+            "sourceIds": [
+              "avgo-q3-2026-ir",
+              "avgo-q3-2026-sec10q"
+            ],
+            "analysis": {
+              "conclusion": "Broadcom FY2026 Q3已经从‘AI带动增长’进入‘AI半导体成为公司主要增长发动机’阶段：AI半导体收入同比+221%，同时自由现金流占收入46%。高增长质量很强，但客户建设AI基础设施需要巨额融资，公司10-Q也直接把资本可得性列为扩张约束。",
+              "plainImpact": "Q3收入295.91亿美元，同比+86%；半导体解决方案收入208.39亿美元，同比+127%，基础设施软件87.52亿美元，同比+29%。AI半导体收入167亿美元，同比+221%、环比+54%；自由现金流136.65亿美元。公司给出的Q4收入指引约348亿美元，非GAAP经营利润率约66%。",
+              "evidence": [
+                "正式业绩稿：Q3收入295.91亿美元，同比+86%；GAAP摊薄EPS 2.68美元，非GAAP摊薄EPS 3.32美元",
+                "正式业绩稿：半导体解决方案208.39亿美元，同比+127%；基础设施软件87.52亿美元，同比+29%",
+                "正式业绩稿：AI半导体收入167亿美元，同比+221%、环比+54%，Q4预计升至217亿美元",
+                "正式业绩稿：经营现金流141.97亿美元、资本开支约5亿美元，自由现金流136.65亿美元",
+                "10-Q：公司称AI基础设施部署需要客户获得大量资本，并建立AI XPV平台支持到2028年超过20GW算力容量"
+              ],
+              "guidance": "公司正式指引Q4 FY2026收入约348亿美元、非GAAP经营利润约占收入66%；管理层同时预计Q4 AI半导体收入约217亿美元，同比+236%。本轮未使用未获授权的卖方全文，也不把新闻媒体的目标价摘要当作完整研报。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "未取得与本轮同一时点的前瞻EPS/FCF一致预期和可比估值口径；高速增长与客户集中/融资约束并存，不能只用历史PE外推。"
+              },
+              "risks": [
+                "AI XPU和网络需求高度依赖少数大客户资本开支",
+                "AI数据中心融资、电力和建设约束可能推迟收入确认",
+                "半导体高增速提高对先进封装与供应链的依赖",
+                "VMware整合、软件续约与高负债带来现金配置压力"
+              ],
+              "invalidation": "若Q4 AI半导体收入明显低于217亿美元路线、客户AI项目因融资/电力延迟而推迟，或自由现金流率持续显著回落，则当前‘高增长且现金转化强’判断需要下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:TSLA",
+            "eventKey": "EQUITY:US:TSLA|earnings|2026Q2|sec-0001628280-26-049270",
+            "eventType": "earnings",
+            "period": "2026Q2",
+            "documentId": "sec-0001628280-26-049270",
+            "documentUrl": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+            "publishedAt": "2026-07-22",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T16:39:06+08:00",
+            "sourceIds": [
+              "tsla-q2-2026-ir",
+              "tsla-q2-2026-sec10q",
+              "tsla-q2-2026-consensus"
+            ],
+            "analysis": {
+              "conclusion": "Tesla Q2收入恢复明显，实际总收入高于公司汇总的卖方平均预期，但盈利和资本强度仍是更关键的约束：季度净利润同比略降，2026年资本开支计划超过250亿美元，核心押注已明显转向AI、自动驾驶、Robotaxi和算力基础设施。",
+              "plainImpact": "Q2总收入282.36亿美元，同比+26%；汽车收入205.16亿美元，能源31.39亿美元，服务及其他45.81亿美元。季度毛利47.51亿美元，对应总毛利率约16.8%；归母净利润11.14亿美元，同比小幅下降。公司汇总的23家卖方Q2平均收入预期为275.84亿美元，实际值高约2.4%，但公司仍预计2026年资本开支超过250亿美元。",
+              "evidence": [
+                "10-Q：Q2总收入282.36亿美元，同比+26%；汽车205.16亿美元、能源31.39亿美元、服务及其他45.81亿美元",
+                "10-Q：Q2毛利47.51亿美元，归母净利润11.14亿美元",
+                "Tesla公司汇总23家卖方输入：Q2平均总收入预期275.84亿美元；这是公司汇总共识，不等于读取了23份研报全文",
+                "10-Q：2026年前六个月经营现金流86.34亿美元、资本开支82.82亿美元",
+                "10-Q：公司预计2026年资本开支超过250亿美元，主要投向AI算力/数据中心、制造与研发产线、公司自营AI资产及充电网络"
+              ],
+              "guidance": "公司没有在本轮读取材料中给出传统意义上的单一季度收入指引；明确的资本开支口径是2026年超过250亿美元。收入实际值高于公司汇总卖方平均预期约2.4%，但该共识页只是汇总表，不代表已读到各券商全文。本轮未取得合法可读的完整卖方研报。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "Tesla估值高度依赖尚未成熟的自动驾驶/Robotaxi/机器人现金流假设；本轮未取得可复核的同一时点长期盈利共识与当前价格，因此不编PE或目标价。"
+              },
+              "risks": [
+                "汽车毛利率和价格竞争仍可能压制利润增长",
+                "超过250亿美元资本开支需要AI/自动驾驶项目产生足够回报",
+                "FSD/Robotaxi监管、责任和安全验证存在不确定性",
+                "SpaceX等关联交易及资本配置增加分析复杂度"
+              ],
+              "invalidation": "若后续汽车收入增长不能转化为利润率改善、自由现金流持续被AI资本开支吞噬，或FSD/Robotaxi监管推进明显落后于投入节奏，则当前‘收入恢复但向AI转型’判断需要下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:BX",
+            "eventKey": "EQUITY:US:BX|earnings|2026Q2|blackstone-q2-20260723",
+            "eventType": "earnings",
+            "period": "2026Q2",
+            "documentId": "blackstone-q2-20260723",
+            "documentUrl": "https://www.blackstone.com/blackstone2q26earningspressrelease/",
+            "publishedAt": "2026-07-23",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T16:39:06+08:00",
+            "sourceIds": [
+              "bx-q2-2026-report",
+              "bx-q2-2026-sec10q"
+            ],
+            "analysis": {
+              "conclusion": "Blackstone Q2同时出现FRE增长、可分配收益增长、AUM扩张和强劲募资，说明不是单靠资产价格上涨撑规模；但私募资管的下一步质量取决于退出、变现和部署能否继续匹配募资速度，而不是只看AUM绝对值。",
+              "plainImpact": "Q2 FRE 17.83亿美元，同比+22%，DE 19.77亿美元，同比+26%；总AUM 1.3463万亿美元，同比+11%，Fee-Earning AUM 9616亿美元，同比+8%。季度流入683亿美元、部署342亿美元、实现318亿美元，说明募资、投资和退出三端都在运转。",
+              "evidence": [
+                "Blackstone完整Q2报告：FRE 17.83亿美元，FRE/share 1.43美元，同比约+20%每股口径",
+                "完整Q2报告：DE 19.77亿美元，DE/share 1.52美元，同比+26%",
+                "完整Q2报告：总AUM 1.3463万亿美元，Fee-Earning AUM 9616亿美元，Perpetual Capital AUM 5556亿美元",
+                "完整Q2报告：季度流入683亿美元、部署341.75亿美元、实现318.43亿美元",
+                "完整Q2报告：GAAP净利润23.56亿美元，归属于Blackstone Inc.净利润12.29亿美元，摊薄EPS 1.54美元"
+              ],
+              "guidance": "本轮以公司完整Q2报告和10-Q为主，没有取得可合法全文读取的卖方研报，也没有用媒体目标价摘要代替研报。后续重点不是管理层给出单点收入指引，而是募资、Fee-Earning AUM、FRE、退出与部署的连续性。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "另类资管更适合结合FRE/DE、Fee-Earning AUM和资本回报看估值；本轮未取得同步前瞻FRE/DE一致预期与股价，不编目标倍数。"
+              },
+              "risks": [
+                "退出市场转弱会拖累实现收益与DE",
+                "大规模募资后若部署回报下降，AUM增长不等于价值增长",
+                "私募资产估值和信用周期变化可能影响绩效费与募资",
+                "高利率环境可能提高融资成本并压低部分资产估值"
+              ],
+              "invalidation": "若连续数季Fee-Earning AUM与FRE增长明显低于总AUM、退出和实现持续弱于部署，或大规模募资伴随投资回报显著下降，则当前‘四端共同改善’判断需要下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:KKR",
+            "eventKey": "EQUITY:US:KKR|earnings|2026Q2|kkr-q2-20260730",
+            "eventType": "earnings",
+            "period": "2026Q2",
+            "documentId": "kkr-q2-20260730",
+            "documentUrl": "https://ir.kkr.com/media/document/15a25fa9-8226-4da1-9ff3-027b9803d436/assets/KKR_Q226_Earnings_Release.pdf?disposition=inline",
+            "publishedAt": "2026-07-30",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T16:39:06+08:00",
+            "sourceIds": [
+              "kkr-q2-2026-report",
+              "kkr-q2-2026-sec10q"
+            ],
+            "analysis": {
+              "conclusion": "KKR Q2的核心是经常性费收能力与资本规模同步扩张：FRE、总经营收益和调整后净利润每股都创季度纪录，AUM与FPAUM双位数增长，同时募资和投资活动维持高位。对资管公司而言，这比单看GAAP净利润更能说明经营趋势。",
+              "plainImpact": "Q2 FRE 12亿美元、每调整后股1.32美元，同比+37%；总经营收益15亿美元、每股1.68美元，同比+29%；调整后净利润15亿美元、每股1.63美元，同比+40%。AUM 7960亿美元，同比+16%，Fee-Paying AUM 6380亿美元，同比+15%；季度新募资本340亿美元、投资240亿美元。",
+              "evidence": [
+                "KKR完整Q2报告：FRE 12亿美元（1.32美元/调整后股），同比+37%",
+                "完整Q2报告：Total Operating Earnings 15亿美元（1.68美元/调整后股），同比+29%；ANI 15亿美元（1.63美元/调整后股），同比+40%",
+                "完整Q2报告：AUM 7960亿美元，同比+16%；Fee-Paying AUM 6380亿美元，同比+15%",
+                "完整Q2报告：季度新募资本340亿美元，过去12个月1330亿美元；季度投资240亿美元，过去12个月1040亿美元",
+                "完整Q2报告：Arctos于5月4日完成收购，截至6月30日AUM约200亿美元并纳入Private Equity业务"
+              ],
+              "guidance": "本轮读取KKR完整Q2财报PDF与10-Q，没有取得可合法全文读取的卖方研报。8月3日公司又完成192亿美元基础设施基金募集的可核验公开事件，但本轮5份新研究预算已用满，单独事件分析进入pendingQueue，不把后续事件倒灌进Q2财报eventKey。",
+              "valuation": {
+                "asOf": null,
+                "status": "not-calculated",
+                "note": "KKR需结合FRE/TOE/ANI、FPAUM、保险业务与资本结构估值；本轮缺少同一时点前瞻共识和当前价格，不编PE/目标价。"
+              },
+              "risks": [
+                "募资强但部署或退出环境转弱会拖累未来绩效收入",
+                "信用与私募资产估值恶化可能影响管理费外收益",
+                "Global Atlantic保险资产负债久期与市场风险",
+                "快速并购扩张可能带来整合和费用压力"
+              ],
+              "invalidation": "若FPAUM增速显著跌破AUM、FRE增速持续失速，或募资仍高但退出/投资回报明显恶化，则当前‘经常性费收与规模同步增强’判断需要下调。"
+            }
+          },
+          {
+            "instrumentId": "EQUITY:US:META",
+            "eventKey": "META|research-report-summary|Muse|2026-09-22|reuters-v1",
+            "eventType": "research-report-summary",
+            "period": "2026-09-22",
+            "documentId": "reuters-meta-muse-20260922",
+            "documentUrl": "https://www.reuters.com/business/wall-street-expects-metas-ai-agent-shape-into-new-revenue-engine-2026-09-22/",
+            "publishedAt": "2026-09-22T20:25:00+08:00",
+            "sourceHash": null,
+            "analyzedAt": "2026-09-22T22:36:40+08:00",
+            "sourceIds": [
+              "reuters-meta-muse-global"
+            ],
+            "analysis": {
+              "conclusion": "Muse早期采用支持Meta AI商业化叙事，但付费转化与成本尚未被财报验证。"
+            }
+          }
+        ],
+        "checks": [],
+        "pendingQueue": [],
+        "reuse": {
+          "fromRunId": "20260923T070418-global-main-research",
+          "note": "本轮未发现必须重做既有财报研究的正式新材料；发布器按eventKey合并既有研究并保留原analyzedAt。"
+        },
+        "cacheAudit": {
+          "added": [],
+          "reused": [],
+          "note": "同事件沿用原分析及analyzedAt；新财报/指引/重述/研报需新eventKey。"
+        }
+      },
+      "_inputHash": "2be9dfe916208f184c12790030bd9ee90649641a3a64bcc94f7c84fc89f695dc"
+    },
+    "synthesis": {
+      "moduleVersion": 1,
+      "module": "synthesis",
+      "runId": "20260923T084024-global-main-synthesis",
+      "generatedAt": "2026-09-23T08:40:24+08:00",
+      "dataAsOf": "2026-09-23T08:28:02+08:00",
+      "status": "partial",
+      "dataMode": "production",
+      "execution": {
+        "batchId": "20260923T084024-global-main",
+        "mode": "scheduled-batch",
+        "role": "synthesis"
+      },
+      "sources": [],
+      "payload": {
+        "report": {
+          "schemaVersion": 5,
+          "reportId": "2026-09-23-0840",
+          "updatedAt": "2026-09-23 08:40",
+          "reportMeta": {
+            "generatedAt": "2026-09-23T08:40:24+08:00",
+            "lastVerifiedAt": "2026-09-23T08:28:02+08:00",
+            "status": "partial",
+            "edition": "08:40全球主报告·深度复核",
+            "contractVersion": "reader-r2",
+            "pipelineVersion": "atomic-batch-v2",
+            "dataMode": "production",
+            "moduleRefs": {
+              "quotes": {
+                "path": "data/runs/quotes/20260923T084024-global-main-quotes.json",
+                "runId": "20260923T084024-global-main-quotes",
+                "generatedAt": "2026-09-23T08:40:24+08:00",
+                "dataAsOf": "2026-09-23T04:00:00+08:00"
+              },
+              "asia-equities": {
+                "path": "data/runs/asia-equities/20260923T084024-global-main-asia-equities.json",
+                "runId": "20260923T084024-global-main-asia-equities",
+                "generatedAt": "2026-09-23T08:40:24+08:00",
+                "dataAsOf": "2026-09-22T16:08:00+08:00"
+              },
+              "us-equities": {
+                "path": "data/runs/us-equities/20260923T084024-global-main-us-equities.json",
+                "runId": "20260923T084024-global-main-us-equities",
+                "generatedAt": "2026-09-23T08:40:24+08:00",
+                "dataAsOf": "2026-09-23T04:00:00+08:00"
+              },
+              "news": {
+                "path": "data/runs/news/20260923T084024-global-main-news.json",
+                "runId": "20260923T084024-global-main-news",
+                "generatedAt": "2026-09-23T08:40:24+08:00",
+                "dataAsOf": "2026-09-23T08:28:02+08:00"
+              },
+              "macro": {
+                "path": "data/runs/macro/20260923T084024-global-main-macro.json",
+                "runId": "20260923T084024-global-main-macro",
+                "generatedAt": "2026-09-23T08:40:24+08:00",
+                "dataAsOf": "2026-09-23T04:00:00+08:00"
+              },
+              "research": {
+                "path": "data/runs/research/20260923T084024-global-main-research.json",
+                "runId": "20260923T084024-global-main-research",
+                "generatedAt": "2026-09-23T08:40:24+08:00",
+                "dataAsOf": "2026-09-22T20:25:00+08:00"
+              }
+            }
+          },
+          "marketState": "美股收盘后科技强、金融弱；亚洲开盘前等待验证；中美会晤与能源运输是下一重定价节点。",
+          "brief": "结构性risk-on未变，深度复核提高中美会晤与台海政策风险权重。",
+          "overview": "08点深度复核没有发现足以翻转主线的新精确价格硬数据。纳指纪录收盘而金融/银行明显偏弱，说明风险偏好仍集中于AI与科技；CoinGecko页面显示BTC约8.64万美元、ETH约2764美元、SOL约118美元，但缺精确源报价时点，只保留文字展示。沙特东西向管线恢复是真实供给缓和证据，不过海峡安全与完整产能尚未恢复。相较07:04，最重要新增是中美元首会晤前台海军售议题升温，以及AI模型和中美制造供应链的新材料。",
+          "period": {
+            "from": "2026-09-22 08:40",
+            "to": "2026-09-23 08:40",
+            "coverageHours": 24,
+            "isFull24h": true
+          },
+          "recentPeriod": {
+            "from": "2026-09-23 07:04",
+            "to": "2026-09-23 08:40"
+          },
+          "rolling24hSummary": "过去24小时从美股盘中AI强势、油价风险溢价回吐，演化到纳指纪录收盘并确认科技强/金融弱的结构分化；能源从谈判预期缓和升级为沙特绕行管线实际恢复但仍降速。08点深度复核新增中美会晤前台海军售摩擦、AI模型成本竞争和制造选址证据，主线仍是结构性risk-on而非全面宽松。",
+          "evolution24h": [
+            {
+              "at": "2026-09-22 15:58",
+              "summary": "亚洲收盘后，A/H数据进入休市冻结；全球主线仍围绕AI、高利率和能源风险。"
+            },
+            {
+              "at": "2026-09-22 22:59",
+              "summary": "美股盘中AI继续领涨，能源风险溢价因供应改善预期回吐。"
+            },
+            {
+              "at": "2026-09-23 04:00",
+              "summary": "美股收盘，纳指27244.28创纪录且涨0.45%，道指-0.36%，金融约-2%、银行约-3%。"
+            },
+            {
+              "at": "2026-09-23 07:04",
+              "summary": "加密页面展示值偏强，中美会晤窗口与前体化学品出口管制进入观察清单。"
+            },
+            {
+              "at": "2026-09-23 08:40",
+              "summary": "深度复核新增台海军售谈判风险、Anthropic模型迭代和EnerVenue常州投产；未发现足以翻转结构性risk-on的新精确行情。"
+            }
+          ],
+          "changes": [
+            {
+              "id": "taiwan-risk-up",
+              "summary": "会晤前台海军售议题升温，增加中美政策尾部风险。",
+              "sourceIds": [
+                "n:xi_taiwan"
+              ]
+            },
+            {
+              "id": "ai-model-competition",
+              "summary": "Anthropic发布Claude Opus 5.5，AI模型性能/成本竞争继续强化。",
+              "sourceIds": [
+                "n:anthropic"
+              ]
+            },
+            {
+              "id": "supply-chain-case",
+              "summary": "EnerVenue在常州投产首座工厂，提供制造供应链与工程人才优势的具体案例。",
+              "sourceIds": [
+                "n:enervenue"
+              ]
+            }
+          ],
+          "recentChanges": [
+            {
+              "id": "r1",
+              "summary": "主线未翻转：科技强、金融弱，高利率约束仍在。"
+            },
+            {
+              "id": "r2",
+              "summary": "能源缓和有实物流支持，但完整产能和海峡安全仍未正常化。"
+            },
+            {
+              "id": "r3",
+              "summary": "中美会晤风险从笼统贸易/AI议题细化到台海军售等更高敏感度议题。"
+            }
+          ],
+          "canonicalFacts": [
+            {
+              "id": "spx",
+              "label": "标普500",
+              "displayValue": "7764.64",
+              "rawValue": 7764.64,
+              "unit": "index",
+              "scope": "S&P 500 close",
+              "window": "收盘",
+              "asOf": "2026-09-23T04:00:00+08:00",
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "closed",
+              "marketState": "已收盘",
+              "direction": "flat",
+              "impactTone": "mixed",
+              "sourceIds": [
+                "q:us"
+              ],
+              "seriesKey": "SP500:index",
+              "valueType": "index"
+            },
+            {
+              "id": "nasdaq",
+              "label": "纳斯达克综合",
+              "displayValue": "27244.28 / +0.45%",
+              "rawValue": 27244.28,
+              "unit": "index",
+              "scope": "Nasdaq Composite close",
+              "window": "收盘",
+              "asOf": "2026-09-23T04:00:00+08:00",
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "closed",
+              "marketState": "已收盘",
+              "direction": "up",
+              "impactTone": "risk-on",
+              "sourceIds": [
+                "q:us"
+              ],
+              "seriesKey": "NASDAQ:composite",
+              "valueType": "index",
+              "changeValue": 0.45,
+              "changeUnit": "%",
+              "comparisonBasis": "previous-official-close"
+            },
+            {
+              "id": "dow",
+              "label": "道琼斯",
+              "displayValue": "51863.69 / -0.36%",
+              "rawValue": 51863.69,
+              "unit": "index",
+              "scope": "Dow Jones Industrial Average close",
+              "window": "收盘",
+              "asOf": "2026-09-23T04:00:00+08:00",
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "closed",
+              "marketState": "已收盘",
+              "direction": "down",
+              "impactTone": "mixed",
+              "sourceIds": [
+                "q:us"
+              ],
+              "seriesKey": "DOW:index",
+              "valueType": "index",
+              "changeValue": -0.36,
+              "changeUnit": "%",
+              "comparisonBasis": "previous-official-close"
+            },
+            {
+              "id": "fin",
+              "label": "标普金融",
+              "displayValue": "约-2%",
+              "rawValue": -2,
+              "unit": "%",
+              "scope": "S&P 500 Financials close",
+              "window": "收盘",
+              "asOf": "2026-09-23T04:00:00+08:00",
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "closed",
+              "marketState": "已收盘",
+              "direction": "down",
+              "impactTone": "risk-off",
+              "sourceIds": [
+                "m:fin"
+              ],
+              "valueType": "return"
+            },
+            {
+              "id": "banks",
+              "label": "美国银行板块",
+              "displayValue": "约-3%",
+              "rawValue": -3,
+              "unit": "%",
+              "scope": "US bank sector close",
+              "window": "收盘",
+              "asOf": "2026-09-23T04:00:00+08:00",
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "closed",
+              "marketState": "已收盘",
+              "direction": "down",
+              "impactTone": "risk-off",
+              "sourceIds": [
+                "m:fin"
+              ],
+              "valueType": "return"
+            },
+            {
+              "id": "btc",
+              "label": "BTC",
+              "displayValue": "约86384.28",
+              "rawValue": null,
+              "unit": "USD",
+              "scope": "BTC/USD CoinGecko page display",
+              "window": "页面快照",
+              "asOf": null,
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "partial",
+              "marketState": "24/7",
+              "direction": "up",
+              "impactTone": "risk-on",
+              "sourceIds": [
+                "q:btc"
+              ],
+              "evidenceNote": "页面本轮显示约86384.28，但缺协议要求的精确源报价时点，故rawValue保持null。"
+            },
+            {
+              "id": "eth",
+              "label": "ETH",
+              "displayValue": "约2763.50",
+              "rawValue": null,
+              "unit": "USD",
+              "scope": "ETH/USD CoinGecko page display",
+              "window": "页面快照",
+              "asOf": null,
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "partial",
+              "marketState": "24/7",
+              "direction": "up",
+              "impactTone": "mixed",
+              "sourceIds": [
+                "q:eth"
+              ]
+            },
+            {
+              "id": "sol",
+              "label": "SOL",
+              "displayValue": "约118.45",
+              "rawValue": null,
+              "unit": "USD",
+              "scope": "SOL/USD CoinGecko page display",
+              "window": "页面快照",
+              "asOf": null,
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "partial",
+              "marketState": "24/7",
+              "direction": "flat",
+              "impactTone": "mixed",
+              "sourceIds": [
+                "q:sol"
+              ]
+            },
+            {
+              "id": "wti",
+              "label": "WTI",
+              "displayValue": "94.99结算（沿用）",
+              "rawValue": null,
+              "unit": "USD/bbl",
+              "scope": "WTI Oct 2026 settlement display",
+              "window": "最近已核验结算",
+              "asOf": null,
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "partial",
+              "marketState": "已结算",
+              "direction": "down",
+              "impactTone": "risk-on",
+              "sourceIds": [
+                "q:oil"
+              ],
+              "contract": "2026-10"
+            },
+            {
+              "id": "pipeline",
+              "label": "沙特东西向管线",
+              "displayValue": "恢复但仍降速",
+              "rawValue": null,
+              "unit": "state",
+              "scope": "Saudi East-West pipeline",
+              "window": "最新进展",
+              "asOf": null,
+              "verifiedAt": "2026-09-23T08:28:02+08:00",
+              "dataStatus": "partial",
+              "marketState": "事件",
+              "direction": "improving",
+              "impactTone": "risk-on",
+              "sourceIds": [
+                "m:pipeline"
+              ]
+            },
+            {
+              "id": "xau",
+              "label": "黄金",
+              "displayValue": "4325.03（沿用）",
+              "rawValue": null,
+              "unit": "USD/oz",
+              "scope": "spot gold display",
+              "window": "最近已核验展示",
+              "asOf": null,
+              "verifiedAt": "2026-09-23T05:59:08+08:00",
+              "dataStatus": "partial",
+              "marketState": "连续市场",
+              "direction": "mixed",
+              "impactTone": "mixed",
+              "sourceIds": [
+                "q:gold"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "name": "纳指",
+              "value": "27244.28 / +0.45%",
+              "factId": "nasdaq",
+              "primary": true
+            },
+            {
+              "name": "标普",
+              "value": "7764.64",
+              "factId": "spx",
+              "primary": true
+            },
+            {
+              "name": "金融",
+              "value": "约-2%",
+              "factId": "fin",
+              "primary": true
+            },
+            {
+              "name": "BTC",
+              "value": "约86384（时点未精确）",
+              "factId": "btc",
+              "primary": true
+            },
+            {
+              "name": "WTI",
+              "value": "94.99结算（沿用）",
+              "factId": "wti",
+              "primary": false
+            },
+            {
+              "name": "黄金",
+              "value": "4325.03（沿用）",
+              "factId": "xau",
+              "primary": false
+            }
+          ],
+          "marketCoverage": [
+            {
+              "market": "A股",
+              "status": "closed",
+              "summary": "08:40仍在开盘前，沿用上一交易日真实收盘时点；缺板块全量成员与排名基准。"
+            },
+            {
+              "market": "港股",
+              "status": "closed",
+              "summary": "上一交易日16:08输入沿用，阿里AI催化与中美会晤是开盘前主要外部变量。"
+            },
+            {
+              "market": "美股",
+              "status": "closed",
+              "summary": "纳指纪录收盘，科技强而金融/银行明显弱，风险偏好集中。"
+            },
+            {
+              "market": "BTC",
+              "status": "partial",
+              "summary": "CoinGecko页面约86384，24/7情绪偏强；精确源报价时点、OI、费率、清算统一窗口仍缺。"
+            },
+            {
+              "market": "黄金",
+              "status": "partial",
+              "summary": "沿用最近核验展示值，高利率和地缘避险继续拉扯；本轮无精确新报价时点。"
+            },
+            {
+              "market": "原油",
+              "status": "partial",
+              "summary": "沙特绕行管线恢复偏空风险溢价，但完整能力与霍尔木兹安全仍需验证。"
+            }
+          ],
+          "worldEvents": [],
+          "analysisTheses": [
+            {
+              "id": "tech-vs-fin",
+              "observed": "纳指创纪录收盘，而金融约跌2%、银行约跌3%。",
+              "interpretation": "风险偏好仍集中于AI/科技，尚未扩展为均匀普涨。",
+              "alternatives": "指数权重集中会放大科技对纳指的贡献。",
+              "validation": "观察亚洲开盘风险偏好、下一美股交易日广度与金融修复。",
+              "confidence": "medium-high",
+              "evidenceFactIds": [
+                "nasdaq",
+                "fin",
+                "banks"
+              ],
+              "sourceIds": [
+                "q:us",
+                "m:fin"
+              ]
+            },
+            {
+              "id": "crypto-strength",
+              "observed": "BTC/ETH/SOL页面展示值保持高位。",
+              "interpretation": "现货情绪偏强，但缺统一衍生品与精确源时点，不能判断是否由新增杠杆驱动。",
+              "alternatives": "可能只是短时现货波动。",
+              "validation": "补齐同一窗口OI、费率、清算与ETF披露。",
+              "confidence": "medium-low",
+              "evidenceFactIds": [
+                "btc",
+                "eth",
+                "sol"
+              ],
+              "sourceIds": [
+                "q:btc",
+                "q:eth",
+                "q:sol"
+              ]
+            },
+            {
+              "id": "energy-normalization",
+              "observed": "沙特东西向管线恢复但仍降速，油价风险溢价此前回吐。",
+              "interpretation": "供给绕行能力改善是真实缓和信号，但航运安全尾部风险仍在。",
+              "alternatives": "新袭击、恢复不及预期或成品油库存紧张都可能重新推升价格。",
+              "validation": "看实物流、库存、船运量与保险成本。",
+              "confidence": "medium-high",
+              "evidenceFactIds": [
+                "pipeline",
+                "wti"
+              ],
+              "sourceIds": [
+                "m:pipeline",
+                "q:oil"
+              ]
+            },
+            {
+              "id": "us-china-event",
+              "observed": "中美元首会晤进入窗口，同时台海军售议题升温。",
+              "interpretation": "会晤可能同时包含合作信号和高敏感度争议，市场不应只定价单向缓和。",
+              "alternatives": "最终文本可能聚焦有限议题，台海分歧未必转化为新限制。",
+              "validation": "等待正式联合表述、出口/关税/军售执行文本。",
+              "confidence": "medium",
+              "evidenceFactIds": [],
+              "sourceIds": [
+                "n:xi",
+                "n:xi_taiwan"
+              ]
+            }
+          ],
+          "judgmentRevisions": [
+            {
+              "id": "jr-energy",
+              "topic": "能源缓和",
+              "previous": "油价回落主要反映谈判和预期。",
+              "newEvidence": "沙特东西向管线恢复提供部分实物流改善证据。",
+              "revised": "缓和判断继续保留，但明确为部分供给恢复，不等于航运与地缘风险归零。",
+              "unresolved": "库存、船运量和完整管线能力恢复进度。",
+              "status": "得到支持",
+              "firstSeenAt": "2026-09-23T04:58:00+08:00",
+              "updatedAt": "2026-09-23T08:40:24+08:00",
+              "evidenceFactIds": [
+                "pipeline",
+                "wti"
+              ],
+              "sourceIds": [
+                "m:pipeline",
+                "q:oil"
+              ]
+            },
+            {
+              "id": "jr-us-china",
+              "topic": "中美会晤",
+              "previous": "会晤可能提供有限合作与风险缓和。",
+              "newEvidence": "台海军售料成为高敏感度谈判议题。",
+              "revised": "不再把会晤简单视为缓和催化，需同时计入台海与技术限制尾部风险。",
+              "unresolved": "最终文本及执行措施。",
+              "status": "待验证",
+              "firstSeenAt": "2026-09-23T08:28:02+08:00",
+              "updatedAt": "2026-09-23T08:40:24+08:00",
+              "evidenceFactIds": [],
+              "sourceIds": [
+                "n:xi_taiwan"
+              ]
+            }
+          ],
+          "dataDefinitions": [
+            {
+              "name": "精确价格",
+              "detail": "只有有限数字、可靠来源与精确asOf同时存在时才进入rawValue和曲线；页面展示值缺源时间时只保留displayValue。"
+            },
+            {
+              "name": "板块榜",
+              "detail": "缺全量成员、20日同口径量比/换手/成交额时不生成热度或弱势榜。"
+            },
+            {
+              "name": "复用",
+              "detail": "休市或无新材料时沿用原asOf/analyzedAt；新报告生成时间不能冒充旧资料更新。"
+            }
+          ],
+          "assets": [
+            {
+              "name": "A股",
+              "summary": "开盘前中性偏分化。",
+              "detail": "中美峰会前既有前体化学品合作信号，也新增台海军售高敏感议题；需等待09:30后真实量价和行业广度。",
+              "factIds": [],
+              "sourceIds": [
+                "n:precursor",
+                "n:xi_taiwan"
+              ]
+            },
+            {
+              "name": "港股",
+              "summary": "AI催化偏正面但政策风险上升。",
+              "detail": "阿里AI模型、芯片和数据中心计划提供催化；同时中美技术与台海议题增加事件波动。",
+              "factIds": [],
+              "sourceIds": [
+                "n:ali",
+                "n:xi_taiwan"
+              ]
+            },
+            {
+              "name": "美股",
+              "summary": "科技强、金融弱的结构行情。",
+              "detail": "纳指创新高但金融和银行显著落后；AI模型竞争继续给科技叙事加材料，但高利率和宽度不足仍是约束。",
+              "factIds": [
+                "nasdaq",
+                "fin",
+                "banks"
+              ],
+              "sourceIds": [
+                "q:us",
+                "m:fin",
+                "n:anthropic"
+              ]
+            },
+            {
+              "name": "BTC",
+              "summary": "页面价格偏强，杠杆结构未知。",
+              "detail": "CoinGecko页面约86384，但缺精确源报价时点；OI/费率/清算未统一，不能把现货高位解释成新增多头。",
+              "factIds": [
+                "btc"
+              ],
+              "sourceIds": [
+                "q:btc"
+              ]
+            },
+            {
+              "name": "黄金",
+              "summary": "高利率与地缘避险继续对冲。",
+              "detail": "本轮没有取得带精确源时点的新黄金报价，沿用最近核验展示值并降低结论强度。",
+              "factIds": [
+                "xau"
+              ],
+              "sourceIds": [
+                "q:gold"
+              ]
+            },
+            {
+              "name": "原油",
+              "summary": "供给改善偏空风险溢价，但安全风险尚未清零。",
+              "detail": "沙特东西向管线恢复是硬证据；完整产能、霍尔木兹通航和中东安全仍是反向风险。",
+              "factIds": [
+                "wti",
+                "pipeline"
+              ],
+              "sourceIds": [
+                "q:oil",
+                "m:pipeline"
+              ]
+            }
+          ],
+          "coreAnalysis": {
+            "mainTheme": "AI/科技与加密情绪偏强，但高利率、金融弱与中美/中东尾部风险仍在。",
+            "expectationGap": "下一预期差来自中美会晤可执行文本、亚洲开盘广度、能源实物流以及美股下一交易日金融修复。",
+            "divergence": "纳指新高而金融/银行弱；加密页面偏强但杠杆证据缺失；能源风险溢价回落但安全风险未消失。",
+            "regime": "结构性risk-on，非全面宽松。",
+            "priceIn": "已发生美股收盘、沙特管线恢复和前体化学品管制；中美会晤结果、台海军售政策与完整航运恢复仍未知。",
+            "bullCase": "AI盈利/采用延续、能源继续正常化、中美出现可执行的有限缓和且利率不再上行。",
+            "bullInvalidation": "利率再急升、AI盈利下修、地缘升级或中美新增实质限制。",
+            "bearCase": "高利率与市场广度差引发估值压缩，台海/中东风险重新推高风险溢价与通胀。",
+            "bearInvalidation": "金融与广度修复、利率回落、能源运输持续恢复且会晤避免新增限制。"
+          },
+          "macroEvents": [
+            {
+              "id": "macro-us-cn",
+              "title": "中美元首会晤窗口",
+              "at": null,
+              "summary": "习近平9月23日至25日访美，贸易、AI、芯片、台海与安全政策进入事件窗口。",
+              "sourceIds": [
+                "n:xi",
+                "n:xi_taiwan"
+              ]
+            },
+            {
+              "id": "macro-energy",
+              "title": "能源供应恢复验证",
+              "at": null,
+              "summary": "继续观察沙特管线恢复速度和霍尔木兹实际通航。",
+              "sourceIds": [
+                "m:pipeline"
+              ]
+            }
+          ],
+          "news": [],
+          "deepDive": [
+            {
+              "id": "dd-a",
+              "title": "A股",
+              "analysis": "08:40仍在开盘前，不能把美股AI强势直接等同于A股普涨。会晤前既有合作信号也有台海军售争议，开盘后先看科技、军工、汽车相关方向的广度和成交，而不是用个别高开替代全市场判断。"
+            },
+            {
+              "id": "dd-hk",
+              "title": "港股",
+              "analysis": "阿里AI投入是直接公司级催化，但港股科技估值仍受高利率与中美科技政策约束。上一交易日数据保留16:08真实时点，等待新交易日再更新。"
+            },
+            {
+              "id": "dd-us",
+              "title": "美股",
+              "analysis": "纳指纪录收盘与金融、银行明显下跌构成最清晰的结构分化。AI主题仍有产品迭代支撑，但广度不足意味着指数强势不能外推到周期、金融和小盘。"
+            },
+            {
+              "id": "dd-btc",
+              "title": "BTC",
+              "analysis": "页面展示约8.64万美元，较前一轮保持强势，但没有精确源报价时点和统一OI/费率/清算窗口，无法区分现货需求、空头回补或杠杆新增。"
+            },
+            {
+              "id": "dd-gold",
+              "title": "黄金",
+              "analysis": "黄金同时受高利率压制和地缘/政策不确定性支撑。本轮没有精确新时点，继续把旧展示值与当前叙事分开。"
+            },
+            {
+              "id": "dd-oil",
+              "title": "原油",
+              "analysis": "沙特东西向管线恢复把此前的谈判缓和推进到部分实物流恢复，但恢复仍降速，霍尔木兹与红海安全、库存和炼化瓶颈决定风险溢价能否继续回吐。"
+            }
+          ],
+          "narrativeTriggers": [
+            {
+              "id": "nt1",
+              "trigger": "中美会晤出现可执行的关税、芯片或台海相关新文本",
+              "impact": "可能迅速改变亚洲科技、军工与人民币风险溢价。",
+              "sourceIds": [
+                "n:xi",
+                "n:xi_taiwan"
+              ]
+            },
+            {
+              "id": "nt2",
+              "trigger": "沙特管线恢复速度或海峡通航显著偏离当前预期",
+              "impact": "直接影响油价、通胀和利率路径。",
+              "sourceIds": [
+                "m:pipeline"
+              ]
+            },
+            {
+              "id": "nt3",
+              "trigger": "下一交易日科技强势扩散到金融/小盘或反向回落",
+              "impact": "用于判断结构性risk-on是否升级为更广泛风险偏好。",
+              "sourceIds": [
+                "m:fin",
+                "q:us"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "id": "ev-us-cn",
+              "at": null,
+              "title": "中美元首会晤及政策文本",
+              "sourceIds": [
+                "n:xi",
+                "n:xi_taiwan"
+              ]
+            },
+            {
+              "id": "ev-energy",
+              "at": null,
+              "title": "沙特管线恢复与霍尔木兹通航",
+              "sourceIds": [
+                "m:pipeline"
+              ]
+            },
+            {
+              "id": "ev-asia-open",
+              "at": "2026-09-23T09:30:00+08:00",
+              "title": "A/H新交易日开盘后的真实量价与广度",
+              "sourceIds": []
+            }
+          ],
+          "watch": [
+            {
+              "id": "w1",
+              "item": "09:30后A/H广度、科技与金融相对强弱",
+              "reason": "验证隔夜AI风险偏好能否传导。"
+            },
+            {
+              "id": "w2",
+              "item": "中美会晤正式文本",
+              "reason": "区分合作信号、台海军售与技术限制的真实执行。"
+            },
+            {
+              "id": "w3",
+              "item": "霍尔木兹通航、沙特管线和成品油库存",
+              "reason": "验证能源风险溢价是否继续下降。"
+            },
+            {
+              "id": "w4",
+              "item": "BTC OI/费率/清算同一窗口数据",
+              "reason": "判断价格高位是否伴随杠杆拥挤。"
+            }
+          ],
+          "sources": [
+            {
+              "id": "q:us",
+              "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-graphic-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "q:btc",
+              "url": "https://www.coingecko.com/en/coins/bitcoin",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "q:eth",
+              "url": "https://www.coingecko.com/en/coins/ethereum",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "q:sol",
+              "url": "https://www.coingecko.com/en/coins/solana",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "q:gold",
+              "url": "https://www.reuters.com/world/india/gold-muted-higher-for-longer-rate-outlook-weighs-2026-09-22/",
+              "verifiedAt": "2026-09-23T05:59:08+08:00"
+            },
+            {
+              "id": "q:oil",
+              "url": "https://www.reuters.com/business/energy/oil-rises-slightly-ahead-potential-us-iran-talks-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "m:fin",
+              "url": "https://www.reuters.com/business/finance/financial-stocks-fall-with-ai-flattening-yield-curve-focus-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "m:pipeline",
+              "url": "https://www.reuters.com/business/energy/saudi-arabia-restarts-east-west-oil-pipeline-resume-exports-yanbu-sources-say-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:us",
+              "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-graphic-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:fin",
+              "url": "https://www.reuters.com/business/finance/financial-stocks-fall-with-ai-flattening-yield-curve-focus-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:pipeline",
+              "url": "https://www.reuters.com/business/energy/saudi-arabia-restarts-east-west-oil-pipeline-resume-exports-yanbu-sources-say-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:ali",
+              "url": "https://www.reuters.com/business/retail-consumer/alibaba-plans-ai-model-with-5-trillion-10-trillion-parameters-unveils-new-chip-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:jp",
+              "url": "https://www.reuters.com/business/environment/torrential-rains-brought-by-japan-typhoon-kill-two-nhk-says-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:aus",
+              "url": "https://www.reuters.com/legal/litigation/anthropic-openai-call-australia-relax-ban-training-ai-models-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:eu",
+              "url": "https://www.reuters.com/world/eu-renews-russia-sanctions-drops-russian-billionaires-usmanov-fridman-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:deep",
+              "url": "https://www.reuters.com/world/asia-pacific/deepseek-brief-un-security-council-ai-this-week-sources-say-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:g7",
+              "url": "https://www.reuters.com/world/americas/g7-foreign-ministers-call-iran-stop-arming-houthis-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:auto",
+              "url": "https://www.reuters.com/world/asia-pacific/china-supports-investment-by-its-automakers-europe-commerce-minister-says-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:xi",
+              "url": "https://www.reuters.com/world/china/chinas-xi-visit-us-september-23-25-2026-09-21/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:precursor",
+              "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/china-expands-export-control-list-drug-precursor-chemicals-ahead-trump-xi-summit-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:vw",
+              "url": "https://www.reuters.com/world/asia-pacific/volkswagen-china-chief-expects-chinas-passenger-car-market-decline-by-20-2026-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:generals",
+              "url": "https://www.reuters.com/world/china/china-expels-two-top-generals-party-military-alleging-disloyalty-corruption-2026-09-21/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:xi_taiwan",
+              "url": "https://www.reuters.com/world/china/chinas-xi-expected-press-trump-halt-taiwan-arms-sales-under-1982-agreement-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:anthropic",
+              "url": "https://www.reuters.com/business/anthropic-unveils-claude-opus-55-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:enervenue",
+              "url": "https://www.reuters.com/world/china/us-battery-startup-that-ditched-kentucky-china-opens-factory-trump-xi-meet-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            },
+            {
+              "id": "n:icc",
+              "url": "https://www.reuters.com/world/china/trump-calls-all-icc-members-resign-immediately-2026-09-22/",
+              "verifiedAt": "2026-09-23T08:28:02+08:00"
+            }
+          ],
+          "methodology": "本报告按atomic-batch-v2在同一批次内冻结quotes、asia-equities、us-equities、news、macro、research六个输入，再生成schemaVersion=5/reader-r2综合报告。休市与复用数据保留原asOf/analyzedAt；缺精确时点的页面值只作displayValue；新闻按滚动24小时去重并区分事实、普通人影响与模型判断。测试数据禁止进入生产。",
+          "plainLanguage": {
+            "verdict": "科技与加密仍偏强，但行情集中；会晤与能源是下一重定价节点。",
+            "bottomLine": "主线仍是结构性risk-on，不是全面宽松。08点复核没有发现翻转主线的新精确价格数据，但中美会晤前台海军售风险需要提高权重。",
+            "whyNow": "纳指纪录收盘与金融弱形成鲜明分化；沙特管线恢复支持能源缓和；中美元首会晤前新增台海军售高敏感议题。",
+            "horizon": "未来12–24小时",
+            "confidence": "medium",
+            "invalidation": "若亚洲开盘广度明显转弱、利率再快速上行、会晤出现新增限制或能源运输再度恶化，则下调风险偏好判断。",
+            "evidenceFactIds": [
+              "nasdaq",
+              "fin",
+              "banks",
+              "pipeline"
+            ],
+            "sourceIds": [
+              "q:us",
+              "m:fin",
+              "m:pipeline",
+              "n:xi_taiwan"
+            ],
+            "impacts": [
+              {
+                "asset": "A股",
+                "effect": "短线分化",
+                "reason": "隔夜科技强，但会晤和台海议题增加政策不确定性。",
+                "takeaway": "先看开盘后广度，不能用单一AI主题替代全市场。",
+                "horizon": "今日开盘至收盘",
+                "sourceIds": [
+                  "n:xi_taiwan"
+                ]
+              },
+              {
+                "asset": "港股",
+                "effect": "科技偏利好但波动上升",
+                "reason": "阿里AI催化与中美事件风险并存。",
+                "takeaway": "AI催化真实，但估值仍受政策与利率约束。",
+                "horizon": "今日交易时段",
+                "sourceIds": [
+                  "n:ali",
+                  "n:xi_taiwan"
+                ]
+              },
+              {
+                "asset": "美股",
+                "effect": "结构性偏利好",
+                "reason": "纳指新高但金融/银行明显弱。",
+                "takeaway": "AI/科技强势可信，但还不是全市场risk-on。",
+                "horizon": "下一交易日",
+                "evidenceFactIds": [
+                  "nasdaq",
+                  "fin",
+                  "banks"
+                ],
+                "sourceIds": [
+                  "q:us",
+                  "m:fin"
+                ]
+              },
+              {
+                "asset": "BTC",
+                "effect": "偏强但证据不足",
+                "reason": "页面价处高位，但缺精确源时点和杠杆数据。",
+                "takeaway": "不能把价格高位直接解释为新增多头。",
+                "horizon": "未来12–24小时",
+                "evidenceFactIds": [
+                  "btc"
+                ],
+                "sourceIds": [
+                  "q:btc"
+                ]
+              },
+              {
+                "asset": "黄金",
+                "effect": "中性偏分化",
+                "reason": "高利率压制与地缘避险需求对冲。",
+                "takeaway": "没有精确新报价和实际利率分解前不提高方向性结论。",
+                "horizon": "未来12–24小时",
+                "evidenceFactIds": [
+                  "xau"
+                ],
+                "sourceIds": [
+                  "q:gold"
+                ]
+              },
+              {
+                "asset": "原油",
+                "effect": "短线偏利空风险溢价",
+                "reason": "沙特绕行管线恢复改善供给。",
+                "takeaway": "供应缓和真实，但风险没有归零。",
+                "horizon": "未来12–24小时至数周",
+                "evidenceFactIds": [
+                  "pipeline",
+                  "wti"
+                ],
+                "sourceIds": [
+                  "m:pipeline",
+                  "q:oil"
+                ]
+              }
+            ]
+          },
+          "frameworkAnalysis": [
+            {
+              "id": "fw-rates",
+              "framework": "现金流折现与利率传导",
+              "conclusion": "科技盈利与采用可抵消部分高贴现率压力，但金融弱说明并非全面宽松。",
+              "evidenceFactIds": [
+                "nasdaq",
+                "fin",
+                "banks"
+              ],
+              "sourceIds": [
+                "q:us",
+                "m:fin"
+              ]
+            },
+            {
+              "id": "fw-event",
+              "framework": "预期差与事件研究",
+              "conclusion": "中美会晤同时存在合作和台海军售争议，需等待可执行文本而非预判单向缓和。",
+              "evidenceFactIds": [],
+              "sourceIds": [
+                "n:xi",
+                "n:xi_taiwan"
+              ]
+            },
+            {
+              "id": "fw-micro",
+              "framework": "市场微观结构与融资流动性",
+              "conclusion": "BTC页面偏强但缺OI、费率、清算和精确时点，不升级为杠杆多头确认。",
+              "evidenceFactIds": [
+                "btc"
+              ],
+              "sourceIds": [
+                "q:btc"
+              ]
+            },
+            {
+              "id": "fw-supply",
+              "framework": "供需、库存与风险溢价",
+              "conclusion": "沙特绕行能力恢复支持能源缓和，但完整产能和航运安全未恢复。",
+              "evidenceFactIds": [
+                "pipeline",
+                "wti"
+              ],
+              "sourceIds": [
+                "m:pipeline",
+                "q:oil"
+              ]
+            }
+          ],
+          "frameworkSynthesis": {
+            "verdict": "四个框架共同支持结构性risk-on而非全面宽松，中美事件风险和高利率仍是主要反向约束。",
+            "agreement": "科技与能源改善支持部分风险资产。",
+            "disagreement": "中美事件框架保持等待，BTC微观框架因数据缺口最保守。",
+            "weighting": "优先使用带精确时点的美股收盘和实际管线恢复证据。",
+            "invalidation": "亚洲市场显著risk-off、利率急升、会晤新增实质限制或能源运输再恶化。"
+          },
+          "newsroom": {
+            "windowStart": "2026-09-22T08:40:00+08:00",
+            "windowEnd": "2026-09-23T08:28:02+08:00",
+            "coverage": {
+              "actualEvents": 18,
+              "note": "覆盖中国、美国和全球事件；采集截止08:28，真实不足不以旧闻填充。"
+            },
+            "items": [
+              {
+                "id": "nasdaq-record",
+                "regions": [
+                  "US"
+                ],
+                "kind": "market",
+                "title": "纳指纪录收盘",
+                "summary": "纳指27244.28，涨0.45%，AI主题继续支撑。",
+                "plainImpact": "科技强但并非全市场普涨。",
+                "assessment": "支持结构性risk-on。",
+                "sourceIds": [
+                  "n:us"
+                ]
+              },
+              {
+                "id": "financials-down",
+                "regions": [
+                  "US"
+                ],
+                "kind": "market",
+                "title": "美国金融股明显落后科技",
+                "summary": "标普金融约跌2%，银行约跌3%。",
+                "plainImpact": "金融持仓承压。",
+                "assessment": "是全面风险偏好叙事的反证。",
+                "sourceIds": [
+                  "n:fin"
+                ]
+              },
+              {
+                "id": "saudi-pipeline",
+                "regions": [
+                  "WORLD"
+                ],
+                "kind": "market",
+                "title": "沙特东西向管线恢复",
+                "summary": "管线恢复但仍降速。",
+                "plainImpact": "供给风险溢价下降。",
+                "assessment": "实物流改善，但风险未归零。",
+                "sourceIds": [
+                  "n:pipeline"
+                ]
+              },
+              {
+                "id": "alibaba-ai",
+                "regions": [
+                  "CN"
+                ],
+                "kind": "market",
+                "title": "阿里扩大AI模型与芯片投入",
+                "summary": "阿里公布更大模型、新AI芯片和数据中心扩张计划。",
+                "plainImpact": "强化AI产业链竞争。",
+                "assessment": "偏正面但投入回报仍需验证。",
+                "sourceIds": [
+                  "n:ali"
+                ]
+              },
+              {
+                "id": "japan-typhoon",
+                "regions": [
+                  "WORLD"
+                ],
+                "kind": "general",
+                "title": "日本台风灾情扩大",
+                "summary": "4人死亡、6人失踪，约4.5万户一度停电。",
+                "plainImpact": "居民、交通和电力受影响。",
+                "assessment": "社会影响明确，非全球市场主线。",
+                "sourceIds": [
+                  "n:jp"
+                ]
+              },
+              {
+                "id": "australia-ai",
+                "regions": [
+                  "WORLD",
+                  "US"
+                ],
+                "kind": "general",
+                "title": "澳洲AI训练版权争议升温",
+                "summary": "OpenAI与Anthropic呼吁重新评估AI训练版权限制。",
+                "plainImpact": "影响创作者、AI公司和数据中心投资。",
+                "assessment": "创新与版权保护的政策权衡。",
+                "sourceIds": [
+                  "n:aus"
+                ]
+              },
+              {
+                "id": "eu-russia",
+                "regions": [
+                  "WORLD"
+                ],
+                "kind": "general",
+                "title": "欧盟续期对俄制裁",
+                "summary": "制裁续期并调整部分个人名单。",
+                "plainImpact": "合规约束延续。",
+                "assessment": "更偏政策延续而非突发冲击。",
+                "sourceIds": [
+                  "n:eu"
+                ]
+              },
+              {
+                "id": "deepseek-un",
+                "regions": [
+                  "CN",
+                  "US",
+                  "WORLD"
+                ],
+                "kind": "general",
+                "title": "DeepSeek等参与联合国AI安全讨论",
+                "summary": "多家AI公司参与安理会AI与国际安全讨论。",
+                "plainImpact": "AI治理进入多边安全议程。",
+                "assessment": "短线市场影响有限，长期规则竞争升温。",
+                "sourceIds": [
+                  "n:deep"
+                ]
+              },
+              {
+                "id": "g7-houthi",
+                "regions": [
+                  "WORLD"
+                ],
+                "kind": "general",
+                "title": "G7要求伊朗停止支持胡塞武装",
+                "summary": "G7称袭击威胁航运和地区稳定。",
+                "plainImpact": "航运与保险尾部风险仍高。",
+                "assessment": "与供应改善证据并存。",
+                "sourceIds": [
+                  "n:g7"
+                ]
+              },
+              {
+                "id": "china-auto",
+                "regions": [
+                  "CN",
+                  "WORLD"
+                ],
+                "kind": "general",
+                "title": "中国支持车企在欧洲扩大投资",
+                "summary": "支持车企赴欧投资并推动对话处理摩擦。",
+                "plainImpact": "为车企提供本地化路径。",
+                "assessment": "效果取决于具体项目和监管。",
+                "sourceIds": [
+                  "n:auto"
+                ]
+              },
+              {
+                "id": "trump-xi",
+                "regions": [
+                  "CN",
+                  "US"
+                ],
+                "kind": "general",
+                "title": "习近平访美窗口开启",
+                "summary": "贸易、AI、芯片与安全议题进入高敏感事件窗口。",
+                "plainImpact": "政策变化可能影响供应链和估值。",
+                "assessment": "等待正式可执行文本。",
+                "sourceIds": [
+                  "n:xi"
+                ]
+              },
+              {
+                "id": "china-precursor",
+                "regions": [
+                  "CN",
+                  "US"
+                ],
+                "kind": "general",
+                "title": "中国新增芬太尼前体化学品出口管制",
+                "summary": "两种前体化学品纳入出口许可。",
+                "plainImpact": "相关化工出口合规门槛上升。",
+                "assessment": "是具体合作信号但非全面缓和。",
+                "sourceIds": [
+                  "n:precursor"
+                ]
+              },
+              {
+                "id": "vw-china-demand",
+                "regions": [
+                  "CN",
+                  "WORLD"
+                ],
+                "kind": "market",
+                "title": "大众中国负责人警告乘用车需求压力",
+                "summary": "预计中国乘用车市场可能明显收缩。",
+                "plainImpact": "汽车产业链价格竞争压力延续。",
+                "assessment": "公司判断重要但不是官方预测。",
+                "sourceIds": [
+                  "n:vw"
+                ]
+              },
+              {
+                "id": "china-generals",
+                "regions": [
+                  "CN"
+                ],
+                "kind": "general",
+                "title": "中国两名高级将领被开除党籍军籍",
+                "summary": "张又侠、刘振立被开除并移送军事检察机关。",
+                "plainImpact": "影响军队治理与政治观察。",
+                "assessment": "不机械映射为股市方向。",
+                "sourceIds": [
+                  "n:generals"
+                ]
+              },
+              {
+                "id": "xi-taiwan-arms",
+                "regions": [
+                  "CN",
+                  "US"
+                ],
+                "kind": "general",
+                "title": "台海军售料成中美元首会晤焦点",
+                "summary": "习近平预计将要求特朗普停止对台军售。",
+                "plainImpact": "提高会晤谈判难度和政策尾部风险。",
+                "assessment": "本轮最值得提高权重的新变量之一。",
+                "sourceIds": [
+                  "n:xi_taiwan"
+                ]
+              },
+              {
+                "id": "anthropic-opus55",
+                "regions": [
+                  "US"
+                ],
+                "kind": "market",
+                "title": "Anthropic发布Claude Opus 5.5",
+                "summary": "新旗舰模型主打更低运行成本和软件开发性能。",
+                "plainImpact": "推动模型竞争和企业采用。",
+                "assessment": "支持AI叙事但不证明全行业盈利改善。",
+                "sourceIds": [
+                  "n:anthropic"
+                ]
+              },
+              {
+                "id": "enervenue-changzhou",
+                "regions": [
+                  "CN",
+                  "US",
+                  "WORLD"
+                ],
+                "kind": "general",
+                "title": "美国电池初创企业在常州投产首座工厂",
+                "summary": "EnerVenue在常州启动首座工厂。",
+                "plainImpact": "反映供应链密度、人才和成本对制造选址的影响。",
+                "assessment": "是产业竞争案例，不能外推到所有制造业。",
+                "sourceIds": [
+                  "n:enervenue"
+                ]
+              },
+              {
+                "id": "trump-icc",
+                "regions": [
+                  "US",
+                  "WORLD"
+                ],
+                "kind": "general",
+                "title": "特朗普在联合国要求ICC成员退出",
+                "summary": "特朗普批评ICC并呼吁成员国退出。",
+                "plainImpact": "增加国际法和盟友协调摩擦。",
+                "assessment": "直接金融影响证据有限。",
+                "sourceIds": [
+                  "n:icc"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "_inputHash": "f5d8460f223b796f010b00010eb54abea323e36b1110c72349f16d4d6c4462fe"
+    }
+  }
+}
