@@ -10,7 +10,17 @@ function copy(rel){const src=path.join(root,rel);if(!fs.existsSync(src))return;c
 for(const rel of ['index.html','.nojekyll','assets','config','docs','history','data/latest.json','data/history-index.json','data/publication-status.json','data/modules','data/runs','data/receipts','data/runtime-control.json','data/reader-projections','data/validation-result.json','demo','validation','synthetic-manifest.json','fixture-evidence.html'])copy(rel);
 for(const f of fs.readdirSync(path.join(root,'data')))if(/^editorial-[\w-]+\.json$/.test(f))copy('data/'+f);
 const controlFile=path.join(root,'automation/control.json');
-if(fs.existsSync(controlFile)){const control=JSON.parse(fs.readFileSync(controlFile,'utf8'));fs.mkdirSync(path.join(dest,'data'),{recursive:true});fs.writeFileSync(path.join(dest,'data/runtime-control.json'),JSON.stringify(control,null,2)+'\n');}
+if(fs.existsSync(controlFile)){
+ // Legacy Pages serves repository bytes, not a reserialized staging projection.
+ const bytes=fs.readFileSync(controlFile),control=JSON.parse(bytes.toString('utf8'));
+ if(control.version!==1||typeof control.productionPaused!=='boolean')throw Error('Invalid production control');
+ fs.mkdirSync(path.join(dest,'data'),{recursive:true});
+ fs.writeFileSync(path.join(dest,'data/runtime-control.json'),bytes);
+ if(process.env.GDR_PERSIST_BUILD==='1'){
+  const file=path.join(root,'data/runtime-control.json'),tmp=file+'.tmp-'+process.pid;
+  fs.writeFileSync(tmp,bytes);fs.renameSync(tmp,file);
+ }
+}
 const report=JSON.parse(fs.readFileSync(path.join(dest,'data/latest.json'),'utf8'));
 const files={};function inventory(dir){for(const name of fs.readdirSync(dir).sort()){const file=path.join(dir,name);if(fs.statSync(file).isDirectory())inventory(file);else if(path.relative(dest,file).split(path.sep).join('/')!=='data/build.json') files[path.relative(dest,file).split(path.sep).join('/')]=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');}}
 for(const rel of ['assets','data','history','config','docs','demo','validation'])if(fs.existsSync(path.join(dest,rel)))inventory(path.join(dest,rel));
