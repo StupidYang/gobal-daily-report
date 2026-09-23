@@ -3,54 +3,98 @@ on:
   push:
     branches: ['repair/incident-20260923']
 permissions:
-  contents: read
+  contents: write
   actions: read
 concurrency:
   group: gdr-incident-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  evidence:
+  regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Read-only incident snapshot
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Verify and apply the reviewed source-only patch
         run: |
-          mkdir -p /tmp/gdr-incident/logs
-          git archive --format=zip --output=/tmp/gdr-incident/source.zip HEAD
-          git rev-parse HEAD > /tmp/gdr-incident/commit.txt
-          gh api "repos/$GITHUB_REPOSITORY/zipball/gdr-runtime" > /tmp/gdr-incident/runtime.zip
-          gh api "repos/$GITHUB_REPOSITORY/actions/runs?per_page=100" --jq '{total_count,runs:[.workflow_runs[]|{id,name,head_sha,head_branch,display_title,event,status,conclusion,created_at,updated_at,html_url}]}' > /tmp/gdr-incident/runs.json
-          gh api "repos/$GITHUB_REPOSITORY/commits?per_page=30" --jq '[.[]|{sha,date:.commit.committer.date,message:.commit.message}]' > /tmp/gdr-incident/commits.json
+          mkdir -p /tmp/gdr-incident-proof
           python3 - <<'PY'
-          import json, pathlib, subprocess, concurrent.futures
-          root=pathlib.Path('/tmp/gdr-incident')
-          runs=json.loads((root/'runs.json').read_text())['runs']
-          selected=[r for r in runs if r['conclusion']=='failure' and r['created_at']>='2026-09-23T06:00:00Z'][:12]
-          def capture(r):
-              repo='StupidYang/gobal-daily-report'
-              jobs=subprocess.check_output(['gh','api',f'repos/{repo}/actions/runs/{r["id"]}/jobs'])
-              (root/'logs'/f'{r["id"]}-jobs.json').write_bytes(jobs)
-              for j in json.loads(jobs)['jobs']:
-                  if j['conclusion']=='failure':
-                      p=subprocess.run(['gh','api',f'repos/{repo}/actions/jobs/{j["id"]}/logs'],capture_output=True)
-                      (root/'logs'/f'{r["id"]}-{j["id"]}.log').write_bytes(p.stdout or p.stderr)
-          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:list(pool.map(capture,selected))
+          import pathlib,base64,lzma,hashlib,subprocess,json
+          parts=sorted(pathlib.Path('scripts/repairs').glob('incident-patch-*.b64'))
+          paths=['.github/workflows/publish-candidates.yml','assets/execution-status.js','lib/execution.cjs','lib/pages-release.cjs','lib/publication-outcome.cjs','scripts/execution-worker.cjs','scripts/publication-lease.cjs','scripts/request-pages.cjs','scripts/verify-site-bytes.cjs','scripts/write-deployment-proof.cjs','tests/incident-release.test.cjs','docs/incident-release-20260923.md']
+          if parts:
+              assert len(parts)==4
+              patch=lzma.decompress(base64.b64decode(''.join(p.read_text().strip() for p in parts),validate=True))
+              assert hashlib.sha256(patch).hexdigest()=='641f245c5f539f7ed647595f27fadf65c21218425e20ff8b26d2f14d44b2b5b5'
+              target=pathlib.Path('/tmp/gdr-incident-proof/repair.patch');target.write_bytes(patch)
+              names=[x.split('\t')[-1] for x in subprocess.check_output(['git','apply','--numstat',str(target)],text=True).splitlines()]
+              assert set(names)==set(paths),(names,paths)
+              subprocess.run(['git','apply','--check',str(target)],check=True)
+              subprocess.run(['git','apply',str(target)],check=True)
+          pathlib.Path('/tmp/gdr-incident-proof/paths.json').write_text(json.dumps(paths))
           PY
-          set +e
-          node --test tests/*.test.cjs > /tmp/gdr-incident/baseline-tests.tap 2>&1
-          echo $? > /tmp/gdr-incident/baseline-tests-exit.txt
+      - name: Run every regression and verify the exact source-to-staging bytes
+        run: |
+          set -euo pipefail
+          node scripts/gdr.cjs check-config
+          node scripts/check-runtime.cjs
+          for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
+          node --test tests/*.test.cjs 2>&1 | tee /tmp/gdr-incident-proof/unit-tests.tap
+          node scripts/build-reader-projections.cjs > /tmp/gdr-incident-proof/content-quality.json
+          node scripts/build-demo.cjs > /tmp/gdr-incident-proof/demo.json
+          cp automation/control.json data/runtime-control.json
+          GDR_PERSIST_BUILD=1 node scripts/stage-site.cjs /tmp/gdr-incident-site > /tmp/gdr-incident-proof/stage.json
+          node scripts/verify-site-bytes.cjs /tmp/gdr-incident-site > /tmp/gdr-incident-proof/branch-bytes.json
+          git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
+      - name: Install HTTP browser dependencies
+        run: |
+          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk >/dev/null
+          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
+      - name: Exercise complete reader and content at four viewport widths
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: http://127.0.0.1:8181/
+          GDR_TEST_WIDTHS: '320,390,768,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-incident-proof/browser
+        run: |
+          python3 -m http.server 8181 --bind 127.0.0.1 --directory /tmp/gdr-incident-site >/tmp/gdr-incident-proof/http.log 2>&1 &
+          node tests/ui-real-data.cjs
+          GDR_UI_OUTPUT=/tmp/gdr-incident-proof/expanded node tests/ui-expanded.cjs
+          GDR_UI_OUTPUT=/tmp/gdr-incident-proof/content node tests/ui-content-quality.cjs
+      - name: Commit only tested source changes to this repair branch
+        run: |
+          test "$GITHUB_REF" = refs/heads/repair/incident-20260923
+          git config user.name 'gdr-repair[bot]'
+          git config user.email 'gdr-repair@users.noreply.github.com'
+          python3 - <<'PY'
+          import json,subprocess,pathlib
+          paths=json.loads(pathlib.Path('/tmp/gdr-incident-proof/paths.json').read_text())
+          subprocess.run(['git','add','--',*paths],check=True)
+          parts=[str(p) for p in pathlib.Path('scripts/repairs').glob('incident-patch-*.b64')]
+          if parts:subprocess.run(['git','rm','--',*parts],check=True)
+          staged=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
+          assert set(staged)<=set(paths+parts)
+          if staged:
+              subprocess.run(['git','commit','-m','fix: verified release deduplication and truthful public outcomes [skip ci]'],check=True)
+              subprocess.run(['git','push','origin','HEAD:repair/incident-20260923'],check=True)
+          manifest=[]
+          for p in paths:
+              blob=subprocess.check_output(['git','rev-parse','HEAD:'+p],text=True).strip()
+              manifest.append({'path':p,'mode':'100644','type':'blob','sha':blob})
+          pathlib.Path('/tmp/gdr-incident-proof/tested-tree-elements.json').write_text(json.dumps(manifest,indent=2))
+          PY
+          git rev-parse HEAD > /tmp/gdr-incident-proof/commit.txt
+          git archive --format=zip --output=/tmp/gdr-incident-proof/source.zip HEAD
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: gdr-incident-evidence
-          path: /tmp/gdr-incident/
-          retention-days: 7
+          name: gdr-incident-regression-proof
+          path: /tmp/gdr-incident-proof/
+          retention-days: 14
           if-no-files-found: error
