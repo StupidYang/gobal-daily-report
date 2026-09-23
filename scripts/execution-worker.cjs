@@ -3,6 +3,7 @@
 // Event-driven collection and bounded editorial repair; never create scheduler tasks.
 const fs=require('node:fs'),path=require('node:path');
 const P=require('../lib/pipeline.cjs'),E=require('../lib/execution.cjs'),C=require('../lib/live-collector.cjs'),L=require('../lib/live-report.cjs'),B=require('../lib/batch.cjs');
+const O=require('../lib/publication-outcome.cjs');
 const safe=x=>typeof x==='string'&&/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(x);
 function createWorker(options={}){
  const root=path.resolve(options.root||process.env.GDR_ROOT||path.join(__dirname,'..'));
@@ -37,7 +38,7 @@ function createWorker(options={}){
    try{await store.request('PUT','/contents/'+name,body);await health(id,next).catch(e=>console.warn('Health projection unavailable: '+e.message));return next;}catch(e){if(e.code!=='CONFLICT'||attempt)throw e;}
   }
  }
- async function requireProduction(){const c=await read('main','automation/control.json');if(!c||c.version!==1||c.productionPaused!==false||c.executionProtocol!=='lease-v1')throw Error('Production remains paused or the execution protocol is not enabled');return c;}
+ async function requireProduction(){const c=await read('main','automation/control.json');if(!c||c.version!==1||c.productionPaused!==false||c.executionProtocol!=='lease-v1')throw Object.assign(Error('Production remains paused or the execution protocol is not enabled'),{code:'PRODUCTION_PAUSED'});return c;}
  async function releaseFailed(id,reason){
   const snapshot=await store.read(),s=snapshot.state;
   if(s.executionId!==id||!['collecting','analyzing'].includes(s.phase))return;
@@ -47,7 +48,9 @@ function createWorker(options={}){
   const snapshot=await store.read(),s=snapshot.state;if(s.phase!=='publishing')return;
   const run=await store.request('GET','/actions/runs/'+s.workflowRunId);if(!run||run.status!=='completed')throw new E.Busy('Previous publishing workflow is not confirmed terminal');
   const receipt=await read('main','data/receipts/batches/'+s.batchId+'.json'),token={executionId:s.executionId,generation:s.generation};
-  await store.cas(snapshot,E.transition(s,token,receipt?.status==='published'?'completed':'failed',receipt?.status==='published'?{reportId:receipt.reportId,receiptHash:P.hash(receipt),reason:'Repository receipt reconciled; public deployment is checked independently'}:{reason:'Previous publishing workflow ended without a successful repository receipt'},clock()));
+  const matched=O.receiptMatches(s,receipt);
+  await store.cas(snapshot,E.transition(s,token,matched?'completed':'failed',matched?{reportId:receipt.reportId,receiptHash:P.hash(receipt),reason:'Exact repository receipt reconciled; public deployment still requires evidence'}:{reason:'Previous publishing workflow ended without an exact successful repository receipt'},clock()));
+  await outcome(s.executionId,{...O.classify(s,receipt,{workflowRunId:s.workflowRunId,jobStatus:run.conclusion,now:clock()}),execution:token});
  }
  async function request(id,{ref}={}){
   await requireProduction();
@@ -98,9 +101,9 @@ function createWorker(options={}){
   catch(e){
    const snapshot=await store.read().catch(()=>null),phase=snapshot?.state.executionId===id?snapshot.state.phase:null;
    if(e.code!=='BUSY')try{await releaseFailed(id,e.message);}catch{}
-   const value={status:e.code==='BUSY'?'skipped-busy':['awaiting-publication','publishing'].includes(phase)?'handoff-uncertain':'failed',error:e.message,published:false};
+   const value={status:e.code==='PRODUCTION_PAUSED'?'paused':e.code==='BUSY'?'skipped-busy':['awaiting-publication','publishing'].includes(phase)?'handoff-uncertain':'failed',error:e.message,published:false};
    const status=await outcome(id,value).catch(()=>({...value,requestId:id,at:new Date(clock()).toISOString()}));P.atomic(path.join(out,'failure.json'),status);
-   if(e.code==='BUSY')return status;throw e;
+   if(['BUSY','PRODUCTION_PAUSED'].includes(e.code))return status;throw e;
   }
  }
  return {run,request,submit,reconcile};
