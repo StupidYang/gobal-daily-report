@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "productionPaused": true,
-  "reason": "真实采集与执行锁升级验收中；固定真实来源验收页不代表三个原生任务已经恢复。",
+  "productionPaused": false,
+  "reason": "用户于2026-09-23明确授权重启三个保留任务；使用execution-lease-v1真实采集与发布。隔离实采验收已通过，恢复后的原生无人值守整轮与连续运行仍以实际回执验证。",
   "maxRecurringTasks": 3,
   "resumeRequires": [
     "isolated fixture suite passes",
@@ -12,10 +12,12 @@
   "allowAutomaticResume": false,
   "resumeAuthorization": {
     "mode": "explicit-user-request",
-    "recordedAt": "2026-09-22T19:33:12+08:00",
-    "firstGlobalRun": "2026-09-22T20:00:00+08:00",
-    "liveSourceValidation": "pending-first-scheduled-run",
-    "note": "The owner explicitly requested resumption now. This is not an assertion that all acceptance conditions have passed. Existing source, synthetic-isolation, atomic-publication and receipt checks remain unchanged."
+    "recordedAt": "2026-09-23T14:11:56+08:00",
+    "firstGlobalRun": "2026-09-23T15:00:00+08:00",
+    "liveSourceValidation": "isolated-real-source-acceptance-passed",
+    "nativeEndToEndValidation": "pending-first-resumed-scheduled-run",
+    "continuousRunValidation": "pending",
+    "note": "The owner explicitly authorized restarting the same three retained tasks after the real-source and execution-lease repair. This records authorization and successful scheduler enable responses, not a claim that unattended production or continuous operation has already passed. All source, content, lease, stale-result and receipt checks remain enforced."
   },
   "qualityPolicy": "content-r3",
   "executionProtocol": "lease-v1"
