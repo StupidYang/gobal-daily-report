@@ -1,0 +1,43 @@
+name: Handoff contract regression
+on:
+  push:
+    branches: [repair/handoff-contract-20260923]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: gdr-handoff-regression
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Export exact source and original failing runtime handoffs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/gdr-handoff
+          git archive --format=zip --output=/tmp/gdr-handoff/source.zip HEAD
+          git rev-parse HEAD > /tmp/gdr-handoff/source-sha.txt
+          git fetch origin gdr-runtime --depth=1
+          git rev-parse FETCH_HEAD > /tmp/gdr-handoff/runtime-sha.txt
+          git archive --format=zip --output=/tmp/gdr-handoff/runtime.zip FETCH_HEAD runtime
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs?per_page=30" --jq '{workflow_runs:[.workflow_runs[]|{id,name,head_sha,head_branch,event,status,conclusion,created_at,updated_at,display_title}]}' > /tmp/gdr-handoff/runs.json
+      - name: Regress actual handoffs when tests are present
+        run: |
+          node --test tests/*.test.cjs > /tmp/gdr-handoff/tests.tap
+          if test -f scripts/check-handoff-replay.cjs; then node scripts/check-handoff-replay.cjs /tmp/gdr-handoff; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gdr-handoff-proof
+          path: /tmp/gdr-handoff/
+          retention-days: 7
+          if-no-files-found: error
