@@ -60,6 +60,7 @@ jobs:
           python3 -m http.server 8181 --bind 127.0.0.1 --directory /tmp/gdr-site >/tmp/gdr-http.log 2>&1 &
       - name: Validate and render the complete candidate write set before committing; retry newer main
         env:
+          GH_TOKEN: ${{ github.token }}
           NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
           GDR_TEST_URL: http://127.0.0.1:8181/
           GDR_TEST_WIDTHS: '390,1440'
@@ -76,6 +77,7 @@ jobs:
             node scripts/check-runtime.cjs
             for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
             node --test tests/*.test.cjs > /tmp/gdr-publication/unit-tests.tap
+            node scripts/publication-lease.cjs claim
             node scripts/promote-candidates.cjs > /tmp/gdr-publication/receipts.json
             node scripts/check-published.cjs
             node scripts/build-reader-projections.cjs > /tmp/gdr-publication/content-quality.json
@@ -88,6 +90,7 @@ jobs:
             git add -- data/modules data/runs data/receipts data/publication-status.json data/latest.json data/history-index.json data/build.json data/runtime-control.json data/reader-projections history demo
             if git diff --cached --quiet; then complete=1; break; fi
             git commit -m 'data: publish tested candidates and matching public build identity'
+            node scripts/publication-lease.cjs verify
             if git push origin HEAD:main; then complete=1; break; fi
             sleep "$((attempt * 2))"
           done
@@ -140,6 +143,11 @@ jobs:
         run: |
           node tests/ui-real-data.cjs
           GDR_UI_OUTPUT=/tmp/gdr-publication/live-demo-expanded node tests/ui-expanded.cjs
+      - name: Record execution result using the committed receipt, not console success
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/publication-lease.cjs finish
       - uses: actions/upload-artifact@v4
         if: always()
         with:
