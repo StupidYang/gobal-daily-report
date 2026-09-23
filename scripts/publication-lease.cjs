@@ -7,6 +7,14 @@ const run=Number(process.env.GITHUB_RUN_ID),store=new E.GitHubStore(),permitFile
 async function committedReceipt(state){
  const x=await store.request('GET','/contents/data/receipts/batches/'+state.batchId+'.json?ref=main');return x?JSON.parse(Buffer.from(x.content,'base64').toString('utf8')):null;
 }
+async function recordOutcome(state,receipt){
+ const name='runtime/outcomes/'+state.executionId+'.json',get=async p=>store.request('GET','/contents/'+p+'?ref=gdr-runtime'),decode=x=>x?JSON.parse(Buffer.from(x.content,'base64').toString('utf8')):null;
+ const prior=await get(name),old=decode(prior)||{},value={...old,status:receipt?.status==='published'?'completed':'failed',at:new Date().toISOString(),published:receipt?.status==='published',reportId:receipt?.reportId||null,error:receipt?.status==='published'?null:'发布流程结束但没有成功仓库回执',issues:[],workflowRunId:run,deadlineAt:state.deadlineAt};
+ await store.request('PUT','/contents/'+name,{branch:'gdr-runtime',message:'runtime: publication result '+state.executionId,...(prior?{sha:prior.sha}:{}),content:Buffer.from(P.json(value)).toString('base64')});
+ const healthName='runtime/health.json',h=await get(healthName),health=decode(h)||{version:1,tasks:{}};
+ health.tasks[state.taskGroup]={requestId:state.executionId,status:value.status,at:value.at,reportId:value.reportId,error:value.error};health.updatedAt=value.at;
+ await store.request('PUT','/contents/'+healthName,{branch:'gdr-runtime',message:'runtime: publication health',...(h?{sha:h.sha}:{}),content:Buffer.from(P.json(health)).toString('base64')});
+}
 async function main(){
  const control=P.read(path.join(root,'automation/control.json'));if(!control)throw Error('No production control');
  if(command!=='finish'&&(control.executionProtocol!=='lease-v1'||control.productionPaused)){if(command==='verify'&&P.read(permitFile))throw Error('Production paused before push; refuse the staged publication');fs.rmSync(permitFile,{force:true});console.log('No production execution to claim');return;}
@@ -29,6 +37,7 @@ async function main(){
   const receipt=await committedReceipt(state),token={executionId:state.executionId,generation:state.generation};
   if(receipt?.status==='published')await E.advance(store,token,'completed',{reportId:receipt.reportId,receiptHash:P.hash(receipt)});
   else await E.advance(store,token,'failed',{reason:'Publishing run ended without a committed successful receipt; see workflow '+run});
+  await recordOutcome(state,receipt);
  }else throw Error('Expected claim, verify or finish');
 }
 if(require.main===module)main().catch(e=>{console.error(e.message);process.exitCode=1;});

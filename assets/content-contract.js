@@ -7,6 +7,7 @@ const first=(...xs)=>xs.map(str).find(Boolean)||'';
 const label=x=>first(x.title,x.name,x.point,x.item,x.term);
 function normalize(input){
  const r=clone(input);
+ r.frameworkAnalysis=arr(r.frameworkAnalysis).map(x=>({...x,framework:first(x.framework,x.name),concept:first(x.concept,x.principle),observed:first(x.observed,x.facts)}));
  for(const k of ['recentChanges','changes','evolution24h'])r[k]=arr(r[k]).map(x=>({...x,title:first(x.title,x.name,x.summary,x.detail,x.body,x.change),detail:first(x.detail,x.body,x.summary,x.change),summary:first(x.summary,x.detail,x.body,x.change)}));
  r.analysisTheses=arr(r.analysisTheses).map(x=>({...x,title:first(x.title,x.topic,x.name)}));
  r.news=arr(r.news).map(x=>({...x,title:first(x.title,x.name,x.summary,x.body)}));
