@@ -1,84 +1,50 @@
-name: Isolated live source acceptance
+name: Manual real-source preview checks
 on:
   workflow_dispatch:
-  push:
-    branches: ['repair/live-execution-20260923']
 permissions:
-  contents: write
-  actions: read
-concurrency:
-  group: gdr-isolated-live-acceptance
-  cancel-in-progress: false
+  contents: read
 jobs:
-  live:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply reviewed integration and verify all existing and new unit cases
+      - name: Verify code and existing preview without regenerating analysis or writing production
         run: |
-          mkdir -p /tmp/gdr-live-final
-          if test -f scripts/apply-execution-upgrade.cjs; then node scripts/apply-execution-upgrade.cjs; rm scripts/apply-execution-upgrade.cjs; fi
+          mkdir -p /tmp/gdr-preview-check
           node scripts/gdr.cjs check-config
           node scripts/check-runtime.cjs
-          for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
-          node --test tests/*.test.cjs > /tmp/gdr-live-final/unit-tests.tap
-      - name: Read original captured source packet and assemble reviewed full analysis in isolation
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/10730515719/zip" > /tmp/gdr-live-final/original-source.zip
-          mkdir -p /tmp/gdr-live-final/source
-          unzip -q /tmp/gdr-live-final/original-source.zip -d /tmp/gdr-live-final/source
-          node automation/editorial/real-20260923.cjs /tmp/gdr-live-final/source/packet.json /tmp/gdr-live-final/editorial.json
-          node scripts/build-live-validation.cjs /tmp/gdr-live-final/source/packet.json /tmp/gdr-live-final/editorial.json validation > /tmp/gdr-live-final/assembly.json
-          git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
-      - name: Test actual shared-store concurrency with two competing GitHub CAS writes
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GDR_LEASE_PROOF: /tmp/gdr-live-final/github-cas.json
-        run: node tests/github-lease-probe.cjs
+          node --test tests/*.test.cjs > /tmp/gdr-preview-check/unit-tests.tap
+          git rev-parse HEAD > /tmp/gdr-preview-check/commit.txt
+          cp docs/live-lock-proof.json /tmp/gdr-preview-check/previous-live-cas-proof.json
+          cp validation/data/validation-result.json /tmp/gdr-preview-check/preview-origin.json
+          git archive --format=zip --output=/tmp/gdr-preview-check/source.zip HEAD
+          git diff --exit-code
       - name: Install browser
         run: |
           npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
           sudo apt-get update -qq
           sudo apt-get install -y fonts-noto-cjk >/dev/null
           if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
-      - name: Exercise complete real-data reader over HTTP
+      - name: Check the real-source fixed preview over HTTP
         env:
           NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
           GDR_TEST_URL: http://127.0.0.1:8181/
           GDR_TEST_WIDTHS: '390,1440'
-          GDR_UI_OUTPUT: /tmp/gdr-live-final/browser
+          GDR_UI_OUTPUT: /tmp/gdr-preview-check/browser
         run: |
-          python3 -m http.server 8181 --bind 127.0.0.1 --directory validation >/tmp/gdr-live-final/http.log 2>&1 &
+          python3 -m http.server 8181 --bind 127.0.0.1 --directory validation >/tmp/gdr-preview-check/http.log 2>&1 &
           node tests/ui-real-data.cjs
-          GDR_UI_OUTPUT=/tmp/gdr-live-final/expanded node tests/ui-expanded.cjs
-      - name: Commit only tested repair and isolated validation page to the repair branch
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          test "$GITHUB_REF_NAME" = 'repair/live-execution-20260923'
-          git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
-          cp /tmp/gdr-live-final/assembly.json docs/live-validation-result.json
-          cp /tmp/gdr-live-final/github-cas.json docs/live-lock-proof.json
-          git config user.name 'gdr-validation[bot]'
-          git config user.email 'gdr-validation@users.noreply.github.com'
-          git add -- .github assets automation config docs lib scripts tests validation
-          git commit -m 'fix: validated execution fencing and complete real-source preview; production stays paused'
-          git push origin HEAD:"$GITHUB_REF_NAME"
-          git rev-parse HEAD > /tmp/gdr-live-final/tested-commit.txt
-          git archive --format=zip --output=/tmp/gdr-live-final/tested-source.zip HEAD
+          GDR_UI_OUTPUT=/tmp/gdr-preview-check/expanded node tests/ui-expanded.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: gdr-live-final-proof
-          path: /tmp/gdr-live-final/
-          retention-days: 14
+          name: gdr-manual-preview-check
+          path: /tmp/gdr-preview-check/
+          retention-days: 7
           if-no-files-found: error

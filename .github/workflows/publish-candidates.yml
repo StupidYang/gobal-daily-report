@@ -12,6 +12,7 @@ on:
       - 'lib/**'
       - 'tests/**'
       - 'automation/**'
+      - 'validation/**'
       - 'index.html'
       - '.github/workflows/publish-candidates.yml'
 permissions:
@@ -143,6 +144,16 @@ jobs:
         run: |
           node tests/ui-real-data.cjs
           GDR_UI_OUTPUT=/tmp/gdr-publication/live-demo-expanded node tests/ui-expanded.cjs
+      - name: Verify deployed fixed real-source report independently from production and demo
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: https://stupidyang.github.io/gobal-daily-report/validation/
+          GDR_EXPECT_BUILD: /tmp/gdr-site/validation/data/build.json
+          GDR_TEST_WIDTHS: '390,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-publication/live-validation
+        run: |
+          node tests/ui-real-data.cjs
+          GDR_UI_OUTPUT=/tmp/gdr-publication/live-validation-expanded node tests/ui-expanded.cjs
       - name: Record execution result using the committed receipt, not console success
         if: always()
         env:
