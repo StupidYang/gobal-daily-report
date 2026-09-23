@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "productionPaused": false,
-  "reason": "修复后的受控端到端验收：三个原生调度仍暂停，仅在本轮人工监督中验证真实请求、分析交接、正式回执与公网。不是恢复持续自动运行。",
+  "productionPaused": true,
+  "reason": "GitHub发布故障排查中：三个原生任务已暂停，阻止在途请求继续发布；已有报告保留，不表示数据持续刷新。",
   "maxRecurringTasks": 3,
   "resumeRequires": ["isolated fixture suite passes", "deployed bytes and full reader pass", "three-task inventory matches runtime", "live source dry run verified"],
   "allowAutomaticResume": false,
@@ -9,10 +9,10 @@
   "executionProtocol": "lease-v1",
   "handoffContract": "editorial-v1",
   "supervisedAcceptance": {
-    "status": "in-progress",
+    "status": "paused-for-incident-repair",
     "purpose": "Owner-requested self-check and bug repair",
     "nativeSchedulesPaused": true,
     "continuousRunValidation": "pending",
-    "note": "This is an explicitly supervised repair check. Existing source, content, lease and receipt validations are unchanged. No native task is enabled by this file."
+    "note": "Production paused after owner reported repeated GitHub failures. Existing source, content, lease and receipt validations remain mandatory."
   }
 }
