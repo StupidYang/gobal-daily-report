@@ -36,6 +36,7 @@ jobs:
           subprocess.run(['git','apply',str(patch)],check=True)
           PY
           fi
+          if test -f .repair/ui-handoff.cjs; then cp .repair/ui-handoff.cjs tests/ui-handoff.cjs; fi
       - name: Preserve exact original native failure inputs as fixed regression fixtures
         run: |
           if ! test -f tests/fixtures/native-handoff/baseline.json; then
