@@ -1,0 +1,38 @@
+name: Bounded collection and report handoff
+on:
+  push:
+    branches: [gdr-runtime]
+    paths: ['runtime/requests/*.json', 'runtime/submissions/*.json']
+permissions:
+  contents: write
+  actions: write
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Process only explicit immutable request or submission paths
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node <<'JS'
+          const fs=require('node:fs'),cp=require('node:child_process');
+          const e=JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH)),files=[...new Set((e.commits||[]).flatMap(c=>c.added||[]))].filter(p=>/^runtime\/(requests|submissions)\/[A-Za-z0-9][A-Za-z0-9_-]{0,79}\.json$/.test(p));
+          if(files.length!==1)throw Error('One immutable execution request per push is required');
+          const file=files[0],mode=file.includes('/requests/')?'request':'submit',id=file.split('/').pop().slice(0,-5);
+          cp.execFileSync(process.execPath,['scripts/execution-worker.cjs',mode,id],{stdio:'inherit',timeout:240000});
+          JS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gdr-execution-${{ github.run_id }}
+          path: /tmp/gdr-execution/
+          retention-days: 7
+          if-no-files-found: warn
