@@ -1,0 +1,34 @@
+name: Isolated live source acceptance
+on:
+  workflow_dispatch:
+  push:
+    branches: ['repair/live-execution-20260923']
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Collect actual evidence without changing production
+        run: |
+          mkdir -p /tmp/gdr-live-acceptance
+          node - <<'JS'
+          const fs=require('node:fs');const config=require('./config/watchlist.json');const brent=config.required.find(x=>x.id==='ENERGY:BRENT');brent.providerSymbol='BZX26.NYM';brent.contractSelection='explicit-2026-11-not-auto-front';fs.writeFileSync('config/watchlist.json',JSON.stringify(config,null,2));
+          const docs=[{id:'fed',title:'美联储9月16日声明',url:'https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm'},{id:'cpi',title:'BLS 8月CPI原始发布',url:'https://www.bls.gov/news.release/archives/cpi_09112026.htm'},{id:'un',title:'联合国9月22日大会讲话报道',url:'https://www.un.org/en/desa/guterres-cracks-have-become-canyons-as-world-faces-four-tests-of-power'},{id:'disclosure',title:'博通集成9月23日交易异常波动公告',url:'https://paper.cnstock.com/html/2026-09/23/content_2271973.htm'},{id:'chinaClose',title:'每经9月22日收盘报道',url:'https://www.nbd.com.cn/articles/2026-09-22/4588920.html'}];fs.writeFileSync('/tmp/gdr-live-acceptance/documents.json',JSON.stringify(docs));
+          JS
+          timeout 150s node scripts/collect-live.cjs /tmp/gdr-live-acceptance /tmp/gdr-live-acceptance/documents.json > /tmp/gdr-live-acceptance/summary.json
+          git diff --exit-code -- data history automation
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gdr-live-source-acceptance
+          path: /tmp/gdr-live-acceptance/
+          retention-days: 7
+          if-no-files-found: error
