@@ -1,19 +1,17 @@
 name: Isolated regression checks
 on:
-  workflow_dispatch:
   push:
-    branches: ['repair/staging-20260922', 'repair/content-quality-20260923']
-  pull_request:
-    branches: [main]
+    branches: ['repair/incident-20260923']
 permissions:
   contents: read
+  actions: read
 concurrency:
-  group: gdr-ci-${{ github.ref }}
+  group: gdr-incident-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  regression:
+  evidence:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,48 +19,38 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validate and build deterministic isolated demonstration
-        run: |
-          mkdir -p /tmp/gdr-regression
-          node scripts/build-reader-projections.cjs > /tmp/gdr-regression/content-quality.json
-          node scripts/gdr.cjs check-config
-          node scripts/check-runtime.cjs
-          for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
-          node --test tests/*.test.cjs > /tmp/gdr-regression/unit-tests.tap
-          node scripts/build-demo.cjs > /tmp/gdr-regression/demo.json
-          cp demo/data/build.json /tmp/gdr-regression/first-build.json
-          node scripts/build-demo.cjs > /dev/null
-          cmp demo/data/build.json /tmp/gdr-regression/first-build.json
-          BATCH_ID=$(node -p "require('./demo/synthetic-manifest.json').snapshots.at(-1).batchId")
-          GDR_ROOT=demo node scripts/check-batch.cjs "$BATCH_ID" --fixture > /tmp/gdr-regression/fixture-batch.json
-          git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
-          git rev-parse HEAD > /tmp/gdr-regression/commit.txt
-      - name: Install browser and Chinese fonts
-        run: |
-          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
-          sudo apt-get update -qq
-          sudo apt-get install -y fonts-noto-cjk >/dev/null
-          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
-      - name: Real HTTP browser tests on all four viewport widths
+      - name: Read-only incident snapshot
         env:
-          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
-          GDR_TEST_URL: http://127.0.0.1:8181/
-          GDR_TEST_WIDTHS: '320,390,768,1440'
-          GDR_UI_OUTPUT: /tmp/gdr-regression/browser
+          GH_TOKEN: ${{ github.token }}
         run: |
-          python3 -m http.server 8181 --bind 127.0.0.1 --directory demo >/tmp/gdr-http.log 2>&1 &
-          node tests/ui-real-data.cjs
-          GDR_UI_OUTPUT=/tmp/gdr-regression/expanded node tests/ui-expanded.cjs
-          python3 -m http.server 8282 --bind 127.0.0.1 --directory . >/tmp/gdr-quality-http.log 2>&1 &
-          GDR_TEST_URL=http://127.0.0.1:8282/ GDR_UI_OUTPUT=/tmp/gdr-regression/content node tests/ui-content-quality.cjs
-      - name: Export tested source and demo
-        run: |
-          git archive --format=zip --output=/tmp/gdr-regression/source.zip HEAD
-          cd demo && zip -qr /tmp/gdr-regression/demo.zip .
+          mkdir -p /tmp/gdr-incident/logs
+          git archive --format=zip --output=/tmp/gdr-incident/source.zip HEAD
+          git rev-parse HEAD > /tmp/gdr-incident/commit.txt
+          gh api "repos/$GITHUB_REPOSITORY/zipball/gdr-runtime" > /tmp/gdr-incident/runtime.zip
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs?per_page=100" --jq '{total_count,runs:[.workflow_runs[]|{id,name,head_sha,head_branch,display_title,event,status,conclusion,created_at,updated_at,html_url}]}' > /tmp/gdr-incident/runs.json
+          gh api "repos/$GITHUB_REPOSITORY/commits?per_page=30" --jq '[.[]|{sha,date:.commit.committer.date,message:.commit.message}]' > /tmp/gdr-incident/commits.json
+          python3 - <<'PY'
+          import json, pathlib, subprocess, concurrent.futures
+          root=pathlib.Path('/tmp/gdr-incident')
+          runs=json.loads((root/'runs.json').read_text())['runs']
+          selected=[r for r in runs if r['conclusion']=='failure' and r['created_at']>='2026-09-23T06:00:00Z'][:12]
+          def capture(r):
+              repo='StupidYang/gobal-daily-report'
+              jobs=subprocess.check_output(['gh','api',f'repos/{repo}/actions/runs/{r["id"]}/jobs'])
+              (root/'logs'/f'{r["id"]}-jobs.json').write_bytes(jobs)
+              for j in json.loads(jobs)['jobs']:
+                  if j['conclusion']=='failure':
+                      p=subprocess.run(['gh','api',f'repos/{repo}/actions/jobs/{j["id"]}/logs'],capture_output=True)
+                      (root/'logs'/f'{r["id"]}-{j["id"]}.log').write_bytes(p.stdout or p.stderr)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:list(pool.map(capture,selected))
+          PY
+          set +e
+          node --test tests/*.test.cjs > /tmp/gdr-incident/baseline-tests.tap 2>&1
+          echo $? > /tmp/gdr-incident/baseline-tests-exit.txt
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: gdr-regression-proof
-          path: /tmp/gdr-regression/
-          retention-days: 14
+          name: gdr-incident-evidence
+          path: /tmp/gdr-incident/
+          retention-days: 7
           if-no-files-found: error
