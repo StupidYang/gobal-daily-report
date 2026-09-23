@@ -3,31 +3,63 @@ on:
   workflow_dispatch:
   push:
     branches: ['repair/staging-20260922']
+  pull_request:
+    branches: [main]
 permissions:
   contents: read
 concurrency:
-  group: gdr-live-readonly-probe
-  cancel-in-progress: false
+  group: gdr-ci-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  probe:
+  regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 20
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Preserve exact public response bodies without publishing
+      - name: Validate and build deterministic isolated demonstration
         run: |
-          mkdir -p /tmp/gdr-source-check
-          node <<'JS'
-          const fs=require('node:fs'),crypto=require('node:crypto');
-          const urls={gold:'https://api.gold-api.com/price/XAU',silver:'https://api.gold-api.com/price/XAG',treasury:'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202609',brent:'https://query1.finance.yahoo.com/v8/finance/chart/BZ%3DF?range=1d&interval=1m',fed:'https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm',cpi:'https://www.bls.gov/news.release/archives/cpi_09112026.htm',un:'https://www.un.org/en/desa/guterres-cracks-have-become-canyons-as-world-faces-four-tests-of-power',disclosure:'https://paper.cnstock.com/html/2026-09/23/content_2271973.htm',chinaClose:'https://www.nbd.com.cn/articles/2026-09-22/4588920.html'};
-          (async()=>{const rows=[];let cursor=0;const jobs=Object.entries(urls);await Promise.all(Array.from({length:3},async()=>{while(cursor<jobs.length){const [id,url]=jobs[cursor++],started=Date.now();try{const r=await fetch(url,{signal:AbortSignal.timeout(10000),headers:{'User-Agent':'GDR-personal-research/2.0'}});const text=await r.text();fs.writeFileSync('/tmp/gdr-source-check/'+id+'.txt',text);rows.push({id,url,status:r.status,bytes:Buffer.byteLength(text),sha256:crypto.createHash('sha256').update(text).digest('hex'),retrievedAt:new Date().toISOString(),durationMs:Date.now()-started});}catch(e){rows.push({id,url,error:e.message,durationMs:Date.now()-started});}}}));fs.writeFileSync('/tmp/gdr-source-check/manifest.json',JSON.stringify(rows,null,2));console.log(rows);})();
-          JS
+          mkdir -p /tmp/gdr-regression
+          node scripts/gdr.cjs check-config
+          node scripts/check-runtime.cjs
+          for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
+          node --test tests/*.test.cjs > /tmp/gdr-regression/unit-tests.tap
+          node scripts/build-demo.cjs > /tmp/gdr-regression/demo.json
+          cp demo/data/build.json /tmp/gdr-regression/first-build.json
+          node scripts/build-demo.cjs > /dev/null
+          cmp demo/data/build.json /tmp/gdr-regression/first-build.json
+          BATCH_ID=$(node -p "require('./demo/synthetic-manifest.json').snapshots.at(-1).batchId")
+          GDR_ROOT=demo node scripts/check-batch.cjs "$BATCH_ID" --fixture > /tmp/gdr-regression/fixture-batch.json
+          git diff --exit-code -- data/latest.json data/history-index.json data/modules data/runs data/receipts history
+          git rev-parse HEAD > /tmp/gdr-regression/commit.txt
+      - name: Install browser and Chinese fonts
+        run: |
+          npm install --prefix "$RUNNER_TEMP/gdr-browser" --no-save playwright@1.55.0
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk >/dev/null
+          if ! command -v google-chrome >/dev/null; then "$RUNNER_TEMP/gdr-browser/node_modules/.bin/playwright" install --with-deps chromium; fi
+      - name: Real HTTP browser tests on all four viewport widths
+        env:
+          NODE_PATH: ${{ runner.temp }}/gdr-browser/node_modules
+          GDR_TEST_URL: http://127.0.0.1:8181/
+          GDR_TEST_WIDTHS: '320,390,768,1440'
+          GDR_UI_OUTPUT: /tmp/gdr-regression/browser
+        run: |
+          python3 -m http.server 8181 --bind 127.0.0.1 --directory demo >/tmp/gdr-http.log 2>&1 &
+          node tests/ui-real-data.cjs
+          GDR_UI_OUTPUT=/tmp/gdr-regression/expanded node tests/ui-expanded.cjs
+      - name: Export tested source and demo
+        run: |
+          git archive --format=zip --output=/tmp/gdr-regression/source.zip HEAD
+          cd demo && zip -qr /tmp/gdr-regression/demo.zip .
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: gdr-source-check
-          path: /tmp/gdr-source-check/
-          retention-days: 7
+          name: gdr-regression-proof
+          path: /tmp/gdr-regression/
+          retention-days: 14
           if-no-files-found: error
