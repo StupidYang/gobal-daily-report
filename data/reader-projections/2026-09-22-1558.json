@@ -4356,5 +4356,980 @@
         "asOf": "2026-09-22T04:15:01+08:00"
       }
     ]
+  },
+  "archivedReport": {
+    "reportId": "2026-09-22-0935",
+    "updatedAt": "2026-09-22 09:35",
+    "deepDive": [
+      {
+        "title": "BTC / 加密市场",
+        "oneLine": "87k突破 + ETF已披露合计上修，但杠杆仍是双刃剑",
+        "analysis": "从20:00的逼空启动到09:35，BTC价格路径持续抬高。最重要的新证据不是“又涨了一点”，而是Farside已披露基金合计从08:00快照约+378.8M增加到+617.6M，说明现货资金支持证据增强；但IBIT、HODL仍未披露，不能使用“最终净流入”。与此同时，CoinDesk引用CoinGlass的旧窗口显示全加密市场24h总清算约746.6M、空头约647.9M，OI反而升至156B，说明杠杆重建依旧明显。资金费率日度快照约0.01%，尚非极端。验证重点是ETF最终数据、清算降温后的1小时收盘结构与OI是否继续加速。",
+        "factIds": [
+          "btc_spot",
+          "btc_etf_partial",
+          "crypto_liq_total",
+          "crypto_liq_short",
+          "crypto_oi",
+          "btc_funding"
+        ],
+        "sourceIds": [
+          "reuters_fx_asia",
+          "farside",
+          "coindesk_liq",
+          "convex_funding"
+        ]
+      },
+      {
+        "title": "A股",
+        "oneLine": "成长科技强于宽基，隔夜AI行情有选择性传导",
+        "analysis": "A股今天是正常交易日。开盘价/集合竞价口径显示科创50约+2.51%、创业板约+1.37%、深证约+0.94%，明显高于上证约+0.23%。这与隔夜Nasdaq和半导体大涨方向一致，支持“成长科技先承接”的解释。但本轮拿不到可复核的09:35两市成交额和涨跌家数，所以不能把这种风格差异升级成“放量普涨”。12:35应重点检查：成长相对强弱是否保留、上涨家数是否扩散、成交额相对过去20个交易日同时间段中位数的位置。",
+        "factIds": [
+          "sse_open",
+          "szse_open",
+          "chinext_open",
+          "star50_open",
+          "a_turnover_0935",
+          "a_breadth_0935",
+          "usd_cny_prev"
+        ],
+        "sourceIds": [
+          "sse_calendar",
+          "szse_calendar",
+          "google_hsi",
+          "google_szse",
+          "google_chinext",
+          "google_star50",
+          "reuters_yuan"
+        ]
+      },
+      {
+        "title": "港股",
+        "oneLine": "恒指温和上涨，但恒生科技实时证据缺口必须保留",
+        "analysis": "HKEX日历与实时恒指页面确认9/22正常交易。恒指09:30约+0.50%，延续上一交易日强势和隔夜全球risk-on；但恒生科技页面核验时仍返回9/21收盘4,423.29，无法确认9/22当前值，因此明确标missing。开盘后港股成交额和南向资金本轮同样缺少可复核实时值。于是本轮只能说“恒指正向承接”，不能说“港股科技已全面确认隔夜AI行情”。",
+        "factIds": [
+          "hsi_open",
+          "hstech_live",
+          "hstech_prev_close",
+          "hk_turnover_live",
+          "southbound_live"
+        ],
+        "sourceIds": [
+          "hkex_calendar",
+          "google_hsi",
+          "investing_hstech"
+        ]
+      },
+      {
+        "title": "美股",
+        "oneLine": "AI主线收盘确认，利率曲线仍在拆分交易",
+        "analysis": "Nasdaq +2.26%并创纪录收盘，S&P +1.49%、Dow +0.71%。AMD +10%、Intel/Arm超过12%、SOX +4.3%，说明核心驱动很明确是AI/半导体。与此同时2Y升至4.751%、10Y降到4.951%，这不是Fed转鸽，而是短端继续交易加息、长端因油价回落和通胀尾部风险减弱而缓和。亚洲成长股的高开是这一隔夜结构的初步跨市场映射。",
+        "factIds": [
+          "sp500_close",
+          "nasdaq_close",
+          "dow_close",
+          "us2y_close",
+          "us10y_close",
+          "fed_oct_prob"
+        ],
+        "sourceIds": [
+          "reuters_us_close"
+        ]
+      },
+      {
+        "title": "黄金",
+        "oneLine": "最近可靠值偏弱，实时缺口不拿旧报价冒充",
+        "analysis": "Reuters最近可靠现货金口径为4,349.94美元、下跌0.6%，美元偏强和进一步加息预期是主要压制。本轮没有获得同质量的09:35现货金实时报价，所以保持stale状态。跨资产上，BTC上涨而黄金偏弱继续表明BTC当前更接近高beta、仓位和ETF驱动，而非与黄金共同的传统避险交易。",
+        "factIds": [
+          "gold_spot_prev",
+          "dxy_prev",
+          "us2y_close"
+        ],
+        "sourceIds": [
+          "reuters_gold",
+          "reuters_yuan",
+          "reuters_us_close"
+        ]
+      },
+      {
+        "title": "原油",
+        "oneLine": "100美元附近不是一条价格线，先把合约月份看清",
+        "analysis": "Brent 11月前一日结算100.34，亚洲早盘约100.57。WTI 10月合约今天到期，报价约95.80，而更活跃11月合约约92.49。这个巨大价差是期限结构/换月问题，不能解释成WTI瞬间暴跌。基本面上，美伊外交希望和沙特出口恢复压低风险溢价，但胡塞袭击、霍尔木兹运输、莫斯科炼厂停产和高柴油价格保留尾部风险。",
+        "factIds": [
+          "brent_nov",
+          "wti_oct",
+          "wti_nov"
+        ],
+        "sourceIds": [
+          "reuters_oil_current",
+          "reuters_oil_settle",
+          "reuters_moscow_refinery"
+        ]
+      },
+      {
+        "title": "宏观 / 美元 / 美债",
+        "oneLine": "全球央行偏鹰未退，风险资产靠盈利与长端缓和硬扛",
+        "analysis": "Fed 10月再加息概率约55%，2Y最近4.751%，所以短端并不友好；但10Y回落到约4.951%，让长久期资产压力下降。亚洲早盘美元仍偏强，USD/JPY约157.33，日本当日休市且干预风险存在。人民币上一交易日在岸约6.6950，处于多年强位附近。当前市场真正的矛盾不是“央行鸽不鸽”，而是偏鹰政策路径能否继续被盈利、AI资本开支和能源风险回落抵消。",
+        "factIds": [
+          "fed_oct_prob",
+          "us2y_close",
+          "us10y_close",
+          "usd_jpy",
+          "dxy_prev",
+          "usd_cny_prev"
+        ],
+        "sourceIds": [
+          "reuters_us_close",
+          "reuters_fx_asia",
+          "reuters_yuan"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "sse_calendar",
+        "name": "上海证券交易所 2026中秋/国庆休市安排",
+        "short": "SSE",
+        "type": "一级来源",
+        "url": "https://www.sse.com.cn/disclosure/announcement/general/c/c_20260915_10832273.shtml",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-17"
+      },
+      {
+        "id": "szse_calendar",
+        "name": "深圳证券交易所 2026中秋/国庆休市安排",
+        "short": "SZSE",
+        "type": "一级来源",
+        "url": "https://www.szse.cn/www/disclosure/notice/general/t20260917_622911.html",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-17"
+      },
+      {
+        "id": "hkex_calendar",
+        "name": "HKEX 2026 Calendar / Stock Connect",
+        "short": "HKEX",
+        "type": "一级来源",
+        "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=en",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09"
+      },
+      {
+        "id": "google_szse",
+        "name": "Google Finance - SZSE Component",
+        "short": "Google Finance",
+        "type": "行情",
+        "url": "https://www.google.com/finance/quote/399001:SHE",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 09:26:52"
+      },
+      {
+        "id": "google_chinext",
+        "name": "Google Finance - ChiNext",
+        "short": "Google Finance",
+        "type": "行情",
+        "url": "https://www.google.com/finance/quote/399006:SHE",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 09:28:07"
+      },
+      {
+        "id": "google_star50",
+        "name": "Google Finance - STAR 50",
+        "short": "Google Finance",
+        "type": "行情",
+        "url": "https://www.google.com/finance/quote/000688:SHA",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 09:25:20"
+      },
+      {
+        "id": "google_hsi",
+        "name": "Google Finance - Hang Seng Index",
+        "short": "Google Finance",
+        "type": "行情",
+        "url": "https://www.google.com/finance/quote/HSI:INDEXHANGSENG",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 09:30:18"
+      },
+      {
+        "id": "investing_hstech",
+        "name": "Investing.com - Hang Seng TECH",
+        "short": "Investing",
+        "type": "行情",
+        "url": "https://www.investing.com/indices/hang-seng-tech",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21 15:59:59"
+      },
+      {
+        "id": "reuters_fx_asia",
+        "name": "Reuters - Yen squeezed as hawkish turn grips central banks",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/asia-pacific/yen-squeezed-hawkish-turn-grips-central-banks-2026-09-22/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 08:53"
+      },
+      {
+        "id": "farside",
+        "name": "Farside Investors BTC ETF Flow",
+        "short": "Farside",
+        "type": "ETF资金流",
+        "url": "https://farside.co.uk/btc/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21交易日"
+      },
+      {
+        "id": "coindesk_liq",
+        "name": "CoinDesk - Bitcoin short squeeze / CoinGlass data",
+        "short": "CoinDesk",
+        "type": "加密衍生品",
+        "url": "https://www.coindesk.com/markets/2026/09/21/bitcoin-hits-usd85-000-as-short-squeeze-forces-out-usd648-million-of-bearish-bets",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21报道窗口"
+      },
+      {
+        "id": "convex_funding",
+        "name": "Convex BTC Perpetual Funding Rate",
+        "short": "Convex",
+        "type": "加密衍生品",
+        "url": "https://convextrade.com/metrics/btc-funding",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21"
+      },
+      {
+        "id": "reuters_us_close",
+        "name": "Reuters - Nasdaq record high / global markets",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21美股交易日"
+      },
+      {
+        "id": "reuters_oil_current",
+        "name": "Reuters - Oil rises slightly ahead of potential US-Iran talks",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/business/energy/oil-rises-slightly-ahead-potential-us-iran-talks-2026-09-22/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 08:21"
+      },
+      {
+        "id": "reuters_oil_settle",
+        "name": "Reuters - Oil price dips to $100",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/business/energy/oil-rises-after-houthi-attack-saudi-capital-2026-09-20/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21结算"
+      },
+      {
+        "id": "reuters_gold",
+        "name": "Reuters - Gold falls on rising odds of Fed rate hike",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/india/gold-eases-firmer-dollar-profit-taking-mideast-conflict-focus-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "上一纽约交易时段（页面时间标注不一致）"
+      },
+      {
+        "id": "reuters_yuan",
+        "name": "Reuters - Yuan hits multi-year peak",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/asia-pacific/yuan-hits-fresh-multi-year-peak-pboc-eases-curb-ahead-trump-xi-summit-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21"
+      },
+      {
+        "id": "reuters_xi",
+        "name": "Reuters - Xi arrives for Trump summit / Breakingviews",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/china/xi-rolls-into-trump-summit-with-chinas-trade-engine-roaring-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22前"
+      },
+      {
+        "id": "reuters_ai",
+        "name": "Reuters - US-China AI safety dialogue",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/asia-pacific/us-china-meet-again-ai-safety-two-months-shenzhen-bessent-says-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21"
+      },
+      {
+        "id": "reuters_moscow_refinery",
+        "name": "Reuters - Moscow refinery halted after drone attack",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/business/energy/moscow-oil-refinery-output-halted-after-sunday-drone-attack-sources-say-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21/22"
+      },
+      {
+        "id": "reuters_macron",
+        "name": "Reuters - Macron discusses Ukraine-Russia energy truce",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/macron-says-he-discussed-ukraine-russia-energy-truce-ideas-with-trump-2026-09-22/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22"
+      },
+      {
+        "id": "nyfed_econ",
+        "name": "New York Fed Economic Indicators Calendar",
+        "short": "NYFed",
+        "type": "一级来源",
+        "url": "https://www.newyorkfed.org/research/calendars/i-sep26.html",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22日历"
+      },
+      {
+        "id": "nyfed_conference",
+        "name": "New York Fed 2026 Treasury Market Conference",
+        "short": "NYFed",
+        "type": "一级来源",
+        "url": "https://www.newyorkfed.org/newsevents/events/markets/2026/0922-2026",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22议程"
+      },
+      {
+        "id": "fed_calendar",
+        "name": "Federal Reserve September 2026 Calendar",
+        "short": "Fed",
+        "type": "一级来源",
+        "url": "https://www.federalreserve.gov/newsevents/2026-september.htm",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22"
+      }
+    ],
+    "canonicalFacts": [
+      {
+        "id": "sse_open",
+        "label": "上证指数开盘后相关报价",
+        "displayValue": "3,958.88",
+        "rawValue": 3958.88,
+        "unit": "index",
+        "changeLabel": "+0.23%",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "上证指数",
+        "window": "2026-09-22开盘后早段",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:30附近",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_hsi"
+        ],
+        "disclosureNote": "Google Finance恒指页面的相关资产报价；上证直接页面当时仍显示前收，因此标记为延迟/交叉页面报价。",
+        "evidenceNote": "仅用于开盘方向，不作为精确实时行情。"
+      },
+      {
+        "id": "szse_open",
+        "label": "深证成指开盘价",
+        "displayValue": "13,858.62",
+        "rawValue": 13858.62,
+        "unit": "index",
+        "changeLabel": "+0.94%",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "深证成指",
+        "window": "集合竞价/开盘价",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:26:52",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_szse"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "Google Finance显示Open与该值一致。"
+      },
+      {
+        "id": "chinext_open",
+        "label": "创业板指开盘价",
+        "displayValue": "3,446.33",
+        "rawValue": 3446.33,
+        "unit": "index",
+        "changeLabel": "+1.37%",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "创业板指",
+        "window": "集合竞价/开盘价",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:28:07",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_chinext"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "Google Finance显示Open与该值一致。"
+      },
+      {
+        "id": "star50_open",
+        "label": "科创50开盘价",
+        "displayValue": "1,699.05",
+        "rawValue": 1699.05,
+        "unit": "index",
+        "changeLabel": "+2.51%",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "科创50",
+        "window": "集合竞价/开盘价",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:25:20",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_star50"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "开盘涨幅显著强于上证宽基。"
+      },
+      {
+        "id": "a_turnover_0935",
+        "label": "A股开盘后成交额",
+        "displayValue": "数据缺失",
+        "rawValue": null,
+        "unit": "CNY",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "沪深市场",
+        "window": "09:30→09:35",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [],
+        "disclosureNote": "本轮未获得可复核的09:35成交额，不能据此使用“放量/缩量”。",
+        "evidenceNote": null
+      },
+      {
+        "id": "a_breadth_0935",
+        "label": "A股开盘后涨跌家数",
+        "displayValue": "数据缺失",
+        "rawValue": null,
+        "unit": "stocks",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "沪深市场",
+        "window": "09:30→09:35",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [],
+        "disclosureNote": "本轮未获得可复核的上涨/下跌家数，因此只讨论指数风格，不使用“市场广度改善”。",
+        "evidenceNote": null
+      },
+      {
+        "id": "hsi_open",
+        "label": "恒生指数",
+        "displayValue": "25,167.32",
+        "rawValue": 25167.32,
+        "unit": "index",
+        "changeLabel": "+0.50%",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "恒生指数",
+        "window": "开盘后早段",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:30:18",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_hsi"
+        ],
+        "disclosureNote": "Google Finance延迟/网页快照口径。",
+        "evidenceNote": "开盘25,170.80；网页显示早段高点25,218.20。"
+      },
+      {
+        "id": "hstech_live",
+        "label": "恒生科技指数当前报价",
+        "displayValue": "读取缺失",
+        "rawValue": null,
+        "unit": "index",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "恒生科技指数",
+        "window": "2026-09-22开盘后早段",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "investing_hstech"
+        ],
+        "disclosureNote": "检查时该页面仍返回上一交易日收盘值，未把旧值伪装成今日实时价格。",
+        "evidenceNote": null
+      },
+      {
+        "id": "hstech_prev_close",
+        "label": "恒生科技指数前收",
+        "displayValue": "4,423.29",
+        "rawValue": 4423.29,
+        "unit": "index",
+        "changeLabel": "+0.40%（9/21）",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "恒生科技指数",
+        "window": "2026-09-21交易日",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-21 16:00",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "investing_hstech"
+        ],
+        "disclosureNote": "仅作为前收基线，不代表9/22实时行情。",
+        "evidenceNote": null
+      },
+      {
+        "id": "hk_turnover_live",
+        "label": "港股开盘后成交额",
+        "displayValue": "数据缺失",
+        "rawValue": null,
+        "unit": "HKD",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "香港主板",
+        "window": "09:30→09:35",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [],
+        "disclosureNote": "本轮未获得可复核的开盘后成交额。",
+        "evidenceNote": null
+      },
+      {
+        "id": "southbound_live",
+        "label": "南向资金早盘净额",
+        "displayValue": "数据缺失",
+        "rawValue": null,
+        "unit": "HKD",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "港股通南向",
+        "window": "开盘后早段",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "hkex_calendar"
+        ],
+        "disclosureNote": "交易日已确认，但本轮未获得可复核的早盘净买入数据。",
+        "evidenceNote": null
+      },
+      {
+        "id": "btc_spot",
+        "label": "BTC",
+        "displayValue": ">$87,000",
+        "rawValue": null,
+        "unit": "USD",
+        "changeLabel": "8个月高位",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "BTC/USD",
+        "window": "亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 08:53",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_fx_asia"
+        ],
+        "disclosureNote": "Reuters仅给出“above $87,000”，不伪造更精确价格。",
+        "evidenceNote": null
+      },
+      {
+        "id": "btc_etf_partial",
+        "label": "美国现货BTC ETF 9/21已披露基金合计",
+        "displayValue": "+ $617.6M",
+        "rawValue": 617.6,
+        "unit": "USD M",
+        "changeLabel": "部分披露",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "美国现货BTC ETF（已披露基金）",
+        "window": "2026-09-21交易日",
+        "dataStatus": "partial",
+        "marketState": "disclosure",
+        "asOf": "2026-09-22 09:35核验",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "farside"
+        ],
+        "disclosureNote": "已披露基金净流量合计为+617.6M；IBIT、HODL仍未披露，最终全市场净流量待确认。",
+        "evidenceNote": "FBTC +238.8M、BITB +21.6M、ARKB +289.1M、MSBT +61.7M、GBTC +3.3M、BTC +3.1M。"
+      },
+      {
+        "id": "crypto_liq_total",
+        "label": "加密市场24h总清算",
+        "displayValue": "约 $746.6M",
+        "rawValue": 746.6,
+        "unit": "USD M",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "全加密市场",
+        "window": "来源滚动24h窗口",
+        "dataStatus": "window-unclear",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "coindesk_liq"
+        ],
+        "disclosureNote": "来源报道给出24小时窗口，但旧快照未保存精确截止时刻，因此不补造asOf。",
+        "evidenceNote": null
+      },
+      {
+        "id": "crypto_liq_short",
+        "label": "加密市场24h空头清算",
+        "displayValue": "约 $647.9M",
+        "rawValue": 647.9,
+        "unit": "USD M",
+        "changeLabel": "总清算的子集",
+        "direction": "flat",
+        "impactTone": "positive",
+        "scope": "全加密市场",
+        "window": "与总清算相同的来源滚动24h窗口",
+        "dataStatus": "window-unclear",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "coindesk_liq"
+        ],
+        "disclosureNote": "不得与总清算额互换。",
+        "evidenceNote": "CoinDesk引用CoinGlass称空头占647.9M/746.6M。"
+      },
+      {
+        "id": "crypto_oi",
+        "label": "全加密市场未平仓合约OI",
+        "displayValue": "约 $156B",
+        "rawValue": 156,
+        "unit": "USD B",
+        "changeLabel": "+7.59%（来源窗口）",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "全加密衍生品市场",
+        "window": "CoinDesk报道快照",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-21 报道窗口",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "coindesk_liq"
+        ],
+        "disclosureNote": "不是BTC单币OI。",
+        "evidenceNote": null
+      },
+      {
+        "id": "btc_funding",
+        "label": "BTC永续资金费率",
+        "displayValue": "0.01%",
+        "rawValue": 0.01,
+        "unit": "%",
+        "changeLabel": "近中性/轻微多头付费",
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "BTC永续合约聚合指标",
+        "window": "2026-09-21日度快照",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "convex_funding"
+        ],
+        "disclosureNote": "非全交易所逐时实时聚合；仅作为拥挤度辅助，不与OI混为一谈。",
+        "evidenceNote": null
+      },
+      {
+        "id": "sp500_close",
+        "label": "S&P 500前收",
+        "displayValue": "+1.49%",
+        "rawValue": 1.49,
+        "unit": "%",
+        "changeLabel": "最近常规交易日",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "S&P 500",
+        "window": "2026-09-21常规交易日",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "收盘涨幅。"
+      },
+      {
+        "id": "nasdaq_close",
+        "label": "Nasdaq前收",
+        "displayValue": "+2.26%",
+        "rawValue": 2.26,
+        "unit": "%",
+        "changeLabel": "纪录收盘",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "Nasdaq Composite",
+        "window": "2026-09-21常规交易日",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "AMD +10%，Intel/Arm >12%，SOX +4.3%。"
+      },
+      {
+        "id": "dow_close",
+        "label": "Dow前收",
+        "displayValue": "+0.71%",
+        "rawValue": 0.71,
+        "unit": "%",
+        "changeLabel": "最近常规交易日",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "Dow Jones Industrial Average",
+        "window": "2026-09-21常规交易日",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": null
+      },
+      {
+        "id": "us2y_close",
+        "label": "美国2Y收益率",
+        "displayValue": "4.751%",
+        "rawValue": 4.751,
+        "unit": "%",
+        "changeLabel": "+0.75bp",
+        "direction": "up",
+        "impactTone": "negative",
+        "scope": "U.S. Treasury 2Y",
+        "window": "纽约收盘附近",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00附近",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": "亚洲早盘未获得同等可靠的更新口径，沿用最近收盘。",
+        "evidenceNote": null
+      },
+      {
+        "id": "us10y_close",
+        "label": "美国10Y收益率",
+        "displayValue": "4.951%",
+        "rawValue": 4.951,
+        "unit": "%",
+        "changeLabel": "-4.5bp",
+        "direction": "down",
+        "impactTone": "positive",
+        "scope": "U.S. Treasury 10Y",
+        "window": "纽约收盘附近",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00附近",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": "亚洲早盘未获得同等可靠的更新口径，沿用最近收盘。",
+        "evidenceNote": null
+      },
+      {
+        "id": "fed_oct_prob",
+        "label": "Fed 10月再加息概率",
+        "displayValue": "约55%",
+        "rawValue": 55,
+        "unit": "%",
+        "changeLabel": "市场隐含概率",
+        "direction": "up",
+        "impactTone": "negative",
+        "scope": "Fed funds futures",
+        "window": "Reuters引用期货定价",
+        "dataStatus": "delayed",
+        "marketState": "expectation",
+        "asOf": "2026-09-22 04:00前后",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close",
+          "reuters_fx_asia"
+        ],
+        "disclosureNote": "不是官方预测。",
+        "evidenceNote": "Reuters亚洲稿再次给出约55%。"
+      },
+      {
+        "id": "usd_jpy",
+        "label": "USD/JPY",
+        "displayValue": "157.33",
+        "rawValue": 157.33,
+        "unit": "JPY per USD",
+        "changeLabel": "日元承压",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "美元/日元",
+        "window": "亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 08:53前后",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_fx_asia"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "日本当日休市、干预风险仍在。"
+      },
+      {
+        "id": "dxy_prev",
+        "label": "美元指数DXY",
+        "displayValue": "约100.23",
+        "rawValue": 100.23,
+        "unit": "index",
+        "changeLabel": "偏强",
+        "direction": "up",
+        "impactTone": "negative",
+        "scope": "DXY",
+        "window": "最近可靠Reuters口径",
+        "dataStatus": "stale",
+        "marketState": "off-hours",
+        "asOf": "2026-09-21纽约盘/亚洲前",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_yuan"
+        ],
+        "disclosureNote": "本轮Reuters亚洲稿描述美元偏强，但未给DXY即时数值，因此保留最近可复核数值并标记stale。",
+        "evidenceNote": null
+      },
+      {
+        "id": "usd_cny_prev",
+        "label": "在岸人民币USD/CNY",
+        "displayValue": "约6.6950",
+        "rawValue": 6.695,
+        "unit": "CNY per USD",
+        "changeLabel": "3年半高位附近（9/21）",
+        "direction": "down",
+        "impactTone": "positive",
+        "scope": "在岸人民币",
+        "window": "上一交易日",
+        "dataStatus": "stale",
+        "marketState": "trading",
+        "asOf": "2026-09-21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_yuan"
+        ],
+        "disclosureNote": "未将9/22预测中间价当作实际中间价。",
+        "evidenceNote": "9/21中间价6.7487。"
+      },
+      {
+        "id": "brent_nov",
+        "label": "Brent 11月期货",
+        "displayValue": "$100.57",
+        "rawValue": 100.57,
+        "unit": "USD/bbl",
+        "changeLabel": "+0.22%",
+        "direction": "up",
+        "impactTone": "negative",
+        "scope": "Brent November futures",
+        "window": "亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 08:21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_oil_current"
+        ],
+        "disclosureNote": "前一日结算100.34，本轮为同一11月合约亚洲早盘报价。",
+        "evidenceNote": "Reuters认为反弹更像近期下跌后的空头回补。"
+      },
+      {
+        "id": "wti_oct",
+        "label": "WTI 10月到期合约",
+        "displayValue": "$95.80",
+        "rawValue": 95.8,
+        "unit": "USD/bbl",
+        "changeLabel": "+0.02%",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "WTI October futures",
+        "window": "到期日亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "expiring",
+        "asOf": "2026-09-22 08:21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_oil_current"
+        ],
+        "disclosureNote": "该合约9/22到期，不应与11月活跃合约直接拼接成连续价格。",
+        "evidenceNote": null
+      },
+      {
+        "id": "wti_nov",
+        "label": "WTI 11月活跃合约",
+        "displayValue": "$92.49",
+        "rawValue": 92.49,
+        "unit": "USD/bbl",
+        "changeLabel": "+0.14%",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "WTI November futures",
+        "window": "亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 08:21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_oil_current"
+        ],
+        "disclosureNote": "更活跃的次月合约；与到期10月合约存在明显期限价差。",
+        "evidenceNote": null
+      },
+      {
+        "id": "gold_spot_prev",
+        "label": "现货黄金最近可靠报价",
+        "displayValue": "$4,349.94",
+        "rawValue": 4349.94,
+        "unit": "USD/oz",
+        "changeLabel": "-0.6%（9/21）",
+        "direction": "down",
+        "impactTone": "neutral",
+        "scope": "Spot gold",
+        "window": "上一交易日Reuters快照",
+        "dataStatus": "stale",
+        "marketState": "off-hours",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_gold"
+        ],
+        "disclosureNote": "Reuters页面时间标注存在内部不一致；本轮不强行换算精确UTC+8时点，仅保留上一纽约时段可靠报价。",
+        "evidenceNote": "美元偏强与进一步加息预期为主要压制。"
+      }
+    ],
+    "note": "未经本轮重新核验的历史分析；不算本轮资产详报通过。"
   }
 }

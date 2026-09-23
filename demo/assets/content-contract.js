@@ -14,7 +14,7 @@ function normalize(input){
  r.assets=arr(r.assets).map(x=>({...x,name:first(x.name,x.asset,x.market,x.title)}));
  r.watch=arr(r.watch).map(x=>({...x,point:first(x.point,x.name,x.item,x.title),detail:first(x.detail,x.why,x.summary)}));
  r.narrativeTriggers=arr(r.narrativeTriggers).map(x=>({...x,title:first(x.title,x.trigger,x.name,x.summary,x.detail),effect:first(x.effect,x.why,x.detail,x.text,x.summary)}));
- r.dataDefinitions=arr(r.dataDefinitions).map(x=>({...x,term:first(x.term,x.name,x.title)||('说明 '+(x.id||'')+'（原文术语未命名）'),_missingTerm:!first(x.term,x.name,x.title),definition:first(x.definition,x.detail,x.text,x.explanation)}));
+ r.dataDefinitions=arr(r.dataDefinitions).map(x=>({...x,term:first(x.term,x.name,x.title)||('说明 '+(x.id||'')+'（原文术语未命名）'),_missingTerm:x._missingTerm===true||!first(x.term,x.name,x.title),definition:first(x.definition,x.detail,x.text,x.explanation)}));
  r.sources=arr(r.sources).map(x=>({...x,checkedAt:first(x.checkedAt,x.verifiedAt),retrievedAt:first(x.retrievedAt,x.checkedAt,x.verifiedAt)}));
  r.deepDive=arr(r.deepDive).map(x=>({...x,title:first(x.title,x.name,x.asset,x.market)}));
  return r;
@@ -51,7 +51,7 @@ function quoteCoverage(config,m,now=Date.now()){
  const counts={required:arr(config?.required).length,numeric:0,fresh:0,stale:0,retained:0,textOnly:0,missing:0};
  const ttl=(config?.moduleTtlHours?.quotes||6)*3600000;
  const rows=arr(config?.required).map(x=>{const q=items.get(x.id),t=Date.parse(q?.asOf);let state='missing';
-  if(q&&typeof q.price==='number'&&Number.isFinite(q.price)&&Number.isFinite(t)&&t<=now&&arr(q.sourceIds).some(id=>s.has(id))){counts.numeric++;state=q.retention?'retained':now-t>ttl?'stale':'fresh';}
+  if(q&&!['missing','error','invalid','unknown','window-unclear'].includes(q.status||q.dataStatus)&&typeof q.price==='number'&&Number.isFinite(q.price)&&Number.isFinite(t)&&t<=now&&arr(q.sourceIds).some(id=>s.has(id))){counts.numeric++;state=q.retention?'retained':now-t>ttl?'stale':'fresh';}
   else if(q&&q.displayValue&&arr(q.sourceIds).some(id=>s.has(id))&&!/缺失|未采集|未知|暂无|隔离/.test(q.displayValue))state='textOnly';
   counts[state]++;return {instrumentId:x.id,name:x.name,state,asOf:q?.asOf||null};
  });return {...counts,rows};
