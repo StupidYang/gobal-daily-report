@@ -37,6 +37,7 @@ jobs:
           PY
           fi
           if test -f .repair/ui-handoff.cjs; then cp .repair/ui-handoff.cjs tests/ui-handoff.cjs; fi
+          if test -f .repair/finalize.cjs; then node .repair/finalize.cjs; fi
       - name: Preserve exact original native failure inputs as fixed regression fixtures
         run: |
           if ! test -f tests/fixtures/native-handoff/baseline.json; then
