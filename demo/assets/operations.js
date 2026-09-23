@@ -11,6 +11,10 @@
     if(href){const a=document.createElement('a');a.textContent=linkText;a.href=href;box.append(a);}
     box.hidden=false;
   }
+  if(document.documentElement.dataset.mode==='validation'){
+    show('真实来源验收 · 自动任务仍暂停','本页是固定的实采与分析验收快照；各资产时点、日度数据和覆盖缺口分别标注，不是自动更新恢复。','返回正式页面','../');
+    return;
+  }
   if(document.documentElement.dataset.mode==='synthetic'){
     show('测试数据 · 非真实行情','报价、事件与分析均为人工合成；只用于工程验收。正式定时任务仍暂停。','返回正式页面','../');
     return;

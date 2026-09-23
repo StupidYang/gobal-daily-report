@@ -1,7 +1,7 @@
 {
   "version": 1,
   "productionPaused": true,
-  "reason": "修复夜间数据覆盖与分析缩水：历史记录只作沿用展示，未重新采集；真实新报告通过内容验收前暂停自动发布。",
+  "reason": "真实采集与执行锁升级验收中；固定真实来源验收页不代表三个原生任务已经恢复。",
   "maxRecurringTasks": 3,
   "resumeRequires": [
     "isolated fixture suite passes",
@@ -17,5 +17,6 @@
     "liveSourceValidation": "pending-first-scheduled-run",
     "note": "The owner explicitly requested resumption now. This is not an assertion that all acceptance conditions have passed. Existing source, synthetic-isolation, atomic-publication and receipt checks remain unchanged."
   },
-  "qualityPolicy": "content-r3"
+  "qualityPolicy": "content-r3",
+  "executionProtocol": "lease-v1"
 }

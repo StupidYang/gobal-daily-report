@@ -4,7 +4,7 @@
 const D=window.GDRDisplay, C=window.GDR, R=window.GDREditorial, A=C.arr, T=C.text, $=s=>document.querySelector(s), LATEST='data/latest.json';
 const rows=v=>A(v).filter(x=>x&&typeof x==='object'&&!Array.isArray(x));
 const state={current:null,index:[],indexFailed:false,intent:0,busy:false,seq:0,renderId:0,historySeq:0,cache:new Map(),series:[],audit:null,pending:null,chartMode:'single',chartKey:null,readAt:null,newsRegion:'ALL',newsQuery:'',newsLimit:9};
-const store={get(k){try{return localStorage.getItem((document.documentElement.dataset.mode==='synthetic'?'demo:':'')+k);}catch{return null;}},set(k,v){try{localStorage.setItem((document.documentElement.dataset.mode==='synthetic'?'demo:':'')+k,v);}catch{}}};
+const store={get(k){try{return localStorage.getItem((document.documentElement.dataset.mode==='synthetic'?'demo:':document.documentElement.dataset.mode==='validation'?'validation:':'')+k);}catch{return null;}},set(k,v){try{localStorage.setItem((document.documentElement.dataset.mode==='synthetic'?'demo:':document.documentElement.dataset.mode==='validation'?'validation:':'')+k,v);}catch{}}};
 state.readAt=store.get('gdr:read-report-at');
 const el=(tag,cls,value)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(value!==undefined)n.textContent=T(value);return n;};
 const add=(p,...cs)=>{cs.filter(Boolean).forEach(x=>p.append(x));return p;};

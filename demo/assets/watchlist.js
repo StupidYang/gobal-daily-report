@@ -4,7 +4,7 @@
 const D=window.GDRDisplay,W=window.GDRWatch;if(!W||!D)return;
 const root=document.getElementById('watchlistRoot');if(!root)return;
 const state={config:null,modules:{},report:null,tab:'required',quoteGroup:'ALL',market:'CN',sector:'ALL',query:'',n:5,limit:40,seq:0,mode:'latest',loaded:false,failures:[],quarantine:[],signature:''};
-const storage={get(k,f){try{return JSON.parse(localStorage.getItem((document.documentElement.dataset.mode==='synthetic'?'demo:':'')+k))||f;}catch{return f;}},set(k,v){try{localStorage.setItem((document.documentElement.dataset.mode==='synthetic'?'demo:':'')+k,JSON.stringify(v));}catch{}}};
+const storage={get(k,f){try{return JSON.parse(localStorage.getItem((document.documentElement.dataset.mode==='synthetic'?'demo:':document.documentElement.dataset.mode==='validation'?'validation:':'')+k))||f;}catch{return f;}},set(k,v){try{localStorage.setItem((document.documentElement.dataset.mode==='synthetic'?'demo:':document.documentElement.dataset.mode==='validation'?'validation:':'')+k,JSON.stringify(v));}catch{}}};
 let pins=new Set(W.arr(storage.get('gdr:pins:v1',[])).filter(x=>typeof x==='string')),custom=W.arr(storage.get('gdr:custom:v1',[])).filter(x=>x&&typeof x.instrumentId==='string');
 const statusText=s=>({ok:'已更新',partial:'部分更新',delayed:'延迟报价',invalid:'数据异常',missing:'未采集',error:'读取失败','no-change':'已查无新增',stale:'较旧',unknown:'未知',snapshot:'行情快照',closed:'收盘快照',previous:'沿用旧值'})[s]||s||'未采集';
 const labels={quotes:'基础行情','asia-equities':'A/H板块','us-equities':'美股候选池',research:'公司研究',news:'综合时事',macro:'宏观',synthesis:'综合分析'};
