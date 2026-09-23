@@ -9,6 +9,7 @@ const proof={checkedAt:new Date().toISOString(),url:base,offline:!!folder,tests:
 async function read(request,file){if(folder)return JSON.parse(fs.readFileSync(path.join(folder,file),'utf8'));const res=await request.get(new URL(file+'?expanded='+Date.now(),base).href,{timeout:25000});assert.equal(res.status(),200,file);return res.json();}
 async function visit(page){
  if(!folder)return page.goto(base+'?expanded='+Date.now(),{waitUntil:'networkidle',timeout:60000});
+ await require('./offline-crypto.cjs')(page);
  await page.route('**/*',async route=>{const file=path.resolve(folder,'.'+new URL(route.request().url()).pathname);if(!file.startsWith(folder+path.sep)||!fs.existsSync(file))return route.fulfill({status:404,body:'not found'});return route.fulfill({status:200,contentType:{'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json'}[path.extname(file)]||'text/plain',body:fs.readFileSync(file)});});
  await page.setContent(fs.readFileSync(path.join(folder,'index.html'),'utf8').replace('<head>','<head><base href="https://gdr-expanded-test.invalid/">'),{waitUntil:'networkidle'});
  await page.evaluate(()=>document.addEventListener('click',e=>{if(e.target.closest('a[href^="#"]'))e.preventDefault();},true));

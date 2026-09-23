@@ -5,7 +5,7 @@ const finite=x=>typeof x==='number'&&Number.isFinite(x);
 const text=x=>x==null?'':String(x);
 const aliases={BTC:'Bitcoin',ETH:'Ethereum',SOL:'Solana',PEPE:'Pepe',HYPE:'Hyperliquid'};
 const names={'INDEX:CN:SSE':'上证指数','INDEX:CN:SZSE':'深证成指','INDEX:CN:CHINEXT':'创业板指','INDEX:CN:STAR50':'科创50','INDEX:CN:CSI300':'沪深300','INDEX:CN:CSI500':'中证500','INDEX:HK:HSI':'恒生指数','INDEX:HK:HSTECH':'恒生科技','INDEX:HK:HSCEI':'恒生国企','INDEX:US:SP500':'标普500','INDEX:US:NASDAQ':'纳斯达克综合','INDEX:US:NDX':'纳斯达克100','INDEX:US:DOW':'道琼斯','INDEX:US:RUSSELL2000':'罗素2000','FX:DXY':'美元指数','FX:USDCNY':'在岸人民币','FX:USDCNH':'离岸人民币','RATE:US2Y':'美债2年期','RATE:US10Y':'美债10年期','ENERGY:WTI':'WTI原油','ENERGY:BRENT':'Brent原油','METAL:XAUUSD':'现货黄金','METAL:XAGUSD':'现货白银','VOL:VIX':'VIX'};
-function identity(f){return text(f.instrumentId||f.id).replace(/^quotes:/,'');}
+function identity(f){return text(f.instrumentId||(/^(INDEX|CRYPTO|ENERGY|RATE|FX|METAL):/.test(f.seriesKey||'')?f.seriesKey:null)||f.id).replace(/^quotes:/,'');}
 function name(f){const id=identity(f);if(names[id])return names[id];const m=id.match(/^CRYPTO:(BTC|ETH|SOL|PEPE|HYPE):/);if(m)return m[1];const label=text(f.label||f.name||f.symbol);if(Object.values(aliases).includes(label))return Object.keys(aliases).find(k=>aliases[k]===label);return label||text(f.symbol)||'未命名资产';}
 function unit(f){const u=text(f.unit||f.currency);return ({index:'点','%':'%',USD:'美元',CNY:'人民币',CNH:'离岸人民币','USD/oz':'美元/盎司','USD/bbl':'美元/桶','CNY/USD':'人民币/美元',bp:'基点',bps:'基点'})[u]||u;}
 function value(f){return Object.hasOwn(f,'rawValue')?f.rawValue:f.price;}

@@ -52,10 +52,10 @@ function quoteTable(favorites){
  list.slice(0,state.limit).forEach(q=>{const tr=E('tr'),star=button(pins.has(q.instrumentId)?'★':'☆',()=>{pins.has(q.instrumentId)?pins.delete(q.instrumentId):pins.add(q.instrumentId);storage.set('gdr:pins:v1',[...pins]);render();},'wl-star');star.setAttribute('aria-label',(pins.has(q.instrumentId)?'取消自选 ':'加入自选 ')+(q.name||q.symbol));star.setAttribute('aria-pressed',String(pins.has(q.instrumentId)));
   const value=E('td');add(value,E('strong','wl-value',D.format(q)),note(D.unit(q)),q.contract?note('合约 '+q.contract):null);
   const change=E('td',W.finite(q.changePct)?q.changePct>=0?'positive':'negative':'wl-muted',W.finite(q.changePct)?(q.changePct>0?'+':'')+q.changePct.toFixed(2)+'%':'—');change.append(note(D.basis(q.comparisonBasis)));
-  const status=E('td');add(status,note(W.stamp(q.asOf)),note(statusText(q.status)));
+  const status=E('td');add(status,note(W.stamp(q.asOf)),note(q.retention?'历史沿用 · 未重新核验':statusText(q.status)));
   const analysis=E('td'),research=findResearch(q.instrumentId),proof=E('div');
   proof.append(note('数据截至：'+W.stamp(q.asOf)+'；'+D.status(q.status)),refs(q.sourceIds,state.modules[q.sourceModule||'quotes']));
-  if(q.note)proof.append(note(q.note));proof.append(note('原始涨跌基准：'+(q.comparisonBasis||'未提供')));
+  if(q.note)proof.append(note(q.note));if(q.retention)proof.append(note('历史沿用：'+q.retention.reason+'；原始运行 '+q.retention.fromRunId+'；不是本轮新采集。'));proof.append(note('原始涨跌基准：'+(q.comparisonBasis||'未提供')));
   if(research)proof.append(researchCard(research));analysis.append(details('quote-proof-'+q.instrumentId,research?'研究与来源':'数据依据',proof));analysis.append(refs(q.sourceIds,state.modules[q.sourceModule||'quotes']));
   add(tr,add(E('td'),star),add(E('td'),E('strong','',q.name||q.symbol||q.instrumentId),note((q.symbol||q.instrumentId)+' · '+(q.group||q.market||''))),value,change,status,analysis);tbody.append(tr);
  });table.append(tbody);wrap.append(table);out.append(wrap,note('展示 '+Math.min(state.limit,list.length)+' / '+list.length+'；空值是未采集，不是价格为零。'));
@@ -94,7 +94,8 @@ async function load(force=false){const seq=++state.seq,selected=document.getElem
  try{const config=state.config||await fetchJSON('config/watchlist.json');let report=null;if(!historical){try{report=await fetchJSON('data/latest.json');}catch{}}if(historical){if(!/^history\/\d{4}-\d{2}-\d{2}\/\d{4}(?:-[\w-]+)?\.json$/.test(selected))throw Error('无效历史路径');report=await fetchJSON(selected);}
  const modules={},failures=[],quarantine=[];await Promise.all(['quotes','asia-equities','us-equities','research','news','macro'].map(async role=>{let path='data/modules/'+role+'.json';if(historical){path=report?.reportMeta?.moduleRefs?.[role]?.path;if(!path||!new RegExp('^data/runs/'+role+'/[A-Za-z0-9_-]+\\.json$').test(path)){failures.push(labels[role]+'历史未冻结');return;}}
  try{const m=await fetchJSON(path);const projected=W.projectModule(m,role);if(!projected.module)throw Error('数据校验失败：'+projected.issues.join('；'));if(historical&&W.time(m.generatedAt)>W.time(report.updatedAt))throw Error('拒绝未来模块');modules[role]=projected.module;quarantine.push(...projected.quarantined.map(q=>({...q,role})));}catch(e){failures.push(labels[role]+'：'+e.message);if(!historical&&state.modules[role]&&state.report?.reportId===report?.reportId){modules[role]=state.modules[role];failures.push(labels[role]+'：沿用上次成功读取的数据及原时点');}}}));
- if(seq!==state.seq)return;const signature=JSON.stringify({selected,config,modules,failures,quarantine});state.config=config;state.n=state.loaded?state.n:config.defaultN;state.loaded=true;if(signature===state.signature&&!force)return;state.signature=signature;state.modules=modules;state.failures=failures;state.quarantine=quarantine;state.report=report;render();publicationLine();
+ if(window.GDRContent?.projection&&report){const pr=await window.GDRContent.projection(report);if(pr)for(const [role,m]of Object.entries(pr.modules||{}))if(modules[role]?.runId===m.runId){const checked=W.projectModule(m,role);if(checked.module)modules[role]=checked.module;}}
+ if(seq!==state.seq)return;const signature=JSON.stringify({selected,config,modules,failures,quarantine});state.config=config;state.n=state.loaded?state.n:config.defaultN;state.loaded=true;if(signature===state.signature&&!force)return;state.signature=signature;state.modules=modules;state.failures=failures;state.quarantine=quarantine;state.report=report;render();publicationLine();document.dispatchEvent(new CustomEvent('gdr:coverage',{detail:window.GDRContent.quoteCoverage(config,modules.quotes,historical?W.time(report.reportMeta?.generatedAt||report.updatedAt):Date.now())}));
  }catch(e){if(seq===state.seq){if(historical&&state.loaded){state.modules={};state.failures=['历史报告读取失败'];state.report=null;render();return;}if(!state.loaded)root.replaceChildren(note('自选模块暂不可用：'+e.message));else root.prepend(E('p','wl-warning','模块检查失败，保留上次显示；不是新数据。'));}}
 }
 
@@ -109,13 +110,13 @@ function marketSamples(module,market){
   b.append(refs(summary.sourceIds,module));out.append(section('市场概览 · 非排名',b));
  }
  const themes=W.arr(p.observedThemes).filter(x=>x.market===market);
- const poolSamples=W.arr(p.groups).filter(x=>x.market===market&&W.arr(x.rows).length).map(g=>({theme:g.name||g.id,rows:g.rows,asOf:g.asOf,sourceIds:g.sourceIds,note:'已核验候选样本；不是全池排名。'}));
+ const poolSamples=[...W.arr(p.groups),...W.arr(p.retainedGroups)].filter(x=>x.market===market&&W.arr(x.rows).length).map(g=>({theme:g.name||g.id,rows:g.rows,asOf:g.asOf,sourceIds:g.sourceIds,note:g.retention?'历史候选样本 · '+g.retention.reason+' · 数据 '+W.stamp(g.asOf):'已核验候选样本；不是全池排名。'}));
  const sampleBody=E('div');
  for(const t of [...themes,...poolSamples]){const b=E('div');if(t.catalyst)b.append(E('p','',t.catalyst));
   for(const q of W.arr(t.rows)){const x=E('div','wl-sample-row'),id=q.instrumentId||(q.symbol?'EQUITY:'+market+':'+q.symbol:null);
    const val=W.finite(q.changePct)?(q.changePct>0?'+':'')+q.changePct+'%':q.displayChange||'变化待核';
    x.append(E('strong','',q.name||q.symbol||id),note((q.symbol||id||'')+' · '+val+(W.finite(q.price)?' · '+W.priceText(q):'')));
-   if(q.catalyst)x.append(note(q.catalyst));
+   x.append(note('数据 '+W.stamp(q.asOf||t.asOf)+(q.retention?' · 历史沿用':'')));if(q.catalyst)x.append(note(q.catalyst));
    if(id)x.append(button(pins.has(id)?'已在自选':'加入自选',()=>{pins.add(id);storage.set('gdr:pins:v1',[...pins]);render();}));
    x.append(refs(q.sourceIds||t.sourceIds,module));b.append(x);
   }

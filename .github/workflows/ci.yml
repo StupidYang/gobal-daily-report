@@ -2,7 +2,7 @@ name: Isolated regression checks
 on:
   workflow_dispatch:
   push:
-    branches: ['repair/staging-20260922']
+    branches: ['repair/staging-20260922', 'repair/content-quality-20260923']
   pull_request:
     branches: [main]
 permissions:
@@ -24,6 +24,7 @@ jobs:
       - name: Validate and build deterministic isolated demonstration
         run: |
           mkdir -p /tmp/gdr-regression
+          node scripts/build-reader-projections.cjs > /tmp/gdr-regression/content-quality.json
           node scripts/gdr.cjs check-config
           node scripts/check-runtime.cjs
           for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
@@ -52,6 +53,8 @@ jobs:
           python3 -m http.server 8181 --bind 127.0.0.1 --directory demo >/tmp/gdr-http.log 2>&1 &
           node tests/ui-real-data.cjs
           GDR_UI_OUTPUT=/tmp/gdr-regression/expanded node tests/ui-expanded.cjs
+          python3 -m http.server 8282 --bind 127.0.0.1 --directory . >/tmp/gdr-quality-http.log 2>&1 &
+          GDR_TEST_URL=http://127.0.0.1:8282/ GDR_UI_OUTPUT=/tmp/gdr-regression/content node tests/ui-content-quality.cjs
       - name: Export tested source and demo
         run: |
           git archive --format=zip --output=/tmp/gdr-regression/source.zip HEAD

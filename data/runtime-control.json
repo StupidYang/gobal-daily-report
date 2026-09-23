@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "productionPaused": false,
-  "reason": "用户于2026-09-22明确要求启用三个保留任务，按小时进行真实数据运行；首次真实采集与发布仍待回执验证，不将配置启用视为数据验收通过。",
+  "productionPaused": true,
+  "reason": "修复夜间数据覆盖与分析缩水：历史记录只作沿用展示，未重新采集；真实新报告通过内容验收前暂停自动发布。",
   "maxRecurringTasks": 3,
   "resumeRequires": [
     "isolated fixture suite passes",
@@ -16,5 +16,6 @@
     "firstGlobalRun": "2026-09-22T20:00:00+08:00",
     "liveSourceValidation": "pending-first-scheduled-run",
     "note": "The owner explicitly requested resumption now. This is not an assertion that all acceptance conditions have passed. Existing source, synthetic-isolation, atomic-publication and receipt checks remain unchanged."
-  }
+  },
+  "qualityPolicy": "content-r3"
 }
