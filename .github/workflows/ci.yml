@@ -19,13 +19,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify and apply the reviewed source-only patch
+      - name: Verify source patch and independently committed workflow
         run: |
           mkdir -p /tmp/gdr-incident-proof
           python3 - <<'PY'
           import pathlib,base64,lzma,hashlib,subprocess,json
           parts=sorted(pathlib.Path('scripts/repairs').glob('incident-patch-*.b64'))
           paths=['.github/workflows/publish-candidates.yml','assets/execution-status.js','lib/execution.cjs','lib/pages-release.cjs','lib/publication-outcome.cjs','scripts/execution-worker.cjs','scripts/publication-lease.cjs','scripts/request-pages.cjs','scripts/verify-site-bytes.cjs','scripts/write-deployment-proof.cjs','tests/incident-release.test.cjs','docs/incident-release-20260923.md']
+          workflow=pathlib.Path(paths[0]).read_bytes()
+          assert hashlib.sha256(workflow).hexdigest()=='bc132808fe986ec4cefb3a75e0f1d59032aebff6e59238d58c71617e5b6bf576'
           if parts:
               assert len(parts)==4
               patch=lzma.decompress(base64.b64decode(''.join(p.read_text().strip() for p in parts),validate=True))
@@ -33,11 +35,12 @@ jobs:
               target=pathlib.Path('/tmp/gdr-incident-proof/repair.patch');target.write_bytes(patch)
               names=[x.split('\t')[-1] for x in subprocess.check_output(['git','apply','--numstat',str(target)],text=True).splitlines()]
               assert set(names)==set(paths),(names,paths)
-              subprocess.run(['git','apply','--check',str(target)],check=True)
-              subprocess.run(['git','apply',str(target)],check=True)
+              subprocess.run(['git','apply','--exclude=.github/workflows/publish-candidates.yml','--check',str(target)],check=True)
+              subprocess.run(['git','apply','--exclude=.github/workflows/publish-candidates.yml',str(target)],check=True)
+          doc=pathlib.Path(paths[-1]);doc.write_text(doc.read_text().replace('36项','37项').replace('36 项','37 项'))
           pathlib.Path('/tmp/gdr-incident-proof/paths.json').write_text(json.dumps(paths))
           PY
-      - name: Run every regression and verify the exact source-to-staging bytes
+      - name: Run every regression and verify exact branch and staging bytes
         run: |
           set -euo pipefail
           node scripts/gdr.cjs check-config
@@ -67,30 +70,32 @@ jobs:
           node tests/ui-real-data.cjs
           GDR_UI_OUTPUT=/tmp/gdr-incident-proof/expanded node tests/ui-expanded.cjs
           GDR_UI_OUTPUT=/tmp/gdr-incident-proof/content node tests/ui-content-quality.cjs
-      - name: Commit only tested source changes to this repair branch
+      - name: Commit tested non-workflow source changes to repair branch only
         run: |
           test "$GITHUB_REF" = refs/heads/repair/incident-20260923
           git config user.name 'gdr-repair[bot]'
           git config user.email 'gdr-repair@users.noreply.github.com'
           python3 - <<'PY'
           import json,subprocess,pathlib
-          paths=json.loads(pathlib.Path('/tmp/gdr-incident-proof/paths.json').read_text())
-          subprocess.run(['git','add','--',*paths],check=True)
+          proof=pathlib.Path('/tmp/gdr-incident-proof')
+          paths=json.loads((proof/'paths.json').read_text())
+          code=[p for p in paths if not p.startswith('.github/')]
+          subprocess.run(['git','add','--',*code],check=True)
           parts=[str(p) for p in pathlib.Path('scripts/repairs').glob('incident-patch-*.b64')]
           if parts:subprocess.run(['git','rm','--',*parts],check=True)
           staged=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
-          assert set(staged)<=set(paths+parts)
-          if staged:
-              subprocess.run(['git','commit','-m','fix: verified release deduplication and truthful public outcomes [skip ci]'],check=True)
-              subprocess.run(['git','push','origin','HEAD:repair/incident-20260923'],check=True)
+          assert set(staged)<=set(code+parts)
+          assert not any(p.startswith('.github/') for p in staged)
+          if staged:subprocess.run(['git','commit','-m','fix: verified release deduplication and truthful public outcomes [skip ci]'],check=True)
           manifest=[]
           for p in paths:
               blob=subprocess.check_output(['git','rev-parse','HEAD:'+p],text=True).strip()
               manifest.append({'path':p,'mode':'100644','type':'blob','sha':blob})
-          pathlib.Path('/tmp/gdr-incident-proof/tested-tree-elements.json').write_text(json.dumps(manifest,indent=2))
+          (proof/'tested-tree-elements.json').write_text(json.dumps(manifest,indent=2))
+          (proof/'commit.txt').write_text(subprocess.check_output(['git','rev-parse','HEAD'],text=True))
+          subprocess.run(['git','archive','--format=zip','--output='+str(proof/'source.zip'),'HEAD'],check=True)
+          if staged:subprocess.run(['git','push','origin','HEAD:repair/incident-20260923'],check=True)
           PY
-          git rev-parse HEAD > /tmp/gdr-incident-proof/commit.txt
-          git archive --format=zip --output=/tmp/gdr-incident-proof/source.zip HEAD
       - uses: actions/upload-artifact@v4
         if: always()
         with:
