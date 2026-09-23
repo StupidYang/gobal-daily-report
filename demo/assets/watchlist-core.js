@@ -141,7 +141,7 @@ function percentile(a,value){if(a.length<2)return .5;const lo=a.filter(x=>x<valu
 function rankGroup(group,config,n=5){
  const rules=config.ranking||{}, as=time(group.asOf), observed=arr(group.rows), seen=new Set(), excluded=[];
  const eligible=observed.filter(q=>{
-  let why=null;
+  let why=group.retention?'沿用的历史样本不参与当前排名':null;
   if(!q?.instrumentId||seen.has(q.instrumentId))why='重复/无证券ID';else seen.add(q.instrumentId);
   if(!why&&(q.suspended===true||rules.excludeST&&q.isST===true))why='停牌或风险警示';
   if(!why&&(!finite(q.price)||q.price<=0||!finite(q.changePct)))why='缺价格/涨跌幅';
@@ -179,7 +179,7 @@ function combinedQuotes(config,modules){
  const map=new Map(quoteRows(config,modules.quotes).map(q=>[q.instrumentId,{...q,sourceModule:'quotes'}]));
  for(const role of ['asia-equities','us-equities'])for(const g of arr(modules[role]?.payload?.groups))for(const q of arr(g?.rows)){
   if(!q?.instrumentId)continue;
-  const next={...q,group:q.group||g.name,market:g.market,status:q.status||'snapshot',sourceModule:role};
+  const next={...q,group:q.group||g.name,market:g.market,status:q.retention||g.retention?'previous':q.status||'snapshot',retention:q.retention||g.retention||null,sourceModule:role};
   map.set(q.instrumentId,chooseQuote(map.get(q.instrumentId),next));
  }
  return [...map.values()];

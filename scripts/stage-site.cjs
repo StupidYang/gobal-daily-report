@@ -7,7 +7,7 @@ if(fs.existsSync(dest)&&fs.lstatSync(dest).isSymbolicLink())throw Error('Site de
 if(fs.existsSync(dest)&&fs.readdirSync(dest).length&&!fs.existsSync(path.join(dest,'data/build.json')))throw Error('Destination is nonempty and not a GDR staging directory');
 fs.rmSync(dest,{recursive:true,force:true});fs.mkdirSync(dest,{recursive:true});
 function copy(rel){const src=path.join(root,rel);if(!fs.existsSync(src))return;const stat=fs.lstatSync(src);if(stat.isSymbolicLink())throw Error('Do not publish symbolic links: '+rel);if(stat.isDirectory()){for(const item of fs.readdirSync(src))copy(rel+'/'+item);return;}const target=path.join(dest,rel);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(src,target);}
-for(const rel of ['index.html','.nojekyll','assets','config','docs','history','data/latest.json','data/history-index.json','data/publication-status.json','data/modules','data/runs','data/receipts','data/runtime-control.json','demo','synthetic-manifest.json','fixture-evidence.html'])copy(rel);
+for(const rel of ['index.html','.nojekyll','assets','config','docs','history','data/latest.json','data/history-index.json','data/publication-status.json','data/modules','data/runs','data/receipts','data/runtime-control.json','data/reader-projections','demo','synthetic-manifest.json','fixture-evidence.html'])copy(rel);
 for(const f of fs.readdirSync(path.join(root,'data')))if(/^editorial-[\w-]+\.json$/.test(f))copy('data/'+f);
 const controlFile=path.join(root,'automation/control.json');
 if(fs.existsSync(controlFile)){const control=JSON.parse(fs.readFileSync(controlFile,'utf8'));fs.mkdirSync(path.join(dest,'data'),{recursive:true});fs.writeFileSync(path.join(dest,'data/runtime-control.json'),JSON.stringify(control,null,2)+'\n');}

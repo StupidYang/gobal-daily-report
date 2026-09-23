@@ -1,0 +1,4609 @@
+{
+  "version": 1,
+  "reportId": "2026-09-22-1430",
+  "reportHash": "7e9dba2280caa150eba9694a441948f9fe2913dcc958ae1596a100ba9fbf2b10",
+  "cutoff": "2026-09-22T14:30:00+08:00",
+  "modules": {
+    "quotes": {
+      "moduleVersion": 1,
+      "module": "quotes",
+      "runId": "20260922T143000-recovery-quotes",
+      "generatedAt": "2026-09-22T14:30:00+08:00",
+      "dataAsOf": "2026-09-22T14:17:26+08:00",
+      "status": "partial",
+      "inputVersions": {},
+      "sources": [
+        {
+          "id": "feed-index-cn-sse",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 上证指数",
+          "verifiedAt": "2026-09-22T14:17:23+08:00"
+        },
+        {
+          "id": "feed-index-cn-szse",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 深证成指",
+          "verifiedAt": "2026-09-22T14:17:23+08:00"
+        },
+        {
+          "id": "feed-index-cn-chinext",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 创业板指",
+          "verifiedAt": "2026-09-22T14:17:23+08:00"
+        },
+        {
+          "id": "feed-index-cn-star50",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 科创50",
+          "verifiedAt": "2026-09-22T14:17:24+08:00"
+        },
+        {
+          "id": "feed-index-cn-csi300",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 沪深300",
+          "verifiedAt": "2026-09-22T14:17:24+08:00"
+        },
+        {
+          "id": "feed-index-cn-csi500",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 中证500",
+          "verifiedAt": "2026-09-22T14:17:24+08:00"
+        },
+        {
+          "id": "feed-index-hk-hsi",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 恒生指数",
+          "verifiedAt": "2026-09-22T14:17:24+08:00"
+        },
+        {
+          "id": "feed-index-hk-hstech",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 恒生科技",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-hk-hscei",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 恒生国企",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-us-sp500",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 标普500",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-us-nasdaq",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 纳斯达克综合",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-us-ndx",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 纳斯达克100",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-us-dow",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 道琼斯",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-index-us-russell2000",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 罗素2000",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-index-jp-nikkei225",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 日经225",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-index-eu-stoxx50",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 欧洲斯托克50",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-crypto-btc-usd",
+          "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
+          "name": "Coinbase Exchange · Bitcoin",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-crypto-eth-usd",
+          "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
+          "name": "Coinbase Exchange · Ethereum",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-crypto-sol-usd",
+          "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
+          "name": "Coinbase Exchange · Solana",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-crypto-pepe-usd",
+          "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
+          "name": "Coinbase Exchange · Pepe",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-crypto-hype-usd",
+          "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
+          "name": "Coinbase Exchange · Hyperliquid",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-fx-dxy",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 美元指数",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-fx-usdcny",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 在岸人民币",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-fx-usdcnh",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 离岸人民币",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-energy-wti",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · WTI原油",
+          "verifiedAt": "2026-09-22T14:17:28+08:00"
+        },
+        {
+          "id": "feed-rate-us10y",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 美国10年期收益率",
+          "verifiedAt": "2026-09-22T14:17:28+08:00"
+        },
+        {
+          "id": "feed-vol-vix",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 波动率指数",
+          "verifiedAt": "2026-09-22T14:17:29+08:00"
+        }
+      ],
+      "payload": {
+        "items": [
+          {
+            "id": "INDEX:CN:SSE",
+            "symbol": "000001.SH",
+            "name": "上证指数",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:SSE",
+            "price": 3955.442,
+            "displayValue": "3955.442",
+            "changePct": 0.14,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:20+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-sse"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 源chartPreviousClose与regularMarketChangePercent口径冲突；使用源明确的常规时段涨跌幅，不自行拼接前收。",
+            "seriesKey": "INDEX:CN:SSE|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:23+08:00"
+          },
+          {
+            "id": "INDEX:CN:SZSE",
+            "symbol": "399001.SZ",
+            "name": "深证成指",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:SZSE",
+            "price": 13759.311,
+            "displayValue": "13759.311",
+            "changePct": 0.213,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-szse"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 源chartPreviousClose与regularMarketChangePercent口径冲突；使用源明确的常规时段涨跌幅，不自行拼接前收。",
+            "seriesKey": "INDEX:CN:SZSE|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:23+08:00"
+          },
+          {
+            "id": "INDEX:CN:CHINEXT",
+            "symbol": "399006.SZ",
+            "name": "创业板指",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:CHINEXT",
+            "price": 3412.459,
+            "displayValue": "3412.459",
+            "changePct": 0.3786,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-chinext"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:CN:CHINEXT|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:23+08:00"
+          },
+          {
+            "id": "INDEX:CN:STAR50",
+            "symbol": "000688.SH",
+            "name": "科创50",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:STAR50",
+            "price": 1672.5273,
+            "displayValue": "1672.5273",
+            "changePct": 0.9076,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:20+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-star50"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:CN:STAR50|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:24+08:00"
+          },
+          {
+            "id": "INDEX:CN:CSI300",
+            "symbol": "000300.CSI",
+            "name": "沪深300",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:CSI300",
+            "price": 4553.7334,
+            "displayValue": "4553.7334",
+            "changePct": 0.3121,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:20+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-csi300"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:CN:CSI300|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:24+08:00"
+          },
+          {
+            "id": "INDEX:CN:CSI500",
+            "symbol": "000905.CSI",
+            "name": "中证500",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:CSI500",
+            "price": 7845.176,
+            "displayValue": "7845.176",
+            "changePct": -0.068,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:20+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-csi500"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:CN:CSI500|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:24+08:00"
+          },
+          {
+            "id": "INDEX:HK:HSI",
+            "symbol": "HSI",
+            "name": "恒生指数",
+            "group": "指数",
+            "market": "HK",
+            "currency": "index",
+            "instrumentId": "INDEX:HK:HSI",
+            "price": 25120.94,
+            "displayValue": "25120.94",
+            "changePct": 0.312,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-hk-hsi"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 源chartPreviousClose与regularMarketChangePercent口径冲突；使用源明确的常规时段涨跌幅，不自行拼接前收。",
+            "seriesKey": "INDEX:HK:HSI|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:24+08:00"
+          },
+          {
+            "id": "INDEX:HK:HSTECH",
+            "symbol": "HSTECH",
+            "name": "恒生科技",
+            "group": "指数",
+            "market": "HK",
+            "currency": "index",
+            "instrumentId": "INDEX:HK:HSTECH",
+            "price": 4444.89,
+            "displayValue": "4444.89",
+            "changePct": 0.488,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-hk-hstech"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:HK:HSTECH|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:25+08:00"
+          },
+          {
+            "id": "INDEX:HK:HSCEI",
+            "symbol": "HSCEI",
+            "name": "恒生国企",
+            "group": "指数",
+            "market": "HK",
+            "currency": "index",
+            "instrumentId": "INDEX:HK:HSCEI",
+            "price": 8361.67,
+            "displayValue": "8361.67",
+            "changePct": 0.264,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-hk-hscei"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 源chartPreviousClose与regularMarketChangePercent口径冲突；使用源明确的常规时段涨跌幅，不自行拼接前收。",
+            "seriesKey": "INDEX:HK:HSCEI|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:25+08:00"
+          },
+          {
+            "id": "INDEX:US:SP500",
+            "symbol": "SPX",
+            "name": "标普500",
+            "group": "指数",
+            "market": "US",
+            "currency": "index",
+            "instrumentId": "INDEX:US:SP500",
+            "price": 7764.7,
+            "displayValue": "7764.7",
+            "changePct": 1.493,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T04:51:02+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-index-us-sp500"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:US:SP500|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:25+08:00"
+          },
+          {
+            "id": "INDEX:US:NASDAQ",
+            "symbol": "IXIC",
+            "name": "纳斯达克综合",
+            "group": "指数",
+            "market": "US",
+            "currency": "index",
+            "instrumentId": "INDEX:US:NASDAQ",
+            "price": 27122.094,
+            "displayValue": "27122.094",
+            "changePct": 2.261,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T05:15:59+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-index-us-nasdaq"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:US:NASDAQ|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:25+08:00"
+          },
+          {
+            "id": "INDEX:US:NDX",
+            "symbol": "NDX",
+            "name": "纳斯达克100",
+            "group": "指数",
+            "market": "US",
+            "currency": "index",
+            "instrumentId": "INDEX:US:NDX",
+            "price": 30482.352,
+            "displayValue": "30482.352",
+            "changePct": 2.827,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T05:15:59+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-index-us-ndx"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:US:NDX|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:25+08:00"
+          },
+          {
+            "id": "INDEX:US:DOW",
+            "symbol": "DJI",
+            "name": "道琼斯",
+            "group": "指数",
+            "market": "US",
+            "currency": "index",
+            "instrumentId": "INDEX:US:DOW",
+            "price": 52048.83,
+            "displayValue": "52048.83",
+            "changePct": 0.709,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T04:50:57+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-index-us-dow"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:US:DOW|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:26+08:00"
+          },
+          {
+            "id": "INDEX:US:RUSSELL2000",
+            "symbol": "RUT",
+            "name": "罗素2000",
+            "group": "指数",
+            "market": "US",
+            "currency": "index",
+            "instrumentId": "INDEX:US:RUSSELL2000",
+            "price": 2875.36,
+            "displayValue": "2875.36",
+            "changePct": 0.523,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T04:30:13+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-index-us-russell2000"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:US:RUSSELL2000|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:26+08:00"
+          },
+          {
+            "id": "INDEX:JP:NIKKEI225",
+            "symbol": "N225",
+            "name": "日经225",
+            "group": "指数",
+            "market": "GLOBAL",
+            "currency": "index",
+            "instrumentId": "INDEX:JP:NIKKEI225",
+            "price": 65018.95,
+            "displayValue": "65018.95",
+            "changePct": 1.376,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-18T14:45:03+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-index-jp-nikkei225"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 日本假期沿用上一可用交易日，源数据日期为9月18日。",
+            "seriesKey": "INDEX:JP:NIKKEI225|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:26+08:00"
+          },
+          {
+            "id": "INDEX:EU:STOXX50",
+            "symbol": "SX5E",
+            "name": "欧洲斯托克50",
+            "group": "指数",
+            "market": "GLOBAL",
+            "currency": "index",
+            "instrumentId": "INDEX:EU:STOXX50",
+            "price": 6318.2,
+            "displayValue": "6318.2",
+            "changePct": 1.315,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T00:00:00+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-index-eu-stoxx50"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:EU:STOXX50|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:26+08:00"
+          },
+          {
+            "id": "CRYPTO:BTC:USD",
+            "symbol": "BTC",
+            "name": "Bitcoin",
+            "group": "加密",
+            "market": "CRYPTO",
+            "currency": "USD",
+            "coingeckoId": "bitcoin",
+            "instrumentId": "CRYPTO:BTC:USD",
+            "price": 85308.22,
+            "displayValue": "85308.22",
+            "changePct": null,
+            "comparisonBasis": "no-comparable-change",
+            "asOf": "2026-09-22T14:17:24+08:00",
+            "status": "snapshot",
+            "sourceIds": [
+              "feed-crypto-btc-usd"
+            ],
+            "contract": null,
+            "note": "Venue-specific USD last trade; not a consolidated market price. Coinbase美元现货最近成交，不等同于全市场聚合报价；未取得同源24h基准，涨跌幅留空。",
+            "seriesKey": "CRYPTO:BTC:USD|Coinbase Exchange|",
+            "valueType": "price",
+            "verifiedAt": "2026-09-22T14:17:26+08:00"
+          },
+          {
+            "id": "CRYPTO:ETH:USD",
+            "symbol": "ETH",
+            "name": "Ethereum",
+            "group": "加密",
+            "market": "CRYPTO",
+            "currency": "USD",
+            "coingeckoId": "ethereum",
+            "instrumentId": "CRYPTO:ETH:USD",
+            "price": 2728.57,
+            "displayValue": "2728.57",
+            "changePct": null,
+            "comparisonBasis": "no-comparable-change",
+            "asOf": "2026-09-22T14:17:24+08:00",
+            "status": "snapshot",
+            "sourceIds": [
+              "feed-crypto-eth-usd"
+            ],
+            "contract": null,
+            "note": "Venue-specific USD last trade; not a consolidated market price. Coinbase美元现货最近成交，不等同于全市场聚合报价；未取得同源24h基准，涨跌幅留空。",
+            "seriesKey": "CRYPTO:ETH:USD|Coinbase Exchange|",
+            "valueType": "price",
+            "verifiedAt": "2026-09-22T14:17:26+08:00"
+          },
+          {
+            "id": "CRYPTO:SOL:USD",
+            "symbol": "SOL",
+            "name": "Solana",
+            "group": "加密",
+            "market": "CRYPTO",
+            "currency": "USD",
+            "coingeckoId": "solana",
+            "instrumentId": "CRYPTO:SOL:USD",
+            "price": 116.61,
+            "displayValue": "116.61",
+            "changePct": null,
+            "comparisonBasis": "no-comparable-change",
+            "asOf": "2026-09-22T14:17:26+08:00",
+            "status": "snapshot",
+            "sourceIds": [
+              "feed-crypto-sol-usd"
+            ],
+            "contract": null,
+            "note": "Venue-specific USD last trade; not a consolidated market price. Coinbase美元现货最近成交，不等同于全市场聚合报价；未取得同源24h基准，涨跌幅留空。",
+            "seriesKey": "CRYPTO:SOL:USD|Coinbase Exchange|",
+            "valueType": "price",
+            "verifiedAt": "2026-09-22T14:17:27+08:00"
+          },
+          {
+            "id": "CRYPTO:PEPE:USD",
+            "symbol": "PEPE",
+            "name": "Pepe",
+            "group": "加密",
+            "market": "CRYPTO",
+            "currency": "USD",
+            "coingeckoId": "pepe",
+            "instrumentId": "CRYPTO:PEPE:USD",
+            "price": 0.00000515,
+            "displayValue": "5.15e-06",
+            "changePct": null,
+            "comparisonBasis": "no-comparable-change",
+            "asOf": "2026-09-22T14:17:25+08:00",
+            "status": "snapshot",
+            "sourceIds": [
+              "feed-crypto-pepe-usd"
+            ],
+            "contract": null,
+            "note": "Venue-specific USD last trade; not a consolidated market price. Coinbase美元现货最近成交，不等同于全市场聚合报价；未取得同源24h基准，涨跌幅留空。",
+            "seriesKey": "CRYPTO:PEPE:USD|Coinbase Exchange|",
+            "valueType": "price",
+            "verifiedAt": "2026-09-22T14:17:27+08:00"
+          },
+          {
+            "id": "CRYPTO:HYPE:USD",
+            "symbol": "HYPE",
+            "name": "Hyperliquid",
+            "group": "加密",
+            "market": "CRYPTO",
+            "currency": "USD",
+            "coingeckoId": "hyperliquid",
+            "note": "Venue-specific USD last trade; not a consolidated market price. Coinbase美元现货最近成交，不等同于全市场聚合报价；未取得同源24h基准，涨跌幅留空。",
+            "instrumentId": "CRYPTO:HYPE:USD",
+            "price": 93.55,
+            "displayValue": "93.55",
+            "changePct": null,
+            "comparisonBasis": "no-comparable-change",
+            "asOf": "2026-09-22T14:17:16+08:00",
+            "status": "snapshot",
+            "sourceIds": [
+              "feed-crypto-hype-usd"
+            ],
+            "contract": null,
+            "seriesKey": "CRYPTO:HYPE:USD|Coinbase Exchange|",
+            "valueType": "price",
+            "verifiedAt": "2026-09-22T14:17:27+08:00"
+          },
+          {
+            "id": "FX:DXY",
+            "symbol": "DXY",
+            "name": "美元指数",
+            "group": "汇率",
+            "market": "FX",
+            "currency": "index",
+            "instrumentId": "FX:DXY",
+            "price": 100.429,
+            "displayValue": "100.429",
+            "changePct": 0,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:07:26+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-fx-dxy"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "FX:DXY|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:27+08:00"
+          },
+          {
+            "id": "FX:USDCNY",
+            "symbol": "USD/CNY",
+            "name": "在岸人民币",
+            "group": "汇率",
+            "market": "FX",
+            "currency": "CNY",
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "instrumentId": "FX:USDCNY",
+            "price": 6.6969,
+            "displayValue": "6.6969",
+            "changePct": 0.0314,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:17:12+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-fx-usdcny"
+            ],
+            "contract": null,
+            "seriesKey": "FX:USDCNY|Yahoo Finance public chart|",
+            "valueType": "price",
+            "verifiedAt": "2026-09-22T14:17:27+08:00"
+          },
+          {
+            "id": "FX:USDCNH",
+            "symbol": "USD/CNH",
+            "name": "离岸人民币",
+            "group": "汇率",
+            "market": "FX",
+            "currency": "CNH",
+            "instrumentId": "FX:USDCNH",
+            "price": 6.6971,
+            "displayValue": "6.6971",
+            "changePct": 0.0701,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:17:26+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-fx-usdcnh"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "FX:USDCNH|Yahoo Finance public chart|",
+            "valueType": "price",
+            "verifiedAt": "2026-09-22T14:17:27+08:00"
+          },
+          {
+            "id": "METAL:XAUUSD",
+            "symbol": "XAU/USD",
+            "name": "现货黄金",
+            "group": "商品",
+            "market": "GLOBAL",
+            "currency": "USD/oz",
+            "instrumentId": "METAL:XAUUSD",
+            "price": null,
+            "displayValue": "待核验",
+            "changePct": null,
+            "comparisonBasis": "unknown",
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": [],
+            "contract": null,
+            "note": "本轮公开数据源未返回可核验的精确值或实际合约；未用旧值冒充新值。"
+          },
+          {
+            "id": "METAL:XAGUSD",
+            "symbol": "XAG/USD",
+            "name": "现货白银",
+            "group": "商品",
+            "market": "GLOBAL",
+            "currency": "USD/oz",
+            "instrumentId": "METAL:XAGUSD",
+            "price": null,
+            "displayValue": "待核验",
+            "changePct": null,
+            "comparisonBasis": "unknown",
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": [],
+            "contract": null,
+            "note": "本轮公开数据源未返回可核验的精确值或实际合约；未用旧值冒充新值。"
+          },
+          {
+            "id": "ENERGY:WTI",
+            "symbol": "WTI",
+            "name": "WTI原油",
+            "group": "商品",
+            "market": "GLOBAL",
+            "currency": "USD/bbl",
+            "requiresContract": true,
+            "instrumentId": "ENERGY:WTI",
+            "price": 93.66,
+            "displayValue": "93.66",
+            "changePct": 1.397,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:07:25+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-energy-wti"
+            ],
+            "contract": "2026-11",
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "ENERGY:WTI|Yahoo Finance public chart|2026-11",
+            "valueType": "price",
+            "verifiedAt": "2026-09-22T14:17:28+08:00"
+          },
+          {
+            "id": "ENERGY:BRENT",
+            "symbol": "BRENT",
+            "name": "Brent原油",
+            "group": "商品",
+            "market": "GLOBAL",
+            "currency": "USD/bbl",
+            "requiresContract": true,
+            "instrumentId": "ENERGY:BRENT",
+            "price": null,
+            "displayValue": "待核验",
+            "changePct": null,
+            "comparisonBasis": "unknown",
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": [],
+            "contract": null,
+            "note": "本轮公开数据源未返回可核验的精确值或实际合约；未用旧值冒充新值。"
+          },
+          {
+            "id": "RATE:US2Y",
+            "symbol": "US2Y",
+            "name": "美国2年期收益率",
+            "group": "利率",
+            "market": "US",
+            "currency": "%",
+            "instrumentId": "RATE:US2Y",
+            "price": null,
+            "displayValue": "待核验",
+            "changePct": null,
+            "comparisonBasis": "unknown",
+            "asOf": null,
+            "status": "missing",
+            "sourceIds": [],
+            "contract": null,
+            "note": "本轮公开数据源未返回可核验的精确值或实际合约；未用旧值冒充新值。"
+          },
+          {
+            "id": "RATE:US10Y",
+            "symbol": "US10Y",
+            "name": "美国10年期收益率",
+            "group": "利率",
+            "market": "US",
+            "currency": "%",
+            "instrumentId": "RATE:US10Y",
+            "price": 4.963,
+            "displayValue": "4.963",
+            "changePct": null,
+            "comparisonBasis": "yield-level-not-price-return",
+            "asOf": "2026-09-22T02:59:53+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-rate-us10y"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 展示收益率水平，不将收益率相对百分比冒充基点变化。",
+            "seriesKey": "RATE:US10Y|Yahoo Finance public chart|",
+            "valueType": "yield",
+            "verifiedAt": "2026-09-22T14:17:28+08:00"
+          },
+          {
+            "id": "VOL:VIX",
+            "symbol": "VIX",
+            "name": "波动率指数",
+            "group": "指数",
+            "market": "US",
+            "currency": "index",
+            "instrumentId": "VOL:VIX",
+            "price": 14.87,
+            "displayValue": "14.87",
+            "changePct": 0.405,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T04:15:01+08:00",
+            "status": "previous",
+            "sourceIds": [
+              "feed-vol-vix"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "VOL:VIX|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:29+08:00"
+          }
+        ],
+        "coverage": {
+          "expected": 31,
+          "obtained": 27,
+          "missingIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "ENERGY:BRENT",
+            "RATE:US2Y"
+          ]
+        },
+        "note": "公开源实际返回68条（27项必看与41家美股）。缺失记录隔离展示；涨幅直接采用明确源字段，禁止错误前收重算。",
+        "evidenceCapturedAt": "2026-09-22T14:17:23+08:00",
+        "evidenceCompletedAt": "2026-09-22T14:17:37+08:00"
+      },
+      "recovery": {
+        "previousRunId": "20260922T130846-quotes",
+        "note": "代码修复后的新快照；旧run原样保留。生成时间不冒充行情时点。"
+      },
+      "_inputHash": "7e0b7f861c1305d085b984631f1f15f1e7ac3ac845e8396e926b74add1f053a2",
+      "projectionOf": {
+        "runId": "20260922T143000-recovery-quotes",
+        "path": "data/runs/quotes/20260922T143000-recovery-quotes.json",
+        "rawHash": "bb52075358e815c33b221a542a8be6dd6fd3505d863dd2678592bbf68d3b1b85",
+        "notNewCollection": true
+      }
+    },
+    "asia-equities": {
+      "moduleVersion": 1,
+      "module": "asia-equities",
+      "runId": "20260922T143000-recovery-asia-equities",
+      "generatedAt": "2026-09-22T14:30:00+08:00",
+      "dataAsOf": "2026-09-22T14:02:22+08:00",
+      "status": "partial",
+      "inputVersions": {},
+      "sources": [
+        {
+          "id": "sws",
+          "name": "申万宏源研究2021行业分类",
+          "url": "https://www.swsresearch.com/institute_sw/allIndex/downloadCenter/industryType",
+          "verifiedAt": "2026-09-22T12:42:14+08:00"
+        },
+        {
+          "id": "hsics",
+          "name": "Hang Seng Industry Classification System",
+          "url": "https://www.hsi.com.hk/eng/our-services/hsics",
+          "verifiedAt": "2026-09-22T12:42:14+08:00"
+        },
+        {
+          "id": "cn-midday",
+          "name": "21世纪经济报道 A股午评",
+          "url": "https://www.21jingji.com/article/20260922/herald/8d323f71dca9858c491c5bd3ebf0dbb8.html",
+          "verifiedAt": "2026-09-22T12:42:14+08:00"
+        },
+        {
+          "id": "cn-midday2",
+          "name": "智通财经 A股午评",
+          "url": "https://hk.investing.com/news/stock-market-news/article-1667482",
+          "verifiedAt": "2026-09-22T12:42:14+08:00"
+        },
+        {
+          "id": "hk-midday",
+          "name": "东方财富 港股午盘",
+          "url": "https://finance.eastmoney.com/a/202609223881088596.html",
+          "verifiedAt": "2026-09-22T12:42:14+08:00"
+        },
+        {
+          "id": "hk-midday2",
+          "name": "新浪 港股午评",
+          "url": "https://finance.sina.com.cn/stock/hkstock/marketalerts/2026-09-22/doc-inissitf7085998.shtml",
+          "verifiedAt": "2026-09-22T12:42:14+08:00"
+        },
+        {
+          "id": "reuters-asia",
+          "name": "Reuters Asia tech rally Sep 22",
+          "url": "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-09-22/",
+          "verifiedAt": "2026-09-22T13:16:56+08:00"
+        },
+        {
+          "id": "feed-index-cn-sse",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 上证指数",
+          "verifiedAt": "2026-09-22T14:17:23+08:00"
+        },
+        {
+          "id": "feed-index-cn-szse",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 深证成指",
+          "verifiedAt": "2026-09-22T14:17:23+08:00"
+        },
+        {
+          "id": "feed-index-cn-chinext",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 创业板指",
+          "verifiedAt": "2026-09-22T14:17:23+08:00"
+        },
+        {
+          "id": "feed-index-cn-star50",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 科创50",
+          "verifiedAt": "2026-09-22T14:17:24+08:00"
+        },
+        {
+          "id": "feed-index-cn-csi300",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 沪深300",
+          "verifiedAt": "2026-09-22T14:17:24+08:00"
+        },
+        {
+          "id": "feed-index-cn-csi500",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 中证500",
+          "verifiedAt": "2026-09-22T14:17:24+08:00"
+        },
+        {
+          "id": "feed-index-hk-hsi",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 恒生指数",
+          "verifiedAt": "2026-09-22T14:17:24+08:00"
+        },
+        {
+          "id": "feed-index-hk-hstech",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 恒生科技",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-hk-hscei",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 恒生国企",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-us-sp500",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 标普500",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-us-nasdaq",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 纳斯达克综合",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-us-ndx",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 纳斯达克100",
+          "verifiedAt": "2026-09-22T14:17:25+08:00"
+        },
+        {
+          "id": "feed-index-us-dow",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 道琼斯",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-index-us-russell2000",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 罗素2000",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-index-jp-nikkei225",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 日经225",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-index-eu-stoxx50",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 欧洲斯托克50",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-crypto-btc-usd",
+          "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
+          "name": "Coinbase Exchange · Bitcoin",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-crypto-eth-usd",
+          "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
+          "name": "Coinbase Exchange · Ethereum",
+          "verifiedAt": "2026-09-22T14:17:26+08:00"
+        },
+        {
+          "id": "feed-crypto-sol-usd",
+          "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
+          "name": "Coinbase Exchange · Solana",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-crypto-pepe-usd",
+          "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
+          "name": "Coinbase Exchange · Pepe",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-crypto-hype-usd",
+          "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
+          "name": "Coinbase Exchange · Hyperliquid",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-fx-dxy",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 美元指数",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-fx-usdcny",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 在岸人民币",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-fx-usdcnh",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 离岸人民币",
+          "verifiedAt": "2026-09-22T14:17:27+08:00"
+        },
+        {
+          "id": "feed-energy-wti",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · WTI原油",
+          "verifiedAt": "2026-09-22T14:17:28+08:00"
+        },
+        {
+          "id": "feed-rate-us10y",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 美国10年期收益率",
+          "verifiedAt": "2026-09-22T14:17:28+08:00"
+        },
+        {
+          "id": "feed-vol-vix",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
+          "name": "Yahoo Finance public chart · 波动率指数",
+          "verifiedAt": "2026-09-22T14:17:29+08:00"
+        }
+      ],
+      "payload": {
+        "attemptedAt": "2026-09-22T13:16:56+08:00",
+        "marketState": {
+          "CN": {
+            "state": "trading",
+            "session": "afternoon",
+            "tradingDate": "2026-09-22",
+            "lastVerifiedDataAsOf": "2026-09-22T11:30:00+08:00",
+            "note": "13:00已复市；本次冷启动未取得可复核的全量午后批量行情，因此保留午间值与原时点。"
+          },
+          "HK": {
+            "state": "trading",
+            "session": "afternoon",
+            "tradingDate": "2026-09-22",
+            "lastVerifiedDataAsOf": "2026-09-22T12:00:00+08:00",
+            "note": "13:00已复市；保留午盘核验值，不把12:00数据改写成13:16。"
+          }
+        },
+        "marketSummary": {
+          "CN": {
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "indices": [
+              {
+                "name": "上证指数",
+                "value": 3958.64,
+                "changePct": 0.22
+              },
+              {
+                "name": "深证成指",
+                "value": 13814.87,
+                "changePct": 0.62
+              },
+              {
+                "name": "创业板指",
+                "value": 3431.11,
+                "changePct": 0.93
+              }
+            ],
+            "turnoverCny": 1430000000000,
+            "breadth": {
+              "advancers": 2883,
+              "decliners": 2475
+            },
+            "structure": "半日指数收涨但从早盘高位回落；科技成长、传媒/AI应用和医药局部活跃，航运、旅游酒店、油气偏弱。",
+            "sourceIds": [
+              "cn-midday",
+              "cn-midday2"
+            ]
+          },
+          "HK": {
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "indices": [
+              {
+                "name": "恒生指数",
+                "value": 25131.75,
+                "changePct": 0.36
+              },
+              {
+                "name": "恒生科技指数",
+                "value": 4467.27,
+                "changePct": 0.99
+              },
+              {
+                "name": "恒生国企指数",
+                "value": null,
+                "changePct": null,
+                "note": "午评来源方向冲突，保留缺失。"
+              }
+            ],
+            "structure": "恒生科技半日跑赢恒指，科技互联网与存储链偏强，黄金股偏弱。",
+            "sourceIds": [
+              "hk-midday",
+              "hk-midday2"
+            ]
+          }
+        },
+        "observedThemes": [
+          {
+            "market": "CN",
+            "theme": "云办公",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "rows": [
+              {
+                "symbol": "688365.SH",
+                "name": "光云科技",
+                "changePct": 19.99
+              },
+              {
+                "symbol": "603039.SH",
+                "name": "泛微网络",
+                "changePct": 10
+              },
+              {
+                "symbol": "002301.SZ",
+                "name": "齐心集团",
+                "changePct": 9.96
+              },
+              {
+                "symbol": "002467.SZ",
+                "name": "二六三",
+                "changePct": 9.94
+              },
+              {
+                "symbol": "300454.SZ",
+                "name": "深信服",
+                "changePct": 6.32
+              }
+            ],
+            "note": "新闻主题样本，不等于SW行业排名。",
+            "sourceIds": [
+              "cn-midday"
+            ]
+          },
+          {
+            "market": "CN",
+            "theme": "航运弱势",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "rows": [
+              {
+                "symbol": "601872.SH",
+                "name": "招商轮船",
+                "changePct": -5.94
+              },
+              {
+                "symbol": "601975.SH",
+                "name": "招商南油",
+                "changePct": -5.15
+              },
+              {
+                "symbol": "833171.BJ",
+                "name": "国航远洋",
+                "changePct": -4.39
+              },
+              {
+                "symbol": "600026.SH",
+                "name": "中远海能",
+                "changePct": -4.1
+              },
+              {
+                "symbol": "601022.SH",
+                "name": "宁波远洋",
+                "changePct": -3.79
+              }
+            ],
+            "note": "主题样本，不等于交通运输行业Bottom-N。",
+            "sourceIds": [
+              "cn-midday"
+            ]
+          },
+          {
+            "market": "CN",
+            "theme": "出版传媒",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "rows": [
+              {
+                "symbol": "601811.SH",
+                "name": "新华文轩",
+                "changePct": 10.01
+              },
+              {
+                "symbol": "603230.SH",
+                "name": "内蒙新华",
+                "changePct": 9.98
+              },
+              {
+                "symbol": "603598.SH",
+                "name": "引力传媒",
+                "changePct": 9.98
+              },
+              {
+                "symbol": "601949.SH",
+                "name": "中国出版",
+                "changePct": 9.97
+              },
+              {
+                "symbol": "600825.SH",
+                "name": "新华传媒",
+                "changePct": 9.93
+              }
+            ],
+            "note": "主题样本，缺真实全行业成员和量比字段。",
+            "sourceIds": [
+              "cn-midday2"
+            ]
+          },
+          {
+            "market": "CN",
+            "theme": "算力芯片/半导体",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "rows": [
+              {
+                "symbol": "300324.SZ",
+                "name": "旋极信息",
+                "displayChange": "20cm涨停"
+              },
+              {
+                "symbol": "000066.SZ",
+                "name": "中国长城",
+                "displayChange": "涨停"
+              },
+              {
+                "symbol": "600770.SH",
+                "name": "综艺股份",
+                "changePct": 9.95
+              },
+              {
+                "symbol": "603893.SH",
+                "name": "瑞芯微",
+                "changePct": 10
+              },
+              {
+                "symbol": "688041.SH",
+                "name": "海光信息",
+                "changePct": 4.53
+              }
+            ],
+            "note": "跨多个SW行业，不做行业归类推断。",
+            "sourceIds": [
+              "cn-midday2"
+            ]
+          },
+          {
+            "market": "HK",
+            "theme": "科网/存储",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "rows": [
+              {
+                "symbol": "00700",
+                "name": "腾讯控股",
+                "displayChange": "涨超6%"
+              },
+              {
+                "symbol": "09988",
+                "name": "阿里巴巴-W",
+                "displayChange": "涨超2%"
+              },
+              {
+                "symbol": "00992",
+                "name": "联想集团",
+                "displayChange": "涨超2%"
+              },
+              {
+                "symbol": "01024",
+                "name": "快手-W",
+                "displayChange": "涨超2%"
+              },
+              {
+                "symbol": "06811",
+                "name": "澜起科技",
+                "displayChange": "涨超9%"
+              }
+            ],
+            "note": "缺HSICS逐股成员与批量成交字段，不生成行业热度榜。",
+            "sourceIds": [
+              "hk-midday",
+              "hk-midday2"
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "id": "农林牧渔",
+            "name": "农林牧渔",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "基础化工",
+            "name": "基础化工",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "钢铁",
+            "name": "钢铁",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "有色金属",
+            "name": "有色金属",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "电子",
+            "name": "电子",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "汽车",
+            "name": "汽车",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "家用电器",
+            "name": "家用电器",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "食品饮料",
+            "name": "食品饮料",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "纺织服饰",
+            "name": "纺织服饰",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "轻工制造",
+            "name": "轻工制造",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "医药生物",
+            "name": "医药生物",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "公用事业",
+            "name": "公用事业",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "交通运输",
+            "name": "交通运输",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "房地产",
+            "name": "房地产",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "商贸零售",
+            "name": "商贸零售",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "社会服务",
+            "name": "社会服务",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "综合",
+            "name": "综合",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "建筑材料",
+            "name": "建筑材料",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "建筑装饰",
+            "name": "建筑装饰",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "电力设备",
+            "name": "电力设备",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "国防军工",
+            "name": "国防军工",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "计算机",
+            "name": "计算机",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "传媒",
+            "name": "传媒",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "通信",
+            "name": "通信",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "银行",
+            "name": "银行",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "非银金融",
+            "name": "非银金融",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "煤炭",
+            "name": "煤炭",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "石油石化",
+            "name": "石油石化",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "环保",
+            "name": "环保",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "美容护理",
+            "name": "美容护理",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "机械设备",
+            "name": "机械设备",
+            "market": "CN",
+            "classification": "SW2021-L1",
+            "asOf": "2026-09-22T11:30:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "sws",
+            "rows": []
+          },
+          {
+            "id": "能源业",
+            "name": "能源业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "原材料业",
+            "name": "原材料业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "工业",
+            "name": "工业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "非必需性消费",
+            "name": "非必需性消费",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "必需性消费",
+            "name": "必需性消费",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "医疗保健业",
+            "name": "医疗保健业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "电讯业",
+            "name": "电讯业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "公用事业",
+            "name": "公用事业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "金融业",
+            "name": "金融业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "地产建筑业",
+            "name": "地产建筑业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "资讯科技业",
+            "name": "资讯科技业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          },
+          {
+            "id": "综合企业",
+            "name": "综合企业",
+            "market": "HK",
+            "classification": "HSICS-industry",
+            "asOf": "2026-09-22T12:00:00+08:00",
+            "universeScope": "sample",
+            "expectedCount": null,
+            "membershipSourceId": "hsics",
+            "rows": []
+          }
+        ],
+        "rankingStatus": {
+          "heat": "missing",
+          "weak": "sample-only",
+          "reason": "未取得全量行业成员、20日同已交易时长量比、换手与成交额，不编热门Top-N；主题样本仅作观察。"
+        },
+        "coverage": {
+          "CN": {
+            "groupsExpected": 31,
+            "groupsWithScorableRows": 0
+          },
+          "HK": {
+            "groupsExpected": 12,
+            "groupsWithScorableRows": 0
+          },
+          "note": "本轮重新核验未取得13:16可复核批量行情；保留12:00前有效数据及原asOf，不空白覆盖。"
+        },
+        "latestIndices": [
+          {
+            "id": "INDEX:CN:SSE",
+            "symbol": "000001.SH",
+            "name": "上证指数",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:SSE",
+            "price": 3955.442,
+            "displayValue": "3955.442",
+            "changePct": 0.14,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:20+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-sse"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 源chartPreviousClose与regularMarketChangePercent口径冲突；使用源明确的常规时段涨跌幅，不自行拼接前收。",
+            "seriesKey": "INDEX:CN:SSE|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:23+08:00"
+          },
+          {
+            "id": "INDEX:CN:SZSE",
+            "symbol": "399001.SZ",
+            "name": "深证成指",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:SZSE",
+            "price": 13759.311,
+            "displayValue": "13759.311",
+            "changePct": 0.213,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-szse"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 源chartPreviousClose与regularMarketChangePercent口径冲突；使用源明确的常规时段涨跌幅，不自行拼接前收。",
+            "seriesKey": "INDEX:CN:SZSE|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:23+08:00"
+          },
+          {
+            "id": "INDEX:CN:CHINEXT",
+            "symbol": "399006.SZ",
+            "name": "创业板指",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:CHINEXT",
+            "price": 3412.459,
+            "displayValue": "3412.459",
+            "changePct": 0.3786,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-chinext"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:CN:CHINEXT|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:23+08:00"
+          },
+          {
+            "id": "INDEX:CN:STAR50",
+            "symbol": "000688.SH",
+            "name": "科创50",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:STAR50",
+            "price": 1672.5273,
+            "displayValue": "1672.5273",
+            "changePct": 0.9076,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:20+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-star50"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:CN:STAR50|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:24+08:00"
+          },
+          {
+            "id": "INDEX:CN:CSI300",
+            "symbol": "000300.CSI",
+            "name": "沪深300",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:CSI300",
+            "price": 4553.7334,
+            "displayValue": "4553.7334",
+            "changePct": 0.3121,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:20+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-csi300"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:CN:CSI300|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:24+08:00"
+          },
+          {
+            "id": "INDEX:CN:CSI500",
+            "symbol": "000905.CSI",
+            "name": "中证500",
+            "group": "指数",
+            "market": "CN",
+            "currency": "index",
+            "instrumentId": "INDEX:CN:CSI500",
+            "price": 7845.176,
+            "displayValue": "7845.176",
+            "changePct": -0.068,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:20+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-cn-csi500"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:CN:CSI500|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:24+08:00"
+          },
+          {
+            "id": "INDEX:HK:HSI",
+            "symbol": "HSI",
+            "name": "恒生指数",
+            "group": "指数",
+            "market": "HK",
+            "currency": "index",
+            "instrumentId": "INDEX:HK:HSI",
+            "price": 25120.94,
+            "displayValue": "25120.94",
+            "changePct": 0.312,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-hk-hsi"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 源chartPreviousClose与regularMarketChangePercent口径冲突；使用源明确的常规时段涨跌幅，不自行拼接前收。",
+            "seriesKey": "INDEX:HK:HSI|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:24+08:00"
+          },
+          {
+            "id": "INDEX:HK:HSTECH",
+            "symbol": "HSTECH",
+            "name": "恒生科技",
+            "group": "指数",
+            "market": "HK",
+            "currency": "index",
+            "instrumentId": "INDEX:HK:HSTECH",
+            "price": 4444.89,
+            "displayValue": "4444.89",
+            "changePct": 0.488,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-hk-hstech"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication.",
+            "seriesKey": "INDEX:HK:HSTECH|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:25+08:00"
+          },
+          {
+            "id": "INDEX:HK:HSCEI",
+            "symbol": "HSCEI",
+            "name": "恒生国企",
+            "group": "指数",
+            "market": "HK",
+            "currency": "index",
+            "instrumentId": "INDEX:HK:HSCEI",
+            "price": 8361.67,
+            "displayValue": "8361.67",
+            "changePct": 0.264,
+            "comparisonBasis": "provider-regular-session-change",
+            "asOf": "2026-09-22T14:02:22+08:00",
+            "status": "delayed",
+            "sourceIds": [
+              "feed-index-hk-hscei"
+            ],
+            "contract": null,
+            "note": "Public delayed feed; currency/session/contract must be checked before publication. 源chartPreviousClose与regularMarketChangePercent口径冲突；使用源明确的常规时段涨跌幅，不自行拼接前收。",
+            "seriesKey": "INDEX:HK:HSCEI|Yahoo Finance public chart|",
+            "valueType": "index",
+            "verifiedAt": "2026-09-22T14:17:25+08:00"
+          }
+        ],
+        "note": "午后指数为本次公开源延迟行情；成交/广度保留11:30或12:00午盘时点。行业成员与量能基准不足，不生成虚构全行业热榜。"
+      },
+      "recovery": {
+        "previousRunId": "20260922T131656-asia-equities",
+        "note": "代码修复后的新快照；旧run原样保留。生成时间不冒充行情时点。"
+      },
+      "_inputHash": "049a41f68195ebf386badafa678ec1fa9dbae8da83ea88cf057460274d24284e",
+      "projectionOf": {
+        "runId": "20260922T143000-recovery-asia-equities",
+        "path": "data/runs/asia-equities/20260922T143000-recovery-asia-equities.json",
+        "rawHash": "fdc59c76884a2ef4661009469bd5dc8bdf5ec55dbaae37d4ecabb0f0b3ee5dc1",
+        "notNewCollection": true
+      }
+    },
+    "us-equities": {
+      "moduleVersion": 1,
+      "module": "us-equities",
+      "runId": "20260922T143000-recovery-us-equities",
+      "generatedAt": "2026-09-22T14:30:00+08:00",
+      "dataAsOf": "2026-09-22T04:00:00+08:00",
+      "status": "partial",
+      "inputVersions": {},
+      "sources": [
+        {
+          "id": "us-AAPL",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
+          "name": "Yahoo Finance · AAPL",
+          "verifiedAt": "2026-09-22T14:17:29+08:00"
+        },
+        {
+          "id": "us-MSFT",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
+          "name": "Yahoo Finance · MSFT",
+          "verifiedAt": "2026-09-22T14:17:29+08:00"
+        },
+        {
+          "id": "us-NVDA",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
+          "name": "Yahoo Finance · NVDA",
+          "verifiedAt": "2026-09-22T14:17:30+08:00"
+        },
+        {
+          "id": "us-GOOGL",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1d&interval=1m",
+          "name": "Yahoo Finance · GOOGL",
+          "verifiedAt": "2026-09-22T14:17:30+08:00"
+        },
+        {
+          "id": "us-AMZN",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
+          "name": "Yahoo Finance · AMZN",
+          "verifiedAt": "2026-09-22T14:17:30+08:00"
+        },
+        {
+          "id": "us-META",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
+          "name": "Yahoo Finance · META",
+          "verifiedAt": "2026-09-22T14:17:30+08:00"
+        },
+        {
+          "id": "us-TSLA",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
+          "name": "Yahoo Finance · TSLA",
+          "verifiedAt": "2026-09-22T14:17:30+08:00"
+        },
+        {
+          "id": "us-AVGO",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
+          "name": "Yahoo Finance · AVGO",
+          "verifiedAt": "2026-09-22T14:17:30+08:00"
+        },
+        {
+          "id": "us-AMD",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
+          "name": "Yahoo Finance · AMD",
+          "verifiedAt": "2026-09-22T14:17:31+08:00"
+        },
+        {
+          "id": "us-INTC",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1d&interval=1m",
+          "name": "Yahoo Finance · INTC",
+          "verifiedAt": "2026-09-22T14:17:31+08:00"
+        },
+        {
+          "id": "us-MU",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
+          "name": "Yahoo Finance · MU",
+          "verifiedAt": "2026-09-22T14:17:31+08:00"
+        },
+        {
+          "id": "us-ARM",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
+          "name": "Yahoo Finance · ARM",
+          "verifiedAt": "2026-09-22T14:17:31+08:00"
+        },
+        {
+          "id": "us-TSM",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
+          "name": "Yahoo Finance · TSM",
+          "verifiedAt": "2026-09-22T14:17:31+08:00"
+        },
+        {
+          "id": "us-ASML",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
+          "name": "Yahoo Finance · ASML",
+          "verifiedAt": "2026-09-22T14:17:31+08:00"
+        },
+        {
+          "id": "us-ORCL",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
+          "name": "Yahoo Finance · ORCL",
+          "verifiedAt": "2026-09-22T14:17:32+08:00"
+        },
+        {
+          "id": "us-CRM",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
+          "name": "Yahoo Finance · CRM",
+          "verifiedAt": "2026-09-22T14:17:32+08:00"
+        },
+        {
+          "id": "us-ADBE",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
+          "name": "Yahoo Finance · ADBE",
+          "verifiedAt": "2026-09-22T14:17:32+08:00"
+        },
+        {
+          "id": "us-NOW",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
+          "name": "Yahoo Finance · NOW",
+          "verifiedAt": "2026-09-22T14:17:32+08:00"
+        },
+        {
+          "id": "us-PLTR",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
+          "name": "Yahoo Finance · PLTR",
+          "verifiedAt": "2026-09-22T14:17:32+08:00"
+        },
+        {
+          "id": "us-SNOW",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
+          "name": "Yahoo Finance · SNOW",
+          "verifiedAt": "2026-09-22T14:17:32+08:00"
+        },
+        {
+          "id": "us-NET",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
+          "name": "Yahoo Finance · NET",
+          "verifiedAt": "2026-09-22T14:17:33+08:00"
+        },
+        {
+          "id": "us-CRWD",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
+          "name": "Yahoo Finance · CRWD",
+          "verifiedAt": "2026-09-22T14:17:33+08:00"
+        },
+        {
+          "id": "us-DDOG",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
+          "name": "Yahoo Finance · DDOG",
+          "verifiedAt": "2026-09-22T14:17:33+08:00"
+        },
+        {
+          "id": "us-COIN",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
+          "name": "Yahoo Finance · COIN",
+          "verifiedAt": "2026-09-22T14:17:33+08:00"
+        },
+        {
+          "id": "us-MSTR",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?range=1d&interval=1m",
+          "name": "Yahoo Finance · MSTR",
+          "verifiedAt": "2026-09-22T14:17:33+08:00"
+        },
+        {
+          "id": "us-BRK-B",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/BRK-B?range=1d&interval=1m",
+          "name": "Yahoo Finance · BRK.B",
+          "verifiedAt": "2026-09-22T14:17:34+08:00"
+        },
+        {
+          "id": "us-BLK",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
+          "name": "Yahoo Finance · BLK",
+          "verifiedAt": "2026-09-22T14:17:34+08:00"
+        },
+        {
+          "id": "us-BX",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
+          "name": "Yahoo Finance · BX",
+          "verifiedAt": "2026-09-22T14:17:34+08:00"
+        },
+        {
+          "id": "us-KKR",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
+          "name": "Yahoo Finance · KKR",
+          "verifiedAt": "2026-09-22T14:17:34+08:00"
+        },
+        {
+          "id": "us-APO",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
+          "name": "Yahoo Finance · APO",
+          "verifiedAt": "2026-09-22T14:17:34+08:00"
+        },
+        {
+          "id": "us-ARES",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
+          "name": "Yahoo Finance · ARES",
+          "verifiedAt": "2026-09-22T14:17:35+08:00"
+        },
+        {
+          "id": "us-OWL",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
+          "name": "Yahoo Finance · OWL",
+          "verifiedAt": "2026-09-22T14:17:35+08:00"
+        },
+        {
+          "id": "us-BN",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
+          "name": "Yahoo Finance · BN",
+          "verifiedAt": "2026-09-22T14:17:35+08:00"
+        },
+        {
+          "id": "us-BAM",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
+          "name": "Yahoo Finance · BAM",
+          "verifiedAt": "2026-09-22T14:17:35+08:00"
+        },
+        {
+          "id": "us-CG",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
+          "name": "Yahoo Finance · CG",
+          "verifiedAt": "2026-09-22T14:17:35+08:00"
+        },
+        {
+          "id": "us-TROW",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
+          "name": "Yahoo Finance · TROW",
+          "verifiedAt": "2026-09-22T14:17:36+08:00"
+        },
+        {
+          "id": "us-BEN",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
+          "name": "Yahoo Finance · BEN",
+          "verifiedAt": "2026-09-22T14:17:36+08:00"
+        },
+        {
+          "id": "us-SCHW",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
+          "name": "Yahoo Finance · SCHW",
+          "verifiedAt": "2026-09-22T14:17:36+08:00"
+        },
+        {
+          "id": "us-IBKR",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
+          "name": "Yahoo Finance · IBKR",
+          "verifiedAt": "2026-09-22T14:17:36+08:00"
+        },
+        {
+          "id": "us-GS",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
+          "name": "Yahoo Finance · GS",
+          "verifiedAt": "2026-09-22T14:17:36+08:00"
+        },
+        {
+          "id": "us-MS",
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
+          "name": "Yahoo Finance · MS",
+          "verifiedAt": "2026-09-22T14:17:36+08:00"
+        }
+      ],
+      "payload": {
+        "groups": [
+          {
+            "id": "technology",
+            "name": "科技候选池",
+            "pool": "technology",
+            "market": "US",
+            "classification": "configured-pool-v1",
+            "universeScope": "sample",
+            "expectedCount": 25,
+            "membershipSourceId": null,
+            "asOf": "2026-09-22T04:04:38+08:00",
+            "tradingDate": "2026-09-21",
+            "session": "regular-close",
+            "currency": "USD",
+            "comparisonBasis": "provider-regular-session-change",
+            "rows": [
+              {
+                "instrumentId": "EQUITY:US:AAPL",
+                "symbol": "AAPL",
+                "name": "Apple Inc.",
+                "price": 338.98,
+                "changePct": 0.848,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-AAPL"
+                ],
+                "listingDays": 16719,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:MSFT",
+                "symbol": "MSFT",
+                "name": "Microsoft Corporation",
+                "price": 501.61,
+                "changePct": 1.586,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-MSFT"
+                ],
+                "listingDays": 14802,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:NVDA",
+                "symbol": "NVDA",
+                "name": "NVIDIA Corporation",
+                "price": 227.38,
+                "changePct": 2.299,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:00+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-NVDA"
+                ],
+                "listingDays": 10104,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:GOOGL",
+                "symbol": "GOOGL",
+                "name": "Alphabet Inc.",
+                "price": 354.97,
+                "changePct": 1.553,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-GOOGL"
+                ],
+                "listingDays": 8068,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:AMZN",
+                "symbol": "AMZN",
+                "name": "Amazon.com, Inc.",
+                "price": 258.45,
+                "changePct": 1.868,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-AMZN"
+                ],
+                "listingDays": 10721,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:META",
+                "symbol": "META",
+                "name": "Meta Platforms, Inc.",
+                "price": 741.245,
+                "changePct": 11.428,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-META"
+                ],
+                "listingDays": 5239,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:TSLA",
+                "symbol": "TSLA",
+                "name": "Tesla, Inc.",
+                "price": 375.3,
+                "changePct": 3.028,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-TSLA"
+                ],
+                "listingDays": 5928,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:AVGO",
+                "symbol": "AVGO",
+                "name": "Broadcom Inc.",
+                "price": 362.66,
+                "changePct": 1.597,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-AVGO"
+                ],
+                "listingDays": 6255,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:AMD",
+                "symbol": "AMD",
+                "name": "Advanced Micro Devices, Inc.",
+                "price": 615.52,
+                "changePct": 9.95,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-AMD"
+                ],
+                "listingDays": 16989,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:INTC",
+                "symbol": "INTC",
+                "name": "Intel Corporation",
+                "price": 121.78,
+                "changePct": 12.136,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-INTC"
+                ],
+                "listingDays": 16989,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:MU",
+                "symbol": "MU",
+                "name": "Micron Technology, Inc.",
+                "price": 1043.96,
+                "changePct": 2.772,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-MU"
+                ],
+                "listingDays": 15452,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:ARM",
+                "symbol": "ARM",
+                "name": "Arm Holdings plc",
+                "price": 322.9,
+                "changePct": 17.158,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-ARM"
+                ],
+                "listingDays": 1103,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:TSM",
+                "symbol": "TSM",
+                "name": "Taiwan Semiconductor Manufacturing Company Limited",
+                "price": 445.14,
+                "changePct": 2.409,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-TSM"
+                ],
+                "listingDays": 10574,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:ASML",
+                "symbol": "ASML",
+                "name": "ASML Holding N.V.",
+                "price": 1711.32,
+                "changePct": 1.869,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-ASML"
+                ],
+                "listingDays": 11513,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:ORCL",
+                "symbol": "ORCL",
+                "name": "Oracle Corporation",
+                "price": 148.56,
+                "changePct": 0.644,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:04:31+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-ORCL"
+                ],
+                "listingDays": 14803,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:CRM",
+                "symbol": "CRM",
+                "name": "Salesforce, Inc.",
+                "price": 236.42,
+                "changePct": -0.63,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:03+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-CRM"
+                ],
+                "listingDays": 8125,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:ADBE",
+                "symbol": "ADBE",
+                "name": "Adobe Inc.",
+                "price": 249.52,
+                "changePct": 0.241,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-ADBE"
+                ],
+                "listingDays": 14649,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:NOW",
+                "symbol": "NOW",
+                "name": "ServiceNow, Inc.",
+                "price": 137.68,
+                "changePct": 1.631,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:03+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-NOW"
+                ],
+                "listingDays": 5197,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:PLTR",
+                "symbol": "PLTR",
+                "name": "Palantir Technologies Inc.",
+                "price": 183.09,
+                "changePct": 3.068,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-PLTR"
+                ],
+                "listingDays": 2182,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:SNOW",
+                "symbol": "SNOW",
+                "name": "Snowflake Inc.",
+                "price": 339.39,
+                "changePct": 2.094,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:03+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-SNOW"
+                ],
+                "listingDays": 2196,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:NET",
+                "symbol": "NET",
+                "name": "Cloudflare, Inc.",
+                "price": 351.67,
+                "changePct": 8.674,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:04:38+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-NET"
+                ],
+                "listingDays": 2565,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:CRWD",
+                "symbol": "CRWD",
+                "name": "CrowdStrike Holdings, Inc.",
+                "price": 249.35,
+                "changePct": 4.923,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-CRWD"
+                ],
+                "listingDays": 2658,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:DDOG",
+                "symbol": "DDOG",
+                "name": "Datadog, Inc.",
+                "price": 245.05,
+                "changePct": 6.581,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-DDOG"
+                ],
+                "listingDays": 2559,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:COIN",
+                "symbol": "COIN",
+                "name": "Coinbase Global, Inc.",
+                "price": 201.05,
+                "changePct": 3.501,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-COIN"
+                ],
+                "listingDays": 1986,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:MSTR",
+                "symbol": "MSTR",
+                "name": "Strategy Inc",
+                "price": 168.5,
+                "changePct": 9.472,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:00+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-MSTR"
+                ],
+                "listingDays": 10329,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              }
+            ]
+          },
+          {
+            "id": "investment",
+            "name": "投资/资管候选池",
+            "pool": "investment",
+            "market": "US",
+            "classification": "configured-pool-v1",
+            "universeScope": "sample",
+            "expectedCount": 16,
+            "membershipSourceId": null,
+            "asOf": "2026-09-22T04:03:07+08:00",
+            "tradingDate": "2026-09-21",
+            "session": "regular-close",
+            "currency": "USD",
+            "comparisonBasis": "provider-regular-session-change",
+            "rows": [
+              {
+                "instrumentId": "EQUITY:US:BRK.B",
+                "symbol": "BRK.B",
+                "name": "Berkshire Hathaway Inc.",
+                "price": 502.01,
+                "changePct": -1.522,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:01:55+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-BRK-B"
+                ],
+                "listingDays": 11092,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:BLK",
+                "symbol": "BLK",
+                "name": "BlackRock, Inc.",
+                "price": 1090.27,
+                "changePct": 1.915,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-BLK"
+                ],
+                "listingDays": 9852,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:BX",
+                "symbol": "BX",
+                "name": "Blackstone Inc.",
+                "price": 126.41,
+                "changePct": 1.16,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-BX"
+                ],
+                "listingDays": 7031,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:KKR",
+                "symbol": "KKR",
+                "name": "KKR & Co. Inc.",
+                "price": 100.83,
+                "changePct": 2.044,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:03+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-KKR"
+                ],
+                "listingDays": 5912,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:APO",
+                "symbol": "APO",
+                "name": "Apollo Global Management, Inc.",
+                "price": 127.91,
+                "changePct": 1.588,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:03+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-APO"
+                ],
+                "listingDays": 5654,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:ARES",
+                "symbol": "ARES",
+                "name": "Ares Management Corporation",
+                "price": 126.67,
+                "changePct": 2.318,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:03+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-ARES"
+                ],
+                "listingDays": 4525,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:OWL",
+                "symbol": "OWL",
+                "name": "Blue Owl Capital Inc.",
+                "price": 10.02,
+                "changePct": 1.829,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-OWL"
+                ],
+                "listingDays": 2107,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:BN",
+                "symbol": "BN",
+                "name": "Brookfield Corporation",
+                "price": 37.98,
+                "changePct": 1.253,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-BN"
+                ],
+                "listingDays": 15606,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:BAM",
+                "symbol": "BAM",
+                "name": "Brookfield Asset Management Ltd.",
+                "price": 46.22,
+                "changePct": 0.347,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-BAM"
+                ],
+                "listingDays": 1390,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:CG",
+                "symbol": "CG",
+                "name": "The Carlyle Group Inc.",
+                "price": 40.86,
+                "changePct": 1.895,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-CG"
+                ],
+                "listingDays": 5254,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:TROW",
+                "symbol": "TROW",
+                "name": "T. Rowe Price Group, Inc.",
+                "price": 104.63,
+                "changePct": 0.451,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:00+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-TROW"
+                ],
+                "listingDays": 14782,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:BEN",
+                "symbol": "BEN",
+                "name": "Franklin Templeton Inc.",
+                "price": 33.64,
+                "changePct": 1.909,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-BEN"
+                ],
+                "listingDays": 15704,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:SCHW",
+                "symbol": "SCHW",
+                "name": "The Charles Schwab Corporation",
+                "price": 106.88,
+                "changePct": 1.549,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-SCHW"
+                ],
+                "listingDays": 14244,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:IBKR",
+                "symbol": "IBKR",
+                "name": "Interactive Brokers Group, Inc.",
+                "price": 93.21,
+                "changePct": 2.779,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:01+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-IBKR"
+                ],
+                "listingDays": 7080,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:GS",
+                "symbol": "GS",
+                "name": "The Goldman Sachs Group, Inc.",
+                "price": 959.39,
+                "changePct": 1.846,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:00:02+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-GS"
+                ],
+                "listingDays": 10002,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              },
+              {
+                "instrumentId": "EQUITY:US:MS",
+                "symbol": "MS",
+                "name": "Morgan Stanley",
+                "price": 206.12,
+                "changePct": 1.747,
+                "currency": "USD",
+                "asOf": "2026-09-22T04:03:07+08:00",
+                "tradingDate": "2026-09-21",
+                "session": "regular-close",
+                "comparisonBasis": "provider-regular-session-change",
+                "sourceIds": [
+                  "us-MS"
+                ],
+                "listingDays": 12263,
+                "isST": false,
+                "suspended": false,
+                "avgDailyValue20d": null,
+                "volumeRatio20d": null,
+                "turnoverPct": null,
+                "valueTraded": null,
+                "catalyst": "最近常规交易日收盘样本；未重做公司研究。",
+                "note": "缺20日同口径量能及流动性输入，仅展示报价，不伪称热度榜。"
+              }
+            ]
+          }
+        ],
+        "note": "41家配置候选股均取得最近常规交易日价格与源涨幅。候选样本不是全市场；量比和换手缺口继续公开，不计算虚构热度。",
+        "coverage": {
+          "technology": {
+            "expected": 25,
+            "observed": 25,
+            "scorable": 0
+          },
+          "investment": {
+            "expected": 16,
+            "observed": 16,
+            "scorable": 0
+          }
+        },
+        "marketState": {
+          "state": "pre-open",
+          "tradingDate": "2026-09-22",
+          "note": "北京时间下午，美国常规交易尚未开始，前收不冒充实时。"
+        }
+      },
+      "recovery": {
+        "previousRunId": "20260922T131800-us-equities",
+        "note": "代码修复后的新快照；旧run原样保留。生成时间不冒充行情时点。"
+      },
+      "_inputHash": "c5de48c9e97c560d3743191b6c727e71c0b2b81dda8aa4361b55fa089609aece",
+      "projectionOf": {
+        "runId": "20260922T143000-recovery-us-equities",
+        "path": "data/runs/us-equities/20260922T143000-recovery-us-equities.json",
+        "rawHash": "59bafb4c2a720da6163da5156b5443d5a7b4ab66d8806b31fc59d41a40ff5b6f",
+        "notNewCollection": true
+      }
+    }
+  },
+  "warnings": [],
+  "quality": {
+    "errors": [
+      "A股详报缺少 mechanism",
+      "A股详报缺少 risk",
+      "A股详报缺少 invalidation",
+      "A股详报缺少 horizon",
+      "港股详报缺少 mechanism",
+      "港股详报缺少 risk",
+      "港股详报缺少 invalidation",
+      "港股详报缺少 horizon",
+      "美股详报缺少 mechanism",
+      "美股详报缺少 risk",
+      "美股详报缺少 invalidation",
+      "美股详报缺少 horizon",
+      "缺少独立资产详报 BTC（A–G总论不能代替资产详报）",
+      "缺少独立资产详报 黄金（A–G总论不能代替资产详报）",
+      "原油详报缺少 mechanism",
+      "原油详报缺少 risk",
+      "原油详报缺少 invalidation",
+      "原油详报缺少 horizon"
+    ],
+    "warnings": [],
+    "assetCoverage": [
+      "A股",
+      "港股",
+      "美股",
+      "原油"
+    ],
+    "contract": "content-r3"
+  },
+  "policy": "read-projection-v1",
+  "note": "历史留存记录的展示恢复，不是新采集；报告及不可变run没有被重写。",
+  "quoteCoverage": {
+    "required": 31,
+    "numeric": 27,
+    "fresh": 18,
+    "stale": 9,
+    "retained": 0,
+    "textOnly": 0,
+    "missing": 4,
+    "rows": [
+      {
+        "instrumentId": "INDEX:CN:SSE",
+        "name": "上证指数",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:20+08:00"
+      },
+      {
+        "instrumentId": "INDEX:CN:SZSE",
+        "name": "深证成指",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:22+08:00"
+      },
+      {
+        "instrumentId": "INDEX:CN:CHINEXT",
+        "name": "创业板指",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:22+08:00"
+      },
+      {
+        "instrumentId": "INDEX:CN:STAR50",
+        "name": "科创50",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:20+08:00"
+      },
+      {
+        "instrumentId": "INDEX:CN:CSI300",
+        "name": "沪深300",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:20+08:00"
+      },
+      {
+        "instrumentId": "INDEX:CN:CSI500",
+        "name": "中证500",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:20+08:00"
+      },
+      {
+        "instrumentId": "INDEX:HK:HSI",
+        "name": "恒生指数",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:22+08:00"
+      },
+      {
+        "instrumentId": "INDEX:HK:HSTECH",
+        "name": "恒生科技",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:22+08:00"
+      },
+      {
+        "instrumentId": "INDEX:HK:HSCEI",
+        "name": "恒生国企",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:02:22+08:00"
+      },
+      {
+        "instrumentId": "INDEX:US:SP500",
+        "name": "标普500",
+        "state": "stale",
+        "asOf": "2026-09-22T04:51:02+08:00"
+      },
+      {
+        "instrumentId": "INDEX:US:NASDAQ",
+        "name": "纳斯达克综合",
+        "state": "stale",
+        "asOf": "2026-09-22T05:15:59+08:00"
+      },
+      {
+        "instrumentId": "INDEX:US:NDX",
+        "name": "纳斯达克100",
+        "state": "stale",
+        "asOf": "2026-09-22T05:15:59+08:00"
+      },
+      {
+        "instrumentId": "INDEX:US:DOW",
+        "name": "道琼斯",
+        "state": "stale",
+        "asOf": "2026-09-22T04:50:57+08:00"
+      },
+      {
+        "instrumentId": "INDEX:US:RUSSELL2000",
+        "name": "罗素2000",
+        "state": "stale",
+        "asOf": "2026-09-22T04:30:13+08:00"
+      },
+      {
+        "instrumentId": "INDEX:JP:NIKKEI225",
+        "name": "日经225",
+        "state": "stale",
+        "asOf": "2026-09-18T14:45:03+08:00"
+      },
+      {
+        "instrumentId": "INDEX:EU:STOXX50",
+        "name": "欧洲斯托克50",
+        "state": "stale",
+        "asOf": "2026-09-22T00:00:00+08:00"
+      },
+      {
+        "instrumentId": "CRYPTO:BTC:USD",
+        "name": "Bitcoin",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:17:24+08:00"
+      },
+      {
+        "instrumentId": "CRYPTO:ETH:USD",
+        "name": "Ethereum",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:17:24+08:00"
+      },
+      {
+        "instrumentId": "CRYPTO:SOL:USD",
+        "name": "Solana",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:17:26+08:00"
+      },
+      {
+        "instrumentId": "CRYPTO:PEPE:USD",
+        "name": "Pepe",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:17:25+08:00"
+      },
+      {
+        "instrumentId": "CRYPTO:HYPE:USD",
+        "name": "Hyperliquid",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:17:16+08:00"
+      },
+      {
+        "instrumentId": "FX:DXY",
+        "name": "美元指数",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:07:26+08:00"
+      },
+      {
+        "instrumentId": "FX:USDCNY",
+        "name": "在岸人民币",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:17:12+08:00"
+      },
+      {
+        "instrumentId": "FX:USDCNH",
+        "name": "离岸人民币",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:17:26+08:00"
+      },
+      {
+        "instrumentId": "METAL:XAUUSD",
+        "name": "现货黄金",
+        "state": "missing",
+        "asOf": null
+      },
+      {
+        "instrumentId": "METAL:XAGUSD",
+        "name": "现货白银",
+        "state": "missing",
+        "asOf": null
+      },
+      {
+        "instrumentId": "ENERGY:WTI",
+        "name": "WTI原油",
+        "state": "fresh",
+        "asOf": "2026-09-22T14:07:25+08:00"
+      },
+      {
+        "instrumentId": "ENERGY:BRENT",
+        "name": "Brent原油",
+        "state": "missing",
+        "asOf": null
+      },
+      {
+        "instrumentId": "RATE:US2Y",
+        "name": "美国2年期收益率",
+        "state": "missing",
+        "asOf": null
+      },
+      {
+        "instrumentId": "RATE:US10Y",
+        "name": "美国10年期收益率",
+        "state": "stale",
+        "asOf": "2026-09-22T02:59:53+08:00"
+      },
+      {
+        "instrumentId": "VOL:VIX",
+        "name": "波动率指数",
+        "state": "stale",
+        "asOf": "2026-09-22T04:15:01+08:00"
+      }
+    ]
+  },
+  "archivedReport": {
+    "reportId": "2026-09-22-0935",
+    "updatedAt": "2026-09-22 09:35",
+    "deepDive": [
+      {
+        "title": "BTC / 加密市场",
+        "oneLine": "87k突破 + ETF已披露合计上修，但杠杆仍是双刃剑",
+        "analysis": "从20:00的逼空启动到09:35，BTC价格路径持续抬高。最重要的新证据不是“又涨了一点”，而是Farside已披露基金合计从08:00快照约+378.8M增加到+617.6M，说明现货资金支持证据增强；但IBIT、HODL仍未披露，不能使用“最终净流入”。与此同时，CoinDesk引用CoinGlass的旧窗口显示全加密市场24h总清算约746.6M、空头约647.9M，OI反而升至156B，说明杠杆重建依旧明显。资金费率日度快照约0.01%，尚非极端。验证重点是ETF最终数据、清算降温后的1小时收盘结构与OI是否继续加速。",
+        "factIds": [
+          "btc_spot",
+          "btc_etf_partial",
+          "crypto_liq_total",
+          "crypto_liq_short",
+          "crypto_oi",
+          "btc_funding"
+        ],
+        "sourceIds": [
+          "reuters_fx_asia",
+          "farside",
+          "coindesk_liq",
+          "convex_funding"
+        ]
+      },
+      {
+        "title": "A股",
+        "oneLine": "成长科技强于宽基，隔夜AI行情有选择性传导",
+        "analysis": "A股今天是正常交易日。开盘价/集合竞价口径显示科创50约+2.51%、创业板约+1.37%、深证约+0.94%，明显高于上证约+0.23%。这与隔夜Nasdaq和半导体大涨方向一致，支持“成长科技先承接”的解释。但本轮拿不到可复核的09:35两市成交额和涨跌家数，所以不能把这种风格差异升级成“放量普涨”。12:35应重点检查：成长相对强弱是否保留、上涨家数是否扩散、成交额相对过去20个交易日同时间段中位数的位置。",
+        "factIds": [
+          "sse_open",
+          "szse_open",
+          "chinext_open",
+          "star50_open",
+          "a_turnover_0935",
+          "a_breadth_0935",
+          "usd_cny_prev"
+        ],
+        "sourceIds": [
+          "sse_calendar",
+          "szse_calendar",
+          "google_hsi",
+          "google_szse",
+          "google_chinext",
+          "google_star50",
+          "reuters_yuan"
+        ]
+      },
+      {
+        "title": "港股",
+        "oneLine": "恒指温和上涨，但恒生科技实时证据缺口必须保留",
+        "analysis": "HKEX日历与实时恒指页面确认9/22正常交易。恒指09:30约+0.50%，延续上一交易日强势和隔夜全球risk-on；但恒生科技页面核验时仍返回9/21收盘4,423.29，无法确认9/22当前值，因此明确标missing。开盘后港股成交额和南向资金本轮同样缺少可复核实时值。于是本轮只能说“恒指正向承接”，不能说“港股科技已全面确认隔夜AI行情”。",
+        "factIds": [
+          "hsi_open",
+          "hstech_live",
+          "hstech_prev_close",
+          "hk_turnover_live",
+          "southbound_live"
+        ],
+        "sourceIds": [
+          "hkex_calendar",
+          "google_hsi",
+          "investing_hstech"
+        ]
+      },
+      {
+        "title": "美股",
+        "oneLine": "AI主线收盘确认，利率曲线仍在拆分交易",
+        "analysis": "Nasdaq +2.26%并创纪录收盘，S&P +1.49%、Dow +0.71%。AMD +10%、Intel/Arm超过12%、SOX +4.3%，说明核心驱动很明确是AI/半导体。与此同时2Y升至4.751%、10Y降到4.951%，这不是Fed转鸽，而是短端继续交易加息、长端因油价回落和通胀尾部风险减弱而缓和。亚洲成长股的高开是这一隔夜结构的初步跨市场映射。",
+        "factIds": [
+          "sp500_close",
+          "nasdaq_close",
+          "dow_close",
+          "us2y_close",
+          "us10y_close",
+          "fed_oct_prob"
+        ],
+        "sourceIds": [
+          "reuters_us_close"
+        ]
+      },
+      {
+        "title": "黄金",
+        "oneLine": "最近可靠值偏弱，实时缺口不拿旧报价冒充",
+        "analysis": "Reuters最近可靠现货金口径为4,349.94美元、下跌0.6%，美元偏强和进一步加息预期是主要压制。本轮没有获得同质量的09:35现货金实时报价，所以保持stale状态。跨资产上，BTC上涨而黄金偏弱继续表明BTC当前更接近高beta、仓位和ETF驱动，而非与黄金共同的传统避险交易。",
+        "factIds": [
+          "gold_spot_prev",
+          "dxy_prev",
+          "us2y_close"
+        ],
+        "sourceIds": [
+          "reuters_gold",
+          "reuters_yuan",
+          "reuters_us_close"
+        ]
+      },
+      {
+        "title": "原油",
+        "oneLine": "100美元附近不是一条价格线，先把合约月份看清",
+        "analysis": "Brent 11月前一日结算100.34，亚洲早盘约100.57。WTI 10月合约今天到期，报价约95.80，而更活跃11月合约约92.49。这个巨大价差是期限结构/换月问题，不能解释成WTI瞬间暴跌。基本面上，美伊外交希望和沙特出口恢复压低风险溢价，但胡塞袭击、霍尔木兹运输、莫斯科炼厂停产和高柴油价格保留尾部风险。",
+        "factIds": [
+          "brent_nov",
+          "wti_oct",
+          "wti_nov"
+        ],
+        "sourceIds": [
+          "reuters_oil_current",
+          "reuters_oil_settle",
+          "reuters_moscow_refinery"
+        ]
+      },
+      {
+        "title": "宏观 / 美元 / 美债",
+        "oneLine": "全球央行偏鹰未退，风险资产靠盈利与长端缓和硬扛",
+        "analysis": "Fed 10月再加息概率约55%，2Y最近4.751%，所以短端并不友好；但10Y回落到约4.951%，让长久期资产压力下降。亚洲早盘美元仍偏强，USD/JPY约157.33，日本当日休市且干预风险存在。人民币上一交易日在岸约6.6950，处于多年强位附近。当前市场真正的矛盾不是“央行鸽不鸽”，而是偏鹰政策路径能否继续被盈利、AI资本开支和能源风险回落抵消。",
+        "factIds": [
+          "fed_oct_prob",
+          "us2y_close",
+          "us10y_close",
+          "usd_jpy",
+          "dxy_prev",
+          "usd_cny_prev"
+        ],
+        "sourceIds": [
+          "reuters_us_close",
+          "reuters_fx_asia",
+          "reuters_yuan"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "sse_calendar",
+        "name": "上海证券交易所 2026中秋/国庆休市安排",
+        "short": "SSE",
+        "type": "一级来源",
+        "url": "https://www.sse.com.cn/disclosure/announcement/general/c/c_20260915_10832273.shtml",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-17"
+      },
+      {
+        "id": "szse_calendar",
+        "name": "深圳证券交易所 2026中秋/国庆休市安排",
+        "short": "SZSE",
+        "type": "一级来源",
+        "url": "https://www.szse.cn/www/disclosure/notice/general/t20260917_622911.html",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-17"
+      },
+      {
+        "id": "hkex_calendar",
+        "name": "HKEX 2026 Calendar / Stock Connect",
+        "short": "HKEX",
+        "type": "一级来源",
+        "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=en",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09"
+      },
+      {
+        "id": "google_szse",
+        "name": "Google Finance - SZSE Component",
+        "short": "Google Finance",
+        "type": "行情",
+        "url": "https://www.google.com/finance/quote/399001:SHE",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 09:26:52"
+      },
+      {
+        "id": "google_chinext",
+        "name": "Google Finance - ChiNext",
+        "short": "Google Finance",
+        "type": "行情",
+        "url": "https://www.google.com/finance/quote/399006:SHE",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 09:28:07"
+      },
+      {
+        "id": "google_star50",
+        "name": "Google Finance - STAR 50",
+        "short": "Google Finance",
+        "type": "行情",
+        "url": "https://www.google.com/finance/quote/000688:SHA",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 09:25:20"
+      },
+      {
+        "id": "google_hsi",
+        "name": "Google Finance - Hang Seng Index",
+        "short": "Google Finance",
+        "type": "行情",
+        "url": "https://www.google.com/finance/quote/HSI:INDEXHANGSENG",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 09:30:18"
+      },
+      {
+        "id": "investing_hstech",
+        "name": "Investing.com - Hang Seng TECH",
+        "short": "Investing",
+        "type": "行情",
+        "url": "https://www.investing.com/indices/hang-seng-tech",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21 15:59:59"
+      },
+      {
+        "id": "reuters_fx_asia",
+        "name": "Reuters - Yen squeezed as hawkish turn grips central banks",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/asia-pacific/yen-squeezed-hawkish-turn-grips-central-banks-2026-09-22/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 08:53"
+      },
+      {
+        "id": "farside",
+        "name": "Farside Investors BTC ETF Flow",
+        "short": "Farside",
+        "type": "ETF资金流",
+        "url": "https://farside.co.uk/btc/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21交易日"
+      },
+      {
+        "id": "coindesk_liq",
+        "name": "CoinDesk - Bitcoin short squeeze / CoinGlass data",
+        "short": "CoinDesk",
+        "type": "加密衍生品",
+        "url": "https://www.coindesk.com/markets/2026/09/21/bitcoin-hits-usd85-000-as-short-squeeze-forces-out-usd648-million-of-bearish-bets",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21报道窗口"
+      },
+      {
+        "id": "convex_funding",
+        "name": "Convex BTC Perpetual Funding Rate",
+        "short": "Convex",
+        "type": "加密衍生品",
+        "url": "https://convextrade.com/metrics/btc-funding",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21"
+      },
+      {
+        "id": "reuters_us_close",
+        "name": "Reuters - Nasdaq record high / global markets",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21美股交易日"
+      },
+      {
+        "id": "reuters_oil_current",
+        "name": "Reuters - Oil rises slightly ahead of potential US-Iran talks",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/business/energy/oil-rises-slightly-ahead-potential-us-iran-talks-2026-09-22/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22 08:21"
+      },
+      {
+        "id": "reuters_oil_settle",
+        "name": "Reuters - Oil price dips to $100",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/business/energy/oil-rises-after-houthi-attack-saudi-capital-2026-09-20/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21结算"
+      },
+      {
+        "id": "reuters_gold",
+        "name": "Reuters - Gold falls on rising odds of Fed rate hike",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/india/gold-eases-firmer-dollar-profit-taking-mideast-conflict-focus-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "上一纽约交易时段（页面时间标注不一致）"
+      },
+      {
+        "id": "reuters_yuan",
+        "name": "Reuters - Yuan hits multi-year peak",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/asia-pacific/yuan-hits-fresh-multi-year-peak-pboc-eases-curb-ahead-trump-xi-summit-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21"
+      },
+      {
+        "id": "reuters_xi",
+        "name": "Reuters - Xi arrives for Trump summit / Breakingviews",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/china/xi-rolls-into-trump-summit-with-chinas-trade-engine-roaring-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22前"
+      },
+      {
+        "id": "reuters_ai",
+        "name": "Reuters - US-China AI safety dialogue",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/asia-pacific/us-china-meet-again-ai-safety-two-months-shenzhen-bessent-says-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21"
+      },
+      {
+        "id": "reuters_moscow_refinery",
+        "name": "Reuters - Moscow refinery halted after drone attack",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/business/energy/moscow-oil-refinery-output-halted-after-sunday-drone-attack-sources-say-2026-09-21/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-21/22"
+      },
+      {
+        "id": "reuters_macron",
+        "name": "Reuters - Macron discusses Ukraine-Russia energy truce",
+        "short": "Reuters",
+        "type": "主流媒体",
+        "url": "https://www.reuters.com/world/macron-says-he-discussed-ukraine-russia-energy-truce-ideas-with-trump-2026-09-22/",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22"
+      },
+      {
+        "id": "nyfed_econ",
+        "name": "New York Fed Economic Indicators Calendar",
+        "short": "NYFed",
+        "type": "一级来源",
+        "url": "https://www.newyorkfed.org/research/calendars/i-sep26.html",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22日历"
+      },
+      {
+        "id": "nyfed_conference",
+        "name": "New York Fed 2026 Treasury Market Conference",
+        "short": "NYFed",
+        "type": "一级来源",
+        "url": "https://www.newyorkfed.org/newsevents/events/markets/2026/0922-2026",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22议程"
+      },
+      {
+        "id": "fed_calendar",
+        "name": "Federal Reserve September 2026 Calendar",
+        "short": "Fed",
+        "type": "一级来源",
+        "url": "https://www.federalreserve.gov/newsevents/2026-september.htm",
+        "checkedAt": "2026-09-22 09:35",
+        "sourceDataAt": "2026-09-22"
+      }
+    ],
+    "canonicalFacts": [
+      {
+        "id": "sse_open",
+        "label": "上证指数开盘后相关报价",
+        "displayValue": "3,958.88",
+        "rawValue": 3958.88,
+        "unit": "index",
+        "changeLabel": "+0.23%",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "上证指数",
+        "window": "2026-09-22开盘后早段",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:30附近",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_hsi"
+        ],
+        "disclosureNote": "Google Finance恒指页面的相关资产报价；上证直接页面当时仍显示前收，因此标记为延迟/交叉页面报价。",
+        "evidenceNote": "仅用于开盘方向，不作为精确实时行情。"
+      },
+      {
+        "id": "szse_open",
+        "label": "深证成指开盘价",
+        "displayValue": "13,858.62",
+        "rawValue": 13858.62,
+        "unit": "index",
+        "changeLabel": "+0.94%",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "深证成指",
+        "window": "集合竞价/开盘价",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:26:52",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_szse"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "Google Finance显示Open与该值一致。"
+      },
+      {
+        "id": "chinext_open",
+        "label": "创业板指开盘价",
+        "displayValue": "3,446.33",
+        "rawValue": 3446.33,
+        "unit": "index",
+        "changeLabel": "+1.37%",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "创业板指",
+        "window": "集合竞价/开盘价",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:28:07",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_chinext"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "Google Finance显示Open与该值一致。"
+      },
+      {
+        "id": "star50_open",
+        "label": "科创50开盘价",
+        "displayValue": "1,699.05",
+        "rawValue": 1699.05,
+        "unit": "index",
+        "changeLabel": "+2.51%",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "科创50",
+        "window": "集合竞价/开盘价",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:25:20",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_star50"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "开盘涨幅显著强于上证宽基。"
+      },
+      {
+        "id": "a_turnover_0935",
+        "label": "A股开盘后成交额",
+        "displayValue": "数据缺失",
+        "rawValue": null,
+        "unit": "CNY",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "沪深市场",
+        "window": "09:30→09:35",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [],
+        "disclosureNote": "本轮未获得可复核的09:35成交额，不能据此使用“放量/缩量”。",
+        "evidenceNote": null
+      },
+      {
+        "id": "a_breadth_0935",
+        "label": "A股开盘后涨跌家数",
+        "displayValue": "数据缺失",
+        "rawValue": null,
+        "unit": "stocks",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "沪深市场",
+        "window": "09:30→09:35",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [],
+        "disclosureNote": "本轮未获得可复核的上涨/下跌家数，因此只讨论指数风格，不使用“市场广度改善”。",
+        "evidenceNote": null
+      },
+      {
+        "id": "hsi_open",
+        "label": "恒生指数",
+        "displayValue": "25,167.32",
+        "rawValue": 25167.32,
+        "unit": "index",
+        "changeLabel": "+0.50%",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "恒生指数",
+        "window": "开盘后早段",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 09:30:18",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "google_hsi"
+        ],
+        "disclosureNote": "Google Finance延迟/网页快照口径。",
+        "evidenceNote": "开盘25,170.80；网页显示早段高点25,218.20。"
+      },
+      {
+        "id": "hstech_live",
+        "label": "恒生科技指数当前报价",
+        "displayValue": "读取缺失",
+        "rawValue": null,
+        "unit": "index",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "恒生科技指数",
+        "window": "2026-09-22开盘后早段",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "investing_hstech"
+        ],
+        "disclosureNote": "检查时该页面仍返回上一交易日收盘值，未把旧值伪装成今日实时价格。",
+        "evidenceNote": null
+      },
+      {
+        "id": "hstech_prev_close",
+        "label": "恒生科技指数前收",
+        "displayValue": "4,423.29",
+        "rawValue": 4423.29,
+        "unit": "index",
+        "changeLabel": "+0.40%（9/21）",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "恒生科技指数",
+        "window": "2026-09-21交易日",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-21 16:00",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "investing_hstech"
+        ],
+        "disclosureNote": "仅作为前收基线，不代表9/22实时行情。",
+        "evidenceNote": null
+      },
+      {
+        "id": "hk_turnover_live",
+        "label": "港股开盘后成交额",
+        "displayValue": "数据缺失",
+        "rawValue": null,
+        "unit": "HKD",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "香港主板",
+        "window": "09:30→09:35",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [],
+        "disclosureNote": "本轮未获得可复核的开盘后成交额。",
+        "evidenceNote": null
+      },
+      {
+        "id": "southbound_live",
+        "label": "南向资金早盘净额",
+        "displayValue": "数据缺失",
+        "rawValue": null,
+        "unit": "HKD",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "港股通南向",
+        "window": "开盘后早段",
+        "dataStatus": "missing",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "hkex_calendar"
+        ],
+        "disclosureNote": "交易日已确认，但本轮未获得可复核的早盘净买入数据。",
+        "evidenceNote": null
+      },
+      {
+        "id": "btc_spot",
+        "label": "BTC",
+        "displayValue": ">$87,000",
+        "rawValue": null,
+        "unit": "USD",
+        "changeLabel": "8个月高位",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "BTC/USD",
+        "window": "亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 08:53",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_fx_asia"
+        ],
+        "disclosureNote": "Reuters仅给出“above $87,000”，不伪造更精确价格。",
+        "evidenceNote": null
+      },
+      {
+        "id": "btc_etf_partial",
+        "label": "美国现货BTC ETF 9/21已披露基金合计",
+        "displayValue": "+ $617.6M",
+        "rawValue": 617.6,
+        "unit": "USD M",
+        "changeLabel": "部分披露",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "美国现货BTC ETF（已披露基金）",
+        "window": "2026-09-21交易日",
+        "dataStatus": "partial",
+        "marketState": "disclosure",
+        "asOf": "2026-09-22 09:35核验",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "farside"
+        ],
+        "disclosureNote": "已披露基金净流量合计为+617.6M；IBIT、HODL仍未披露，最终全市场净流量待确认。",
+        "evidenceNote": "FBTC +238.8M、BITB +21.6M、ARKB +289.1M、MSBT +61.7M、GBTC +3.3M、BTC +3.1M。"
+      },
+      {
+        "id": "crypto_liq_total",
+        "label": "加密市场24h总清算",
+        "displayValue": "约 $746.6M",
+        "rawValue": 746.6,
+        "unit": "USD M",
+        "changeLabel": null,
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "全加密市场",
+        "window": "来源滚动24h窗口",
+        "dataStatus": "window-unclear",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "coindesk_liq"
+        ],
+        "disclosureNote": "来源报道给出24小时窗口，但旧快照未保存精确截止时刻，因此不补造asOf。",
+        "evidenceNote": null
+      },
+      {
+        "id": "crypto_liq_short",
+        "label": "加密市场24h空头清算",
+        "displayValue": "约 $647.9M",
+        "rawValue": 647.9,
+        "unit": "USD M",
+        "changeLabel": "总清算的子集",
+        "direction": "flat",
+        "impactTone": "positive",
+        "scope": "全加密市场",
+        "window": "与总清算相同的来源滚动24h窗口",
+        "dataStatus": "window-unclear",
+        "marketState": "trading",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "coindesk_liq"
+        ],
+        "disclosureNote": "不得与总清算额互换。",
+        "evidenceNote": "CoinDesk引用CoinGlass称空头占647.9M/746.6M。"
+      },
+      {
+        "id": "crypto_oi",
+        "label": "全加密市场未平仓合约OI",
+        "displayValue": "约 $156B",
+        "rawValue": 156,
+        "unit": "USD B",
+        "changeLabel": "+7.59%（来源窗口）",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "全加密衍生品市场",
+        "window": "CoinDesk报道快照",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-21 报道窗口",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "coindesk_liq"
+        ],
+        "disclosureNote": "不是BTC单币OI。",
+        "evidenceNote": null
+      },
+      {
+        "id": "btc_funding",
+        "label": "BTC永续资金费率",
+        "displayValue": "0.01%",
+        "rawValue": 0.01,
+        "unit": "%",
+        "changeLabel": "近中性/轻微多头付费",
+        "direction": "flat",
+        "impactTone": "neutral",
+        "scope": "BTC永续合约聚合指标",
+        "window": "2026-09-21日度快照",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "convex_funding"
+        ],
+        "disclosureNote": "非全交易所逐时实时聚合；仅作为拥挤度辅助，不与OI混为一谈。",
+        "evidenceNote": null
+      },
+      {
+        "id": "sp500_close",
+        "label": "S&P 500前收",
+        "displayValue": "+1.49%",
+        "rawValue": 1.49,
+        "unit": "%",
+        "changeLabel": "最近常规交易日",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "S&P 500",
+        "window": "2026-09-21常规交易日",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "收盘涨幅。"
+      },
+      {
+        "id": "nasdaq_close",
+        "label": "Nasdaq前收",
+        "displayValue": "+2.26%",
+        "rawValue": 2.26,
+        "unit": "%",
+        "changeLabel": "纪录收盘",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "Nasdaq Composite",
+        "window": "2026-09-21常规交易日",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "AMD +10%，Intel/Arm >12%，SOX +4.3%。"
+      },
+      {
+        "id": "dow_close",
+        "label": "Dow前收",
+        "displayValue": "+0.71%",
+        "rawValue": 0.71,
+        "unit": "%",
+        "changeLabel": "最近常规交易日",
+        "direction": "up",
+        "impactTone": "positive",
+        "scope": "Dow Jones Industrial Average",
+        "window": "2026-09-21常规交易日",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": null
+      },
+      {
+        "id": "us2y_close",
+        "label": "美国2Y收益率",
+        "displayValue": "4.751%",
+        "rawValue": 4.751,
+        "unit": "%",
+        "changeLabel": "+0.75bp",
+        "direction": "up",
+        "impactTone": "negative",
+        "scope": "U.S. Treasury 2Y",
+        "window": "纽约收盘附近",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00附近",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": "亚洲早盘未获得同等可靠的更新口径，沿用最近收盘。",
+        "evidenceNote": null
+      },
+      {
+        "id": "us10y_close",
+        "label": "美国10Y收益率",
+        "displayValue": "4.951%",
+        "rawValue": 4.951,
+        "unit": "%",
+        "changeLabel": "-4.5bp",
+        "direction": "down",
+        "impactTone": "positive",
+        "scope": "U.S. Treasury 10Y",
+        "window": "纽约收盘附近",
+        "dataStatus": "closed",
+        "marketState": "closed",
+        "asOf": "2026-09-22 04:00附近",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close"
+        ],
+        "disclosureNote": "亚洲早盘未获得同等可靠的更新口径，沿用最近收盘。",
+        "evidenceNote": null
+      },
+      {
+        "id": "fed_oct_prob",
+        "label": "Fed 10月再加息概率",
+        "displayValue": "约55%",
+        "rawValue": 55,
+        "unit": "%",
+        "changeLabel": "市场隐含概率",
+        "direction": "up",
+        "impactTone": "negative",
+        "scope": "Fed funds futures",
+        "window": "Reuters引用期货定价",
+        "dataStatus": "delayed",
+        "marketState": "expectation",
+        "asOf": "2026-09-22 04:00前后",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_us_close",
+          "reuters_fx_asia"
+        ],
+        "disclosureNote": "不是官方预测。",
+        "evidenceNote": "Reuters亚洲稿再次给出约55%。"
+      },
+      {
+        "id": "usd_jpy",
+        "label": "USD/JPY",
+        "displayValue": "157.33",
+        "rawValue": 157.33,
+        "unit": "JPY per USD",
+        "changeLabel": "日元承压",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "美元/日元",
+        "window": "亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 08:53前后",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_fx_asia"
+        ],
+        "disclosureNote": null,
+        "evidenceNote": "日本当日休市、干预风险仍在。"
+      },
+      {
+        "id": "dxy_prev",
+        "label": "美元指数DXY",
+        "displayValue": "约100.23",
+        "rawValue": 100.23,
+        "unit": "index",
+        "changeLabel": "偏强",
+        "direction": "up",
+        "impactTone": "negative",
+        "scope": "DXY",
+        "window": "最近可靠Reuters口径",
+        "dataStatus": "stale",
+        "marketState": "off-hours",
+        "asOf": "2026-09-21纽约盘/亚洲前",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_yuan"
+        ],
+        "disclosureNote": "本轮Reuters亚洲稿描述美元偏强，但未给DXY即时数值，因此保留最近可复核数值并标记stale。",
+        "evidenceNote": null
+      },
+      {
+        "id": "usd_cny_prev",
+        "label": "在岸人民币USD/CNY",
+        "displayValue": "约6.6950",
+        "rawValue": 6.695,
+        "unit": "CNY per USD",
+        "changeLabel": "3年半高位附近（9/21）",
+        "direction": "down",
+        "impactTone": "positive",
+        "scope": "在岸人民币",
+        "window": "上一交易日",
+        "dataStatus": "stale",
+        "marketState": "trading",
+        "asOf": "2026-09-21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_yuan"
+        ],
+        "disclosureNote": "未将9/22预测中间价当作实际中间价。",
+        "evidenceNote": "9/21中间价6.7487。"
+      },
+      {
+        "id": "brent_nov",
+        "label": "Brent 11月期货",
+        "displayValue": "$100.57",
+        "rawValue": 100.57,
+        "unit": "USD/bbl",
+        "changeLabel": "+0.22%",
+        "direction": "up",
+        "impactTone": "negative",
+        "scope": "Brent November futures",
+        "window": "亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 08:21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_oil_current"
+        ],
+        "disclosureNote": "前一日结算100.34，本轮为同一11月合约亚洲早盘报价。",
+        "evidenceNote": "Reuters认为反弹更像近期下跌后的空头回补。"
+      },
+      {
+        "id": "wti_oct",
+        "label": "WTI 10月到期合约",
+        "displayValue": "$95.80",
+        "rawValue": 95.8,
+        "unit": "USD/bbl",
+        "changeLabel": "+0.02%",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "WTI October futures",
+        "window": "到期日亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "expiring",
+        "asOf": "2026-09-22 08:21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_oil_current"
+        ],
+        "disclosureNote": "该合约9/22到期，不应与11月活跃合约直接拼接成连续价格。",
+        "evidenceNote": null
+      },
+      {
+        "id": "wti_nov",
+        "label": "WTI 11月活跃合约",
+        "displayValue": "$92.49",
+        "rawValue": 92.49,
+        "unit": "USD/bbl",
+        "changeLabel": "+0.14%",
+        "direction": "up",
+        "impactTone": "neutral",
+        "scope": "WTI November futures",
+        "window": "亚洲早盘",
+        "dataStatus": "delayed",
+        "marketState": "trading",
+        "asOf": "2026-09-22 08:21",
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_oil_current"
+        ],
+        "disclosureNote": "更活跃的次月合约；与到期10月合约存在明显期限价差。",
+        "evidenceNote": null
+      },
+      {
+        "id": "gold_spot_prev",
+        "label": "现货黄金最近可靠报价",
+        "displayValue": "$4,349.94",
+        "rawValue": 4349.94,
+        "unit": "USD/oz",
+        "changeLabel": "-0.6%（9/21）",
+        "direction": "down",
+        "impactTone": "neutral",
+        "scope": "Spot gold",
+        "window": "上一交易日Reuters快照",
+        "dataStatus": "stale",
+        "marketState": "off-hours",
+        "asOf": null,
+        "verifiedAt": "2026-09-22 09:35",
+        "sourceIds": [
+          "reuters_gold"
+        ],
+        "disclosureNote": "Reuters页面时间标注存在内部不一致；本轮不强行换算精确UTC+8时点，仅保留上一纽约时段可靠报价。",
+        "evidenceNote": "美元偏强与进一步加息预期为主要压制。"
+      }
+    ],
+    "note": "未经本轮重新核验的历史分析；不算本轮资产详报通过。"
+  }
+}

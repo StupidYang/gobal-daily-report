@@ -7,6 +7,7 @@ const sum=b=>crypto.createHash('sha256').update(b).digest('hex'),abs=p=>new URL(
 async function read(request,p){if(process.env.GDR_OFFLINE_ROOT)return fs.readFileSync(path.join(process.env.GDR_OFFLINE_ROOT,p));const r=await request.get(abs(p)+'?acceptance='+Date.now(),{timeout:25000});assert.equal(r.status(),200,p+' HTTP '+r.status());return await r.body();}
 async function visit(page){
  if(process.env.GDR_OFFLINE_ROOT){
+  await require('./offline-crypto.cjs')(page);
   const folder=path.resolve(process.env.GDR_OFFLINE_ROOT);
   await page.route('**/*',async route=>{const p=path.resolve(folder,'.'+new URL(route.request().url()).pathname);if(!p.startsWith(folder+path.sep)||!fs.existsSync(p))return route.fulfill({status:404,body:'not found'});const type={'.js':'text/javascript','.css':'text/css','.json':'application/json','.html':'text/html'}[path.extname(p)]||'text/plain';return route.fulfill({status:200,contentType:type,body:fs.readFileSync(p)});});
   await page.setContent(fs.readFileSync(path.join(folder,'index.html'),'utf8').replace('<head>','<head><base href="https://gdr-local-test.invalid/">'),{waitUntil:'networkidle'});

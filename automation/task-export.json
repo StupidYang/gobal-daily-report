@@ -18,7 +18,7 @@
       ],
       "promptFile": "automation/tasks/global-main.md",
       "taskId": "6ab1dc6f6d6081919ac20591b5ee4988",
-      "enabled": true,
+      "enabled": false,
       "prompt": "执行GDR任务 global-main，仓库 StupidYang/gobal-daily-report。首先读取 automation/control.json：productionPaused=true、缺失、格式错误或读取失败立即停止，不采集、不写入、不触发构建。仅在允许生产时读取 automation/manifest.json、automation/tasks/common.md、automation/tasks/global-main.md、对应角色提示词、docs/modules-contract.md、docs/reader-r2-contract.md 和 config/watchlist.json。按 atomic-batch-v2 执行内部角色 quotes, asia-equities, us-equities, news, macro, research, synthesis，必须在一次执行内完成综合报告，仅提交一个 data/inbox/batches/<batchId>.json，包含 batchVersion=1、batchId、taskGroup=global-main 和所有本任务模块；synthesis.payload.report 必须是完整正文并冻结六个正确输入。复用保留原asOf/analyzedAt；测试数据禁止进入生产。提交后读取 data/receipts/batches/<batchId>.json，published且正式产物回读一致才报告成功，否则如实报告pending/waiting-dependencies/rejected。完整细则以仓库文件为准。不创建子任务，不改任何定时任务、代码或正式数据，不进行无限重试。"
     },
     {
@@ -32,7 +32,7 @@
       ],
       "promptFile": "automation/tasks/asia-session.md",
       "taskId": "6aafc701dc80819187ea120074ccef44",
-      "enabled": true,
+      "enabled": false,
       "prompt": "执行GDR任务 asia-session，仓库 StupidYang/gobal-daily-report。首先读取 automation/control.json：productionPaused=true、缺失、格式错误或读取失败立即停止，不采集、不写入、不触发构建。仅在允许生产时读取 automation/manifest.json、automation/tasks/common.md、automation/tasks/asia-session.md、对应角色提示词、docs/modules-contract.md、docs/reader-r2-contract.md 和 config/watchlist.json。按 atomic-batch-v2 执行内部角色 asia-equities, synthesis，必须在一次执行内完成综合报告，仅提交一个 data/inbox/batches/<batchId>.json，包含 batchVersion=1、batchId、taskGroup=asia-session 和所有本任务模块；synthesis.payload.report 必须是完整正文并冻结六个正确输入。复用保留原asOf/analyzedAt；测试数据禁止进入生产。提交后读取 data/receipts/batches/<batchId>.json，published且正式产物回读一致才报告成功，否则如实报告pending/waiting-dependencies/rejected。完整细则以仓库文件为准。不创建子任务，不改任何定时任务、代码或正式数据，不进行无限重试。"
     },
     {
@@ -46,7 +46,7 @@
       ],
       "promptFile": "automation/tasks/us-session.md",
       "taskId": "6ab1cb9983d88191bf0db6340bfe6972",
-      "enabled": true,
+      "enabled": false,
       "prompt": "执行GDR任务 us-session，仓库 StupidYang/gobal-daily-report。首先读取 automation/control.json：productionPaused=true、缺失、格式错误或读取失败立即停止，不采集、不写入、不触发构建。仅在允许生产时读取 automation/manifest.json、automation/tasks/common.md、automation/tasks/us-session.md、对应角色提示词、docs/modules-contract.md、docs/reader-r2-contract.md 和 config/watchlist.json。按 atomic-batch-v2 执行内部角色 us-equities, synthesis，必须在一次执行内完成综合报告，仅提交一个 data/inbox/batches/<batchId>.json，包含 batchVersion=1、batchId、taskGroup=us-session 和所有本任务模块；synthesis.payload.report 必须是完整正文并冻结六个正确输入。复用保留原asOf/analyzedAt；测试数据禁止进入生产。提交后读取 data/receipts/batches/<batchId>.json，published且正式产物回读一致才报告成功，否则如实报告pending/waiting-dependencies/rejected。完整细则以仓库文件为准。不创建子任务，不改任何定时任务、代码或正式数据，不进行无限重试。"
     }
   ]
