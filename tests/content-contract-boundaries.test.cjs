@@ -28,3 +28,8 @@ for(const [label,file,archival]of [
  if(archival){assert.equal(latest.archivedReport?.reportId,prior.reportId);assert.equal(latest.archivedReport.updatedAt,prior.updatedAt,'Preserve actual archival analysis time');}
  else assert.equal(latest.archivedReport,undefined,'Complete current analysis must not be replaced with archival fallback');
 });
+
+test('content-r3 rejects a false complete newsroom claim',()=>{
+ const r={newsroom:{items:[{id:'x'}],coverage:{claimedComplete:true,complete:false}}};
+ assert.ok(Q.quality(r).errors.some(e=>e.includes('新闻覆盖声明为complete')));
+});

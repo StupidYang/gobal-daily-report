@@ -20,8 +20,22 @@ for(const id of ['20260923T145853-global-main','20260923T153900-asia-session'])t
  for(const row of result.packet.rows.filter(x=>x.instrumentId.startsWith('INDEX:CN:'))){const actual=quotes.payload.items.find(x=>x.instrumentId===row.instrumentId);a.equal(actual.price,row.price);a.equal(actual.asOf,row.asOf);}
  a.ok(report.newsroom.legacyItems.length>0,'legacy incomplete news must stay explicitly traceable');
  a.ok(report.newsroom.legacyItems.every(x=>x.missingFields.length||x.legacyReason));
- if(result.taskGroup==='global-main')a.equal(report.newsroom.items.length,14);
- else {a.equal(report.newsroom.items.length,0);a.equal(report.newsroom.legacyItems.length,18);a.ok(report.newsroom.legacyItems.every(x=>!x.plainImpact),'no invented impact text');}
+ if(result.taskGroup==='global-main'){
+  a.equal(report.newsroom.items.length,14);
+  const research=batch.modules.find(m=>m.module==='research'),pending=new Set((research.payload.pendingQueue||[]).map(x=>x.instrumentId));
+  for(const record of seed.modules.research.payload.records||[])a.ok(!pending.has(record.instrumentId),'retained research must not also be auto-marked pending');
+ } else {a.equal(report.newsroom.items.length,0);a.equal(report.newsroom.legacyItems.length,18);a.ok(report.newsroom.legacyItems.every(x=>!x.plainImpact),'no invented impact text');}
+});
+t('empty macro refresh retains the recent source-backed macro snapshot without redating it',()=>{
+ const prior=seed.modules.macro,now=Date.parse('2026-09-23T09:05:00Z'),macro=L.prepareMacro(prior,{macroFacts:[],macroEvents:[],events:[],macroFundingNotes:[]},now);
+ a.equal(macro.status,'no-change');a.equal(macro.retention.runId,prior.runId);a.equal(macro.dataAsOf,prior.dataAsOf);
+ a.equal(macro.payload.canonicalFacts.length,prior.payload.canonicalFacts.length);a.equal(macro.payload.canonicalFacts[0].asOf,prior.payload.canonicalFacts[0].asOf);
+ a.ok(macro.payload.canonicalFacts.every(x=>x.retention?.runId===prior.runId));
+ a.equal(macro.payload.macroEvents[0].id,prior.payload.macroEvents[0].id);a.equal(macro.retainedSources[0].url,prior.sources[0].url);
+});
+t('macro retention expires after 24 hours instead of pretending stale evidence is current',()=>{
+ const prior=seed.modules.macro,now=Date.parse('2026-09-24T09:00:00Z'),macro=L.prepareMacro(prior,{macroFacts:[],macroEvents:[],events:[]},now);
+ a.equal(macro.status,'partial');a.equal(macro.retention,null);a.equal(macro.payload.canonicalFacts.length,0);a.match(macro.payload.coverage.note,/超过24小时/);
 });
 t('framework name alias is normalized while an absent conclusion is still rejected',()=>{
  const x=load('20260923T145853-global-main'),e=x.submission.editorial;
@@ -34,6 +48,19 @@ t('a valid same-window item retains its original dates and body',()=>{
  const item={id:'n',title:'news',regions:['US'],kind:'market',summary:'fact',plainImpact:'impact',assessment:'judgment',sourceIds:['s'],publishedAt:'2026-09-23T01:00:00Z'};
  const n=N.merge({runId:'prior',generatedAt:'2026-09-23T02:00:00Z',payload:{newsroom:{items:[item]}}},[],{now:Date.parse('2026-09-23T03:00:00Z'),sources:[{id:'s',url:'https://example.com'}]});
  a.equal(n.items[0].publishedAt,item.publishedAt);a.equal(n.items[0].assessment,item.assessment);a.equal(n.coverage.retained,1);
+});
+t('news coverage distinguishes external reporting from quote-only observations',()=>{
+ const sources=[{id:'quote',url:'https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC'},{id:'wire',url:'https://www.reuters.com/world/example'}];
+ const items=[
+  {id:'price',eventId:'price',title:'price observation',regions:['US'],kind:'market',summary:'price fact',plainImpact:'price impact',assessment:'price judgment',sourceIds:['quote'],publishedAt:'2026-09-23T01:00:00Z'},
+  {id:'policy',eventId:'policy',title:'policy event',regions:['CN','WORLD'],kind:'general',summary:'policy fact',plainImpact:'policy impact',assessment:'policy judgment',sourceIds:['wire'],publishedAt:'2026-09-23T01:10:00Z'}
+ ];
+ const n=N.merge(null,items,{now:Date.parse('2026-09-23T03:00:00Z'),sources,coverage:{status:'partial',note:'source-backed sample'}});
+ a.equal(n.coverage.externalVerified,1);a.equal(n.coverage.marketDataOnly,1);a.equal(n.coverage.general,1);a.deepEqual(n.coverage.regionCounts,{CN:1,US:1,WORLD:1});a.equal(n.coverage.complete,false);
+});
+t('a quote-only newsroom cannot self-declare complete external coverage',()=>{
+ const n=N.merge(null,[{id:'price',eventId:'price',title:'price observation',regions:['CN','US','WORLD'],kind:'market',summary:'price fact',plainImpact:'price impact',assessment:'price judgment',sourceIds:['quote'],publishedAt:'2026-09-23T01:00:00Z'}],{now:Date.parse('2026-09-23T03:00:00Z'),sources:[{id:'quote',url:'https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC'}],coverage:{status:'complete',complete:true}});
+ a.equal(n.coverage.claimedComplete,true);a.equal(n.coverage.complete,false);a.equal(n.coverage.status,'partial');a.match(n.coverage.claimIssue,/降级/);
 });
 t('revision route preserves execution ID and rejects a second correction',()=>{
  a.deepEqual(router.select([{filename:'runtime/submissions/run--r1.json',status:'added'}]),{file:'runtime/submissions/run--r1.json',mode:'submit',id:'run',revision:1});

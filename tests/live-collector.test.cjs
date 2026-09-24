@@ -15,3 +15,16 @@ test('spot USD trade has no invented 24-hour return',()=>{const x=C.coinbase({id
 test('429 stops further calls to the same provider',async()=>{let calls=0;const config={required:[{...i,id:'INDEX:US:SP500'},{...i,id:'INDEX:US:NDX'}],usPools:{}};const x=await C.collect(config,{concurrency:1,fetchImpl:async()=>{calls++;return {ok:false,status:429};}});assert.equal(calls,1);assert.equal(x.errors.length,2);});
 test('collector request is bounded even if a provider ignores abort',async()=>{const start=Date.now(),x=await C.collect({required:[{id:'CRYPTO:BTC:USD',market:'CRYPTO',symbol:'BTC'}],usPools:{}},{requestMs:30,budgetMs:100,fetchImpl:()=>new Promise(()=>{})});assert.equal(x.errors.length,1);assert.ok(Date.now()-start<500);});
 test('slow response body is independently bounded',async()=>{const start=Date.now(),x=await C.collect({required:[{id:'CRYPTO:BTC:USD',market:'CRYPTO',symbol:'BTC'}],usPools:{}},{requestMs:30,budgetMs:100,fetchImpl:async()=>({ok:true,status:200,headers:{get:()=>null},text:()=>new Promise(()=>{})})});assert.equal(x.errors.length,1);assert.ok(Date.now()-start<500);});
+
+test('packet completeness cannot ignore a failed requested evidence document',async()=>{
+ const documents=[{id:'doc-ok',url:'https://example.org/ok',title:'ok'},{id:'doc-fail',url:'https://example.org/fail',title:'fail'}];
+ const x=await C.collect({required:[],usPools:{}},{documents,concurrency:2,requestMs:200,budgetMs:1000,fetchImpl:async url=>url.endsWith('/fail')?{ok:false,status:503}:{ok:true,status:200,headers:{get:()=>null},text:async()=>'<html>ok</html>'}});
+ assert.equal(x.quotesComplete,true);assert.equal(x.documentsRequested,2);assert.equal(x.documentsRetrieved,1);assert.equal(x.documentsComplete,false);assert.equal(x.complete,false);
+});
+test('evidence documents use bounded concurrency instead of serial waits',async()=>{
+ let active=0,maxActive=0;
+ const fetchImpl=async()=>{active++;maxActive=Math.max(maxActive,active);await new Promise(r=>setTimeout(r,20));active--;return {ok:true,status:200,headers:{get:()=>null},text:async()=>'<html>evidence</html>'};};
+ const documents=[1,2,3].map(n=>({id:'doc-'+n,url:'https://example.org/'+n,title:'doc '+n,kind:'news'}));
+ const x=await C.collect({required:[],usPools:{}},{documents,concurrency:3,requestMs:200,budgetMs:1000,fetchImpl});
+ assert.equal(x.documents.length,3);assert.equal(x.errors.length,0);assert.equal(maxActive,3);assert.deepEqual(x.documents.map(d=>d.id),documents.map(d=>d.id));
+});
