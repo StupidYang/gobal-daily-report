@@ -5,7 +5,7 @@
 ## 阶段及边界
 
 1. 原生任务读取main/automation/control.json。只有productionPaused=false且executionProtocol=lease-v1才继续；缺失或读取失败停止。
-2. 生产允许后先只读检查共享锁和最近outcomes，明显有未终结执行就停止大规模搜索。然后做请求前证据发现：查找本轮真正需要阅读的具体新闻、官方发布、宏观数据页和研究原文，不用首页或搜索摘要冒充证据。生成真实时间的唯一executionId（不超过80个ASCII字母、数字、短横线或下划线），在gdr-runtime分支创建runtime/requests/<executionId>.json：`{version:1,requestId,taskGroup,requestedAt,documents:[{id,url,title,kind}]}`。documents最多32项，kind可为news/macro/research/official/general，域名仍限execution-worker.cjs明确白名单。来源发现发生在锁外只是降低证据盲区，真正防重入仍以代码CAS锁为准。
+2. 生产允许后先只读检查共享锁和最近outcomes，明显有未终结执行就停止大规模搜索。然后做请求前证据发现：查找本轮真正需要阅读的具体新闻、官方发布、宏观数据页和研究原文，不用首页或搜索摘要冒充证据。生成真实时间的唯一executionId（不超过80个ASCII字母、数字、短横线或下划线），在gdr-runtime分支创建runtime/requests/<executionId>.json：`{version:1,requestId,taskGroup,requestedAt,documents:[{id,url,title,kind}]}`。documents最多32项，kind可为news/market/macro/research/official/general，域名仍限execution-worker.cjs明确白名单。请求包结构错误或超出32项仍整轮拒绝；单条文档若URL、域名、ID或kind不合规，则只隔离该条并记录blockedDocuments，不抓取、不进入可引用来源，其余合法证据与行情继续执行。来源发现发生在锁外只是降低证据盲区，真正防重入仍以代码CAS锁为准。
 3. 事件工作流从main检出执行代码。使用GitHub Contents API旧blob SHA比较交换，在gdr-runtime/runtime/leases/production.json取得三任务共用锁。失败者不采集。固定20分钟期限，不通过心跳续期。
 4. 基础行情与外部文档都在同一90秒总预算内有界采集；默认并发4、单请求8秒，文档不再逐条串行等待。429后停止该供应商后续请求。检查价格、标的、币种、合约与时间。两年美债按财政部日度日期展示，不伪造盘中时刻。文档抓取成功只生成URL/哈希/抓取时间证明，受版权保护全文不复制到公开仓库；模型仍须实际阅读原始URL后才可写分析。
 5. 成功采集写runtime/results/<executionId>.json，锁转analyzing。先检查runtime/outcomes/<executionId>.json；忙碌或失败立即结束，不为不存在的结果空等。读取结果来源包和原始文章后分析，不能把抓取成功冒充读懂全文。
