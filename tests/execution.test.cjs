@@ -15,3 +15,15 @@ t('finish stores phase times and duplicate slot rejection',()=>{const {s}=staged
 t('phase payload cannot change owner, deadline or generation',()=>{const s=start(),n=E.transition(s,s,'analyzing',{generation:9,executionId:'bad',deadlineAt:'2999-01-01'},NOW+5);a.equal(n.generation,1);a.equal(n.executionId,'one');a.equal(n.deadlineAt,s.deadlineAt);});
 t('concurrent CAS contenders run only one collector',async()=>{let revision=0,state=E.idle(),collected=0;const store={read:async()=>({sha:revision,state:structuredClone(state)}),cas:async(s,n)=>{await new Promise(r=>setTimeout(r,1));if(s.sha!==revision)throw new E.Conflict();state=n;revision++;return {sha:revision,state:n};}};const out=await Promise.allSettled(Array.from({length:8},(_,i)=>E.begin(store,'global-main',{now:NOW,executionId:'worker-'+i}).then(()=>collected++)));a.equal(collected,1);a.equal(out.filter(x=>x.status==='rejected').length,7);});
 t('one repair per failed slot, not unlimited resubmission',()=>{let s=start();s=E.transition(s,s,'failed',{reason:'test'},NOW+1);s=E.acquire(s,'global-main',{now:NOW+2,executionId:'two'});s=E.transition(s,s,'failed',{reason:'test'},NOW+3);a.throws(()=>E.acquire(s,'global-main',{now:NOW+4}),/two attempts/);});
+
+t('completed hourly run releases the lease for the next real hour without losing fencing',()=>{
+ let s=start('hour-one'),token={executionId:s.executionId,generation:s.generation};
+ s=E.transition(s,token,'analyzing',{},NOW+1000);
+ const b1={batchVersion:1,batchId:'batch-one',taskGroup:'global-main',execution:token,modules:[]};
+ s=E.transition(s,token,'awaiting-publication',{batchId:b1.batchId,batchHash:E.digest(b1)},NOW+2000);
+ s=E.transition(s,token,'publishing',{workflowRunId:1},NOW+3000);
+ s=E.transition(s,token,'completed',{reportId:'2026-09-23-1100',receiptHash:'a'.repeat(64)},NOW+4000);
+ const next=E.acquire(s,'global-main',{now:NOW+3600000,executionId:'hour-two'});
+ a.equal(next.generation,token.generation+1);a.equal(next.phase,'collecting');a.equal(next.recentSlots.filter(x=>x.taskGroup==='global-main').length,0);
+ a.throws(()=>E.assertOwner(next,token,NOW+3600001),/obsolete/);
+});
