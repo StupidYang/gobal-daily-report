@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
-const {sanitizeDocuments,DOCUMENT_KINDS}=require('../scripts/execution-worker.cjs');
+const {sanitizeDocuments,DOCUMENT_KINDS,DOCUMENT_HOSTS}=require('../scripts/execution-worker.cjs');
 
 test('market evidence kind is accepted for approved news sources',()=>{
  const x=sanitizeDocuments([
@@ -45,4 +45,18 @@ test('duplicate document ids do not enter the accepted source packet twice',()=>
 test('document envelope limits remain strict',()=>{
  assert.throws(()=>sanitizeDocuments(null),/envelope/);
  assert.throws(()=>sanitizeDocuments(Array.from({length:33},(_,i)=>({id:'d'+i,url:'https://www.reuters.com/world/'+i+'/',kind:'news'}))),/envelope/);
+});
+
+
+test('calendar evidence kind and EIA host are explicitly allowed',()=>{
+ const x=sanitizeDocuments([
+  {id:'fed-calendar',url:'https://www.federalreserve.gov/newsevents/calendar.htm',title:'Fed calendar',kind:'calendar'},
+  {id:'bls-calendar',url:'https://www.bls.gov/schedule/2026/',title:'BLS calendar',kind:'calendar'},
+  {id:'bea-calendar',url:'https://www.bea.gov/news/schedule',title:'BEA calendar',kind:'calendar'},
+  {id:'eia-calendar',url:'https://www.eia.gov/petroleum/supply/weekly/schedule.php',title:'EIA WPSR schedule',kind:'calendar'}
+ ]);
+ assert.equal(DOCUMENT_KINDS.has('calendar'),true);
+ assert.equal(DOCUMENT_HOSTS.has('www.eia.gov'),true);
+ assert.equal(x.accepted.length,4);
+ assert.deepEqual(x.blocked,[]);
 });
