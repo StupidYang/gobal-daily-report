@@ -51,6 +51,10 @@
   function coverage(period) {
     if (!period || !finite(period.coverageHours)) return {label:'窗口覆盖未知',ratio:0};
     const h = Math.max(0,Math.min(24,period.coverageHours));
+    if (period.coverageMode==='snapshot-span') {
+      const n=Number.isInteger(period.snapshotCount)?period.snapshotCount:0;
+      return {label:`${n}个快照 · 跨度 ${h.toFixed(1)}h / 24h · 非连续采样`,ratio:h/24};
+    }
     return {label:`${h.toFixed(1)} / 24 小时${period.isFull24h === true ? ' · 时间跨度完整' : ' · 覆盖不足或待核'}`,ratio:h/24};
   }
   function safePath(path) { return typeof path === 'string' && /^history\/\d{4}-\d{2}-\d{2}\/\d{4}(?:-[\w-]+)?\.json$/.test(path) ? path : null; }
