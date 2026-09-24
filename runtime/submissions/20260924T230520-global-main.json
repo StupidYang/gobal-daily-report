@@ -1,0 +1,859 @@
+{
+  "version": 1,
+  "requestId": "20260924T230520-global-main",
+  "execution": {
+    "executionId": "20260924T230520-global-main",
+    "generation": 12
+  },
+  "editorial": {
+    "packetHash": "c2be4a7dd66dee8dfbb6171d1c19a9ce2c2c074b2ca7925201ee95ddcbc2a6ca",
+    "analyzedAt": "2026-09-24T15:23:42.576Z",
+    "report": {
+      "brief": "23点完整增量：A/H已收盘偏弱；美股9月24日新常规盘四宽基同步回撤；两油涨幅扩至约3.6%—3.7%，10Y与美元偏强。BTC变化不大，黄金较21点回落。",
+      "marketState": "UTC+8 23点小时报告。A/H保留本日来源真实时点；美股为9月24日延迟常规盘；BTC与黄金为快照；原油、DXY、10Y为延迟观测；2Y仅有9月23日日度4.85%。",
+      "overview": "A股上证约-1.61%、深成指-2.96%、创业板-2.68%、科创50-2.35%、沪深300-1.73%、中证500-2.15%；港股恒指-1.30%、恒科-0.41%、国企-1.16%。美股标普约-0.43%、纳指-0.73%、NDX-0.70%、道指-0.59%，VIX约+3.89%。BTC约83782.46美元，黄金约4252.30美元/盎司，WTI/Brent约95.48/106.91美元、+3.60%/+3.72%，10Y约5.129%，DXY约101.291。事实层显示防守同步性较21点增强，但BTC未明显走弱且VIX绝对水平不高，因此不定义为全面恐慌。",
+      "rolling24hSummary": "24小时离散快照中，亚洲权益弱势扩大；BTC从15点约84047到本轮约83782美元总体震荡；黄金由21点约4280.60回落至4252.30；WTI/Brent由21点约93.70/105.18升至95.48/106.91；10Y由21点约5.106%升至5.129%。美股新盘首次提供本日盘中宽基确认。",
+      "methodology": "绑定generation=12与固定packetHash。15个指定文档成功9个，6条Reuters均HTTP 401；成功来源包括Fed/BLS/BEA/EIA/UN官方页面和商务部转载新华社。失败来源不进入事实层。不同市场时点与数据频率保持原口径，不把日度、历史或测试数据当实时。",
+      "coreAnalysis": {
+        "mainTheme": "A. 美股新盘、油价、10Y与美元共同强化防守信号。",
+        "expectationGap": "B. 21点缺美股新盘确认，本轮四宽基同步为负；但BTC稳定、VIX不高，弱于全面恐慌情景。",
+        "divergence": "C. 恒科相对抗跌、BTC稳定与油价大涨、美股走弱形成跨资产背离。",
+        "regime": "D. 10Y约5.129%、DXY约101.291、FOMC区间3.75%—4.00%，高贴现率仍是重要约束。",
+        "priceIn": "E. 价格已反映部分风险溢价，但失败新闻正文不足以确认具体催化是否充分计价。",
+        "bullCase": "F. 若油价、10Y和美元回落且美股四宽基共同修复，则防守同步性下降。",
+        "bullInvalidation": "若油价、10Y、美元继续走强且美股跌幅扩大，则上述修复情景失效。",
+        "bearCase": "G. 若高油价、高收益率、强美元与美股下跌继续共振，并伴随BTC破近期离散低位和VIX明显抬升，则全面risk-off概率上升。",
+        "bearInvalidation": "若上述变量多数回落且美股修复，则下调该情景权重。"
+      },
+      "plainLanguage": {
+        "verdict": "今晚比21点更偏防守：美股新盘普跌、油价再冲高、10年美债收益率和美元偏强；但BTC未明显走弱，VIX也不是恐慌水平。",
+        "bottomLine": "当前最重要的是观察油价、10Y、美元与美股是否继续同向。",
+        "whyNow": "标普约-0.43%、纳指-0.73%，两油约+3.60%/+3.72%，10Y约5.129%，DXY约101.291。",
+        "horizon": "未来4—24小时",
+        "confidence": "medium-high",
+        "invalidation": "若油价、10Y和美元回落且美股共同修复，则防守升级失效。",
+        "evidenceFactIds": [
+          "INDEX:US:SP500",
+          "INDEX:US:NASDAQ",
+          "INDEX:US:NDX",
+          "INDEX:US:DOW",
+          "VOL:VIX",
+          "CRYPTO:BTC:USD",
+          "METAL:XAUUSD",
+          "ENERGY:WTI",
+          "ENERGY:BRENT",
+          "RATE:US10Y",
+          "FX:DXY"
+        ],
+        "impacts": [
+          {
+            "asset": "A股",
+            "effect": "本日明显走弱",
+            "reason": "六项观察指数均为负，深成指与创业板跌幅较深。",
+            "takeaway": "本日弱势已形成，晚间不重复解释为继续下跌。",
+            "horizon": "下一交易日到3日",
+            "invalidation": "下一交易日宽基与成长共同修复。",
+            "confidence": "medium-high",
+            "evidenceFactIds": [
+              "INDEX:CN:SSE",
+              "INDEX:CN:SZSE",
+              "INDEX:CN:CHINEXT",
+              "INDEX:CN:STAR50",
+              "INDEX:CN:CSI300",
+              "INDEX:CN:CSI500"
+            ]
+          },
+          {
+            "asset": "港股",
+            "effect": "收跌但恒科相对抗跌",
+            "reason": "恒指约-1.30%、国企约-1.16%、恒科约-0.41%。",
+            "takeaway": "科技相对强弱与宽基不同。",
+            "horizon": "下一交易日到3日",
+            "invalidation": "恒科补跌并与宽基同步恶化。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:HK:HSI",
+              "INDEX:HK:HSTECH",
+              "INDEX:HK:HSCEI"
+            ]
+          },
+          {
+            "asset": "美股",
+            "effect": "新常规盘偏弱",
+            "reason": "标普、纳指、NDX、道指盘中均为负，VIX上行。",
+            "takeaway": "9月24日新盘已提供偏弱确认，但仍是延迟盘中快照。",
+            "horizon": "本次常规盘到2日",
+            "invalidation": "四宽基共同修复且VIX回落。",
+            "confidence": "medium-high",
+            "evidenceFactIds": [
+              "INDEX:US:SP500",
+              "INDEX:US:NASDAQ",
+              "INDEX:US:NDX",
+              "INDEX:US:DOW",
+              "VOL:VIX"
+            ]
+          },
+          {
+            "asset": "BTC",
+            "effect": "横盘偏稳",
+            "reason": "Coinbase USD现货约83782.46美元，较21点变化小。",
+            "takeaway": "单点不足以确认趋势。",
+            "horizon": "4—24小时",
+            "invalidation": "显著偏离近期8.34万—8.4万美元离散区间并获其他证据确认。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "CRYPTO:BTC:USD"
+            ]
+          },
+          {
+            "asset": "黄金",
+            "effect": "较21点回落",
+            "reason": "参考现货约4252.30美元/盎司，低于21点约4280.60。",
+            "takeaway": "美元和收益率偏强与该方向相容，但不构成唯一因果。",
+            "horizon": "4—24小时",
+            "invalidation": "重新回到21点附近且美元/收益率回落。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "METAL:XAUUSD",
+              "FX:DXY",
+              "RATE:US10Y"
+            ]
+          },
+          {
+            "asset": "原油",
+            "effect": "涨幅扩大",
+            "reason": "WTI/Brent 2026-11约95.48/106.91美元、+3.60%/+3.72%。",
+            "takeaway": "能源风险溢价明显上升，但当前Reuters正文失败，具体催化未知。",
+            "horizon": "4—24小时",
+            "invalidation": "两油明显回落至21点附近或前收附近。",
+            "confidence": "medium-high",
+            "evidenceFactIds": [
+              "ENERGY:WTI",
+              "ENERGY:BRENT"
+            ]
+          }
+        ]
+      },
+      "marketCoverage": [
+        {
+          "market": "A股",
+          "status": "closed-partial",
+          "asOf": null,
+          "note": "本日宽基已采集；缺完整广度和资金流。"
+        },
+        {
+          "market": "港股",
+          "status": "closed-partial",
+          "asOf": null,
+          "note": "三项指数已采集；缺南向与完整成交结构。"
+        },
+        {
+          "market": "美股",
+          "status": "open-delayed-partial",
+          "asOf": "2026-09-24T15:06:06.000Z",
+          "note": "9月24日常规盘已有延迟宽基观测；缺最终收盘。"
+        },
+        {
+          "market": "BTC",
+          "status": "snapshot-partial",
+          "asOf": "2026-09-24T15:06:07.056Z",
+          "note": "Coinbase USD现货；缺24h同源基准和衍生品。"
+        },
+        {
+          "market": "黄金",
+          "status": "snapshot-partial",
+          "asOf": "2026-09-24T15:05:56.000Z",
+          "note": "参考现货；缺同源涨跌基准和实际利率拆分。"
+        },
+        {
+          "market": "原油",
+          "status": "delayed-partial",
+          "asOf": "2026-09-24T14:56:07.000Z",
+          "note": "2026-11合约；缺库存、航运与成功能源新闻正文。"
+        }
+      ],
+      "assets": [
+        {
+          "name": "A股",
+          "state": "本日明显走弱",
+          "summary": "六项指数均为负。"
+        },
+        {
+          "name": "港股",
+          "state": "收跌但恒科相对抗跌",
+          "summary": "恒科跌幅小于恒指与国企。"
+        },
+        {
+          "name": "美股",
+          "state": "新盘偏弱",
+          "summary": "四宽基盘中为负，VIX上行。"
+        },
+        {
+          "name": "BTC",
+          "state": "横盘偏稳",
+          "summary": "约83782美元。"
+        },
+        {
+          "name": "黄金",
+          "state": "较21点回落",
+          "summary": "约4252美元/盎司。"
+        },
+        {
+          "name": "原油",
+          "state": "涨幅扩大",
+          "summary": "两油约+3.6%—3.7%。"
+        }
+      ],
+      "deepDive": [
+        {
+          "asset": "A股",
+          "title": "A股",
+          "analysis": "六项观察指数均为负，深成指与创业板跌幅较深。 本日弱势已形成，晚间不重复解释为继续下跌。",
+          "mechanism": "利率、盈利预期、风险偏好与本地因素共同作用。",
+          "risk": "部分资金流、广度或高频拆分缺失。",
+          "invalidation": "下一交易日宽基与成长共同修复。",
+          "horizon": "下一交易日到3日",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CSI500"
+          ]
+        },
+        {
+          "asset": "港股",
+          "title": "港股",
+          "analysis": "恒指约-1.30%、国企约-1.16%、恒科约-0.41%。 科技相对强弱与宽基不同。",
+          "mechanism": "利率、盈利预期、风险偏好与本地因素共同作用。",
+          "risk": "部分资金流、广度或高频拆分缺失。",
+          "invalidation": "恒科补跌并与宽基同步恶化。",
+          "horizon": "下一交易日到3日",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ]
+        },
+        {
+          "asset": "美股",
+          "title": "美股",
+          "analysis": "标普、纳指、NDX、道指盘中均为负，VIX上行。 9月24日新盘已提供偏弱确认，但仍是延迟盘中快照。",
+          "mechanism": "利率、盈利预期、风险偏好与本地因素共同作用。",
+          "risk": "缺完整广度和最终收盘。",
+          "invalidation": "四宽基共同修复且VIX回落。",
+          "horizon": "本次常规盘到2日",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "asset": "BTC",
+          "title": "BTC",
+          "analysis": "Coinbase USD现货约83782.46美元，较21点变化小。 单点不足以确认趋势。",
+          "mechanism": "流动性、风险偏好和加密市场结构共同影响价格。",
+          "risk": "缺OI、费率、清算、完整ETF流量和多场所确认。",
+          "invalidation": "显著偏离近期8.34万—8.4万美元离散区间并获其他证据确认。",
+          "horizon": "4—24小时",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        },
+        {
+          "asset": "黄金",
+          "title": "黄金",
+          "analysis": "参考现货约4252.30美元/盎司，低于21点约4280.60。 美元和收益率偏强与该方向相容，但不构成唯一因果。",
+          "mechanism": "美元、实际利率与避险需求共同影响价格。",
+          "risk": "部分资金流、广度或高频拆分缺失。",
+          "invalidation": "重新回到21点附近且美元/收益率回落。",
+          "horizon": "4—24小时",
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "asset": "原油",
+          "title": "原油",
+          "analysis": "WTI/Brent 2026-11约95.48/106.91美元、+3.60%/+3.72%。 能源风险溢价明显上升，但当前Reuters正文失败，具体催化未知。",
+          "mechanism": "供需、库存、运输与地缘风险溢价共同影响价格。",
+          "risk": "缺库存细项、航运和成功的当前能源新闻正文。",
+          "invalidation": "两油明显回落至21点附近或前收附近。",
+          "horizon": "4—24小时",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ]
+        }
+      ],
+      "frameworkAnalysis": [
+        {
+          "id": "fw-rate",
+          "framework": "现金流折现与利率传导",
+          "concept": "较高利率提高长久期资产折现率。",
+          "observed": "10Y约5.129%、DXY约101.291，美股新盘宽基偏弱。",
+          "mechanism": "高必要回报率降低高估值容忍度。",
+          "conclusion": "高贴现率与美股弱势同向，但不是唯一原因。",
+          "assumptions": "盈利预期未大幅上修。",
+          "counterEvidence": "BTC稳定、恒科相对抗跌。",
+          "horizon": "数小时到数周",
+          "invalidation": "利率与美元回落而权益仍全面走弱。",
+          "confidence": "medium-high",
+          "missingData": "实际利率、盈利预期修订、完整广度。",
+          "evidenceFactIds": [
+            "RATE:US10Y",
+            "FX:DXY",
+            "INDEX:US:NASDAQ"
+          ],
+          "sourceUrls": [
+            "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
+          ]
+        },
+        {
+          "id": "fw-divergence",
+          "framework": "跨资产相对强弱",
+          "concept": "相关资产不同步说明驱动不止一个。",
+          "observed": "美股偏弱、油价走高，BTC稳定、恒科相对抗跌。",
+          "mechanism": "利率、风险偏好、地缘与资产特有资金流共同作用。",
+          "conclusion": "防守同步性增强但仍存在明显背离。",
+          "assumptions": "来源时点已区分。",
+          "counterEvidence": "若后续所有风险资产同步恶化，背离会减少。",
+          "horizon": "4—24小时",
+          "invalidation": "跨资产转为一致方向。",
+          "confidence": "medium-high",
+          "missingData": "BTC衍生品、A/H资金流、美股完整广度。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "CRYPTO:BTC:USD",
+            "ENERGY:WTI"
+          ]
+        },
+        {
+          "id": "fw-energy",
+          "framework": "供需与风险溢价",
+          "concept": "油价同时反映供需、库存运输与地缘风险。",
+          "observed": "WTI/Brent约+3.60%/+3.72%。",
+          "mechanism": "风险溢价或供给约束上升会推高油价。",
+          "conclusion": "能源风险权重上升，但具体催化未知。",
+          "assumptions": "合约口径保持2026-11。",
+          "counterEvidence": "缺库存、航运与现货升贴水。",
+          "horizon": "4—24小时",
+          "invalidation": "两油明显回落。",
+          "confidence": "medium-high",
+          "missingData": "库存、航运、现货升贴水、成功能源新闻正文。",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ],
+          "sourceUrls": [
+            "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+          ]
+        },
+        {
+          "id": "fw-evidence",
+          "framework": "证据更新与情景分析",
+          "concept": "只让成功取得的新证据修改对应判断。",
+          "observed": "行情完整，15个文档成功9个，Reuters 6条均失败。",
+          "mechanism": "行情确认发生了什么，正文用于确认事件事实。",
+          "conclusion": "可提高防守判断置信度，但新闻因果保持保守。",
+          "assumptions": "成功源无未识别错误。",
+          "counterEvidence": "后续高质量正文可能改变解释。",
+          "horizon": "本轮到24小时",
+          "invalidation": "新证据显示明确相反方向。",
+          "confidence": "high",
+          "missingData": "Reuters综合新闻与资金流。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "ENERGY:WTI",
+            "VOL:VIX"
+          ]
+        }
+      ],
+      "frameworkSynthesis": {
+        "verdict": "防守同步性较21点增强，但尚不是无差别抛售。",
+        "agreement": "美股、油价、10Y与美元共同提高防守权重。",
+        "disagreement": "BTC稳定和恒科相对抗跌反对全面risk-off。",
+        "weighting": "同口径行情与成功官方原文优先。",
+        "invalidation": "油价和利率回落、美股共同修复。"
+      },
+      "analysisTheses": [
+        {
+          "id": "t1",
+          "title": "防守同步性增强",
+          "observed": "美股宽基普跌、VIX上行、油价和10Y偏强。",
+          "interpretation": "风险定价扩展到美国盘中。",
+          "alternatives": "事件风险、供需、盈利与仓位。",
+          "validation": "观察后续盘中方向。",
+          "confidence": "medium-high",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "VOL:VIX",
+            "ENERGY:WTI",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "id": "t2",
+          "title": "BTC暂未确认更强risk-off",
+          "observed": "约83782美元，较21点变化小。",
+          "interpretation": "加密现货暂有韧性。",
+          "alternatives": "单场所波动。",
+          "validation": "补衍生品与资金流。",
+          "confidence": "medium-low",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        }
+      ],
+      "judgmentRevisions": [
+        {
+          "id": "r1",
+          "topic": "美股新盘",
+          "previous": "21点尚无9月24日宽基新盘观测。",
+          "newEvidence": "本轮四宽基盘中同步为负。",
+          "revised": "修订为新盘偏弱。",
+          "unresolved": "缺最终收盘与完整广度。",
+          "status": "revised",
+          "firstSeenAt": "2026-09-24 21:11",
+          "updatedAt": "2026-09-24 23:06",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ"
+          ]
+        },
+        {
+          "id": "r2",
+          "topic": "能源风险",
+          "previous": "21点高位震荡。",
+          "newEvidence": "两油升至95.48/106.91。",
+          "revised": "修订为涨幅再次扩大。",
+          "unresolved": "缺成功能源新闻正文。",
+          "status": "revised",
+          "firstSeenAt": "2026-09-24 21:11",
+          "updatedAt": "2026-09-24 23:06",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ]
+        }
+      ],
+      "changes": [
+        {
+          "title": "美股新盘转为可观测",
+          "detail": "四宽基均为负、VIX上行。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "title": "油价再上冲",
+          "detail": "WTI/Brent约95.48/106.91。",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ]
+        },
+        {
+          "title": "10Y与美元偏强",
+          "detail": "10Y约5.129%，DXY约101.291。",
+          "evidenceFactIds": [
+            "RATE:US10Y",
+            "FX:DXY"
+          ]
+        }
+      ],
+      "recentChanges": [
+        {
+          "title": "防守扩展至美股新盘",
+          "detail": "美国宽基盘中同步为负。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ"
+          ]
+        },
+        {
+          "title": "能源风险上升",
+          "detail": "两油涨幅扩大。",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ]
+        },
+        {
+          "title": "新闻覆盖仍有缺口",
+          "detail": "6条Reuters正文均401。"
+        }
+      ],
+      "evolution24h": [
+        {
+          "at": "2026-09-24 15:07",
+          "title": "亚洲弱势与油价温和上涨",
+          "detail": "BTC约84047，两油约92.58/103.65。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ]
+        },
+        {
+          "at": "2026-09-24 21:11",
+          "title": "BTC与黄金回升",
+          "detail": "BTC约83686.64，黄金约4280.60。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "METAL:XAUUSD"
+          ]
+        },
+        {
+          "at": "2026-09-24 23:06",
+          "title": "美股偏弱、油价再冲高",
+          "detail": "标普约-0.43%、纳指-0.73%，两油95.48/106.91。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ]
+        }
+      ],
+      "narrativeTriggers": [
+        {
+          "id": "u",
+          "title": "美股盘中是否修复",
+          "effect": "共同修复会削弱防守判断。"
+        },
+        {
+          "id": "o",
+          "title": "油价是否继续创新高",
+          "effect": "继续上涨会强化能源风险。"
+        },
+        {
+          "id": "d",
+          "title": "10Y与美元是否继续共振",
+          "effect": "同步上行会强化高贴现率约束。"
+        },
+        {
+          "id": "c",
+          "title": "中美元首访问正式成果",
+          "effect": "只按正式政策文本更新判断。"
+        }
+      ],
+      "events": [
+        {
+          "id": "fed-scoos",
+          "title": "Fed：Senior Credit Officer Opinion Survey",
+          "at": "2026-09-25T02:00:00+08:00",
+          "importance": "high",
+          "scenarioA": "若融资条件收紧，金融条件约束增强。",
+          "scenarioB": "若稳定或改善，相关约束减弱。",
+          "sourceUrls": [
+            "https://www.federalreserve.gov/newsevents/2026-september.htm"
+          ]
+        },
+        {
+          "id": "bls-benefits",
+          "title": "BLS：Employee Benefits in the United States",
+          "at": "2026-09-25T22:00:00+08:00",
+          "importance": "medium-low",
+          "scenarioA": "显著变化仅作为劳动与企业成本背景。",
+          "scenarioB": "变化有限则不改变跨资产主线。",
+          "sourceUrls": [
+            "https://www.bls.gov/schedule/2026/09_sched.htm"
+          ]
+        },
+        {
+          "id": "un-pandemic",
+          "title": "联合国：大流行预防、准备和应对高级别会议",
+          "at": "2026-09-25T22:00:00+08:00",
+          "importance": "medium",
+          "scenarioA": "若有新政策承诺，关注公共卫生相关主题。",
+          "scenarioB": "若主要为政治宣示，短线影响有限。",
+          "sourceUrls": [
+            "https://www.un.org/en/high-level-week-2026"
+          ]
+        }
+      ],
+      "watch": [
+        {
+          "point": "美股盘中与收盘",
+          "detail": "观察四宽基与VIX是否继续同向。"
+        },
+        {
+          "point": "原油",
+          "detail": "观察2026-11两油是否继续高于本轮水平。"
+        },
+        {
+          "point": "10Y与DXY",
+          "detail": "观察长端收益率与美元是否继续共振。"
+        },
+        {
+          "point": "BTC",
+          "detail": "观察近期离散区间并等待衍生品证据。"
+        },
+        {
+          "point": "中美元首访问",
+          "detail": "只跟踪正式成果文件。"
+        }
+      ],
+      "dataDefinitions": [
+        {
+          "term": "离散快照",
+          "definition": "实际抓取时点观测，不等于连续行情或24小时收益率。"
+        },
+        {
+          "term": "delayed常规盘",
+          "definition": "公开供应商延迟盘中报价，不等于交易所实时或最终收盘。"
+        },
+        {
+          "term": "provider-previous-close",
+          "definition": "供应商相对前收变化，不保证等于交易所最终统计。"
+        },
+        {
+          "term": "US2Y日度",
+          "definition": "财政部每日平价收益率只有业务日期，不伪造盘中时刻。"
+        },
+        {
+          "term": "2026-11原油合约",
+          "definition": "WTI和Brent保持同一合约月份口径。"
+        }
+      ],
+      "macroEvents": [],
+      "worldEvents": [],
+      "news": [],
+      "metrics": [],
+      "sectionGaps": {
+        "newsroom": {
+          "reason": "15个文档成功9个；6条Reuters均401。"
+        },
+        "research": {
+          "reason": "本轮没有成功取得足以触发新增公司/行业研究的材料。"
+        },
+        "funding": {
+          "reason": "缺A/H资金流和BTC完整ETF/OI/费率/清算。"
+        },
+        "events": {
+          "reason": "已核验Fed、BLS、BEA、EIA和UN官方日历；未来约24小时列出三项官方事件。"
+        }
+      }
+    },
+    "newsItems": [
+      {
+        "eventId": "xi-us-arrival",
+        "title": "习近平抵达美国并期待同特朗普深入交流",
+        "regions": [
+          "CN",
+          "US"
+        ],
+        "kind": "general",
+        "summary": "商务部转载新华社确认习近平抵达美国并发表书面讲话，表示期待同特朗普就两国关系和世界局势重大问题深入交流。",
+        "plainImpact": "中美关系进入高信息密度窗口。",
+        "assessment": "访问事实不等于协议已经落地。",
+        "sourceUrls": [
+          "https://www.mofcom.gov.cn/xwfb/ldrhd/art/2026/art_03186da702944f9282e32a81d69655a4.html"
+        ]
+      },
+      {
+        "eventId": "us-open",
+        "title": "行情观察：美股新盘宽基偏弱",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "summary": "标普约-0.43%、纳指-0.73%、NDX-0.70%、道指-0.59%。",
+        "plainImpact": "防守叙事获得美国盘中价格确认。",
+        "assessment": "这是盘中延迟观测，不等同最终收盘。",
+        "sourceUrls": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m"
+        ]
+      },
+      {
+        "eventId": "oil",
+        "title": "行情观察：两油涨幅扩大",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "market",
+        "summary": "WTI约95.48/+3.60%，Brent约106.91/+3.72%。",
+        "plainImpact": "能源风险权重上升。",
+        "assessment": "Reuters正文失败，只确认价格结果。",
+        "sourceUrls": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
+          "https://query1.finance.yahoo.com/v8/finance/chart/BZX26.NYM?range=1d&interval=1m"
+        ]
+      }
+    ],
+    "newsCoverage": {
+      "status": "partial",
+      "note": "15个文档成功9个；Reuters 6条均401。",
+      "regions": {
+        "CN": "商务部原文成功。",
+        "US": "官方宏观与日历成功。",
+        "WORLD": "UN日历成功，Reuters能源正文失败。"
+      },
+      "gaps": [
+        "Reuters正文失败",
+        "能源综合新闻不足"
+      ]
+    },
+    "macroFacts": [
+      {
+        "id": "MACRO:US:FED-TARGET-RANGE",
+        "label": "联邦基金目标区间",
+        "displayValue": "3.75%—4.00%",
+        "rawValue": null,
+        "unit": "%",
+        "scope": "FOMC",
+        "window": "2026-09-16",
+        "asOf": "2026-09-16T14:00:00-04:00",
+        "verifiedAt": "2026-09-24T15:23:42.576Z",
+        "dataStatus": "complete",
+        "marketState": "published",
+        "direction": "up",
+        "impactTone": "高利率约束",
+        "sourceUrls": [
+          "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
+        ]
+      },
+      {
+        "id": "MACRO:US:CPI-MOM",
+        "label": "美国8月CPI环比",
+        "displayValue": "+0.4%",
+        "rawValue": 0.4,
+        "unit": "%",
+        "scope": "BLS CPI",
+        "window": "2026-08",
+        "asOf": null,
+        "verifiedAt": "2026-09-24T15:23:42.576Z",
+        "dataStatus": "complete",
+        "marketState": "published",
+        "direction": "up",
+        "impactTone": "通胀压力",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/cpi.nr0.htm"
+        ]
+      },
+      {
+        "id": "MACRO:US:CPI-YOY",
+        "label": "美国8月CPI同比",
+        "displayValue": "+3.4%",
+        "rawValue": 3.4,
+        "unit": "%",
+        "scope": "BLS CPI",
+        "window": "12m through 2026-08",
+        "asOf": null,
+        "verifiedAt": "2026-09-24T15:23:42.576Z",
+        "dataStatus": "complete",
+        "marketState": "published",
+        "direction": "up",
+        "impactTone": "通胀压力",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/cpi.nr0.htm"
+        ]
+      },
+      {
+        "id": "MACRO:US:CORE-CPI-YOY",
+        "label": "美国8月核心CPI同比",
+        "displayValue": "+2.4%",
+        "rawValue": 2.4,
+        "unit": "%",
+        "scope": "BLS core CPI",
+        "window": "12m through 2026-08",
+        "asOf": null,
+        "verifiedAt": "2026-09-24T15:23:42.576Z",
+        "dataStatus": "complete",
+        "marketState": "published",
+        "direction": "up",
+        "impactTone": "核心通胀",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/cpi.nr0.htm"
+        ]
+      },
+      {
+        "id": "MACRO:US:PAYROLLS",
+        "label": "美国8月非农就业增加",
+        "displayValue": "+16.2万",
+        "rawValue": 162000,
+        "unit": "jobs",
+        "scope": "BLS Employment Situation",
+        "window": "2026-08",
+        "asOf": null,
+        "verifiedAt": "2026-09-24T15:23:42.576Z",
+        "dataStatus": "complete",
+        "marketState": "published",
+        "direction": "up",
+        "impactTone": "就业扩张",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/empsit.nr0.htm"
+        ]
+      },
+      {
+        "id": "MACRO:US:UNEMPLOYMENT",
+        "label": "美国8月失业率",
+        "displayValue": "4.1%",
+        "rawValue": 4.1,
+        "unit": "%",
+        "scope": "BLS Employment Situation",
+        "window": "2026-08",
+        "asOf": null,
+        "verifiedAt": "2026-09-24T15:23:42.576Z",
+        "dataStatus": "complete",
+        "marketState": "published",
+        "direction": "flat",
+        "impactTone": "就业未明显失速",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/empsit.nr0.htm"
+        ]
+      }
+    ],
+    "macroEvents": [],
+    "events": [
+      {
+        "id": "fed-scoos",
+        "title": "Fed：Senior Credit Officer Opinion Survey",
+        "at": "2026-09-25T02:00:00+08:00",
+        "importance": "high",
+        "scenarioA": "若融资条件收紧，金融条件约束增强。",
+        "scenarioB": "若稳定或改善，相关约束减弱。",
+        "sourceUrls": [
+          "https://www.federalreserve.gov/newsevents/2026-september.htm"
+        ]
+      },
+      {
+        "id": "bls-benefits",
+        "title": "BLS：Employee Benefits in the United States",
+        "at": "2026-09-25T22:00:00+08:00",
+        "importance": "medium-low",
+        "scenarioA": "显著变化仅作为劳动与企业成本背景。",
+        "scenarioB": "变化有限则不改变跨资产主线。",
+        "sourceUrls": [
+          "https://www.bls.gov/schedule/2026/09_sched.htm"
+        ]
+      },
+      {
+        "id": "un-pandemic",
+        "title": "联合国：大流行预防、准备和应对高级别会议",
+        "at": "2026-09-25T22:00:00+08:00",
+        "importance": "medium",
+        "scenarioA": "若有新政策承诺，关注公共卫生相关主题。",
+        "scenarioB": "若主要为政治宣示，短线影响有限。",
+        "sourceUrls": [
+          "https://www.un.org/en/high-level-week-2026"
+        ]
+      }
+    ],
+    "macroCoverage": {
+      "status": "partial",
+      "note": "官方宏观原文与官方日历已核验；资金流、实际利率和Reuters正文仍有缺口。"
+    },
+    "macroFundingNotes": [],
+    "researchRecords": [],
+    "researchChecks": []
+  }
+}
