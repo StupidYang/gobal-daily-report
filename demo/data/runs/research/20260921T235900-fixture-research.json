@@ -43,6 +43,18 @@
     "checks": [
       {
         "instrumentId": "EQUITY:US:AAPL",
+        "checkedAt": "2026-09-21T15:59:00.000+08:00",
+        "result": "no-new-material",
+        "note": "测试复用原分析"
+      },
+      {
+        "instrumentId": "EQUITY:US:AAPL",
+        "checkedAt": "2026-09-21T19:59:00.000+08:00",
+        "result": "no-new-material",
+        "note": "测试复用原分析"
+      },
+      {
+        "instrumentId": "EQUITY:US:AAPL",
         "checkedAt": "2026-09-21T23:59:00.000+08:00",
         "result": "no-new-material",
         "note": "测试复用原分析"
@@ -59,7 +71,8 @@
       "reused": [
         "EQUITY:US:AAPL|synthetic-earnings-v1"
       ],
-      "note": "同事件沿用原分析及analyzedAt；新财报/指引/重述/研报需新eventKey。"
+      "checksRetained": 2,
+      "note": "同事件沿用原分析及analyzedAt；研究检查保留实际checkedAt；新财报/指引/重述/研报需新eventKey。"
     }
   },
   "note": "测试数据，非真实行情",
