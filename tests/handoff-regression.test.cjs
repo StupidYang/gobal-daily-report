@@ -35,6 +35,19 @@ t('a valid same-window item retains its original dates and body',()=>{
  const n=N.merge({runId:'prior',generatedAt:'2026-09-23T02:00:00Z',payload:{newsroom:{items:[item]}}},[],{now:Date.parse('2026-09-23T03:00:00Z'),sources:[{id:'s',url:'https://example.com'}]});
  a.equal(n.items[0].publishedAt,item.publishedAt);a.equal(n.items[0].assessment,item.assessment);a.equal(n.coverage.retained,1);
 });
+t('news coverage distinguishes external reporting from quote-only observations',()=>{
+ const sources=[{id:'quote',url:'https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC'},{id:'wire',url:'https://www.reuters.com/world/example'}];
+ const items=[
+  {id:'price',eventId:'price',title:'price observation',regions:['US'],kind:'market',summary:'price fact',plainImpact:'price impact',assessment:'price judgment',sourceIds:['quote'],publishedAt:'2026-09-23T01:00:00Z'},
+  {id:'policy',eventId:'policy',title:'policy event',regions:['CN','WORLD'],kind:'general',summary:'policy fact',plainImpact:'policy impact',assessment:'policy judgment',sourceIds:['wire'],publishedAt:'2026-09-23T01:10:00Z'}
+ ];
+ const n=N.merge(null,items,{now:Date.parse('2026-09-23T03:00:00Z'),sources,coverage:{status:'partial',note:'source-backed sample'}});
+ a.equal(n.coverage.externalVerified,1);a.equal(n.coverage.marketDataOnly,1);a.equal(n.coverage.general,1);a.deepEqual(n.coverage.regionCounts,{CN:1,US:1,WORLD:1});a.equal(n.coverage.complete,false);
+});
+t('a quote-only newsroom cannot self-declare complete external coverage',()=>{
+ const n=N.merge(null,[{id:'price',eventId:'price',title:'price observation',regions:['CN','US','WORLD'],kind:'market',summary:'price fact',plainImpact:'price impact',assessment:'price judgment',sourceIds:['quote'],publishedAt:'2026-09-23T01:00:00Z'}],{now:Date.parse('2026-09-23T03:00:00Z'),sources:[{id:'quote',url:'https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC'}],coverage:{status:'complete',complete:true}});
+ a.equal(n.coverage.claimedComplete,true);a.equal(n.coverage.complete,false);a.equal(n.coverage.status,'partial');a.match(n.coverage.claimIssue,/降级/);
+});
 t('revision route preserves execution ID and rejects a second correction',()=>{
  a.deepEqual(router.select([{filename:'runtime/submissions/run--r1.json',status:'added'}]),{file:'runtime/submissions/run--r1.json',mode:'submit',id:'run',revision:1});
  a.throws(()=>router.select([{filename:'runtime/submissions/run--r2.json',status:'added'}]),/Only submission/);
