@@ -12,6 +12,7 @@
 - 全局任务输出全部七模块；区域任务由代码输出 **quotes + 本区域股票 + news + synthesis**，另三个输入引用已发布历史。这样本轮实采报价不会被旧指针替换。
 - 区域任务没有新增新闻时 newsItems 可以为空。仍在窗口且字段完整的旧新闻保留原始时点；不完整历史新闻单独保留为“待复核历史新闻”。不可为填补历史缺字段而猜地区、类型、影响或判断。
 - `editorial.newsCoverage`如实写status/note/regions/gaps。代码会再根据实际sourceIds派生active/general/market/externalVerified/marketDataOnly/regionCounts；如果正文声称complete但只有行情源、或CN/US/WORLD实际事件缺席，complete声明会被降级并由content-r3拒绝假完整。18–30条是滚动窗口目标，不是每小时新增配额。
+- 公司研究默认会把已发布历史records计为已有覆盖，不再因为“本轮没重做”就把同一公司塞进pendingQueue。只有发现了新材料但本轮来不及研究时，才可提供可选的 `editorial.researchPendingQueue` 明确列出对象和原因；旧研究继续保留原analyzedAt。
 
 ## 一次可修正交接
 
