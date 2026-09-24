@@ -26,6 +26,17 @@ for(const id of ['20260923T145853-global-main','20260923T153900-asia-session'])t
   for(const record of seed.modules.research.payload.records||[])a.ok(!pending.has(record.instrumentId),'retained research must not also be auto-marked pending');
  } else {a.equal(report.newsroom.items.length,0);a.equal(report.newsroom.legacyItems.length,18);a.ok(report.newsroom.legacyItems.every(x=>!x.plainImpact),'no invented impact text');}
 });
+t('empty macro refresh retains the recent source-backed macro snapshot without redating it',()=>{
+ const {result,submission}=load('20260923T145853-global-main'),e=structuredClone(submission.editorial),now=Date.parse(e.analyzedAt)+20000;
+ e.macroFacts=[];e.macroEvents=[];e.events=[];e.macroFundingNotes=[];
+ const batch=L.compile(root,result.packet,e,{...submission.execution,taskGroup:result.taskGroup,now});
+ const macro=batch.modules.find(m=>m.module==='macro'),report=batch.modules.find(m=>m.module==='synthesis').payload.report,prior=seed.modules.macro;
+ a.equal(macro.status,'no-change');a.equal(macro.retention.runId,prior.runId);a.equal(macro.dataAsOf,prior.dataAsOf);
+ a.equal(macro.payload.canonicalFacts.length,prior.payload.canonicalFacts.length);a.equal(macro.payload.canonicalFacts[0].asOf,prior.payload.canonicalFacts[0].asOf);
+ a.ok(macro.payload.canonicalFacts.every(x=>x.retention?.runId===prior.runId));
+ a.equal(report.macroEvents[0].id,prior.payload.macroEvents[0].id);
+ a.ok(report.sources.some(s=>s.id==='fin'&&s.url===prior.sources[0].url));
+});
 t('framework name alias is normalized while an absent conclusion is still rejected',()=>{
  const x=load('20260923T145853-global-main'),e=x.submission.editorial;
  a.equal(Q.normalize(e.report).frameworkAnalysis[0].framework,e.report.frameworkAnalysis[0].name);
