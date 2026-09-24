@@ -44,8 +44,11 @@ function quality(input,previous=null){
  for(const [i,x]of r.dataDefinitions.entries())if(x._missingTerm||!str(x.term)||!str(x.definition))errors.push('dataDefinitions['+i+']术语或解释为空');
  for(const k of ['frameworkAnalysis','watch','dataDefinitions'])if(!arr(r[k]).length&&!str(r.sectionGaps?.[k]?.reason))errors.push(k+'缺失，需具体缺口原因而不是空数组');
  if(previous)for(const k of ['watch','dataDefinitions'])if(arr(previous[k]).length&&!arr(r[k]).length&&!str(r.sectionGaps?.[k]?.reason))errors.push('不允许静默删除已有 '+k);
+ const newsCoverage=r.newsroom?.coverage||{};
+ if(newsCoverage.claimedComplete===true&&newsCoverage.complete!==true)errors.push('新闻覆盖声明为complete但缺少可核验外部新闻或CN/US/WORLD实际覆盖');
+ if(Number.isInteger(newsCoverage.marketDataOnly)&&newsCoverage.marketDataOnly>0&&Number(newsCoverage.externalVerified||0)===0)warnings.push('新闻区只有行情数据观察，没有可核验外部综合新闻');
  if(arr(r.newsroom?.items).length<18)warnings.push('新闻覆盖不足18条，必须如实披露，不可凑数');
- return {errors:[...new Set(errors)],warnings,assetCoverage:markets.filter(m=>by.has(m)),contract:'content-r3'};
+ return {errors:[...new Set(errors)],warnings:[...new Set(warnings)],assetCoverage:markets.filter(m=>by.has(m)),contract:'content-r3'};
 }
 function quoteCoverage(config,m,now=Date.now()){
  const items=new Map(arr(m?.payload?.items).map(x=>[x.instrumentId,x])),s=new Set(arr(m?.sources).filter(x=>/^https?:\/\//.test(x.url||'')).map(x=>x.id));
