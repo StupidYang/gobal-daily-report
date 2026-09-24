@@ -8,6 +8,7 @@
 - `report.frameworkAnalysis` 每项使用 `framework`（框架名称）、`concept`、`observed`、`conclusion` 及适用性、机制、前提、反证、周期、改判条件和证据。历史同义字段 `name/principle/facts` 只做无损映射；缺结论不会被自动补出。
 - 新闻只放 `editorial.newsItems`，每项必须包含 `eventId`、`title`、`regions`（CN/US/WORLD数组）、`kind`（general/market）、`summary`、`plainImpact`、`assessment`、`sourceUrls`。不能以摘要冒充影响和判断。每项保持实际来源时间与独立事件ID。sourceUrls应优先引用请求前发现并被本轮documents实际抓取的具体文章/公告；Yahoo/Coinbase等行情URL只能支持“行情观察”，不能据此宣称完成外部综合新闻。
 - 六份 `report.deepDive` 分别覆盖A股、港股、美股、BTC、黄金、原油，包含独立analysis、mechanism、risk、invalidation、horizon和证据引用。旧样例只参考格式，不是本轮分析材料。
+- `report.evolution24h` 每个节点应有实际 `at`（或真实事件时点）并引用 `evidenceFactIds` / `sourceUrls`；它表示离散快照的演化，不得用报告整点补造缺失时段。`changes/recentChanges` 的事实变化也应尽量引用证据。
 - 外部引用使用已获取来源的 `sourceUrls`；报价事实编号使用 packet.rows 的 instrumentId。不要手写 sourceIds 或捏造来源。
 - 全局任务输出全部七模块；区域任务由代码输出 **quotes + 本区域股票 + news + synthesis**，另三个输入引用已发布历史。这样本轮实采报价不会被旧指针替换。
 - 区域任务没有新增新闻时 newsItems 可以为空。仍在窗口且字段完整的旧新闻保留原始时点；不完整历史新闻单独保留为“待复核历史新闻”。不可为填补历史缺字段而猜地区、类型、影响或判断。
