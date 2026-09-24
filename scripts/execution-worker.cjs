@@ -5,6 +5,34 @@ const fs=require('node:fs'),path=require('node:path');
 const P=require('../lib/pipeline.cjs'),E=require('../lib/execution.cjs'),C=require('../lib/live-collector.cjs'),L=require('../lib/live-report.cjs'),B=require('../lib/batch.cjs');
 const O=require('../lib/publication-outcome.cjs');
 const safe=x=>typeof x==='string'&&/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(x);
+const DOCUMENT_HOSTS=new Set([
+ 'www.federalreserve.gov','www.bls.gov','home.treasury.gov','www.bea.gov','www.sec.gov','www.whitehouse.gov',
+ 'www.gov.cn','www.pbc.gov.cn','www.stats.gov.cn','www.mof.gov.cn','www.mofcom.gov.cn','www.csrc.gov.cn',
+ 'www.sse.com.cn','www.szse.cn','www.hkexnews.hk','www.hkex.com.hk','paper.cnstock.com','www.stcn.com','www.nbd.com.cn',
+ 'www.un.org','unsdg.un.org','www.who.int','www.imf.org','www.worldbank.org','www.iea.org','www.opec.org',
+ 'www.reuters.com','reuters.com','apnews.com','www.apnews.com','investor.nvidia.com'
+]);
+const DOCUMENT_KINDS=new Set(['news','market','macro','research','official','general']);
+function sanitizeDocuments(documents){
+ if(!Array.isArray(documents)||documents.length>32)throw Error('Document request envelope invalid');
+ const accepted=[],blocked=[],seen=new Set();
+ for(const d of documents){
+  let reason=null,u=null;
+  if(!d||typeof d!=='object'||Array.isArray(d))reason='invalid-document';
+  else if(!safe(d.id))reason='invalid-id';
+  else if(seen.has(d.id))reason='duplicate-id';
+  else{
+   seen.add(d.id);
+   try{u=new URL(d.url);}catch{reason='invalid-url';}
+   if(!reason&&(u.protocol!=='https:'||u.username||u.password))reason='unsafe-url';
+   if(!reason&&!DOCUMENT_HOSTS.has(u.hostname))reason='host-not-allowed';
+   if(!reason&&d.kind!=null&&!DOCUMENT_KINDS.has(d.kind))reason='kind-not-allowed';
+  }
+  if(reason)blocked.push({id:d?.id||null,url:d?.url||null,kind:d?.kind||null,reason});
+  else accepted.push(d);
+ }
+ return {accepted,blocked};
+}
 function createWorker(options={}){
  const root=path.resolve(options.root||process.env.GDR_ROOT||path.join(__dirname,'..'));
  const store=options.store||new E.GitHubStore({repository:process.env.GITHUB_REPOSITORY||'StupidYang/gobal-daily-report'});
@@ -59,20 +87,18 @@ function createWorker(options={}){
   const req=await read('gdr-runtime','runtime/requests/'+id+'.json',ref);
   if(req?.version!==1||req.requestId!==id||!safe(id))throw Error('Invalid request');
   if(!Number.isFinite(Date.parse(req.requestedAt))||Math.abs(clock()-Date.parse(req.requestedAt))>15*60000)throw Error('Request was queued too long or has an invalid timestamp');
-  const hosts=new Set([
-   'www.federalreserve.gov','www.bls.gov','home.treasury.gov','www.bea.gov','www.sec.gov','www.whitehouse.gov',
-   'www.gov.cn','www.pbc.gov.cn','www.stats.gov.cn','www.mof.gov.cn','www.mofcom.gov.cn','www.csrc.gov.cn',
-   'www.sse.com.cn','www.szse.cn','www.hkexnews.hk','www.hkex.com.hk','paper.cnstock.com','www.stcn.com','www.nbd.com.cn',
-   'www.un.org','unsdg.un.org','www.who.int','www.imf.org','www.worldbank.org','www.iea.org','www.opec.org',
-   'www.reuters.com','reuters.com','apnews.com','www.apnews.com','investor.nvidia.com'
-  ]);
-  const documentKinds=new Set(['news','macro','research','official','general']);
-  const docs=req.documents||[];if(!Array.isArray(docs)||docs.length>32||docs.some(d=>{try{const u=new URL(d.url);return !safe(d.id)||u.protocol!=='https:'||!hosts.has(u.hostname)||u.username||u.password||(d.kind!=null&&!documentKinds.has(d.kind));}catch{return true;}}))throw Error('Document request outside the configured public-source scope');
+  const sourcePlan=sanitizeDocuments(req.documents||[]),docs=sourcePlan.accepted;
   await reconcile();const acquired=await E.begin(store,req.taskGroup,{now:clock(),executionId:id,budgetMs:20*60000}),token={executionId:id,generation:acquired.state.generation};
   await outcome(id,{status:'collecting',error:null,issues:[],execution:token,deadlineAt:acquired.state.deadlineAt});
   const packet=await collect(P.read(path.join(root,'config/watchlist.json')),{documents:docs,rawDir:path.join(out,'raw'),onProgress:p=>P.atomic(path.join(out,'progress.json'),p),budgetMs:90000,requestMs:8000,concurrency:4});
+  packet.documentsAccepted=docs.length;packet.documentsBlocked=sourcePlan.blocked.length;
+  if(sourcePlan.blocked.length){
+   const checkedAt=new Date(clock()).toISOString();packet.blockedDocuments=sourcePlan.blocked;
+   packet.errors.push(...sourcePlan.blocked.map(d=>({documentId:d.id,sourceUrl:d.url,error:'Document blocked before fetch: '+d.reason,checkedAt})));
+   packet.documentsRequested=(req.documents||[]).length;packet.documentsComplete=false;packet.complete=false;
+  }
   await requireProduction();E.assertOwner((await store.read()).state,token,clock());
-  const result={version:1,requestId:id,taskGroup:req.taskGroup,execution:token,deadlineAt:acquired.state.deadlineAt,packetHash:P.hash(packet),packet,editorialContract:{version:'editorial-v1',path:'docs/editorial-input.md',frameworkNameField:'framework',documentLimit:32,documentKinds:[...documentKinds],newsFields:['eventId','title','regions','kind','summary','plainImpact','assessment','sourceUrls'],revisionPath:'runtime/submissions/'+id+'--r1.json',maxSubmissions:2},scope:'Evidence only. Read sources and write complete analysis; collection success is not publication.'};
+  const result={version:1,requestId:id,taskGroup:req.taskGroup,execution:token,deadlineAt:acquired.state.deadlineAt,packetHash:P.hash(packet),packet,editorialContract:{version:'editorial-v1',path:'docs/editorial-input.md',frameworkNameField:'framework',documentLimit:32,documentKinds:[...DOCUMENT_KINDS],newsFields:['eventId','title','regions','kind','summary','plainImpact','assessment','sourceUrls'],revisionPath:'runtime/submissions/'+id+'--r1.json',maxSubmissions:2},scope:'Evidence only. Read sources and write complete analysis; collection success is not publication.'};
   await create('gdr-runtime','runtime/results/'+id+'.json',result);
   await E.advance(store,token,'analyzing',{sourcePacketPath:'runtime/results/'+id+'.json',sourcePacketHash:P.hash(packet)},clock());
   await outcome(id,{status:'ready-for-analysis',error:null,issues:[],execution:token,deadlineAt:result.deadlineAt,packetHash:result.packetHash,collectionDurationMs:packet.durationMs});
@@ -116,4 +142,4 @@ function createWorker(options={}){
  return {run,request,submit,reconcile};
 }
 if(require.main===module)createWorker().run(process.argv[2],process.argv[3],{revision:Number(process.argv[4]||0),ref:process.env.GDR_HANDOFF_REF}).then(r=>console.log(JSON.stringify({status:r?.status||'collected',published:false}))).catch(e=>{console.error(e.stack||e.message);process.exitCode=1;});
-module.exports={createWorker};
+module.exports={createWorker,sanitizeDocuments,DOCUMENT_KINDS,DOCUMENT_HOSTS};
