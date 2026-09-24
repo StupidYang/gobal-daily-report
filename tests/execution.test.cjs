@@ -24,6 +24,6 @@ t('completed hourly run releases the lease for the next real hour without losing
  s=E.transition(s,token,'publishing',{workflowRunId:1},NOW+3000);
  s=E.transition(s,token,'completed',{reportId:'2026-09-23-1100',receiptHash:'a'.repeat(64)},NOW+4000);
  const next=E.acquire(s,'global-main',{now:NOW+3600000,executionId:'hour-two'});
- a.equal(next.generation,token.generation+1);a.equal(next.phase,'collecting');a.equal(next.recentSlots.filter(x=>x.taskGroup==='global-main').length,0);
+ a.equal(next.generation,token.generation+1);a.equal(next.phase,'collecting');a.ok(next.recentSlots.some(x=>x.executionId==='hour-one'&&x.status==='completed'));a.ok(next.recentSlots.some(x=>x.executionId==='hour-two'&&x.status==='started'));
  a.throws(()=>E.assertOwner(next,token,NOW+3600001),/obsolete/);
 });
