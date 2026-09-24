@@ -9,10 +9,10 @@ const DOCUMENT_HOSTS=new Set([
  'www.federalreserve.gov','www.bls.gov','home.treasury.gov','www.bea.gov','www.sec.gov','www.whitehouse.gov',
  'www.gov.cn','www.pbc.gov.cn','www.stats.gov.cn','www.mof.gov.cn','www.mofcom.gov.cn','www.csrc.gov.cn',
  'www.sse.com.cn','www.szse.cn','www.hkexnews.hk','www.hkex.com.hk','paper.cnstock.com','www.stcn.com','www.nbd.com.cn',
- 'www.un.org','unsdg.un.org','www.who.int','www.imf.org','www.worldbank.org','www.iea.org','www.opec.org',
+ 'www.un.org','unsdg.un.org','www.who.int','www.imf.org','www.worldbank.org','www.iea.org','www.opec.org','www.eia.gov',
  'www.reuters.com','reuters.com','apnews.com','www.apnews.com','investor.nvidia.com'
 ]);
-const DOCUMENT_KINDS=new Set(['news','market','macro','research','official','general']);
+const DOCUMENT_KINDS=new Set(['news','market','macro','calendar','research','official','general']);
 function sanitizeDocuments(documents){
  if(!Array.isArray(documents)||documents.length>32)throw Error('Document request envelope invalid');
  const accepted=[],blocked=[],seen=new Set();
