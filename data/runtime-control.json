@@ -1,18 +1,30 @@
 {
   "version": 1,
-  "productionPaused": true,
-  "reason": "GitHub发布故障排查中：三个原生任务已暂停，阻止在途请求继续发布；已有报告保留，不表示数据持续刷新。",
+  "productionPaused": false,
+  "reason": "Owner explicitly authorized controlled production resumption on 2026-09-24. Only global-main is enabled for canary continuity validation; asia-session and us-session remain paused.",
   "maxRecurringTasks": 3,
-  "resumeRequires": ["isolated fixture suite passes", "deployed bytes and full reader pass", "three-task inventory matches runtime", "live source dry run verified"],
+  "resumeRequires": [
+    "isolated fixture suite passes",
+    "deployed bytes and full reader pass",
+    "three-task inventory matches runtime",
+    "live source dry run verified"
+  ],
   "allowAutomaticResume": false,
   "qualityPolicy": "content-r3",
   "executionProtocol": "lease-v1",
   "handoffContract": "editorial-v1",
   "supervisedAcceptance": {
-    "status": "paused-for-incident-repair",
-    "purpose": "Owner-requested self-check and bug repair",
-    "nativeSchedulesPaused": true,
-    "continuousRunValidation": "pending",
-    "note": "Production paused after owner reported repeated GitHub failures. Existing source, content, lease and receipt validations remain mandatory."
+    "status": "global-main-canary",
+    "purpose": "Owner-authorized controlled production resumption",
+    "nativeSchedulesPaused": false,
+    "enabledTaskGroups": [
+      "global-main"
+    ],
+    "pausedTaskGroups": [
+      "asia-session",
+      "us-session"
+    ],
+    "continuousRunValidation": "in-progress",
+    "note": "Only the existing hourly global-main task is authorized during canary. Regional tasks remain paused until consecutive native runs are reviewed. Existing source, content, lease and receipt validations remain mandatory."
   }
 }
