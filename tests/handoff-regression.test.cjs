@@ -20,8 +20,11 @@ for(const id of ['20260923T145853-global-main','20260923T153900-asia-session'])t
  for(const row of result.packet.rows.filter(x=>x.instrumentId.startsWith('INDEX:CN:'))){const actual=quotes.payload.items.find(x=>x.instrumentId===row.instrumentId);a.equal(actual.price,row.price);a.equal(actual.asOf,row.asOf);}
  a.ok(report.newsroom.legacyItems.length>0,'legacy incomplete news must stay explicitly traceable');
  a.ok(report.newsroom.legacyItems.every(x=>x.missingFields.length||x.legacyReason));
- if(result.taskGroup==='global-main')a.equal(report.newsroom.items.length,14);
- else {a.equal(report.newsroom.items.length,0);a.equal(report.newsroom.legacyItems.length,18);a.ok(report.newsroom.legacyItems.every(x=>!x.plainImpact),'no invented impact text');}
+ if(result.taskGroup==='global-main'){
+  a.equal(report.newsroom.items.length,14);
+  const research=batch.modules.find(m=>m.module==='research'),pending=new Set((research.payload.pendingQueue||[]).map(x=>x.instrumentId));
+  for(const record of seed.modules.research.payload.records||[])a.ok(!pending.has(record.instrumentId),'retained research must not also be auto-marked pending');
+ } else {a.equal(report.newsroom.items.length,0);a.equal(report.newsroom.legacyItems.length,18);a.ok(report.newsroom.legacyItems.every(x=>!x.plainImpact),'no invented impact text');}
 });
 t('framework name alias is normalized while an absent conclusion is still rejected',()=>{
  const x=load('20260923T145853-global-main'),e=x.submission.editorial;
