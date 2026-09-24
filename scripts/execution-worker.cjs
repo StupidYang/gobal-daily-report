@@ -59,13 +59,20 @@ function createWorker(options={}){
   const req=await read('gdr-runtime','runtime/requests/'+id+'.json',ref);
   if(req?.version!==1||req.requestId!==id||!safe(id))throw Error('Invalid request');
   if(!Number.isFinite(Date.parse(req.requestedAt))||Math.abs(clock()-Date.parse(req.requestedAt))>15*60000)throw Error('Request was queued too long or has an invalid timestamp');
-  const hosts=new Set(['www.federalreserve.gov','www.bls.gov','www.un.org','unsdg.un.org','investor.nvidia.com','paper.cnstock.com','www.nbd.com.cn','www.pbc.gov.cn','www.stats.gov.cn','www.sec.gov']);
-  const docs=req.documents||[];if(!Array.isArray(docs)||docs.length>12||docs.some(d=>{try{const u=new URL(d.url);return u.protocol!=='https:'||!hosts.has(u.hostname)||u.username||u.password;}catch{return true;}}))throw Error('Document request outside the configured public-source scope');
+  const hosts=new Set([
+   'www.federalreserve.gov','www.bls.gov','home.treasury.gov','www.bea.gov','www.sec.gov','www.whitehouse.gov',
+   'www.gov.cn','www.pbc.gov.cn','www.stats.gov.cn','www.mof.gov.cn','www.mofcom.gov.cn','www.csrc.gov.cn',
+   'www.sse.com.cn','www.szse.cn','www.hkexnews.hk','www.hkex.com.hk','paper.cnstock.com','www.stcn.com','www.nbd.com.cn',
+   'www.un.org','unsdg.un.org','www.who.int','www.imf.org','www.worldbank.org','www.iea.org','www.opec.org',
+   'www.reuters.com','reuters.com','apnews.com','www.apnews.com','investor.nvidia.com'
+  ]);
+  const documentKinds=new Set(['news','macro','research','official','general']);
+  const docs=req.documents||[];if(!Array.isArray(docs)||docs.length>32||docs.some(d=>{try{const u=new URL(d.url);return !safe(d.id)||u.protocol!=='https:'||!hosts.has(u.hostname)||u.username||u.password||(d.kind!=null&&!documentKinds.has(d.kind));}catch{return true;}}))throw Error('Document request outside the configured public-source scope');
   await reconcile();const acquired=await E.begin(store,req.taskGroup,{now:clock(),executionId:id,budgetMs:20*60000}),token={executionId:id,generation:acquired.state.generation};
   await outcome(id,{status:'collecting',error:null,issues:[],execution:token,deadlineAt:acquired.state.deadlineAt});
   const packet=await collect(P.read(path.join(root,'config/watchlist.json')),{documents:docs,rawDir:path.join(out,'raw'),onProgress:p=>P.atomic(path.join(out,'progress.json'),p),budgetMs:90000,requestMs:8000,concurrency:4});
   await requireProduction();E.assertOwner((await store.read()).state,token,clock());
-  const result={version:1,requestId:id,taskGroup:req.taskGroup,execution:token,deadlineAt:acquired.state.deadlineAt,packetHash:P.hash(packet),packet,editorialContract:{version:'editorial-v1',path:'docs/editorial-input.md',frameworkNameField:'framework',newsFields:['eventId','title','regions','kind','summary','plainImpact','assessment','sourceUrls'],revisionPath:'runtime/submissions/'+id+'--r1.json',maxSubmissions:2},scope:'Evidence only. Read sources and write complete analysis; collection success is not publication.'};
+  const result={version:1,requestId:id,taskGroup:req.taskGroup,execution:token,deadlineAt:acquired.state.deadlineAt,packetHash:P.hash(packet),packet,editorialContract:{version:'editorial-v1',path:'docs/editorial-input.md',frameworkNameField:'framework',documentLimit:32,documentKinds:[...documentKinds],newsFields:['eventId','title','regions','kind','summary','plainImpact','assessment','sourceUrls'],revisionPath:'runtime/submissions/'+id+'--r1.json',maxSubmissions:2},scope:'Evidence only. Read sources and write complete analysis; collection success is not publication.'};
   await create('gdr-runtime','runtime/results/'+id+'.json',result);
   await E.advance(store,token,'analyzing',{sourcePacketPath:'runtime/results/'+id+'.json',sourcePacketHash:P.hash(packet)},clock());
   await outcome(id,{status:'ready-for-analysis',error:null,issues:[],execution:token,deadlineAt:result.deadlineAt,packetHash:result.packetHash,collectionDurationMs:packet.durationMs});
