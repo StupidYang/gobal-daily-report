@@ -3,6 +3,13 @@
   'use strict';
   const C=typeof module!=='undefined'&&module.exports?require('./terminal-core.js'):root.GDR;
   const A=C.arr,T=C.text,regions={CN:'中国',US:'美国',WORLD:'全球其他地区',UNSPECIFIED:'旧版未分类'};
+  function eventTime(e){return C.parseTime(e?.at??e?.eventAt);}
+  function normalizeEvent(e){
+    if(!e||typeof e!=='object'||Array.isArray(e))return null;
+    const rawAt=e.at??e.eventAt??null,at=eventTime(e),timing=T(e.time||e.timing||e.timePrecision);
+    return {...e,at:at===null?rawAt:new Date(at).toISOString(),time:timing,impact:T(e.impact||e.summary||e.whyWatch),summary:T(e.summary||e.impact||e.whyWatch)};
+  }
+  function eventRows(r){return A(r?.events).map(normalizeEvent).filter(Boolean);}
   function newsRows(r){
     const byId=new Map();
     [...A(r?.worldEvents),...A(r?.newsroom?.items)].forEach((x,i)=>{
@@ -83,6 +90,6 @@
     A(r.newsroom?.items).forEach(x=>{if(!x?.id&&!x?.eventId)errors.push('时事缺少稳定事件ID');if(!T(x?.summary)||!T(x?.title))errors.push('时事缺少事实摘要');});
     return [...new Set(errors)];
   }
-  const api={regions,newsRows,newsCounts,plain,normalizedId,rejectReason,series,comparable,check};
+  const api={regions,eventTime,normalizeEvent,eventRows,newsRows,newsCounts,plain,normalizedId,rejectReason,series,comparable,check};
   root.GDREditorial=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof globalThis!=='undefined'?globalThis:window);
