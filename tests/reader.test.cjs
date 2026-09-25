@@ -34,3 +34,20 @@ test('malformed source records are reported before reference scanning',()=>{
  a.ok(R.check(r).includes('sources含无效对象'));
  a.ok(R.check(r).includes('judgmentRevisions含无效对象'));
 });
+
+
+test('event radar aliases preserve pending timing and readable summary',()=>{
+ const input={title:'中美元首会晤后续正式结果',eventAt:null,timing:'未来12—24小时重点观察，精确时点未确认',summary:'等待正式结果',scenarioA:'缓和',scenarioB:'摩擦'};
+ const x=R.normalizeEvent(input);
+ a.equal(x.at,null);
+ a.equal(x.time,input.timing);
+ a.equal(x.impact,input.summary);
+ a.equal(x.summary,input.summary);
+ a.equal(input.at,undefined,'adapter must not mutate original event');
+});
+
+test('eventAt is normalized to the same precise event time as at',()=>{
+ const x=R.normalizeEvent({title:'release',eventAt:'2026-09-25T14:00:00Z',summary:'scheduled'});
+ a.equal(C.parseTime(x.at),C.parseTime('2026-09-25T14:00:00Z'));
+ a.equal(R.eventTime({eventAt:'2026-09-25T14:00:00Z'}),C.parseTime('2026-09-25T14:00:00Z'));
+});
