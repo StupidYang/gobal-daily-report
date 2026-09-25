@@ -28,3 +28,19 @@ test('evidence documents use bounded concurrency instead of serial waits',async(
  const x=await C.collect({required:[],usPools:{}},{documents,concurrency:3,requestMs:200,budgetMs:1000,fetchImpl});
  assert.equal(x.documents.length,3);assert.equal(x.errors.length,0);assert.equal(maxActive,3);assert.deepEqual(x.documents.map(d=>d.id),documents.map(d=>d.id));
 });
+
+
+test('explicit provider CLOSED state is a closed snapshot, not mislabeled as historical previous',()=>{
+ const oldNow=now+3*3600000;
+ const x=C.yahoo(i,wrap({...meta,regularMarketTime:now/1000-7200,marketState:'CLOSED'}),'AAPL',oldNow);
+ assert.equal(x.status,'closed');
+ assert.equal(x.providerMarketState,'CLOSED');
+ assert.match(x.note,/市场已关闭/);
+});
+
+test('an old regular-session observation without CLOSED evidence remains previous',()=>{
+ const oldNow=now+3*3600000;
+ const x=C.yahoo(i,wrap({...meta,regularMarketTime:now/1000-7200,marketState:'REGULAR'}),'AAPL',oldNow);
+ assert.equal(x.status,'previous');
+ assert.equal(x.providerMarketState,'REGULAR');
+});
