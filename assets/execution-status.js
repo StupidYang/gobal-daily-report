@@ -14,19 +14,32 @@
   const paused=new Set(control?.supervisedAcceptance?.pausedTaskGroups||[]);
   return paused.has(id)?'canary期间主动暂停':'尚无新执行记录';
  }
- if(typeof module!=='undefined'&&module.exports){module.exports={describe,taskStatus};return;}
+ function freshnessStatus(latest,health,control,now=Date.now()){
+  if(control?.productionPaused===true)return null;
+  const enabled=new Set(control?.supervisedAcceptance?.enabledTaskGroups||[]);
+  if(!enabled.has('global-main'))return null;
+  const reportAt=Date.parse(latest?.reportMeta?.generatedAt||latest?.updatedAt),healthAt=Date.parse(health?.updatedAt);
+  if(!Number.isFinite(reportAt)&&!Number.isFinite(healthAt))return {stale:true,text:'连续更新状态无法核验：报告与运行状态均缺少有效时间。'};
+  const reportAge=Number.isFinite(reportAt)?Math.max(0,now-reportAt):Infinity,healthAge=Number.isFinite(healthAt)?Math.max(0,now-healthAt):Infinity,limit=2*3600000;
+  if(reportAge<=limit&&healthAge<=limit)return null;
+  const ageText=ms=>Number.isFinite(ms)?(ms/3600000).toFixed(ms>=10*3600000?0:1)+'小时':'未知';
+  return {stale:true,text:'连续更新疑似中断：最新报告距今 '+ageText(reportAge)+'，运行状态距今 '+ageText(healthAge)+'；生产开关仍开启，请检查原生定时任务是否失活。'};
+ }
+ if(typeof module!=='undefined'&&module.exports){module.exports={describe,taskStatus,freshnessStatus};return;}
  if(!root.document||['synthetic','validation'].includes(document.documentElement.dataset.mode))return;
  const box=document.getElementById('executionStatus');if(!box)return;
  async function load(){
   const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),6000);
   try{
-   const [healthResponse,controlResponse]=await Promise.all([
+   const [healthResponse,controlResponse,latestResponse]=await Promise.all([
     fetch('https://raw.githubusercontent.com/StupidYang/gobal-daily-report/gdr-runtime/runtime/health.json?check='+Date.now(),{cache:'no-store',signal:abort.signal}),
-    fetch('./data/runtime-control.json?check='+Date.now(),{cache:'no-store',signal:abort.signal})
+    fetch('./data/runtime-control.json?check='+Date.now(),{cache:'no-store',signal:abort.signal}),
+    fetch('./data/latest.json?check='+Date.now(),{cache:'no-store',signal:abort.signal})
    ]);
    if(!healthResponse.ok)throw Error('health unavailable');const health=await healthResponse.json();if(health.version!==1||!health.tasks)throw Error('invalid health');
-   const control=controlResponse.ok?await controlResponse.json():null;
+   const control=controlResponse.ok?await controlResponse.json():null,latest=latestResponse.ok?await latestResponse.json():null;
    box.replaceChildren();
+   const stale=freshnessStatus(latest,health,control);if(stale){const warning=document.createElement('p');warning.className='execution-stale';warning.textContent=stale.text;box.append(warning);}
    for(const [id,label]of [['global-main','全球主报告'],['asia-session','A股港股节点'],['us-session','美股节点']]){
     const x=health.tasks[id],line=document.createElement('p');line.textContent=label+'：'+taskStatus(id,x,control)+(x?.at?' · '+new Date(x.at).toLocaleString('zh-CN',{timeZone:'Asia/Singapore',hour12:false})+' UTC+8':'');
     if(x?.error){const reason=document.createElement('span');reason.textContent='；'+String(x.error).split('\n')[0];line.append(reason);}box.append(line);
