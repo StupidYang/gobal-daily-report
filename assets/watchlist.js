@@ -23,14 +23,14 @@ function renderBody(){
  if(!state.config)return;
  const focused=document.activeElement,searchFocused=focused?.getAttribute('aria-label')==='搜索自选模块',caret=searchFocused?focused.selectionStart:null;
  const open=keepOpen(),box=E('details','library wl-library');box.id='watchlist';box.dataset.key='watchlist';box.open=open.has('watchlist')||location.hash==='#watchlist';
- const sum=E('summary');add(sum,E('span','library-title','自选资产 · 板块榜 · 公司研究'),E('span','library-caption','必看行情、各板块热度与相对弱势、只在新事件后更新的研究'),E('span','library-count',state.config.required.length+'项必看'));box.append(sum);
+ const sum=E('summary');add(sum,E('span','library-title','自选资产 · 板块数据 · 公司研究'),E('span','library-caption','必看行情、板块数据状态与可用排名、只在新事件后更新的研究'),E('span','library-count',state.config.required.length+'项必看'));box.append(sum);
  const body=E('div','library-body wl-body');
  add(body,note('这是独立的数据模块：报价更新、榜单更新和研究更新不是同一个时间。候选名单不代表当前热门；热度不等于看涨。'));
  if(state.mode!=='latest')body.append(note('历史模式：只读取该报告冻结的模块快照；缺少冻结引用时不展示今天的数据，避免穿越。'));
  if(state.failures.length)body.append(E('p','wl-warning',state.failures.join('；')));
  if(state.quarantine.length){const audit=E('div');state.quarantine.forEach(q=>audit.append(note(q.role+' · '+q.path+' · '+q.errors.join('；'))));body.append(details('quarantine','已隔离 '+state.quarantine.length+' 条异常记录；其余合格数据继续显示',audit));}
  const status=E('div','wl-statusline');Object.keys(labels).filter(k=>!['synthesis'].includes(k)).forEach(k=>{const m=state.modules[k];status.append(E('span','wl-status',labels[k]+' · '+statusText(W.freshness(m,state.config.moduleTtlHours[k]||8,state.mode==='history'?W.time(state.report?.updatedAt):Date.now()))+(m?' · '+W.stamp(m.generatedAt):'')));});body.append(details('worker-status','模块状态与更新时点',status));
- const tools=E('div','wl-tools'),tabs=E('div','wl-tabs');[['required','必看资产'],['favorites','我的自选'],['boards','板块热 / 弱榜'],['research','公司研究']].forEach(([id,name])=>{const b=button(name,()=>{state.tab=id;state.limit=40;render();});b.setAttribute('aria-pressed',String(state.tab===id));tabs.append(b);});tools.append(tabs);
+ const tools=E('div','wl-tools'),tabs=E('div','wl-tabs');[['required','必看资产'],['favorites','我的自选'],['boards','板块数据 / 热弱榜'],['research','公司研究']].forEach(([id,name])=>{const b=button(name,()=>{state.tab=id;state.limit=40;render();});b.setAttribute('aria-pressed',String(state.tab===id));tabs.append(b);});tools.append(tabs);
  const search=E('input');search.type='search';search.placeholder='搜索名称 / 代码 / 板块';search.value=state.query;search.setAttribute('aria-label','搜索自选模块');search.oninput=()=>{if(state.query===search.value)return;state.query=search.value;state.limit=40;render();};tools.append(search,button('检查模块更新',()=>load(true)));body.append(tools);
  if(state.tab==='boards')body.append(boards());else if(state.tab==='research')body.append(researchLibrary());else body.append(quoteTable(state.tab==='favorites'));
  const provenance=E('div');Object.entries(state.modules).forEach(([k,m])=>add(provenance,E('h4','',labels[k]||k),note('运行 '+m.runId+'；生成 '+W.stamp(m.generatedAt)+'；数据截止 '+W.stamp(m.dataAsOf)),note(m.payload?.note||m.note||'')));
@@ -71,6 +71,9 @@ function boards(){const out=E('div'),tools=E('div','wl-tools'),market=E('select'
  const n=E('input');n.type='number';n.min=1;n.max=state.config.maxN;n.value=state.n;n.setAttribute('aria-label','每组显示前N只');n.onchange=()=>{const next=W.nValue(n.value,state.config.maxN);if(next===state.n)return;state.n=next;render();};tools.append(market,E('label','','每组 N'),n);out.append(tools);
  out.append(note('热度 = 50%同板块量比分位 + 30%换手率分位 + 20%成交额分位；弱势 = 当日涨跌幅相对板块样本中位数。缺20日同时间量能基准不计算热度；样本不全不冒充全市场榜。'));
  const module=state.modules[state.market==='US'?'us-equities':'asia-equities'],groups=W.arr(module?.payload?.groups).filter(g=>g.market===state.market);
+ const observedRows=groups.reduce((n,g)=>n+W.arr(g.rows).length,0),gap=module?.payload?.rankingInputGaps;
+ if(!observedRows&&['CN','HK'].includes(state.market))out.append(E('p','wl-warning','当前只有行业目录，尚未取得行业成员与同口径量价输入，因此不生成热度/弱势榜；这不是0只股票。'));
+ if(state.market==='US'&&observedRows&&gap&&(gap.heatRankingGenerated===false||gap.weakRankingGenerated===false)){const missing=['volumeRatio20d','turnoverPct','avgDailyValue20d'].filter(k=>gap[k]==='missing');out.append(E('p','wl-warning','美股候选池已有 '+observedRows+' 条基础报价，但排名输入仍不完整'+(missing.length?'：'+missing.join('、'):'')+'；不以涨幅代替热度。'));}
  out.append(marketSamples(module,state.market));const noData=E('div');let noDataCount=0;
  const expected=state.market==='US'?['technology','investment']:state.config.sectors[state.market].names;
  if(!groups.length)out.append(E('p','wl-warning','尚未采集有效板块快照。下面列出应覆盖的全部板块，不填造热股。'));
@@ -88,7 +91,7 @@ function researchCard(r){const b=E('div');add(b,E('p','wl-conclusion',r.analysis
 function researchLibrary(){const out=E('div'),m=state.modules.research,records=W.selectResearch(m?.payload?.records),checks=W.arr(m?.payload?.checks);out.append(note('只有新财报、指引、重述、重大公告、可核验新研报或原判断失效时重做。没有新材料则沿用原分析时间；每次只检查不等于每次重新研究。'));
  if(!records.length)out.append(note('暂无公司研究。候选池已配置，不能把未读取的最新财报或付费研报写成已分析。'));
  filtered(records.map(r=>({...r,name:r.instrumentId,conclusion:r.analysis?.conclusion}))).forEach(r=>out.append(details('research-'+r.instrumentId,r.instrumentId+' · '+(r.eventType||'')+' · '+(r.period||''),researchCard(r))));
- out.append(details('research-checks','事件检查记录 · '+checks.length,add(E('div'),...checks.map(c=>note(c.instrumentId+' · '+c.status+' · 检查 '+W.stamp(c.checkedAt)+' · '+(c.note||''))))));return out;}
+ const checkBody=E('div');if(checks.length)checks.forEach(c=>checkBody.append(note(c.instrumentId+' · '+c.status+' · 检查 '+W.stamp(c.checkedAt)+' · '+(c.note||''))));else checkBody.append(note('本轮没有公司材料检查记录；这不等于已经检查并确认“无新增”。已有研究仍保留原analyzedAt。'));out.append(details('research-checks','事件检查记录 · '+checks.length,checkBody));return out;}
 async function fetchJSON(path){const c=new AbortController(),timer=setTimeout(()=>c.abort(),15000);try{const r=await fetch('./'+path+'?v='+Date.now(),{cache:'no-store',signal:c.signal});if(!r.ok)throw Error('HTTP '+r.status);return await r.json();}finally{clearTimeout(timer);}}
 async function load(force=false){const seq=++state.seq,selected=document.getElementById('historySelect')?.value||'data/latest.json',historical=selected!=='data/latest.json';state.mode=historical?'history':'latest';
  try{const config=state.config||await fetchJSON('config/watchlist.json');let report=null;if(!historical){try{report=await fetchJSON('data/latest.json');}catch{}}if(historical){if(!/^history\/\d{4}-\d{2}-\d{2}\/\d{4}(?:-[\w-]+)?\.json$/.test(selected))throw Error('无效历史路径');report=await fetchJSON(selected);}
