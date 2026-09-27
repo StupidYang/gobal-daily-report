@@ -44,3 +44,31 @@ test('an old regular-session observation without CLOSED evidence remains previou
  assert.equal(x.status,'previous');
  assert.equal(x.providerMarketState,'REGULAR');
 });
+
+test('401 or 403 on a document host stops later document calls to that host',async()=>{
+ let calls=0;
+ const documents=[
+  {id:'r1',url:'https://www.reuters.com/world/a/',title:'a',kind:'news'},
+  {id:'r2',url:'https://www.reuters.com/world/b/',title:'b',kind:'news'}
+ ];
+ const x=await C.collect({required:[],usPools:{}},{documents,concurrency:1,requestMs:200,budgetMs:1000,fetchImpl:async()=>{calls++;return {ok:false,status:401,headers:{get:()=>null},text:async()=>''};}});
+ assert.equal(calls,1);
+ assert.equal(x.documentsRetrieved,0);
+ assert.equal(x.documentsComplete,false);
+ assert.equal(x.errors.length,2);
+ assert.match(x.errors[0].error,/401/);
+ assert.match(x.errors[1].error,/paused after rate limit|paused after access denial|Provider paused/);
+});
+
+test('access denial on document host does not block quote provider or another document host',async()=>{
+ let calls=[];
+ const documents=[
+  {id:'r1',url:'https://www.reuters.com/world/a/',title:'a',kind:'news'},
+  {id:'b1',url:'https://www.bls.gov/news.release/cpi.nr0.htm',title:'b',kind:'official'}
+ ];
+ const fetchImpl=async url=>{calls.push(url);if(url.includes('reuters.com'))return {ok:false,status:403,headers:{get:()=>null},text:async()=>''};return {ok:true,status:200,headers:{get:()=>null},text:async()=>'<html>ok</html>'};};
+ const x=await C.collect({required:[],usPools:{}},{documents,concurrency:1,requestMs:200,budgetMs:1000,fetchImpl});
+ assert.equal(calls.length,2);
+ assert.equal(x.documentsRetrieved,1);
+ assert.equal(x.documents[0].id,'b1');
+});
