@@ -72,7 +72,7 @@ async function visit(page){
     assert.doesNotMatch(await page.locator('#watchlist').innerText(),/503/);checks.push('recovery-clears-error');
     const btc=page.locator('.wl-table tbody tr').filter({hasText:/Bitcoin|BTC/}).first();await btc.getByRole('button').first().click();
     await page.getByRole('button',{name:'我的自选',exact:true}).click();assert.match(await page.locator('.wl-table').innerText(),/Bitcoin|BTC/);checks.push('favorites');
-    await page.getByRole('button',{name:'板块热 / 弱榜',exact:true}).click();
+    await page.getByRole('button',{name:'板块数据 / 热弱榜',exact:true}).click();
     for(const market of ['CN','HK','US']){await page.getByLabel('榜单市场',{exact:true}).selectOption(market);await page.getByLabel('每组显示前N只',{exact:true}).fill('3');await page.getByLabel('每组显示前N只',{exact:true}).dispatchEvent('change');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
     checks.push('three-market-boards-and-N');
     await page.getByRole('button',{name:'公司研究',exact:true}).click();assert.match(await page.locator('#watchlist').innerText(),/研究|财报/);checks.push('research-cache-view');
