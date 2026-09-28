@@ -9,7 +9,19 @@
   if(['collecting','ready-for-analysis','needs-revision'].includes(x.status)&&Number.isFinite(deadline)&&now>=deadline)return '本轮已超时，不能继续发布';
   return labels[x.status];
  }
+ function schedulerObservation(id,x,control,now=Date.now()){
+  const audit=control?.schedulerObservation;
+  if(audit?.version!==1||!Array.isArray(audit.tasks))return null;
+  const recorded=Date.parse(audit.recordedAt),observed=audit.tasks.find(t=>t.id===id);
+  if(!Number.isFinite(recorded)||recorded>now+30000||typeof observed?.enabled!=='boolean')return null;
+  const newer=Date.parse(x?.executionStartedAt);
+  if(Number.isFinite(newer)&&newer>recorded)return null;
+  if(now-recorded>2*3600000)return '调度器当前状态未核验；上次排查记录为'+(observed.enabled?'启用':'停用');
+  if(observed.enabled===false)return '原生调度器停用（本次排查读取）；历史部署成功不代表持续运行';
+  return null;
+ }
  function taskStatus(id,x,control,now=Date.now()){
+  const observed=schedulerObservation(id,x,control,now);if(observed)return observed;
   if(x)return describe(x,now);
   const paused=new Set(control?.supervisedAcceptance?.pausedTaskGroups||[]);
   return paused.has(id)?'canary期间主动暂停':'尚无新执行记录';
@@ -18,14 +30,15 @@
   if(control?.productionPaused===true)return null;
   const enabled=new Set(control?.supervisedAcceptance?.enabledTaskGroups||[]);
   if(!enabled.has('global-main'))return null;
-  const reportAt=Date.parse(latest?.reportMeta?.generatedAt||latest?.updatedAt),healthAt=Date.parse(health?.updatedAt);
+  const task=health?.tasks?.['global-main'];
+  const reportAt=Date.parse(latest?.reportMeta?.generatedAt||latest?.updatedAt),healthAt=Date.parse(task?.executionFinishedAt||task?.at||(health?.tasks?null:health?.updatedAt));
   if(!Number.isFinite(reportAt)&&!Number.isFinite(healthAt))return {stale:true,text:'连续更新状态无法核验：报告与运行状态均缺少有效时间。'};
   const reportAge=Number.isFinite(reportAt)?Math.max(0,now-reportAt):Infinity,healthAge=Number.isFinite(healthAt)?Math.max(0,now-healthAt):Infinity,limit=2*3600000;
   if(reportAge<=limit&&healthAge<=limit)return null;
   const ageText=ms=>Number.isFinite(ms)?(ms/3600000).toFixed(ms>=10*3600000?0:1)+'小时':'未知';
-  return {stale:true,text:'连续更新疑似中断：最新报告距今 '+ageText(reportAge)+'，运行状态距今 '+ageText(healthAge)+'；生产开关仍开启，请检查原生定时任务是否失活。'};
+  return {stale:true,text:'连续更新疑似中断：最新报告距今 '+ageText(reportAge)+'，全球任务执行记录距今 '+ageText(healthAge)+'；生产开关仍开启，请检查原生定时任务是否失活。'};
  }
- if(typeof module!=='undefined'&&module.exports){module.exports={describe,taskStatus,freshnessStatus};return;}
+ if(typeof module!=='undefined'&&module.exports){module.exports={describe,taskStatus,freshnessStatus,schedulerObservation};return;}
  if(!root.document||['synthetic','validation'].includes(document.documentElement.dataset.mode))return;
  const box=document.getElementById('executionStatus');if(!box)return;
  async function load(){
