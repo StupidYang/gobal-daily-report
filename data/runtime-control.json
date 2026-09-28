@@ -24,7 +24,37 @@
       "asia-session",
       "us-session"
     ],
-    "continuousRunValidation": "in-progress",
-    "note": "Only the existing hourly global-main task is authorized during canary. Regional tasks remain paused until consecutive native runs are reviewed. Existing source, content, lease and receipt validations remain mandatory."
+    "continuousRunValidation": "failed-stopped",
+    "note": "Native continuity has failed: scheduler observed disabled while the repository gate remained open. Enabling the repository gate is not evidence of scheduler operation. No automatic resumption."
+  },
+  "schedulerObservation": {
+    "version": 1,
+    "recordedAt": "2026-09-28T11:52:54Z",
+    "scope": "Point-in-time scheduler-tool read in this repair conversation, not a live heartbeat or resume authorization.",
+    "tasks": [
+      {
+        "id": "global-main",
+        "taskId": "6ab1dc6f6d6081919ac20591b5ee4988",
+        "enabled": false,
+        "updatedAt": "2026-09-27T04:07:30.809949Z",
+        "lastRunAt": "2026-09-27T04:06:25.777362Z"
+      },
+      {
+        "id": "asia-session",
+        "taskId": "6aafc701dc80819187ea120074ccef44",
+        "enabled": false,
+        "updatedAt": "2026-09-23T09:36:39.239062Z",
+        "lastRunAt": "2026-09-23T07:53:37.704892Z"
+      },
+      {
+        "id": "us-session",
+        "taskId": "6ab1cb9983d88191bf0db6340bfe6972",
+        "enabled": false,
+        "updatedAt": "2026-09-23T09:36:48.826577Z",
+        "lastRunAt": null
+      }
+    ],
+    "reportedFailure": "Prior task-run messages report runtime safety-layer rejection before creating a GitHub request. The underlying policy decision is not available.",
+    "nextAction": "Review the failed task action and its authorized app context. Do not re-enable repeatedly, retry denied writes through another path, create replacement tasks, or fabricate a successful report."
   }
 }
