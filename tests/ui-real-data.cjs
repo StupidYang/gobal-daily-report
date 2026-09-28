@@ -2,9 +2,11 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {chromium}=require('playwright');
+const {readPublicBytes}=require('./public-byte-reader.cjs');
+const transportRetries=[];
 const base=process.env.GDR_TEST_URL||'http://127.0.0.1:8181/',out=process.env.GDR_UI_OUTPUT||'/tmp/gdr-ui-e2e';fs.mkdirSync(out,{recursive:true});
 const sum=b=>crypto.createHash('sha256').update(b).digest('hex'),abs=p=>new URL(p,base).href;
-async function read(request,p){if(process.env.GDR_OFFLINE_ROOT)return fs.readFileSync(path.join(process.env.GDR_OFFLINE_ROOT,p));const r=await request.get(abs(p)+'?acceptance='+Date.now(),{timeout:25000});assert.equal(r.status(),200,p+' HTTP '+r.status());return await r.body();}
+async function read(request,p){if(process.env.GDR_OFFLINE_ROOT)return fs.readFileSync(path.join(process.env.GDR_OFFLINE_ROOT,p));return readPublicBytes(request,abs(p)+'?acceptance='+Date.now(),{onResult:r=>{if(r.attempts.length>1||r.status==='failed')transportRetries.push({...r,path:p});}});}
 async function visit(page){
  if(process.env.GDR_OFFLINE_ROOT){
   await require('./offline-crypto.cjs')(page);
@@ -16,7 +18,7 @@ async function visit(page){
 }
 (async()=>{
  const opts={headless:true};for(const p of ['/usr/bin/google-chrome','/usr/bin/chromium'])if(fs.existsSync(p)){opts.executablePath=p;break;}
- const browser=await chromium.launch(opts),results=[],proof={url:base,checkedAt:new Date().toISOString(),tests:results,offline:!!process.env.GDR_OFFLINE_ROOT,scope:'Actual published files; simulated network failures are browser-local only.'};
+ const browser=await chromium.launch(opts),results=[],proof={url:base,checkedAt:new Date().toISOString(),tests:results,transportRetries,offline:!!process.env.GDR_OFFLINE_ROOT,scope:'Actual published files; simulated network failures are browser-local only.'};
  try{
   const request=await browser.newContext();
   const build=JSON.parse(await read(request.request,'data/build.json'));proof.build=build;
