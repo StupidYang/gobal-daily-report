@@ -4,6 +4,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const P=require('../lib/pipeline.cjs'),E=require('../lib/execution.cjs'),C=require('../lib/live-collector.cjs'),L=require('../lib/live-report.cjs'),B=require('../lib/batch.cjs');
 const O=require('../lib/publication-outcome.cjs');
+const {assertTaskAllowed}=require('../lib/task-admission.cjs');
 const safe=x=>typeof x==='string'&&/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(x);
 const DOCUMENT_HOSTS=new Set([
  'www.federalreserve.gov','www.bls.gov','home.treasury.gov','www.bea.gov','www.sec.gov','www.whitehouse.gov',
@@ -66,7 +67,7 @@ function createWorker(options={}){
    try{await store.request('PUT','/contents/'+name,body);await health(id,next).catch(e=>console.warn('Health projection unavailable: '+e.message));return next;}catch(e){if(e.code!=='CONFLICT'||attempt)throw e;}
   }
  }
- async function requireProduction(){const c=await read('main','automation/control.json');if(!c||c.version!==1||c.productionPaused!==false||c.executionProtocol!=='lease-v1')throw Object.assign(Error('Production remains paused or the execution protocol is not enabled'),{code:'PRODUCTION_PAUSED'});return c;}
+ async function requireProduction(group){return assertTaskAllowed(await read('main','automation/control.json'),group);}
  async function releaseFailed(id,reason){
   const snapshot=await store.read(),s=snapshot.state;
   if(s.executionId!==id||!['collecting','analyzing'].includes(s.phase))return;
@@ -86,6 +87,7 @@ function createWorker(options={}){
   if(previous)return {status:'already-collected',requestId:id,deadlineAt:previous.deadlineAt};
   const req=await read('gdr-runtime','runtime/requests/'+id+'.json',ref);
   if(req?.version!==1||req.requestId!==id||!safe(id))throw Error('Invalid request');
+  await requireProduction(req.taskGroup);
   if(!Number.isFinite(Date.parse(req.requestedAt))||Math.abs(clock()-Date.parse(req.requestedAt))>15*60000)throw Error('Request was queued too long or has an invalid timestamp');
   const sourcePlan=sanitizeDocuments(req.documents||[]),docs=sourcePlan.accepted;
   await reconcile();const acquired=await E.begin(store,req.taskGroup,{now:clock(),executionId:id,budgetMs:20*60000}),token={executionId:id,generation:acquired.state.generation};
@@ -97,7 +99,7 @@ function createWorker(options={}){
    packet.errors.push(...sourcePlan.blocked.map(d=>({documentId:d.id,sourceUrl:d.url,error:'Document blocked before fetch: '+d.reason,checkedAt})));
    packet.documentsRequested=(req.documents||[]).length;packet.documentsComplete=false;packet.complete=false;
   }
-  await requireProduction();E.assertOwner((await store.read()).state,token,clock());
+  await requireProduction(req.taskGroup);E.assertOwner((await store.read()).state,token,clock());
   const result={version:1,requestId:id,taskGroup:req.taskGroup,execution:token,deadlineAt:acquired.state.deadlineAt,packetHash:P.hash(packet),packet,editorialContract:{version:'editorial-v1',path:'docs/editorial-input.md',frameworkNameField:'framework',documentLimit:32,documentKinds:[...DOCUMENT_KINDS],newsFields:['eventId','title','regions','kind','summary','plainImpact','assessment','sourceUrls'],revisionPath:'runtime/submissions/'+id+'--r1.json',maxSubmissions:2},scope:'Evidence only. Read sources and write complete analysis; collection success is not publication.'};
   await create('gdr-runtime','runtime/results/'+id+'.json',result);
   await E.advance(store,token,'analyzing',{sourcePacketPath:'runtime/results/'+id+'.json',sourcePacketHash:P.hash(packet)},clock());
@@ -109,6 +111,7 @@ function createWorker(options={}){
   await requireProduction();
   const suffix=revision?'--r1':'',submission=await read('gdr-runtime','runtime/submissions/'+id+suffix+'.json',ref),result=await read('gdr-runtime','runtime/results/'+id+'.json');
   if(!submission||!result||submission.execution?.executionId!==id||P.hash(result.packet)!==result.packetHash||submission.editorial?.packetHash!==result.packetHash)throw Error('Submission does not match the immutable source packet');
+  await requireProduction(result.taskGroup);
   const inputHash=P.hash(submission),old=await read('gdr-runtime','runtime/outcomes/'+id+'.json');
   if(old?.submissionHash===inputHash&&old?.revision===revision&&['needs-revision','submitted-not-published','failed'].includes(old.status))return old;
   const current=E.assertOwner((await store.read()).state,submission.execution,clock());
@@ -121,7 +124,7 @@ function createWorker(options={}){
    const rejected=await outcome(id,{status:next.phase==='failed'?'failed':'needs-revision',execution:submission.execution,revision,submissionHash:inputHash,error:e.message,issues:e.message.split('\n'),deadlineAt:next.deadlineAt,revisionPath:next.phase==='failed'?null:'runtime/submissions/'+id+'--r1.json',published:false});
    P.atomic(path.join(out,'validation.json'),rejected);return rejected;
   }
-  await requireProduction();await E.advance(store,submission.execution,'awaiting-publication',{batchId:id,batchHash:P.hash(batch)},clock());
+  await requireProduction(result.taskGroup);await E.advance(store,submission.execution,'awaiting-publication',{batchId:id,batchHash:P.hash(batch)},clock());
   await create('main','data/inbox/batches/'+id+'.json',batch);
   // Bot commits do not recursively trigger push workflows. Dispatch exactly once.
   await store.request('POST','/actions/workflows/publish-candidates.yml/dispatches',{ref:'main'});

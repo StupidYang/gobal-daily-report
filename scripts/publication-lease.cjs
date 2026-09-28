@@ -4,6 +4,7 @@
 const fs = require('node:fs'), path = require('node:path');
 const P = require('../lib/pipeline.cjs'), E = require('../lib/execution.cjs');
 const O = require('../lib/publication-outcome.cjs');
+const { assertTaskAllowed } = require('../lib/task-admission.cjs');
 function createPublisher(options = {}) {
   const root = path.resolve(options.root || process.env.GDR_ROOT || path.join(__dirname, '..'));
   const runId = options.runId ?? Number(process.env.GITHUB_RUN_ID);
@@ -27,6 +28,9 @@ function createPublisher(options = {}) {
   }
   async function recordOutcome(state, receipt, proof) {
     const result = O.classify(state, receipt, { proof, workflowRunId: runId, jobStatus, now: clock() });
+    result.executionStartedAt = state.startedAt || null;
+    result.executionFinishedAt = state.finishedAt || null;
+    if (state.finishedAt) result.at = state.finishedAt;
     const value = await upsert('runtime/outcomes/' + state.executionId + '.json', old => {
       if (old?.deployed === true && result.deployed !== true && old.deploymentWorkflowRunId !== runId) return null;
       return { ...old, ...result, requestId: state.executionId,
@@ -38,9 +42,28 @@ function createPublisher(options = {}) {
       if (previous && previous.requestId !== state.executionId && Date.parse(previous.at) > Date.parse(state.startedAt)) return null;
       health.tasks[state.taskGroup] = { requestId: state.executionId, status: value.status, at: value.at,
         reportId: value.reportId, error: value.error, deadlineAt: value.deadlineAt,
+        executionStartedAt: value.executionStartedAt, executionFinishedAt: value.executionFinishedAt,
         repositoryPublished: value.repositoryPublished, deployed: value.deployed, deployment: value.deployment };
       health.updatedAt = value.at;
       return health;
+    });
+    P.atomic(path.join(root, '.runtime/publication-outcome.json'), value);
+    return value;
+  }
+  async function recordRevalidation(state, receipt, proof) {
+    const result = O.classify(state, receipt, { proof, workflowRunId: runId, jobStatus, now: clock() });
+    if (!result.deployed) throw Error('Code-only revalidation requires complete public verification');
+    if (!Number.isSafeInteger(runId) || runId <= 0) throw Error('Invalid revalidation workflow identity');
+    const value = { version: 1, status: 'deployment-revalidated', newExecution: false,
+      executionId: state.executionId, originalWorkflowRunId: state.workflowRunId,
+      reportId: receipt.reportId, workflowRunId: runId, checkedAt: proof.checkedAt,
+      buildId: proof.buildId, latestSha256: proof.latestSha256, historySha256: proof.historySha256,
+      browserChecksPassed: true };
+    const name = 'runtime/deployment-verifications/' + runId + '.json';
+    // Immutable build proof. Never refresh an execution's outcome/health/lease.
+    await upsert(name, old => {
+      if (old && P.hash(old) !== P.hash(value)) throw Error('Immutable deployment verification conflict');
+      return old ? null : value;
     });
     P.atomic(path.join(root, '.runtime/publication-outcome.json'), value);
     return value;
@@ -56,6 +79,7 @@ function createPublisher(options = {}) {
     if (command === 'claim') {
       fs.rmSync(permitFile, { force: true });
       if (!['awaiting-publication', 'publishing'].includes(state.phase)) return { status: 'no-submitted-execution' };
+      assertTaskAllowed(control, state.taskGroup);
       const batch = P.read(path.join(root, 'data/inbox/batches', state.batchId + '.json'));
       if (!batch) return { status: 'waiting-for-candidate' };
       if (state.phase === 'publishing' && state.workflowRunId !== runId) throw new E.Busy('Another publishing run owns this execution; reconcile its terminal result first');
@@ -72,6 +96,7 @@ function createPublisher(options = {}) {
       const liveControl = decode(await get('main', 'automation/control.json'));
       if (liveControl?.productionPaused !== false || liveControl.executionProtocol !== 'lease-v1') throw Error('Production paused before push; refuse the staged publication');
       state = (await store.read()).state;
+      assertTaskAllowed(liveControl, state.taskGroup);
       const batch = P.read(path.join(root, 'data/inbox/batches', local.batchId + '.json'));
       const valid = E.permit(state, batch);
       if (valid.workflowRunId !== runId || P.hash(valid) !== P.hash(local)) throw Error('Publishing lease changed before commit');
@@ -87,10 +112,11 @@ function createPublisher(options = {}) {
       proof.workflowRunId === runId && proof.reportId === state.reportId && jobStatus === 'success';
     if (!ownsPublishing && !retriesOwnFinish && !verifiesExisting) return { status: 'no-owned-publication' };
     const receipt = decode(await get('main', 'data/receipts/batches/' + state.batchId + '.json'));
+    if (verifiesExisting && !ownsPublishing && !retriesOwnFinish) return recordRevalidation(state, receipt, proof);
     if (ownsPublishing) {
       const token = { executionId: state.executionId, generation: state.generation };
-      if (O.receiptMatches(state, receipt)) await E.advance(store, token, 'completed', { reportId: receipt.reportId, receiptHash: P.hash(receipt) });
-      else await E.advance(store, token, 'failed', { reason: 'No exact committed receipt for workflow ' + runId });
+      if (O.receiptMatches(state, receipt)) state = (await E.advance(store, token, 'completed', { reportId: receipt.reportId, receiptHash: P.hash(receipt) }, clock())).state;
+      else state = (await E.advance(store, token, 'failed', { reason: 'No exact committed receipt for workflow ' + runId }, clock())).state;
     }
     return recordOutcome(state, receipt, proof);
   }
