@@ -3,13 +3,46 @@
   'use strict';
   const C=typeof module!=='undefined'&&module.exports?require('./terminal-core.js'):root.GDR;
   const A=C.arr,T=C.text,regions={CN:'中国',US:'美国',WORLD:'全球其他地区',UNSPECIFIED:'旧版未分类'};
-  function eventTime(e){return C.parseTime(e?.at??e?.eventAt);}
+  function eventTime(e){return C.parseTime(e&&Object.hasOwn(e,'at')?e.at:e?.eventAt);}
   function normalizeEvent(e){
     if(!e||typeof e!=='object'||Array.isArray(e))return null;
-    const rawAt=e.at??e.eventAt??null,at=eventTime(e),timing=T(e.time||e.timing||e.timePrecision);
+    const rawAt=Object.hasOwn(e,'at')?e.at:e.eventAt??null,at=eventTime(e),timing=T(e.time||e.timing||e.timePrecision);
     return {...e,at:at===null?rawAt:new Date(at).toISOString(),time:timing,impact:T(e.impact||e.summary||e.whyWatch),summary:T(e.summary||e.impact||e.whyWatch)};
   }
   function eventRows(r){return A(r?.events).map(normalizeEvent).filter(Boolean);}
+  // Deterministic identity decoding for recorded quotes; never infer from prose.
+  function quoteKind(f){
+    const id=T(f?.instrumentId||f?.seriesKey||f?.id).replace(/^quotes:/,''),unit=T(f?.unit);
+    if(f?.instrumentId&&f?.seriesKey&&T(f.seriesKey).replace(/^quotes:/,'')!==id)return null;
+    if((/^INDEX:(CN|HK|US|JP|EU):[A-Z0-9]+$/.test(id)||['VOL:VIX','FX:DXY'].includes(id))&&['index','points','点'].includes(unit))return 'index';
+    if(/^RATE:US(?:2Y|10Y)$/.test(id)&&unit==='%')return 'yield';
+    if(/^CRYPTO:[A-Z0-9]+:USD$/.test(id)&&unit==='USD')return 'price';
+    if(/^METAL:XA[UG]USD$/.test(id)&&unit==='USD/oz')return 'price';
+    if(/^ENERGY:(WTI|BRENT)$/.test(id)&&unit==='USD/bbl')return 'price';
+    if((id==='FX:USDCNY'&&['CNY','CNY/USD'].includes(unit))||(id==='FX:USDCNH'&&['CNH','CNH/USD'].includes(unit)))return 'price';
+    return null;
+  }
+  function chartObservation(f){
+    const kind=quoteKind(f);
+    return kind&&!f.valueType?{...f,valueType:kind,seriesKey:f.seriesKey||T(f.instrumentId||f.id).replace(/^quotes:/,'')}:f;
+  }
+  function readingClock(report,path,mode,now=Date.now()){
+    return path==='data/latest.json'&&!['synthetic','validation'].includes(mode)?now:C.reportTime(report)??now;
+  }
+  function radarState(report,now=Date.now()){
+    const events=eventRows(report),start=C.parseTime(report?.reportMeta?.generatedAt)??C.reportTime(report);
+    const end=start===null?null:start+86400000;
+    const exact=e=>eventTime(e)!==null&&!/待定|待确认|未确认/.test(T(e.time)+' '+T(e.timePrecision));
+    const inWindow=e=>start!==null&&eventTime(e)>=start&&eventTime(e)<=end;
+    const scheduled=events.filter(e=>exact(e)&&inWindow(e)&&eventTime(e)>now).sort((a,b)=>eventTime(a)-eventTime(b));
+    if(scheduled.length)return {kind:'scheduled',event:scheduled[0]};
+    const untimed=events.find(e=>!exact(e)&&T(e.title));
+    if(untimed)return {kind:'untimed',event:untimed};
+    const overdue=events.filter(e=>exact(e)&&eventTime(e)<=now).sort((a,b)=>eventTime(b)-eventTime(a));
+    if(overdue.length)return {kind:'overdue',event:overdue[0]};
+    if(events.some(exact))return {kind:'outside-window',event:null};
+    return {kind:'empty',event:null};
+  }
   function newsRows(r){
     const byId=new Map();
     [...A(r?.worldEvents),...A(r?.newsroom?.items)].forEach((x,i)=>{
@@ -35,14 +68,18 @@
     return {legacy:true,verdict:T(r?.brief||r?.marketState,'本版本尚未提供白话结论'),whyNow:'以下摘自原报告；不是本次页面更新生成的新研究。',bottomLine:'白话影响与多框架综合判断将在采用 reader-r2 契约的新报告中提供。原有分析仍完整保留。',impacts:A(r?.assets).map(x=>({asset:x.name,effect:'未单独评级',reason:x.summary,takeaway:x.detail,evidenceFactIds:A(x.factIds),sourceIds:A(x.sourceIds)}))};
   }
   function normalizedId(f){
+    const kind=quoteKind(f);if(kind&&f.valueType&&f.valueType!==kind)return null;
+    f=chartObservation(f);
     // Use only source-backed, finite, timed observations. Changing scope splits series.
-    if(f?.valueType==='yield'&&C.finite(f.rawValue)&&T(f.seriesKey)&&f.unit==='%'&&T(f.scope)&&C.parseTime(f.asOf)!==null&&['live','complete','closed','delayed'].includes(f.dataStatus)&&A(f.sourceIds).length)return [f.seriesKey,'yield',f.unit,T(f.contract),f.scope].join('|');
+    if(f?.valueType==='yield'&&C.finite(f.rawValue)&&T(f.seriesKey)&&f.unit==='%'&&T(f.scope)&&C.parseTime(f.asOf)!==null&&['live','complete','closed','delayed','snapshot','previous'].includes(f.dataStatus)&&A(f.sourceIds).length)return [f.seriesKey,'yield',f.unit,T(f.contract),f.scope].join('|');
     const id=C.seriesIdentity(f);return id&&T(f.scope)?id+'|'+T(f.scope):null;
   }
   function rejectReason(f){
+    const known=quoteKind(f);f=chartObservation(f);
+    if(/[<>≥≤]|超过|至少|至多|区间|约/.test(T(f.displayValue)))return '近似值或阈值不是精确观测';
     if(!C.finite(f.rawValue)||(f.rawValue<=0&&f.valueType!=='yield'))return '没有精确正数值（缺失或阈值报价）';
     if(C.parseTime(f.asOf)===null)return '数据时点不精确';
-    if(!['live','complete','closed','delayed'].includes(f.dataStatus))return '质量或披露状态不适合价格曲线';
+    if(!['live','complete','closed','delayed'].includes(f.dataStatus)&&!(known&&['snapshot','previous'].includes(f.dataStatus)))return '质量或披露状态不适合价格曲线';
     if(f.valueType&&!['price','index','yield'].includes(f.valueType))return '流量、涨幅或概率不是价格序列';
     if(!normalizedId(f))return '指标身份、单位、来源或合约不完整';
     return null;
@@ -53,7 +90,8 @@
     A(reports).forEach(r=>{
       const rt=C.reportTime(r);if(rt===null||rt>cutoff)return;
       const rid=T(r.reportId||r.updatedAt);if(seenReports.has(rid))return;seenReports.add(rid);
-      C.facts(r).forEach(f=>{
+      C.facts(r).forEach(original=>{
+        const f=chartObservation(original);
         let reason=rejectReason(f),at=C.parseTime(f.asOf);
         if(!reason&&at>rt+59999)reason='观测时点晚于所属报告';
         if(!reason&&(at>cutoff||at<cutoff-86400000))reason='不在本报告24小时窗口';
@@ -62,7 +100,7 @@
         const key=normalizedId(f);accepted++;
         if(!bins.has(key))bins.set(key,{key,label:T(f.label),group:C.group(f),kind:f.valueType||key.split('|')[1],unit:f.unit,points:new Map()});
         const b=bins.get(key),old=b.points.get(at);
-        if(!old||rt>=(C.parseTime(old.recordedAt)||0))b.points.set(at,{at,value:f.rawValue,factId:f.id,reportId:rid,recordedAt:r.updatedAt,sourceIds:A(f.sourceIds)});
+        if(!old||rt>=(C.parseTime(old.recordedAt)||0))b.points.set(at,{at,value:f.rawValue,factId:f.id,reportId:rid,recordedAt:r.updatedAt,sourceIds:A(f.sourceIds),dataStatus:f.dataStatus,retention:f.retention||null});
       });
     });
     const rows=[...bins.values()].map(b=>({...b,points:[...b.points.values()].sort((a,b)=>a.at-b.at)}));
@@ -90,6 +128,6 @@
     A(r.newsroom?.items).forEach(x=>{if(!x?.id&&!x?.eventId)errors.push('时事缺少稳定事件ID');if(!T(x?.summary)||!T(x?.title))errors.push('时事缺少事实摘要');});
     return [...new Set(errors)];
   }
-  const api={regions,eventTime,normalizeEvent,eventRows,newsRows,newsCounts,plain,normalizedId,rejectReason,series,comparable,check};
+  const api={regions,quoteKind,chartObservation,readingClock,radarState,eventTime,normalizeEvent,eventRows,newsRows,newsCounts,plain,normalizedId,rejectReason,series,comparable,check};
   root.GDREditorial=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof globalThis!=='undefined'?globalThis:window);

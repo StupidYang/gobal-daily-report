@@ -66,11 +66,13 @@ async function visit(page){
     assert.ok(await page.getByLabel('搜索自选模块',{exact:true}).evaluate(n=>n===document.activeElement));checks.push('filter-search-focus');
     await page.getByLabel('搜索自选模块',{exact:true}).fill('');await page.getByLabel('资产类别',{exact:true}).selectOption('ALL');
     const before=await page.locator('.wl-table').innerText();
-    await page.route('**/data/modules/quotes.json*',r=>r.fulfill({status:503,body:'simulated outage'}));
+    const frozenQuoteUrl='**/'+report.reportMeta.moduleRefs.quotes.path+'*';let injectedQuoteFailures=0;
+    await page.route(frozenQuoteUrl,r=>{injectedQuoteFailures++;return r.fulfill({status:503,body:'simulated outage'});});
     await page.getByRole('button',{name:'检查模块更新',exact:true}).click();await page.waitForTimeout(1500);
+    assert.ok(injectedQuoteFailures>0,'Quote outage injection must hit the selected frozen URL');
     assert.match(await page.locator('#watchlist').innerText(),/503|失败|上次/);assert.equal(await page.locator('.wl-table tbody tr').count(),config.required.length);
     assert.equal(await page.locator('.wl-table').innerText(),before,'Quote outage erased last good rows');checks.push('quote-outage-retains-data');
-    await page.unroute('**/data/modules/quotes.json*');await page.getByRole('button',{name:'检查模块更新',exact:true}).click();await page.waitForTimeout(1500);
+    await page.unroute(frozenQuoteUrl);await page.getByRole('button',{name:'检查模块更新',exact:true}).click();await page.waitForTimeout(1500);
     assert.doesNotMatch(await page.locator('#watchlist').innerText(),/503/);checks.push('recovery-clears-error');
     const btc=page.locator('.wl-table tbody tr').filter({hasText:/Bitcoin|BTC/}).first();await btc.getByRole('button').first().click();
     await page.getByRole('button',{name:'我的自选',exact:true}).click();assert.match(await page.locator('.wl-table').innerText(),/Bitcoin|BTC/);checks.push('favorites');

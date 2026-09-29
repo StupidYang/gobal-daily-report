@@ -3,10 +3,11 @@
 'use strict';
 const D=window.GDRDisplay,W=window.GDRWatch;if(!W||!D)return;
 const root=document.getElementById('watchlistRoot');if(!root)return;
-const state={config:null,modules:{},report:null,tab:'required',quoteGroup:'ALL',market:'CN',sector:'ALL',query:'',n:5,limit:40,seq:0,mode:'latest',loaded:false,failures:[],quarantine:[],signature:''};
+const integrated=!!document.getElementById('refreshBtn');
+const state={selection:null,config:null,modules:{},report:null,tab:'required',quoteGroup:'ALL',market:'CN',sector:'ALL',query:'',n:5,limit:40,seq:0,mode:'latest',loaded:false,failures:[],quarantine:[],signature:''};
 const storage={get(k,f){try{return JSON.parse(localStorage.getItem((document.documentElement.dataset.mode==='synthetic'?'demo:':document.documentElement.dataset.mode==='validation'?'validation:':'')+k))||f;}catch{return f;}},set(k,v){try{localStorage.setItem((document.documentElement.dataset.mode==='synthetic'?'demo:':document.documentElement.dataset.mode==='validation'?'validation:':'')+k,JSON.stringify(v));}catch{}}};
 let pins=new Set(W.arr(storage.get('gdr:pins:v1',[])).filter(x=>typeof x==='string')),custom=W.arr(storage.get('gdr:custom:v1',[])).filter(x=>x&&typeof x.instrumentId==='string');
-const statusText=s=>({ok:'已更新',partial:'部分更新',delayed:'延迟报价',invalid:'数据异常',missing:'未采集',error:'读取失败','no-change':'已查无新增',stale:'较旧',unknown:'未知',snapshot:'行情快照',closed:'收盘快照',previous:'沿用旧值'})[s]||s||'未采集';
+const statusText=s=>({ok:'已更新',partial:'部分更新',delayed:'延迟报价',invalid:'数据异常',missing:'未采集',error:'读取失败','no-change':'无新增提交，核验见记录',stale:'较旧',unknown:'未知',snapshot:'行情快照',closed:'收盘快照',previous:'沿用旧值'})[s]||s||'未采集';
 const labels={quotes:'基础行情','asia-equities':'A/H板块','us-equities':'美股候选池',research:'公司研究',news:'综合时事',macro:'宏观',synthesis:'综合分析'};
 const E=(t,c,x)=>{const n=document.createElement(t);if(c)n.className=c;if(x!==undefined)n.textContent=String(x);return n;};
 const add=(p,...a)=>{a.filter(Boolean).forEach(n=>p.append(n));return p;};
@@ -22,7 +23,7 @@ function render(){if(rendering){if(!queued){queued=true;queueMicrotask(()=>{queu
 function renderBody(){
  if(!state.config)return;
  const focused=document.activeElement,searchFocused=focused?.getAttribute('aria-label')==='搜索自选模块',caret=searchFocused?focused.selectionStart:null;
- const open=keepOpen(),box=E('details','library wl-library');box.id='watchlist';box.dataset.key='watchlist';box.open=open.has('watchlist')||location.hash==='#watchlist';
+ const open=keepOpen(),box=E('details','library wl-library');box.id='watchlist';box.dataset.key='watchlist';box.dataset.reportId=state.report?.reportId||'';box.dataset.viewPath=state.selection?.path||document.getElementById('historySelect')?.value||'data/latest.json';box.open=open.has('watchlist')||location.hash==='#watchlist';
  const sum=E('summary');add(sum,E('span','library-title','自选资产 · 板块数据 · 公司研究'),E('span','library-caption','必看行情、板块数据状态与可用排名、只在新事件后更新的研究'),E('span','library-count',state.config.required.length+'项必看'));box.append(sum);
  const body=E('div','library-body wl-body');
  add(body,note('这是独立的数据模块：报价更新、榜单更新和研究更新不是同一个时间。候选名单不代表当前热门；热度不等于看涨。'));
@@ -93,13 +94,29 @@ function researchLibrary(){const out=E('div'),m=state.modules.research,records=W
  filtered(records.map(r=>({...r,name:r.instrumentId,conclusion:r.analysis?.conclusion}))).forEach(r=>out.append(details('research-'+r.instrumentId,r.instrumentId+' · '+(r.eventType||'')+' · '+(r.period||''),researchCard(r))));
  const checkBody=E('div');if(checks.length)checks.forEach(c=>checkBody.append(note(c.instrumentId+' · '+c.status+' · 检查 '+W.stamp(c.checkedAt)+' · '+(c.note||''))));else checkBody.append(note('本轮没有公司材料检查记录；这不等于已经检查并确认“无新增”。已有研究仍保留原analyzedAt。'));out.append(details('research-checks','事件检查记录 · '+checks.length,checkBody));return out;}
 async function fetchJSON(path){const c=new AbortController(),timer=setTimeout(()=>c.abort(),15000);try{const r=await fetch('./'+path+'?v='+Date.now(),{cache:'no-store',signal:c.signal});if(!r.ok)throw Error('HTTP '+r.status);return await r.json();}finally{clearTimeout(timer);}}
-async function load(force=false){const seq=++state.seq,selected=document.getElementById('historySelect')?.value||'data/latest.json',historical=selected!=='data/latest.json';state.mode=historical?'history':'latest';
- try{const config=state.config||await fetchJSON('config/watchlist.json');let report=null;if(!historical){try{report=await fetchJSON('data/latest.json');}catch{}}if(historical){if(!/^history\/\d{4}-\d{2}-\d{2}\/\d{4}(?:-[\w-]+)?\.json$/.test(selected))throw Error('无效历史路径');report=await fetchJSON(selected);}
- const modules={},failures=[],quarantine=[];await Promise.all(['quotes','asia-equities','us-equities','research','news','macro'].map(async role=>{let path='data/modules/'+role+'.json';if(historical){path=report?.reportMeta?.moduleRefs?.[role]?.path;if(!path||!new RegExp('^data/runs/'+role+'/[A-Za-z0-9_-]+\\.json$').test(path)){failures.push(labels[role]+'历史未冻结');return;}}
- try{const m=await fetchJSON(path);const projected=W.projectModule(m,role);if(!projected.module)throw Error('数据校验失败：'+projected.issues.join('；'));if(historical&&W.time(m.generatedAt)>W.time(report.updatedAt))throw Error('拒绝未来模块');modules[role]=projected.module;quarantine.push(...projected.quarantined.map(q=>({...q,role})));}catch(e){failures.push(labels[role]+'：'+e.message);if(!historical&&state.modules[role]&&state.report?.reportId===report?.reportId){modules[role]=state.modules[role];failures.push(labels[role]+'：沿用上次成功读取的数据及原时点');}}}));
- if(window.GDRContent?.projection&&report){const pr=await window.GDRContent.projection(report);if(pr)for(const [role,m]of Object.entries(pr.modules||{}))if(modules[role]?.runId===m.runId){const checked=W.projectModule(m,role);if(checked.module)modules[role]=checked.module;}}
- if(seq!==state.seq)return;const signature=JSON.stringify({selected,config,modules,failures,quarantine});state.config=config;state.n=state.loaded?state.n:config.defaultN;state.loaded=true;if(signature===state.signature&&!force)return;state.signature=signature;state.modules=modules;state.failures=failures;state.quarantine=quarantine;state.report=report;render();publicationLine();document.dispatchEvent(new CustomEvent('gdr:coverage',{detail:window.GDRContent.quoteCoverage(config,modules.quotes,historical?W.time(report.reportMeta?.generatedAt||report.updatedAt):Date.now())}));
- }catch(e){if(seq===state.seq){if(historical&&state.loaded){state.modules={};state.failures=['历史报告读取失败'];state.report=null;render();return;}if(!state.loaded)root.replaceChildren(note('自选模块暂不可用：'+e.message));else root.prepend(E('p','wl-warning','模块检查失败，保留上次显示；不是新数据。'));}}
+async function load(force=false){
+ if(integrated&&!state.selection)return;
+ const selection=state.selection,seq=++state.seq,selected=selection?.path||document.getElementById('historySelect')?.value||'data/latest.json',historical=selected!=='data/latest.json';
+ try{
+  const config=state.config||await fetchJSON('config/watchlist.json');
+  if(historical&&!/^history\/\d{4}-\d{2}-\d{2}\/\d{4}(?:-[\w-]+)?\.json$/.test(selected))throw Error('无效历史路径');
+  const report=selection?.report||await fetchJSON(selected);
+  const modules={},failures=[],quarantine=[];
+  await Promise.all(['quotes','asia-equities','us-equities','research','news','macro'].map(async role=>{
+   try{const file=W.frozenPath(report,role),m=W.boundModule(report,role,await fetchJSON(file)),projected=W.projectModule(m,role);
+    if(!projected.module)throw Error('数据校验失败：'+projected.issues.join('；'));
+    modules[role]=projected.module;quarantine.push(...projected.quarantined.map(q=>({...q,role})));
+   }catch(e){failures.push(labels[role]+'：'+e.message);
+    if(state.modules[role]&&state.report?.reportId===report?.reportId){try{modules[role]=W.boundModule(report,role,state.modules[role]);failures.push(labels[role]+'：保留同一冻结版本，未重新核验');}catch{}}
+   }
+  }));
+  if(window.GDRContent?.projection){const pr=await window.GDRContent.projection(report);if(pr)for(const [role,m]of Object.entries(pr.modules||{}))if(modules[role]?.runId===m.runId){try{W.boundModule(report,role,m);const checked=W.projectModule(m,role);if(checked.module)modules[role]=checked.module;}catch{failures.push(labels[role]+'恢复投影身份不符');}}}
+  if(seq!==state.seq)return;
+  const signature=JSON.stringify({selected,reportId:report.reportId,config,modules,failures,quarantine});state.config=config;state.n=state.loaded?state.n:config.defaultN;state.loaded=true;state.mode=historical?'history':'latest';
+  if(signature===state.signature&&!force)return;
+  state.signature=signature;state.modules=modules;state.failures=failures;state.quarantine=quarantine;state.report=report;render();publicationLine();
+  if(window.GDRContent?.quoteCoverage)document.dispatchEvent(new CustomEvent('gdr:coverage',{detail:{...window.GDRContent.quoteCoverage(config,modules.quotes,historical?W.time(report.reportMeta?.generatedAt||report.updatedAt):Date.now()),reportId:report.reportId}}));
+ }catch(e){if(seq===state.seq){if(!state.loaded)root.replaceChildren(note('自选模块暂不可用：'+e.message));else root.prepend(E('p','wl-warning','模块检查失败，保留上次显示；不是新数据。'));}}
 }
 
 function publicationLine(){document.getElementById('publicationLine')?.remove();}
@@ -132,8 +149,8 @@ function marketSamples(module,market){
 
 function directory(){const d=document.querySelector('#reportRoot .directory');if(d&&!d.querySelector('[data-watch-entry]')){d.classList.add('with-watchlist');const a=E('a');a.dataset.watchEntry='1';a.href='#watchlist';add(a,E('strong','','自选 / 板块 / 财报'),E('span','','独立更新 · 完整资料'));d.append(a);}}
 const mainRoot=document.getElementById('reportRoot');if(mainRoot)new MutationObserver(directory).observe(mainRoot,{childList:true,subtree:true});directory();
-document.getElementById('historySelect')?.addEventListener('change',()=>load(true));
-document.addEventListener('gdr:report-applied',()=>load(true));
+document.getElementById('historySelect')?.addEventListener('change',()=>{if(!integrated){state.selection=null;load(true);}});
+document.addEventListener('gdr:report-applied',e=>{if(e.detail?.report&&e.detail.reportId===e.detail.report.reportId){state.selection={path:e.detail.path,report:e.detail.report};load(true);}else if(!integrated)load(true);});
 document.addEventListener('click',e=>{if(e.target.closest('a[href="#watchlist"]')){const d=document.getElementById('watchlist');if(d)d.open=true;}});
 load();setInterval(()=>{if(!document.hidden&&state.mode==='latest')load();},600000);
 })();
