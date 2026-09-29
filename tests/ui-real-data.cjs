@@ -66,7 +66,11 @@ async function visit(page){
     assert.ok(await page.getByLabel('搜索自选模块',{exact:true}).evaluate(n=>n===document.activeElement));checks.push('filter-search-focus');
     await page.getByLabel('搜索自选模块',{exact:true}).fill('');await page.getByLabel('资产类别',{exact:true}).selectOption('ALL');
     const before=await page.locator('.wl-table').innerText();
-    const frozenQuoteUrl='**/'+report.reportMeta.moduleRefs.quotes.path+'*';let injectedQuoteFailures=0;
+    const hasFrozenReader=await page.evaluate(()=>typeof window.GDRWatch?.frozenPath==='function');
+    // The fixed validation snapshot keeps its original reader bytes; do not rewrite that archive.
+    const legacyValidation=report.reportMeta?.validationOnly===true&&!hasFrozenReader;
+    if(!legacyValidation)assert.ok(hasFrozenReader,'Current reader must bind immutable modules');
+    const frozenQuoteUrl='**/'+(legacyValidation?'data/modules/quotes.json':report.reportMeta.moduleRefs.quotes.path)+'*';let injectedQuoteFailures=0;
     await page.route(frozenQuoteUrl,r=>{injectedQuoteFailures++;return r.fulfill({status:503,body:'simulated outage'});});
     await page.getByRole('button',{name:'检查模块更新',exact:true}).click();await page.waitForTimeout(1500);
     assert.ok(injectedQuoteFailures>0,'Quote outage injection must hit the selected frozen URL');
