@@ -7,10 +7,14 @@ module.exports=async function consistency({browser,base,read,report,out}){
  for(const width of [390,1440]){
   const context=await browser.newContext({viewport:{width,height:1000},locale:'zh-CN',timezoneId:'Asia/Singapore',reducedMotion:'reduce'});
   await context.addInitScript(()=>{const original=window.setInterval;window.__gdrIntervalProbes=[];window.setInterval=function(fn,ms,...args){if(ms===600000)window.__gdrIntervalProbes.push(fn);return original.call(this,fn,ms,...args);};});
-  const page=await context.newPage(),errors=[],moving=[];page.setDefaultTimeout(20000);
+  const page=await context.newPage(),errors=[],moving=[];let delayedWatchlistLoads=0;page.setDefaultTimeout(20000);
   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/\/data\/modules\//.test(r.url()))moving.push(r.url());});
   try{
+   // Force the consumer script to arrive after a fast report response.
+   // Ordered defer bootstrap must register it before reader.js starts.
+   await page.route('**/assets/watchlist.js*',async route=>{delayedWatchlistLoads++;await new Promise(resolve=>setTimeout(resolve,1200));await route.continue();});
    await page.goto(base,{waitUntil:'networkidle'});
+   assert.ok(delayedWatchlistLoads>0,'Late-script injection must hit the actual watchlist asset');
    await page.waitForFunction(id=>document.querySelector('#watchlist')?.dataset.reportId===id,report.reportId);
    await page.waitForFunction(()=>!document.querySelector('#chartNote')?.textContent.includes('正在读取窗口历史'));
    const radar=R.radarState(report,Date.now());
@@ -38,8 +42,8 @@ module.exports=async function consistency({browser,base,read,report,out}){
    assert.deepEqual(errors,[]);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Horizontal overflow');
    await page.evaluate(()=>document.querySelectorAll('details').forEach(d=>d.open=false));
    await page.screenshot({path:path.join(out,'consistency-'+width+'.png')});
-   proofs.push({width,status:'passed',tests:['expired-event-state','same-minute-frozen-history','no-moving-module-reads','pending-selection-atomicity','applied-selection-atomicity','no-page-errors','no-overflow']});
-  }finally{await context.close();}
+   proofs.push({width,status:'passed',tests:['late-consumer-startup','expired-event-state','same-minute-frozen-history','no-moving-module-reads','pending-selection-atomicity','applied-selection-atomicity','no-page-errors','no-overflow']});
+  }catch(error){await page.screenshot({path:path.join(out,'consistency-'+width+'-failure.png')}).catch(()=>{});throw error;}finally{await context.close();}
  }
  fs.writeFileSync(path.join(out,'reader-consistency-results.json'),JSON.stringify({scope:'Isolated browser failure-injection; no production writes',tests:proofs},null,2));
 };
