@@ -32,6 +32,7 @@ async function visit(page){if(!folder)return page.goto(base,{waitUntil:'networki
    const watch=await page.locator('#watchlist').innerText();const latestView=r.reportMeta?.dataMode==='synthetic'?null:await read(context.request,'data/reader-projections/'+r.reportId+'.json');const groups=latestView?.modules?.['us-equities']?.payload;const hasRetained=[...(groups?.groups||[]),...(groups?.retainedGroups||[])].some(g=>g.retention&&(g.rows||[]).length);if(hasRetained)assert.ok(watch.includes('历史候选样本'),'Historical sample origin must be visible');
    await page.locator('#watchlist').screenshot({path:path.join(out,width+'-us-samples.png')});assert.deepEqual(errors,[]);await context.close();
   }
+  if(!folder)await require('./reader-browser-regression.cjs')({browser,base,read,report:r,out});
   proof.status='passed';
  }catch(e){proof.status='failed';proof.error=e.stack;throw e;}finally{fs.writeFileSync(path.join(out,'content-results.json'),JSON.stringify(proof,null,2));await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
