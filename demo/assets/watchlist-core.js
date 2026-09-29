@@ -16,6 +16,23 @@ function time(v){
 }
 function stamp(v){const t=time(v);return t===null?'时间未确认':new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Singapore',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(t);}
 function safeUrl(v){try{const u=new URL(v);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
+// Resolve only the selected report's immutable input; never the moving module pointer.
+function frozenPath(report,role){
+ const ref=report?.reportMeta?.moduleRefs?.[role];
+ if(!MODULES.includes(role)||!ref||!new RegExp('^data/runs/'+role+'/[A-Za-z0-9_-]+\\.json$').test(ref.path||'')||ref.path!=='data/runs/'+role+'/'+ref.runId+'.json')throw Error('本报告缺少合法冻结引用：'+role);
+ return ref.path;
+}
+function boundModule(report,role,m){
+ frozenPath(report,role);const ref=report.reportMeta.moduleRefs[role];
+ if(!m||m.module!==role||m.runId!==ref.runId)throw Error('冻结模块身份不匹配：'+role);
+ const precise=time(report.reportMeta.generatedAt),minute=time(report.updatedAt),cutoff=precise??(minute===null?null:minute+59999),generated=time(m.generatedAt);
+ if(cutoff===null||generated===null||generated>cutoff)throw Error('冻结模块晚于报告或时点无效：'+role);
+ if(ref.generatedAt!=null&&time(ref.generatedAt)!==generated)throw Error('冻结模块生成时点不匹配：'+role);
+ if(Object.hasOwn(ref,'dataAsOf')&&(ref.dataAsOf!==null&&time(ref.dataAsOf)===null||time(ref.dataAsOf)!==time(m.dataAsOf)))throw Error('冻结模块数据时点不匹配：'+role);
+ const synthetic=m.dataMode==='synthetic'||m.execution?.mode==='fixture';
+ if(synthetic!==(report.reportMeta.dataMode==='synthetic')||(m.validationOnly===true)!==(report.reportMeta.validationOnly===true))throw Error('冻结模块正式/测试模式不匹配：'+role);
+ return m;
+}
 function validate(m, expected, now=Date.now()){
  const errors=[];
  if(!m||typeof m!=='object'||Array.isArray(m))return ['模块必须是对象'];
@@ -186,6 +203,6 @@ function combinedQuotes(config,modules){
 }
 function researchFingerprint(r){return JSON.stringify([r.instrumentId,r.eventType,r.period,r.documentId,r.documentUrl,r.sourceHash||'']);}
 function selectResearch(records,cutoff=Infinity){const map=new Map();arr(records).forEach(r=>{const t=time(r.analyzedAt);if(t===null||t>cutoff)return;const old=map.get(r.instrumentId);if(!old||t>time(old.analyzedAt))map.set(r.instrumentId,r);});return [...map.values()];}
-const api={arr,finite,MODULES,STATUSES,time,stamp,safeUrl,validate,projectModule,nValue,median,percentile,rankGroup,quoteRows,priceText,freshness,chooseQuote,combinedQuotes,researchFingerprint,selectResearch};
+const api={arr,finite,frozenPath,boundModule,MODULES,STATUSES,time,stamp,safeUrl,validate,projectModule,nValue,median,percentile,rankGroup,quoteRows,priceText,freshness,chooseQuote,combinedQuotes,researchFingerprint,selectResearch};
 if(typeof module!=='undefined')module.exports=api;root.GDRWatch=api;
 })(typeof globalThis!=='undefined'?globalThis:window);

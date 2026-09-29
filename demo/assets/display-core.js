@@ -24,7 +24,7 @@ function format(f){
 }
 const basisNames={'previous-official-close':'较前收','provider-regular-session-change':'较行情源常规前收','24h':'过去24小时','24h-range':'24小时区间','intraday':'盘中观测','coinbase-spot-snapshot':'现货快照','UTC daily open/previous close on source':'较来源日线基准'};
 function basis(v){if(!v)return '涨跌基准未提供';return basisNames[v]||(/[a-z]{3}/i.test(v)?'来源特定基准（见依据）':v);}
-const statuses={live:'即时快照',snapshot:'报价快照',complete:'已确认',closed:'最近收盘',delayed:'延迟报价',stale:'较旧数据',partial:'部分数据',missing:'暂无合格报价',error:'来源读取失败',previous:'沿用旧值','window-unclear':'统计窗口待核',unknown:'状态未确认',invalid:'记录待核',ok:'已更新','no-change':'已查无新增'};
+const statuses={live:'即时快照',snapshot:'报价快照',complete:'已确认',closed:'最近收盘',delayed:'延迟报价',stale:'较旧数据',partial:'部分数据',missing:'暂无合格报价',error:'来源读取失败',previous:'沿用旧值','window-unclear':'统计窗口待核',unknown:'状态未确认',invalid:'记录待核',ok:'已更新','no-change':'无新增提交，核验见记录'};
 function status(v){return statuses[v]||'状态未确认';}
 function change(f){const n=f.changePct??(f.changeUnit==='%'?f.changeValue:null);if(finite(n))return (n>0?'+':'')+n.toFixed(2)+'%';const s=text(f.changeLabel);return /^[+-]?\d+(?:\.\d+)?\s*(%|bp|bps)$/.test(s)?s:'涨跌幅未提供';}
 function group(f){const id=identity(f);if(id.startsWith('INDEX:CN:'))return 'CN';if(id.startsWith('INDEX:HK:'))return 'HK';if(id.startsWith('INDEX:US:'))return 'US';if(id.startsWith('CRYPTO:'))return 'CRYPTO';if(id.startsWith('ENERGY:'))return 'ENERGY';if(id.startsWith('RATE:'))return 'RATES';if(id.startsWith('FX:'))return 'FX';if(id.startsWith('METAL:'))return 'METALS';return null;}

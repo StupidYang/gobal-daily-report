@@ -4,7 +4,7 @@
   const arr = v => Array.isArray(v) ? v : [];
   const text = (v, fallback = '') => typeof v === 'string' || typeof v === 'number' ? String(v) : fallback;
   const finite = v => typeof v === 'number' && Number.isFinite(v);
-  const statuses = {live:'即时快照',complete:'完整披露',closed:'收盘快照',delayed:'延迟',stale:'较旧',partial:'部分披露',missing:'缺失',error:'读取失败','window-unclear':'窗口待核',unknown:'未知'};
+  const statuses = {snapshot:'报价快照',previous:'原时点报价',live:'即时快照',complete:'完整披露',closed:'收盘快照',delayed:'延迟',stale:'较旧',partial:'部分披露',missing:'缺失',error:'读取失败','window-unclear':'窗口待核',unknown:'未知'};
   function parseTime(value) {
     if (value instanceof Date) return Number.isFinite(value.getTime()) ? value.getTime() : null;
     if (typeof value !== 'string') return null;
