@@ -10,8 +10,18 @@ test('literal generation19 r1 now compiles and stages atomically without changin
  assert.equal(P.hash(result.packet),result.packetHash);
  assert.equal(P.hash(submission),'bc32e303803caa3797558b54b553ce04bce173177b8268b230b6f0924bd65638');
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'gdr-literal-equity-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
- for(const rel of ['config/watchlist.json','automation/control.json','data/latest.json','data/modules','data/runs','data/history-index.json','history']){
-  const dest=path.join(root,rel);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.cpSync(path.join(project,rel),dest,{recursive:true});
+ // Freeze the pre-incident report and its inputs: advancing production must not
+ // make this historical regression consume tomorrow's module pointers.
+ const priorPath='history/2026-09-29/2311.json',prior=P.read(path.join(project,priorPath));
+ P.atomic(path.join(root,'config/watchlist.json'),P.read(path.join(fixture,'baseline.json')).config);
+ P.atomic(path.join(root,'automation/control.json'),{version:1,productionPaused:false,qualityPolicy:'content-r3'});
+ P.atomic(path.join(root,'data/latest.json'),prior);P.atomic(path.join(root,priorPath),prior);
+ P.atomic(path.join(root,'data/history-index.json'),{reports:[{reportId:prior.reportId,label:prior.updatedAt,path:priorPath}]});
+ for(const [role,ref]of Object.entries(prior.reportMeta.moduleRefs)){
+  const frozen=P.read(path.join(project,ref.path));
+  assert.equal(frozen.runId,ref.runId);
+  P.atomic(path.join(root,'data/modules',role+'.json'),frozen);
+  P.atomic(path.join(root,ref.path),frozen);
  }
  const before=P.hash(submission),latestBefore=fs.readFileSync(path.join(root,'data/latest.json'),'utf8');
  const now=Date.parse(submission.editorial.analyzedAt)+20000;
