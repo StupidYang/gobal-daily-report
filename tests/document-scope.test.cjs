@@ -70,3 +70,11 @@ test('reviewed public evidence hosts are exact and do not permit lookalikes or p
  }
  assert.equal(sanitizeDocuments([{id:'private',url:'https://127.0.0.1/private',kind:'official'}]).blocked[0].reason,'host-not-allowed');
 });
+
+
+test('HKEX automated website retrieval stays excluded pending source permission',()=>{
+ for(const host of ['www.hkex.com.hk','www.hkexnews.hk']){
+  const x=sanitizeDocuments([{id:'restricted',url:'https://'+host+'/public-statistics',kind:'macro'}]);
+  assert.equal(x.accepted.length,0);assert.equal(x.blocked[0].reason,'host-not-allowed');
+ }
+});

@@ -9,7 +9,7 @@ const safe=x=>typeof x==='string'&&/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(x);
 const DOCUMENT_HOSTS=new Set([
  'www.federalreserve.gov','www.bls.gov','home.treasury.gov','www.bea.gov','www.sec.gov','www.whitehouse.gov',
  'www.gov.cn','www.pbc.gov.cn','www.stats.gov.cn','www.mof.gov.cn','www.mofcom.gov.cn','www.csrc.gov.cn',
- 'www.sse.com.cn','www.szse.cn','www.hkexnews.hk','www.hkex.com.hk','paper.cnstock.com','www.stcn.com','www.nbd.com.cn',
+ 'www.sse.com.cn','www.szse.cn','paper.cnstock.com','www.stcn.com','www.nbd.com.cn',
  'www.un.org','unsdg.un.org','www.who.int','www.imf.org','www.worldbank.org','www.iea.org','www.opec.org','www.eia.gov',
  'www.reuters.com','reuters.com','apnews.com','www.apnews.com','investor.nvidia.com',
  'data.sec.gov','www.deribit.com','farside.co.uk','www.nmc.cn','www.cdc.gov','www.nasa.gov','www.elysee.fr','www.afro.who.int','www.justice.gov','beta.weather.gov',
