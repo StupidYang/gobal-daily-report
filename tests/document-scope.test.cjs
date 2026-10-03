@@ -60,3 +60,13 @@ test('calendar evidence kind and EIA host are explicitly allowed',()=>{
  assert.equal(x.accepted.length,4);
  assert.deepEqual(x.blocked,[]);
 });
+
+
+test('reviewed public evidence hosts are exact and do not permit lookalikes or private networks',()=>{
+ const hosts=['data.sec.gov','www.deribit.com','farside.co.uk','www.nmc.cn','www.cdc.gov','www.nasa.gov','www.elysee.fr','www.afro.who.int'];
+ for(const [i,host]of hosts.entries()){
+  assert.equal(sanitizeDocuments([{id:'source'+i,url:'https://'+host+'/public',kind:'official'}]).accepted.length,1);
+  assert.equal(sanitizeDocuments([{id:'source'+i,url:'https://'+host+'.example.com/public',kind:'official'}]).blocked[0].reason,'host-not-allowed');
+ }
+ assert.equal(sanitizeDocuments([{id:'private',url:'https://127.0.0.1/private',kind:'official'}]).blocked[0].reason,'host-not-allowed');
+});
