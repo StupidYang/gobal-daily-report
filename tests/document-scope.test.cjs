@@ -63,7 +63,7 @@ test('calendar evidence kind and EIA host are explicitly allowed',()=>{
 
 
 test('reviewed public evidence hosts are exact and do not permit lookalikes or private networks',()=>{
- const hosts=['data.sec.gov','www.deribit.com','farside.co.uk','www.nmc.cn','www.cdc.gov','www.nasa.gov','www.elysee.fr','www.afro.who.int','www.justice.gov','beta.weather.gov','news.met.police.uk','www.epa.gov','www.fda.gov','www.tse.jus.br','www.mem.gov.cn','www.ishares.com'];
+ const hosts=['data.sec.gov','www.deribit.com','farside.co.uk','www.nmc.cn','www.cdc.gov','www.nasa.gov','www.elysee.fr','www.afro.who.int','www.justice.gov','beta.weather.gov','news.met.police.uk','www.epa.gov','www.fda.gov','www.tse.jus.br','www.mem.gov.cn','www.ishares.com','9to5mac.com'];
  for(const [i,host]of hosts.entries()){
   assert.equal(sanitizeDocuments([{id:'source'+i,url:'https://'+host+'/public',kind:'official'}]).accepted.length,1);
   assert.equal(sanitizeDocuments([{id:'source'+i,url:'https://'+host+'.example.com/public',kind:'official'}]).blocked[0].reason,'host-not-allowed');
