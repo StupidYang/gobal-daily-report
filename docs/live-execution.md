@@ -15,6 +15,8 @@
 9. 发布者CAS认领publishing，许可绑定批次哈希、代数、workflowRunId，git push前再次核验。过期、旧令牌、篡改候选、单模块绕行均被拒绝。
 10. publishing不能靠超时强夺。必须核对原workflow终止，再按main真实回执恢复completed或failed。completed表示仓库回执已核对，公网部署与浏览器结果仍独立检查。
 
+SEC Archives 的 research HTML 新采集可附加版本化 contentFingerprint 诊断元数据；原始 sourceHash/bytes 和发布门禁不变，不回填旧来源包，也不以规范化匹配替代原始完整性。算法、独立复核流程与限制见 [研究内容指纹](research-content-fingerprints.md)。
+
 ## 可观测性与限制
 
 运行分支不参与Pages；锁、结果及outcomes变更不触发网页构建。状态保存阶段、截止时间、阶段耗时和原因。同任务同小时成功不再执行，失败最多一次修订。

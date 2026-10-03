@@ -13,7 +13,7 @@ const DOCUMENT_HOSTS=new Set([
  'www.un.org','unsdg.un.org','www.who.int','www.imf.org','www.worldbank.org','www.iea.org','www.opec.org','www.eia.gov',
  'www.reuters.com','reuters.com','apnews.com','www.apnews.com','investor.nvidia.com',
  'data.sec.gov','www.deribit.com','farside.co.uk','www.nmc.cn','www.cdc.gov','www.nasa.gov','www.elysee.fr','www.afro.who.int','www.justice.gov','beta.weather.gov',
- 'news.met.police.uk','www.epa.gov','www.fda.gov','www.tse.jus.br','www.mem.gov.cn','www.ishares.com','9to5mac.com'
+ 'news.met.police.uk','www.epa.gov','www.fda.gov','www.tse.jus.br','www.mem.gov.cn','www.ishares.com','9to5mac.com','www.nso.gov.vn'
 ]);
 const DOCUMENT_KINDS=new Set(['news','market','macro','calendar','research','official','general']);
 function sanitizeDocuments(documents){
