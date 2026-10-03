@@ -21,7 +21,9 @@ for(const id of ['20260923T145853-global-main','20260923T153900-asia-session'])t
  a.ok(report.newsroom.legacyItems.length>0,'legacy incomplete news must stay explicitly traceable');
  a.ok(report.newsroom.legacyItems.every(x=>x.missingFields.length||x.legacyReason));
  if(result.taskGroup==='global-main'){
-  a.equal(report.newsroom.items.length,14);
+  a.equal(report.newsroom.items.length,12,'two undated/out-of-window incoming records are background, not current news');
+  const allNews=[...report.newsroom.items,...report.newsroom.legacyItems];
+  for(const item of submission.editorial.newsItems)a.ok(allNews.some(x=>(x.eventId||x.id)===(item.eventId||item.id)&&x.summary===item.summary),'all original evidence remains traceable');
   const research=batch.modules.find(m=>m.module==='research'),pending=new Set((research.payload.pendingQueue||[]).map(x=>x.instrumentId));
   for(const record of seed.modules.research.payload.records||[])a.ok(!pending.has(record.instrumentId),'retained research must not also be auto-marked pending');
  } else {a.equal(report.newsroom.items.length,0);a.equal(report.newsroom.legacyItems.length,18);a.ok(report.newsroom.legacyItems.every(x=>!x.plainImpact),'no invented impact text');}

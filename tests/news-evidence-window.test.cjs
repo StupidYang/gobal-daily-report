@@ -1,0 +1,8 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),N=require('../lib/news-retention.cjs');
+const now=Date.parse('2026-10-03T16:00:00Z'),sources=[{id:'s',url:'https://www.bls.gov/schedule/2026/10_sched.htm',evidenceKind:'calendar'}];
+const item={eventId:'n',title:'source-backed item',regions:['US'],kind:'general',summary:'fact',plainImpact:'impact',assessment:'analysis',sourceIds:['s'],publishedAt:'2026-10-03T12:00:00Z'};
+test('a calendar is not verified external news',()=>{const n=N.merge(null,[item],{now,sources});assert.equal(n.coverage.externalVerified,0);assert.equal(n.coverage.externalGeneral,0);});
+for(const at of [undefined,'2026-10-01T16:00:00Z','2026-10-03T17:00:00Z','2026-10-03','2026-10-03T12:00:00'])test('incoming news cannot refresh an invalid publication time '+String(at),()=>{const n=N.merge(null,[{...item,publishedAt:at,updatedAt:new Date(now).toISOString()}],{now,sources});assert.equal(n.items.length,0);assert.equal(n.legacyItems.length,1);assert.equal(n.coverage.verified,0);});
+test('a precise real event time can substitute for unknown publication time',()=>{const n=N.merge(null,[{...item,publishedAt:undefined,eventAt:'2026-10-03T11:00:00+08:00'}],{now,sources});assert.equal(n.items.length,1);assert.equal(n.items[0].publishedAt,undefined);});
+test('window boundary is inclusive and retained items preserve their original source dates',()=>{const x={...item,publishedAt:'2026-10-02T16:00:00Z'},n=N.merge(null,[x],{now,sources});const r=N.merge({runId:'old',generatedAt:new Date(now).toISOString(),payload:{newsroom:n}},[],{now:now+1000,sources});assert.equal(r.items.length,0);assert.equal(r.legacyItems[0].publishedAt,x.publishedAt);});

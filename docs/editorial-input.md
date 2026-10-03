@@ -15,10 +15,14 @@
 - `editorial.newsCoverage`如实写status/note/regions/gaps。代码会再根据实际sourceIds派生active/general/market/externalVerified/marketDataOnly/regionCounts；如果正文声称complete但只有行情源、或CN/US/WORLD实际事件缺席，complete声明会被降级并由content-r3拒绝假完整。18–30条是滚动窗口目标，不是每小时新增配额。
 - 公司研究默认会把已发布历史records计为已有覆盖，不再因为“本轮没重做”就把同一公司塞进pendingQueue。只有发现了新材料但本轮来不及研究时，才可提供可选的 `editorial.researchPendingQueue` 明确列出对象和原因；旧研究继续保留原analyzedAt。
 - `editorial.researchChecks`只记录本轮实际完成的材料检查：每项至少有instrumentId、checkedAt、status/result和说明，`no-new-material`必须有本轮成功取得的SEC/交易所/IR材料依据；来源抓取失败应写失败/待检查，不得伪装成已确认无新增。深度复核优先轮换最多5家公司，普通小时可为空。pipeline会保留旧检查的原checkedAt，不把普通空轮次改成今天已检查。
-- 宏观/资金允许提供可选 `macroFundingNotes` 与 `macroCoverage`。`editorial.events`承载未来12–24小时事件雷达，global-main每轮必须基于本轮实际抓取的官方日历证据填写；日历文档使用`kind=calendar`。精确时点未知时`at=null`并保留时间待定说明，禁止编整点。若核验后确实没有值得展示的事件，`events`可以为空，但`report.sectionGaps.events.reason`必须写清核验范围和空缺原因；否则新报告会进入`needs-revision`。如果本轮四类宏观输入（facts/events/radar/funding）都为空，代码只会保留24小时内上一份来源支持的macro模块，并标记 `status=no-change`、module/item retention及原始dataAsOf；不会把旧证据改成当前时点。超过24小时则不自动沿用，明确保持缺口。
+- 宏观/资金允许提供可选 `macroFundingNotes` 与 `macroCoverage`。`editorial.events`承载未来12–24小时事件雷达，global-main每轮必须基于本轮实际抓取的官方日历证据填写；日历文档使用`kind=calendar`。精确时点未知时`at=null`并保留时间待定说明，禁止编整点。若核验后确实没有值得展示的事件，`events`可以为空，但`report.sectionGaps.events.reason`必须写清核验范围和空缺原因；否则新报告会进入`needs-revision`。宏观按facts/releases/radar/funding分别保留：某类没有新证据时可沿用24小时内上一份来源支持项目，并保留item/lane retention原始锚点；新日历不能清空合格资金事实，也不能续期旧数据。显式events=[]表示本轮已检查空雷达，会清除旧雷达；缺失雷达只可保留尚未过期的原事件。混合新旧输入不制造共同dataAsOf。超过24小时的旧证据不自动沿用。
 
 ## 一次可修正交接
 
 代码返回 `needs-revision` 不是发布成功。立即读取 issues，修正本轮 editorial，并在**原 deadlineAt**之前创建 `<executionId>--r1.json`，仍使用原执行令牌与 packetHash。不得修改首次提交文件、续租、重采集或创建新调度任务。修订仍不合格则失败并释放执行锁。
 
 当返回 `submitted-not-published`，只能说明候选已提交。只有正式回执为 published，并核对网页实际版本后，才能说发布成功。失败的原始输入留存，用于复现；不要删除它们来制造成功率。
+
+## 2026-10-03 恢复质量边界
+
+新提交新闻必须保留真实来源发布时间或事件时间。无精确时区时间、未来或24小时窗口外材料隔离为历史背景，不计入本轮新闻覆盖，不改写原日期。calendar证据不计外部新闻。报价同一时点的数值冲突保留已发表完整观测；新数值、哈希和来源在latestAttempt中隔离待核，模块标partial，不能当作新行情；币种/合约冲突仍拒绝。
