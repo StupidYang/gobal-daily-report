@@ -1,0 +1,1272 @@
+{
+  "execution": {
+    "executionId": "20261003T190014-global-main",
+    "generation": 25
+  },
+  "editorial": {
+    "packetHash": "ff18dcde62a0ec589aa53132f345ea8549f3c132401c2b7cff19951b4e7a6665",
+    "analyzedAt": "2026-10-03T19:08:40.609Z",
+    "report": {
+      "overview": "03:00真实采样中BTC为84933.65美元，较前轮02:02快照约-0.072%，间隔约58分钟，非24小时收益。两个Deribit反向永续OI均较前轮下降，但单场所存量变化不足以认定全球资金流或清算。新增美乌重建投资、苹果AT&T故障回应和流花油田累计产量里程碑；NMC实际02:49通报显示彩云增强为超强台风，已用真实发布替换过期02:30计划。宏观增长与通胀主线仍保持条件判断。",
+      "rolling24hSummary": "00:47、01:12、02:18之后，本轮继续真实采样，没有插值补造旧小时。新增三项不同事件，苹果采用10月2日20:47:02Z的原始声明报道时间而非更晚转载时间；台风沿用同一事件ID更新实际通报，不重复计数。原新闻继续依其实际发布时间到期，FDA时间证明RSS仍失败，仅保留日期级背景。",
+      "methodology": "监督小时执行20261003T190014-global-main，generation25；捕获2026-10-03T19:00:33.474Z，完成2026-10-03T19:00:39.493Z，72条报价、30请求中29份正文成功，FDA官方RSS再次fetch failed。正式日历、就业/PCE、HKEX成交及单位页、发行人页面和新新闻正文均重新读取；动态OI只取冻结packet.publicData，不把随后接口值代入。HKEX9月30日成交值和单位本轮复核成功，统计日期不变；发行人10月2日份额和NAV不变且不是现金流。NMC本轮冻结正文与独立重读哈希一致，实际发布02:49、观测02:00，旧计划02:30已结束；下一05:30仍只是计划。苹果原始声明报道正文与原发布时间已纳入本轮来源，不能凭转载延长24小时窗口。公司研究和五家检查保留旧分析时钟，本轮不伪造新SEC检查。监督小时序列不等于原生定时权限已恢复。",
+      "coreAnalysis": {
+        "mainTheme": "A. 增长降温和通胀仍高于目标并存。非农低增量及下修提供增长放缓证据，PCE显示价格压力仍在，不能简单归纳为无条件宽松或单一衰退。",
+        "expectationGap": "B. 正式就业与PCE实际值已核验，一致预期未取得。只能描述实际和修订，不能编造超预期/不及预期幅度，也不能用涨跌倒推出预期。",
+        "divergence": "C. 最新可得美股五个宽基较来源前收上涨、港股三指数下跌，A股仍是9月30日记录；它们代表不同市场与时段的差异，没有足够资金与成分贡献把差异归因于一个原因。",
+        "regime": "D. 美股上涨与VIX回落显示最新美国交易快照风险偏好改善，但名义10Y仍处高位，缺实际利率、广度及连续反应窗口，只给条件性结论。",
+        "priceIn": "E. 缺利率期货、期权概率和一致预期，无法量化市场已计价多少降息或衰退风险。市场价格本身不是政策预告。",
+        "bullCase": "F. 若后续实际利率减压、就业没有进一步急剧恶化且企业盈利支撑持续，温和增长降温可能改善长久期资产环境。",
+        "bullInvalidation": "F反证. 核心价格压力重新加速、长端收益率继续抬升或就业和盈利同时走弱时，温和降温情景需要撤回。",
+        "bearCase": "G. 若弱就业与高通胀形成更难处理的组合，估值和盈利可能同时受压；港股弱势需要后续量价与资金证据验证。",
+        "bearInvalidation": "G反证. 增长和盈利稳定、通胀下行且宽基广度改善时，不沿用缺乏新证据的单边防守判断。"
+      },
+      "plainLanguage": {
+        "verdict": "新信息集中在具体事件，价格和单场所OI的小幅变化仍不足以改写宏观方向。",
+        "bottomLine": "台风用实际新通报更新，苹果用最早报道时间，生产累计量和项目融资不当作即时新增供给。",
+        "whyNow": "03:00有真实动态观测与三项新增事件；保留宏观、盈利和完整资金证据的限制。",
+        "horizon": "未来24小时及下一合格交易阶段",
+        "confidence": "medium-low",
+        "invalidation": "新的同窗口价格、实际利率、资金和盈利证据改变增长/通胀权衡时重评。",
+        "evidenceFactIds": [
+          "INDEX:US:SP500",
+          "INDEX:HK:HSI",
+          "CRYPTO:BTC:USD",
+          "RATE:US10Y"
+        ],
+        "impacts": [
+          {
+            "asset": "A股",
+            "effect": "假期沿用9月30日快照，消费观察不等于盈利确认",
+            "reason": "上证3842.20、深成指12887.62、创业板3135.28、科创50 1530.01、沪深300 4357.62、中证500 7435.16均保留9月30日源时点；较各自前收约+0.31%、-0.11%、-0.23%、-2.51%、+0.29%、-0.06%。",
+            "takeaway": "假期服务需求可以通过收入预期影响旅游、零售与运营服务估值，传导强弱取决于客单价、利润率、竞争和权重；只见高频使用量不代表盈利同步改善。",
+            "horizon": "下一合格交易阶段及假期后正式统计",
+            "counterRisk": "仍缺全行业成员、量比、换手率、北向净流及系统化公司盈利覆盖；高频假期数据和9月30日总成交不能替代这些输入。",
+            "invalidation": "复市后若同口径量价与实际消费/盈利数据不支持需求改善，则降低这一线索权重；源数据修订时先更正事实。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "INDEX:CN:SSE",
+              "INDEX:CN:SZSE",
+              "INDEX:CN:CHINEXT",
+              "INDEX:CN:STAR50",
+              "INDEX:CN:CSI300",
+              "INDEX:CN:CSI500"
+            ],
+            "sourceUrls": [
+              "https://www.stcn.com/article/detail/4205962.html",
+              "https://www.stcn.com/article/detail/4206104.html"
+            ]
+          },
+          {
+            "asset": "港股",
+            "effect": "10月2日三指数走弱，不能用今天时钟重标",
+            "reason": "恒指23972.29、恒生科技4157.94、国企指数8030.54，来源时间为10月2日08:08:32Z，较各自前收约-2.60%、-2.26%、-2.31%。",
+            "takeaway": "港股同时受全球贴现率、本地盈利和结构性资金影响。相对差异需要指数权重贡献和同窗口资金证据，不能从跌幅直接推断资金流出规模。",
+            "horizon": "下一港股常规交易阶段",
+            "counterRisk": "缺10月2日可比南向有效交易分项、全市场成交结构与盈利修订；现有9月30日量不可重标为当前。",
+            "invalidation": "下一交易阶段宽基、科技及真实成交/资金数据同步改善可削弱弱势判断；继续恶化且盈利修订支持时才加重谨慎权重。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "INDEX:HK:HSI",
+              "INDEX:HK:HSTECH",
+              "INDEX:HK:HSCEI"
+            ]
+          },
+          {
+            "asset": "美股",
+            "effect": "最新可得宽基上涨，弱就业不能简单等同于利好",
+            "reason": "10月2日来源常规时段记录中，标普7722.72（约+0.73%）、纳综27190.86（+1.19%）、纳指100 30807.93（+1.00%）、道指51176.96（+0.49%）、罗素2000 2832.90（+0.94%），VIX15.31（-6.59%）。",
+            "takeaway": "增长放缓可能降低利率路径预期，同时压低盈利预期；哪一条主导取决于实际利率、企业盈利和风险溢价，而不是只看非农一个数字。",
+            "horizon": "下一美股交易阶段与后续宏观数据",
+            "counterRisk": "缺一致预期、完整广度、实际利率、完整资金和其余公司事件研究；五家官方材料检查不能冒充全候选池覆盖。",
+            "invalidation": "后续通胀、就业修订与公司业绩若使增长/贴现率权衡逆转，调整判断；若广度与盈利不能跟上指数上涨则降低改善置信度。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "INDEX:US:SP500",
+              "INDEX:US:NASDAQ",
+              "INDEX:US:NDX",
+              "INDEX:US:DOW",
+              "INDEX:US:RUSSELL2000",
+              "VOL:VIX",
+              "RATE:US10Y",
+              "EQUITY:US:AAPL",
+              "EQUITY:US:MSFT",
+              "EQUITY:US:NVDA",
+              "EQUITY:US:ARM",
+              "EQUITY:US:ORCL",
+              "EQUITY:US:MSTR"
+            ],
+            "sourceUrls": [
+              "https://www.bls.gov/news.release/empsit.nr0.htm",
+              "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+            ]
+          },
+          {
+            "asset": "BTC",
+            "effect": "周末现货有新快照，资金方向仍待证",
+            "reason": "本轮Coinbase记录BTC84933.65、ETH2684.75、SOL119.93、HYPE89.14美元，PEPE0.00000431美元，时点分别保留；BTC较前轮02:02的84995.13约-0.072%，相隔约58分钟，不是24小时收益。",
+            "takeaway": "周末加密仍交易，传统资产停留在旧交易窗口时，薄流动性和自身杠杆可能主导短期波动；宏观路径只是条件背景。",
+            "horizon": "未来1—24小时",
+            "counterRisk": "ETF完整披露、清算汇总与跨场所比较缺失；Deribit OI是存量，不是资金流，费率零也不代表无杠杆。",
+            "invalidation": "后续同源连续价格与独立资金/杠杆披露形成共振才提高方向置信度；若数据相反或源口径变动则撤回。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "CRYPTO:BTC:USD",
+              "CRYPTO:ETH:USD",
+              "CRYPTO:SOL:USD",
+              "CRYPTO:PEPE:USD",
+              "CRYPTO:HYPE:USD",
+              "FX:DXY",
+              "RATE:US10Y"
+            ]
+          },
+          {
+            "asset": "黄金",
+            "effect": "参考现货4141.80美元，实际利率和资金证据缺失",
+            "reason": "Gold API本轮参考黄金4141.799805、白银60.523998美元/金衡盎司，原更新时间约03:00。",
+            "takeaway": "黄金同时受实际利率、美元、避险及实物需求影响；名义收益率减去一个历史通胀值不能冒充当前可交易实际利率。",
+            "horizon": "未来24小时及下一主要交易时段",
+            "counterRisk": "参考现货供应商上游未完整披露，周末更新时间不代表活跃交易；缺同源收益基线和资金流。",
+            "invalidation": "获得同窗口实际利率、连续金价及资金证据后重评；若供应商时点或口径异常则降低该报价权重。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "METAL:XAUUSD",
+              "METAL:XAGUSD",
+              "FX:DXY",
+              "RATE:US10Y"
+            ],
+            "sourceUrls": [
+              "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+              "https://www.bls.gov/news.release/empsit.nr0.htm"
+            ]
+          },
+          {
+            "asset": "原油",
+            "effect": "WTI前一交易快照回落，Brent仍旧，避免伪造同步价差",
+            "reason": "WTI明确2026年11月合约91.11美元/桶，原时点10月2日21:00Z，较来源前收约-1.90%；Brent明确2026年11月合约103.58美元，源时点仍为9月30日18:28Z。",
+            "takeaway": "需求变化、供给约束和风险溢价都影响油价，同方向的价格可能对应不同经济机制；用期现结构和库存独立验证更可靠。",
+            "horizon": "下一能源交易时段与下一次官方库存发布",
+            "counterRisk": "Brent旧数据、库存实际/预期、现货结构及供给事件正文不足；连续合约与明确月份不可混用。",
+            "invalidation": "取得新的同期Brent、库存及产品需求后重评；若供给事实与需求解释冲突，明确改变驱动判断。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "ENERGY:WTI",
+              "ENERGY:BRENT"
+            ],
+            "sourceUrls": [
+              "https://www.eia.gov/reports/upcoming.php",
+              "https://www.bls.gov/news.release/empsit.nr0.htm"
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "name": "A股",
+          "signal": "mixed",
+          "summary": "假期沿用9月30日快照，消费观察不等于盈利确认",
+          "detail": "上证3842.20、深成指12887.62、创业板3135.28、科创50 1530.01、沪深300 4357.62、中证500 7435.16均保留9月30日源时点；较各自前收约+0.31%、-0.11%、-0.23%、-2.51%、+0.29%、-0.06%。科创相对偏弱是已有交易观察，不是10月4日新涨跌。10月3日两篇具体报道给出假期人员流动和高速充电活跃信息，可以观察服务需求和基础设施利用率，但预计出行量不是消费金额，充电电量不是车企销量或利润。缺同口径客单价、成本与上市公司业绩，不能直接生成消费股买入结论。 北向9月30日总成交207941.62百万元人民币本轮重新核对文件与单位，仍不是净买入。商务部对欧盟原产对硝基甲苯反倾销立案属于特定化工链条的政策观察，不等于已征税或整个行业盈利改善。本轮未重新请求此前失败的交易所假期通告，不把接口占位零当成当前资金事实。",
+          "factIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CSI500"
+          ]
+        },
+        {
+          "name": "港股",
+          "signal": "mixed",
+          "summary": "10月2日三指数走弱，不能用今天时钟重标",
+          "detail": "恒指23972.29、恒生科技4157.94、国企指数8030.54，来源时间为10月2日08:08:32Z，较各自前收约-2.60%、-2.26%、-2.31%。这是此次恢复后取得的最新可得来源观测，比上一报告的9月30日数据向前推进，但今天没有新的港股常规交易快照。科技跌幅小于恒指只是三指数的相对观察，不能替代全市场广度、成分贡献或南向资金。美国就业与通胀信息可能影响折现率和全球配置，但上述港股报价早于10月2日12:30Z就业发布，不能把它解释成非农后的市场反应。 HKEX9月30日两路南向买入减卖出合计6863.61百万港元，金额与单位本轮重读成功，但日期仍为9月30日；不能解释10月2日全部跌幅或当作当前流量。本轮没有重新核验交易所假期公告，不引入新的零流量假设。",
+          "factIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ]
+        },
+        {
+          "name": "美股",
+          "signal": "mixed",
+          "summary": "最新可得宽基上涨，弱就业不能简单等同于利好",
+          "detail": "10月2日来源常规时段记录中，标普7722.72（约+0.73%）、纳综27190.86（+1.19%）、纳指100 30807.93（+1.00%）、道指51176.96（+0.49%）、罗素2000 2832.90（+0.94%），VIX15.31（-6.59%）。个股示例AAPL333.69、MSFT517.53、NVDA233.95、ARM307.49、ORCL142.30、MSTR160.01美元，各自保留原时点；候选池不是全市场热榜。BLS显示9月就业仅增2.9万、失业率4.2%、工资环比0.1%，7—8月合计下修6万；BEA8月PCE同比3.4%和核心3.0%表明通胀约束未消失。宽基上涨和波动率下行是事实，但没有发布前后连续窗口与一致预期，不把全部涨幅归因于非农或降息交易。 00:47的五家SEC检查和Tesla分析按原时钟保留，本轮未重新检查SEC索引或研究同一Tesla附表。新增苹果AT&T网络特定机型故障回应，预防更新与已有故障硬件更换的范围不同；缺确切影响数量、售后成本与后续披露，不能量化盈利或股价冲击。URIF三项投资获批是能源与矿产项目融资安排，未披露投资金额，不能当作全部建设完成。",
+          "factIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y",
+            "EQUITY:US:AAPL",
+            "EQUITY:US:MSFT",
+            "EQUITY:US:NVDA",
+            "EQUITY:US:ARM",
+            "EQUITY:US:ORCL",
+            "EQUITY:US:MSTR"
+          ]
+        },
+        {
+          "name": "BTC",
+          "signal": "mixed",
+          "summary": "BTC84933.65美元，单場所OI下降但不等于全球资金流",
+          "detail": "本轮Coinbase记录BTC84933.65、ETH2684.75、SOL119.93、HYPE89.14美元，PEPE0.00000431美元，时点分别保留；BTC较前轮02:02的84995.13约-0.072%，相隔约58分钟，不是24小时收益。Deribit BTC反向永续OI为797,769,650美元（2026-10-03T19:00:34.188Z），ETH为244,212,278美元（2026-10-03T19:00:35.020Z），current_funding和funding_8h均为0。较前轮BTC OI减少2951350美元、ETH减少1600288美元，但价格与名义存量共同变化，仅一场所，不能断言全球出逃或具体清算量。iShares10月2日份额/NAV本轮重读未改变；两只单基金存量仍不构成完整ETF现金净流量。暂保留条件性判断，不把几次小时快照变成强方向信号。",
+          "factIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD",
+            "CRYPTO:PEPE:USD",
+            "CRYPTO:HYPE:USD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "name": "黄金",
+          "signal": "mixed",
+          "summary": "参考现货4141.80美元，实际利率和资金证据缺失",
+          "detail": "Gold API本轮参考黄金4141.799805、白银60.523998美元/金衡盎司，原更新时间约03:00。周末参考报价并非交易所即时结算，不能把接口更新时间当成有活跃集中市场成交。美元指数101.924、10Y名义收益率5.277%来自10月2日不同源时点，不能与贵金属当前参考值计算即时因果。PCE同比3.4%与就业增长放缓形成多方向影响：通胀需求、机会成本和避险偏好可能相互抵消。实际利率、ETF和实物需求仍缺，无法锁定驱动或编造同源24小时收益。",
+          "factIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "name": "原油",
+          "signal": "mixed",
+          "summary": "WTI前一交易快照回落，Brent仍旧，避免伪造同步价差",
+          "detail": "WTI明确2026年11月合约91.11美元/桶，原时点10月2日21:00Z，较来源前收约-1.90%；Brent明确2026年11月合约103.58美元，源时点仍为9月30日18:28Z。合约月份相同但采样相差两天，不能把差额当成当前可交易裂口或宣称两油共振。EIA未来发布日历已读，周末当前24小时未列常规库存发布；日历不提供库存实际值。就业增长放缓可以提示需求风险，但美国一个就业数字不能独立代表全球石油消费；仍需库存、产品需求、炼厂与供给信息。 新增流花二次开发累计产量超过200万吨的项目里程碑，不能当作当日新增供给；没有具体日产量、成本或全球供需占比，暂不足以改变油价机制判断。",
+          "factIds": [
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ]
+        }
+      ],
+      "deepDive": [
+        {
+          "title": "A股",
+          "oneLine": "假期沿用9月30日快照，消费观察不等于盈利确认",
+          "analysis": "上证3842.20、深成指12887.62、创业板3135.28、科创50 1530.01、沪深300 4357.62、中证500 7435.16均保留9月30日源时点；较各自前收约+0.31%、-0.11%、-0.23%、-2.51%、+0.29%、-0.06%。科创相对偏弱是已有交易观察，不是10月4日新涨跌。10月3日两篇具体报道给出假期人员流动和高速充电活跃信息，可以观察服务需求和基础设施利用率，但预计出行量不是消费金额，充电电量不是车企销量或利润。缺同口径客单价、成本与上市公司业绩，不能直接生成消费股买入结论。 北向9月30日总成交207941.62百万元人民币本轮重新核对文件与单位，仍不是净买入。商务部对欧盟原产对硝基甲苯反倾销立案属于特定化工链条的政策观察，不等于已征税或整个行业盈利改善。本轮未重新请求此前失败的交易所假期通告，不把接口占位零当成当前资金事实。",
+          "mechanism": "假期服务需求可以通过收入预期影响旅游、零售与运营服务估值，传导强弱取决于客单价、利润率、竞争和权重；只见高频使用量不代表盈利同步改善。",
+          "risk": "仍缺全行业成员、量比、换手率、北向净流及系统化公司盈利覆盖；高频假期数据和9月30日总成交不能替代这些输入。",
+          "invalidation": "复市后若同口径量价与实际消费/盈利数据不支持需求改善，则降低这一线索权重；源数据修订时先更正事实。",
+          "horizon": "下一合格交易阶段及假期后正式统计",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CSI500",
+            "FLOW:NB:GROSS:20260930"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4205962.html",
+            "https://www.stcn.com/article/detail/4206104.html",
+            "https://www.hkex.com.hk/eng/csm/DailyStat/data_tab_daily_20260930e.js",
+            "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_97459d25c9174ec4a9679b689eb495a5.html"
+          ]
+        },
+        {
+          "title": "港股",
+          "oneLine": "10月2日三指数走弱，不能用今天时钟重标",
+          "analysis": "恒指23972.29、恒生科技4157.94、国企指数8030.54，来源时间为10月2日08:08:32Z，较各自前收约-2.60%、-2.26%、-2.31%。这是此次恢复后取得的最新可得来源观测，比上一报告的9月30日数据向前推进，但今天没有新的港股常规交易快照。科技跌幅小于恒指只是三指数的相对观察，不能替代全市场广度、成分贡献或南向资金。美国就业与通胀信息可能影响折现率和全球配置，但上述港股报价早于10月2日12:30Z就业发布，不能把它解释成非农后的市场反应。 HKEX9月30日两路南向买入减卖出合计6863.61百万港元，金额与单位本轮重读成功，但日期仍为9月30日；不能解释10月2日全部跌幅或当作当前流量。本轮没有重新核验交易所假期公告，不引入新的零流量假设。",
+          "mechanism": "港股同时受全球贴现率、本地盈利和结构性资金影响。相对差异需要指数权重贡献和同窗口资金证据，不能从跌幅直接推断资金流出规模。",
+          "risk": "缺10月2日可比南向有效交易分项、全市场成交结构与盈利修订；现有9月30日量不可重标为当前。",
+          "invalidation": "下一交易阶段宽基、科技及真实成交/资金数据同步改善可削弱弱势判断；继续恶化且盈利修订支持时才加重谨慎权重。",
+          "horizon": "下一港股常规交易阶段",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FLOW:SB:20260930"
+          ],
+          "sourceUrls": [
+            "https://www.hkex.com.hk/eng/csm/DailyStat/data_tab_daily_20260930e.js"
+          ]
+        },
+        {
+          "title": "美股",
+          "oneLine": "最新可得宽基上涨，弱就业不能简单等同于利好",
+          "analysis": "10月2日来源常规时段记录中，标普7722.72（约+0.73%）、纳综27190.86（+1.19%）、纳指100 30807.93（+1.00%）、道指51176.96（+0.49%）、罗素2000 2832.90（+0.94%），VIX15.31（-6.59%）。个股示例AAPL333.69、MSFT517.53、NVDA233.95、ARM307.49、ORCL142.30、MSTR160.01美元，各自保留原时点；候选池不是全市场热榜。BLS显示9月就业仅增2.9万、失业率4.2%、工资环比0.1%，7—8月合计下修6万；BEA8月PCE同比3.4%和核心3.0%表明通胀约束未消失。宽基上涨和波动率下行是事实，但没有发布前后连续窗口与一致预期，不把全部涨幅归因于非农或降息交易。 00:47的五家SEC检查和Tesla分析按原时钟保留，本轮未重新检查SEC索引或研究同一Tesla附表。新增苹果AT&T网络特定机型故障回应，预防更新与已有故障硬件更换的范围不同；缺确切影响数量、售后成本与后续披露，不能量化盈利或股价冲击。URIF三项投资获批是能源与矿产项目融资安排，未披露投资金额，不能当作全部建设完成。",
+          "mechanism": "增长放缓可能降低利率路径预期，同时压低盈利预期；哪一条主导取决于实际利率、企业盈利和风险溢价，而不是只看非农一个数字。",
+          "risk": "缺一致预期、完整广度、实际利率、完整资金和其余公司事件研究；五家官方材料检查不能冒充全候选池覆盖。",
+          "invalidation": "后续通胀、就业修订与公司业绩若使增长/贴现率权衡逆转，调整判断；若广度与盈利不能跟上指数上涨则降低改善置信度。",
+          "horizon": "下一美股交易阶段与后续宏观数据",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y",
+            "EQUITY:US:AAPL",
+            "EQUITY:US:MSFT",
+            "EQUITY:US:NVDA",
+            "EQUITY:US:ARM",
+            "EQUITY:US:ORCL",
+            "EQUITY:US:MSTR"
+          ],
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/empsit.nr0.htm",
+            "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+            "https://www.epa.gov/newsreleases/epa-notifies-states-potential-designations-biden-epas-flawed-2024-air-quality-standard",
+            "https://9to5mac.com/2026/10/02/apple-confirms-iphone-18-pro-max-att-cellular-issues-affected-devices-require-hardware-replacement/",
+            "https://home.treasury.gov/news/press-releases/sb0648/"
+          ]
+        },
+        {
+          "title": "BTC",
+          "oneLine": "BTC84933.65美元，单場所OI下降但不等于全球资金流",
+          "analysis": "本轮Coinbase记录BTC84933.65、ETH2684.75、SOL119.93、HYPE89.14美元，PEPE0.00000431美元，时点分别保留；BTC较前轮02:02的84995.13约-0.072%，相隔约58分钟，不是24小时收益。Deribit BTC反向永续OI为797,769,650美元（2026-10-03T19:00:34.188Z），ETH为244,212,278美元（2026-10-03T19:00:35.020Z），current_funding和funding_8h均为0。较前轮BTC OI减少2951350美元、ETH减少1600288美元，但价格与名义存量共同变化，仅一场所，不能断言全球出逃或具体清算量。iShares10月2日份额/NAV本轮重读未改变；两只单基金存量仍不构成完整ETF现金净流量。暂保留条件性判断，不把几次小时快照变成强方向信号。",
+          "mechanism": "周末加密仍交易，传统资产停留在旧交易窗口时，薄流动性和自身杠杆可能主导短期波动；宏观路径只是条件背景。",
+          "risk": "ETF完整披露、清算汇总与跨场所比较缺失；Deribit OI是存量，不是资金流，费率零也不代表无杠杆。",
+          "invalidation": "后续同源连续价格与独立资金/杠杆披露形成共振才提高方向置信度；若数据相反或源口径变动则撤回。",
+          "horizon": "未来1—24小时",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD",
+            "CRYPTO:PEPE:USD",
+            "CRYPTO:HYPE:USD",
+            "FX:DXY",
+            "RATE:US10Y",
+            "ISSUER:IBIT:SHARES:20261002",
+            "ISSUER:ETHA:SHARES:20261002"
+          ],
+          "sourceUrls": [
+            "https://www.deribit.com/api/v2/public/ticker?instrument_name=BTC-PERPETUAL",
+            "https://www.deribit.com/api/v2/public/ticker?instrument_name=ETH-PERPETUAL",
+            "https://www.ishares.com/us/products/333011/ishares-bitcoin-trust-etf",
+            "https://www.ishares.com/us/products/337614/ishares-ethereum-trust-etf"
+          ]
+        },
+        {
+          "title": "黄金",
+          "oneLine": "参考现货4141.80美元，实际利率和资金证据缺失",
+          "analysis": "Gold API本轮参考黄金4141.799805、白银60.523998美元/金衡盎司，原更新时间约03:00。周末参考报价并非交易所即时结算，不能把接口更新时间当成有活跃集中市场成交。美元指数101.924、10Y名义收益率5.277%来自10月2日不同源时点，不能与贵金属当前参考值计算即时因果。PCE同比3.4%与就业增长放缓形成多方向影响：通胀需求、机会成本和避险偏好可能相互抵消。实际利率、ETF和实物需求仍缺，无法锁定驱动或编造同源24小时收益。",
+          "mechanism": "黄金同时受实际利率、美元、避险及实物需求影响；名义收益率减去一个历史通胀值不能冒充当前可交易实际利率。",
+          "risk": "参考现货供应商上游未完整披露，周末更新时间不代表活跃交易；缺同源收益基线和资金流。",
+          "invalidation": "获得同窗口实际利率、连续金价及资金证据后重评；若供应商时点或口径异常则降低该报价权重。",
+          "horizon": "未来24小时及下一主要交易时段",
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ],
+          "sourceUrls": [
+            "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+            "https://www.bls.gov/news.release/empsit.nr0.htm"
+          ]
+        },
+        {
+          "title": "原油",
+          "oneLine": "WTI前一交易快照回落，Brent仍旧，避免伪造同步价差",
+          "analysis": "WTI明确2026年11月合约91.11美元/桶，原时点10月2日21:00Z，较来源前收约-1.90%；Brent明确2026年11月合约103.58美元，源时点仍为9月30日18:28Z。合约月份相同但采样相差两天，不能把差额当成当前可交易裂口或宣称两油共振。EIA未来发布日历已读，周末当前24小时未列常规库存发布；日历不提供库存实际值。就业增长放缓可以提示需求风险，但美国一个就业数字不能独立代表全球石油消费；仍需库存、产品需求、炼厂与供给信息。 新增流花二次开发累计产量超过200万吨的项目里程碑，不能当作当日新增供给；没有具体日产量、成本或全球供需占比，暂不足以改变油价机制判断。",
+          "mechanism": "需求变化、供给约束和风险溢价都影响油价，同方向的价格可能对应不同经济机制；用期现结构和库存独立验证更可靠。",
+          "risk": "Brent旧数据、库存实际/预期、现货结构及供给事件正文不足；连续合约与明确月份不可混用。",
+          "invalidation": "取得新的同期Brent、库存及产品需求后重评；若供给事实与需求解释冲突，明确改变驱动判断。",
+          "horizon": "下一能源交易时段与下一次官方库存发布",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ],
+          "sourceUrls": [
+            "https://www.eia.gov/reports/upcoming.php",
+            "https://www.bls.gov/news.release/empsit.nr0.htm",
+            "https://www.stcn.com/article/detail/4206030.html"
+          ]
+        }
+      ],
+      "marketCoverage": [
+        {
+          "market": "A股",
+          "status": "partial",
+          "asOf": "2026-09-30T07:00:34.000Z",
+          "note": "假期沿用9月30日快照，消费观察不等于盈利确认；仍缺全行业成员、量比、换手率、北向净流及系统化公司盈利覆盖；高频假期数据和9月30日总成交不能替代这些输入。"
+        },
+        {
+          "market": "港股",
+          "status": "partial",
+          "asOf": "2026-10-02T08:08:32.000Z",
+          "note": "10月2日三指数走弱，不能用今天时钟重标；缺10月2日可比南向有效交易分项、全市场成交结构与盈利修订；现有9月30日量不可重标为当前。"
+        },
+        {
+          "market": "美股",
+          "status": "partial",
+          "asOf": "2026-10-02T20:59:13.000Z",
+          "note": "最新可得宽基上涨，弱就业不能简单等同于利好；缺一致预期、完整广度、实际利率、完整资金和其余公司事件研究；五家官方材料检查不能冒充全候选池覆盖。"
+        },
+        {
+          "market": "BTC",
+          "status": "partial",
+          "asOf": "2026-10-03T19:00:38.114Z",
+          "note": "周末现货有新快照，资金方向仍待证；ETF完整披露、清算汇总与跨场所比较缺失；Deribit OI是存量，不是资金流，费率零也不代表无杠杆。"
+        },
+        {
+          "market": "黄金",
+          "status": "partial",
+          "asOf": "2026-10-03T19:00:33.000Z",
+          "note": "参考现货4141.80美元，实际利率和资金证据缺失；参考现货供应商上游未完整披露，周末更新时间不代表活跃交易；缺同源收益基线和资金流。"
+        },
+        {
+          "market": "原油",
+          "status": "partial",
+          "asOf": "2026-10-02T21:00:00.000Z",
+          "note": "WTI前一交易快照回落，Brent仍旧，避免伪造同步价差；Brent旧数据、库存实际/预期、现货结构及供给事件正文不足；连续合约与明确月份不可混用。"
+        }
+      ],
+      "watch": [
+        {
+          "point": "A股：下一证据条件",
+          "detail": "复市后若同口径量价与实际消费/盈利数据不支持需求改善，则降低这一线索权重；源数据修订时先更正事实。",
+          "a": "新证据支持且时点口径可比时，才提高判断强度。",
+          "b": "反证或主要缺口持续时，保留条件判断。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4205962.html",
+            "https://www.stcn.com/article/detail/4206104.html"
+          ]
+        },
+        {
+          "point": "港股：下一证据条件",
+          "detail": "下一交易阶段宽基、科技及真实成交/资金数据同步改善可削弱弱势判断；继续恶化且盈利修订支持时才加重谨慎权重。",
+          "a": "新证据支持且时点口径可比时，才提高判断强度。",
+          "b": "反证或主要缺口持续时，保留条件判断。",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ]
+        },
+        {
+          "point": "美股：下一证据条件",
+          "detail": "后续通胀、就业修订与公司业绩若使增长/贴现率权衡逆转，调整判断；若广度与盈利不能跟上指数上涨则降低改善置信度。",
+          "a": "新证据支持且时点口径可比时，才提高判断强度。",
+          "b": "反证或主要缺口持续时，保留条件判断。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y",
+            "EQUITY:US:AAPL",
+            "EQUITY:US:MSFT",
+            "EQUITY:US:NVDA",
+            "EQUITY:US:ARM",
+            "EQUITY:US:ORCL",
+            "EQUITY:US:MSTR"
+          ],
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/empsit.nr0.htm",
+            "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+          ]
+        },
+        {
+          "point": "BTC：下一证据条件",
+          "detail": "后续同源连续价格与独立资金/杠杆披露形成共振才提高方向置信度；若数据相反或源口径变动则撤回。",
+          "a": "新证据支持且时点口径可比时，才提高判断强度。",
+          "b": "反证或主要缺口持续时，保留条件判断。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD",
+            "CRYPTO:PEPE:USD",
+            "CRYPTO:HYPE:USD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "point": "黄金：下一证据条件",
+          "detail": "获得同窗口实际利率、连续金价及资金证据后重评；若供应商时点或口径异常则降低该报价权重。",
+          "a": "新证据支持且时点口径可比时，才提高判断强度。",
+          "b": "反证或主要缺口持续时，保留条件判断。",
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ],
+          "sourceUrls": [
+            "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+            "https://www.bls.gov/news.release/empsit.nr0.htm"
+          ]
+        },
+        {
+          "point": "原油：下一证据条件",
+          "detail": "取得新的同期Brent、库存及产品需求后重评；若供给事实与需求解释冲突，明确改变驱动判断。",
+          "a": "新证据支持且时点口径可比时，才提高判断强度。",
+          "b": "反证或主要缺口持续时，保留条件判断。",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "ENERGY:BRENT"
+          ],
+          "sourceUrls": [
+            "https://www.eia.gov/reports/upcoming.php",
+            "https://www.bls.gov/news.release/empsit.nr0.htm"
+          ]
+        }
+      ],
+      "frameworkAnalysis": [
+        {
+          "id": "growth-inflation",
+          "framework": "增长与通胀双约束",
+          "concept": "增长与价格信息共同决定政策与盈利的权衡，不能单指标定方向。",
+          "applicability": "用于就业与PCE已经公布后的宏观背景判断。",
+          "observed": "9月就业新增2.9万、工资环比0.1%、前两月下修；8月PCE同比3.4%、核心3.0%。",
+          "mechanism": "弱增长既可能缓解部分利率压力，也可能降低盈利；价格压力限制简单宽松推演。",
+          "conclusion": "保留增长降温与通胀约束并存的条件判断。",
+          "assumptions": [
+            "官方发布口径可比较",
+            "不把不同月份指标视为同一统计窗口"
+          ],
+          "counterEvidence": "就业统计可修订，单月低值不自动代表趋势；未取得一致预期。",
+          "horizon": "后续数次宏观发布",
+          "invalidation": "新修订或正式新数据推翻增长/价格组合时重评。",
+          "confidence": "medium",
+          "missingData": [
+            "一致预期",
+            "实际利率",
+            "企业盈利修订"
+          ],
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/empsit.nr0.htm",
+            "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+          ]
+        },
+        {
+          "id": "clock",
+          "framework": "事件研究与信息时点",
+          "concept": "市场反应必须发生在事件之后，并有可比基线。",
+          "applicability": "跨A股、港股、美股、周末加密与商品比较。",
+          "observed": "传统市场仍是各自旧交易时点，BTC本轮19:00:38.114Z。NMC观测02:00、发布02:49和计划05:30分别记录，苹果用原始声明报道时间而非转载时间，避免倒置因果或延长新鲜度。",
+          "mechanism": "不同信息集合和交易窗口会产生表面分化，不能把先发生的跌幅解释成后发生的数据冲击。",
+          "conclusion": "保留实际时钟，不把港美分化机械归因于同一非农反应。",
+          "assumptions": [
+            "供应商源时点准确"
+          ],
+          "counterEvidence": "缺发布前后连续样本与广度、资金等独立变量。",
+          "horizon": "未来24小时及下一交易日",
+          "invalidation": "更正时点或取得连续同窗口样本时重新评估。",
+          "confidence": "medium",
+          "missingData": [
+            "连续发布前后样本",
+            "资金流"
+          ],
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:US:SP500",
+            "CRYPTO:BTC:USD"
+          ],
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/empsit.nr0.htm"
+          ]
+        },
+        {
+          "id": "commodity",
+          "framework": "供需与机会成本",
+          "concept": "资产价格不是单一宏观变量的函数。",
+          "applicability": "用于黄金、WTI和BTC的条件分析，不给机械交易信号。",
+          "observed": "金价参考快照与名义利率不同步，WTI与Brent时间不同，BTC缺同源24小时基线。",
+          "mechanism": "实际利率、供需和流动性可能互相抵消；缺独立输入时价格方向无法唯一识别原因。",
+          "conclusion": "等待同窗口实际利率、库存或资金证据，不伪造同步价差与资金归因。",
+          "assumptions": [
+            "合约、单位及来源身份保持一致"
+          ],
+          "counterEvidence": "周末参考价与旧合约报价限制短线结论。",
+          "horizon": "未来1—3交易日",
+          "invalidation": "新同窗口独立证据出现时改变机制权重。",
+          "confidence": "medium-low",
+          "missingData": [
+            "实际利率",
+            "库存与产品需求",
+            "完整ETF现金净流量、跨场所OI/费率与全球清算；已取得单场所和单基金快照"
+          ],
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "ENERGY:WTI",
+            "ENERGY:BRENT",
+            "CRYPTO:BTC:USD"
+          ]
+        }
+      ],
+      "frameworkSynthesis": {
+        "verdict": "事实更新，方向保持条件性；增长和通胀的双约束优先于单一叙事。",
+        "agreement": "三个框架都要求真实时点和独立证据，避免把来源更新时间当行情发生时间。",
+        "disagreement": "美股风险偏好改善与港股弱势、弱就业和高PCE不能以简单多数投票得出单边结论。",
+        "weighting": "先核验数据时间和口径，再比较宏观与盈利机制；资金和供需缺口降低置信度。",
+        "invalidation": "新正式数据、修订或同窗口价格资金组合改变时更新。"
+      },
+      "dataDefinitions": [
+        {
+          "term": "报告时间与证据时间",
+          "definition": "新报告生成不刷新旧市场asOf，原文发布时间、抓取时间和分析时间分别保留。"
+        },
+        {
+          "term": "官方实际与一致预期",
+          "definition": "本轮有就业和PCE正式实际，但没有一致预期，所以不计算惊喜幅度。"
+        },
+        {
+          "term": "日度收益率",
+          "definition": "2Y财政部4.83%是按原业务日期记录的日度曲线值，asOf为空，不伪装为盘中报价。"
+        },
+        {
+          "term": "当前新闻与宏观背景",
+          "definition": "24小时窗口外的就业/PCE仍可作为标明原日期的宏观背景，不计为今天新增新闻。"
+        },
+        {
+          "term": "事件雷达",
+          "definition": "四官方日历用于检查常规宏观发布；独立列示未来台风通报计划和TSE投票时点，不把已过期计划留作未来事件。"
+        },
+        {
+          "term": "监督恢复与自动运行",
+          "definition": "当前会话监督完成这一轮，外部任务修改返回拒绝，不能据此宣称无人值守连续性恢复。"
+        },
+        {
+          "term": "OI与资金流",
+          "definition": "未平仓合约名义规模是存量，变化也不等于现金净流入；单场所数据不可冒充全球汇总。"
+        },
+        {
+          "term": "交易日与读取日",
+          "definition": "HKEX9月30日数据仍属于9月30日，假期接口占位零不能写成当前零流量。"
+        },
+        {
+          "term": "材料检查与研究",
+          "definition": "五家SEC索引检查保留实际时间与编号；只有实际读过并分析的Tesla经营附表形成研究记录，不把索引查询等同全文财报研究。"
+        },
+        {
+          "term": "发行人快照与ETF流量",
+          "definition": "基金NAV、净资产、流通份额是带日期的单基金披露，未核实现金申购赎回和完整覆盖前不生成全市场净流量。"
+        },
+        {
+          "term": "指定历史事实复用",
+          "definition": "读取失败不删除上版已核验金额；明确按旧ID和完整原来源保留，其原核验时间不改成本轮。"
+        }
+      ],
+      "analysisTheses": [
+        {
+          "title": "就业低增长不等于宽松利好自动成立",
+          "observed": "新增就业2.9万、此前两月下修6万，PCE仍有价格压力。",
+          "interpretation": "需要同时评估盈利与贴现率两条传导。",
+          "alternatives": [
+            "单月噪音或修订",
+            "增长进一步放缓",
+            "政策路径重估"
+          ],
+          "validation": "后续就业/通胀正式发布及实际利率、盈利修订。",
+          "confidence": "medium",
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/empsit.nr0.htm",
+            "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+          ]
+        },
+        {
+          "title": "市场分化需先处理时间差",
+          "observed": "港股报价早于非农公布，美股随后交易，加密在19:00:38.114Z仍有当前快照；新闻实际发布、观测和下一计划也必须分开。",
+          "interpretation": "当前证据不支持统一事件因果。",
+          "alternatives": [
+            "本地盈利因素",
+            "资金结构差异",
+            "不同采样时点"
+          ],
+          "validation": "同窗口广度、价格与资金证据。",
+          "confidence": "medium",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:US:SP500",
+            "CRYPTO:BTC:USD"
+          ]
+        }
+      ],
+      "judgmentRevisions": [],
+      "narrativeTriggers": [
+        {
+          "title": "增长与价格组合改变",
+          "definition": "后续正式发布或修订改变就业与价格压力。",
+          "effect": "增长和通胀同时缓和与盈利骤弱的含义不同，重新权衡。",
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/empsit.nr0.htm",
+            "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+          ]
+        },
+        {
+          "title": "周末加密的独立资金验证",
+          "definition": "仅价格变动不足以确认ETF买入或去杠杆。",
+          "effect": "在OI、费率、清算或完整流量可得后才升级归因。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        }
+      ],
+      "changes": [
+        {
+          "id": "hour03-observation",
+          "title": "03:00实际动态观测",
+          "detail": "BTC84933.65美元，较前轮约-0.072%，约58分钟间隔；单场所OI均下降，不能替代全球资金证据。",
+          "recordedAt": "2026-10-03T19:00:39.493Z",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "DERIBIT:BTC:OI",
+            "DERIBIT:ETH:OI"
+          ]
+        },
+        {
+          "id": "hour03-nmc",
+          "title": "台风计划转为实际新通报",
+          "detail": "02:49实际发布，02时观测升至超强台风52米/秒、935hPa；撤下原02:30计划，新的05:30仍待后续核验。",
+          "recordedAt": "2026-10-03T19:00:39.493Z",
+          "sourceUrls": [
+            "https://www.nmc.cn/publish/typhoon/typhoon_new.html"
+          ]
+        },
+        {
+          "id": "hour03-news",
+          "title": "三个新事件与原始时间核验",
+          "detail": "URIF融资获批、苹果网络故障回应和流花累计产量分别收录；苹果保留原始声明报道20:47:02Z，不用转载续期。",
+          "recordedAt": "2026-10-03T19:00:39.493Z",
+          "sourceUrls": [
+            "https://home.treasury.gov/news/press-releases/sb0648/",
+            "https://9to5mac.com/2026/10/02/apple-confirms-iphone-18-pro-max-att-cellular-issues-affected-devices-require-hardware-replacement/",
+            "https://www.stcn.com/article/detail/4206030.html"
+          ]
+        }
+      ],
+      "recentChanges": [
+        {
+          "id": "hour03-observation",
+          "title": "03:00实际动态观测",
+          "detail": "BTC84933.65美元，较前轮约-0.072%，约58分钟间隔；单场所OI均下降，不能替代全球资金证据。",
+          "recordedAt": "2026-10-03T19:00:39.493Z",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "DERIBIT:BTC:OI",
+            "DERIBIT:ETH:OI"
+          ]
+        },
+        {
+          "id": "hour03-nmc",
+          "title": "台风计划转为实际新通报",
+          "detail": "02:49实际发布，02时观测升至超强台风52米/秒、935hPa；撤下原02:30计划，新的05:30仍待后续核验。",
+          "recordedAt": "2026-10-03T19:00:39.493Z",
+          "sourceUrls": [
+            "https://www.nmc.cn/publish/typhoon/typhoon_new.html"
+          ]
+        },
+        {
+          "id": "hour03-news",
+          "title": "三个新事件与原始时间核验",
+          "detail": "URIF融资获批、苹果网络故障回应和流花累计产量分别收录；苹果保留原始声明报道20:47:02Z，不用转载续期。",
+          "recordedAt": "2026-10-03T19:00:39.493Z",
+          "sourceUrls": [
+            "https://home.treasury.gov/news/press-releases/sb0648/",
+            "https://9to5mac.com/2026/10/02/apple-confirms-iphone-18-pro-max-att-cellular-issues-affected-devices-require-hardware-replacement/",
+            "https://www.stcn.com/article/detail/4206030.html"
+          ]
+        }
+      ],
+      "evolution24h": [
+        {
+          "id": "recovery0047",
+          "title": "00:47恢复报告",
+          "detail": "原始采样00:36，事实见冻结历史版本。",
+          "at": "2026-10-04T00:47:11.574+08:00",
+          "evidenceReportId": "2026-10-04-0047"
+        },
+        {
+          "id": "hour0112",
+          "title": "01:12第二个小时版本",
+          "detail": "原始采样01:01，旧时点文字已更正。",
+          "at": "2026-10-04T01:12:38.439+08:00",
+          "evidenceReportId": "2026-10-04-0112"
+        },
+        {
+          "id": "hour0218",
+          "title": "02:18第三个小时版本",
+          "detail": "原始采样02:02，增加单基金背景与具体事件。",
+          "at": "2026-10-04T02:18:30.321+08:00",
+          "evidenceReportId": "2026-10-04-0218"
+        },
+        {
+          "id": "hour03-capture",
+          "title": "03:00本轮采样",
+          "detail": "动态快照与实际台风通报更新，旧统计日期保持不变。",
+          "at": "2026-10-03T19:00:39.493Z",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "DERIBIT:BTC:OI"
+          ]
+        }
+      ],
+      "worldEvents": [],
+      "sectionGaps": {
+        "events": {
+          "reason": "实际读取Fed/BLS/BEA/EIA排程，检查2026-10-03T19:00:39.493Z至次日同一时刻，无该周末窗口的常规宏观统计发布；EIA持续电网监测不当成离散宏观事件。NMC实际02:49通报已解决旧计划，新05:30仍待验证；TSE投票11:00Z开始在窗口内，20:00Z结束仍在窗口外。"
+        },
+        "newsroom": {
+          "reason": "新增3个独立事件、同一台风实际更新；苹果按原始声明20:47:02Z计时。FDA仅日期级背景，未用转载或模糊时分填数。"
+        },
+        "funding": {
+          "reason": "两只基金日度份额/NAV与单场所OI/费率可得，完整ETF现金净流量和全球清算仍缺。HKEX旧交易日金额和单位本轮已重读，日期不改。"
+        },
+        "researchChecks": {
+          "reason": "普通小时未新增SEC材料检查；保留原五家检查与Tesla原分析。苹果回应是本轮新闻证据，不冒充完整公司业绩研究。"
+        },
+        "continuity": {
+          "reason": "连续四个小时版本都有真实请求和来源采样；更早断档不补造，原生定时权限仍未恢复。"
+        },
+        "quoteConflicts": {
+          "reason": "SSE同一时点返回数值精度差异，保留旧完整观测并隔离新值，待独立核验。"
+        },
+        "sourceFailure": {
+          "reason": "本轮只有FDA官方RSS fetch failed；HKEX单位页已经恢复读取。此前被拒绝的源未重试，也未以未采到值补零。"
+        }
+      },
+      "events": []
+    },
+    "newsItems": [
+      {
+        "eventId": "us-treasury-urif-energy-minerals-20261002",
+        "title": "美乌重建投资基金批准能源与关键矿产新投资",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-02T19:30:00Z",
+        "summary": "美国财政部宣布，美乌重建投资基金（URIF）董事会批准三项新投资：与 BGV Group Management 建立关键矿产联合投资平台，向社区热电联产项目提供股权投资，并为 DTEK 分布在六处的 200 MW／400 MWh 电池储能系统提供债务融资。",
+        "plainImpact": "此举把美乌经济合作进一步落实为矿产与能源项目融资，涉及关键矿产供应链和乌克兰电网恢复能力。官方称 DTEK 储能系统已运行，可提供相当于约60万户家庭两小时用电量的电力。",
+        "assessment": "新的跨境重建融资与关键矿产供应链政策进展，具有持续性；可补充美国公共政策与能源经济新闻。",
+        "counterRisk": "公告未披露各项投资金额或资金拨付进度；矿产平台和社区热电项目仍属投资／建设安排，不应表述为矿产已投产或全部项目已完成。原网页正文列出稀土、铍、锆；搜索摘要曾多出“铀”，应以原网页正文为准。",
+        "nextWatch": "关注三项投资的具体规模、资本实际部署、矿产平台项目筛选和社区能源项目建设进度。",
+        "sourceUrls": [
+          "https://home.treasury.gov/news/press-releases/sb0648/"
+        ],
+        "firstSeenAt": "2026-10-03T19:00:38.190Z",
+        "category": "国际经济合作",
+        "status": "本轮新收录，保留原发布时间"
+      },
+      {
+        "eventId": "us_iphone_connectivity",
+        "title": "苹果确认部分AT&T版iPhone 18 Pro Max失去服务，已受影响设备需更换",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "publishedAt": "2026-10-02T20:47:02Z",
+        "summary": "苹果向9to5Mac确认，少量使用AT&T网络的iPhone 18 Pro Max可能失去蜂窝服务。软件和运营商设置更新用于预防新增故障；已经失去服务的设备需联系苹果或AT&T处理硬件更换。",
+        "plainImpact": "受影响用户的电话、短信和移动数据服务可能中断。更新与更换的适用对象不同，售后处理及故障规模仍需跟踪。",
+        "assessment": "采用直接取得苹果声明的9to5Mac原发布时间10月2日20:47:02Z；证券时报转载时间单列为10月3日15:51UTC+8，不据此延长事件新鲜度。更新用于预防新故障，已经失去服务的设备需硬件更换。",
+        "counterRisk": "苹果只称少量用户，未提供可核验的受影响数量或成本。不能扩展为所有iPhone或全球网络故障，也不能认定基带供应商导致问题，或推断公司股价和利润影响。",
+        "nextWatch": "苹果和AT&T后续支持指引、硬件更换安排、故障数量及原因调查。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4206088.html",
+          "https://9to5mac.com/2026/10/02/apple-confirms-iphone-18-pro-max-att-cellular-issues-affected-devices-require-hardware-replacement/"
+        ],
+        "firstSeenAt": "2026-10-03T19:00:38.785Z",
+        "category": "科技与消费者服务",
+        "status": "本轮新收录，保留原发布时间",
+        "republishedAt": "2026-10-03T15:51:00+08:00"
+      },
+      {
+        "eventId": "cn_liuhua_output",
+        "title": "流花油田二次开发项目累计产油突破200万吨",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-03T11:20:00+08:00",
+        "summary": "据央视新闻10月3日报道，流花油田二次开发项目累计原油产量当天超过200万吨。报道还称，该油田当前日产量达到投产以来的新高，但未给出具体日产量。",
+        "plainImpact": "这一进展提供了国内海上原油开发能力的项目级观察。累计产量可反映项目运行规模，但不能直接推算当前新增供给。",
+        "assessment": "本条为10月3日发生的累计产量里程碑，与已有国庆出行、充电和安全检查报道是不同事件。数据来自央视新闻报道，本轮未取得项目运营方的原始产量表。",
+        "counterRisk": "200万吨是累计产量，不能表述为单日或年度新增产量；没有项目成本、利润或全国供给占比，不能据此量化油价及公司盈利影响。",
+        "nextWatch": "项目运营方后续生产公告、日产量与运营成本。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4206030.html"
+        ],
+        "firstSeenAt": "2026-10-03T19:00:38.621Z",
+        "category": "能源生产",
+        "status": "本轮新收录，保留原发布时间"
+      },
+      {
+        "eventId": "world_choiwan",
+        "title": "彩云增强为超强台风，中央气象台实际02:49发布新通报",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "publishedAt": "2026-10-04T02:49:00+08:00",
+        "eventAt": "2026-10-04T02:00:00+08:00",
+        "firstSeenAt": "2026-10-03T16:36:40.596Z",
+        "summary": "中央气象台02:49发布的通报对应02时观测：彩云位于20.9°N、146.6°E，中心附近最大风力16级、52米/秒，气压935hPa，距东京南偏东约1780公里，等级为超强台风。",
+        "plainImpact": "强度较上一23时观测增强，需要关注西北太平洋航运及后续路径；尚不能推断登陆位置或损失。",
+        "assessment": "上一通报为15级、48米/秒、945hPa，本轮为实际新观测，不把原计划02:30当成准时已发布；实际发布时间02:49与观测02:00分别保留。下一05:30仍须到时查证。",
+        "counterRisk": "中心强度和路径预报不等同具体沿岸灾情或已发生经济损失。",
+        "nextWatch": "核验05:30计划更新是否实际发布，以及路径和强度变化。",
+        "category": "天气与公共安全",
+        "status": "同一事件更新实际官方通报",
+        "updateType": "同事件实质更新，不新增重复故事",
+        "sourceUrls": [
+          "https://www.nmc.cn/publish/typhoon/typhoon_new.html"
+        ]
+      }
+    ],
+    "newsCoverage": {
+      "status": "partial",
+      "note": "新增三项独立事件，台风同一事件更新；保留既有窗口内故事及来源，新闻数依据实际编译窗口计算。",
+      "regions": {
+        "CN": "新增流花油田累计产量，保留消费与政策事件",
+        "US": "新增原始苹果回应及美乌融资，严格使用原发布时间",
+        "WORLD": "台风正式更新，既有国际事件按原时间留存"
+      },
+      "gaps": [
+        "18条目标会随原事件到期变化，不能用转载续期",
+        "FDA具体时分证据仍未取得，本轮不计当前新闻",
+        "交战方通报仍未独立核验"
+      ]
+    },
+    "macroFacts": [
+      {
+        "id": "MACRO:US:PAYROLL:202609",
+        "label": "美国9月非农新增就业",
+        "rawValue": 2.9,
+        "displayValue": "2.9万人",
+        "valueType": "number",
+        "unit": "万人",
+        "asOf": "2026-10-02T12:30:00Z",
+        "dataStatus": "complete",
+        "scope": "官方已发布历史统计，非当前行情",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/empsit.nr0.htm"
+        ],
+        "note": "9月统计；发布时间不等于当期每小时就业变化。",
+        "verifiedAt": "2026-10-03T19:01:51.529+00:00",
+        "window": "2026年9月月度",
+        "direction": "unknown",
+        "impactTone": "neutral"
+      },
+      {
+        "id": "MACRO:US:UNEMP:202609",
+        "label": "美国9月失业率",
+        "rawValue": 4.2,
+        "displayValue": "4.2%",
+        "valueType": "number",
+        "unit": "%",
+        "asOf": "2026-10-02T12:30:00Z",
+        "dataStatus": "complete",
+        "scope": "官方已发布历史统计，非当前行情",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/empsit.nr0.htm"
+        ],
+        "note": "季调官方值；与家庭调查口径相符。",
+        "verifiedAt": "2026-10-03T19:01:51.529+00:00",
+        "window": "2026年9月月度",
+        "direction": "unknown",
+        "impactTone": "neutral"
+      },
+      {
+        "id": "MACRO:US:PCEYOY:202608",
+        "label": "美国8月PCE同比",
+        "rawValue": 3.4,
+        "displayValue": "3.4%",
+        "valueType": "number",
+        "unit": "%",
+        "asOf": "2026-09-30T12:30:00Z",
+        "dataStatus": "complete",
+        "scope": "官方已发布历史统计，非当前行情",
+        "sourceUrls": [
+          "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+        ],
+        "note": "8月统计，于9月30日发布，不算本24小时新新闻。",
+        "verifiedAt": "2026-10-03T19:01:54.630+00:00",
+        "window": "2026年8月月度",
+        "direction": "unknown",
+        "impactTone": "neutral"
+      },
+      {
+        "id": "MACRO:US:COREPCEYOY:202608",
+        "label": "美国8月核心PCE同比",
+        "rawValue": 3,
+        "displayValue": "3.0%",
+        "valueType": "number",
+        "unit": "%",
+        "asOf": "2026-09-30T12:30:00Z",
+        "dataStatus": "complete",
+        "scope": "官方已发布历史统计，非当前行情",
+        "sourceUrls": [
+          "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+        ],
+        "note": "剔除食品能源，历史月度统计。",
+        "verifiedAt": "2026-10-03T19:01:54.630+00:00",
+        "window": "2026年8月月度",
+        "direction": "unknown",
+        "impactTone": "neutral"
+      },
+      {
+        "id": "DERIBIT:BTC:OI",
+        "label": "BTC Deribit反向永续OI",
+        "rawValue": 797769650,
+        "displayValue": "797,769,650美元（单场所）",
+        "valueType": "number",
+        "unit": "USD notional",
+        "asOf": "2026-10-03T19:00:34.188Z",
+        "verifiedAt": "2026-10-03T19:00:34.299Z",
+        "window": "此次接口瞬时快照",
+        "direction": "unknown",
+        "impactTone": "neutral",
+        "dataStatus": "snapshot",
+        "scope": "Deribit BTC-PERPETUAL，非全球汇总",
+        "note": "OI是未平仓存量，不是现金流入；反向永续官方单位为USD。",
+        "sourceUrls": [
+          "https://www.deribit.com/api/v2/public/ticker?instrument_name=BTC-PERPETUAL"
+        ]
+      },
+      {
+        "id": "DERIBIT:ETH:OI",
+        "label": "ETH Deribit反向永续OI",
+        "rawValue": 244212278,
+        "displayValue": "244,212,278美元（单场所）",
+        "valueType": "number",
+        "unit": "USD notional",
+        "asOf": "2026-10-03T19:00:35.020Z",
+        "verifiedAt": "2026-10-03T19:00:35.127Z",
+        "window": "此次接口瞬时快照",
+        "direction": "unknown",
+        "impactTone": "neutral",
+        "dataStatus": "snapshot",
+        "scope": "Deribit ETH-PERPETUAL，非全球汇总",
+        "note": "OI是未平仓存量，不是现金流入；反向永续官方单位为USD。",
+        "sourceUrls": [
+          "https://www.deribit.com/api/v2/public/ticker?instrument_name=ETH-PERPETUAL"
+        ]
+      },
+      {
+        "id": "ISSUER:IBIT:SHARES:20261002",
+        "label": "IBIT官方流通份额（10月2日）",
+        "rawValue": 1418840000,
+        "displayValue": "1,418,840,000份（10月2日）",
+        "valueType": "number",
+        "unit": "shares",
+        "asOf": null,
+        "observationDate": "2026-10-02",
+        "timePrecision": "date",
+        "verifiedAt": "2026-10-03T19:01:50.712+00:00",
+        "window": "发行人10月2日快照",
+        "direction": "unknown",
+        "impactTone": "neutral",
+        "dataStatus": "partial",
+        "scope": "单只基金发行人数据，不是全市场ETF净流量",
+        "note": "未从份额或NAV推导现金申购赎回；日期与口径分开。",
+        "sourceUrls": [
+          "https://www.ishares.com/us/products/333011/ishares-bitcoin-trust-etf"
+        ]
+      },
+      {
+        "id": "ISSUER:ETHA:SHARES:20261002",
+        "label": "ETHA官方流通份额（10月2日）",
+        "rawValue": 487280000,
+        "displayValue": "487,280,000份（10月2日）",
+        "valueType": "number",
+        "unit": "shares",
+        "asOf": null,
+        "observationDate": "2026-10-02",
+        "timePrecision": "date",
+        "verifiedAt": "2026-10-03T19:01:50.601+00:00",
+        "window": "发行人10月2日快照",
+        "direction": "unknown",
+        "impactTone": "neutral",
+        "dataStatus": "partial",
+        "scope": "单只基金发行人数据，不是全市场ETF净流量",
+        "note": "未从份额或NAV推导现金申购赎回；日期与口径分开。",
+        "sourceUrls": [
+          "https://www.ishares.com/us/products/337614/ishares-ethereum-trust-etf"
+        ]
+      },
+      {
+        "id": "FLOW:SB:20260930",
+        "label": "9月30日南向成交净买入",
+        "rawValue": 6863.61,
+        "displayValue": "6863.61百万港元（9月30日）",
+        "valueType": "number",
+        "unit": "HKD million",
+        "asOf": null,
+        "observationDate": "2026-09-30",
+        "timePrecision": "date",
+        "verifiedAt": "2026-10-03T19:01:51.025+00:00",
+        "window": "9月30日交易日",
+        "direction": "up",
+        "impactTone": "neutral",
+        "dataStatus": "partial",
+        "scope": "Stock Connect两路买入成交额减卖出成交额",
+        "note": "计算5094.33+1769.28；不是当前资金流，不是额度占用。",
+        "sourceUrls": [
+          "https://www.hkex.com.hk/eng/csm/DailyStat/data_tab_daily_20260930e.js",
+          "https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Historical-Daily?sc_lang=en"
+        ]
+      },
+      {
+        "id": "FLOW:NB:GROSS:20260930",
+        "label": "9月30日北向总成交",
+        "rawValue": 207941.62,
+        "displayValue": "207941.62百万元人民币（总成交）",
+        "valueType": "number",
+        "unit": "CNY million",
+        "asOf": null,
+        "observationDate": "2026-09-30",
+        "timePrecision": "date",
+        "verifiedAt": "2026-10-03T19:01:51.025+00:00",
+        "window": "9月30日交易日",
+        "direction": "unknown",
+        "impactTone": "neutral",
+        "dataStatus": "partial",
+        "scope": "北向两路总成交，不是净流入",
+        "note": "缺买卖分项，禁止将总成交解释成资金净流。",
+        "sourceUrls": [
+          "https://www.hkex.com.hk/eng/csm/DailyStat/data_tab_daily_20260930e.js",
+          "https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Historical-Daily?sc_lang=en"
+        ]
+      }
+    ],
+    "macroEvents": [
+      {
+        "id": "jobs-sept-official",
+        "title": "美国9月就业报告已发布",
+        "eventAt": "2026-10-02T12:30:00Z",
+        "summary": "非农+2.9万、失业率4.2%、时薪环比+0.1%同比+3.0%，7—8月合计下修6万。",
+        "assessment": "增长降温线索，未取得一致预期，不能宣称惊喜幅度。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/empsit.nr0.htm"
+        ]
+      },
+      {
+        "id": "pce-aug-official",
+        "title": "美国8月个人收入与支出已发布",
+        "eventAt": "2026-09-30T12:30:00Z",
+        "summary": "PCE同比3.4%、核心3.0%，环比0.3%/0.2%，实际消费环比+0.6%。",
+        "assessment": "价格压力与需求韧性并存，不把不同月份指标当同一个窗口。",
+        "sourceUrls": [
+          "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "nmc-choiwan-next-bulletin",
+        "title": "中央气象台彩云台风下一通报计划",
+        "at": "2026-10-03T21:30:00Z",
+        "timezone": "Asia/Shanghai",
+        "summary": "实际02:49新通报已读取，原02:30计划从未来雷达撤下；新通报预告10月4日05:30UTC+8下一更新。",
+        "impact": "核验后续路径和强度，不将下一计划当已发布结果。",
+        "scenarioA": "到时实际新通报出现，按观测和发布时点更新。",
+        "scenarioB": "若页面仍旧或延迟，明确未确认并撤下过期倒计时。",
+        "sourceUrls": [
+          "https://www.nmc.cn/publish/typhoon/typhoon_new.html"
+        ]
+      },
+      {
+        "id": "brazil-first-round-open",
+        "title": "巴西大选首轮投票开始",
+        "at": "2026-10-04T11:00:00Z",
+        "timezone": "America/Sao_Paulo",
+        "summary": "TSE规则明确10月4日按巴西利亚08:00开始投票，即北京时间19:00；17:00结束为20:00Z，结束点在本轮24小时窗口外。",
+        "impact": "关注官方投票进展与后续结果，不提前推断任何候选人胜负或市场反应。",
+        "scenarioA": "按计划开始后查证官方实际进展。",
+        "scenarioB": "安排变更或异常以选举机构后续公告核验。",
+        "sourceUrls": [
+          "https://www.tse.jus.br/comunicacao/noticias/2026/Outubro/falta-1-dia-veja-o-que-pode-e-o-que-nao-pode-no-1o-turno-das-eleicoes-2026"
+        ]
+      }
+    ],
+    "macroFundingNotes": [
+      {
+        "id": "deribit_btc-sample",
+        "title": "BTC Deribit反向永续单场所样本",
+        "asOf": "2026-10-03T19:00:34.188Z",
+        "summary": "本次单场所OI名义存量797,769,650美元，相对前轮变化-2,951,350美元；current_funding=0、funding_8h=0，均为接口原字段小数。",
+        "scope": "单场所、单品种的存量及费率字段；不是资金净流入、不是全市场OI/清算。",
+        "assessment": "单场所存量变化可能受持仓、价格及合约机制共同影响，不等于资金净流或全球清算。",
+        "sourceUrls": [
+          "https://www.deribit.com/api/v2/public/ticker?instrument_name=BTC-PERPETUAL"
+        ]
+      },
+      {
+        "id": "deribit_eth-sample",
+        "title": "ETH Deribit反向永续单场所样本",
+        "asOf": "2026-10-03T19:00:35.020Z",
+        "summary": "本次单场所OI名义存量244,212,278美元，相对前轮变化-1,600,288美元；current_funding=0、funding_8h=0，均为接口原字段小数。",
+        "scope": "单场所、单品种的存量及费率字段；不是资金净流入、不是全市场OI/清算。",
+        "assessment": "单场所存量变化可能受持仓、价格及合约机制共同影响，不等于资金净流或全球清算。",
+        "sourceUrls": [
+          "https://www.deribit.com/api/v2/public/ticker?instrument_name=ETH-PERPETUAL"
+        ]
+      },
+      {
+        "id": "stock-connect-20260930",
+        "title": "9月30日互联互通已执行成交，保留历史交易日",
+        "observationDate": "2026-09-30",
+        "timePrecision": "date",
+        "summary": "本轮成交文件与单位页均成功重读，南向两路买入减卖出合计6863.61百万港元，北向两路总成交207941.62百万元人民币；统计日期仍为9月30日。",
+        "assessment": "北向仅有总成交，不能推算净流；南向净买入不是额度使用或银行汇款。不是10月4日流量。",
+        "sourceUrls": [
+          "https://www.hkex.com.hk/eng/csm/DailyStat/data_tab_daily_20260930e.js",
+          "https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Historical-Daily?sc_lang=en"
+        ],
+        "evidenceFactIds": [
+          "FLOW:SB:20260930",
+          "FLOW:NB:GROSS:20260930"
+        ]
+      },
+      {
+        "id": "issuer-IBIT-20261002",
+        "title": "IBIT发行人快照",
+        "observationDate": "2026-10-02",
+        "timePrecision": "date",
+        "summary": "iShares官方页列示10月2日NAV每份47.64美元、基金净资产67,589,503,046美元、流通份额1,418,840,000份。",
+        "assessment": "仅单只基金日度存量与净值；没有核实完整BTC/ETH ETF现金净流量，不从这些值推算流入。",
+        "sourceUrls": [
+          "https://www.ishares.com/us/products/333011/ishares-bitcoin-trust-etf"
+        ]
+      },
+      {
+        "id": "issuer-ETHA-20261002",
+        "title": "ETHA发行人快照",
+        "observationDate": "2026-10-02",
+        "timePrecision": "date",
+        "summary": "iShares官方页列示10月2日NAV每份20.10美元、基金净资产9,794,984,561美元、流通份额487,280,000份。",
+        "assessment": "仅单只基金日度存量与净值；没有核实完整BTC/ETH ETF现金净流量，不从这些值推算流入。",
+        "sourceUrls": [
+          "https://www.ishares.com/us/products/337614/ishares-ethereum-trust-etf"
+        ]
+      },
+      {
+        "id": "etha-split-caution",
+        "title": "ETHA份额序列比较提醒",
+        "summary": "发行人页提示反向拆分于10月5日收市后生效，10月6日起按调整后的份额交易；本轮未核验拆分比例。",
+        "assessment": "跨公司行为日期比较份额须做正确调整，不能把未调整份额跳变解释成赎回。",
+        "sourceUrls": [
+          "https://www.ishares.com/us/products/337614/ishares-ethereum-trust-etf"
+        ]
+      }
+    ],
+    "macroCoverage": {
+      "status": "partial",
+      "note": "正式就业/PCE、03:00单场所OI/费率、9月30日互联互通金额与单位、10月2日单基金份额/NAV和四官方日历本轮已读取。完整ETF现金流、全球清算、跨市场全排名、一致预期及实际利率仍缺。"
+    },
+    "researchRecords": [],
+    "researchChecks": [],
+    "retainedMacroFactIds": []
+  }
+}
