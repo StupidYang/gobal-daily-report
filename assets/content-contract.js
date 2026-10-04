@@ -1,6 +1,7 @@
 /* Shared reader/publication contract. Aliases are projections, never invented evidence. */
 (function(root){
 'use strict';
+const Scope=typeof module!=='undefined'&&module.exports?require('./editorial-scope.js'):root.GDREditorialScope;
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x.trim():'',clone=x=>JSON.parse(JSON.stringify(x));
 const markets=['A股','港股','美股','BTC','黄金','原油'];
 const first=(...xs)=>xs.map(str).find(Boolean)||'';
@@ -70,6 +71,6 @@ async function projection(report){
   return p.version===1&&p.reportId===report.reportId&&p.reportHash===digest?p:null;
  }catch{return null;}finally{clearTimeout(timer);}})();projectionCache.set(key,pending);return pending;
 }
-async function view(report){const p=await projection(report);return p?{...normalize(report),_readerProjection:p}:normalize(report);}
-const api={normalize,quality,markets,marketOf,placeholder,quoteCoverage,projection,view};root.GDRContent=api;if(typeof module!=='undefined')module.exports=api;
+async function view(report){const p=await projection(report),r=p?{...normalize(report),_readerProjection:p}:normalize(report);return Scope?Scope.project(r):r;}
+const api={normalize,quality,markets,marketOf,placeholder,quoteCoverage,projection,view,editorialScope:Scope};root.GDRContent=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof globalThis!=='undefined'?globalThis:window);

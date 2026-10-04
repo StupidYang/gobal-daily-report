@@ -85,7 +85,14 @@ async function visit(page){
     checks.push('three-market-boards-and-N');
     await page.getByRole('button',{name:'公司研究',exact:true}).click();assert.match(await page.locator('#watchlist').innerText(),/研究|财报/);checks.push('research-cache-view');
     const previous=index.reports.find(x=>x.path!==hp);
-    if(previous){await page.locator('#historySelect').selectOption(previous.path);await page.waitForTimeout(1800);assert.match(await page.locator('#watchlist').innerText(),/历史/);await page.locator('#historySelect').selectOption('data/latest.json');await page.waitForTimeout(1800);checks.push('history-isolation-and-return');}
+    if(previous){
+     await page.locator('#historySelect').selectOption(previous.path);
+     await page.waitForFunction(({path,id})=>{const w=document.querySelector('#watchlist');return w?.dataset.viewPath===path&&w.dataset.reportId===id;},{path:previous.path,id:previous.reportId},{timeout:15000});
+     assert.match(await page.locator('#watchlist').innerText(),/历史/);
+     await page.locator('#historySelect').selectOption('data/latest.json');
+     await page.waitForFunction(id=>{const w=document.querySelector('#watchlist');return w?.dataset.viewPath==='data/latest.json'&&w.dataset.reportId===id;},report.reportId,{timeout:15000});
+     checks.push('history-isolation-and-return');
+    }
     await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.locator('#fontBtn').click();await page.locator('#themeBtn').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));checks.push('large-type-dark-theme');
     await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.locator('#fontBtn').click();await page.locator('#themeBtn').click();
     await page.getByRole('button',{name:'必看资产',exact:true}).click();await page.locator('#watchlist').evaluate(d=>{d.open=true;d.scrollIntoView();});await page.evaluate(()=>scrollBy(0,-110));await page.screenshot({path:path.join(out,width+'-watch.png')});
