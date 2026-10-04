@@ -12,7 +12,7 @@ async function visit(page){if(!folder)return page.goto(base,{waitUntil:'networki
    const context=await browser.newContext({viewport:{width,height:1000},locale:'zh-CN',timezoneId:'Asia/Singapore',reducedMotion:'reduce'}),page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(20000);
    await visit(page);await page.waitForSelector('#contentQuality');await page.waitForSelector('#watchlist');
    for(const c of cases){
-    const raw=await read(context.request,c.path),canonical=Q.normalize(raw);
+    const raw=await read(context.request,c.path),canonical=Q.editorialScope.project(Q.normalize(raw)); // Only policy-excluded clauses may be omitted; every surviving body is still required.
     if(c.path!=='data/latest.json'){await page.selectOption('#historySelect',c.path);await page.waitForFunction(id=>document.querySelector('#mainlandIndices')?.dataset.reportId===id,c.reportId);}
     await page.waitForFunction(()=>document.querySelector('#mainlandIndices')?.dataset.loadStatus!=='loading');
     await page.evaluate(()=>document.querySelectorAll('details').forEach(d=>d.open=true));

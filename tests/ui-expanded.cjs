@@ -1,7 +1,7 @@
 /* Expanded-reader assertions against actual published data, not a generated price fixture. */
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const {chromium}=require('playwright'),R=require('../assets/reader-core.js');
+const {chromium}=require('playwright'),R=require('../assets/reader-core.js'),Q=require('../assets/content-contract.js');
 const base=process.env.GDR_TEST_URL||'http://127.0.0.1:8181/';
 const folder=process.env.GDR_OFFLINE_ROOT&&path.resolve(process.env.GDR_OFFLINE_ROOT);
 const out=process.env.GDR_UI_OUTPUT||'/tmp/gdr-expanded';fs.mkdirSync(out,{recursive:true});
@@ -22,7 +22,7 @@ async function assertLegacy(page,expected){assert.equal(await page.locator('#wor
  const options={headless:true};for(const p of ['/usr/bin/google-chrome','/usr/bin/chromium'])if(fs.existsSync(p)){options.executablePath=p;break;}
  const browser=await chromium.launch(options);
  try{
-  const req=await browser.newContext(),report=await read(req.request,'data/latest.json'),build=await read(req.request,'data/build.json');proof.reportId=report.reportId;proof.buildId=build.buildId;
+  const req=await browser.newContext(),raw=await read(req.request,'data/latest.json'),report=Q.editorialScope.project(Q.normalize(raw)),build=await read(req.request,'data/build.json');proof.reportId=report.reportId;proof.buildId=build.buildId;
   if(process.env.GDR_EXPECT_BUILD){const expected=JSON.parse(fs.readFileSync(process.env.GDR_EXPECT_BUILD,'utf8'));assert.equal(build.buildId,expected.buildId,'Public UI/data build differs');assert.deepEqual(build.files,expected.files,'Public build inventory differs');}
   const news=R.newsRows(report),legacy=Array.isArray(report.newsroom?.legacyItems)?report.newsroom.legacyItems:[];await req.close();
   for(const width of (process.env.GDR_TEST_WIDTHS||'320,390,768,1440').split(',').map(Number)){
