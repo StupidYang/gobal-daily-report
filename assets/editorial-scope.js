@@ -4,7 +4,7 @@
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x:'',clone=x=>JSON.parse(JSON.stringify(x));
 const weather=/(?:天气预报|气象|台风|飓风|离岸流|阵雨|雷暴|体感温度|\bNMC(?=\b|\d)|\bNWS(?=\b|\d)|weather\s+(?:forecast|bulletin|advisory)|rip\s+currents?|typhoon|hurricane)/i;
 const channels=new Set(['energy','shipping','agriculture','insurance','supply-chain']);
-const contentKeys=new Set(['title','name','summary','body','detail','observed','overview','rolling24hSummary','methodology','reason','assessment','plainImpact','impact','effect','analysis','takeaway','verdict','bottomLine','whyNow','conclusion','note']);
+const contentKeys=new Set(['title','name','summary','body','detail','observed','overview','rolling24hSummary','methodology','reason','assessment','plainImpact','impact','effect','analysis','takeaway','verdict','bottomLine','whyNow','conclusion','note','definition','explanation']);
 const lanes=['news','worldEvents','events','macroEvents','changes','recentChanges','evolution24h','narrativeTriggers'];
 function material(x){
  const m=x?.marketImpactEvidence,ids=arr(x?.sourceIds),urls=arr(x?.sourceUrls);
@@ -19,7 +19,7 @@ function outOfScope(x){
 function cleanProse(value){
  if(typeof value!=='string'||!weatherText(value))return value;
  // Remove whole clauses, never substitute a price, time, outcome, or market judgment.
- return (value.match(/[^。！？\n]+[。！？\n]?/g)||[]).filter(x=>!weatherText(x)).join('').trim();
+ return (value.match(/[^。！？；;\n]+[。！？；;\n]?/g)||[]).filter(x=>!weatherText(x)).join('').trim().replace(/[；;]$/,'。');
 }
 function errors(editorial){
  const found=[];
@@ -49,7 +49,9 @@ function project(report){
   if(Array.isArray(x)){x.forEach(prose);return;}
   for(const [k,v]of Object.entries(x)){
    if(['sources','canonicalFacts','reportMeta','retention','_readerProjection','_editorialScope'].includes(k))continue;
-   if(contentKeys.has(k)&&typeof v==='string'){const clean=cleanProse(v);if(clean!==v){removed.push({field:k});x[k]=clean;}}
+   if(contentKeys.has(k)&&typeof v==='string'){let clean=cleanProse(v);const originalCount=arr(report.newsroom?.items).length,displayCount=arr(r.newsroom?.items).length;
+    if(originalCount>0&&originalCount!==displayCount)clean=clean.replace(new RegExp('(?<!\\d)'+originalCount+'条新闻','g'),displayCount+'条展示新闻（原收录'+originalCount+'条）');
+    if(clean!==v){removed.push({field:k});x[k]=clean;}}
    else if(v&&typeof v==='object')prose(v);
   }
  }

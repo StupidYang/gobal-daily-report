@@ -45,3 +45,11 @@ test('compiler scope gate precedes radar acceptance and browser script loads bef
  const root=path.join(__dirname,'..'),code=fs.readFileSync(path.join(root,'lib/live-report.cjs'),'utf8'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
  assert.ok(code.indexOf('Q.editorialScope.assertEditorial(e)')<code.indexOf("assertEventRadar(e,options.taskGroup"));assert.ok(html.indexOf('assets/editorial-scope.js')<html.indexOf('assets/content-contract.js'));
 });
+
+test('expanded definitions and prose counts cannot leak removed weather or misleading totals',()=>{
+ const original={newsroom:{items:[market,bulletin]},dataDefinitions:[{term:'事件雷达',definition:'官方日历用于检查宏观发布；独立列示未来台风通报计划。'}],changes:[{title:'研究与新闻保留原时钟',detail:'既有2条新闻保持原发布时间。18条研究保留原分析。'}]};
+ const before=JSON.stringify(original),r=S.project(original);
+ assert.equal(JSON.stringify(original),before);assert.equal(r.dataDefinitions[0].definition,'官方日历用于检查宏观发布。');
+ assert.equal(r.changes[0].detail,'既有1条展示新闻（原收录2条）保持原发布时间。18条研究保留原分析。');
+ assert.throws(()=>S.assertEditorial({report:{dataDefinitions:original.dataDefinitions}}),/editorial-scope-v1/);
+});
