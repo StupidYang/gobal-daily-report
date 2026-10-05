@@ -14,17 +14,22 @@
   if(audit?.version!==1||!Array.isArray(audit.tasks))return null;
   const recorded=Date.parse(audit.recordedAt),observed=audit.tasks.find(t=>t.id===id);
   if(!Number.isFinite(recorded)||recorded>now+30000||typeof observed?.enabled!=='boolean')return null;
-  const newer=Date.parse(x?.executionStartedAt);
-  if(Number.isFinite(newer)&&newer>recorded)return null;
   if(now-recorded>2*3600000)return '调度器当前状态未核验；上次排查记录为'+(observed.enabled?'启用':'停用');
-  if(observed.enabled===false)return '原生调度器停用（本次排查读取）；历史部署成功不代表持续运行';
-  return null;
+  return '原生调度器排查时为'+(observed.enabled?'启用':'停用')+'；排查记录不代表持续运行';
  }
  function taskStatus(id,x,control,now=Date.now()){
-  const observed=schedulerObservation(id,x,control,now);if(observed)return observed;
   if(x)return describe(x,now);
   const paused=new Set(control?.supervisedAcceptance?.pausedTaskGroups||[]);
   return paused.has(id)?'canary期间主动暂停':'尚无新执行记录';
+ }
+ function taskText(id,x,control,now=Date.now()){
+  const time=at=>Number.isFinite(Date.parse(at))?new Date(at).toLocaleString('zh-CN',{timeZone:'Asia/Singapore',hour12:false})+' UTC+8':null;
+  const executionClock=[['at','执行记录'],['executionFinishedAt','执行结束'],['executionStartedAt','执行开始']].find(([key])=>time(x?.[key]));
+  const observed=schedulerObservation(id,x,control,now);
+  // An execution and a scheduler inspection are independent observations, with their own clocks.
+  const execution=taskStatus(id,x,control,now)+(executionClock?' · '+executionClock[1]+'：'+time(x[executionClock[0]]):x?' · 执行记录时间未提供':'')+(x?.error?'；执行错误：'+String(x.error).split('\n')[0]:'');
+  const scheduler=observed?observed+' · 排查记录：'+time(control.schedulerObservation.recordedAt):'调度器当前状态未核验；缺少有效排查记录';
+  return execution+'；'+scheduler;
  }
  function freshnessStatus(latest,health,control,now=Date.now()){
   if(control?.productionPaused===true)return null;
@@ -38,7 +43,7 @@
   const ageText=ms=>Number.isFinite(ms)?(ms/3600000).toFixed(ms>=10*3600000?0:1)+'小时':'未知';
   return {stale:true,text:'连续更新疑似中断：最新报告距今 '+ageText(reportAge)+'，全球任务执行记录距今 '+ageText(healthAge)+'；生产开关仍开启，请检查原生定时任务是否失活。'};
  }
- if(typeof module!=='undefined'&&module.exports){module.exports={describe,taskStatus,freshnessStatus,schedulerObservation};return;}
+ if(typeof module!=='undefined'&&module.exports){module.exports={describe,taskStatus,taskText,freshnessStatus,schedulerObservation};return;}
  if(!root.document||['synthetic','validation'].includes(document.documentElement.dataset.mode))return;
  const box=document.getElementById('executionStatus');if(!box)return;
  async function load(){
@@ -54,8 +59,8 @@
    box.replaceChildren();
    const stale=freshnessStatus(latest,health,control);if(stale){const warning=document.createElement('p');warning.className='execution-stale';warning.textContent=stale.text;box.append(warning);}
    for(const [id,label]of [['global-main','全球主报告'],['asia-session','A股港股节点'],['us-session','美股节点']]){
-    const x=health.tasks[id],line=document.createElement('p');line.textContent=label+'：'+taskStatus(id,x,control)+(x?.at?' · '+new Date(x.at).toLocaleString('zh-CN',{timeZone:'Asia/Singapore',hour12:false})+' UTC+8':'');
-    if(x?.error){const reason=document.createElement('span');reason.textContent='；'+String(x.error).split('\n')[0];line.append(reason);}box.append(line);
+    const x=health.tasks[id],line=document.createElement('p');line.textContent=label+'：'+taskText(id,x,control);
+    box.append(line);
    }
   }catch{box.textContent='执行状态暂时无法读取；页面能打开不代表本轮更新成功。';}
   finally{clearTimeout(timer);box.hidden=false;}

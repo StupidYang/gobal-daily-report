@@ -63,13 +63,15 @@ test('new global runtime is not made fresh by an unrelated regional health updat
  const x=UI.freshnessStatus({reportMeta:{generatedAt:new Date(now-10*60000).toISOString()}},h,control,now);
  assert.equal(x?.stale,true);assert.match(x.text,/全球任务/);
 });
-test('observed-disabled scheduler cannot be overwritten by a historical green deployment label',()=>{
+test('historical deployment and newer disabled scheduler inspection both remain visible',()=>{
  const c={...control,schedulerObservation:{version:1,recordedAt:new Date(now-60000).toISOString(),tasks:[{id:'global-main',enabled:false,updatedAt:new Date(start).toISOString()}]}};
- assert.match(UI.taskStatus('global-main',{status:'deployed',at:new Date(start).toISOString(),deployed:true,deployment:{status:'verified'}},c,now),/停用/);
- assert.match(UI.taskStatus('global-main',{status:'deployed',at:new Date(start).toISOString(),deployed:true,deployment:{status:'verified'}},c,now+3*3600000),/当前.*未核验/);
+ const x={status:'deployed',at:new Date(start).toISOString(),deployed:true,deployment:{status:'verified'}};
+ const text=UI.taskText('global-main',x,c,now);assert.match(text,/公网版本与正文验收已通过/);assert.match(text,/排查时为停用/);
+ assert.match(UI.taskText('global-main',x,c,now+3*3600000),/当前.*未核验/);
 });
-test('new execution evidence supersedes an old disabled scheduler observation',()=>{
+test('new execution evidence does not imply that native scheduling was enabled',()=>{
  const c={...control,schedulerObservation:{version:1,recordedAt:new Date(now-60000).toISOString(),tasks:[{id:'global-main',enabled:false}]}};
- const s=UI.taskStatus('global-main',{status:'ready-for-analysis',at:new Date(now).toISOString(),executionStartedAt:new Date(now).toISOString(),deadlineAt:new Date(now+120000).toISOString()},c,now);
- assert.match(s,/分析/);assert.doesNotMatch(s,/停用/);
+ const x={status:'ready-for-analysis',at:new Date(now).toISOString(),executionStartedAt:new Date(now).toISOString(),deadlineAt:new Date(now+120000).toISOString()};
+ assert.match(UI.taskStatus('global-main',x,c,now),/分析/);
+ const s=UI.taskText('global-main',x,c,now);assert.match(s,/分析/);assert.match(s,/排查时为停用/);
 });
