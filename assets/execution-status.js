@@ -1,7 +1,7 @@
 /* Latest execution status is independent of the report and the production switch. */
 (function(root){
  'use strict';
- const labels={paused:'维护暂停，未发布',deployed:'公网版本与正文验收已通过','deployment-failed':'仓库已提交，但公网部署或验收失败','published-unverified':'仓库已提交，公网尚未验收',collecting:'正在采集','ready-for-analysis':'正在分析','needs-revision':'内容待修订，尚未发布','submitted-not-published':'已提交，等待发布',failed:'本轮失败，保留旧报告','skipped-busy':'本轮跳过：已有执行','handoff-uncertain':'交接状态待核验',completed:'仓库发布已确认'};
+ const labels={paused:'维护暂停，未发布',deployed:'公网版本与正文验收已通过','deployment-failed':'仓库已提交，但公网部署或验收失败','published-unverified':'仓库已提交，公网尚未验收',collecting:'正在采集','ready-for-analysis':'采集已完成，等待分析提交','needs-revision':'内容待修订，尚未发布','submitted-not-published':'已提交，等待发布',failed:'本轮失败，保留旧报告','skipped-busy':'本轮跳过：已有执行','handoff-uncertain':'交接状态待核验',completed:'仓库发布已确认'};
  function describe(x,now=Date.now()){
   if(x?.status==='deployed'&&(x.deployed!==true||x.deployment?.status!=='verified'))return '仓库已提交，公网验收证据待核';
   if(!x||typeof x.status!=='string'||!labels[x.status])return '执行状态未核验';
@@ -43,21 +43,35 @@
   const ageText=ms=>Number.isFinite(ms)?(ms/3600000).toFixed(ms>=10*3600000?0:1)+'小时':'未知';
   return {stale:true,text:'连续更新疑似中断：最新报告距今 '+ageText(reportAge)+'，全球任务执行记录距今 '+ageText(healthAge)+'；生产开关仍开启，请检查原生定时任务是否失活。'};
  }
- if(typeof module!=='undefined'&&module.exports){module.exports={describe,taskStatus,taskText,freshnessStatus,schedulerObservation};return;}
+ function snapshotStatus(latest,now=Date.now()){
+  const raw=latest?.reportMeta?.generatedAt||latest?.updatedAt;
+  // Legacy local report timestamps are UTC+8, never the viewer's machine timezone.
+  const iso=typeof raw==='string'&&/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(raw)?raw.replace(' ','T')+':00+08:00':raw;
+  const at=typeof iso==='string'?Date.parse(iso):NaN;
+  if(!Number.isFinite(at)||at>now+30000)return {stale:true,status:'unverified',text:'报告时效无法核验：缺少有效的报告时间。页面可打开不代表内容已更新。'};
+  const age=Math.max(0,now-at),clock=new Date(at).toLocaleString('zh-CN',{timeZone:'Asia/Singapore',hour12:false})+' UTC+8';
+  if(age<=2*3600000)return {stale:false,status:'within-window',ageMs:age,reportAt:iso};
+  return {stale:true,status:'stale',ageMs:age,reportAt:iso,text:'报告已超过 '+(age/3600000).toFixed(1)+' 小时未更新；最后报告：'+clock+'。以下是历史快照，不是当前行情；新闻的24小时窗口以该报告为准，事件日历也未重新核验。'};
+ }
+ async function readState(fetchImpl,signal,now=Date.now()){
+  const urls=['https://raw.githubusercontent.com/StupidYang/gobal-daily-report/gdr-runtime/runtime/health.json?check='+now,'./data/runtime-control.json?check='+now,'./data/latest.json?check='+now];
+  // Failure of the cross-origin health endpoint must not erase a locally verifiable stale-report warning.
+  const result=await Promise.allSettled(urls.map(async url=>{const r=await fetchImpl(url,{cache:'no-store',signal});if(!r.ok)throw Error('HTTP '+r.status);return r.json();}));
+  const value=i=>result[i].status==='fulfilled'?result[i].value:null;
+  const health=value(0),control=value(1),latest=value(2);
+  return {health:health?.version===1&&health.tasks&&typeof health.tasks==='object'&&!Array.isArray(health.tasks)?health:null,control,latest,snapshot:snapshotStatus(latest,now),readErrors:result.map((r,i)=>r.status==='rejected'?{component:['health','control','latest'][i],error:String(r.reason?.message||r.reason)}:null).filter(Boolean)};
+ }
+ if(typeof module!=='undefined'&&module.exports){module.exports={describe,taskStatus,taskText,freshnessStatus,schedulerObservation,snapshotStatus,readState};return;}
  if(!root.document||['synthetic','validation'].includes(document.documentElement.dataset.mode))return;
  const box=document.getElementById('executionStatus');if(!box)return;
  async function load(){
   const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),6000);
   try{
-   const [healthResponse,controlResponse,latestResponse]=await Promise.all([
-    fetch('https://raw.githubusercontent.com/StupidYang/gobal-daily-report/gdr-runtime/runtime/health.json?check='+Date.now(),{cache:'no-store',signal:abort.signal}),
-    fetch('./data/runtime-control.json?check='+Date.now(),{cache:'no-store',signal:abort.signal}),
-    fetch('./data/latest.json?check='+Date.now(),{cache:'no-store',signal:abort.signal})
-   ]);
-   if(!healthResponse.ok)throw Error('health unavailable');const health=await healthResponse.json();if(health.version!==1||!health.tasks)throw Error('invalid health');
-   const control=controlResponse.ok?await controlResponse.json():null,latest=latestResponse.ok?await latestResponse.json():null;
+   const {health,control,latest,snapshot,readErrors}=await readState(fetch,abort.signal);
    box.replaceChildren();
-   const stale=freshnessStatus(latest,health,control);if(stale){const warning=document.createElement('p');warning.className='execution-stale';warning.textContent=stale.text;box.append(warning);}
+   if(snapshot.stale){const warning=document.createElement('p');warning.className='execution-stale';warning.textContent=snapshot.text;box.append(warning);}
+   else {const stale=freshnessStatus(latest,health,control);if(stale){const warning=document.createElement('p');warning.className='execution-stale';warning.textContent=stale.text;box.append(warning);}}
+   if(!health){const line=document.createElement('p');line.textContent='执行状态接口暂时不可用；不能据此认定任务正在运行。'+readErrors.filter(e=>e.component==='health').map(e=>' '+e.error).join('');box.append(line);return;}
    for(const [id,label]of [['global-main','全球主报告'],['asia-session','A股港股节点'],['us-session','美股节点']]){
     const x=health.tasks[id],line=document.createElement('p');line.textContent=label+'：'+taskText(id,x,control);
     box.append(line);

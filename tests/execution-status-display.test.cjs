@@ -38,7 +38,7 @@ test('actual health shape without executionStartedAt shows expiry and the indepe
  assert.equal(text.match(/12:03:40/g).length,1);
 });
 test('scheduler observations never hide active, failed, or terminal execution evidence',()=>{
- for(const [status,expected]of [['collecting','正在采集'],['ready-for-analysis','正在分析'],['needs-revision','内容待修订'],['failed','本轮失败'],['completed','仓库发布已确认'],['deployed','公网版本与正文验收已通过']]){
+ for(const [status,expected]of [['collecting','正在采集'],['ready-for-analysis','采集已完成，等待分析提交'],['needs-revision','内容待修订'],['failed','本轮失败'],['completed','仓库发布已确认'],['deployed','公网版本与正文验收已通过']]){
   const x={...expiredExecution,status,deployed:true,deployment:{status:'verified'}};
   const text=S.taskText('global-main',x,oldScheduler,Date.parse('2026-10-04T04:10:00Z'));
   assert.ok(text.startsWith(expected));assert.match(text,/调度器当前状态未核验/);
@@ -69,7 +69,7 @@ test('reader rendering and refresh preserve separate execution and scheduler tim
  const health={version:1,tasks:{'global-main':expiredExecution}};
  const fetch=async url=>({ok:true,json:async()=>url.includes('health.json')?health:url.includes('runtime-control')?oldScheduler:{}});
  vm.runInNewContext(fs.readFileSync(require.resolve('../assets/execution-status.js'),'utf8'),{document,fetch,Date:Clock,AbortController,setTimeout,clearTimeout});
- await new Promise(resolve=>setImmediate(resolve));assert.match(box.children[0].textContent,/全球主报告：正在分析 · 执行记录：2026\/10\/4/);
+ await new Promise(resolve=>setImmediate(resolve));assert.match(box.children.find(x=>x.textContent.startsWith('全球主报告：')).textContent,/全球主报告：采集已完成，等待分析提交 · 执行记录：2026\/10\/4/);
  current=afterDeadline;await refresh();
- assert.match(box.children[0].textContent,/全球主报告：本轮已超时/);assert.match(box.children[0].textContent,/排查记录：2026\/9\/29/);assert.equal(box.children.length,3);
+ assert.match(box.children[0].textContent,/报告时效无法核验/);const global=box.children.find(x=>x.textContent.startsWith('全球主报告：'));assert.match(global.textContent,/全球主报告：本轮已超时/);assert.match(global.textContent,/排查记录：2026\/9\/29/);assert.equal(box.children.length,4);
 });
