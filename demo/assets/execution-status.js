@@ -119,10 +119,10 @@
   line(box,p.text,p.verified?'execution-published':'execution-unverified');
   if(!health)line(box,'执行状态接口暂时不可用；不能据此认定任务正在运行。'+readErrors.filter(e=>e.component==='health').map(e=>' '+e.error).join(''),'execution-unverified');
   else for(const id of Object.keys(groups))if(id==='global-main'||health.tasks[id])line(box,attemptText(id,health.tasks[id],now),'execution-attempt');
-  for(const id of ['asia-session','us-session'])line(box,regionText(id,latest,receipt,control,now),'execution-region');
-  line(box,'模块发布不代表行情实时、行业排名或研究覆盖完整；具体缺口见下方内容状态。','execution-note');
   const details=document.createElement('details'),summary=document.createElement('summary');
   details.className='execution-details';summary.textContent='查看执行、调度观测与模块来源';details.append(summary);
+  for(const id of ['asia-session','us-session'])line(details,regionText(id,latest,receipt,control,now),'execution-region');
+  line(details,'模块发布不代表行情实时、行业排名或研究覆盖完整；具体缺口见下方内容状态。','execution-note');
   for(const id of Object.keys(groups))line(details,groups[id]+'：'+taskText(id,health?.tasks?.[id],control,now));
   if(p.verified)line(details,'发布批次：'+p.batchId+'；回执处理时间：'+clock(p.processedAt)+' UTC+8。此处核对发布回执，不代替独立公网浏览器验收。');
   for(const error of readErrors.filter(e=>e.component!=='health'))line(details,'读取未完成：'+error.component+' · '+error.error);

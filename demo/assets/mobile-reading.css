@@ -1,0 +1,74 @@
+/* Reading hierarchy without hiding report text, provenance, or failure warnings. */
+.reading-segmented{white-space:normal!important}
+.reading-paragraph{display:block;white-space:pre-line}
+.reading-paragraph+.reading-paragraph{margin-top:1em}
+.research-body>.prose,.hero .disclosure .prose{max-width:72ch}
+.environment-banner.is-production{background:var(--surface);border-color:var(--line);color:var(--muted);padding:10px 14px;margin-bottom:10px;gap:8px;font-size:13px}
+.environment-banner.is-production strong{font-size:13px;color:var(--ink)}
+.environment-banner.is-production details{flex:1;min-width:0}
+.environment-banner.is-production summary{font-size:12px;font-weight:400;cursor:pointer}
+.environment-banner.is-production details>div{padding:10px 0 3px;line-height:1.75}
+.environment-banner.is-production a{display:inline-block;margin-top:7px}
+.execution-status .execution-details .execution-region{padding:10px 0;border-top:1px solid var(--line)}
+.execution-status .execution-details .execution-region:first-of-type{border-top:0}
+.execution-status .execution-note{margin-bottom:8px}
+@media(max-width:760px){
+ .shell{padding-inline:16px}
+ .hero{padding:18px 16px}
+ .hero h1{font-size:23px;line-height:1.55;text-wrap:pretty;letter-spacing:0}
+ .hero .lead{font-size:16px;line-height:1.85;margin-top:12px}
+ .hero .meta{gap:6px 12px;line-height:1.65}
+ .hero .next-event{margin-top:16px;padding-top:14px}
+ .library{margin-top:14px}
+ .library>summary{padding:17px 15px;gap:8px 12px;min-height:64px}
+ .library-title{font-size:17px;line-height:1.55}
+ .library-caption{font-size:13px;line-height:1.7}
+ .library-body{padding:18px 16px}
+ #reportRoot .prose,#reportRoot .definition-list dd,#reportRoot .news-take,#reportRoot .news-impact{font-size:16px;line-height:1.85;overflow-wrap:anywhere;word-break:normal;text-align:start}
+ #reportRoot .reading-paragraph{white-space:normal}
+ #reportRoot .reading-paragraph+.reading-paragraph{margin-top:1em}
+ .research-item{padding:20px 0}
+ .research-item>summary{font-size:18px;line-height:1.65}
+ .research-item .subtitle{font-size:14px;line-height:1.75;margin-top:8px}
+ .research-body{padding:16px 0 8px}
+ .research-body>.prose{max-width:none}
+ .definition-list{grid-template-columns:1fr;gap:0;margin-top:18px}
+ .definition-list dt{font-size:13px;font-weight:650;line-height:1.65;color:var(--accent);padding-top:12px;border-top:1px solid var(--line)}
+ .definition-list dt:first-child{padding-top:0;border-top:0}
+ .definition-list dd{margin:5px 0 16px}
+ .definition-list dd:last-child{margin-bottom:0}
+ .impact{padding-block:20px}
+ .impact-head{display:block}
+ .impact-head h3{margin-bottom:10px;font-size:19px}
+ .impact-head .effect{display:block;padding:10px 12px;line-height:1.75;font-size:15px;border-radius:8px}
+ .news-item{padding:22px 0}
+ .news-item h3,.event-content h3,.analysis-block h3{font-size:18px;line-height:1.65}
+ .news-impact{display:block;margin-top:16px}
+ .news-impact b{display:block;margin-bottom:6px;font-size:13px;font-weight:650;color:var(--accent)}
+ .news-impact span{display:block}
+ .news-take{padding:14px;margin-top:16px}
+ .news-labels,.news-item>.small,.fact-meta{line-height:1.75}
+ .event-row{grid-template-columns:1fr;gap:8px;padding:18px 0}
+ .event-time{font-size:13px;line-height:1.6}
+ .event-content{padding:0;border-left:0;min-width:0}
+ .event-content p.prose{color:var(--soft)}
+ .linked-facts,.sources-row{gap:8px;line-height:1.65;margin-top:16px}
+ .linked-facts a,.sources-row a{font-size:13px;overflow-wrap:anywhere;padding-block:3px}
+ .quick-list{font-size:15px;line-height:1.8}
+ .quick-list li+li{margin-top:9px}
+ .quick-board{gap:18px;padding:16px 2px 4px}
+ .quick-label{font-size:13px;margin-bottom:8px}
+ .execution-status{padding:12px 14px;margin:10px 0;line-height:1.7}
+ .execution-status .execution-published{font-size:13px;line-height:1.75}
+ .execution-status .execution-attempt,.execution-status .execution-unverified{font-size:13px;line-height:1.75;margin-top:8px}
+ .execution-status .execution-details summary{min-height:40px;padding-top:7px;font-size:13px}
+ .execution-status .execution-details p{font-size:13px;line-height:1.8}
+ .execution-status .execution-stale{font-size:14px;line-height:1.8}
+ .environment-banner.is-production{align-items:baseline;gap:6px 12px}
+ .environment-banner.is-production details{flex-basis:auto}
+ .environment-banner.is-production details>div{font-size:13px}
+ body.large #reportRoot .prose,body.large #reportRoot .definition-list dd,body.large #reportRoot .news-take,body.large #reportRoot .news-impact{font-size:18px;line-height:1.9}
+ body.large .hero .lead{font-size:18px}
+}
+@media(max-width:360px){.shell{padding-inline:12px}.library-body{padding-inline:14px}.hero h1{font-size:22px}}
+@media print{.reading-paragraph{display:block}.environment-banner.is-production details>div{display:block!important}}

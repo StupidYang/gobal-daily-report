@@ -23,6 +23,15 @@
   fetch('./data/runtime-control.json',{cache:'no-store',signal:abort.signal}).then(r=>{if(!r.ok)throw Error('control unavailable');return r.json();}).then(c=>{
     if(c.version!==1||typeof c.productionPaused!=='boolean')throw Error('invalid control');
     if(c.productionPaused)show('维护中 · 自动更新暂停',c.reason||'正在验收隔离测试数据。旧报告保留，不代表持续更新。','查看测试演示','./demo/');
-    else show('正式快照','发布开关允许更新；请以各模块数据时点和实际发布回执判断新鲜度。','查看测试演示','./demo/');
+    else {
+      // A healthy environment label is not a warning banner. Keep its full explanation accessible.
+      box.replaceChildren();box.classList.add('is-production');
+      const badge=document.createElement('strong');badge.textContent='正式快照';
+      const details=document.createElement('details'),summary=document.createElement('summary'),body=document.createElement('div');
+      summary.textContent='定时研究，非实时行情';
+      body.textContent='发布开关允许更新；请以各模块数据时点和实际发布回执判断新鲜度。';
+      const a=document.createElement('a');a.textContent='查看测试演示';a.href='./demo/';body.append(document.createElement('br'),a);
+      details.append(summary,body);box.append(badge,details);box.hidden=false;
+    }
   }).catch(()=>show('运行状态未核验','无法读取发布开关；不要将页面可访问视为定时更新正常。','查看测试演示','./demo/')).finally(()=>clearTimeout(timer));
 })();
