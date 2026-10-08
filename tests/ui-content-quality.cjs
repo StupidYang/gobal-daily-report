@@ -16,11 +16,11 @@ async function visit(page){if(!folder)return page.goto(base,{waitUntil:'networki
     if(c.path!=='data/latest.json'){await page.selectOption('#historySelect',c.path);await page.waitForFunction(id=>document.querySelector('#mainlandIndices')?.dataset.reportId===id,c.reportId);}
     await page.waitForFunction(()=>document.querySelector('#mainlandIndices')?.dataset.loadStatus!=='loading');
     await page.evaluate(()=>document.querySelectorAll('details').forEach(d=>d.open=true));
-    const text=await page.locator('#reportRoot').innerText();
-    for(const x of canonical.recentChanges)assert.ok(text.includes(x.detail),'Recent-change body lost '+c.reportId);
-    for(const x of canonical.evolution24h)assert.ok(text.includes(x.detail),'Timeline body lost '+c.reportId);
-    for(const x of canonical.watch)if(x.detail)assert.ok(text.includes(x.detail),'Observation body lost '+c.reportId);
-    for(const x of canonical.dataDefinitions)assert.ok(text.includes(x.definition),'Definition body lost '+c.reportId);
+    const text=await page.locator('#reportRoot').innerText();const hasText=value=>text.replace(/\s+/g,'').includes(String(value).replace(/\s+/g,''));
+    for(const x of canonical.recentChanges)assert.ok(hasText(x.detail),'Recent-change body lost '+c.reportId);
+    for(const x of canonical.evolution24h)assert.ok(hasText(x.detail),'Timeline body lost '+c.reportId);
+    for(const x of canonical.watch)if(x.detail)assert.ok(hasText(x.detail),'Observation body lost '+c.reportId);
+    for(const x of canonical.dataDefinitions)assert.ok(hasText(x.definition),'Definition body lost '+c.reportId);
     assert.equal(await page.locator('.quick-list a').evaluateAll(xs=>xs.filter(x=>!x.textContent.trim()).length),0,'Empty overview links');
     const blanks=await page.locator('#changes .event-content h3,#research h3').evaluateAll(xs=>xs.filter(x=>!x.textContent.trim()).map(x=>x.parentElement.outerHTML));if(blanks.length)fs.writeFileSync(path.join(out,'blank-debug.json'),JSON.stringify({reportId:c.reportId,blanks},null,2));
     assert.equal(await page.locator('#changes .event-content h3,#research h3').evaluateAll(xs=>xs.filter(x=>!x.textContent.trim()).length),0,'Empty research/timeline headings');

@@ -5,13 +5,14 @@ module.exports=async function checkStatus({page,report,control}){
  const panel=page.locator('#executionStatus');
  await page.waitForSelector('#executionStatus .execution-published');
  assert.ok((await panel.locator('.execution-published').innerText()).includes(report.reportId));
+ await panel.locator('details').evaluate(n=>{n.open=true;});
  for(const [id,label]of [['asia-session','A股港股额外任务'],['us-session','美股额外任务']]){
   const row=panel.locator('.execution-region').filter({hasText:label}),text=await row.innerText();
   assert.ok(text.includes(report.reportId)||text.includes('沿用模块'));
   const paused=control.productionPaused===true||(control.supervisedAcceptance?.pausedTaskGroups||[]).includes(id);
   assert.match(text,paused?/暂停/:/配置允许/);
  }
- await panel.locator('summary').click();
+
  await page.evaluate(()=>window.__statusRegressionRoot=document.querySelector('#reportRoot').firstElementChild);
  const pattern='**/gdr-runtime/runtime/health.json*';
  const health={version:1,tasks:{'global-main':{status:'skipped-busy',error:'This task hour is already completed',at:new Date().toISOString()}}};

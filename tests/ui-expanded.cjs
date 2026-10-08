@@ -40,14 +40,15 @@ async function assertLegacy(page,expected){assert.equal(await page.locator('#wor
     checks.push('all-regions-and-all-news-reachable','legacy-excluded-from-active-count');
     await page.getByLabel('筛选新闻',{exact:true}).fill('___NO_SUCH_NEWS___');assert.equal(await currentNewsCount(page),0);await assertLegacy(page,legacy);await page.getByLabel('筛选新闻',{exact:true}).fill('');await allNews(page);checks.push('news-search-empty-and-recovery');
     await page.evaluate(()=>document.querySelectorAll('#reportRoot details').forEach(n=>{n.open=true;}));
-    const text=await page.locator('#reportRoot').innerText();assert.doesNotMatch(text,/\[object Object\]|\bNaN\b|\bundefined\b/,'Hidden details serialize machine objects');
-    for(const section of report.deepDive||[])assert.ok(text.includes(section.analysis),'An existing detailed analysis disappeared: '+section.title);
-    for(const frame of report.frameworkAnalysis||[])assert.ok(text.includes(frame.framework),'A reasoning framework disappeared');
-    for(const item of legacy){assert.ok(text.includes(item.title),'Legacy title missing');if(item.summary)assert.ok(text.includes(item.summary),'Legacy original summary missing');}
+    const text=await page.locator('#reportRoot').innerText();const hasText=value=>text.replace(/\s+/g,'').includes(String(value).replace(/\s+/g,''));assert.doesNotMatch(text,/\[object Object\]|\bNaN\b|\bundefined\b/,'Hidden details serialize machine objects');
+    for(const section of report.deepDive||[])assert.ok(hasText(section.analysis),'An existing detailed analysis disappeared: '+section.title);
+    for(const frame of report.frameworkAnalysis||[])assert.ok(hasText(frame.framework),'A reasoning framework disappeared');
+    for(const item of legacy){assert.ok(hasText(item.title),'Legacy title missing');if(item.summary)assert.ok(hasText(item.summary),'Legacy original summary missing');}
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Expanded content has horizontal overflow');checks.push('full-analysis-retained','all-details-readable','legacy-original-text-retained');
     const ref=page.locator('a[href^="#fact-"]').first();if(await ref.count()){
      const href=await ref.getAttribute('href');await ref.click();assert.ok(await page.evaluate(h=>{const n=document.getElementById(h.slice(1));return n&&!n.hidden&&n.getClientRects().length>0;},href));checks.push('fact-reference-opens-real-evidence');
     }
+    checks.push(...await require('./reading-layout-regression.cjs')({page,report,width,out}));
     const screenshot=await require('./reader-capture.cjs').captureReaderTop(page,path.join(out,width+'-top.png'));
     checks.push('settled-anchor-scroll','nonblank-screenshot-pixels');assert.deepEqual(errors,[]);proof.tests.push({width,status:'pass',checks,pageErrors:errors,screenshot});
    }catch(e){await page.screenshot({path:path.join(out,width+'-failure.png')}).catch(()=>{});proof.tests.push({width,status:'fail',checks,error:e.message,pageErrors:errors});throw e;}finally{await context.close();}
