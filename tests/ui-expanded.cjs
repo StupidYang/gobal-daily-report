@@ -30,6 +30,7 @@ async function assertLegacy(page,expected){assert.equal(await page.locator('#wor
    page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
    try{
     await visit(page);await page.waitForSelector('#reportRoot .directory');await page.waitForSelector('#watchlist');
+    if(!folder&&raw.reportMeta?.dataMode==='production'&&raw.reportMeta?.validationOnly!==true)checks.push(...await require('./reader-status-regression.cjs')({page,report:raw,control:await read(context.request,'data/runtime-control.json')}));
     await page.locator('#world').evaluate(n=>{n.open=true;});
     for(const region of ['CN','US','WORLD','ALL']){
      const button=page.locator('#world [data-region="'+region+'"]');await button.click();await allNews(page);

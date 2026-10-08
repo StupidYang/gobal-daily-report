@@ -1,0 +1,13 @@
+执行 StupidYang/gobal-daily-report 既有 asia-session（A股港股额外交易节点）。用户已授权恢复该区域任务，保留原ID、频率和Asia/Singapore时区，不创建副本。本任务不得调用任务管理工具修改、停用、删除或重建任何任务，不修改权限、生产配置、代码、锁或历史。
+
+先用当前已连接GitHub读取main/automation/control.json，要求productionPaused=false、executionProtocol=lease-v1，supervisedAcceptance.enabledTaskGroups包含asia-session且pausedTaskGroups不包含asia-session；缺失、读取失败或不准入则终止本轮。读取automation/tasks/common.md、automation/tasks/asia-session.md、docs/live-execution.md、docs/editorial-input.md及docs/reader-r2-contract.md。保留content-r3全部质量校验。以实际UTC+8日期核对A股与港股交易状态和允许访问的交易日历；开盘、收盘分别说明，确认休市时不重复发布空结果，不能将周一至周五直接当成交易日。
+
+读取gdr-runtime/runtime/leases/production.json和runtime/health.json。phase=publishing始终按占用结束，不抢占；collecting/analyzing/awaiting-publication只在deadlineAt未到时按busy结束。过期时不续交旧execution、不手改锁，新正常时隙交由原入口的代码CAS判断。未知阶段或无效截止时间报不可核验。已完成的本任务同小时不重复请求；其他任务同小时成功不等于本区域任务已完成。
+
+发现本轮具体新闻、官方发布及区域证据后，以实际时钟生成唯一executionId，仅用当前schema中的GitHub.create_file在gdr-runtime新建一次runtime/requests/<executionId>.json，内容{version:1,requestId,taskGroup:'asia-session',requestedAt,documents:[{id,url,title,kind}]}，最多32份文档，遵守仓库来源范围。不得手工写main候选、正式模块或回执，不新增补跑、验收或看门狗任务。读取本轮outcomes/results，核对executionId、generation、packetHash和固定deadlineAt；ready-for-analysis只表示采集完成，必须继续实际阅读、分析并提交，不能说会在对话结束后后台继续。
+
+按editorial-v1提供完整六资产详报、白话影响、观察条件、框架及来源引用，重点更新亚洲交易证据。代码负责发布quotes、asia-equities、news、synthesis，其余模块引用已发表版本，保留原asOf/analyzedAt。新报价不代表行业成分、资金流或研究已齐全；缺口如实标partial，不补0、不换旧值时间、不用普通天气或重复新闻凑数，不把抓取成功当阅读全文。首屏写市场变化，不写执行次数代替结论。
+
+只在原deadlineAt前新建runtime/submissions/<executionId>.json，包含原execution令牌及绑定本轮packetHash的editorial，analyzedAt用实际分析结束时间。needs-revision仅允许在原期限内新建一次<executionId>--r1.json，不覆盖、不续期、不重采集。真实工具拒绝、需要审批时立即停止该动作，保留原错误与审批卡；不换工具或传输格式重试，不用新execution绕过。历史转述不是本轮拒绝，没有实际工具错误就不能声称安全层拒绝；已知仍适用的实际拒绝必须遵守。单轮失败不授权关闭未来任务。
+
+成功必须核对main/data/receipts/batches/<executionId>.json、新reportId的data/latest.json与冻结history及公网版本或本轮真实验收凭证。submitted-not-published不算发布成功。中文报告实际时刻、executionId、最后阶段、reportId/观测时点和公网核验情况；失败列原始动作及错误码（未提供就注明）、已创建的请求/提交及所需审批。未完成就如实报缺口，不虚构成功。
