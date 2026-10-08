@@ -48,8 +48,8 @@ async function assertLegacy(page,expected){assert.equal(await page.locator('#wor
     const ref=page.locator('a[href^="#fact-"]').first();if(await ref.count()){
      const href=await ref.getAttribute('href');await ref.click();assert.ok(await page.evaluate(h=>{const n=document.getElementById(h.slice(1));return n&&!n.hidden&&n.getClientRects().length>0;},href));checks.push('fact-reference-opens-real-evidence');
     }
-    await page.evaluate(()=>{document.querySelectorAll('#reportRoot details').forEach(n=>n.open=false);window.scrollTo(0,0);});
-    await page.screenshot({path:path.join(out,width+'-top.png')});assert.deepEqual(errors,[]);proof.tests.push({width,status:'pass',checks,pageErrors:errors});
+    const screenshot=await require('./reader-capture.cjs').captureReaderTop(page,path.join(out,width+'-top.png'));
+    checks.push('settled-anchor-scroll','nonblank-screenshot-pixels');assert.deepEqual(errors,[]);proof.tests.push({width,status:'pass',checks,pageErrors:errors,screenshot});
    }catch(e){await page.screenshot({path:path.join(out,width+'-failure.png')}).catch(()=>{});proof.tests.push({width,status:'fail',checks,error:e.message,pageErrors:errors});throw e;}finally{await context.close();}
   }
   proof.status='passed';
