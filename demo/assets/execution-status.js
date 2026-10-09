@@ -1,9 +1,9 @@
 /* Latest execution status is independent of the report and the production switch. */
 (function(root){
  'use strict';
- const labels={paused:'维护暂停，未发布',deployed:'公网版本与正文验收已通过','deployment-failed':'仓库已提交，但公网部署或验收失败','published-unverified':'仓库已提交，公网尚未验收',collecting:'正在采集','ready-for-analysis':'采集已完成，等待分析提交','needs-revision':'内容待修订，尚未发布','submitted-not-published':'已提交，等待发布',failed:'本轮失败，保留旧报告','skipped-busy':'本轮跳过：已有执行','handoff-uncertain':'交接状态待核验',completed:'仓库发布已确认'};
+ const labels={expired:'本轮已过期，未完成发布',paused:'维护暂停，未发布',deployed:'公网版本与正文验收已通过','deployment-failed':'仓库已提交，但公网部署或验收失败','published-unverified':'仓库已提交，公网尚未验收',collecting:'正在采集','ready-for-analysis':'采集已完成，等待分析提交','needs-revision':'内容待修订，尚未发布','submitted-not-published':'已提交，等待发布',failed:'本轮失败，保留旧报告','skipped-busy':'本轮跳过：已有执行','handoff-uncertain':'交接状态待核验',completed:'仓库发布已确认'};
  function describe(x,now=Date.now()){
-  if(x?.status==='skipped-busy'&&x.error==='This task hour is already completed')return '该小时已完成，重复请求已跳过';
+  if(x?.status==='skipped-busy'&&(x.reasonCode==='SLOT_COMPLETED'||x.error==='This task hour is already completed'))return '该小时已完成，重复请求已跳过';
   if(x?.status==='deployed'&&(x.deployed!==true||x.deployment?.status!=='verified'))return '仓库已提交，公网验收证据待核';
   if(!x||typeof x.status!=='string'||!labels[x.status])return '执行状态未核验';
   const deadline=Date.parse(x.deadlineAt);
@@ -123,6 +123,11 @@
   details.className='execution-details';summary.textContent='查看执行、调度观测与模块来源';details.append(summary);
   for(const id of ['asia-session','us-session'])line(details,regionText(id,latest,receipt,control,now),'execution-region');
   line(details,'模块发布不代表行情实时、行业排名或研究覆盖完整；具体缺口见下方内容状态。','execution-note');
+  const attempts=list(health?.attempts).filter(x=>Object.hasOwn(groups,x?.taskGroup)&&Number.isFinite(stamp(x.at))&&stamp(x.at)<=now&&now-stamp(x.at)<=86400000).slice(-24);
+  if(attempts.length){
+   line(details,'最近已入库尝试（不是平台全部触发日志；写入前失败或未触发不可由此推断）','execution-note');
+   for(const x of attempts)line(details,attemptText(x.taskGroup,x,now)+(x.reasonCode?'；分类：'+x.reasonCode:''),'execution-attempt');
+  }
   for(const id of Object.keys(groups))line(details,groups[id]+'：'+taskText(id,health?.tasks?.[id],control,now));
   if(p.verified)line(details,'发布批次：'+p.batchId+'；回执处理时间：'+clock(p.processedAt)+' UTC+8。此处核对发布回执，不代替独立公网浏览器验收。');
   for(const error of readErrors.filter(e=>e.component!=='health'))line(details,'读取未完成：'+error.component+' · '+error.error);
