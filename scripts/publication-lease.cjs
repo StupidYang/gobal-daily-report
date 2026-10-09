@@ -44,6 +44,7 @@ function createPublisher(options = {}) {
         reportId: value.reportId, error: value.error, deadlineAt: value.deadlineAt,
         executionStartedAt: value.executionStartedAt, executionFinishedAt: value.executionFinishedAt,
         repositoryPublished: value.repositoryPublished, deployed: value.deployed, deployment: value.deployment };
+      health.attempts = [...(Array.isArray(health.attempts) ? health.attempts : []).filter(x => x.requestId !== state.executionId), { ...health.tasks[state.taskGroup], taskGroup: state.taskGroup }].slice(-144);
       health.updatedAt = value.at;
       return health;
     });

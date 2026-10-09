@@ -2,7 +2,7 @@
 'use strict';
 // Preserve the worker's persisted outcome; expose terminal failure to GitHub Actions.
 const {createWorker}=require('./execution-worker.cjs');
-function executionExitCode(result){return ['failed','handoff-uncertain','deployment-failed'].includes(result?.status)?1:0;}
+function executionExitCode(result){return ['failed','expired','handoff-uncertain','deployment-failed'].includes(result?.status)?1:0;}
 async function runCli({worker=createWorker(),argv=process.argv.slice(2),ref=process.env.GDR_HANDOFF_REF,log=console.log,error=console.error}={}){
  const result=await worker.run(argv[0],argv[1],{revision:Number(argv[2]||0),ref});
  log(JSON.stringify({status:result?.status||'collected',published:false}));

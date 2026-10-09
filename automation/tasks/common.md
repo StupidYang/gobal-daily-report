@@ -2,7 +2,7 @@
 
 本文件替代旧的原生任务直接拼写七模块并提交main的流程。角色文件只规定内容责任，不决定写入路径。
 
-首先读取main生产控制文件，暂停或不可读就退出。详情严格按 `docs/live-execution.md` 执行。生产允许时，先读取gdr-runtime的共享锁与最近outcomes；先核对phase和固定deadlineAt：publishing不得自动抢占；collecting/analyzing/awaiting-publication只有未过期才报告busy。已经过期不代表仍在工作，新正常时隙可由原入口的代码CAS决定接管，不手改锁、不续交旧结果。无效状态或无效时钟直接报告无法核验。已知安全拒绝尚未解除时仍停止被拒动作，不以过期接管规则绕过拒绝。随后进行**请求前证据发现**：联网查找本轮真正需要阅读的新闻、官方发布和研究原文，选择具体文章/公告/数据页URL，而不是把网站首页、栏目页或搜索结果摘要当成已研究材料。除非栏目页本身就是官方最新发布清单，否则不能用首页占掉证据槽。
+首先读取main生产控制文件，暂停或不可读就退出。详情严格按 `docs/live-execution.md` 执行。生产允许时，先读取gdr-runtime的共享锁与最近outcomes；先核对phase和固定deadlineAt：publishing不得自动抢占；collecting/analyzing/awaiting-publication只有未过期才报告busy。已经过期不代表仍在工作。同任务同实际小时成功后不重复、未成功最多两次业务尝试，一次started/expired不是永久禁止；后续正常调用交由原入口代码CAS决定准入，不手改锁、不续交旧结果。模型不得将自己的跳过结论冒充后端拒绝。无效状态或无效时钟直接报告无法核验。已知安全拒绝尚未解除时仍停止被拒动作，不以过期接管规则绕过拒绝。随后进行**请求前证据发现**：联网查找本轮真正需要阅读的新闻、官方发布和研究原文，选择具体文章/公告/数据页URL，而不是把网站首页、栏目页或搜索结果摘要当成已研究材料。除非栏目页本身就是官方最新发布清单，否则不能用首页占掉证据槽。
 
 每个documents条目应带稳定id、url、title，并尽量标kind=news/market/macro/calendar/research/official/general；单轮最多32条。单条候选来源不满足URL、域名、ID或kind约束时由代码隔离并记录，不允许因为一条坏来源让整轮行情和其他合法证据一起失败；被隔离来源也绝不能进入editorial引用。请求前读取runtime/health.json指向的上一轮global-main结果（若存在且仍可读），检查packet里的文档401/403/429；近期明确拒绝自动抓取的媒体host不要继续占用本轮证据槽，只能作为发现线索去寻找可抓取的官方/一手或其他可信来源。普通媒体默认每个host最多2个documents，只有上一轮同host已有成功正文凭证时才可适度增加；官方机构同域多份正式发布不受这个媒体限额。禁止绕登录、绕403或把搜索摘要当正文凭证。小时增量优先“新事件/新进展/旧判断失效证据”，滚动24小时仍有效的合格新闻由代码保留，不要求每小时重新抓满18–30条；深度复核或长暂停后的首轮可以提高证据数量，但不得凑数。发现不足就把缺口写进source plan和最终coverage，不用旧闻冒充新闻。
 
@@ -29,3 +29,11 @@ GDR保留市场、宏观、政策、公司与重大全球公共事件。普通�
 确有可核验的能源停产、港口关闭、供应链中断、农业损失或保险损失时，选题是经济事件而非天气播报。相关条目必须附结构化 `marketImpactEvidence={status:"verified",channel:"energy|shipping|agriculture|insurance|supply-chain",observedEffect:"至少20字符的已证实具体影响",sourceUrls:["本轮实际取得的证据URL"]}`，其中channel只能取一个值，证据也必须出现在条目自身的sourceUrls中；只写“可能影响市场”不合格。标题和摘要聚焦已证实影响，未证实损失、未来预测不得写成事实。
 
 提交前自行执行选题审查。代码会拒绝新提交的无关气象正文，不会以删除它再冒充内容合格；旧模块中的此类条目不再滚动继承。原始历史与来源收据保留，不重写报告时间或伪造新版本。
+
+### 2026-10-09 执行交接修复
+
+小时主任务仍为原ID，每小时05分执行，区域时间表不变。使用实际时钟，不向未来取整，不用生成时间冒充行情时点。后端统一返回reasonCode，BUSY_ACTIVE、BUSY_PUBLISHING、SLOT_COMPLETED、ATTEMPTS_EXHAUSTED各自独立。实际安全拒绝不是业务重试条件。
+
+采集完成后优先读取runtime/handoffs/<executionId>.json。这是代码绑定原packetHash的精简证据目录，nextAction=READ_EVIDENCE_AND_SUBMIT；它不是分析稿，不证明阅读过全文。旧执行没有清单时读取原results。必须在同次调用内读来源、完成分析并提交，不能以ready-for-analysis结束并暗示后台会继续。
+
+后续正常请求在CAS保护下收尾已过期的collecting/analyzing执行，追加expired及最后可观察阶段，保留原deadlineAt、来源包和原始分析输入。没有提交文件只能记录未观察到，不能推断安全拒绝。awaiting-publication和publishing不由该收尾分支终止或抢占。health.attempts保存近期已进入仓库的执行；它看不到写入前被拒或未触发的任务，不是平台全量日志。

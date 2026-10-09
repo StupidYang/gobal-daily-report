@@ -4,6 +4,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const P=require('../lib/pipeline.cjs'),E=require('../lib/execution.cjs'),C=require('../lib/live-collector.cjs'),L=require('../lib/live-report.cjs'),B=require('../lib/batch.cjs');
 const O=require('../lib/publication-outcome.cjs');
+const {handoff}=require('../lib/analysis-handoff.cjs');
 const {assertTaskAllowed}=require('../lib/task-admission.cjs');
 const safe=x=>typeof x==='string'&&/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(x);
 const DOCUMENT_HOSTS=new Set([
@@ -55,7 +56,8 @@ function createWorker(options={}){
    let group=snap.state.executionId===id?snap.state.taskGroup:null;
    if(!group){const req=await read('gdr-runtime','runtime/requests/'+id+'.json');group=req?.taskGroup;}
    if(!['global-main','asia-session','us-session'].includes(group))return;
-   h.tasks[group]={requestId:id,status:value.status,at:value.at,deadlineAt:value.deadlineAt||null,error:value.error||null,reportId:value.reportId||null};h.updatedAt=value.at;
+   h.tasks[group]={requestId:id,status:value.status,at:value.at,deadlineAt:value.deadlineAt||null,error:value.error||null,reasonCode:value.reasonCode||null,reportId:value.reportId||null};
+   h.attempts=[...(Array.isArray(h.attempts)?h.attempts:[]).filter(x=>x.requestId!==id),{...h.tasks[group],taskGroup:group}].slice(-144);h.updatedAt=value.at;
    const body={branch:'gdr-runtime',message:'runtime: health '+id,content:Buffer.from(P.json(h)).toString('base64')};if(prior)body.sha=prior.sha;
    try{await store.request('PUT','/contents/'+name,body);return;}catch(e){if(e.code!=='CONFLICT'||attempt)throw e;}
   }
@@ -75,6 +77,20 @@ function createWorker(options={}){
   if(s.executionId!==id||!['collecting','analyzing'].includes(s.phase))return;
   await store.cas(snapshot,E.terminate(s,{executionId:id,generation:s.generation},reason,clock()));
  }
+ // Close an observed expired non-publishing owner before a new normal request.
+ // Never re-date the packet, infer a safety error, or terminate someone who won a CAS.
+ async function expirePrevious(){
+  const snapshot=await store.read(),s=snapshot.state,now=clock();
+  if(!['collecting','analyzing'].includes(s.phase)||now<Date.parse(s.deadlineAt))return null;
+  const original=await read('gdr-runtime','runtime/outcomes/'+s.executionId+'.json');
+  if(original?.repositoryPublished===true||original?.published===true)throw new E.Busy('Expired owner has publication evidence; reconciliation required','HANDOFF_RECONCILIATION_REQUIRED');
+  const submitted=!!(await file('gdr-runtime','runtime/submissions/'+s.executionId+'.json'));
+  const reasonCode=submitted?'SUBMISSION_PROCESSING_NOT_CONFIRMED':s.phase==='analyzing'?'ANALYSIS_SUBMISSION_NOT_OBSERVED':'COLLECTION_DEADLINE_EXCEEDED';
+  const reason=submitted?'截止时间已过，发现提交文件但未确认处理完成；中断原因未知':s.phase==='analyzing'?'截止时间已过，未观察到有效分析提交；中断原因未知':'采集期限已过，未观察到采集交接完成；中断原因未知';
+  const token={executionId:s.executionId,generation:s.generation};
+  await store.cas(snapshot,E.terminate(s,token,reason,now));
+  return outcome(s.executionId,{status:'expired',reasonCode,error:reason,execution:token,deadlineAt:s.deadlineAt,expiredAt:s.deadlineAt,detectedAt:new Date(now).toISOString(),lastPhase:s.phase,submissionObserved:submitted,published:false,repositoryPublished:false,deployed:false});
+ }
  async function reconcile(){
   const snapshot=await store.read(),s=snapshot.state;if(s.phase!=='publishing')return;
   const run=await store.request('GET','/actions/runs/'+s.workflowRunId);if(!run||run.status!=='completed')throw new E.Busy('Previous publishing workflow is not confirmed terminal');
@@ -92,7 +108,7 @@ function createWorker(options={}){
   await requireProduction(req.taskGroup);
   if(!Number.isFinite(Date.parse(req.requestedAt))||Math.abs(clock()-Date.parse(req.requestedAt))>15*60000)throw Error('Request was queued too long or has an invalid timestamp');
   const sourcePlan=sanitizeDocuments(req.documents||[]),docs=sourcePlan.accepted;
-  await reconcile();const acquired=await E.begin(store,req.taskGroup,{now:clock(),executionId:id,budgetMs:20*60000}),token={executionId:id,generation:acquired.state.generation};
+  await reconcile();await expirePrevious();const acquired=await E.begin(store,req.taskGroup,{now:clock(),executionId:id,budgetMs:20*60000}),token={executionId:id,generation:acquired.state.generation};
   await outcome(id,{status:'collecting',error:null,issues:[],execution:token,deadlineAt:acquired.state.deadlineAt});
   const packet=await collect(P.read(path.join(root,'config/watchlist.json')),{documents:docs,rawDir:path.join(out,'raw'),onProgress:p=>P.atomic(path.join(out,'progress.json'),p),budgetMs:90000,requestMs:8000,concurrency:4});
   packet.documentsAccepted=docs.length;packet.documentsBlocked=sourcePlan.blocked.length;
@@ -103,7 +119,10 @@ function createWorker(options={}){
   }
   await requireProduction(req.taskGroup);E.assertOwner((await store.read()).state,token,clock());
   const result={version:1,requestId:id,taskGroup:req.taskGroup,execution:token,deadlineAt:acquired.state.deadlineAt,packetHash:P.hash(packet),packet,editorialContract:{version:'editorial-v1',path:'docs/editorial-input.md',frameworkNameField:'framework',documentLimit:32,documentKinds:[...DOCUMENT_KINDS],newsFields:['eventId','title','regions','kind','summary','plainImpact','assessment','sourceUrls'],revisionPath:'runtime/submissions/'+id+'--r1.json',maxSubmissions:2},scope:'Evidence only. Read sources and write complete analysis; collection success is not publication.'};
+  result.handoffPath='runtime/handoffs/'+id+'.json';
+  result.nextAction='READ_EVIDENCE_AND_SUBMIT';
   await create('gdr-runtime','runtime/results/'+id+'.json',result);
+  await create('gdr-runtime',result.handoffPath,handoff(result,clock()));
   await E.advance(store,token,'analyzing',{sourcePacketPath:'runtime/results/'+id+'.json',sourcePacketHash:P.hash(packet)},clock());
   await outcome(id,{status:'ready-for-analysis',error:null,issues:[],execution:token,deadlineAt:result.deadlineAt,packetHash:result.packetHash,collectionDurationMs:packet.durationMs});
   P.atomic(path.join(out,'result.json'),result);return result;
@@ -139,12 +158,12 @@ function createWorker(options={}){
   catch(e){
    const snapshot=await store.read().catch(()=>null),phase=snapshot?.state.executionId===id?snapshot.state.phase:null;
    if(e.code!=='BUSY')try{await releaseFailed(id,e.message);}catch{}
-   const value={status:e.code==='PRODUCTION_PAUSED'?'paused':e.code==='BUSY'?'skipped-busy':['awaiting-publication','publishing'].includes(phase)?'handoff-uncertain':'failed',error:e.message,published:false};
+   const value={reasonCode:e.reasonCode||e.code||'UNCLASSIFIED_ERROR',status:e.code==='PRODUCTION_PAUSED'?'paused':e.code==='BUSY'?'skipped-busy':['awaiting-publication','publishing'].includes(phase)?'handoff-uncertain':'failed',error:e.message,published:false};
    const status=await outcome(id,value).catch(()=>({...value,requestId:id,at:new Date(clock()).toISOString()}));P.atomic(path.join(out,'failure.json'),status);
    if(['BUSY','PRODUCTION_PAUSED'].includes(e.code))return status;throw e;
   }
  }
- return {run,request,submit,reconcile};
+ return {run,request,submit,reconcile,expirePrevious};
 }
 if(require.main===module)createWorker().run(process.argv[2],process.argv[3],{revision:Number(process.argv[4]||0),ref:process.env.GDR_HANDOFF_REF}).then(r=>console.log(JSON.stringify({status:r?.status||'collected',published:false}))).catch(e=>{console.error(e.stack||e.message);process.exitCode=1;});
 module.exports={createWorker,sanitizeDocuments,DOCUMENT_KINDS,DOCUMENT_HOSTS};
