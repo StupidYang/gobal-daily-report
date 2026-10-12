@@ -4,16 +4,22 @@
   "executionId": "20261012T081339Z-global-main",
   "taskGroup": "global-main",
   "slot": "global-main:2026-10-12T08",
-  "phase": "analyzing",
+  "phase": "failed",
   "startedAt": "2026-10-12T08:13:49.622Z",
   "deadlineAt": "2026-10-12T08:33:49.622Z",
-  "updatedAt": "2026-10-12T08:13:57.796Z",
+  "updatedAt": "2026-10-12T08:24:18.435Z",
   "stages": [
     {
       "phase": "collecting",
       "startedAt": "2026-10-12T08:13:49.622Z",
       "finishedAt": "2026-10-12T08:13:57.796Z",
       "durationMs": 8174
+    },
+    {
+      "phase": "analyzing",
+      "startedAt": "2026-10-12T08:13:57.796Z",
+      "finishedAt": "2026-10-12T08:24:18.435Z",
+      "durationMs": 620639
     }
   ],
   "recentSlots": [
@@ -73,14 +79,17 @@
     },
     {
       "slot": "global-main:2026-10-12T08",
-      "status": "started",
+      "status": "failed",
       "at": "2026-10-12T08:13:49.622Z",
       "executionId": "20261012T081339Z-global-main"
     }
   ],
   "sourcePacketPath": "runtime/results/20261012T081339Z-global-main.json",
   "sourcePacketHash": "eb3baeb55ae6a42cd97c5d7a0b494ffe2ca6e23e96866fc32c40c16b9a716118",
-  "submissionAttempts": 1,
+  "submissionAttempts": 2,
   "validationReason": "editorial.newsItems[0] missing/invalid: kind",
-  "lastValidationAt": "2026-10-12T08:23:53.266Z"
+  "lastValidationAt": "2026-10-12T08:23:53.266Z",
+  "reason": "Atomic batch rejected: [{\"role\":\"quotes\",\"status\":\"published\",\"errors\":[]},{\"role\":\"asia-equities\",\"status\":\"published\",\"errors\":[]},{\"role\":\"us-equities\",\"status\":\"published\",\"errors\":[]},{\"role\":\"news\",\"status\":\"published\",\"errors\":[]},{\"role\":\"macro\",\"status\":\"published\",\"errors\":[]},{\"role\":\"research\",\"status\":\"rejected\",\"errors\":[\"研究缺事件身份/原文/分析时间/结论\"]},{\"role\":\"synthesis\",\"status\":\"waiting-dependencies\",\"errors\":[\"DEPENDENCY_MISSING: data/runs/research/20261012T081339Z-global-main-research.json\"]}]",
+  "finishedAt": "2026-10-12T08:24:18.435Z",
+  "totalDurationMs": 628813
 }
