@@ -2,6 +2,7 @@
 const t=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os');
 const P=require('../lib/pipeline.cjs'),L=require('../lib/live-report.cjs'),B=require('../lib/batch.cjs'),Q=require('../assets/content-contract.js'),N=require('../lib/news-retention.cjs'),E=require('../lib/execution.cjs');
 const {createWorker}=require('../scripts/execution-worker.cjs'),router=require('../scripts/route-execution-event.cjs');
+const {EditorialValidationError}=require('../lib/editorial-errors.cjs');
 const project=path.resolve(__dirname,'..'),fixtures=path.join(__dirname,'fixtures/native-handoff');
 const root=fs.mkdtempSync(path.join(os.tmpdir(),'gdr-pinned-native-replay-'));
 const seed=P.read(path.join(fixtures,'baseline.json'));P.atomic(path.join(root,'config/watchlist.json'),seed.config);P.atomic(path.join(root,'data/latest.json'),seed.latest);P.atomic(path.join(root,'automation/control.json'),{version:1,productionPaused:false,qualityPolicy:'content-r3'});
@@ -88,7 +89,7 @@ function harness(){
   if(old&&body.sha!==old.sha)throw new E.Conflict();if(!old&&body.sha)throw new E.Conflict();files.set(key,{sha:String(++serial),content:body.content});return {content:files.get(key)};
  }};
  let bad=true;
- const worker=createWorker({root,store,out:dir,clock:()=>now+1000,compile:()=>{if(bad)throw Error('frameworkAnalysis[0].conclusion missing');return {batchId:id,execution:token,modules:[]};},prepare:()=>({reportId:'2026-09-23-1100',receipts:[]})});
+ const worker=createWorker({root,store,out:dir,clock:()=>now+1000,compile:()=>{if(bad)throw new EditorialValidationError([{path:'editorial.report.frameworkAnalysis[0].conclusion',code:'required',message:'conclusion missing'}]);return {batchId:id,execution:token,modules:[]};},prepare:()=>({reportId:'2026-09-23-1100',receipts:[]})});
  const submit=(revision=0)=>{put('gdr-runtime','runtime/submissions/'+id+(revision?'--r1':'')+'.json',{execution:token,editorial:{packetHash:P.hash(packet),revision}});};
  return {worker,id,token,calls,submit,state:()=>state,setGood:()=>bad=false,done:()=>fs.rmSync(dir,{recursive:true,force:true})};
 }
@@ -102,7 +103,7 @@ t('rejected editorial stays bounded, one revision can submit, duplicate delivery
  }finally{h.done();}
 });
 t('second invalid submission releases the shared lease instead of leaving analyzing',async()=>{
- const h=harness();try{h.submit();await h.worker.run('submit',h.id);h.submit(1);a.equal((await h.worker.run('submit',h.id,{revision:1})).status,'failed');a.equal(h.state().phase,'failed');a.equal(h.state().submissionAttempts,2);}finally{h.done();}
+ const h=harness();try{h.submit();await h.worker.run('submit',h.id);h.submit(1);a.equal((await h.worker.run('submit',h.id,{revision:1})).status,'editorial-rejected');a.equal(h.state().phase,'failed');a.equal(h.state().submissionAttempts,2);}finally{h.done();}
 });
 t('execution status never calls an expired analyzing job healthy',()=>{
  const S=require('../assets/execution-status.js');a.match(S.describe({status:'ready-for-analysis',deadlineAt:'2026-09-23T01:00:00Z'},Date.parse('2026-09-23T02:00:00Z')),/超时/);a.match(S.describe({status:'needs-revision'}),/尚未发布/);a.match(S.describe({status:'submitted-not-published'}),/等待发布/);a.match(S.describe({status:'completed'}),/仓库/);

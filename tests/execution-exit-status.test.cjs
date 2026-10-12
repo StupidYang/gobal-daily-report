@@ -1,11 +1,21 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {executionExitCode,runCli}=require('../scripts/execution-cli.cjs');
-test('terminal editorial failures return failure instead of green workflow success',()=>{
+test('unclassified terminal and infrastructure failures still fail the workflow',()=>{
  for(const status of ['failed','handoff-uncertain','deployment-failed'])assert.equal(executionExitCode({status}),1);
 });
+test('only explicitly classified unpublished editorial rejection is a completed business result',()=>{
+ assert.equal(executionExitCode({status:'editorial-rejected',reasonCode:'EDITORIAL_VALIDATION_FAILED',published:false}),0);
+ for(const result of [{status:'editorial-rejected'},{status:'editorial-rejected',reasonCode:'UNCLASSIFIED_ERROR',published:false},{status:'editorial-rejected',reasonCode:'EDITORIAL_VALIDATION_FAILED',published:true}])assert.equal(executionExitCode(result),1);
+});
 test('pending revision, completed collection and intentional skips do not become infrastructure errors',()=>{
- for(const status of ['needs-revision','submitted-not-published','ready-for-analysis','skipped-busy','paused','already-collected',undefined])assert.equal(executionExitCode({status}),0);
+ for(const status of ['needs-revision','submitted-not-published','ready-for-analysis','skipped-busy','paused','already-collected'])assert.equal(executionExitCode({status}),0);
+});
+test('missing and unknown results cannot silently become green collection results',async()=>{
+ for(const result of [null,undefined,{}, {status:undefined},{status:'unknown'},{status:'collected'}]){
+  assert.equal(executionExitCode(result),1);
+  assert.equal(await runCli({worker:{run:async()=>result},argv:['request','run'],log:()=>{},error:()=>{},summaryFile:null}),1);
+ }
 });
 test('CLI awaits the recorded outcome, retains raw errors and reports failure without retry',async()=>{
  const calls=[],logs=[],errors=[];let persisted=false;

@@ -16,6 +16,12 @@
 
 直接按editorial-v1完成独立完整六资产分析、plainLanguage、frameworkAnalysis/frameworkSynthesis、watch、证据引用、新闻和未来事件。缺数据明确partial与具体原因，不删除六资产正文，不用相同文案占位，不补0、不重标旧asOf/analyzedAt、不用普通天气凑数。首屏说市场变化与影响，不说执行成功次数。事实、推断、风险、改判条件分开。每轮核对Fed/BLS/BEA未来12—24小时官方日历，日历不是实际结果；资金流、全行业榜、公司全文研究未经核验不能自称完成。00/04/08/12/16/20小时在本任务内深度复核，其余小时减少重复研究但不删完整正文。
 
+【提交结构必须逐项核对】
+先按 docs/editorial-input.md 的字段表核对完整JSON，字段有内容不等于类型正确。report.marketCoverage、dataDefinitions、watch、recentChanges必须是规定字段的对象数组；frameworkSynthesis必须使用verdict/agreement/disagreement/weighting/invalidation，不另造同义键。六资产正文、白话影响、框架及证据均须完整。
+newsItems.kind只允许general或market；请求文档的kind=official/calendar不是新闻类型。所有sourceUrls必须对应本轮实际成功取得且已阅读的来源；请求计划、搜索结果和抓取失败URL不能直接算入已取得证据。
+researchRecords仅放可核验的公司事件原文研究，每项按契约提供instrumentId/eventKey/documentId/documentUrl/analyzedAt/analysis.conclusion及本轮证据。IMF研究展示、会议议程或宏观日历应放events/macroEvents，不得伪造公司身份塞入researchRecords。没有合格新公司研究时按实际情况保持空数组并写研究缺口；researchChecks中的每项也必须有真实instrumentId、checkedAt、status/result和说明。
+needs-revision返回后读取完整issues，逐项修正所有错误再交唯一r1，不能只改第一条后重交。editorial-rejected表示稿件终态拒收、本轮未发布；即便校验工作流正常结束也不代表发布，不重交该执行、不创建第二个请求规避，不把业务拒稿说成GitHub或平台安全拒绝。
+
 在原deadlineAt前只创建runtime/submissions/<executionId>.json，包含原execution及editorial:{packetHash,analyzedAt,report,newsItems,newsCoverage,macroFacts,macroEvents,events,researchRecords,researchChecks}。analyzedAt取实际分析时间。提交返回不确定时只读核对原路径，不盲目重写。needs-revision仅在原期限内创建一次<executionId>--r1.json，不覆盖、不续期、不重采集。过期旧稿停止提交。不要停在采集完成后承诺后台继续；当前调用未交稿就必须明说最后完成阶段、剩余时间和真正遇到的阻断。
 
 【安全与权限独立】真实工具拒绝、需要审批时立即停止该动作，保留原错误、可用错误码和审批卡。已知仍适用的拒绝，未取得解除或批准证据不得重复被拒动作，不换工具或传输格式重试，不新建executionId绕过。业务第二次机会不是安全拒绝的重试授权。404只表示当前地址的资源不可访问，不能单凭404认定仓库删除或安全写入拒绝；旧助手转述和普通超时不自动证明当前安全拒绝。没有实际工具错误就不能声称安全层拒绝；未调用写入就不能声称写入被拦截。权限不足、模型自行跳过、业务占用、超时、来源失败分别报告，不混用。

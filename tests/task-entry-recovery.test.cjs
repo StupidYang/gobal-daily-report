@@ -1,6 +1,17 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const root=path.join(__dirname,'..'),P=require('../lib/pipeline.cjs'),T=require('../lib/task-runtime.cjs');
+function configurationFixture(t,{productionPaused,enabledTaskGroups,pausedTaskGroups}){
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'gdr-config-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
+ fs.cpSync(path.join(root,'automation'),path.join(dir,'automation'),{recursive:true});
+ const c=P.read(path.join(dir,'automation/control.json')),e=P.read(path.join(dir,'automation/task-export.json')),b=P.read(path.join(dir,'automation/bindings.json'));
+ for(const rows of [e.tasks,b.bindings])for(const row of rows)row.enabled=enabledTaskGroups.includes(row.id);
+ c.productionPaused=productionPaused;
+ c.supervisedAcceptance={...c.supervisedAcceptance,enabledTaskGroups,pausedTaskGroups,nativeSchedulesPaused:enabledTaskGroups.length===0};
+ c.schedulerObservation={version:1,scope:'Isolated test fixture',tasks:b.bindings.map(({id,taskId,enabled})=>({id,taskId,enabled}))};
+ P.atomic(path.join(dir,'automation/control.json'),c);P.atomic(path.join(dir,'automation/task-export.json'),e);P.atomic(path.join(dir,'automation/bindings.json'),b);
+ return dir;
+}
 test('global runtime entry export and binding retain the repaired exact prompt',()=>{
  const prompt=T.entry(root,'global-main'),exported=P.read(path.join(root,'automation/task-export.json')).tasks.find(t=>t.id==='global-main'),binding=P.read(path.join(root,'automation/bindings.json')).bindings.find(t=>t.id==='global-main');
  assert.equal(prompt,fs.readFileSync(path.join(root,'automation/entry/global-main.txt'),'utf8').trimEnd());assert.equal(exported.prompt,prompt);assert.equal(binding.entryPromptSha256,P.hash(prompt));
@@ -13,13 +24,21 @@ test('owner-authorized regional entries, hashes and admission remain aligned',()
  for(const id of ['asia-session','us-session']){const prompt=T.entry(root,id),e=P.read(path.join(root,'automation/task-export.json')).tasks.find(t=>t.id===id),b=P.read(path.join(root,'automation/bindings.json')).bindings.find(t=>t.id===id);assert.equal(e.prompt,prompt);assert.equal(b.entryPromptSha256,P.hash(prompt));assert.equal(prompt,fs.readFileSync(path.join(root,'automation/entry',id+'.txt'),'utf8').trimEnd());assert.equal(b.enabled,e.enabled);if(b.enabled)assert.doesNotThrow(()=>require('../lib/task-admission.cjs').assertTaskAllowed(P.read(path.join(root,'automation/control.json')),id));}
 });
 
-test('runtime validates all entries and rejects disabled-admission or duplicate-export drift',t=>{
+test('runtime validates all current entries',()=>{
  assert.doesNotThrow(()=>T.validateConfiguration(root));
- const dir=fs.mkdtempSync(path.join(os.tmpdir(),'gdr-config-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
- fs.cpSync(path.join(root,'automation'),path.join(dir,'automation'),{recursive:true});
+});
+test('runtime accepts a synchronized fully paused configuration',t=>{
+ const dir=configurationFixture(t,{productionPaused:true,enabledTaskGroups:[],pausedTaskGroups:['global-main','asia-session','us-session']});
+ assert.doesNotThrow(()=>T.validateConfiguration(dir));
+});
+test('runtime rejects an enabled task group paused by production control',t=>{
+ const dir=configurationFixture(t,{productionPaused:false,enabledTaskGroups:['asia-session'],pausedTaskGroups:[]});
+ assert.doesNotThrow(()=>T.validateConfiguration(dir));
  const c=P.read(path.join(dir,'automation/control.json'));c.supervisedAcceptance.pausedTaskGroups=['asia-session'];P.atomic(path.join(dir,'automation/control.json'),c);
- assert.throws(()=>T.validateConfiguration(dir),/paused/);
- fs.copyFileSync(path.join(root,'automation/control.json'),path.join(dir,'automation/control.json'));
+ assert.throws(()=>T.validateConfiguration(dir),/Task group is paused by the production control: asia-session/);
+});
+test('runtime rejects duplicate task exports while production is paused',t=>{
+ const dir=configurationFixture(t,{productionPaused:true,enabledTaskGroups:[],pausedTaskGroups:['global-main','asia-session','us-session']});
  const e=P.read(path.join(dir,'automation/task-export.json'));e.tasks[1]=e.tasks[0];P.atomic(path.join(dir,'automation/task-export.json'),e);
  assert.throws(()=>T.validateConfiguration(dir),/Duplicate/);
 });
@@ -30,3 +49,4 @@ test('missing regional canonical entries cannot silently fall back to stale prom
   assert.throws(()=>T.entry(dir,id),/ENOENT/);
  }
 });
+

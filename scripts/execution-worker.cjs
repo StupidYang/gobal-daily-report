@@ -4,6 +4,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const P=require('../lib/pipeline.cjs'),E=require('../lib/execution.cjs'),C=require('../lib/live-collector.cjs'),L=require('../lib/live-report.cjs'),B=require('../lib/batch.cjs');
 const O=require('../lib/publication-outcome.cjs');
+const {isEditorialValidationError,formatValidationIssue}=require('../lib/editorial-errors.cjs');
 const {handoff}=require('../lib/analysis-handoff.cjs');
 const {assertTaskAllowed}=require('../lib/task-admission.cjs');
 const safe=x=>typeof x==='string'&&/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(x);
@@ -68,7 +69,10 @@ function createWorker(options={}){
    const old=await file('gdr-runtime',name),previous=decode(old),next={...previous,...value,requestId:id,at:new Date(clock()).toISOString()};
    next.history=[...(previous?.history||[]),{status:next.status,at:next.at,revision:next.revision??null}].slice(-16);
    const body={branch:'gdr-runtime',message:'runtime: '+next.status+' '+id,content:Buffer.from(P.json(next)).toString('base64')};if(old)body.sha=old.sha;
-   try{await store.request('PUT','/contents/'+name,body);await health(id,next).catch(e=>console.warn('Health projection unavailable: '+e.message));return next;}catch(e){if(e.code!=='CONFLICT'||attempt)throw e;}
+   try{await store.request('PUT','/contents/'+name,body);}catch(e){if(e.code!=='CONFLICT'||attempt)throw e;continue;}
+   // A durable rejection must remain observable. Projection write failures are
+   // infrastructure errors, even when the primary outcome was already saved.
+   await health(id,next);return next;
   }
  }
  async function requireProduction(group){return assertTaskAllowed(await read('main','automation/control.json'),group);}
@@ -118,7 +122,7 @@ function createWorker(options={}){
    packet.documentsRequested=(req.documents||[]).length;packet.documentsComplete=false;packet.complete=false;
   }
   await requireProduction(req.taskGroup);E.assertOwner((await store.read()).state,token,clock());
-  const result={version:1,requestId:id,taskGroup:req.taskGroup,execution:token,deadlineAt:acquired.state.deadlineAt,packetHash:P.hash(packet),packet,editorialContract:{version:'editorial-v1',path:'docs/editorial-input.md',frameworkNameField:'framework',documentLimit:32,documentKinds:[...DOCUMENT_KINDS],newsFields:['eventId','title','regions','kind','summary','plainImpact','assessment','sourceUrls'],revisionPath:'runtime/submissions/'+id+'--r1.json',maxSubmissions:2},scope:'Evidence only. Read sources and write complete analysis; collection success is not publication.'};
+  const result={version:1,status:'ready-for-analysis',requestId:id,taskGroup:req.taskGroup,execution:token,deadlineAt:acquired.state.deadlineAt,packetHash:P.hash(packet),packet,editorialContract:{version:'editorial-v1',path:'docs/editorial-input.md',frameworkNameField:'framework',documentLimit:32,documentKinds:[...DOCUMENT_KINDS],newsFields:['eventId','title','regions','kind','summary','plainImpact','assessment','sourceUrls'],revisionPath:'runtime/submissions/'+id+'--r1.json',maxSubmissions:2},scope:'Evidence only. Read sources and write complete analysis; collection success is not publication.'};
   result.handoffPath='runtime/handoffs/'+id+'.json';
   result.nextAction='READ_EVIDENCE_AND_SUBMIT';
   await create('gdr-runtime','runtime/results/'+id+'.json',result);
@@ -134,22 +138,26 @@ function createWorker(options={}){
   if(!submission||!result||submission.execution?.executionId!==id||P.hash(result.packet)!==result.packetHash||submission.editorial?.packetHash!==result.packetHash)throw Error('Submission does not match the immutable source packet');
   await requireProduction(result.taskGroup);
   const inputHash=P.hash(submission),old=await read('gdr-runtime','runtime/outcomes/'+id+'.json');
-  if(old?.submissionHash===inputHash&&old?.revision===revision&&['needs-revision','submitted-not-published','failed'].includes(old.status))return old;
+  if(old?.submissionHash===inputHash&&old?.revision===revision&&['needs-revision','editorial-rejected','submitted-not-published','failed'].includes(old.status))return old;
   const current=E.assertOwner((await store.read()).state,submission.execution,clock());
   if(current.phase!=='analyzing'||current.sourcePacketHash!==result.packetHash||result.execution?.generation!==submission.execution.generation)throw Error('Source packet or analysis ownership changed');
   if((current.submissionAttempts||0)!==revision)throw Error('Editorial revisions must follow one rejected initial submission');
   let batch,preflight;
   try{batch=compile(root,result.packet,submission.editorial,{executionId:id,generation:submission.execution.generation,taskGroup:result.taskGroup,now:clock()});preflight=prepare(root,batch,clock());}
   catch(e){
+   // Only a validator's explicit error is a bounded editorial repair. Never
+   // turn TypeError, filesystem, ownership or persistence errors into a draft result.
+   if(!isEditorialValidationError(e))throw e;
    const snapshot=await store.read();const next=E.rejectEditorial(snapshot.state,submission.execution,e.message,clock());await store.cas(snapshot,next);
-   const rejected=await outcome(id,{status:next.phase==='failed'?'failed':'needs-revision',execution:submission.execution,revision,submissionHash:inputHash,error:e.message,issues:e.message.split('\n'),deadlineAt:next.deadlineAt,revisionPath:next.phase==='failed'?null:'runtime/submissions/'+id+'--r1.json',published:false});
+   const terminal=next.phase==='failed';
+   const rejected=await outcome(id,{status:terminal?'editorial-rejected':'needs-revision',reasonCode:e.code,execution:submission.execution,revision,submissionHash:inputHash,error:e.message,issues:e.issues.map(formatValidationIssue),validationIssues:e.issues,validationStage:e.stage||null,terminal,deadlineAt:next.deadlineAt,revisionPath:terminal?null:'runtime/submissions/'+id+'--r1.json',published:false,repositoryPublished:false,deployed:false});
    P.atomic(path.join(out,'validation.json'),rejected);return rejected;
   }
   await requireProduction(result.taskGroup);await E.advance(store,submission.execution,'awaiting-publication',{batchId:id,batchHash:P.hash(batch)},clock());
   await create('main','data/inbox/batches/'+id+'.json',batch);
   // Bot commits do not recursively trigger push workflows. Dispatch exactly once.
   await store.request('POST','/actions/workflows/publish-candidates.yml/dispatches',{ref:'main'});
-  const submitted=await outcome(id,{status:'submitted-not-published',error:null,issues:[],execution:submission.execution,revision,submissionHash:inputHash,batchId:id,reportId:preflight.reportId,preparedModules:preflight.receipts.length,packetHash:result.packetHash,published:false});
+  const submitted=await outcome(id,{status:'submitted-not-published',reasonCode:null,error:null,issues:[],validationIssues:[],validationStage:null,terminal:false,execution:submission.execution,revision,submissionHash:inputHash,batchId:id,reportId:preflight.reportId,preparedModules:preflight.receipts.length,packetHash:result.packetHash,published:false});
   P.atomic(path.join(out,'submitted.json'),submitted);return submitted;
  }
  async function run(mode,id,args={}){
@@ -157,13 +165,24 @@ function createWorker(options={}){
   try{if(mode==='request')return await request(id,args);if(mode==='submit')return await submit(id,args);throw Error('Expected request or submit');}
   catch(e){
    const snapshot=await store.read().catch(()=>null),phase=snapshot?.state.executionId===id?snapshot.state.phase:null;
-   if(e.code!=='BUSY')try{await releaseFailed(id,e.message);}catch{}
-   const value={reasonCode:e.reasonCode||e.code||'UNCLASSIFIED_ERROR',status:e.code==='PRODUCTION_PAUSED'?'paused':e.code==='BUSY'?'skipped-busy':['awaiting-publication','publishing'].includes(phase)?'handoff-uncertain':'failed',error:e.message,published:false};
-   const status=await outcome(id,value).catch(()=>({...value,requestId:id,at:new Date(clock()).toISOString()}));P.atomic(path.join(out,'failure.json'),status);
+   const failedStatus=['awaiting-publication','publishing'].includes(phase)?'handoff-uncertain':'failed';
+   let cleanupError=null;
+   if(e.code!=='BUSY')try{await releaseFailed(id,e.message);}catch(error){cleanupError=error;}
+   const original={reasonCode:e.reasonCode||e.code||'UNCLASSIFIED_ERROR',status:e.code==='PRODUCTION_PAUSED'?'paused':e.code==='BUSY'?'skipped-busy':failedStatus,error:e.message,published:false};
+   const value=cleanupError?{...original,status:failedStatus,reasonCode:cleanupError.reasonCode||cleanupError.code||'LEASE_CLEANUP_FAILED',error:cleanupError.message,originalStatus:original.status,originalReasonCode:original.reasonCode,originalError:original.error}:original;
+   let status;
+   try{status=await outcome(id,value);}catch(error){
+    // Preserve the original stop reason without hiding a newly observed storage
+    // failure behind a successful paused/busy result.
+    const failure={...value,status:failedStatus,reasonCode:error.reasonCode||error.code||'OUTCOME_PERSISTENCE_FAILED',error:error.message,originalStatus:value.status,originalReasonCode:value.reasonCode,originalError:value.error,requestId:id,at:new Date(clock()).toISOString()};
+    P.atomic(path.join(out,'failure.json'),failure);throw error;
+   }
+   P.atomic(path.join(out,'failure.json'),status);
+   if(cleanupError)throw cleanupError;
    if(['BUSY','PRODUCTION_PAUSED'].includes(e.code))return status;throw e;
   }
  }
  return {run,request,submit,reconcile,expirePrevious};
 }
-if(require.main===module)createWorker().run(process.argv[2],process.argv[3],{revision:Number(process.argv[4]||0),ref:process.env.GDR_HANDOFF_REF}).then(r=>console.log(JSON.stringify({status:r?.status||'collected',published:false}))).catch(e=>{console.error(e.stack||e.message);process.exitCode=1;});
 module.exports={createWorker,sanitizeDocuments,DOCUMENT_KINDS,DOCUMENT_HOSTS};
+if(require.main===module)require('./execution-cli.cjs').runCli({worker:createWorker()}).then(code=>{process.exitCode=code;}).catch(e=>{console.error(e.stack||e.message);process.exitCode=1;});

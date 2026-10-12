@@ -2,6 +2,15 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const S=require('../assets/execution-status.js');
 
+test('terminal editorial rejection stays visibly unpublished even after its deadline',()=>{
+ const now=Date.parse('2026-10-12T08:40:00Z');
+ const x={status:'editorial-rejected',published:false,at:'2026-10-12T08:24:18Z',deadlineAt:'2026-10-12T08:33:49Z',error:'editorial.researchRecords[0].instrumentId: required'};
+ assert.equal(S.describe(x,now),'稿件已拒收，本轮未发布');
+ assert.match(S.attemptText('global-main',x,now),/稿件已拒收，本轮未发布/);
+ assert.match(S.attemptText('global-main',x,now),/researchRecords\[0\]\.instrumentId/);
+ assert.doesNotMatch(S.attemptText('global-main',x,now),/验收已通过|仓库发布已确认|等待发布|本轮已超时/);
+});
+
 test('paused canary groups are described as intentionally paused, not missing',()=>{
  const control={supervisedAcceptance:{pausedTaskGroups:['asia-session','us-session']}};
  assert.equal(S.taskStatus('asia-session',null,control),'额外交易节点按配置暂停');
