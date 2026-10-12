@@ -19,9 +19,85 @@
 
 ## 一次可修正交接
 
-代码返回 `needs-revision` 不是发布成功。立即读取 issues，修正本轮 editorial，并在**原 deadlineAt**之前创建 `<executionId>--r1.json`，仍使用原执行令牌与 packetHash。不得修改首次提交文件、续租、重采集或创建新调度任务。修订仍不合格则失败并释放执行锁。
+代码返回 `needs-revision` 不是发布成功。立即读取 `issues` 和结构化 `validationIssues`，一次处理本轮已经列出的全部独立错误，并在**原 deadlineAt**之前创建 `<executionId>--r1.json`，仍使用原执行令牌与 packetHash。不得修改首次提交文件、续租、重采集或创建新调度任务。最多一份修订；修订仍不合格则返回终态 `editorial-rejected` 并释放执行锁，本轮未发布。修订不得为过门禁伪填字段、改造来源日期或删除原始证据；无法有依据地完成的内容必须如实说明。
 
 当返回 `submitted-not-published`，只能说明候选已提交。只有正式回执为 published，并核对网页实际版本后，才能说发布成功。失败的原始输入留存，用于复现；不要删除它们来制造成功率。
+
+## 精确输入结构与前置校验
+
+此处给出原生交接直接需要的字段类型；无需根据旧报告或字段中文含义猜 JSON 形状。`对象[]` 表示数组内每项都是对象，不接受字符串数组或以市场名称为键的对象。字段为非空字符串时，不能用数组、对象、null 或空串代替。完整内容要求仍遵守 `report-contract`、`reader-r2`、`modules-v1` 和 `content-r3`；下表不会降低分析、来源或发布门禁。
+
+最外层提交是 `{ "execution": { "executionId": "本轮原值", "generation": 1 }, "editorial": { ... } }` 的结构。示意中的文字和数字仅解释类型，实际值必须从本轮结果复制；revision 继续使用原令牌，不生成新 executionId。
+
+### editorial 顶层
+
+| 字段 | JSON 类型及规则 |
+| --- | --- |
+| `packetHash` | 本轮不可变 packet 的完整 SHA-256 字符串，必须与结果一致。 |
+| `analyzedAt` | 实际分析结束时间字符串，带 `Z` 或 `±HH:MM`；不得早于本轮采集开始或晚于当前时间。 |
+| `report` | 完整报告正文对象，详见下表。代码生成 reportId、updatedAt、reportMeta、窗口、sourceIds 与模块引用。 |
+| `newsItems` | 新闻对象数组，可为空；每项包含 `eventId`、`regions`、`kind`、`title`、`summary`、`plainImpact`、`assessment`、`sourceUrls`。稳定ID历史别名 `id` 兼容。 |
+| `newsItems[].regions` / `.kind` | regions 为 `CN/US/WORLD` 组成的非空字符串数组；kind 只允许 `general` 或 `market`。采集计划的 `official/research/calendar` 不能填在 news.kind。 |
+| `newsItems[].publishedAt/eventAt` | 真实来源时间字符串或 null；保留 `sourceDateText`、`dateUncertainty`。缺少明确时区、过期或未来材料保留为背景，不计入24小时覆盖，不猜补时间。 |
+| `newsCoverage` | 建议对象：status、note、regions、gaps；旧的说明字符串仍兼容。regions 可为地区说明对象或地区数组。代码独立计算实际覆盖。 |
+| `macroFacts` | 事实对象数组；每项有唯一非空 `id`，引用实际来源。数值必须是有限数字或 null，`asOf` 为有效精确时点或 null。 |
+| `macroEvents` / `events` | 对象数组。events 是已核验的未来事件雷达；未知具体时点写 `at: null` 并说明。global-main 空雷达须给 `report.sectionGaps.events.reason`。 |
+| `macroFundingNotes` / `macroCoverage` | 前者为文本或对象组成的数组；后者为覆盖说明对象。 |
+| `retainedMacroFactIds` | 可选非空字符串组成的数组；每个ID必须对应仍有效的上一宏观事实。仅由代码保留原事实与原来源。 |
+| `researchRecords` / `researchChecks` / `researchPendingQueue` | 公司研究对象数组，分别见后文。无本轮新材料时可为空，历史研究由代码保留。 |
+
+所有层级的 `sourceUrls` 必须是 http(s) URL 字符串数组。新引用必须在本轮 packet 中同时具有：成功的 HTTP 200 回执、有效哈希与取得时间，以及与 URL/哈希/时间全部匹配的已解析行情或 `contentRetrieved=true` 文档。只有 HTTP 200、历史来源目录、失败解析、搜索结果标题或未匹配回执都不构成可引用证据。前置检查会列出每个失败引用的具体路径，包括同一 URL 出现在多个段落的情况。
+
+`factIds` / `evidenceFactIds` 为非空字符串组成的数组，`factId` 为字符串或 null；行情引用使用实际 instrumentId。代码会继续核对报告最终实际绑定的事实目录，不能以原始包里一条未绑定的区域行情替代冻结模块。外部作者使用 sourceUrls，不手写旧 sourceIds。
+
+### report 正文
+
+| 字段 | JSON 类型及规则 |
+| --- | --- |
+| `overview` / `rolling24hSummary` / `methodology` | 各为非空字符串。 |
+| `coreAnalysis` | 对象，包含九个非空字符串：`mainTheme`、`expectationGap`、`divergence`、`regime`、`priceIn`、`bullCase`、`bullInvalidation`、`bearCase`、`bearInvalidation`。 |
+| `plainLanguage` | 对象，包含非空 `verdict/bottomLine/whyNow/horizon/confidence/invalidation`，以及 `impacts` 对象数组。 |
+| `plainLanguage.impacts[]` | `asset` 覆盖 A股、港股、美股、BTC、黄金、原油；每项非空 `effect/reason/takeaway/horizon`，并保留反证、风险与证据。 |
+| `marketCoverage` | **对象数组**，每项 `market` 为市场名称，六类资产全部出现；其余字段写该市场实际覆盖与缺口。不能写成 `{ "A股": "说明" }`。 |
+| `assets` | 对象数组，保留六类资产概览及各自时点、状态、判断和证据。 |
+| `deepDive` | 六份独立资产对象数组，通过 `asset/name/market/title` 标明资产；每份有非占位 `analysis/mechanism/risk/invalidation/horizon`，以及实际事实或来源引用。沿用时 `retention` 对象须有原 `reportId/analyzedAt/reason`。 |
+| `frameworkAnalysis` | 非空对象数组。每项有 `framework/concept/observed/conclusion`，按 reader-r2 保留适用性、机制、假设、反证、周期、改判条件和证据。已有 `name/principle/facts` 分别兼容前三个字段，不能补造 conclusion。 |
+| `frameworkSynthesis` | **固定五字段对象**：`verdict/agreement/disagreement/weighting/invalidation`，各为非空字符串。`conclusion/supporting/tensions/decisionRule` 等名称不等同这五个字段。 |
+| `recentChanges` / `changes` / `evolution24h` | **对象数组**，每项有 `title` 与 `detail`。已有 `summary/body/change/name` 按既有规则无损映射。不能使用字符串数组。演化节点保留实际时点及证据。 |
+| `watch` | **对象数组**，每项有 `point` 与 `detail`；兼容 point 的 `name/item/title`，detail 的 `why/summary`，或原有 `a/b` 条件。无可核验观察条件时给 `sectionGaps.watch.reason`。 |
+| `dataDefinitions` | **对象数组**，每项有 `term` 与 `definition`；兼容 `name/title` 及 `detail/text/explanation`。不能写成术语到解释的对象。为空时给 `sectionGaps.dataDefinitions.reason`。 |
+| `narrativeTriggers` | 对象数组，使用 `title/effect`；已有 `trigger/name/summary/detail` 和 `why/text` 等别名按既有规则保留。 |
+| `worldEvents` / `analysisTheses` / `judgmentRevisions` / `metrics` | 对象数组；实际没有条目时可为空，不得用文本代替。 |
+| `sectionGaps` | **对象**，键是缺口栏目名，每项为含非空 `reason` 的对象，例如 `{ "events": { "reason": "实际核验范围及未纳入原因" } }`。不能使用字符串数组。 |
+
+代码派生的 `canonicalFacts/sources/news/events/macroEvents/reportMeta/period/recentPeriod` 不能拿来覆盖源材料或伪造新时点。最终报告仍执行完整 report/reader-r2/content-r3 校验，前置通过不等于已经发布。
+
+### 公司研究 records、checks 与待办
+
+`researchRecords[]` 必须对应真实公司披露或研究原文。必填：
+
+| 字段 | 类型和含义 |
+| --- | --- |
+| `instrumentId` | 真实证券身份字符串，例如格式 `EQUITY:US/CN/HK:证券标识`，不能给宏观活动补造证券。 |
+| `eventKey` / `eventType` | 非空字符串，标识具体公司事件及事件类型；材料版本变化使用新 eventKey。 |
+| `documentId` / `documentUrl` | 非空原文身份与真实 http(s) URL；documentUrl 必须在本轮已取得证据中，并包含在本项 sourceUrls。 |
+| `period` | 真实报告期字符串；不适用时显式 null，不猜报告期。 |
+| `publishedAt` | 原文发布日期文本；未知时显式 null，不以分析时间代替。 |
+| `analyzedAt` | 该次原文分析的真实完整时点，带明确时区。 |
+| `sourceUrls` / `sourceHash` | sourceUrls 为非空数组。sourceHash 如提供，只能是真实 SHA-256 或 null；非空哈希必须与该原文本轮回执一致。 |
+| `analysis` | **对象**，至少包含非空 `conclusion`；summary 字段或一段字符串不能代替 analysis.conclusion。按实际阅读范围保留证据、指引、估值口径、风险和证伪条件。 |
+
+仅抓到 IMF/央行/宏观会议的日历或活动介绍，不构成已完成公司原文研究。填写 `status: "source-read-event-page"` 也不能绕过 records 必填结构；应如实按日历或待核材料解释实际阅读范围，不补造分析结论、证券身份、事件版本或时间。研究内容不能为通过校验而被自动填充或删除。
+
+`researchChecks[]` 每项有真实公司 `instrumentId`、带明确时区的 `checkedAt`、非空 `status`（历史别名 `result`）和说明 `note`（兼容 `reason/explanation`）。`no-new-material` 必须引用本轮成功取得的材料；未取得来源可以如实填 `source-unavailable/pending` 并写原因，不能写成已确认无新披露。宏观活动页检查不能充当公司披露检查。checks 的身份和时间不可缺失，否则记录合并时可能互相覆盖。
+
+`researchPendingQueue[]` 每项为真实公司 `instrumentId` 与非空 `reason`。已有历史记录、检查时点和来源保持不变；同轮重复公司事件或检查身份会被前置拒绝。
+
+### 校验错误与系统故障
+
+纯接口 `validateEditorialInput(editorial, { packet, now, taskGroup })` 返回所有可独立判定的输入问题，不修改输入。每条为 `{ path, code, message }`，例如 `editorial.newsItems[0].kind`、`editorial.researchRecords[1].analysis.conclusion`、`editorial.report.marketCoverage`。`assertEditorialInput` 在存在问题时抛出 `EditorialValidationError`，固定 code 为 `EDITORIAL_VALIDATION_FAILED`，issues 保存结构化原项。初稿能够同时看见新闻分类、研究缺项、来源错误与报告结构错误，不会只因第一个错误耗尽唯一修订。
+
+文件系统、内部 TypeError、冻结依赖、租约、原子写入和未知异常仍按系统失败处理，不根据消息中出现“rejected”就归类为编辑稿问题。程序只对明确的校验结果列表使用该错误类型。聚合输入校验之后，完整模块、内容和原子发布门禁继续严格执行。
 
 ## 2026-10-03 恢复质量边界
 
@@ -33,3 +109,4 @@
 ## 来源使用边界（2026-10-03复核）
 
 HKEX网站及其关联网站的用途条款第5节要求程序化访问、公开再分发等用途取得相应书面许可。当前没有此许可的证据，故采集器不再接受其网站域名的自动化文档请求。不要改用同站其他路径、代理或镜像重取同一受限数据，也不要凭历史采集记录声称已有持续使用许可。新报告应明确相应数据缺口；既有冻结历史和原来源记录保持不变，不能删除历史来掩盖当时的采集事实。恢复此类源须先核验合法的数据授权和允许的访问方式。
+
