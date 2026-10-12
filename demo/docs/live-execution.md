@@ -1,12 +1,25 @@
 # execution-lease-v1：真实采集、分析与发布
 
+## GitHub 仓库与分支地址（2026-10-12 修正）
+
+本系统唯一仓库为 `StupidYang/gobal-daily-report`。`gdr-runtime` 是同仓库的运行分支；本系统没有使用 `StupidYang/gdr-runtime` 作为独立运行时仓库。
+
+| 内容 | repository_full_name | 读取 ref / 创建 branch | path 示例 |
+| --- | --- | --- | --- |
+| 生产控制、契约、正式数据与历史 | StupidYang/gobal-daily-report | main | automation/control.json、data/latest.json |
+| 租约、健康状态、请求、结果与分析提交 | StupidYang/gobal-daily-report | gdr-runtime | runtime/leases/production.json、runtime/health.json |
+
+所有工具调用必须显式传仓库及分支：`fetch_file` 使用 `ref`；`create_file` 使用 `branch`。文件 `path` 从仓库根目录开始，不能添加 `main/` 或 `gdr-runtime/` 前缀，也不能省略创建请求/提交时的 `branch="gdr-runtime"`。请求、首次稿、唯一修订均仍走原分支的原生 `GitHub.create_file` 入口。
+
+正确租约读取：`{repository_full_name:"StupidYang/gobal-daily-report",ref:"gdr-runtime",path:"runtime/leases/production.json"}`。不得因把分支拼成独立仓库后得到404，就认定缺少仓库授权、要求新建同名仓库或停止未来调度。正确地址仍失败时保留实际参数与原始错误；实际权限拒绝和审批要求继续遵守，不能换工具或入口规避。
+
 三个原生任务仍是唯一定时入口。GitHub的execution.yml只处理显式请求事件，没有cron。是否运行由当前生产控制、taskGroup准入、用户授权与平台任务状态共同决定；此处旧验收阶段的暂停描述不能作为当前状态。测试成功不能自动恢复生产。
 
 ## 阶段及边界
 
 1. 原生任务读取main/automation/control.json。只有productionPaused=false且executionProtocol=lease-v1才继续；缺失或读取失败停止。
 2. 生产允许后先只读检查共享锁和最近outcomes，有效期限内有活动执行才停止大规模搜索；已过期的非发布执行不等于永久占用。业务同小时至多两次尝试、成功后不重复，准入由lib/execution.cjs的admission/acquire共用规则与CAS决定，工具权限独立。然后做请求前证据发现：查找本轮真正需要阅读的具体新闻、官方发布、宏观数据页和研究原文，不用首页或搜索摘要冒充证据。生成真实时间的唯一executionId（不超过80个ASCII字母、数字、短横线或下划线），在gdr-runtime分支创建runtime/requests/<executionId>.json：`{version:1,requestId,taskGroup,requestedAt,documents:[{id,url,title,kind}]}`。documents最多32项，kind可为news/market/macro/calendar/research/official/general，域名仍限execution-worker.cjs明确白名单。calendar用于未来12–24小时官方事件日历，并在采集计划中有独立lane，避免被大量行情或新闻请求挤到预算末尾。请求包结构错误或超出32项仍整轮拒绝；单条文档若URL、域名、ID或kind不合规，则只隔离该条并记录blockedDocuments，不抓取、不进入可引用来源，其余合法证据与行情继续执行。来源发现发生在锁外只是降低证据盲区，真正防重入仍以代码CAS锁为准。
-3. 事件工作流从main检出执行代码。使用GitHub Contents API旧blob SHA比较交换，在gdr-runtime/runtime/leases/production.json取得三任务共用锁。失败者不采集。固定20分钟期限，不通过心跳续期。
+3. 事件工作流从main检出执行代码。使用GitHub Contents API旧blob SHA比较交换，在同仓库gdr-runtime分支的runtime/leases/production.json取得三任务共用锁。失败者不采集。固定20分钟期限，不通过心跳续期。
 4. 基础行情与外部文档都在同一90秒总预算内有界采集；默认并发4、单请求8秒，文档不再逐条串行等待。429后停止该供应商后续请求；**文档host明确返回401/403时也停止本轮对该host的后续文档抓取**，不绕权限、不把拒绝访问当内容证据，其他来源与行情继续。检查价格、标的、币种、合约与时间。两年美债按财政部日度日期展示，不伪造盘中时刻。文档抓取成功只生成URL/哈希/抓取时间证明，受版权保护全文不复制到公开仓库；模型仍须实际阅读原始URL后才可写分析。
 5. 成功采集写runtime/results/<executionId>.json，锁转analyzing。先检查runtime/outcomes/<executionId>.json；忙碌或失败立即结束，不为不存在的结果空等。读取结果来源包和原始文章后分析，不能把抓取成功冒充读懂全文。
 6. 仅创建runtime/submissions/<executionId>.json：`{execution:{executionId,generation},editorial:{packetHash,analyzedAt,report,newsItems,newsCoverage,macroFacts,macroEvents,events,researchRecords,researchChecks}}`。绑定原packetHash，analyzedAt必须是真实分析结束时间。
@@ -45,3 +58,4 @@ SEC Archives 的 research HTML 新采集可附加版本化 contentFingerprint �
 代码在原results之外生成runtime/handoffs/<executionId>.json，包含原执行令牌、packetHash、deadlineAt、提交路径、逐项源时点和证据URL及缺口。该清单不保存受版权保护的新闻全文，不代替阅读，也不产生分析。原packet、提交契约与发布门禁保持不变。
 
 下一正常请求会在获取新执行权之前检查已过期的collecting/analyzing，用旧blob SHA原子终止旧代数并追加expired结果。SUBMISSION_PROCESSING_NOT_CONFIRMED表示发现提交但未确认处理，ANALYSIS_SUBMISSION_NOT_OBSERVED表示截止后检查未发现提交，两者都不说明平台错误原因。不能修改已完成执行或抢夺publishing。该流程不新增任何定时器，整段无人触发时服务器不会凭空执行收尾。
+
