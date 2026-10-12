@@ -1,15 +1,23 @@
 执行 StupidYang/gobal-daily-report 既有 global-main 生产任务。这是采集、分析、提交和发布工作，不是只查询状态。原任务每小时05分运行，避开整点前启动落入上一小时的风险；仍每小时一轮。全部时间用实际时钟，不倒填整点、不制造未来时点或补造历史。
 
-【读取一次必要契约】用当前GitHub正式工具读取main的automation/control.json，要求productionPaused=false、executionProtocol=lease-v1、qualityPolicy=content-r3、global-main在enabledTaskGroups而不在pausedTaskGroups。读取automation/tasks/common.md、automation/tasks/global-main.md、docs/live-execution.md、docs/editorial-input.md、docs/reader-r2-contract.md，每份本轮读取一次；不是循环复读历史故障。业务暂停或不可核验则报告本轮实际原因，不修改开关。
+【GitHub资源定位：本轮所有调用必须显式填写】
+唯一仓库为 StupidYang/gobal-daily-report；gdr-runtime 是这个仓库的分支名，不是独立仓库。所有 GitHub 读取和创建文件调用都使用 repository_full_name="StupidYang/gobal-daily-report"。
+- 生产控制、六份执行契约、已发布 data/ 与 history/：fetch_file 的 ref="main"，path 从仓库根目录填写。
+- 共享租约、health、requests、outcomes、handoffs、results、submissions：均位于同仓库 gdr-runtime 分支。fetch_file 必须传 ref="gdr-runtime"；create_file 必须传 branch="gdr-runtime"。
+- 正确租约读取参数为 {repository_full_name:"StupidYang/gobal-daily-report",ref:"gdr-runtime",path:"runtime/leases/production.json"}；health 的 path="runtime/health.json"。
+- 请求和提交创建时 path 分别为 "runtime/requests/<executionId>.json"、"runtime/submissions/<executionId>.json"，修订仍用该分支。path 不加 main/ 或 gdr-runtime/ 前缀，写入不得省略 branch。
+调用前逐项核对 repository_full_name、ref/branch、path。不得查询、创建或要求授权 StupidYang/gdr-runtime 仓库；该地址不是本系统的运行时入口。若正确地址仍返回错误，保留实际参数与原错误，不将404自行解释为仓库删除或安全写入拒绝。真实权限拒绝与审批要求仍按下文执行。
 
-【准入由代码裁定】只读gdr-runtime/runtime/leases/production.json和runtime/health.json作准备。不得只因非终态就永久busy；phase=publishing始终视为占用，须先核对其原发布工作流是否终态，未终止不得发新请求抢占。collecting/analyzing/awaiting-publication只有deadlineAt未到时视为占用；过期不续交旧execution、不手改锁。代码规则是：同任务同实际小时成功后不重复，未成功最多两次业务尝试；一次started/expired不是该小时永久禁用。新小时独立判定，不继承旧小时的completed。不要自行宣称SLOT_COMPLETED、ATTEMPTS_EXHAUSTED或后端拒绝；只有原请求入口实际返回的reasonCode才能作为程序拒绝。每次本任务调用最多创建一个正常请求，不主动创建第二轮来试探。普通超时后的后续调用由现有代码CAS判定，不额外新建调度、补跑、验收或看门狗任务。
+【读取一次必要契约】用当前GitHub正式工具以ref=main读取automation/control.json，要求productionPaused=false、executionProtocol=lease-v1、qualityPolicy=content-r3、global-main在enabledTaskGroups而不在pausedTaskGroups。读取automation/tasks/common.md、automation/tasks/global-main.md、docs/live-execution.md、docs/editorial-input.md、docs/reader-r2-contract.md，每份本轮读取一次；不是循环复读历史故障。业务暂停或不可核验则报告本轮实际原因，不修改开关。
 
-【原入口完整交接】先发现当前具体新闻、官方发布、研究与未来日历，保留最多32份合法文档计划，不用首页和搜索摘要冒充原文。用实际UTC时钟生成唯一executionId，仅调用GitHub.create_file在gdr-runtime创建runtime/requests/<executionId>.json，格式{version:1,requestId,taskGroup:'global-main',requestedAt,documents:[{id,url,title,kind}]}。核对创建结果后有限重查本轮outcomes；不得因为结果尚未生成而重复创建请求。ready-for-analysis不是完成，必须继续。优先读取代码生成的runtime/handoffs/<executionId>.json；旧执行没有该文件才读runtime/results/<executionId>.json。核对executionId/generation/packetHash/deadlineAt，实际阅读所引用来源；清单只证明采集，不证明全文研究。需要额外字段时回到原results，不猜数值。
+【准入由代码裁定】以ref=gdr-runtime只读runtime/leases/production.json和runtime/health.json作准备。不得只因非终态就永久busy；phase=publishing始终视为占用，须先核对其原发布工作流是否终态，未终止不得发新请求抢占。collecting/analyzing/awaiting-publication只有deadlineAt未到时视为占用；过期不续交旧execution、不手改锁。代码规则是：同任务同实际小时成功后不重复，未成功最多两次业务尝试；一次started/expired不是该小时永久禁用。新小时独立判定，不继承旧小时的completed。不要自行宣称SLOT_COMPLETED、ATTEMPTS_EXHAUSTED或后端拒绝；只有原请求入口实际返回的reasonCode才能作为程序拒绝。每次本任务调用最多创建一个正常请求，不主动创建第二轮来试探。普通超时后的后续调用由现有代码CAS判定，不额外新建调度、补跑、验收或看门狗任务。
+
+【原入口完整交接】先发现当前具体新闻、官方发布、研究与未来日历，保留最多32份合法文档计划，不用首页和搜索摘要冒充原文。用实际UTC时钟生成唯一executionId，仅调用GitHub.create_file（repository_full_name=StupidYang/gobal-daily-report，branch=gdr-runtime）创建runtime/requests/<executionId>.json，格式{version:1,requestId,taskGroup:'global-main',requestedAt,documents:[{id,url,title,kind}]}。核对创建结果后有限重查本轮outcomes；不得因为结果尚未生成而重复创建请求。ready-for-analysis不是完成，必须继续。优先读取代码生成的runtime/handoffs/<executionId>.json；旧执行没有该文件才读runtime/results/<executionId>.json。核对executionId/generation/packetHash/deadlineAt，实际阅读所引用来源；清单只证明采集，不证明全文研究。需要额外字段时回到原results，不猜数值。
 
 直接按editorial-v1完成独立完整六资产分析、plainLanguage、frameworkAnalysis/frameworkSynthesis、watch、证据引用、新闻和未来事件。缺数据明确partial与具体原因，不删除六资产正文，不用相同文案占位，不补0、不重标旧asOf/analyzedAt、不用普通天气凑数。首屏说市场变化与影响，不说执行成功次数。事实、推断、风险、改判条件分开。每轮核对Fed/BLS/BEA未来12—24小时官方日历，日历不是实际结果；资金流、全行业榜、公司全文研究未经核验不能自称完成。00/04/08/12/16/20小时在本任务内深度复核，其余小时减少重复研究但不删完整正文。
 
 在原deadlineAt前只创建runtime/submissions/<executionId>.json，包含原execution及editorial:{packetHash,analyzedAt,report,newsItems,newsCoverage,macroFacts,macroEvents,events,researchRecords,researchChecks}。analyzedAt取实际分析时间。提交返回不确定时只读核对原路径，不盲目重写。needs-revision仅在原期限内创建一次<executionId>--r1.json，不覆盖、不续期、不重采集。过期旧稿停止提交。不要停在采集完成后承诺后台继续；当前调用未交稿就必须明说最后完成阶段、剩余时间和真正遇到的阻断。
 
-【安全与权限独立】真实工具拒绝、需要审批时立即停止该动作，保留原错误、可用错误码和审批卡。已知仍适用的拒绝，未取得解除或批准证据不得重复被拒动作，不换工具或传输格式重试，不新建executionId绕过。业务第二次机会不是安全拒绝的重试授权。404只表示所读文件未找到，不是安全写入拒绝；旧助手转述和普通超时不自动证明当前安全拒绝。没有实际工具错误就不能声称安全层拒绝；未调用写入就不能声称写入被拦截。权限不足、模型自行跳过、业务占用、超时、来源失败分别报告，不混用。
+【安全与权限独立】真实工具拒绝、需要审批时立即停止该动作，保留原错误、可用错误码和审批卡。已知仍适用的拒绝，未取得解除或批准证据不得重复被拒动作，不换工具或传输格式重试，不新建executionId绕过。业务第二次机会不是安全拒绝的重试授权。404只表示当前地址的资源不可访问，不能单凭404认定仓库删除或安全写入拒绝；旧助手转述和普通超时不自动证明当前安全拒绝。没有实际工具错误就不能声称安全层拒绝；未调用写入就不能声称写入被拦截。权限不足、模型自行跳过、业务占用、超时、来源失败分别报告，不混用。
 
 【结果】成功必须核对正式批次回执、新reportId的latest、冻结history和本轮公网验收凭证。只有请求成功、采集完成、submitted-not-published或工作流绿色都不是最终发布。输出简短中文结果：实际开始/结束时间、executionId、最后完成阶段、报告编号/源时点、公网是否确认、真实错误或缺口。任何情况下本任务不得调用任务管理工具修改、停用、删除、重建或恢复任何任务；不改代码、权限、生产控制、锁或历史。

@@ -1,5 +1,9 @@
 # 原生任务入口约束（execution-lease-v1）
 
+## 运行时地址
+
+所有 GitHub 调用的 `repository_full_name` 固定为 `StupidYang/gobal-daily-report`。`gdr-runtime` 是这个仓库的分支，不能使用 `StupidYang/gdr-runtime` 作为仓库名。读取控制、契约及正式 `data/`、`history/` 时显式传 `ref="main"`；读取任何 `runtime/` 文件时传 `ref="gdr-runtime"`；仅在原请求/分析提交入口创建文件时传 `branch="gdr-runtime"`。文件 `path` 不包含分支前缀，例如 `runtime/leases/production.json`，不能写成 `gdr-runtime/runtime/leases/production.json`。调用前核对这三个字段，失败时报告实际参数与原错误。完整映射见 `docs/live-execution.md`；真实工具拒绝仍需停止被拒动作，单轮失败不授权修改未来调度。
+
 本文件替代旧的原生任务直接拼写七模块并提交main的流程。角色文件只规定内容责任，不决定写入路径。
 
 首先读取main生产控制文件，暂停或不可读就退出。详情严格按 `docs/live-execution.md` 执行。生产允许时，先读取gdr-runtime的共享锁与最近outcomes；先核对phase和固定deadlineAt：publishing不得自动抢占；collecting/analyzing/awaiting-publication只有未过期才报告busy。已经过期不代表仍在工作。同任务同实际小时成功后不重复、未成功最多两次业务尝试，一次started/expired不是永久禁止；后续正常调用交由原入口代码CAS决定准入，不手改锁、不续交旧结果。模型不得将自己的跳过结论冒充后端拒绝。无效状态或无效时钟直接报告无法核验。已知安全拒绝尚未解除时仍停止被拒动作，不以过期接管规则绕过拒绝。随后进行**请求前证据发现**：联网查找本轮真正需要阅读的新闻、官方发布和研究原文，选择具体文章/公告/数据页URL，而不是把网站首页、栏目页或搜索结果摘要当成已研究材料。除非栏目页本身就是官方最新发布清单，否则不能用首页占掉证据槽。
@@ -37,3 +41,4 @@ GDR保留市场、宏观、政策、公司与重大全球公共事件。普通�
 采集完成后优先读取runtime/handoffs/<executionId>.json。这是代码绑定原packetHash的精简证据目录，nextAction=READ_EVIDENCE_AND_SUBMIT；它不是分析稿，不证明阅读过全文。旧执行没有清单时读取原results。必须在同次调用内读来源、完成分析并提交，不能以ready-for-analysis结束并暗示后台会继续。
 
 后续正常请求在CAS保护下收尾已过期的collecting/analyzing执行，追加expired及最后可观察阶段，保留原deadlineAt、来源包和原始分析输入。没有提交文件只能记录未观察到，不能推断安全拒绝。awaiting-publication和publishing不由该收尾分支终止或抢占。health.attempts保存近期已进入仓库的执行；它看不到写入前被拒或未触发的任务，不是平台全量日志。
+
