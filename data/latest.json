@@ -1,844 +1,952 @@
 {
-  "brief": "A股收盘点位已冻结但部分涨跌幅冲突；港股收市竞价宽基偏强、科技仍弱",
-  "marketState": "A股已收盘；港股16:08:50延迟观测落在随机收市窗口，宽基上涨而科技指数下跌",
-  "overview": "截至北京时间16:38，A股和港股今天均为正常交易日。A股已于15:00结束交易，本轮取得上证3800.87点、深证成指12353.70点、创业板2958.34点等延迟观测；但上证与深证的供应商涨跌幅字段和外部收盘报道明显冲突，因此只保留点位并隔离冲突百分比。港股持续交易已结束，16:08:50延迟观测位于收市竞价随机收市窗口：恒指约24345.22点、供应商+0.55%，国企指数约+0.33%，恒生科技约-0.79%。这支持宽基与科技分化，但仍不冒充交易所最终官方收盘。",
-  "rolling24hSummary": "过去24小时最稳定的线索仍是科技相对承压而非所有资产同步撤退。隔夜纳指弱于道指；港股收市竞价阶段恒指和国企指数为正、恒生科技仍为负；A股内部点位可核验，但部分供应商涨跌幅口径冲突。美元指数小幅回落，BTC和黄金只有即时价格锚，WTI继续下跌，跨资产尚未形成单一方向。",
-  "methodology": "仅使用本轮来源包中绑定的行情事实，以及成功取得并实际阅读的IMF官方日程。商务部中欧汽车材料已读但发布时间超过滚动24小时窗口，本轮不作为新增新闻；另一商务部文档虽采集成功但阅读全文入口不可用，也不引用。上交所本轮文档抓取失败、港股360被白名单隔离，均不进入sourceUrls。A股冲突涨跌幅隔离；港股16:08:50标为收市竞价阶段延迟观测；未知行业、资金流、研究和Brent不补0。",
+  "overview": "截至北京时间17:02，亚洲现货交易已结束：A股主要指数总体偏弱但深证成指的供应商跌幅仍与其他宽基显著分叉；港股恒指+0.55%而恒生科技-0.79%。欧洲斯托克50约+0.22%；BTC约83,376.46美元，WTI约92.10美元并下跌1.75%。事实支持“亚洲科技偏弱、欧洲与跨资产尚未同步恶化”，不支持把当前状态升级为全球一致性恐慌。",
+  "rolling24hSummary": "过去24小时的主线是风格分化：上一美股时段道指上涨而纳指和小盘回落；10月13日亚洲收盘后，港股宽基为正、科技为负，日经-1.82%；欧洲开盘小幅上涨。美元指数-0.26%、WTI-1.75%，黄金保持高位，BTC只有单点快照。政策面新增民航两用物项出口凭证征求意见稿与650亿元逆回购，但前者尚未定稿、后者利率维持1.40%，都不能直接外推企业利润或风险资产趋势。",
+  "methodology": "本轮仅引用generation 84来源包中取得且带有效哈希的71条行情与8份文档；被白名单隔离的NDRC、Eurostat URL和Brent HTTP 404不进入证据。行情保留各自asOf、previous/delayed/snapshot状态；A/H收盘缺交易所最终确认，美股保留上一交易日时点。Fed、BLS、BEA、EIA日历只用于未来事件核对，不当作已发布数据。资金流、全行业榜和公司原文研究不足均标partial，不补0、不刷新旧时点。",
   "coreAnalysis": {
-    "mainTheme": "港股收市竞价阶段宽基走强而科技仍弱，A股部分涨跌幅口径冲突，最可靠结论是结构分化而非全市场同向。",
-    "expectationGap": "港股宽基在收市前后继续修复，但恒生科技仍下跌；A股收盘点位可用，供应商涨跌幅却无法全部通过交叉核验。",
-    "divergence": "恒指和国企指数为正、恒生科技为负；隔夜道指上涨而纳指下跌；WTI下跌但美元并未同步走强。",
-    "regime": "高利率与科技竞争担忧背景下的结构性风险折价，尚无充分证据确认全面risk-off。",
-    "priceIn": "港股已反映科技相对弱势与宽基承接；A股点位反映日内修复，但冲突涨跌幅不能参与强弱排序。",
-    "bullCase": "若港股最终官方收盘确认宽基上涨且科技跌幅继续收窄，下一交易日A股成长企稳，则结构性压力可能减轻。",
-    "bullInvalidation": "港股最终值明显弱于16:08:50观测，或下一交易日A/H科技继续显著跑输并伴随广度恶化。",
-    "bearCase": "若科技弱势扩散到宽基、美元与长端利率同步上行、VIX继续抬升，结构性压力可能转为广泛风险收缩。",
-    "bearInvalidation": "港股最终收盘与下一交易日A股成长同步修复，跨资产避险未形成确认。"
+    "mainTheme": "亚洲科技和日本股市相对偏弱，但港股宽基与欧洲尚有承接，跨资产未形成全面去风险。",
+    "expectationGap": "A股多数宽基跌幅有限而深证供应商值明显更弱；港股宽基为正、科技为负，显示内部结构差异大于统一方向。",
+    "divergence": "道指与纳指分化、恒指与恒生科技分化；WTI下跌、美元走弱，但黄金和BTC未给出同方向收益基准。",
+    "regime": "高利率背景下的结构性估值压缩与地区轮动，尚非证据充分的全球风险-off。",
+    "priceIn": "市场已部分计入科技久期压力和能源风险溢价回落，但未计入可确认的全球增长骤降。",
+    "bullCase": "欧洲与下一美股时段保持韧性，亚洲科技修复，美元与收益率回落。",
+    "bullInvalidation": "欧美宽基转弱、VIX持续上升并伴随科技和小盘进一步下跌。",
+    "bearCase": "亚洲科技弱势扩散至欧美宽基，美元或收益率反升压制黄金与加密。",
+    "bearInvalidation": "科技、小盘和加密同步修复，且获广度、成交与资金流确认。"
   },
   "plainLanguage": {
-    "verdict": "港股宽基收市阶段有承接，但科技仍弱；A股涨跌幅冲突需隔离。",
-    "bottomLine": "今天最清楚的是科技相对落后，不是所有资产一起跌。港股16:08:50仍处随机收市窗口，A股部分百分比也有冲突，别把不确定数据写成铁板钉钉。",
-    "whyNow": "港股持续交易结束后宽基为正、恒生科技仍负；A股点位已冻结，但供应商对上证和深证的涨跌幅与外部报道不一致。",
-    "horizon": "至港股最终收盘确认及下一亚洲交易日。",
+    "verdict": "亚洲科技仍弱，但港股宽基和欧洲没有一起转差；现在更像结构分化，不是全球恐慌。",
+    "bottomLine": "A股收盘偏弱，港股恒指+0.55%但恒生科技-0.79%；欧洲斯托克50约+0.22%。BTC约83,376.46美元，WTI约92.10美元且-1.75%。",
+    "whyNow": "本轮更新了亚洲收盘后的延迟行情、欧洲早盘、加密、贵金属、美元、能源与VIX，并核对了两份当日政策/流动性原文和Fed/BLS/BEA/EIA未来日历。",
+    "horizon": "未来12—24小时；政策落地另看数周",
     "confidence": "medium",
-    "invalidation": "若港股最终官方收盘显示科技明显修复并跑赢宽基，且下一交易日A股成长同步反弹，当前科技偏弱判断失效。",
+    "invalidation": "若欧洲和下一美股宽基同步转弱且VIX、美元或收益率上升，则上调全球去风险判断；若亚洲科技与美股科技同步修复并获成交和资金确认，则降低承压判断。",
     "evidenceFactIds": [
       "INDEX:CN:SSE",
       "INDEX:CN:SZSE",
       "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500",
       "INDEX:HK:HSI",
-      "INDEX:HK:HSTECH",
       "INDEX:HK:HSCEI",
+      "INDEX:HK:HSTECH",
+      "INDEX:JP:NIKKEI225",
+      "INDEX:EU:STOXX50",
+      "INDEX:US:SP500",
       "INDEX:US:NASDAQ",
-      "INDEX:US:DOW"
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "VOL:VIX",
+      "RATE:US10Y",
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "FX:DXY",
+      "ENERGY:WTI"
+    ],
+    "sourceIds": [
+      "src-4f174cda8a9a92d7a9da2bdd",
+      "src-56f8b6cf9289eb812069329d",
+      "src-d710626606bba04bd08ad849",
+      "src-9940126ea964d09e7fafaaff",
+      "src-c7ebed6429fdab05af3d4e37",
+      "src-eaadd6d97d93eb6207a16fc2",
+      "src-34bca50b53334f82f208d557",
+      "src-c0124b191492ac42ab36d935",
+      "src-977e21a36fbe85aa82e451f4",
+      "src-db321b256a90919f12e35781",
+      "src-440d8c358ccf2eb5de026ded",
+      "src-d72e220f5f535c1245072385",
+      "src-4a57b5e12b1c7830f0336dc8",
+      "src-e0bb5fd1bca46282849a8b5f",
+      "src-4c2724acd20f3bf712e1b9a9",
+      "src-3f3171fa7d078be4fc2861fa",
+      "src-a7554f3c5fd773eea8743645",
+      "src-483e50fe4cc003e84c411bec",
+      "src-d0f06544a61c10ea97899aa0",
+      "src-61b7dcccf93560ea56eb3187",
+      "src-ff3513c8c5dcb5dca0085f61",
+      "src-395e439b7112bf85673a6beb",
+      "src-8ada3bfad620c0aaad97dfef",
+      "src-dee9c47e788eb3b5e9957de0",
+      "src-d9a47ba66192b3c04bc8f3f6"
     ],
     "impacts": [
       {
         "asset": "A股",
-        "effect": "收盘结构分化、百分比口径部分冲突",
-        "reason": "上证3800.87点、深证成指12353.70点、创业板2958.34点已取得；但上证和深证的供应商涨跌幅与外部收盘报道冲突，隔离其百分比。",
-        "takeaway": "我的判断是只用点位确认已收盘，不用冲突百分比判断全市场强弱。",
+        "effect": "收盘整体偏弱，但指数之间的跌幅口径仍不一致",
+        "reason": "本轮取得上证3,800.87、沪深300 4,275.68、创业板2,958.34、科创50 1,427.18；深证成指供应商涨跌幅-2.28%显著弱于其他宽基。",
+        "takeaway": "A股不能简单概括为全面下跌；在交易所正式收盘和统一前收基准补齐前，深证异常值只作低权重风险提示。",
         "horizon": "下一交易日前",
-        "counterRisk": "缺交易所官方收盘回执、成交额、涨跌家数和行业全量成员。",
-        "invalidation": "补齐官方口径后若指数方向一致且广度确认，再调整判断。",
+        "counterRisk": "部分指数为previous或delayed，缺交易所正式收盘、成交额、涨跌家数、行业广度和资金流。",
+        "invalidation": "若独立来源确认深证弱势并伴随广度恶化，上调风险权重；若官方口径显示跌幅收窄，则维持结构分化判断。",
         "confidence": "medium-low",
         "evidenceFactIds": [
           "INDEX:CN:SSE",
           "INDEX:CN:SZSE",
           "INDEX:CN:CHINEXT",
+          "INDEX:CN:STAR50",
           "INDEX:CN:CSI300",
-          "INDEX:CN:STAR50"
+          "INDEX:CN:CSI500"
+        ],
+        "sourceIds": [
+          "src-4f174cda8a9a92d7a9da2bdd",
+          "src-56f8b6cf9289eb812069329d",
+          "src-d710626606bba04bd08ad849",
+          "src-9940126ea964d09e7fafaaff",
+          "src-c7ebed6429fdab05af3d4e37",
+          "src-eaadd6d97d93eb6207a16fc2"
+        ],
+        "factIds": [
+          "INDEX:CN:SSE",
+          "INDEX:CN:SZSE",
+          "INDEX:CN:CHINEXT",
+          "INDEX:CN:STAR50",
+          "INDEX:CN:CSI300",
+          "INDEX:CN:CSI500"
         ]
       },
       {
         "asset": "港股",
-        "effect": "收市竞价阶段分化、科技偏利空",
-        "reason": "16:08:50延迟观测中恒指约+0.55%、国企指数约+0.33%，恒生科技约-0.79%；时点位于随机收市窗口。",
-        "takeaway": "我的判断是宽基承接存在，但科技风险偏好未完全修复，仍需最终官方收盘确认。",
-        "horizon": "最终收盘确认至下一交易日",
-        "counterRisk": "缺交易所最终收盘、成交额、南向资金和12个HSICS行业全量样本。",
-        "invalidation": "最终收盘恒生科技收复跌幅并持续跑赢恒指。",
+        "effect": "宽基收涨、科技仍落后",
+        "reason": "恒指+0.55%、国企指数+0.33%；恒生科技-0.79%。",
+        "takeaway": "宽基有承接，但成长风险偏好没有同步恢复。",
+        "horizon": "下一交易日前",
+        "counterRisk": "报价为16:08:50延迟观测，缺港交所最终收盘、成交额、南向资金和行业成分贡献。",
+        "invalidation": "若恒生科技在下一交易日持续跑赢宽基且获成交和资金确认，降低科技承压判断；若宽基转弱则提高扩散风险。",
         "confidence": "medium",
         "evidenceFactIds": [
           "INDEX:HK:HSI",
-          "INDEX:HK:HSTECH",
-          "INDEX:HK:HSCEI"
+          "INDEX:HK:HSCEI",
+          "INDEX:HK:HSTECH"
+        ],
+        "sourceIds": [
+          "src-34bca50b53334f82f208d557",
+          "src-c0124b191492ac42ab36d935",
+          "src-977e21a36fbe85aa82e451f4"
+        ],
+        "factIds": [
+          "INDEX:HK:HSI",
+          "INDEX:HK:HSCEI",
+          "INDEX:HK:HSTECH"
         ]
       },
       {
         "asset": "美股",
-        "effect": "上一交易日结构分化",
-        "reason": "标普约-0.06%、纳指约-0.44%、道指约+0.38%；科技弱于传统宽基。",
-        "takeaway": "我的判断是下一美股时段应观察科技压力是否扩散，不能把道指上涨等同全面风险偏好改善。",
-        "horizon": "下一美股交易日前",
-        "counterRisk": "本轮没有完整期货与行业广度。",
-        "invalidation": "纳指期货与半导体龙头同步修复且VIX回落。",
+        "effect": "上一交易日内部轮动，科技与小盘弱于道指",
+        "reason": "标普-0.06%、纳指-0.44%、纳指100 -0.71%、道指+0.38%、罗素2000 -0.45%；当前尚未进入10月13日常规盘。",
+        "takeaway": "这更像风格轮动而非全市场撤退，下一交易时段要看科技和小盘能否修复。",
+        "horizon": "下一美股常规时段",
+        "counterRisk": "指数均为上一交易日观测，缺当前期货、完整广度、资金流、期权偏度和公司原文研究。",
+        "invalidation": "若纳指、半导体和小盘同步修复且VIX回落，降低风险判断；若道指和标普也转弱且VIX继续上升，则上调全面去风险权重。",
         "confidence": "medium",
         "evidenceFactIds": [
           "INDEX:US:SP500",
           "INDEX:US:NASDAQ",
+          "INDEX:US:NDX",
           "INDEX:US:DOW",
+          "INDEX:US:RUSSELL2000",
+          "VOL:VIX",
+          "RATE:US10Y"
+        ],
+        "sourceIds": [
+          "src-d72e220f5f535c1245072385",
+          "src-4a57b5e12b1c7830f0336dc8",
+          "src-e0bb5fd1bca46282849a8b5f",
+          "src-4c2724acd20f3bf712e1b9a9",
+          "src-3f3171fa7d078be4fc2861fa",
+          "src-a7554f3c5fd773eea8743645",
+          "src-483e50fe4cc003e84c411bec"
+        ],
+        "factIds": [
+          "INDEX:US:SP500",
+          "INDEX:US:NASDAQ",
+          "INDEX:US:NDX",
+          "INDEX:US:DOW",
+          "INDEX:US:RUSSELL2000",
           "VOL:VIX",
           "RATE:US10Y"
         ]
       },
       {
         "asset": "BTC",
-        "effect": "方向证据不足",
-        "reason": "Coinbase BTC-USD在16:37附近约83765.59美元，但缺同源24小时基准、OI、资金费率、清算和ETF完整流量。",
-        "takeaway": "我的判断是只把它当价格锚，不据此声称资金流入或避险方向。",
-        "horizon": "未来12小时",
-        "counterRisk": "单一交易场所、单点现货。",
-        "invalidation": "补齐同源涨跌、衍生品与ETF数据并出现一致方向。",
-        "confidence": "low",
+        "effect": "单点价格较16时回落，但未形成方向确认",
+        "reason": "BTC约83,376.46美元，ETH约2,510.54美元，SOL约107.36美元；三者均为单一场所现货快照。",
+        "takeaway": "本轮只确认即时价格，不能据此断言资金流出或趋势反转。",
+        "horizon": "未来6—24小时",
+        "counterRisk": "缺统一24小时同源基准、现货ETF申赎、期货基差、未平仓量和清算数据。",
+        "invalidation": "若BTC与ETH/SOL同向下破并获成交和杠杆数据确认，转弱；若重新站稳且资金流改善，则提高修复权重。",
+        "confidence": "medium-low",
         "evidenceFactIds": [
-          "CRYPTO:BTC:USD"
+          "CRYPTO:BTC:USD",
+          "CRYPTO:ETH:USD",
+          "CRYPTO:SOL:USD"
+        ],
+        "sourceIds": [
+          "src-d0f06544a61c10ea97899aa0",
+          "src-61b7dcccf93560ea56eb3187",
+          "src-ff3513c8c5dcb5dca0085f61"
+        ],
+        "factIds": [
+          "CRYPTO:BTC:USD",
+          "CRYPTO:ETH:USD",
+          "CRYPTO:SOL:USD"
         ]
       },
       {
         "asset": "黄金",
-        "effect": "高位但方向证据不足",
-        "reason": "16:37附近现货参考价约4190.80美元/盎司，美元指数约-0.27%；缺黄金同源涨跌与实际利率。",
-        "takeaway": "我的判断是不能把高价本身直接等同避险继续增强。",
-        "horizon": "未来12–24小时",
-        "counterRisk": "无同源涨跌基准、实际利率与ETF持仓流。",
-        "invalidation": "补齐连续数据后美元、实际利率与黄金形成稳定机制。",
-        "confidence": "low",
+        "effect": "黄金维持高位，美元小幅走弱",
+        "reason": "黄金约4,188.10美元/盎司，白银约60.603美元，美元指数102.319（-0.26%）。",
+        "takeaway": "弱美元为黄金提供边际支持，但缺实际利率和ETF资金，不能确认突破。",
+        "horizon": "未来12—24小时",
+        "counterRisk": "金银为单点快照；10年期收益率为上一交易时点，缺实际利率、ETF申赎和期货持仓。",
+        "invalidation": "若美元和实际利率同步回落、金银获资金流确认则转强；若美元与实际利率上升且金银回落则转弱。",
+        "confidence": "medium-low",
         "evidenceFactIds": [
           "METAL:XAUUSD",
+          "METAL:XAGUSD",
+          "FX:DXY",
+          "RATE:US10Y"
+        ],
+        "sourceIds": [
+          "src-395e439b7112bf85673a6beb",
+          "src-8ada3bfad620c0aaad97dfef",
+          "src-dee9c47e788eb3b5e9957de0",
+          "src-483e50fe4cc003e84c411bec"
+        ],
+        "factIds": [
+          "METAL:XAUUSD",
+          "METAL:XAGUSD",
           "FX:DXY",
           "RATE:US10Y"
         ]
       },
       {
         "asset": "原油",
-        "effect": "短线偏利空",
-        "reason": "WTI 2026年11月合约16:28附近约92.21美元/桶、较供应商前收约-1.63%。",
-        "takeaway": "我的判断是短线价格偏弱，但缺Brent、库存与现货流量，不能确认供需拐点。",
-        "horizon": "未来12–24小时",
-        "counterRisk": "Brent指定合约404，库存、炼化与供应证据未更新。",
-        "invalidation": "WTI重新转涨且库存下降或供应趋紧获独立确认。",
+        "effect": "WTI延续回落，能源风险溢价边际减弱",
+        "reason": "WTI约92.10美元/桶（-1.75%）；布伦特端点HTTP 404。",
+        "takeaway": "WTI走弱降低短线通胀冲击，但缺布伦特和实物链，不能确认中期供需拐点。",
+        "horizon": "未来12—24小时",
+        "counterRisk": "缺布伦特、最新库存、裂解价差、航运、期限结构和产量政策证据。",
+        "invalidation": "若库存、期限结构和布伦特同步转强且WTI反弹，上调供需紧张权重；若库存宽松并继续下跌，进一步降低风险溢价判断。",
         "confidence": "medium-low",
         "evidenceFactIds": [
+          "ENERGY:WTI",
+          "FX:DXY"
+        ],
+        "sourceIds": [
+          "src-d9a47ba66192b3c04bc8f3f6",
+          "src-dee9c47e788eb3b5e9957de0"
+        ],
+        "factIds": [
           "ENERGY:WTI",
           "FX:DXY"
         ]
       }
     ]
   },
+  "assets": [
+    {
+      "asset": "A股",
+      "name": "A股",
+      "status": "partial",
+      "dataAsOf": "2026-10-13T08:29:58.000Z",
+      "summary": "收盘整体偏弱，但指数之间的跌幅口径仍不一致",
+      "evidenceFactIds": [
+        "INDEX:CN:SSE",
+        "INDEX:CN:SZSE",
+        "INDEX:CN:CHINEXT",
+        "INDEX:CN:STAR50",
+        "INDEX:CN:CSI300",
+        "INDEX:CN:CSI500"
+      ],
+      "sourceIds": [
+        "src-4f174cda8a9a92d7a9da2bdd",
+        "src-56f8b6cf9289eb812069329d",
+        "src-d710626606bba04bd08ad849",
+        "src-9940126ea964d09e7fafaaff",
+        "src-c7ebed6429fdab05af3d4e37",
+        "src-eaadd6d97d93eb6207a16fc2"
+      ]
+    },
+    {
+      "asset": "港股",
+      "name": "港股",
+      "status": "partial",
+      "dataAsOf": "2026-10-13T08:08:50.000Z",
+      "summary": "宽基收涨、科技仍落后",
+      "evidenceFactIds": [
+        "INDEX:HK:HSI",
+        "INDEX:HK:HSCEI",
+        "INDEX:HK:HSTECH"
+      ],
+      "sourceIds": [
+        "src-34bca50b53334f82f208d557",
+        "src-c0124b191492ac42ab36d935",
+        "src-977e21a36fbe85aa82e451f4"
+      ]
+    },
+    {
+      "asset": "美股",
+      "name": "美股",
+      "status": "partial",
+      "dataAsOf": "2026-10-12T21:15:59.000Z",
+      "summary": "上一交易日内部轮动，科技与小盘弱于道指",
+      "evidenceFactIds": [
+        "INDEX:US:SP500",
+        "INDEX:US:NASDAQ",
+        "INDEX:US:NDX",
+        "INDEX:US:DOW",
+        "INDEX:US:RUSSELL2000",
+        "VOL:VIX",
+        "RATE:US10Y"
+      ],
+      "sourceIds": [
+        "src-d72e220f5f535c1245072385",
+        "src-4a57b5e12b1c7830f0336dc8",
+        "src-e0bb5fd1bca46282849a8b5f",
+        "src-4c2724acd20f3bf712e1b9a9",
+        "src-3f3171fa7d078be4fc2861fa",
+        "src-a7554f3c5fd773eea8743645",
+        "src-483e50fe4cc003e84c411bec"
+      ]
+    },
+    {
+      "asset": "BTC",
+      "name": "BTC",
+      "status": "partial",
+      "dataAsOf": "2026-10-13T09:01:55.243Z",
+      "summary": "单点价格较16时回落，但未形成方向确认",
+      "evidenceFactIds": [
+        "CRYPTO:BTC:USD",
+        "CRYPTO:ETH:USD",
+        "CRYPTO:SOL:USD"
+      ],
+      "sourceIds": [
+        "src-d0f06544a61c10ea97899aa0",
+        "src-61b7dcccf93560ea56eb3187",
+        "src-ff3513c8c5dcb5dca0085f61"
+      ]
+    },
+    {
+      "asset": "黄金",
+      "name": "黄金",
+      "status": "partial",
+      "dataAsOf": "2026-10-13T09:01:43.000Z",
+      "summary": "黄金维持高位，美元小幅走弱",
+      "evidenceFactIds": [
+        "METAL:XAUUSD",
+        "METAL:XAGUSD",
+        "FX:DXY",
+        "RATE:US10Y"
+      ],
+      "sourceIds": [
+        "src-395e439b7112bf85673a6beb",
+        "src-8ada3bfad620c0aaad97dfef",
+        "src-dee9c47e788eb3b5e9957de0",
+        "src-483e50fe4cc003e84c411bec"
+      ]
+    },
+    {
+      "asset": "原油",
+      "name": "原油",
+      "status": "partial",
+      "dataAsOf": "2026-10-13T08:51:54.000Z",
+      "summary": "WTI延续回落，能源风险溢价边际减弱",
+      "evidenceFactIds": [
+        "ENERGY:WTI",
+        "FX:DXY"
+      ],
+      "sourceIds": [
+        "src-d9a47ba66192b3c04bc8f3f6",
+        "src-dee9c47e788eb3b5e9957de0"
+      ]
+    }
+  ],
+  "deepDive": [
+    {
+      "name": "A股",
+      "title": "收盘整体偏弱，但指数之间的跌幅口径仍不一致",
+      "oneLine": "A股不能简单概括为全面下跌；在交易所正式收盘和统一前收基准补齐前，深证异常值只作低权重风险提示。",
+      "analysis": "本轮取得上证3,800.87、沪深300 4,275.68、创业板2,958.34、科创50 1,427.18；深证成指供应商涨跌幅-2.28%显著弱于其他宽基。",
+      "mechanism": "A股不能简单概括为全面下跌；在交易所正式收盘和统一前收基准补齐前，深证异常值只作低权重风险提示。",
+      "risk": "部分指数为previous或delayed，缺交易所正式收盘、成交额、涨跌家数、行业广度和资金流。",
+      "invalidation": "若独立来源确认深证弱势并伴随广度恶化，上调风险权重；若官方口径显示跌幅收窄，则维持结构分化判断。",
+      "horizon": "下一交易日前",
+      "factIds": [
+        "INDEX:CN:SSE",
+        "INDEX:CN:SZSE",
+        "INDEX:CN:CHINEXT",
+        "INDEX:CN:STAR50",
+        "INDEX:CN:CSI300",
+        "INDEX:CN:CSI500"
+      ],
+      "sourceIds": [
+        "src-4f174cda8a9a92d7a9da2bdd",
+        "src-56f8b6cf9289eb812069329d",
+        "src-d710626606bba04bd08ad849",
+        "src-9940126ea964d09e7fafaaff",
+        "src-c7ebed6429fdab05af3d4e37",
+        "src-eaadd6d97d93eb6207a16fc2"
+      ]
+    },
+    {
+      "name": "港股",
+      "title": "宽基收涨、科技仍落后",
+      "oneLine": "宽基有承接，但成长风险偏好没有同步恢复。",
+      "analysis": "恒指+0.55%、国企指数+0.33%；恒生科技-0.79%。",
+      "mechanism": "宽基有承接，但成长风险偏好没有同步恢复。",
+      "risk": "报价为16:08:50延迟观测，缺港交所最终收盘、成交额、南向资金和行业成分贡献。",
+      "invalidation": "若恒生科技在下一交易日持续跑赢宽基且获成交和资金确认，降低科技承压判断；若宽基转弱则提高扩散风险。",
+      "horizon": "下一交易日前",
+      "factIds": [
+        "INDEX:HK:HSI",
+        "INDEX:HK:HSCEI",
+        "INDEX:HK:HSTECH"
+      ],
+      "sourceIds": [
+        "src-34bca50b53334f82f208d557",
+        "src-c0124b191492ac42ab36d935",
+        "src-977e21a36fbe85aa82e451f4"
+      ]
+    },
+    {
+      "name": "美股",
+      "title": "上一交易日内部轮动，科技与小盘弱于道指",
+      "oneLine": "这更像风格轮动而非全市场撤退，下一交易时段要看科技和小盘能否修复。",
+      "analysis": "标普-0.06%、纳指-0.44%、纳指100 -0.71%、道指+0.38%、罗素2000 -0.45%；当前尚未进入10月13日常规盘。",
+      "mechanism": "这更像风格轮动而非全市场撤退，下一交易时段要看科技和小盘能否修复。",
+      "risk": "指数均为上一交易日观测，缺当前期货、完整广度、资金流、期权偏度和公司原文研究。",
+      "invalidation": "若纳指、半导体和小盘同步修复且VIX回落，降低风险判断；若道指和标普也转弱且VIX继续上升，则上调全面去风险权重。",
+      "horizon": "下一美股常规时段",
+      "factIds": [
+        "INDEX:US:SP500",
+        "INDEX:US:NASDAQ",
+        "INDEX:US:NDX",
+        "INDEX:US:DOW",
+        "INDEX:US:RUSSELL2000",
+        "VOL:VIX",
+        "RATE:US10Y"
+      ],
+      "sourceIds": [
+        "src-d72e220f5f535c1245072385",
+        "src-4a57b5e12b1c7830f0336dc8",
+        "src-e0bb5fd1bca46282849a8b5f",
+        "src-4c2724acd20f3bf712e1b9a9",
+        "src-3f3171fa7d078be4fc2861fa",
+        "src-a7554f3c5fd773eea8743645",
+        "src-483e50fe4cc003e84c411bec"
+      ]
+    },
+    {
+      "name": "BTC",
+      "title": "单点价格较16时回落，但未形成方向确认",
+      "oneLine": "本轮只确认即时价格，不能据此断言资金流出或趋势反转。",
+      "analysis": "BTC约83,376.46美元，ETH约2,510.54美元，SOL约107.36美元；三者均为单一场所现货快照。",
+      "mechanism": "本轮只确认即时价格，不能据此断言资金流出或趋势反转。",
+      "risk": "缺统一24小时同源基准、现货ETF申赎、期货基差、未平仓量和清算数据。",
+      "invalidation": "若BTC与ETH/SOL同向下破并获成交和杠杆数据确认，转弱；若重新站稳且资金流改善，则提高修复权重。",
+      "horizon": "未来6—24小时",
+      "factIds": [
+        "CRYPTO:BTC:USD",
+        "CRYPTO:ETH:USD",
+        "CRYPTO:SOL:USD"
+      ],
+      "sourceIds": [
+        "src-d0f06544a61c10ea97899aa0",
+        "src-61b7dcccf93560ea56eb3187",
+        "src-ff3513c8c5dcb5dca0085f61"
+      ]
+    },
+    {
+      "name": "黄金",
+      "title": "黄金维持高位，美元小幅走弱",
+      "oneLine": "弱美元为黄金提供边际支持，但缺实际利率和ETF资金，不能确认突破。",
+      "analysis": "黄金约4,188.10美元/盎司，白银约60.603美元，美元指数102.319（-0.26%）。",
+      "mechanism": "弱美元为黄金提供边际支持，但缺实际利率和ETF资金，不能确认突破。",
+      "risk": "金银为单点快照；10年期收益率为上一交易时点，缺实际利率、ETF申赎和期货持仓。",
+      "invalidation": "若美元和实际利率同步回落、金银获资金流确认则转强；若美元与实际利率上升且金银回落则转弱。",
+      "horizon": "未来12—24小时",
+      "factIds": [
+        "METAL:XAUUSD",
+        "METAL:XAGUSD",
+        "FX:DXY",
+        "RATE:US10Y"
+      ],
+      "sourceIds": [
+        "src-395e439b7112bf85673a6beb",
+        "src-8ada3bfad620c0aaad97dfef",
+        "src-dee9c47e788eb3b5e9957de0",
+        "src-483e50fe4cc003e84c411bec"
+      ]
+    },
+    {
+      "name": "原油",
+      "title": "WTI延续回落，能源风险溢价边际减弱",
+      "oneLine": "WTI走弱降低短线通胀冲击，但缺布伦特和实物链，不能确认中期供需拐点。",
+      "analysis": "WTI约92.10美元/桶（-1.75%）；布伦特端点HTTP 404。",
+      "mechanism": "WTI走弱降低短线通胀冲击，但缺布伦特和实物链，不能确认中期供需拐点。",
+      "risk": "缺布伦特、最新库存、裂解价差、航运、期限结构和产量政策证据。",
+      "invalidation": "若库存、期限结构和布伦特同步转强且WTI反弹，上调供需紧张权重；若库存宽松并继续下跌，进一步降低风险溢价判断。",
+      "horizon": "未来12—24小时",
+      "factIds": [
+        "ENERGY:WTI",
+        "FX:DXY"
+      ],
+      "sourceIds": [
+        "src-d9a47ba66192b3c04bc8f3f6",
+        "src-dee9c47e788eb3b5e9957de0"
+      ]
+    }
+  ],
   "marketCoverage": [
     {
       "market": "A股",
       "status": "partial",
-      "dataAsOf": "2026-10-13T08:22:58.000Z",
-      "coverage": "正常交易日且已收盘；取得六个主要指数点位，但上证和深证涨跌幅与外部收盘报道冲突，已隔离百分比。",
+      "dataAsOf": "2026-10-13T08:29:58.000Z",
+      "coverage": "本轮取得上证3,800.87、沪深300 4,275.68、创业板2,958.34、科创50 1,427.18；深证成指供应商涨跌幅-2.28%显著弱于其他宽基。",
       "gaps": [
-        "交易所官方收盘回执",
-        "成交额",
-        "涨跌家数",
-        "31个申万一级行业全量成员与量比/换手/成交额"
+        "交易所正式收盘",
+        "成交额与涨跌家数",
+        "全行业排名与资金流"
       ]
     },
     {
       "market": "港股",
       "status": "partial",
       "dataAsOf": "2026-10-13T08:08:50.000Z",
-      "coverage": "正常交易日；取得恒指、恒生科技、恒生国企16:08:50收市竞价随机收市窗口延迟观测。",
+      "coverage": "恒指+0.55%、国企指数+0.33%；恒生科技-0.79%。",
       "gaps": [
-        "交易所最终官方收盘确认",
-        "成交额",
-        "南向资金",
-        "12个HSICS行业全量成员"
+        "港交所最终收盘",
+        "南向资金与成交额",
+        "HSICS全行业成员"
       ]
     },
     {
       "market": "美股",
-      "status": "previous",
+      "status": "partial",
       "dataAsOf": "2026-10-12T21:15:59.000Z",
-      "coverage": "上一交易日主要指数与10年期名义收益率。",
+      "coverage": "标普-0.06%、纳指-0.44%、纳指100 -0.71%、道指+0.38%、罗素2000 -0.45%；当前尚未进入10月13日常规盘。",
       "gaps": [
-        "本轮期货",
-        "完整行业广度",
-        "公司级催化交叉核验"
+        "当前交易日常规盘",
+        "市场广度与资金流",
+        "公司披露原文研究"
       ]
     },
     {
       "market": "BTC",
       "status": "partial",
-      "dataAsOf": "2026-10-13T08:37:58.300Z",
-      "coverage": "Coinbase单一USD现货快照。",
+      "dataAsOf": "2026-10-13T09:01:55.243Z",
+      "coverage": "BTC约83,376.46美元，ETH约2,510.54美元，SOL约107.36美元；三者均为单一场所现货快照。",
       "gaps": [
         "24小时同源基准",
-        "OI",
-        "资金费率",
-        "清算",
-        "ETF完整流量"
+        "ETF资金与衍生品杠杆"
       ]
     },
     {
       "market": "黄金",
       "status": "partial",
-      "dataAsOf": "2026-10-13T08:37:43.000Z",
-      "coverage": "美元计价现货参考快照与美元指数。",
+      "dataAsOf": "2026-10-13T09:01:43.000Z",
+      "coverage": "黄金约4,188.10美元/盎司，白银约60.603美元，美元指数102.319（-0.26%）。",
       "gaps": [
-        "同源涨跌基准",
         "实际利率",
-        "ETF持仓流"
+        "ETF申赎与央行购金"
       ]
     },
     {
       "market": "原油",
       "status": "partial",
-      "dataAsOf": "2026-10-13T08:28:00.000Z",
-      "coverage": "WTI 2026年11月合约延迟报价。",
+      "dataAsOf": "2026-10-13T08:51:54.000Z",
+      "coverage": "WTI约92.10美元/桶（-1.75%）；布伦特端点HTTP 404。",
       "gaps": [
-        "Brent指定合约",
-        "库存",
-        "炼化开工",
-        "现货流量"
+        "Brent",
+        "库存与期限结构",
+        "裂解价差与航运"
       ]
-    }
-  ],
-  "assets": [
-    {
-      "asset": "A股",
-      "status": "partial",
-      "dataAsOf": "2026-10-13T08:22:58.000Z",
-      "summary": "已收盘；主要指数点位取得，但上证和深证涨跌幅冲突，不能据此做完整强弱排序。",
-      "evidenceFactIds": [
-        "INDEX:CN:SSE",
-        "INDEX:CN:SZSE",
-        "INDEX:CN:CHINEXT",
-        "INDEX:CN:CSI300",
-        "INDEX:CN:STAR50"
-      ],
-      "name": "A股"
-    },
-    {
-      "asset": "港股",
-      "status": "partial",
-      "dataAsOf": "2026-10-13T08:08:50.000Z",
-      "summary": "收市竞价阶段宽基上涨、恒生科技仍下跌，尚缺最终官方收盘确认。",
-      "evidenceFactIds": [
-        "INDEX:HK:HSI",
-        "INDEX:HK:HSTECH",
-        "INDEX:HK:HSCEI"
-      ],
-      "name": "港股"
-    },
-    {
-      "asset": "美股",
-      "status": "previous",
-      "dataAsOf": "2026-10-12T21:15:59.000Z",
-      "summary": "上一交易日道指上涨、纳指回落，结构分化。",
-      "evidenceFactIds": [
-        "INDEX:US:SP500",
-        "INDEX:US:NASDAQ",
-        "INDEX:US:DOW",
-        "VOL:VIX",
-        "RATE:US10Y"
-      ],
-      "name": "美股"
-    },
-    {
-      "asset": "BTC",
-      "status": "partial",
-      "dataAsOf": "2026-10-13T08:37:58.300Z",
-      "summary": "单一交易场所现货约83765.59美元，缺方向与资金流基准。",
-      "evidenceFactIds": [
-        "CRYPTO:BTC:USD"
-      ],
-      "name": "BTC"
-    },
-    {
-      "asset": "黄金",
-      "status": "partial",
-      "dataAsOf": "2026-10-13T08:37:43.000Z",
-      "summary": "现货参考价约4190.80美元/盎司，缺实际利率与同源涨跌基准。",
-      "evidenceFactIds": [
-        "METAL:XAUUSD",
-        "FX:DXY",
-        "RATE:US10Y"
-      ],
-      "name": "黄金"
-    },
-    {
-      "asset": "原油",
-      "status": "partial",
-      "dataAsOf": "2026-10-13T08:28:00.000Z",
-      "summary": "WTI 11月合约约92.21美元/桶、约-1.63%，Brent缺失。",
-      "evidenceFactIds": [
-        "ENERGY:WTI",
-        "FX:DXY"
-      ],
-      "name": "原油"
-    }
-  ],
-  "deepDive": [
-    {
-      "asset": "A股",
-      "analysis": "市场已于15:00结束交易。本轮取得上证3800.87、深证成指12353.70、创业板2958.34、沪深300 4275.68等点位；但上证与深证供应商涨跌幅和外部收盘报道冲突，因此只保留点位、隔离冲突百分比。行业热度榜缺全量成员、同已交易时长量比、换手率和成交额，不计算Top-N。",
-      "mechanism": "指数成分差异与供应商基准异常都可能造成表面分化，未经统一口径不能外推全市场方向。",
-      "risk": "把冲突涨跌幅写成确定收盘结论，或用少数指数替代市场广度。",
-      "invalidation": "补齐交易所官方口径、成交与广度后重新判断。",
-      "horizon": "下一交易日前",
-      "evidenceFactIds": [
-        "INDEX:CN:SSE",
-        "INDEX:CN:SZSE",
-        "INDEX:CN:CHINEXT",
-        "INDEX:CN:CSI300",
-        "INDEX:CN:STAR50"
-      ],
-      "title": "A股"
-    },
-    {
-      "asset": "港股",
-      "analysis": "16:08:50延迟观测中恒指约24345.22点、+0.55%，国企指数约+0.33%，恒生科技约-0.79%。该时点位于16:08–16:10随机收市窗口内，说明宽基承接强于科技，但不能冒充交易所最终官方收盘。",
-      "mechanism": "金融及其他权重可托住宽基，而科技对海外利率、竞争格局和风险溢价更敏感。",
-      "risk": "缺最终收盘、成交额、南向资金与行业全量样本；随机收市阶段仍可能变化。",
-      "invalidation": "最终官方收盘显示恒生科技明显收复并跑赢恒指。",
-      "horizon": "最终收盘确认至下一交易日",
-      "evidenceFactIds": [
-        "INDEX:HK:HSI",
-        "INDEX:HK:HSTECH",
-        "INDEX:HK:HSCEI"
-      ],
-      "title": "港股"
-    },
-    {
-      "asset": "美股",
-      "analysis": "上一交易日标普近乎持平，道指上涨、纳指下跌；10年期名义收益率约5.24%。这与亚洲科技相对弱势方向一致，但不能证明单一利率因果。",
-      "mechanism": "较高贴现率通常对久期较长的科技估值更不利，但盈利预期和公司事件可抵消。",
-      "risk": "缺实际利率、完整期货和行业广度。",
-      "invalidation": "下一交易日前科技期货与龙头同步修复且VIX回落。",
-      "horizon": "下一美股交易日前",
-      "evidenceFactIds": [
-        "INDEX:US:SP500",
-        "INDEX:US:NASDAQ",
-        "INDEX:US:DOW",
-        "VOL:VIX",
-        "RATE:US10Y"
-      ],
-      "title": "美股"
-    },
-    {
-      "asset": "BTC",
-      "analysis": "16:37附近Coinbase BTC-USD最新成交约83765.59美元。没有同源24小时基准、OI、资金费率、清算和ETF流量，只确认价格锚。",
-      "mechanism": "现货价格可能同时受美元、杠杆清算和风险偏好影响；单点不能区分。",
-      "risk": "把单场所成交当全市场均价，或由价格倒推资金流。",
-      "invalidation": "补齐同源变化、衍生品和ETF数据后多条证据同向。",
-      "horizon": "未来12小时",
-      "evidenceFactIds": [
-        "CRYPTO:BTC:USD"
-      ],
-      "title": "BTC"
-    },
-    {
-      "asset": "黄金",
-      "analysis": "16:37附近现货参考价约4190.80美元/盎司，美元指数16:28附近约102.31、约-0.27%。黄金缺同源涨跌，实际利率未取得，方向维持低置信度。",
-      "mechanism": "黄金受美元、实际利率、避险与实物需求共同影响；名义收益率不能替代实际利率。",
-      "risk": "高价位不自动等于避险增强。",
-      "invalidation": "补齐实际利率和连续价格后形成稳定机制。",
-      "horizon": "未来12–24小时",
-      "evidenceFactIds": [
-        "METAL:XAUUSD",
-        "FX:DXY",
-        "RATE:US10Y"
-      ],
-      "title": "黄金"
-    },
-    {
-      "asset": "原油",
-      "analysis": "WTI 2026年11月合约16:28附近约92.21美元/桶、较供应商前收约-1.63%。Brent指定合约返回404，库存、炼化和现货流量未更新。",
-      "mechanism": "期货价格包含需求预期、库存和地缘风险溢价；单一合约回落可能有多种解释。",
-      "risk": "缺Brent与库存时不能确认全球供需拐点。",
-      "invalidation": "WTI重新转涨，并有库存下降或供应收紧独立证据。",
-      "horizon": "未来12–24小时",
-      "evidenceFactIds": [
-        "ENERGY:WTI",
-        "FX:DXY"
-      ],
-      "title": "原油"
-    }
-  ],
-  "frameworkAnalysis": [
-    {
-      "id": "fw-quality",
-      "framework": "证据质量与口径一致性",
-      "concept": "先验证数据身份、时间和比较基准，再解释涨跌。",
-      "applicability": "适用于A股冲突涨跌幅与港股随机收市窗口报价。",
-      "observed": "A股点位稳定但部分涨跌幅与外部收盘报道冲突；港股时点为16:08:50。",
-      "mechanism": "错误前收基准或供应商状态刷新可制造虚假幅度；随机收市时点也可能不是最终值。",
-      "conclusion": "A股只用点位，港股只称收市竞价阶段观测，避免把不确定值升级为事实。",
-      "assumptions": "时间戳与标的身份正确。",
-      "counterEvidence": "若交易所最终口径与供应商完全一致，当前谨慎处理可放松。",
-      "horizon": "本轮至下一次核验",
-      "invalidation": "取得交易所最终收盘与统一基准交叉确认。",
-      "confidence": "high",
-      "missingData": "交易所最终收盘、统一前收基准与成交广度",
-      "evidenceFactIds": [
-        "INDEX:CN:SSE",
-        "INDEX:CN:SZSE",
-        "INDEX:HK:HSI",
-        "INDEX:HK:HSTECH"
-      ]
-    },
-    {
-      "id": "fw-relative",
-      "framework": "相对强弱与横截面分化",
-      "concept": "比较同一时段相关指数，可区分市场方向与风格轮动。",
-      "applicability": "适用于港股恒指与恒生科技、隔夜道指与纳指。",
-      "observed": "恒指约+0.55%而恒生科技约-0.79%；道指上涨而纳指下跌。",
-      "mechanism": "行业权重、估值敏感性和风险溢价差异可造成指数分叉。",
-      "conclusion": "最稳健结论是科技相对承压，而非所有股票同向下跌。",
-      "assumptions": "供应商指数定义正确且时间戳足够接近。",
-      "counterEvidence": "港股仍缺最终官方收盘，A股部分涨跌幅被隔离。",
-      "horizon": "收盘至下一交易日",
-      "invalidation": "科技指数最终收复并持续跑赢宽基。",
-      "confidence": "medium-high",
-      "missingData": "最终收盘、成交额与行业广度",
-      "evidenceFactIds": [
-        "INDEX:HK:HSI",
-        "INDEX:HK:HSTECH",
-        "INDEX:US:DOW",
-        "INDEX:US:NASDAQ"
-      ]
-    },
-    {
-      "id": "fw-rate",
-      "framework": "现金流折现与利率传导",
-      "concept": "贴现率越高，远期现金流估值通常越受压，但盈利变化可能抵消。",
-      "applicability": "适用于A/H成长股和美股科技，不适用于直接给BTC估值。",
-      "observed": "10年期名义收益率约5.24%；隔夜纳指弱于道指，恒生科技弱于恒指。",
-      "mechanism": "较高要求回报率可能压低久期较长资产估值。",
-      "conclusion": "利率渠道与科技弱势方向一致，但缺实际利率与盈利预期，不能确认单一因果。",
-      "assumptions": "报价可比且盈利预期没有同步大幅上修。",
-      "counterEvidence": "恒指、国企指数与道指均非同步下跌。",
-      "horizon": "1–3个交易日",
-      "invalidation": "实际利率回落且科技指数持续修复。",
-      "confidence": "medium-low",
-      "missingData": "实际利率、盈利预期修订与行业广度",
-      "evidenceFactIds": [
-        "RATE:US10Y",
-        "INDEX:US:NASDAQ",
-        "INDEX:US:DOW",
-        "INDEX:HK:HSTECH",
-        "INDEX:HK:HSI"
-      ]
-    },
-    {
-      "id": "fw-supply",
-      "framework": "供需、库存与风险溢价",
-      "concept": "原油价格需要同时看供需、库存、运输与风险溢价。",
-      "applicability": "适用于WTI指定合约，不扩展到缺失的Brent。",
-      "observed": "WTI 2026年11月合约约92.21美元/桶、约-1.63%；Brent请求404。",
-      "mechanism": "回落可能来自需求预期走弱或风险溢价回吐。",
-      "conclusion": "短线价格偏弱可确认，供需拐点不能确认。",
-      "assumptions": "合约月份与比较基准一致。",
-      "counterEvidence": "无库存、炼化开工和现货流量支持。",
-      "horizon": "未来12–24小时",
-      "invalidation": "库存或供应证据显示趋紧且WTI重新上行。",
-      "confidence": "medium-low",
-      "missingData": "Brent、库存、炼化和现货流量",
-      "evidenceFactIds": [
-        "ENERGY:WTI",
-        "FX:DXY"
-      ]
-    },
-    {
-      "id": "fw-event",
-      "framework": "事件研究与预期差",
-      "concept": "日程只有在正式结果相对预期出现差异时才可能形成可归因影响。",
-      "applicability": "适用于IMF韩国货币政策、代币化与财政监测等后续节点。",
-      "observed": "官方日程确认北京时间17:15后仍有韩国货币政策、代币化与智能体AI论坛，次日10:00有财政监测发布会。",
-      "mechanism": "新政策表述可能通过利率、财政空间和风险溢价影响资产。",
-      "conclusion": "这些是改判节点，不是已发生的利好或利空。",
-      "assumptions": "活动按计划举行并产生可核验新信息。",
-      "counterEvidence": "目前只有官方日程，没有结果与市场反应。",
-      "horizon": "未来1–18小时",
-      "invalidation": "活动延期、无新增内容或市场无可识别反应。",
-      "confidence": "medium",
-      "missingData": "正式发布内容、事前预期与发布后价格反应",
-      "evidenceFactIds": [],
-      "sourceIds": [
-        "src-79451bf28a71d4b543160c31"
-      ]
-    }
-  ],
-  "frameworkSynthesis": {
-    "verdict": "多框架共同支持科技相对承压，但数据质量框架要求隔离A股冲突涨跌幅并等待港股最终收盘。",
-    "agreement": "横截面比较、隔夜科技分化与港股收市竞价阶段表现都指向科技弱于宽基。",
-    "disagreement": "A股部分百分比不能参与方向判断；原油只支持WTI短线偏弱；BTC与黄金缺方向基准。",
-    "weighting": "最重视标的身份、统一基准与交易状态；对冲突涨跌幅、随机收市窗口报价和单场所现货给予较低权重。",
-    "invalidation": "取得港股最终官方收盘和A股统一涨跌幅后若科技明显修复、广度改善，将削弱当前结论。"
-  },
-  "metrics": [
-    {
-      "label": "上证指数",
-      "factId": "INDEX:CN:SSE",
-      "primary": true
-    },
-    {
-      "label": "恒生指数",
-      "factId": "INDEX:HK:HSI",
-      "primary": true
-    },
-    {
-      "label": "恒生科技",
-      "factId": "INDEX:HK:HSTECH",
-      "primary": true
-    },
-    {
-      "label": "BTC/USD",
-      "factId": "CRYPTO:BTC:USD",
-      "primary": true
-    },
-    {
-      "label": "现货黄金",
-      "factId": "METAL:XAUUSD",
-      "primary": true
-    },
-    {
-      "label": "WTI 2026-11",
-      "factId": "ENERGY:WTI",
-      "primary": true
-    }
-  ],
-  "recentChanges": [
-    {
-      "title": "A股完成交易但部分涨跌幅冲突",
-      "detail": "上证3800.87点、深证成指12353.70点、创业板2958.34点已取得；上证和深证百分比被隔离。",
-      "evidenceFactIds": [
-        "INDEX:CN:SSE",
-        "INDEX:CN:SZSE",
-        "INDEX:CN:CHINEXT"
-      ],
-      "summary": "上证3800.87点、深证成指12353.70点、创业板2958.34点已取得；上证和深证百分比被隔离。"
-    },
-    {
-      "title": "港股收市竞价阶段宽基强于科技",
-      "detail": "16:08:50延迟观测中恒指约+0.55%、国企指数约+0.33%，恒生科技约-0.79%。",
-      "evidenceFactIds": [
-        "INDEX:HK:HSI",
-        "INDEX:HK:HSCEI",
-        "INDEX:HK:HSTECH"
-      ],
-      "summary": "16:08:50延迟观测中恒指约+0.55%、国企指数约+0.33%，恒生科技约-0.79%。"
-    },
-    {
-      "title": "WTI继续走弱、Brent仍缺失",
-      "detail": "WTI 11月合约约92.21美元/桶、约-1.63%；Brent指定合约返回404。",
-      "evidenceFactIds": [
-        "ENERGY:WTI"
-      ],
-      "summary": "WTI 11月合约约92.21美元/桶、约-1.63%；Brent指定合约返回404。"
-    },
-    {
-      "title": "下一批宏观节点转向韩国货币政策与金融基础设施",
-      "detail": "IMF日程显示北京时间17:15后有韩国央行议题与代币化、智能体AI论坛。",
-      "sourceIds": [
-        "src-79451bf28a71d4b543160c31"
-      ],
-      "summary": "IMF日程显示北京时间17:15后有韩国央行议题与代币化、智能体AI论坛。"
-    }
-  ],
-  "changes": [
-    {
-      "title": "港股从盘中修复进入收市竞价确认",
-      "detail": "恒指与国企指数保持正值、恒生科技仍为负，结构分化延续。",
-      "evidenceFactIds": [
-        "INDEX:HK:HSI",
-        "INDEX:HK:HSCEI",
-        "INDEX:HK:HSTECH"
-      ],
-      "summary": "恒指与国企指数保持正值、恒生科技仍为负，结构分化延续。"
-    },
-    {
-      "title": "A股百分比质量降级",
-      "detail": "点位可核验，但上证与深证供应商涨跌幅和外部收盘报道冲突，停止用其判断方向。",
-      "evidenceFactIds": [
-        "INDEX:CN:SSE",
-        "INDEX:CN:SZSE"
-      ],
-      "summary": "点位可核验，但上证与深证供应商涨跌幅和外部收盘报道冲突，停止用其判断方向。"
-    },
-    {
-      "title": "跨资产仍未形成一致去风险",
-      "detail": "美元小幅回落，黄金和BTC只有即时价格锚，WTI单独偏弱。",
-      "evidenceFactIds": [
-        "FX:DXY",
-        "METAL:XAUUSD",
-        "CRYPTO:BTC:USD",
-        "ENERGY:WTI"
-      ],
-      "summary": "美元小幅回落，黄金和BTC只有即时价格锚，WTI单独偏弱。"
-    }
-  ],
-  "evolution24h": [
-    {
-      "title": "隔夜美股收盘分化",
-      "detail": "10月12日美股时点中，道指上涨、纳指回落。",
-      "at": "2026-10-12T21:15:59.000Z",
-      "evidenceFactIds": [
-        "INDEX:US:DOW",
-        "INDEX:US:NASDAQ"
-      ],
-      "summary": "10月12日美股时点中，道指上涨、纳指回落。"
-    },
-    {
-      "title": "A股完成交易",
-      "detail": "10月13日收盘后取得主要指数点位，但部分涨跌幅口径冲突。",
-      "at": "2026-10-13T08:22:58.000Z",
-      "evidenceFactIds": [
-        "INDEX:CN:SSE",
-        "INDEX:CN:SZSE",
-        "INDEX:CN:CHINEXT",
-        "INDEX:CN:CSI300"
-      ],
-      "summary": "10月13日收盘后取得主要指数点位，但部分涨跌幅口径冲突。"
-    },
-    {
-      "title": "港股进入随机收市窗口",
-      "detail": "16:08:50延迟观测中恒指和国企指数为正，恒生科技仍为负。",
-      "at": "2026-10-13T08:08:50.000Z",
-      "evidenceFactIds": [
-        "INDEX:HK:HSI",
-        "INDEX:HK:HSCEI",
-        "INDEX:HK:HSTECH"
-      ],
-      "summary": "16:08:50延迟观测中恒指和国企指数为正，恒生科技仍为负。"
-    },
-    {
-      "title": "跨资产价格锚更新",
-      "detail": "16:37附近取得BTC、黄金现货参考与WTI延迟报价，方向和资金流证据仍不完整。",
-      "at": "2026-10-13T08:37:58.300Z",
-      "evidenceFactIds": [
-        "CRYPTO:BTC:USD",
-        "METAL:XAUUSD",
-        "ENERGY:WTI"
-      ],
-      "summary": "16:37附近取得BTC、黄金现货参考与WTI延迟报价，方向和资金流证据仍不完整。"
     }
   ],
   "watch": [
     {
-      "point": "港股最终官方收盘",
-      "detail": "核对16:08–16:10随机收市完成后的恒指、恒生科技与国企指数最终值。"
+      "point": "美股开盘后的科技与小盘",
+      "detail": "观察纳指100、半导体与罗素2000能否修复，并与道指/标普广度比较。"
     },
     {
-      "point": "A股涨跌幅口径复核",
-      "detail": "补取交易所或可交叉核验的统一前收基准，确认上证和深证真实涨跌幅。"
+      "point": "VIX与长端收益率",
+      "detail": "VIX当前约15.39，10年期收益率为上一交易时点5.24%；等待同一时点更新。"
     },
     {
-      "point": "下一交易日A股广度",
-      "detail": "补核成交额、上涨下跌家数和行业全量表现。"
+      "point": "港股科技相对强弱",
+      "detail": "下一交易日核对恒生科技能否重新跑赢恒指并获得成交和南向资金确认。"
     },
     {
-      "point": "IMF韩国货币政策与代币化议题",
-      "detail": "只在正式内容发布后比较预期，不把日程本身当利好或利空。"
+      "point": "A股深证异常值",
+      "detail": "补取交易所或独立统一基准，确认深证成指显著弱于其他指数是否真实。"
     },
     {
-      "point": "美元与长端收益率",
-      "detail": "若美元和10年期收益率同步上行，科技估值压力机制更可信。"
+      "point": "美元、黄金与BTC联动",
+      "detail": "观察弱美元是否转化为黄金与加密的持续上行，而非单点价格波动。"
     },
     {
-      "point": "BTC与原油缺口",
-      "detail": "等待BTC杠杆/ETF流量及Brent、库存和炼化数据。"
+      "point": "EIA库存时点",
+      "detail": "因联邦假日，本周EIA周度石油报告安排在10月15日，超出本轮24小时窗口，不把日历当结果。"
     }
   ],
+  "frameworkAnalysis": [
+    {
+      "id": "relative-strength",
+      "framework": "相对强弱与横截面分化",
+      "concept": "比较同一市场和近似时点的宽基、成长与地区指数。",
+      "applicability": "高",
+      "observed": "恒指+0.55%而恒生科技-0.79%；道指+0.38%而纳指-0.44%；欧洲斯托克50 +0.22%。",
+      "mechanism": "指数成分、盈利久期与贴现敏感度差异造成内部轮动。",
+      "conclusion": "科技相对承压比全球全面撤离更符合证据。",
+      "assumptions": "供应商标的身份和各自时点正确。",
+      "counterEvidence": "A/H缺交易所最终收盘和广度；美股是上一交易日。",
+      "horizon": "未来1—3个交易日",
+      "invalidation": "科技指数持续跑赢宽基并获成交和资金流确认。",
+      "confidence": "medium",
+      "missingData": "最终收盘、广度、成交和资金流",
+      "evidenceFactIds": [
+        "INDEX:HK:HSI",
+        "INDEX:HK:HSTECH",
+        "INDEX:US:DOW",
+        "INDEX:US:NASDAQ",
+        "INDEX:EU:STOXX50"
+      ],
+      "sourceIds": [
+        "src-34bca50b53334f82f208d557",
+        "src-977e21a36fbe85aa82e451f4",
+        "src-4c2724acd20f3bf712e1b9a9",
+        "src-4a57b5e12b1c7830f0336dc8",
+        "src-440d8c358ccf2eb5de026ded"
+      ]
+    },
+    {
+      "id": "discount-rate",
+      "framework": "贴现率与美元传导",
+      "concept": "收益率和美元通过机会成本影响久期资产、黄金与加密。",
+      "applicability": "中高",
+      "observed": "10年期收益率上一值5.24%、美元指数-0.26%；黄金高位，BTC为单点快照。",
+      "mechanism": "更高无风险利率压低长久期估值，弱美元则提供部分缓冲。",
+      "conclusion": "高利率约束仍在，但美元走弱使传导并非单向。",
+      "assumptions": "上一收益率时点仍具有背景意义。",
+      "counterEvidence": "2年期仅有10月9日日度值，缺实际利率和利率期货。",
+      "horizon": "未来12—24小时",
+      "invalidation": "实时收益率与美元同步回落，科技、黄金和加密获资金流确认。",
+      "confidence": "medium-low",
+      "missingData": "实时收益率曲线、实际利率、利率期货与资金流",
+      "evidenceFactIds": [
+        "RATE:US10Y",
+        "RATE:US2Y",
+        "FX:DXY",
+        "METAL:XAUUSD",
+        "CRYPTO:BTC:USD"
+      ],
+      "sourceIds": [
+        "src-483e50fe4cc003e84c411bec",
+        "src-b59d300064ebc2cd8c2acde4",
+        "src-dee9c47e788eb3b5e9957de0",
+        "src-395e439b7112bf85673a6beb",
+        "src-d0f06544a61c10ea97899aa0"
+      ]
+    },
+    {
+      "id": "liquidity-policy",
+      "framework": "流动性与政策传导",
+      "concept": "区分操作量、价格与真实信用扩张。",
+      "applicability": "中",
+      "observed": "中国人民银行开展650亿元7天期逆回购，操作利率1.40%、与此前持平；民航出口凭证仍是征求意见稿。",
+      "mechanism": "公开市场操作可平滑短期资金面，规则便利化可降低合规摩擦，但两者都不自动等于盈利或风险偏好改善。",
+      "conclusion": "政策信号偏稳定和便利化，尚不足以改写跨资产趋势。",
+      "assumptions": "公开报道准确转述央行公告，征求意见稿尚未最终生效。",
+      "counterEvidence": "缺银行间利率、信用投放和企业订单数据。",
+      "horizon": "未来数日到数周",
+      "invalidation": "资金价格显著变化或最终规则大幅收紧/放宽。",
+      "confidence": "medium",
+      "missingData": "DR007、信用数据、最终条文与企业经营反馈",
+      "sourceIds": [
+        "src-8104520866729a30387377e1",
+        "src-aef113d49f776c795a019f12"
+      ],
+      "evidenceFactIds": []
+    },
+    {
+      "id": "scenario-update",
+      "framework": "情景更新与证伪",
+      "concept": "以新价格和官方原文更新判断，不把单点变化写成定论。",
+      "applicability": "高",
+      "observed": "亚洲科技与日经弱，港股宽基与欧洲偏强，美元和WTI回落，黄金高位，BTC缺方向基准。",
+      "mechanism": "资产对利率、盈利、流动性和供需的敏感度不同。",
+      "conclusion": "基准情景仍是地区与风格分化，全面risk-off需等待欧美同一时点确认。",
+      "assumptions": "各资产的不同asOf已被保留。",
+      "counterEvidence": "若欧美开盘同步走弱，风险扩散概率会上升。",
+      "horizon": "未来12—24小时",
+      "invalidation": "欧美宽基与科技同步走弱且VIX、收益率或美元上升；反向则降低风险权重。",
+      "confidence": "medium",
+      "missingData": "欧美同一时点、广度、资金流和公司盈利原文",
+      "evidenceFactIds": [
+        "INDEX:HK:HSTECH",
+        "INDEX:JP:NIKKEI225",
+        "INDEX:EU:STOXX50",
+        "INDEX:US:SP500",
+        "VOL:VIX",
+        "CRYPTO:BTC:USD",
+        "ENERGY:WTI"
+      ],
+      "sourceIds": [
+        "src-977e21a36fbe85aa82e451f4",
+        "src-db321b256a90919f12e35781",
+        "src-440d8c358ccf2eb5de026ded",
+        "src-d72e220f5f535c1245072385",
+        "src-a7554f3c5fd773eea8743645",
+        "src-d0f06544a61c10ea97899aa0",
+        "src-d9a47ba66192b3c04bc8f3f6"
+      ]
+    }
+  ],
+  "frameworkSynthesis": {
+    "verdict": "多框架共同支持“科技相对承压、但全球宽基未同步恶化”的结构分化判断。",
+    "agreement": "横截面框架、贴现率框架和情景更新都认为高久期科技比宽基脆弱；政策框架显示流动性操作与规则便利化偏稳定。",
+    "disagreement": "WTI走弱和美元回落不支持通胀/流动性单向收紧；A股深证异常值与不同市场时点降低方向结论确定性。",
+    "weighting": "最高权重给同一来源包中身份明确、时点清楚的指数相对表现；对previous/delayed报价、单点加密与黄金、缺实物验证的能源信号降权。",
+    "invalidation": "若欧美宽基与科技同步转弱并获VIX、收益率和资金流确认，则改判为风险扩散；若科技广泛修复，则改判为风格回归。"
+  },
   "dataDefinitions": [
     {
-      "term": "A股点位已取、涨跌幅隔离",
-      "definition": "主要指数点位来自绑定行情包；上证和深证百分比与外部收盘报道冲突，本轮不用于方向结论。",
+      "term": "previous",
+      "definition": "供应商返回上一有效交易时点，不重新标注为当前行情。",
       "_missingTerm": false
     },
     {
-      "term": "港股16:08:50延迟观测",
-      "definition": "该时点位于港交所16:08–16:10随机收市窗口，不能冒充交易所最终官方收盘。",
+      "term": "delayed",
+      "definition": "延迟行情快照，不等同交易所最终正式收盘。",
       "_missingTerm": false
     },
     {
-      "term": "provider-previous-close",
-      "definition": "涨跌幅相对供应商前收口径，不是相对上一份GDR报告。",
-      "_missingTerm": false
-    },
-    {
-      "term": "单一交易场所现货",
-      "definition": "BTC价格来自Coinbase USD现货最新成交，不代表全市场加权均价。",
-      "_missingTerm": false
-    },
-    {
-      "term": "WTI 2026年11月",
-      "definition": "明确月份的WTI期货合约报价，不与其他月份或Brent混连。",
+      "term": "snapshot",
+      "definition": "单一来源即时价格，没有同源24小时收益基准。",
       "_missingTerm": false
     },
     {
       "term": "partial",
-      "definition": "已取得部分事实但关键覆盖项缺失；未知值不补0。",
+      "definition": "已取得部分可靠事实，但关键口径、广度或原文仍缺失。",
       "_missingTerm": false
-    }
-  ],
-  "narrativeTriggers": [
-    {
-      "title": "港股最终收盘科技显著修复",
-      "effect": "降低科技相对弱势的持续性判断。"
     },
     {
-      "title": "港股最终值弱于16:08:50观测",
-      "effect": "提高收市阶段压力与数据时点风险权重。"
+      "term": "官方日历",
+      "definition": "只证明未来发布安排，不代表数据或讲话内容已经公布。",
+      "_missingTerm": false
     },
     {
-      "title": "A股统一口径确认深市明显弱于宽基",
-      "effect": "提高成长风险溢价持续上升的解释权重。"
-    },
-    {
-      "title": "美元与10年期收益率同步上行",
-      "effect": "提高贴现率压力对科技和黄金的解释权重。"
-    },
-    {
-      "title": "IMF后续发布显著改变货币或财政风险判断",
-      "effect": "仅在正式文本与市场反应可核验后调整宏观情景。"
+      "term": "结构分化",
+      "definition": "不同指数或资产方向不一致，不能概括为全市场同涨同跌。",
+      "_missingTerm": false
     }
   ],
   "analysisTheses": [
     {
       "id": "thesis-tech-relative-weakness",
       "topic": "科技相对弱势",
-      "observed": "港股恒生科技显著弱于恒指，隔夜纳指也弱于道指。",
-      "interpretation": "科技风险溢价上升或行业权重差异是当前主要线索。",
-      "alternatives": "随机收市时点、指数成分和个股事件也可解释。",
-      "validation": "港股最终收盘与下一交易日A股仍同向，并有成交与广度确认。",
+      "title": "科技相对弱势",
+      "observed": "恒生科技弱于恒指，上一时段纳指弱于道指。",
+      "interpretation": "高久期资产风险溢价高于宽基。",
+      "alternatives": "指数成分和个股事件也可能解释。",
+      "validation": "下一交易时段继续同向并获广度与成交确认。",
       "confidence": "medium",
       "evidenceFactIds": [
         "INDEX:HK:HSTECH",
         "INDEX:HK:HSI",
         "INDEX:US:NASDAQ",
         "INDEX:US:DOW"
-      ],
-      "title": "科技相对弱势"
+      ]
     },
     {
-      "id": "thesis-data-quality-first",
-      "topic": "数据质量优先于方向叙事",
-      "observed": "A股部分涨跌幅冲突，港股时点处于随机收市窗口。",
-      "interpretation": "当前结论应降级为点位与相对强弱观察，不能写成精确正式收盘统计。",
-      "alternatives": "后续交易所口径可能与供应商吻合。",
-      "validation": "等待官方收盘与统一前收基准。",
-      "confidence": "high",
+      "id": "thesis-no-global-panic",
+      "topic": "尚无全球一致性恐慌",
+      "title": "尚无全球一致性恐慌",
+      "observed": "欧洲宽基小幅上涨、美元和WTI回落，港股宽基为正。",
+      "interpretation": "风险收缩尚未跨地区和资产同步扩散。",
+      "alternatives": "欧美后续交易时段可能补跌。",
+      "validation": "观察美股开盘、VIX与收益率同一时点表现。",
+      "confidence": "medium",
       "evidenceFactIds": [
-        "INDEX:CN:SSE",
-        "INDEX:CN:SZSE",
+        "INDEX:EU:STOXX50",
+        "FX:DXY",
+        "ENERGY:WTI",
         "INDEX:HK:HSI",
-        "INDEX:HK:HSTECH"
-      ],
-      "title": "数据质量优先于方向叙事"
+        "VOL:VIX"
+      ]
     }
   ],
   "judgmentRevisions": [
     {
-      "title": "港股由盘中修复修正为收市竞价阶段结构分化",
-      "detail": "16:08:50恒指和国企指数维持正值、恒生科技仍负；结论保留分化，但不再称普通下午盘。"
+      "title": "港股由盘中修复更新为收盘后结构分化",
+      "detail": "恒指和国企指数保持正值，恒生科技仍为负；结论从盘中观察升级为收盘后延迟快照，但仍缺交易所最终确认。"
     },
     {
-      "title": "A股方向判断降级",
-      "detail": "发现上证和深证供应商涨跌幅与外部收盘报道冲突后，只保留点位，不再使用冲突百分比。"
+      "title": "BTC由16时高位回落",
+      "detail": "BTC从上轮约83,945美元回落至本轮约83,376.46美元；因缺同源24小时基准和资金流，只下调短线动能，不改判趋势。"
+    },
+    {
+      "title": "政策面新增短期流动性与民航便利化线索",
+      "detail": "650亿元逆回购利率维持1.40%；民航出口凭证规则仍处征求意见阶段，均不直接映射资产收益。"
+    }
+  ],
+  "narrativeTriggers": [
+    {
+      "title": "欧美科技与宽基同步转弱",
+      "effect": "把结构分化上调为跨地区风险扩散。"
+    },
+    {
+      "title": "VIX和收益率同时上行",
+      "effect": "提高贴现率与风险厌恶框架权重。"
+    },
+    {
+      "title": "亚洲科技重新跑赢宽基",
+      "effect": "降低科技相对承压判断。"
+    },
+    {
+      "title": "美元继续回落且黄金/加密获资金流确认",
+      "effect": "提高流动性缓冲与风险偏好修复权重。"
+    },
+    {
+      "title": "WTI与Brent、库存和期限结构同步走强",
+      "effect": "恢复能源供给风险溢价判断。"
+    }
+  ],
+  "changes": [
+    {
+      "title": "亚洲现货交易结束",
+      "detail": "A股总体偏弱；港股宽基为正、恒生科技为负。",
+      "evidenceFactIds": [
+        "INDEX:CN:SSE",
+        "INDEX:CN:CHINEXT",
+        "INDEX:HK:HSI",
+        "INDEX:HK:HSTECH"
+      ],
+      "summary": "A股总体偏弱；港股宽基为正、恒生科技为负。"
+    },
+    {
+      "title": "欧洲开盘未跟随亚洲科技走弱",
+      "detail": "欧洲斯托克50延迟观测+0.22%。",
+      "evidenceFactIds": [
+        "INDEX:EU:STOXX50"
+      ],
+      "summary": "欧洲斯托克50延迟观测+0.22%。"
+    },
+    {
+      "title": "WTI继续处于前收下方",
+      "detail": "WTI约92.10美元，-1.75%。",
+      "evidenceFactIds": [
+        "ENERGY:WTI"
+      ],
+      "summary": "WTI约92.10美元，-1.75%。"
+    }
+  ],
+  "recentChanges": [
+    {
+      "title": "BTC较16时单点回落",
+      "detail": "本轮BTC约83,376.46美元，缺ETF与杠杆确认。",
+      "evidenceFactIds": [
+        "CRYPTO:BTC:USD"
+      ],
+      "summary": "本轮BTC约83,376.46美元，缺ETF与杠杆确认。"
+    },
+    {
+      "title": "欧洲保持小幅正收益",
+      "detail": "欧洲斯托克50约6,214.91点、+0.22%。",
+      "evidenceFactIds": [
+        "INDEX:EU:STOXX50"
+      ],
+      "summary": "欧洲斯托克50约6,214.91点、+0.22%。"
+    },
+    {
+      "title": "新增650亿元逆回购信息",
+      "detail": "7天期操作利率1.40%，与此前持平；仅视作流动性事实。",
+      "sourceIds": [
+        "src-8104520866729a30387377e1"
+      ],
+      "summary": "7天期操作利率1.40%，与此前持平；仅视作流动性事实。"
+    },
+    {
+      "title": "民航两用物项出口凭证征求意见",
+      "detail": "拟对符合条件的维修、维护、租赁和备件等情形实行登记后取得出口凭证，最终规则仍待定。",
+      "sourceIds": [
+        "src-aef113d49f776c795a019f12"
+      ],
+      "summary": "拟对符合条件的维修、维护、租赁和备件等情形实行登记后取得出口凭证，最终规则仍待定。"
+    }
+  ],
+  "evolution24h": [
+    {
+      "title": "上一美股时段内部轮动",
+      "detail": "道指上涨、纳指与罗素2000回落。",
+      "at": "2026-10-12T21:15:59.000Z",
+      "evidenceFactIds": [
+        "INDEX:US:DOW",
+        "INDEX:US:NASDAQ",
+        "INDEX:US:RUSSELL2000"
+      ],
+      "summary": "道指上涨、纳指与罗素2000回落。"
+    },
+    {
+      "title": "10月13日亚洲收盘",
+      "detail": "A股偏弱；港股宽基为正、科技为负；日经跌幅更深。",
+      "at": "2026-10-13T08:08:50.000Z",
+      "evidenceFactIds": [
+        "INDEX:CN:SSE",
+        "INDEX:HK:HSI",
+        "INDEX:HK:HSTECH",
+        "INDEX:JP:NIKKEI225"
+      ],
+      "summary": "A股偏弱；港股宽基为正、科技为负；日经跌幅更深。"
+    },
+    {
+      "title": "欧洲早盘保持韧性",
+      "detail": "欧洲斯托克50+0.22%。",
+      "at": "2026-10-13T08:46:45.000Z",
+      "evidenceFactIds": [
+        "INDEX:EU:STOXX50"
+      ],
+      "summary": "欧洲斯托克50+0.22%。"
+    },
+    {
+      "title": "17时跨资产快照",
+      "detail": "BTC约83,376.46美元、黄金约4,188.10美元、WTI约92.10美元。",
+      "at": "2026-10-13T09:01:55.243Z",
+      "evidenceFactIds": [
+        "CRYPTO:BTC:USD",
+        "METAL:XAUUSD",
+        "ENERGY:WTI"
+      ],
+      "summary": "BTC约83,376.46美元、黄金约4,188.10美元、WTI约92.10美元。"
     }
   ],
   "worldEvents": [],
-  "events": [
-    {
-      "id": "fed-waller-economic-outlook-20261013",
-      "title": "美联储理事Waller发表经济展望演讲",
-      "at": "2026-10-13T04:30:00-04:00",
-      "timezone": "America/New_York",
-      "summary": "10月13日04:30 ET，对应北京时间16:30。",
-      "impact": "可能影响利率路径与增长预期；日历不是讲话结果。",
-      "status": "scheduled",
-      "sourceIds": [
-        "src-4592d3929976b9dbff4a894e"
-      ]
-    },
-    {
-      "id": "fed-commercial-paper-20261013",
-      "title": "美联储商业票据统计发布",
-      "at": "2026-10-13T13:00:00-04:00",
-      "timezone": "America/New_York",
-      "summary": "10月13日13:00 ET，对应北京时间10月14日01:00。",
-      "impact": "可观察短期企业融资条件；日历不是实际数据。",
-      "status": "scheduled",
-      "sourceIds": [
-        "src-4592d3929976b9dbff4a894e"
-      ]
-    },
-    {
-      "id": "fed-h10-h15-20261013",
-      "title": "美联储H.10外汇与H.15利率统计发布",
-      "at": "2026-10-13T16:15:00-04:00",
-      "timezone": "America/New_York",
-      "summary": "10月13日16:15 ET，对应北京时间10月14日04:15。",
-      "impact": "可复核外汇和利率曲线；日历不是当前值。",
-      "status": "scheduled",
-      "sourceIds": [
-        "src-4592d3929976b9dbff4a894e"
-      ]
-    }
-  ],
-  "macroEvents": [
-    {
-      "id": "fed-waller-economic-outlook-20261013",
-      "title": "美联储理事Waller发表经济展望演讲",
-      "at": "2026-10-13T04:30:00-04:00",
-      "timezone": "America/New_York",
-      "summary": "10月13日04:30 ET，对应北京时间16:30。",
-      "impact": "可能影响利率路径与增长预期；日历不是讲话结果。",
-      "status": "scheduled",
-      "sourceIds": [
-        "src-4592d3929976b9dbff4a894e"
-      ]
-    },
-    {
-      "id": "fed-commercial-paper-20261013",
-      "title": "美联储商业票据统计发布",
-      "at": "2026-10-13T13:00:00-04:00",
-      "timezone": "America/New_York",
-      "summary": "10月13日13:00 ET，对应北京时间10月14日01:00。",
-      "impact": "可观察短期企业融资条件；日历不是实际数据。",
-      "status": "scheduled",
-      "sourceIds": [
-        "src-4592d3929976b9dbff4a894e"
-      ]
-    },
-    {
-      "id": "fed-h10-h15-20261013",
-      "title": "美联储H.10外汇与H.15利率统计发布",
-      "at": "2026-10-13T16:15:00-04:00",
-      "timezone": "America/New_York",
-      "summary": "10月13日16:15 ET，对应北京时间10月14日04:15。",
-      "impact": "可复核外汇和利率曲线；日历不是当前值。",
-      "status": "scheduled",
-      "sourceIds": [
-        "src-4592d3929976b9dbff4a894e"
-      ]
-    }
-  ],
   "sectionGaps": {
-    "news": {
-      "reason": "本轮成功取得的商务部中欧汽车材料发布时间超过滚动24小时窗口，作为背景不新增；另一商务部文档虽采集成功但阅读全文入口不可用；IMF日程仅用于事件雷达。"
+    "newsroom": {
+      "reason": "10份计划文档取得8份；NDRC和Eurostat被白名单隔离。新闻使用两份当日成功原文，未把搜索摘要或失败URL当证据。"
     },
-    "asiaSectors": {
-      "reason": "缺31个申万一级与12个HSICS行业全量成员、统一时点量比、换手率和成交额，不能计算Top-N。"
+    "funding": {
+      "reason": "未取得A/H净资金、股票基金流、BTC/黄金ETF申赎或完整杠杆数据。"
     },
-    "flows": {
-      "reason": "缺南向资金、BTC ETF、衍生品和黄金ETF完整流量。"
+    "industry": {
+      "reason": "缺全行业成员、成分贡献和统一基准量价输入，未完成全市场行业排名。"
     },
     "research": {
-      "reason": "本轮没有成功取得并完整阅读的公司事件原文，不创建researchRecords；历史研究由代码保留原时点。"
+      "reason": "本轮没有成功取得并完整阅读的公司事件披露原文，researchRecords与researchChecks保持空数组；SEC规则提案不是公司研究。"
     },
-    "quoteConflicts": {
-      "reason": "上证与深证供应商涨跌幅和外部收盘报道冲突，已隔离百分比；港股16:08:50位于随机收市窗口，缺最终官方收盘。"
+    "continuity": {
+      "reason": "A/H缺交易所最终收盘，美股为上一交易时点，美债2年期仅有10月9日4.80%的日度值。"
     },
-    "brent": {
-      "reason": "指定Brent 2026年11月合约请求返回HTTP 404，未用其他合约或0替代。"
+    "sourceFailure": {
+      "reason": "Brent HTTP 404；NDRC和Eurostat文档因host-not-allowed被隔离，均未进入sourceUrls。"
+    },
+    "events": {
+      "reason": "已核对Fed、BLS、BEA与EIA日历；未来24小时有Fed商业票据及H.10/H.15发布，BLS CPI和EIA库存均超出24小时，BEA窗口内无主要发布。"
     }
   },
   "news": [
@@ -881,17 +989,57 @@
       "sourceDateText": "2026-10-13 10:00（商务部页面）",
       "dateUncertainty": "征求意见稿尚未成为最终规则，生效安排待定。",
       "evidenceStatus": "source-read",
-      "summary": "商务部称拟对符合条件的民航企业在维修、维护、租赁及备件等合理用途下实行登记填报后自动获得出口凭证，并配套报告、文件保存与事后监管。",
+      "summary": "商务部表示，拟对符合条件的民航企业在维修、维护、租赁及备件等合理用途下实行登记填报后自动取得出口凭证，并配套报告、保存和事后监管。",
       "plainImpact": "若最终落地，可缩短合规民航零部件出境维修和备件供应周期；当前不能据此确认订单或利润变化。",
-      "assessment": "事实是制度设计与征求意见；推断是低风险合规出口流程或更便利；风险是最终条文、适用范围和执行时间仍可能调整。",
+      "assessment": "事实是制度设计和公开征求意见；推断是低风险合规出口流程可能更便利；风险是最终条文、适用主体和执行时间仍会调整。",
       "sourceIds": [
-        "news-retained-f1c2bee00d382d61530bfb98"
+        "src-aef113d49f776c795a019f12"
+      ]
+    },
+    {
+      "eventId": "pbc-repo-650-20261013",
+      "title": "央行开展650亿元7天期逆回购，利率维持1.40%",
+      "regions": [
+        "CN"
       ],
-      "retention": {
-        "runId": "20261013T080945Z-global-main-news",
-        "generatedAt": "2026-10-13T16:13:05.021+08:00",
-        "reason": "仍在24小时窗口内，沿用原文、分析及来源时点"
-      }
+      "kind": "market",
+      "publishedAt": "2026-10-13T09:26:00+08:00",
+      "eventAt": "2026-10-13",
+      "sourceDateText": "2026-10-13 09:26（证券时报）",
+      "dateUncertainty": "报道转述央行公告，未取得央行页面正文。",
+      "evidenceStatus": "source-read",
+      "summary": "人民银行以固定利率、数量招标方式开展650亿元7天期逆回购，操作利率1.40%，与此前持平。",
+      "plainImpact": "短期资金面获得流动性支持，但利率未变，不能单凭操作规模判断货币政策转向。",
+      "assessment": "事实是操作规模和利率；推断是维持短期流动性平稳；风险是缺到期量、DR007和银行间资金价格完整数据。",
+      "sourceIds": [
+        "src-8104520866729a30387377e1"
+      ]
+    }
+  ],
+  "macroEvents": [
+    {
+      "id": "fed-commercial-paper-20261013",
+      "title": "美联储商业票据统计发布",
+      "at": "2026-10-13T13:00:00-04:00",
+      "timezone": "America/New_York",
+      "summary": "10月13日13:00 ET，对应北京时间10月14日01:00。",
+      "impact": "用于观察短期企业融资条件；日历不是实际数据。",
+      "status": "scheduled",
+      "sourceIds": [
+        "src-b3b5a8feee441c3342754e42"
+      ]
+    },
+    {
+      "id": "fed-h10-h15-20261013",
+      "title": "美联储H.10外汇利率与H.15利率统计发布",
+      "at": "2026-10-13T16:15:00-04:00",
+      "timezone": "America/New_York",
+      "summary": "10月13日16:15 ET，对应北京时间10月14日04:15。",
+      "impact": "可更新汇率和利率背景；日历不是实际结果。",
+      "status": "scheduled",
+      "sourceIds": [
+        "src-b3b5a8feee441c3342754e42"
+      ]
     }
   ],
   "sources": [
@@ -900,35 +1048,45 @@
       "name": "INDEX:CN:SSE",
       "short": "INDEX:CN:SSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:00.350Z",
-      "checkedAt": "2026-10-13T08:38:00.350Z",
-      "sourceHash": "03a3a457ea32988bd83497932e715b13ab78495dcf2fd22ef008237a39736451"
+      "retrievedAt": "2026-10-13T09:01:53.955Z",
+      "checkedAt": "2026-10-13T09:01:53.955Z",
+      "sourceHash": "b0697d9aea77ff4e427c62c059e432d4ca3e68917eba569457a95db710e559ff"
     },
     {
-      "id": "src-56f8b6cf9289eb812069329d",
-      "name": "INDEX:CN:SZSE",
-      "short": "INDEX:CN:SZSE",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:00.443Z",
-      "checkedAt": "2026-10-13T08:38:00.443Z",
-      "sourceHash": "cb7073e358f126d3b1f9f147fe9ed991988947382f2b37dc3c9fdde56bb8901d"
+      "id": "src-b3b5a8feee441c3342754e42",
+      "name": "Federal Reserve News and Events Calendar",
+      "short": "fed-calendar-20261013",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "sourceHash": "34f8a27654a5332869282860b3241c605750543169263fa88f495a2d6e887c4f",
+      "retrievedAt": "2026-10-13T09:01:53.999Z",
+      "evidenceKind": "calendar",
+      "checkedAt": ""
     },
     {
       "id": "src-43a3f5dcc80ebd4231e735b1",
       "name": "EQUITY:US:AAPL",
       "short": "EQUITY:US:AAPL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:00.567Z",
-      "checkedAt": "2026-10-13T08:38:00.567Z",
-      "sourceHash": "c9ecc01632747cc9318ca5c2656d61ebf946c230dfc044d508b00266edd6c476"
+      "retrievedAt": "2026-10-13T09:01:54.056Z",
+      "checkedAt": "2026-10-13T09:01:54.056Z",
+      "sourceHash": "20ddd6eabfb46145faa5454af9aab96b7105628b2d9f3e9188456c828dd3d4e0"
     },
     {
-      "id": "src-79451bf28a71d4b543160c31",
-      "name": "IMF 2026 Annual Meetings schedule",
-      "short": "imf-annual-meetings-schedule-2026",
-      "url": "https://www.imf.org/en/meetings/2026/annual/schedule",
-      "sourceHash": "2c2601f489423799de4b07d0657de7d4787befa757a69853a34d2b8ccf1a22a6",
-      "retrievedAt": "2026-10-13T08:38:00.778Z",
+      "id": "src-56f8b6cf9289eb812069329d",
+      "name": "INDEX:CN:SZSE",
+      "short": "INDEX:CN:SZSE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:54.489Z",
+      "checkedAt": "2026-10-13T09:01:54.489Z",
+      "sourceHash": "dbde661baceec252e7ef0131a2c2e245d1287b90c109a6432fe524a5cd164367"
+    },
+    {
+      "id": "src-3ca73e30e8f7fb927d5d37ef",
+      "name": "BLS Schedule of Selected Releases 2026",
+      "short": "bls-schedule-2026",
+      "url": "https://www.bls.gov/schedule/2026/home.htm",
+      "sourceHash": "1bfb9d805fb7b419504962aa22773506b558534daac3b47d72c9de99fd16acac",
+      "retrievedAt": "2026-10-13T09:01:54.493Z",
       "evidenceKind": "calendar",
       "checkedAt": ""
     },
@@ -937,632 +1095,672 @@
       "name": "EQUITY:US:MSFT",
       "short": "EQUITY:US:MSFT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:00.810Z",
-      "checkedAt": "2026-10-13T08:38:00.810Z",
-      "sourceHash": "c4db961868fa9e08d795fee35823b611d532bfce2bb26be28643789a6d2c8d5a"
-    },
-    {
-      "id": "src-34668c6d731a57ed1c1023dc",
-      "name": "EQUITY:US:NVDA",
-      "short": "EQUITY:US:NVDA",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:00.867Z",
-      "checkedAt": "2026-10-13T08:38:00.867Z",
-      "sourceHash": "453b8a407cc94dfa00b3a48912d2dbdb87f45be300718fc49b2717209f43f39f"
+      "retrievedAt": "2026-10-13T09:01:54.559Z",
+      "checkedAt": "2026-10-13T09:01:54.559Z",
+      "sourceHash": "9a50af743b8633dda161d42fe8b79311b7bb372336a8a74e2961e568dad22c9b"
     },
     {
       "id": "src-d710626606bba04bd08ad849",
       "name": "INDEX:CN:CHINEXT",
       "short": "INDEX:CN:CHINEXT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:00.896Z",
-      "checkedAt": "2026-10-13T08:38:00.896Z",
-      "sourceHash": "8a928220983ec6b31aa8bcf1bf1bed637e3f5e773ca4dc112947a37ed16a8414"
+      "retrievedAt": "2026-10-13T09:01:54.620Z",
+      "checkedAt": "2026-10-13T09:01:54.620Z",
+      "sourceHash": "1b0aaa9cc8d45aa5f8aa75dcd6268bea223c1e7cda1606c5c7ba7e7496d96837"
+    },
+    {
+      "id": "src-aef113d49f776c795a019f12",
+      "name": "商务部解读民用航空领域相关两用物项出口凭证管理办法征求意见稿",
+      "short": "mofcom-aviation-dual-use-20261013",
+      "url": "https://www.mofcom.gov.cn/syxwfb/art/2026/art_7e0a0aec73234c47ae9de7b2e645a6ab.html",
+      "sourceHash": "3f0b786b62d6cafddf5d90fddbcbc904a93f3c4c922d4eb4aa6c399471b6a78b",
+      "retrievedAt": "2026-10-13T09:01:54.883Z",
+      "evidenceKind": "official",
+      "checkedAt": ""
+    },
+    {
+      "id": "src-a871759ffedfd1dec5d9ca5d",
+      "name": "BEA Release Schedule 2026",
+      "short": "bea-schedule-2026",
+      "url": "https://www.bea.gov/news/schedule/",
+      "sourceHash": "c38e31a882719b1e8f79ad3b5e5d9533968d2cf0c55840cc5db8179a1da9047f",
+      "retrievedAt": "2026-10-13T09:01:55.059Z",
+      "evidenceKind": "calendar",
+      "checkedAt": ""
+    },
+    {
+      "id": "src-911a9947d51def6fd1a138a0",
+      "name": "商务部回应中欧混动汽车和电动汽车磋商共识",
+      "short": "mofcom-eu-auto-consensus-20261012",
+      "url": "https://www.mofcom.gov.cn/syxwfb/art/2026/art_d6a5e2c4e62740868c7f1a7cd061f84a.html",
+      "sourceHash": "1e6988fbcfc807e85e9b3b3bcea172d0d76e74e84f027122295d7bab4229b040",
+      "retrievedAt": "2026-10-13T09:01:55.083Z",
+      "evidenceKind": "official",
+      "checkedAt": ""
+    },
+    {
+      "id": "src-e9125648fbc842c6ef19eec4",
+      "name": "SEC Proposes Expanding Securities Eligible for Cross Trading by Registered Funds",
+      "short": "sec-cross-trading-proposal-20261009",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds",
+      "sourceHash": "6b04200dd37f223a88a6fb3fde80f3fdd5f6d7572ea821533920b5c2441e3182",
+      "retrievedAt": "2026-10-13T09:01:55.100Z",
+      "evidenceKind": "official",
+      "checkedAt": ""
+    },
+    {
+      "id": "src-34668c6d731a57ed1c1023dc",
+      "name": "EQUITY:US:NVDA",
+      "short": "EQUITY:US:NVDA",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.126Z",
+      "checkedAt": "2026-10-13T09:01:55.126Z",
+      "sourceHash": "2a45f480785b0a61649d1780c04e07494d36499c4b152ee5e598530d32aef8b2"
     },
     {
       "id": "src-9940126ea964d09e7fafaaff",
       "name": "INDEX:CN:STAR50",
       "short": "INDEX:CN:STAR50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:00.960Z",
-      "checkedAt": "2026-10-13T08:38:00.960Z",
-      "sourceHash": "99d619689527df7455ae20e2cc6ee02dbbaa7b40bb25fd8e94e31cbb54e4d24e"
+      "retrievedAt": "2026-10-13T09:01:55.148Z",
+      "checkedAt": "2026-10-13T09:01:55.148Z",
+      "sourceHash": "6e0bf14fa17fc4e4fe2eca4b0d843be30969f573c04d39bbcea3e72c2bb1eb21"
     },
     {
       "id": "src-184a3aed61d874af1cc937af",
       "name": "EQUITY:US:GOOGL",
       "short": "EQUITY:US:GOOGL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:00.963Z",
-      "checkedAt": "2026-10-13T08:38:00.963Z",
-      "sourceHash": "5b81b318a21a8d11590d568056511c877c859f8005d6e298d2dc460723284272"
+      "retrievedAt": "2026-10-13T09:01:55.188Z",
+      "checkedAt": "2026-10-13T09:01:55.188Z",
+      "sourceHash": "80abca10ad5eb49d154cc80f7c80a19958a5522cec22069d1abbeae534c34700"
     },
     {
       "id": "src-c7ebed6429fdab05af3d4e37",
       "name": "INDEX:CN:CSI300",
       "short": "INDEX:CN:CSI300",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.016Z",
-      "checkedAt": "2026-10-13T08:38:01.016Z",
-      "sourceHash": "431f29c9d5ad5dabf1ddf1c069ddce062318313597e8b0bb14cacdc734bee918"
+      "retrievedAt": "2026-10-13T09:01:55.213Z",
+      "checkedAt": "2026-10-13T09:01:55.213Z",
+      "sourceHash": "e6cd43e664b382467419432471298e16a32bb10eafbc0132f97a2d655e8a6a5f"
     },
     {
       "id": "src-04b8bdcf2a7320327379db05",
       "name": "EQUITY:US:AMZN",
       "short": "EQUITY:US:AMZN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.019Z",
-      "checkedAt": "2026-10-13T08:38:01.019Z",
-      "sourceHash": "124cf62cc9ba99d941bb9a24ed587ae4844276e800ad246a4231f3e764843bd6"
+      "retrievedAt": "2026-10-13T09:01:55.258Z",
+      "checkedAt": "2026-10-13T09:01:55.258Z",
+      "sourceHash": "c8cd0cde812db1a71abf4a529a85ae6d967bba7fc6e564b928f212c704597a66"
     },
     {
       "id": "src-eaadd6d97d93eb6207a16fc2",
       "name": "INDEX:CN:CSI500",
       "short": "INDEX:CN:CSI500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.081Z",
-      "checkedAt": "2026-10-13T08:38:01.081Z",
-      "sourceHash": "4ac13d8dc2ff4023ad26dfd4842acc598abb87e04e3d2cdbab4298b350ae79b3"
+      "retrievedAt": "2026-10-13T09:01:55.285Z",
+      "checkedAt": "2026-10-13T09:01:55.285Z",
+      "sourceHash": "bc5203795074475ff27d26f355a2df1cfcdb5a30022df9a7f09136927b6f04ff"
+    },
+    {
+      "id": "src-aaabb3face464c1123b1140e",
+      "name": "EIA Weekly Petroleum Status Report Schedule",
+      "short": "eia-wpsr-schedule-2026",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+      "sourceHash": "f4ef0d4788686a651d7c83a295da2f6bcd92ee3b4cab58d8e5102cb544030f55",
+      "retrievedAt": "2026-10-13T09:01:55.316Z",
+      "evidenceKind": "calendar",
+      "checkedAt": ""
     },
     {
       "id": "src-78e6f09e34616fdc208b1d39",
       "name": "EQUITY:US:META",
       "short": "EQUITY:US:META",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.086Z",
-      "checkedAt": "2026-10-13T08:38:01.086Z",
-      "sourceHash": "b489702be62df4de2b0a503a42c1310d4363bded575566c9b39a2167487cb9f8"
+      "retrievedAt": "2026-10-13T09:01:55.323Z",
+      "checkedAt": "2026-10-13T09:01:55.323Z",
+      "sourceHash": "e9233cd2064837429d0675c54fea951f6976bddc8a1199099fc53ea2a87449e6"
     },
     {
       "id": "src-34bca50b53334f82f208d557",
       "name": "INDEX:HK:HSI",
       "short": "INDEX:HK:HSI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.136Z",
-      "checkedAt": "2026-10-13T08:38:01.136Z",
-      "sourceHash": "ddc92906fe5dc90fcba76c434bf3ffef001115797478b678e7713fa81db19734"
-    },
-    {
-      "id": "src-6296613e58b80d5a2541b2bc",
-      "name": "EQUITY:US:TSLA",
-      "short": "EQUITY:US:TSLA",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.144Z",
-      "checkedAt": "2026-10-13T08:38:01.144Z",
-      "sourceHash": "2c411ffc15159f86dd0ed340c4fca0c4a51660f40c5d56e3bc453450a38e390d"
-    },
-    {
-      "id": "src-2330b34d03dae5a96933f1cd",
-      "name": "EQUITY:US:AVGO",
-      "short": "EQUITY:US:AVGO",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.195Z",
-      "checkedAt": "2026-10-13T08:38:01.195Z",
-      "sourceHash": "afa691ab2bd0db32dadf4008c73867d1397faada3202559107d6be745a6ee470"
+      "retrievedAt": "2026-10-13T09:01:55.416Z",
+      "checkedAt": "2026-10-13T09:01:55.416Z",
+      "sourceHash": "27e6fe3a2a0e8cc60bff62ddc0e8c9b157471e620ae7f7846584abf5456c1b6e"
     },
     {
       "id": "src-977e21a36fbe85aa82e451f4",
       "name": "INDEX:HK:HSTECH",
       "short": "INDEX:HK:HSTECH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.222Z",
-      "checkedAt": "2026-10-13T08:38:01.222Z",
-      "sourceHash": "5be4a0c6b26dfa3147b0651d440e4390c7da258d84c2c815361c833277ede431"
+      "retrievedAt": "2026-10-13T09:01:55.421Z",
+      "checkedAt": "2026-10-13T09:01:55.421Z",
+      "sourceHash": "059a779f792e557cccad065437a698e583d191d042aed122bc053dd4f2a80dd1"
+    },
+    {
+      "id": "src-6296613e58b80d5a2541b2bc",
+      "name": "EQUITY:US:TSLA",
+      "short": "EQUITY:US:TSLA",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.479Z",
+      "checkedAt": "2026-10-13T09:01:55.479Z",
+      "sourceHash": "1bf38974ea2110d4ed8f44a5dd20d729227e30f747eae706df9041ff105a686d"
     },
     {
       "id": "src-c0124b191492ac42ab36d935",
       "name": "INDEX:HK:HSCEI",
       "short": "INDEX:HK:HSCEI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.249Z",
-      "checkedAt": "2026-10-13T08:38:01.249Z",
-      "sourceHash": "f88302ebe2d1e5ebb8c4949044809a72f5b92ef935bba2f01c970d1cee2e32b3"
+      "retrievedAt": "2026-10-13T09:01:55.482Z",
+      "checkedAt": "2026-10-13T09:01:55.482Z",
+      "sourceHash": "fe8706f47b7045208cd954fba2cc460a778e3c8f0dc5e953011b3538915f6ced"
+    },
+    {
+      "id": "src-2330b34d03dae5a96933f1cd",
+      "name": "EQUITY:US:AVGO",
+      "short": "EQUITY:US:AVGO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.484Z",
+      "checkedAt": "2026-10-13T09:01:55.484Z",
+      "sourceHash": "5e312415ada50eb82ce1c6309e9a2165ec0c49376ed6e29adeb945a161e4e1bc"
+    },
+    {
+      "id": "src-8104520866729a30387377e1",
+      "name": "央行开展650亿元7天期逆回购操作",
+      "short": "pbc-repo-650-20261013",
+      "url": "https://www.stcn.com/article/detail/4213737.html",
+      "sourceHash": "64edff3e75ad19fe1b5b55f753fd034af82f17f7139ae0e100d94ea576ac1ce9",
+      "retrievedAt": "2026-10-13T09:01:55.525Z",
+      "evidenceKind": "market",
+      "checkedAt": ""
     },
     {
       "id": "src-6c0e86c9d9d00b20a083c934",
       "name": "EQUITY:US:AMD",
       "short": "EQUITY:US:AMD",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.291Z",
-      "checkedAt": "2026-10-13T08:38:01.291Z",
-      "sourceHash": "80cd464021d22c8537429c9090cfcdfb30d3f52e62191caf0f3bbb3a75b3320b"
-    },
-    {
-      "id": "src-d72e220f5f535c1245072385",
-      "name": "INDEX:US:SP500",
-      "short": "INDEX:US:SP500",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.309Z",
-      "checkedAt": "2026-10-13T08:38:01.309Z",
-      "sourceHash": "b7bef7e52b530c9661557b900f41fa56ba6b3b064ee6dd6fc34aedcd127f9cb7"
+      "retrievedAt": "2026-10-13T09:01:55.555Z",
+      "checkedAt": "2026-10-13T09:01:55.555Z",
+      "sourceHash": "3e3eb619b6fd4bb3ac69a247eb9c25b224306ba485956855b516431c3e6378d3"
     },
     {
       "id": "src-a5c669eb8928b350011058da",
       "name": "EQUITY:US:INTC",
       "short": "EQUITY:US:INTC",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.351Z",
-      "checkedAt": "2026-10-13T08:38:01.351Z",
-      "sourceHash": "169aecb2c4f9ea95d621f7028e2f8e1a2f9bb8b856da85b77be7a2aa206d7e0d"
+      "retrievedAt": "2026-10-13T09:01:55.557Z",
+      "checkedAt": "2026-10-13T09:01:55.557Z",
+      "sourceHash": "2058f1067007e426612936f3b6bf7e47715dd31ea3a62c572459c431bcc967f0"
     },
     {
-      "id": "src-4a57b5e12b1c7830f0336dc8",
-      "name": "INDEX:US:NASDAQ",
-      "short": "INDEX:US:NASDAQ",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.382Z",
-      "checkedAt": "2026-10-13T08:38:01.382Z",
-      "sourceHash": "574bee41b5ef1b4655fb05f45a5be111ff3f90c864821bb2725a4c3477338a78"
-    },
-    {
-      "id": "src-772408f27845565f1128d60a",
-      "name": "EQUITY:US:MU",
-      "short": "EQUITY:US:MU",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.407Z",
-      "checkedAt": "2026-10-13T08:38:01.407Z",
-      "sourceHash": "1932fb9b23e57fd5df92f0b8d7f7b876734ca8b9fcebcbb3bec5ea795afb6797"
+      "id": "src-d72e220f5f535c1245072385",
+      "name": "INDEX:US:SP500",
+      "short": "INDEX:US:SP500",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.577Z",
+      "checkedAt": "2026-10-13T09:01:55.577Z",
+      "sourceHash": "648b514aa486037a1b33abaee24714d74233c2242839cc67c5f8e7e393904800"
     },
     {
       "id": "src-e0bb5fd1bca46282849a8b5f",
       "name": "INDEX:US:NDX",
       "short": "INDEX:US:NDX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.438Z",
-      "checkedAt": "2026-10-13T08:38:01.438Z",
-      "sourceHash": "5245e1ce52cd439540e1ca540c5b81c2f4dc3192e1260ab41e96aa5bbaa66e10"
+      "retrievedAt": "2026-10-13T09:01:55.633Z",
+      "checkedAt": "2026-10-13T09:01:55.633Z",
+      "sourceHash": "5493406f54afab0443b1823b89cb4af714f5f286937a3a8b4b9206cfaeac94d2"
     },
     {
       "id": "src-2c82f404902c9e27e70a5709",
       "name": "EQUITY:US:ARM",
       "short": "EQUITY:US:ARM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.463Z",
-      "checkedAt": "2026-10-13T08:38:01.463Z",
-      "sourceHash": "eb1d597fe6b20a50ce058221f30b5685cfc28636ca3c14e83d921819ad7780eb"
+      "retrievedAt": "2026-10-13T09:01:55.638Z",
+      "checkedAt": "2026-10-13T09:01:55.638Z",
+      "sourceHash": "73d37cd4c3b5839a1271b1b51d7cf14dfe3e51e00eecc0b54945246e4bcecff1"
+    },
+    {
+      "id": "src-772408f27845565f1128d60a",
+      "name": "EQUITY:US:MU",
+      "short": "EQUITY:US:MU",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.642Z",
+      "checkedAt": "2026-10-13T09:01:55.642Z",
+      "sourceHash": "043094add9bae462a8f5eb515ec2d1880e333f48cff8f4bb81a7ead026710a3e"
+    },
+    {
+      "id": "src-4a57b5e12b1c7830f0336dc8",
+      "name": "INDEX:US:NASDAQ",
+      "short": "INDEX:US:NASDAQ",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.645Z",
+      "checkedAt": "2026-10-13T09:01:55.645Z",
+      "sourceHash": "01e0cef350629217100410b1a165652aca723db0cf7bf3962fec7f253b6ac38f"
     },
     {
       "id": "src-a1855a700abc50828e0dbe10",
       "name": "EQUITY:US:TSM",
       "short": "EQUITY:US:TSM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.519Z",
-      "checkedAt": "2026-10-13T08:38:01.519Z",
-      "sourceHash": "fe5a4377b451e761b346cd613b3f6f0aa55d941c9a468e3983f535f28a93a7b2"
+      "retrievedAt": "2026-10-13T09:01:55.700Z",
+      "checkedAt": "2026-10-13T09:01:55.700Z",
+      "sourceHash": "16d1c388b10477e5a9fe0ef0e84810ed5c070512c22812d4b34854325a90ee22"
     },
     {
       "id": "src-4c2724acd20f3bf712e1b9a9",
       "name": "INDEX:US:DOW",
       "short": "INDEX:US:DOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.524Z",
-      "checkedAt": "2026-10-13T08:38:01.524Z",
-      "sourceHash": "c9b62c027faa6d1069c26fa509801bcb969f3e262ea9d1026ab6a24e395cd97b"
-    },
-    {
-      "id": "src-dcd2b309e1e526cf37ec9129",
-      "name": "中欧双方就电动汽车贸易达成新共识",
-      "short": "mofcom-eu-auto-20261013",
-      "url": "https://www.mofcom.gov.cn/xwfb/sjfzrfb/art/2026/art_4d502e1d49fd4480b39a6cfd0d752038.html",
-      "sourceHash": "3d83294dfc35535d2bd99e43c89d78807c5c2bc6b7ce3be6e373912c2989cccc",
-      "retrievedAt": "2026-10-13T08:38:01.546Z",
-      "evidenceKind": "official",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-dcd91b585d7ec2ce6a7af42d",
-      "name": "商务部就加强航空领域两用物项出口许可审查答记者问",
-      "short": "mofcom-aviation-export-20261013",
-      "url": "https://www.mofcom.gov.cn/xwfb/sjfzrfb/art/2026/art_5fb14edff75c45fa887d5c16d3477eb4.html",
-      "sourceHash": "db185882904ed9b1445b87924240d407c0189bae26f21e663070b70583462352",
-      "retrievedAt": "2026-10-13T08:38:01.549Z",
-      "evidenceKind": "official",
-      "checkedAt": ""
+      "retrievedAt": "2026-10-13T09:01:55.703Z",
+      "checkedAt": "2026-10-13T09:01:55.703Z",
+      "sourceHash": "0fa811f866de8d1cce4215ed120dd2efa3b11aadb11007c1ce53c05a8ec564c4"
     },
     {
       "id": "src-3f3171fa7d078be4fc2861fa",
       "name": "INDEX:US:RUSSELL2000",
       "short": "INDEX:US:RUSSELL2000",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.576Z",
-      "checkedAt": "2026-10-13T08:38:01.576Z",
-      "sourceHash": "cf9e50cf18af594d6fa90ab65701a5b7c46822052b3f139ab96ec5ecc2a37554"
+      "retrievedAt": "2026-10-13T09:01:55.718Z",
+      "checkedAt": "2026-10-13T09:01:55.718Z",
+      "sourceHash": "9ce01b5bfde87a0850f38c9f6759eaa4cffdbc18bfc750d0c74740d960d790c4"
     },
     {
       "id": "src-8793bfe1c682ddb7a690b48f",
       "name": "EQUITY:US:ASML",
       "short": "EQUITY:US:ASML",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.579Z",
-      "checkedAt": "2026-10-13T08:38:01.579Z",
-      "sourceHash": "9e07ec07db6bda579288a4874710955d244a242ed43139d2a6adbc04a97eed2f"
-    },
-    {
-      "id": "src-38299ba2f9df25e3bf2df111",
-      "name": "EQUITY:US:ORCL",
-      "short": "EQUITY:US:ORCL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.619Z",
-      "checkedAt": "2026-10-13T08:38:01.619Z",
-      "sourceHash": "9101ba0370107de7069cf48aa7acb0029de3e6be155f7e991238aae30aa124a8"
-    },
-    {
-      "id": "src-440d8c358ccf2eb5de026ded",
-      "name": "INDEX:EU:STOXX50",
-      "short": "INDEX:EU:STOXX50",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.630Z",
-      "checkedAt": "2026-10-13T08:38:01.630Z",
-      "sourceHash": "6ce98c0b9913ef9ce69d8d580a9e51e2795a9aa08326fdfdbfa5593295af6760"
-    },
-    {
-      "id": "src-a9fc80df8ffb235e6cd0d757",
-      "name": "EQUITY:US:CRM",
-      "short": "EQUITY:US:CRM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.638Z",
-      "checkedAt": "2026-10-13T08:38:01.638Z",
-      "sourceHash": "337adbc1afc9af58bcbaf4ef0035c7d261e26158454c0abaf962a1f402bedbe5"
+      "retrievedAt": "2026-10-13T09:01:55.724Z",
+      "checkedAt": "2026-10-13T09:01:55.724Z",
+      "sourceHash": "d8f058bed696f5c9c9bf6450a2eab7f8610391593f83475a9c9af26183b46f43"
     },
     {
       "id": "src-db321b256a90919f12e35781",
       "name": "INDEX:JP:NIKKEI225",
       "short": "INDEX:JP:NIKKEI225",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.647Z",
-      "checkedAt": "2026-10-13T08:38:01.647Z",
-      "sourceHash": "1fa17854d8857592aedc85ec19f25580d89e2acd66ca048246a74ec4021e8ed1"
+      "retrievedAt": "2026-10-13T09:01:55.762Z",
+      "checkedAt": "2026-10-13T09:01:55.762Z",
+      "sourceHash": "0dcea1f59d3e4b2d8a6425f820dfedf8608e0c3d59127e3d56c3d6d5042fc297"
+    },
+    {
+      "id": "src-38299ba2f9df25e3bf2df111",
+      "name": "EQUITY:US:ORCL",
+      "short": "EQUITY:US:ORCL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.774Z",
+      "checkedAt": "2026-10-13T09:01:55.774Z",
+      "sourceHash": "3104f82feecddf15e966f3a823b122b705d7ebb2c53d3f771aa2b903123e8926"
+    },
+    {
+      "id": "src-a9fc80df8ffb235e6cd0d757",
+      "name": "EQUITY:US:CRM",
+      "short": "EQUITY:US:CRM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.787Z",
+      "checkedAt": "2026-10-13T09:01:55.787Z",
+      "sourceHash": "442f13eb9f7af3d873fd3e6651f91aeb5640af6603d4f4b452ce7d0331674e21"
+    },
+    {
+      "id": "src-440d8c358ccf2eb5de026ded",
+      "name": "INDEX:EU:STOXX50",
+      "short": "INDEX:EU:STOXX50",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.789Z",
+      "checkedAt": "2026-10-13T09:01:55.789Z",
+      "sourceHash": "42810d2cd73335175a880a75ed85f084f588f61f7c15b08e88e262abe4dc4108"
     },
     {
       "id": "src-d0f06544a61c10ea97899aa0",
       "name": "CRYPTO:BTC:USD",
       "short": "CRYPTO:BTC:USD",
       "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
-      "retrievedAt": "2026-10-13T08:38:01.673Z",
-      "checkedAt": "2026-10-13T08:38:01.673Z",
-      "sourceHash": "de29347c169b7c272207a292a46b4e647e8cc5a23ae81e139bea7399d5de79d4"
-    },
-    {
-      "id": "src-61b7dcccf93560ea56eb3187",
-      "name": "CRYPTO:ETH:USD",
-      "short": "CRYPTO:ETH:USD",
-      "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
-      "retrievedAt": "2026-10-13T08:38:01.675Z",
-      "checkedAt": "2026-10-13T08:38:01.675Z",
-      "sourceHash": "402c213c4908980d754d2efd3f5a27d5de4f0a43e55f2947b219d2e59b2f6569"
-    },
-    {
-      "id": "src-ff3513c8c5dcb5dca0085f61",
-      "name": "CRYPTO:SOL:USD",
-      "short": "CRYPTO:SOL:USD",
-      "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
-      "retrievedAt": "2026-10-13T08:38:01.686Z",
-      "checkedAt": "2026-10-13T08:38:01.686Z",
-      "sourceHash": "f60d252ad3f58b2e3c9171061131b3720a232f7ef08bf64b721fcc76eea2c373"
-    },
-    {
-      "id": "src-e73683bca4f7778e43d2f1e8",
-      "name": "CRYPTO:PEPE:USD",
-      "short": "CRYPTO:PEPE:USD",
-      "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
-      "retrievedAt": "2026-10-13T08:38:01.709Z",
-      "checkedAt": "2026-10-13T08:38:01.709Z",
-      "sourceHash": "f04982fbdf25b5a04e5c06b1be10f48e8e2d55e02cb68aad84398b7c2f5c253b"
+      "retrievedAt": "2026-10-13T09:01:55.815Z",
+      "checkedAt": "2026-10-13T09:01:55.815Z",
+      "sourceHash": "1843668b21081ebabbcc48ac3ee86eec3a652cf01411d6300aa2535aa29b08ed"
     },
     {
       "id": "src-5022e6cea2b9157cf6b11a77",
       "name": "EQUITY:US:ADBE",
       "short": "EQUITY:US:ADBE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.723Z",
-      "checkedAt": "2026-10-13T08:38:01.723Z",
-      "sourceHash": "d504106d3aacc12e52ab3f1659cf2b09e83900b703592a746e319c2836b0edb9"
+      "retrievedAt": "2026-10-13T09:01:55.838Z",
+      "checkedAt": "2026-10-13T09:01:55.838Z",
+      "sourceHash": "3b31eab49375171dbcf2895758f9e7342a94161571ca3aff3a41714841bcabed"
     },
     {
-      "id": "src-a9cf54901e28ec9b25fe355d",
-      "name": "EQUITY:US:PLTR",
-      "short": "EQUITY:US:PLTR",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.727Z",
-      "checkedAt": "2026-10-13T08:38:01.727Z",
-      "sourceHash": "798b7691a821fe9f5973fdfc442d0b12b404ed02cab3d1b1b981ad43e51c4bf8"
+      "id": "src-ff3513c8c5dcb5dca0085f61",
+      "name": "CRYPTO:SOL:USD",
+      "short": "CRYPTO:SOL:USD",
+      "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
+      "retrievedAt": "2026-10-13T09:01:55.840Z",
+      "checkedAt": "2026-10-13T09:01:55.840Z",
+      "sourceHash": "4033026bfceba8ed958624637db976e3c3a47179c15894d82e1957ff39d1311b"
     },
     {
       "id": "src-620ca0f9ff9da68ab66b8b1c",
       "name": "EQUITY:US:NOW",
       "short": "EQUITY:US:NOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.733Z",
-      "checkedAt": "2026-10-13T08:38:01.733Z",
-      "sourceHash": "49886381ee81868f22005caa78140cd45b33ce7ca1c8b33e0b7add0b71369f07"
+      "retrievedAt": "2026-10-13T09:01:55.855Z",
+      "checkedAt": "2026-10-13T09:01:55.855Z",
+      "sourceHash": "81aaf3b40e1050c9bf11d26ae036e0e67f6eb440e5a9e578780604e327f37751"
+    },
+    {
+      "id": "src-61b7dcccf93560ea56eb3187",
+      "name": "CRYPTO:ETH:USD",
+      "short": "CRYPTO:ETH:USD",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
+      "retrievedAt": "2026-10-13T09:01:55.860Z",
+      "checkedAt": "2026-10-13T09:01:55.860Z",
+      "sourceHash": "9819ceec996af97ee9020496732c069de33d0ee1631ff37a649efa5f030b789a"
+    },
+    {
+      "id": "src-e73683bca4f7778e43d2f1e8",
+      "name": "CRYPTO:PEPE:USD",
+      "short": "CRYPTO:PEPE:USD",
+      "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
+      "retrievedAt": "2026-10-13T09:01:55.898Z",
+      "checkedAt": "2026-10-13T09:01:55.898Z",
+      "sourceHash": "5294d3d1d5ee406bfa0a5c70cded3b3f5b79c21a6890e01945a911dc90b2503f"
+    },
+    {
+      "id": "src-a9cf54901e28ec9b25fe355d",
+      "name": "EQUITY:US:PLTR",
+      "short": "EQUITY:US:PLTR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:55.902Z",
+      "checkedAt": "2026-10-13T09:01:55.902Z",
+      "sourceHash": "97d34ee3c2c85ab61d5c1982d50cd68ee5ab9e03123a7a782d18fdba154b3385"
     },
     {
       "id": "src-219ba892243f0871c11511b2",
       "name": "CRYPTO:HYPE:USD",
       "short": "CRYPTO:HYPE:USD",
       "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
-      "retrievedAt": "2026-10-13T08:38:01.737Z",
-      "checkedAt": "2026-10-13T08:38:01.737Z",
-      "sourceHash": "bd361f90fdce447e6452ed8fec9d82db7c9caab2445bdbd0aebcfec2c794231c"
+      "retrievedAt": "2026-10-13T09:01:55.912Z",
+      "checkedAt": "2026-10-13T09:01:55.912Z",
+      "sourceHash": "2c851c570df122c1b9eb16202924b5bc5f09266e7ab3229a3009ec31b171b62c"
     },
     {
       "id": "src-15f5b79b32cba97e05e23d60",
       "name": "EQUITY:US:SNOW",
       "short": "EQUITY:US:SNOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.771Z",
-      "checkedAt": "2026-10-13T08:38:01.771Z",
-      "sourceHash": "98799debddcffc884d6b568a87551431d91226bba84822c26dff08a41086afff"
+      "retrievedAt": "2026-10-13T09:01:55.928Z",
+      "checkedAt": "2026-10-13T09:01:55.928Z",
+      "sourceHash": "c7ecb95d396372780ef2837eb9d33d65bd10b763792277cc40b3dbdb162d8e7b"
     },
     {
       "id": "src-c3ce3ea19c5e3ff913bc8e44",
       "name": "EQUITY:US:NET",
       "short": "EQUITY:US:NET",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.782Z",
-      "checkedAt": "2026-10-13T08:38:01.782Z",
-      "sourceHash": "a16976463c4e6450a371db695fcc4de330aea5f34a95c7b8c240c8ce6e08b19e"
+      "retrievedAt": "2026-10-13T09:01:55.972Z",
+      "checkedAt": "2026-10-13T09:01:55.972Z",
+      "sourceHash": "4092c0e64eded62d17050cf007b29edc0f13b6179f588c8ce41f7ec4da7fe5de"
     },
     {
       "id": "src-dee9c47e788eb3b5e9957de0",
       "name": "FX:DXY",
       "short": "FX:DXY",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.813Z",
-      "checkedAt": "2026-10-13T08:38:01.813Z",
-      "sourceHash": "eea22b2e727167294dcb4937bc7227a82443e259316ab4665d62a256920a27ba"
-    },
-    {
-      "id": "src-ff2cf19ea64f05b5a5a53285",
-      "name": "EQUITY:US:CRWD",
-      "short": "EQUITY:US:CRWD",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.822Z",
-      "checkedAt": "2026-10-13T08:38:01.822Z",
-      "sourceHash": "65bdea532ed14dd5021cac865219789b024e38d2f24246359f96c4b10762c53d"
+      "retrievedAt": "2026-10-13T09:01:55.987Z",
+      "checkedAt": "2026-10-13T09:01:55.987Z",
+      "sourceHash": "4bca5d2915a81662528d935a69e57fab63fe491872fd5ae680ed6e7ad55be39b"
     },
     {
       "id": "src-8d5d7352d4aa06cef2c4c9c8",
       "name": "FX:USDCNY",
       "short": "FX:USDCNY",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.824Z",
-      "checkedAt": "2026-10-13T08:38:01.824Z",
-      "sourceHash": "7e52b3208bc8157f701b3638849edd05515e202a6b31efa6e956d8b2ccef06eb"
+      "retrievedAt": "2026-10-13T09:01:55.993Z",
+      "checkedAt": "2026-10-13T09:01:55.993Z",
+      "sourceHash": "2b674b0b0195481bfaa4a72b1a754854f8d8c09c2127c5f41a4f8197690bf0ab"
     },
     {
-      "id": "src-b9c9b43f7a4ebde198fdf0e4",
-      "name": "EQUITY:US:DDOG",
-      "short": "EQUITY:US:DDOG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.839Z",
-      "checkedAt": "2026-10-13T08:38:01.839Z",
-      "sourceHash": "a8dda07402ffc538b3159d23287d2f6802894feaa0a9b525c9648e1170905693"
+      "id": "src-ff2cf19ea64f05b5a5a53285",
+      "name": "EQUITY:US:CRWD",
+      "short": "EQUITY:US:CRWD",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.001Z",
+      "checkedAt": "2026-10-13T09:01:56.001Z",
+      "sourceHash": "9bf7289d4d480ae37deb9a3fc40a61d598770d8870dce62021871e6993ba7008"
     },
     {
       "id": "src-3d44a550fc9b64a2d1f171c2",
       "name": "FX:USDCNH",
       "short": "FX:USDCNH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.868Z",
-      "checkedAt": "2026-10-13T08:38:01.868Z",
-      "sourceHash": "464a8aa04b83a6126c2a1573ad6e0039022894689e058f64c41ff8fee882caac"
+      "retrievedAt": "2026-10-13T09:01:56.045Z",
+      "checkedAt": "2026-10-13T09:01:56.045Z",
+      "sourceHash": "499a0464286c9208c728b4256c1b8d38b7204f0dabe137c018bf60983998b98f"
     },
     {
       "id": "src-326f0b6e68e52c485af15110",
       "name": "EQUITY:US:COIN",
       "short": "EQUITY:US:COIN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.876Z",
-      "checkedAt": "2026-10-13T08:38:01.876Z",
-      "sourceHash": "e19dfd67b0f8a78e9f464c3971ea8727bff9f87e0f9bf843520f717348102045"
+      "retrievedAt": "2026-10-13T09:01:56.074Z",
+      "checkedAt": "2026-10-13T09:01:56.074Z",
+      "sourceHash": "91dd7c54ff3cb9bc8a40b24fea0679439301b448dca9423236a539cf89a6c9d8"
+    },
+    {
+      "id": "src-b9c9b43f7a4ebde198fdf0e4",
+      "name": "EQUITY:US:DDOG",
+      "short": "EQUITY:US:DDOG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.077Z",
+      "checkedAt": "2026-10-13T09:01:56.077Z",
+      "sourceHash": "2bd4753c9ee829f930d5cea9afea9463423559617ee4cc1f70c23b210d60381b"
     },
     {
       "id": "src-65479f4ce02fa594db0ce3a7",
       "name": "EQUITY:US:MSTR",
       "short": "EQUITY:US:MSTR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.899Z",
-      "checkedAt": "2026-10-13T08:38:01.899Z",
-      "sourceHash": "0a8cb063de4feb86c887eeaa8d8793fe5d92ba031d6ce741a07ee5b7af264994"
+      "retrievedAt": "2026-10-13T09:01:56.110Z",
+      "checkedAt": "2026-10-13T09:01:56.110Z",
+      "sourceHash": "1ad88175b1206f6b75122a842ae556d395b4b4b9ca7b6b46ec2ee56db817372b"
     },
     {
       "id": "src-f870632d144ef25b5d81e0d5",
       "name": "EQUITY:US:BRK.B",
       "short": "EQUITY:US:BRK.B",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BRK-B?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.929Z",
-      "checkedAt": "2026-10-13T08:38:01.929Z",
-      "sourceHash": "694da8320476a34d4d67419268b2ebd92bce16518e32f7e9569b604eb3a1c32b"
-    },
-    {
-      "id": "src-d9a47ba66192b3c04bc8f3f6",
-      "name": "ENERGY:WTI",
-      "short": "ENERGY:WTI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:01.957Z",
-      "checkedAt": "2026-10-13T08:38:01.957Z",
-      "sourceHash": "5ccbbd448e47ef330d317baad54a41f197b7929995f4a977c9a80d95ecb7e28e"
-    },
-    {
-      "id": "src-b4c33f217cb4617da7b6dc01",
-      "name": "EQUITY:US:BLK",
-      "short": "EQUITY:US:BLK",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.017Z",
-      "checkedAt": "2026-10-13T08:38:02.017Z",
-      "sourceHash": "4505f7b76fd68de80c05bc5c218a19f8ba96f2a90dffbf5f6ff55354f3c18f26"
-    },
-    {
-      "id": "src-9df907448534d3354922f821",
-      "name": "EQUITY:US:BX",
-      "short": "EQUITY:US:BX",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.073Z",
-      "checkedAt": "2026-10-13T08:38:02.073Z",
-      "sourceHash": "1e726761850b9e9d7aaf82d9a5d95d593daa80466551ef2d56d6ea1d98e525aa"
-    },
-    {
-      "id": "src-7169e336e7f73bbd1e2d1f54",
-      "name": "EQUITY:US:KKR",
-      "short": "EQUITY:US:KKR",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.133Z",
-      "checkedAt": "2026-10-13T08:38:02.133Z",
-      "sourceHash": "55890e63249a1cc9e07ee206e1a551f4c19798b3a2579115f291673bb840e733"
-    },
-    {
-      "id": "src-483e50fe4cc003e84c411bec",
-      "name": "RATE:US10Y",
-      "short": "RATE:US10Y",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.186Z",
-      "checkedAt": "2026-10-13T08:38:02.186Z",
-      "sourceHash": "a3dd6e121f68ad90ef1b356fbb415ed3848ef980823864cdf52d6f78e240d96b"
-    },
-    {
-      "id": "src-b59d300064ebc2cd8c2acde4",
-      "name": "RATE:US2Y",
-      "short": "RATE:US2Y",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
-      "retrievedAt": "2026-10-13T08:38:02.215Z",
-      "checkedAt": "2026-10-13T08:38:02.215Z",
-      "sourceHash": "475df9a641ac465201d0c6cd209ab0870881743c980a318eb2f59a6d212c2134"
+      "retrievedAt": "2026-10-13T09:01:56.150Z",
+      "checkedAt": "2026-10-13T09:01:56.150Z",
+      "sourceHash": "69c8447169446389e34e38599fa6c8c98846e0091798abc1d1bf7c1daa085635"
     },
     {
       "id": "src-395e439b7112bf85673a6beb",
       "name": "METAL:XAUUSD",
       "short": "METAL:XAUUSD",
       "url": "https://api.gold-api.com/price/XAU",
-      "retrievedAt": "2026-10-13T08:38:02.233Z",
-      "checkedAt": "2026-10-13T08:38:02.233Z",
-      "sourceHash": "77a60be211dc3ce35d6f99460de6d50963b789ad969666b70dd03af609cd4a77"
+      "retrievedAt": "2026-10-13T09:01:56.165Z",
+      "checkedAt": "2026-10-13T09:01:56.165Z",
+      "sourceHash": "90ce7f46f7e59fa146f58038412ccc6a0c0600a91c0373a0eb03971a44cb5780"
+    },
+    {
+      "id": "src-d9a47ba66192b3c04bc8f3f6",
+      "name": "ENERGY:WTI",
+      "short": "ENERGY:WTI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.170Z",
+      "checkedAt": "2026-10-13T09:01:56.170Z",
+      "sourceHash": "40f897726668d776c25d2ba0da1fcad20a2dc24d844dedfe811b6f205c02ce6e"
+    },
+    {
+      "id": "src-b4c33f217cb4617da7b6dc01",
+      "name": "EQUITY:US:BLK",
+      "short": "EQUITY:US:BLK",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.218Z",
+      "checkedAt": "2026-10-13T09:01:56.218Z",
+      "sourceHash": "527a5e5d097c4cea07ccb1a2da5ada87964bc25bb6c17f52ac1b586e84b7c2e9"
+    },
+    {
+      "id": "src-9df907448534d3354922f821",
+      "name": "EQUITY:US:BX",
+      "short": "EQUITY:US:BX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.262Z",
+      "checkedAt": "2026-10-13T09:01:56.262Z",
+      "sourceHash": "56fa4d29043cf7727347e386bfc5bf510d84cda10d60da813e68f73b70b2232a"
+    },
+    {
+      "id": "src-483e50fe4cc003e84c411bec",
+      "name": "RATE:US10Y",
+      "short": "RATE:US10Y",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.326Z",
+      "checkedAt": "2026-10-13T09:01:56.326Z",
+      "sourceHash": "5420229942a4594b8993db70291ac64d759e970eefc4a5bdc475018fa8b9faee"
     },
     {
       "id": "src-8ada3bfad620c0aaad97dfef",
       "name": "METAL:XAGUSD",
       "short": "METAL:XAGUSD",
       "url": "https://api.gold-api.com/price/XAG",
-      "retrievedAt": "2026-10-13T08:38:02.238Z",
-      "checkedAt": "2026-10-13T08:38:02.238Z",
-      "sourceHash": "ae9b2de08e5fb4d1ba68e47e2882df0718e823a2ce682b89c1eb6404538deba3"
+      "retrievedAt": "2026-10-13T09:01:56.330Z",
+      "checkedAt": "2026-10-13T09:01:56.330Z",
+      "sourceHash": "9903ec402539a39780379f1eaafec98451261b2952c075085d1f0877ba84efba"
     },
     {
-      "id": "src-9641ed6e3e9256c44410b13f",
-      "name": "EQUITY:US:APO",
-      "short": "EQUITY:US:APO",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.280Z",
-      "checkedAt": "2026-10-13T08:38:02.280Z",
-      "sourceHash": "5b305c42c51b0e5f1d670d8999e18e4dd0c8bf7a11a4f5013263a2bab8bf28f7"
-    },
-    {
-      "id": "src-177a579934a7c61da3eda551",
-      "name": "EQUITY:US:ARES",
-      "short": "EQUITY:US:ARES",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.291Z",
-      "checkedAt": "2026-10-13T08:38:02.291Z",
-      "sourceHash": "6794bf062c4a4c36eda4cb7318c6cacf9e64cff438e53a9baf006a46016c00bd"
-    },
-    {
-      "id": "src-3f9155e9bb026d51e16a0b29",
-      "name": "EQUITY:US:OWL",
-      "short": "EQUITY:US:OWL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.293Z",
-      "checkedAt": "2026-10-13T08:38:02.293Z",
-      "sourceHash": "fe90c93fa1e10323a15321d5036e859d90040e6822b7eb90950c8be6d2cc2371"
+      "id": "src-7169e336e7f73bbd1e2d1f54",
+      "name": "EQUITY:US:KKR",
+      "short": "EQUITY:US:KKR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.343Z",
+      "checkedAt": "2026-10-13T09:01:56.343Z",
+      "sourceHash": "4f84bf5d25a1fd9c50734a04ff3c319e1e606ad194ae02bebc745621e5ce3cd0"
     },
     {
       "id": "src-a7554f3c5fd773eea8743645",
       "name": "VOL:VIX",
       "short": "VOL:VIX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.296Z",
-      "checkedAt": "2026-10-13T08:38:02.296Z",
-      "sourceHash": "2916456a5f86cfdfc138630d2d92bfa908926c28a3488cbb22a328854c0755eb"
+      "retrievedAt": "2026-10-13T09:01:56.400Z",
+      "checkedAt": "2026-10-13T09:01:56.400Z",
+      "sourceHash": "95ece9dd499f0bad2018b520099707569b98e0bec216a6c4781a7e872c3bb8c1"
     },
     {
-      "id": "src-921d9df8692f2f48f9e01166",
-      "name": "EQUITY:US:CG",
-      "short": "EQUITY:US:CG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.348Z",
-      "checkedAt": "2026-10-13T08:38:02.348Z",
-      "sourceHash": "e02518c2b8d02c7fb0d08fae2aa81d0b9017b731504ac8d49161d9c76ebe12f8"
+      "id": "src-9641ed6e3e9256c44410b13f",
+      "name": "EQUITY:US:APO",
+      "short": "EQUITY:US:APO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.434Z",
+      "checkedAt": "2026-10-13T09:01:56.434Z",
+      "sourceHash": "a581f8eee81728953f966ef81ae3be67c712b49b1e6feb08ab6adb556d51c364"
     },
     {
-      "id": "src-eb442cf33996fa78a3fa09c9",
-      "name": "EQUITY:US:BAM",
-      "short": "EQUITY:US:BAM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.374Z",
-      "checkedAt": "2026-10-13T08:38:02.374Z",
-      "sourceHash": "a4383e5d9a4a824be5dc52fca3e946457fd70e59b4d14490fa451c9b4dac34a2"
+      "id": "src-177a579934a7c61da3eda551",
+      "name": "EQUITY:US:ARES",
+      "short": "EQUITY:US:ARES",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.447Z",
+      "checkedAt": "2026-10-13T09:01:56.447Z",
+      "sourceHash": "0a8b14d98e9ea1ad021f107869e45c8775bb01b509a580a8dd0c434305f72416"
     },
     {
-      "id": "src-6facdc12d1f68f042abf8250",
-      "name": "EQUITY:US:TROW",
-      "short": "EQUITY:US:TROW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.378Z",
-      "checkedAt": "2026-10-13T08:38:02.378Z",
-      "sourceHash": "935ac71e914f42a1538f033c34a23aefc2076c1170e18b0ed0552bcc15016e7b"
+      "id": "src-3f9155e9bb026d51e16a0b29",
+      "name": "EQUITY:US:OWL",
+      "short": "EQUITY:US:OWL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.488Z",
+      "checkedAt": "2026-10-13T09:01:56.488Z",
+      "sourceHash": "564542c108f8080e19282dd3c36cb283a025e805ee229dc00cddb308b0e55fe1"
     },
     {
       "id": "src-cea9af858dc05581bdc0e5e5",
       "name": "EQUITY:US:BN",
       "short": "EQUITY:US:BN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.379Z",
-      "checkedAt": "2026-10-13T08:38:02.379Z",
-      "sourceHash": "972926c899d7bdae2c8eaed48c683b757ee649f343be5c22f60736eac091ff22"
+      "retrievedAt": "2026-10-13T09:01:56.497Z",
+      "checkedAt": "2026-10-13T09:01:56.497Z",
+      "sourceHash": "16608963124797ced5ab718ec6feccd4dea545502d46331a4438c4f7ff2433bc"
     },
     {
-      "id": "src-237d29e211c4e002af0208a6",
-      "name": "EQUITY:US:BEN",
-      "short": "EQUITY:US:BEN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.408Z",
-      "checkedAt": "2026-10-13T08:38:02.408Z",
-      "sourceHash": "53028e954308f8477a6c78584d227c3048fdffb0422ea5589b51902866a4c961"
+      "id": "src-b59d300064ebc2cd8c2acde4",
+      "name": "RATE:US2Y",
+      "short": "RATE:US2Y",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "retrievedAt": "2026-10-13T09:01:56.500Z",
+      "checkedAt": "2026-10-13T09:01:56.500Z",
+      "sourceHash": "475df9a641ac465201d0c6cd209ab0870881743c980a318eb2f59a6d212c2134"
     },
     {
-      "id": "src-b9801499a70677bb015b218e",
-      "name": "EQUITY:US:SCHW",
-      "short": "EQUITY:US:SCHW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.432Z",
-      "checkedAt": "2026-10-13T08:38:02.432Z",
-      "sourceHash": "ff7170dde8abbc849d5e8ad999edca60f295fa5dfec5a4ad6f838d8d9f4558c4"
+      "id": "src-921d9df8692f2f48f9e01166",
+      "name": "EQUITY:US:CG",
+      "short": "EQUITY:US:CG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.607Z",
+      "checkedAt": "2026-10-13T09:01:56.607Z",
+      "sourceHash": "767b317181ba3e793d17b1ebc94ae9b1566bc2b1e12ce2aea605d2e17c36a12e"
     },
     {
-      "id": "src-563aa0dacd1aa03dcee1ad85",
-      "name": "EQUITY:US:GS",
-      "short": "EQUITY:US:GS",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.436Z",
-      "checkedAt": "2026-10-13T08:38:02.436Z",
-      "sourceHash": "58ed6ea382b65cfd43ad963822bd2ab7858f8b17954dda68a728072a2abd442e"
+      "id": "src-eb442cf33996fa78a3fa09c9",
+      "name": "EQUITY:US:BAM",
+      "short": "EQUITY:US:BAM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.608Z",
+      "checkedAt": "2026-10-13T09:01:56.608Z",
+      "sourceHash": "af41c6a668daf8d053bebc0142fc3d65e4a87c981bdf284397de0217a6e22e3d"
+    },
+    {
+      "id": "src-6facdc12d1f68f042abf8250",
+      "name": "EQUITY:US:TROW",
+      "short": "EQUITY:US:TROW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.609Z",
+      "checkedAt": "2026-10-13T09:01:56.609Z",
+      "sourceHash": "e58718c4c41d5f542d802f2076d9d5f5ae6487e7a280e0e361414d44fbdaf6a2"
     },
     {
       "id": "src-65538695782361cfffb29020",
       "name": "EQUITY:US:IBKR",
       "short": "EQUITY:US:IBKR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.466Z",
-      "checkedAt": "2026-10-13T08:38:02.466Z",
-      "sourceHash": "e80497afcf5d8675ddf89409b5d128f6e8c2852f6dcdc9ba7b47f74df3c977ed"
+      "retrievedAt": "2026-10-13T09:01:56.679Z",
+      "checkedAt": "2026-10-13T09:01:56.679Z",
+      "sourceHash": "495e84827022bc982aa340eae92c13b3ceae0cacaf72c6b8f3c4704d37250f48"
+    },
+    {
+      "id": "src-b9801499a70677bb015b218e",
+      "name": "EQUITY:US:SCHW",
+      "short": "EQUITY:US:SCHW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.681Z",
+      "checkedAt": "2026-10-13T09:01:56.681Z",
+      "sourceHash": "2291a33c4b80079ad41b767e7cefd5050e50f3f96f4cf30835985bc90637c70b"
+    },
+    {
+      "id": "src-237d29e211c4e002af0208a6",
+      "name": "EQUITY:US:BEN",
+      "short": "EQUITY:US:BEN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.709Z",
+      "checkedAt": "2026-10-13T09:01:56.709Z",
+      "sourceHash": "90c802cdef5802ab96360902d8245157b9bb77d8456eb7493f8172a5bdc0576c"
+    },
+    {
+      "id": "src-563aa0dacd1aa03dcee1ad85",
+      "name": "EQUITY:US:GS",
+      "short": "EQUITY:US:GS",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T09:01:56.734Z",
+      "checkedAt": "2026-10-13T09:01:56.734Z",
+      "sourceHash": "0119b9c58dffcab5db7008db233c9c8759b5f3b0f5c5e5a4ed5bc189ab73db2b"
     },
     {
       "id": "src-81b168263e538041e104ad36",
       "name": "EQUITY:US:MS",
       "short": "EQUITY:US:MS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:38:02.504Z",
-      "checkedAt": "2026-10-13T08:38:02.504Z",
-      "sourceHash": "8b2f808ae8c16b5816221645156cd830f2623b9f351bea844fb67066850e8c95"
+      "retrievedAt": "2026-10-13T09:01:56.749Z",
+      "checkedAt": "2026-10-13T09:01:56.749Z",
+      "sourceHash": "fa33afa26df6f0b63fcf24ba4797c84599a73c9091a303d757c4f5c0b241381a"
     },
     {
       "name": "INDEX:CN:SSE",
@@ -1599,6 +1797,33 @@
       "checkedAt": "2026-10-13T07:34:41.374Z",
       "sourceHash": "25fd9451956a325f1e509078f626c0aa4c0ab63a294d82d3e4084c6142e77fa6",
       "id": "retained-5319e09326b983be4f72d0ae"
+    },
+    {
+      "name": "INDEX:HK:HSI",
+      "short": "INDEX:HK:HSI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T08:38:01.136Z",
+      "checkedAt": "2026-10-13T08:38:01.136Z",
+      "sourceHash": "ddc92906fe5dc90fcba76c434bf3ffef001115797478b678e7713fa81db19734",
+      "id": "retained-5aac3a8827efc6e4e4c8ca76"
+    },
+    {
+      "name": "INDEX:HK:HSTECH",
+      "short": "INDEX:HK:HSTECH",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T08:38:01.222Z",
+      "checkedAt": "2026-10-13T08:38:01.222Z",
+      "sourceHash": "5be4a0c6b26dfa3147b0651d440e4390c7da258d84c2c815361c833277ede431",
+      "id": "retained-e83464702140e5da63aa4d5b"
+    },
+    {
+      "name": "INDEX:HK:HSCEI",
+      "short": "INDEX:HK:HSCEI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+      "retrievedAt": "2026-10-13T08:38:01.249Z",
+      "checkedAt": "2026-10-13T08:38:01.249Z",
+      "sourceHash": "f88302ebe2d1e5ebb8c4949044809a72f5b92ef935bba2f01c970d1cee2e32b3",
+      "id": "retained-2424dde20a09e61587687608"
     },
     {
       "name": "INDEX:US:SP500",
@@ -1673,46 +1898,6 @@
       "id": "retained-93ff945fa16b1e17cc0bda87"
     },
     {
-      "id": "src-4592d3929976b9dbff4a894e",
-      "name": "Federal Reserve October 2026 calendar",
-      "short": "fed-october-calendar-2026",
-      "url": "https://www.federalreserve.gov/newsevents/2026-october.htm",
-      "sourceHash": "fb94903ed185a6e41f42b3dc2d91d37f1bab5035e397ce2f0a0badca666ea1cd",
-      "retrievedAt": "2026-10-13T08:10:01.695Z",
-      "evidenceKind": "calendar",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-a4def0e543600158a18119f6",
-      "name": "BLS October 2026 release calendar",
-      "short": "bls-october-calendar-2026",
-      "url": "https://www.bls.gov/schedule/2026/10_sched_list.htm",
-      "sourceHash": "bb86b1bb2616027b0b1751699574f1b1f2d708b3505a84207310cf9ef3920f0b",
-      "retrievedAt": "2026-10-13T08:10:01.902Z",
-      "evidenceKind": "calendar",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-87316dcfa4ec8f7730de773b",
-      "name": "何立峰会见苹果公司首席执行官库克",
-      "short": "mofcom-cook-meeting-20261013",
-      "url": "https://www.mofcom.gov.cn/xwfb/ldrhd/art/2026/art_13676cb2522449c6b6e7234ffd91021d.html",
-      "sourceHash": "239336c5238854d6a3a9f93037957768687074d6b6ed5d654cd099a8e1c63653",
-      "retrievedAt": "2026-10-13T08:10:02.358Z",
-      "evidenceKind": "official",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-fd4e4b2ac67cbbe5507866a6",
-      "name": "BEA news release schedule",
-      "short": "bea-release-schedule-2026",
-      "url": "https://www.bea.gov/news/schedule",
-      "sourceHash": "27d1b3f6a35ad1e71ab670027f4e8cb9fa569248a5f572d97065a870e2967b2d",
-      "retrievedAt": "2026-10-13T08:10:02.409Z",
-      "evidenceKind": "calendar",
-      "checkedAt": ""
-    },
-    {
       "name": "新浪转载/每日经济新闻 · A股午间个股样本",
       "url": "https://finance.sina.com.cn/jjxw/2026-09-22/doc-inissitf7075940.shtml",
       "verifiedAt": "2026-09-22T16:44:35+08:00",
@@ -1750,9 +1935,9 @@
       "short": "mofcom-cook-meeting-20261013",
       "url": "https://www.mofcom.gov.cn/xwfb/ldrhd/art/2026/art_13676cb2522449c6b6e7234ffd91021d.html",
       "sourceHash": "239336c5238854d6a3a9f93037957768687074d6b6ed5d654cd099a8e1c63653",
-      "retrievedAt": "2026-10-13T07:06:22.913Z",
+      "retrievedAt": "2026-10-13T08:10:02.358Z",
       "evidenceKind": "official",
-      "id": "news-retained-898f73699b168e8cba56ff15",
+      "id": "news-retained-42c1650c19b7e31ebdf43656",
       "checkedAt": ""
     },
     {
@@ -1760,9 +1945,9 @@
       "short": "mofcom-aviation-export-20261013",
       "url": "https://www.mofcom.gov.cn/xwfb/sjfzrfb/art/2026/art_5fb14edff75c45fa887d5c16d3477eb4.html",
       "sourceHash": "db185882904ed9b1445b87924240d407c0189bae26f21e663070b70583462352",
-      "retrievedAt": "2026-10-13T07:06:22.919Z",
+      "retrievedAt": "2026-10-13T08:10:02.355Z",
       "evidenceKind": "official",
-      "id": "news-retained-33427b16e00afdadf292e8d2",
+      "id": "news-retained-f1c2bee00d382d61530bfb98",
       "checkedAt": ""
     },
     {
@@ -2815,566 +3000,60 @@
       "short": "mofcom-eu-auto-20261013",
       "url": "https://www.mofcom.gov.cn/xwfb/sjfzrfb/art/2026/art_4d502e1d49fd4480b39a6cfd0d752038.html",
       "sourceHash": "3d83294dfc35535d2bd99e43c89d78807c5c2bc6b7ce3be6e373912c2989cccc",
-      "retrievedAt": "2026-10-13T07:06:22.912Z",
-      "evidenceKind": "official",
-      "id": "news-retained-35191278cb032ab46d2866cd",
-      "checkedAt": ""
-    },
-    {
-      "id": "amd-q2",
-      "name": "AMD Q2 2026 financial results",
-      "url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
-      "verifiedAt": "2026-09-22T13:18:57+08:00",
-      "checkedAt": "2026-09-22T13:18:57+08:00",
-      "retrievedAt": "2026-09-22T13:18:57+08:00"
-    },
-    {
-      "id": "msft-q4",
-      "name": "Microsoft FY2026 Q4 earnings release",
-      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
-      "verifiedAt": "2026-09-22T13:18:57+08:00",
-      "checkedAt": "2026-09-22T13:18:57+08:00",
-      "retrievedAt": "2026-09-22T13:18:57+08:00"
-    },
-    {
-      "id": "meta-q2",
-      "name": "Meta Q2 2026 results",
-      "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/",
-      "verifiedAt": "2026-09-22T13:18:57+08:00",
-      "checkedAt": "2026-09-22T13:18:57+08:00",
-      "retrievedAt": "2026-09-22T13:18:57+08:00"
-    },
-    {
-      "id": "alibaba-ai",
-      "name": "Reuters Alibaba AI roadmap and chip Sep 22",
-      "url": "https://www.reuters.com/business/retail-consumer/alibaba-plans-ai-model-with-5-trillion-10-trillion-parameters-unveils-new-chip-2026-09-22/",
-      "verifiedAt": "2026-09-22T13:18:57+08:00",
-      "checkedAt": "2026-09-22T13:18:57+08:00",
-      "retrievedAt": "2026-09-22T13:18:57+08:00"
-    },
-    {
-      "id": "nvda-q2fy27-sec-release",
-      "name": "NVIDIA Q2 FY2027 earnings release (SEC exhibit)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
-      "verifiedAt": "2026-09-22T15:54:02+08:00",
-      "checkedAt": "2026-09-22T15:54:02+08:00",
-      "retrievedAt": "2026-09-22T15:54:02+08:00"
-    },
-    {
-      "id": "nvda-q2fy27-sec-10q",
-      "name": "NVIDIA Q2 FY2027 Form 10-Q",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
-      "verifiedAt": "2026-09-22T15:54:02+08:00",
-      "checkedAt": "2026-09-22T15:54:02+08:00",
-      "retrievedAt": "2026-09-22T15:54:02+08:00"
-    },
-    {
-      "id": "googl-q2-2026-sec-release",
-      "name": "Alphabet Q2 2026 earnings release (SEC exhibit)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
-      "verifiedAt": "2026-09-22T15:54:02+08:00",
-      "checkedAt": "2026-09-22T15:54:02+08:00",
-      "retrievedAt": "2026-09-22T15:54:02+08:00"
-    },
-    {
-      "id": "googl-q2-2026-sec-10q",
-      "name": "Alphabet Q2 2026 Form 10-Q",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
-      "verifiedAt": "2026-09-22T15:54:02+08:00",
-      "checkedAt": "2026-09-22T15:54:02+08:00",
-      "retrievedAt": "2026-09-22T15:54:02+08:00"
-    },
-    {
-      "id": "amzn-q2-2026-ir",
-      "name": "Amazon Q2 2026 earnings release",
-      "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx?mode=light",
-      "verifiedAt": "2026-09-22T15:54:02+08:00",
-      "checkedAt": "2026-09-22T15:54:02+08:00",
-      "retrievedAt": "2026-09-22T15:54:02+08:00"
-    },
-    {
-      "id": "brk-chair-20260918-reuters",
-      "name": "Reuters Berkshire chairman transition Sep 18",
-      "url": "https://www.reuters.com/business/retail-consumer/berkshire-hathaway-names-warren-buffett-chairman-emeritus-2026-09-18/",
-      "verifiedAt": "2026-09-22T15:54:02+08:00",
-      "checkedAt": "2026-09-22T15:54:02+08:00",
-      "retrievedAt": "2026-09-22T15:54:02+08:00"
-    },
-    {
-      "id": "blk-q2-2026-sec-release",
-      "name": "BlackRock Q2 2026 earnings release (SEC exhibit)",
-      "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526304013/blk-ex99_1.htm",
-      "verifiedAt": "2026-09-22T15:54:02+08:00",
-      "checkedAt": "2026-09-22T15:54:02+08:00",
-      "retrievedAt": "2026-09-22T15:54:02+08:00"
-    },
-    {
-      "id": "blk-q2-2026-sec-10q",
-      "name": "BlackRock Q2 2026 Form 10-Q",
-      "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526337177/blk-20260630.htm",
-      "verifiedAt": "2026-09-22T15:54:02+08:00",
-      "checkedAt": "2026-09-22T15:54:02+08:00",
-      "retrievedAt": "2026-09-22T15:54:02+08:00"
-    },
-    {
-      "id": "aapl-q3-2026-apple",
-      "name": "Apple FY2026 Q3 results",
-      "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "aapl-q3-2026-sec10q",
-      "name": "Apple FY2026 Q3 Form 10-Q",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "avgo-q3-2026-ir",
-      "name": "Broadcom FY2026 Q3 results",
-      "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "avgo-q3-2026-sec10q",
-      "name": "Broadcom FY2026 Q3 Form 10-Q",
-      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/avgo-20260802.htm",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "tsla-q2-2026-ir",
-      "name": "Tesla Q2 2026 financial results notice",
-      "url": "https://ir.tesla.com/press-release/tesla-releases-second-quarter-2026-financial-results",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "tsla-q2-2026-sec10q",
-      "name": "Tesla Q2 2026 Form 10-Q",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "tsla-q2-2026-consensus",
-      "name": "Tesla company-compiled Q2 2026 sell-side consensus",
-      "url": "https://ir.tesla.com/press-release/earnings-consensus-second-quarter-2026",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "bx-q2-2026-report",
-      "name": "Blackstone Q2 2026 earnings report",
-      "url": "https://www.blackstone.com/blackstone2q26earningspressrelease/",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "bx-q2-2026-sec10q",
-      "name": "Blackstone Q2 2026 Form 10-Q",
-      "url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526340208/d158269d10q.htm",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "kkr-q2-2026-report",
-      "name": "KKR Q2 2026 earnings release",
-      "url": "https://ir.kkr.com/media/document/15a25fa9-8226-4da1-9ff3-027b9803d436/assets/KKR_Q226_Earnings_Release.pdf?disposition=inline",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "kkr-q2-2026-sec10q",
-      "name": "KKR Q2 2026 Form 10-Q",
-      "url": "https://www.sec.gov/Archives/edgar/data/1404912/000140491226000027/kkr-20260630.htm",
-      "verifiedAt": "2026-09-22T16:39:06+08:00",
-      "checkedAt": "2026-09-22T16:39:06+08:00",
-      "retrievedAt": "2026-09-22T16:39:06+08:00"
-    },
-    {
-      "id": "reuters-meta-muse-global",
-      "url": "https://www.reuters.com/business/wall-street-expects-metas-ai-agent-shape-into-new-revenue-engine-2026-09-22/",
-      "verifiedAt": "2026-09-22T22:36:35+08:00",
-      "checkedAt": "2026-09-22T22:36:35+08:00",
-      "retrievedAt": "2026-09-22T22:36:35+08:00"
-    },
-    {
-      "name": "tsla_q3_2026_exhibit",
-      "short": "tsla_q3_2026_exhibit",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/exhibit991111111.htm",
-      "sourceHash": "05fa124a2d8bf17137eb8df3f969741ebe7e40c2d9762d2fa7afc1f8453a198d",
-      "retrievedAt": "2026-10-03T16:36:36.463Z",
-      "evidenceKind": "research",
-      "id": "research-retained-c2b664e65f56c4d4ef755f42",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-1fcc706c14d082b1cc9a1abf",
-      "name": "tsla_sec_index",
-      "short": "tsla_sec_index",
-      "url": "https://data.sec.gov/submissions/CIK0001318605.json",
-      "sourceHash": "33fd857195d8a298b043a969159239409967e063399da37ac4a76ab32c89583a",
-      "retrievedAt": "2026-10-03T16:36:35.945Z",
-      "evidenceKind": "research",
-      "checkedAt": ""
-    },
-    {
-      "name": "AMD official complete SEC submission 0000002488-26-000182; analyzed 8-K amd-20260926.htm",
-      "short": "amd-complete-submission",
-      "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000182/0000002488-26-000182.txt",
-      "sourceHash": "0e17490fa436b69d6efb6e106acfcee693897fb9b6043da1cff600a9fbdc6c96",
-      "retrievedAt": "2026-10-03T22:00:42.670Z",
-      "evidenceKind": "research",
-      "id": "research-retained-46ba97a0f8d331faa67ecb8c",
-      "checkedAt": ""
-    },
-    {
-      "name": "ORCL official complete SEC submission 0001193125-26-387905; analyzed EX-99.1 orcl-ex99_1.htm",
-      "short": "orcl-complete-submission",
-      "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526387905/0001193125-26-387905.txt",
-      "sourceHash": "1171f24722b632862d56ee026123b5f167bde9860df8723f0667e53596c81355",
-      "retrievedAt": "2026-10-03T22:00:42.801Z",
-      "evidenceKind": "research",
-      "id": "research-retained-1e30d59115e0bb2620a56290",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-67b767aac259adf10f9cb865",
-      "name": "nvda_sec_index",
-      "short": "nvda_sec_index",
-      "url": "https://data.sec.gov/submissions/CIK0001045810.json",
-      "sourceHash": "e220b9939d680e34f3a59655b5134a8f1a44e6a4d9292426093c8a899d3020a8",
-      "retrievedAt": "2026-10-03T16:36:34.636Z",
-      "evidenceKind": "research",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-91bdab619e8f37da2f6228a2",
-      "name": "aapl_sec_index",
-      "short": "aapl_sec_index",
-      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
-      "sourceHash": "2159349dae17cc9148a2f2a9d2eab12c84f59c2135b62e78d56ac9b00ca86b1e",
-      "retrievedAt": "2026-10-03T16:36:34.835Z",
-      "evidenceKind": "research",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-ef055d13b1b76eeab2f59bd0",
-      "name": "msft_sec_index",
-      "short": "msft_sec_index",
-      "url": "https://data.sec.gov/submissions/CIK0000789019.json",
-      "sourceHash": "551ff75d16e89942b05b48835f3548be1276d59159bf86f009468b99542a94b9",
-      "retrievedAt": "2026-10-03T16:36:35.549Z",
-      "evidenceKind": "research",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-1e4f6e7b190740f2d009628e",
-      "name": "blk_sec_index",
-      "short": "blk_sec_index",
-      "url": "https://data.sec.gov/submissions/CIK0002012383.json",
-      "sourceHash": "bcd671d4416db58b7023c285859ebac3aa155a9c1a26154767e1d1ead653a00b",
-      "retrievedAt": "2026-10-03T16:36:36.315Z",
-      "evidenceKind": "research",
-      "checkedAt": ""
-    },
-    {
-      "name": "Broadcom Inc. SEC recent submissions index",
-      "short": "cik0001730168-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001730168.json",
-      "sourceHash": "b3bb8094e6809c7b3c7d2d7f419363b213bfa5071b40adb2bc2534317637f061",
-      "retrievedAt": "2026-10-03T20:00:33.761Z",
-      "evidenceKind": "research",
-      "id": "research-retained-f794e4a1476c152478173fcf",
-      "checkedAt": ""
-    },
-    {
-      "name": "ADVANCED MICRO DEVICES INC SEC recent submissions index",
-      "short": "cik0000002488-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0000002488.json",
-      "sourceHash": "3edab34f7292b7d2991a223715b136c6f5cf0efffe413854bf5398adc5fc121a",
-      "retrievedAt": "2026-10-03T20:00:33.888Z",
-      "evidenceKind": "research",
-      "id": "research-retained-8f87db1453b3f308dc01e4e9",
-      "checkedAt": ""
-    },
-    {
-      "name": "ORACLE CORP SEC recent submissions index",
-      "short": "cik0001341439-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001341439.json",
-      "sourceHash": "bed0ec89b0d273799517d3e332b3a4ba3612168f0e4e9b963759b507f857adec",
-      "retrievedAt": "2026-10-03T20:00:34.561Z",
-      "evidenceKind": "research",
-      "id": "research-retained-127d14a4b5779f61bc175c29",
-      "checkedAt": ""
-    },
-    {
-      "name": "ARM HOLDINGS PLC /UK SEC recent submissions index",
-      "short": "cik0001973239-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001973239.json",
-      "sourceHash": "3594b191f8f5bd6b2780aa7e1dca2a4d4e619d639ef8c482bd691f0e1b8eefe7",
-      "retrievedAt": "2026-10-03T20:00:34.875Z",
-      "evidenceKind": "research",
-      "id": "research-retained-aa75944472dd49aeb75ed7b4",
-      "checkedAt": ""
-    },
-    {
-      "name": "KKR & Co. Inc. SEC recent submissions index",
-      "short": "cik0001404912-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001404912.json",
-      "sourceHash": "e1dadc209b31bdcd1852a3ce4316b12a224bde132648f2743094b053f60355ab",
-      "retrievedAt": "2026-10-03T20:00:35.567Z",
-      "evidenceKind": "research",
-      "id": "research-retained-c88ea8252069b475b5da06a7",
-      "checkedAt": ""
-    },
-    {
-      "name": "Broadcom Inc. SEC recent submissions index",
-      "short": "cik0001730168-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001730168.json",
-      "sourceHash": "b3bb8094e6809c7b3c7d2d7f419363b213bfa5071b40adb2bc2534317637f061",
-      "retrievedAt": "2026-10-03T21:00:48.949Z",
-      "evidenceKind": "research",
-      "id": "research-retained-5b932eb56471cd330f304dc6",
-      "checkedAt": ""
-    },
-    {
-      "name": "ADVANCED MICRO DEVICES INC SEC recent submissions index",
-      "short": "cik0000002488-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0000002488.json",
-      "sourceHash": "9789d97cfb1b41fb58cc5fcebd13cfced084409dc3bbcfb6ca1382304f092493",
-      "retrievedAt": "2026-10-03T21:00:49.032Z",
-      "evidenceKind": "research",
-      "id": "research-retained-3362f7511348e557444fe470",
-      "checkedAt": ""
-    },
-    {
-      "name": "ORACLE CORP SEC recent submissions index",
-      "short": "cik0001341439-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001341439.json",
-      "sourceHash": "bed0ec89b0d273799517d3e332b3a4ba3612168f0e4e9b963759b507f857adec",
-      "retrievedAt": "2026-10-03T21:00:49.366Z",
-      "evidenceKind": "research",
-      "id": "research-retained-0d4c61ef1dc7396a4f0267f5",
-      "checkedAt": ""
-    },
-    {
-      "name": "KKR & Co. Inc. SEC recent submissions index",
-      "short": "cik0001404912-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001404912.json",
-      "sourceHash": "e1dadc209b31bdcd1852a3ce4316b12a224bde132648f2743094b053f60355ab",
-      "retrievedAt": "2026-10-03T21:00:50.547Z",
-      "evidenceKind": "research",
-      "id": "research-retained-7863b594e768d7657a2fd1f5",
-      "checkedAt": ""
-    },
-    {
-      "name": "ARM HOLDINGS PLC /UK SEC recent submissions index",
-      "short": "cik0001973239-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001973239.json",
-      "sourceHash": "3594b191f8f5bd6b2780aa7e1dca2a4d4e619d639ef8c482bd691f0e1b8eefe7",
-      "retrievedAt": "2026-10-03T21:00:50.294Z",
-      "evidenceKind": "research",
-      "id": "research-retained-4468ddbbe0685a0f500c39d4",
-      "checkedAt": ""
-    },
-    {
-      "name": "Broadcom Inc. SEC recent submissions index",
-      "short": "cik0001730168-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001730168.json",
-      "sourceHash": "b3bb8094e6809c7b3c7d2d7f419363b213bfa5071b40adb2bc2534317637f061",
-      "retrievedAt": "2026-10-03T22:00:39.545Z",
-      "evidenceKind": "research",
-      "id": "research-retained-c5909e1301aeb7f2b6af9896",
-      "checkedAt": ""
-    },
-    {
-      "name": "KKR & Co. Inc. SEC recent submissions index",
-      "short": "cik0001404912-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001404912.json",
-      "sourceHash": "e1dadc209b31bdcd1852a3ce4316b12a224bde132648f2743094b053f60355ab",
-      "retrievedAt": "2026-10-03T22:00:40.920Z",
-      "evidenceKind": "research",
-      "id": "research-retained-be21ac20d598beae140eb4aa",
-      "checkedAt": ""
-    },
-    {
-      "name": "ARM HOLDINGS PLC /UK SEC recent submissions index",
-      "short": "cik0001973239-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001973239.json",
-      "sourceHash": "3594b191f8f5bd6b2780aa7e1dca2a4d4e619d639ef8c482bd691f0e1b8eefe7",
-      "retrievedAt": "2026-10-03T22:00:40.265Z",
-      "evidenceKind": "research",
-      "id": "research-retained-d4ff07c505b62c63e2c39a36",
-      "checkedAt": ""
-    },
-    {
-      "name": "ADVANCED MICRO DEVICES INC SEC recent submissions index",
-      "short": "cik0000002488-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0000002488.json",
-      "sourceHash": "9789d97cfb1b41fb58cc5fcebd13cfced084409dc3bbcfb6ca1382304f092493",
-      "retrievedAt": "2026-10-03T22:00:39.592Z",
-      "evidenceKind": "research",
-      "id": "research-retained-4a6c6fcc24cec413fd8c0f9a",
-      "checkedAt": ""
-    },
-    {
-      "name": "ORACLE CORP SEC recent submissions index",
-      "short": "cik0001341439-submissions",
-      "url": "https://data.sec.gov/submissions/CIK0001341439.json",
-      "sourceHash": "bed0ec89b0d273799517d3e332b3a4ba3612168f0e4e9b963759b507f857adec",
-      "retrievedAt": "2026-10-03T22:00:39.946Z",
-      "evidenceKind": "research",
-      "id": "research-retained-384883a0dc9e040c8f55d165",
-      "checkedAt": ""
-    },
-    {
-      "id": "src-84d7c211aeafa37bb17eb94b",
-      "name": "PepsiCo October 8 8-K earnings filing source index",
-      "short": "sec-pep-8k-20261008",
-      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000050/0000077476-26-000050-index.htm",
-      "sourceHash": "9915ebfed3fe6130392ad804a9f5d176f84380ab4ef0b9bd42832e0d1b98ec88",
-      "retrievedAt": "2026-10-09T01:04:06.047Z",
-      "evidenceKind": "research",
-      "checkedAt": ""
-    },
-    {
-      "name": "何立峰会见苹果公司首席执行官库克",
-      "short": "mofcom-cook-meeting-20261013",
-      "url": "https://www.mofcom.gov.cn/xwfb/ldrhd/art/2026/art_13676cb2522449c6b6e7234ffd91021d.html",
-      "sourceHash": "239336c5238854d6a3a9f93037957768687074d6b6ed5d654cd099a8e1c63653",
-      "retrievedAt": "2026-10-13T08:10:02.358Z",
-      "evidenceKind": "official",
-      "id": "news-retained-42c1650c19b7e31ebdf43656",
-      "checkedAt": ""
-    },
-    {
-      "name": "商务部就加强航空领域两用物项出口许可审查答记者问",
-      "short": "mofcom-aviation-export-20261013",
-      "url": "https://www.mofcom.gov.cn/xwfb/sjfzrfb/art/2026/art_5fb14edff75c45fa887d5c16d3477eb4.html",
-      "sourceHash": "db185882904ed9b1445b87924240d407c0189bae26f21e663070b70583462352",
-      "retrievedAt": "2026-10-13T08:10:02.355Z",
-      "evidenceKind": "official",
-      "id": "news-retained-f1c2bee00d382d61530bfb98",
-      "checkedAt": ""
-    },
-    {
-      "name": "中欧双方就电动汽车贸易达成新共识",
-      "short": "mofcom-eu-auto-20261013",
-      "url": "https://www.mofcom.gov.cn/xwfb/sjfzrfb/art/2026/art_4d502e1d49fd4480b39a6cfd0d752038.html",
-      "sourceHash": "3d83294dfc35535d2bd99e43c89d78807c5c2bc6b7ce3be6e373912c2989cccc",
       "retrievedAt": "2026-10-13T08:10:02.356Z",
       "evidenceKind": "official",
       "id": "news-retained-208cfe2a2c0f4762070e0b7e",
       "checkedAt": ""
-    },
-    {
-      "name": "RATE:US10Y",
-      "short": "RATE:US10Y",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:10:03.215Z",
-      "checkedAt": "2026-10-13T08:10:03.215Z",
-      "sourceHash": "8f97f15f1e89f55138187f5917a711a5d638903cfd12ade7f8c454135cd2b9e2",
-      "id": "macro-retained-68296fa7dcd70268ebdc55a8"
-    },
-    {
-      "name": "RATE:US2Y",
-      "short": "RATE:US2Y",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
-      "retrievedAt": "2026-10-13T08:10:03.165Z",
-      "checkedAt": "2026-10-13T08:10:03.165Z",
-      "sourceHash": "475df9a641ac465201d0c6cd209ab0870881743c980a318eb2f59a6d212c2134",
-      "id": "macro-retained-5e08fb8c6ea4a4a7ea994068"
-    },
-    {
-      "name": "FX:DXY",
-      "short": "FX:DXY",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:10:02.868Z",
-      "checkedAt": "2026-10-13T08:10:02.868Z",
-      "sourceHash": "0fbb632572f5d944c632b0a094292a4d106b2dc7a900ac85b1f8e3209f76ce38",
-      "id": "macro-retained-620711b4072b8361d61f8c19"
-    },
-    {
-      "name": "ENERGY:WTI",
-      "short": "ENERGY:WTI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:10:02.995Z",
-      "checkedAt": "2026-10-13T08:10:02.995Z",
-      "sourceHash": "b52a051a853b5d70bd4cd4464cb6c7af8741cfecb42cd1f4b4466770ade41799",
-      "id": "macro-retained-93c7c17930e602dd56238975"
-    },
-    {
-      "name": "VOL:VIX",
-      "short": "VOL:VIX",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-13T08:10:03.261Z",
-      "checkedAt": "2026-10-13T08:10:03.261Z",
-      "sourceHash": "bc8cb3b14bcef6ca63ebe85b60b421604fd4ba670244ea9d34d601ec142dda19",
-      "id": "macro-retained-4220a2aabdee3e1d35f05ef0"
     }
   ],
   "schemaVersion": 5,
-  "reportId": "2026-10-13-1641",
-  "updatedAt": "2026-10-13 16:41",
+  "reportId": "2026-10-13-1706",
+  "updatedAt": "2026-10-13 17:06",
   "reportMeta": {
-    "generatedAt": "2026-10-13T16:41:42.882+08:00",
-    "analysisAsOf": "2026-10-13T08:41:31.535Z",
+    "generatedAt": "2026-10-13T17:06:21.659+08:00",
+    "analysisAsOf": "2026-10-13T09:06:05Z",
     "contractVersion": "reader-r2",
     "pipelineVersion": "execution-lease-v1",
     "dataMode": "production",
     "validationOnly": false,
     "edition": "每小时全球报告",
     "status": "partial",
-    "sourcePacketHash": "9819f585ced2826525f55f03e648483636747c1f00a8dd1c4ab1db3c930a1976",
+    "sourcePacketHash": "f28fb346dc5eb1fc7c7afe74fca3dcaf55ece6212ec525a602e46b5c9599b1ea",
     "moduleRefs": {
       "quotes": {
-        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
-        "runId": "20261013T083745Z-asia-session-quotes",
-        "generatedAt": "2026-10-13T16:41:42.882+08:00",
-        "dataAsOf": "2026-10-13T08:38:01.175Z"
+        "path": "data/runs/quotes/20261013T090125Z-global-main-quotes.json",
+        "runId": "20261013T090125Z-global-main-quotes",
+        "generatedAt": "2026-10-13T17:06:21.659+08:00",
+        "dataAsOf": "2026-10-13T09:01:55.243Z"
       },
       "us-equities": {
-        "path": "data/runs/us-equities/20261013T080945Z-global-main-us-equities.json",
-        "runId": "20261013T080945Z-global-main-us-equities",
-        "generatedAt": "2026-10-13T16:13:05.021+08:00",
+        "path": "data/runs/us-equities/20261013T090125Z-global-main-us-equities.json",
+        "runId": "20261013T090125Z-global-main-us-equities",
+        "generatedAt": "2026-10-13T17:06:21.659+08:00",
         "dataAsOf": null
       },
       "asia-equities": {
-        "path": "data/runs/asia-equities/20261013T083745Z-asia-session-asia-equities.json",
-        "runId": "20261013T083745Z-asia-session-asia-equities",
-        "generatedAt": "2026-10-13T16:41:42.882+08:00",
+        "path": "data/runs/asia-equities/20261013T090125Z-global-main-asia-equities.json",
+        "runId": "20261013T090125Z-global-main-asia-equities",
+        "generatedAt": "2026-10-13T17:06:21.659+08:00",
         "dataAsOf": null
       },
       "news": {
-        "path": "data/runs/news/20261013T083745Z-asia-session-news.json",
-        "runId": "20261013T083745Z-asia-session-news",
-        "generatedAt": "2026-10-13T16:41:42.882+08:00",
+        "path": "data/runs/news/20261013T090125Z-global-main-news.json",
+        "runId": "20261013T090125Z-global-main-news",
+        "generatedAt": "2026-10-13T17:06:21.659+08:00",
         "dataAsOf": null
       },
       "macro": {
-        "path": "data/runs/macro/20261013T080945Z-global-main-macro.json",
-        "runId": "20261013T080945Z-global-main-macro",
-        "generatedAt": "2026-10-13T16:13:05.021+08:00",
+        "path": "data/runs/macro/20261013T090125Z-global-main-macro.json",
+        "runId": "20261013T090125Z-global-main-macro",
+        "generatedAt": "2026-10-13T17:06:21.659+08:00",
         "dataAsOf": null
       },
       "research": {
-        "path": "data/runs/research/20261013T080945Z-global-main-research.json",
-        "runId": "20261013T080945Z-global-main-research",
-        "generatedAt": "2026-10-13T16:13:05.021+08:00",
+        "path": "data/runs/research/20261013T090125Z-global-main-research.json",
+        "runId": "20261013T090125Z-global-main-research",
+        "generatedAt": "2026-10-13T17:06:21.659+08:00",
         "dataAsOf": null
       }
     }
@@ -3401,11 +3080,11 @@
         "retained-fbeefa80cb48680bb32c2aaa"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-13T07:00:19.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261013T073424Z-asia-session-quotes",
@@ -3423,8 +3102,8 @@
       "unit": "index",
       "scope": "Yahoo Finance public chart",
       "window": "provider-previous-close",
-      "asOf": "2026-10-13T08:22:43.000Z",
-      "verifiedAt": "2026-10-13T08:38:00.443Z",
+      "asOf": "2026-10-13T08:29:43.000Z",
+      "verifiedAt": "2026-10-13T09:01:54.489Z",
       "dataStatus": "delayed",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
@@ -3444,8 +3123,8 @@
       "unit": "index",
       "scope": "Yahoo Finance public chart",
       "window": "provider-previous-close",
-      "asOf": "2026-10-13T08:22:58.000Z",
-      "verifiedAt": "2026-10-13T08:38:00.896Z",
+      "asOf": "2026-10-13T08:29:58.000Z",
+      "verifiedAt": "2026-10-13T09:01:54.620Z",
       "dataStatus": "delayed",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
@@ -3476,11 +3155,11 @@
         "retained-a819c77a3e0ab3897ad34a37"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-13T07:00:19.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261013T073424Z-asia-session-quotes",
@@ -3509,11 +3188,11 @@
         "retained-abc63c31f74714ea1b86eb64"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-13T07:00:34.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261013T073424Z-asia-session-quotes",
@@ -3542,11 +3221,11 @@
         "retained-5319e09326b983be4f72d0ae"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-13T07:00:34.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261013T073424Z-asia-session-quotes",
@@ -3566,14 +3245,26 @@
       "window": "provider-previous-close",
       "asOf": "2026-10-13T08:08:50.000Z",
       "verifiedAt": "2026-10-13T08:38:01.136Z",
-      "dataStatus": "delayed",
+      "dataStatus": "previous",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
       "changePct": 0.5531301499712926,
       "contract": null,
       "sourceIds": [
-        "src-34bca50b53334f82f208d557"
-      ]
+        "retained-5aac3a8827efc6e4e4c8ca76"
+      ],
+      "retention": {
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
+        "asOf": "2026-10-13T08:08:50.000Z",
+        "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
+        "originalStatus": "delayed",
+        "origin": {
+          "runId": "20261013T083745Z-asia-session-quotes",
+          "asOf": "2026-10-13T08:08:50.000Z"
+        }
+      }
     },
     {
       "id": "INDEX:HK:HSTECH",
@@ -3587,14 +3278,26 @@
       "window": "provider-previous-close",
       "asOf": "2026-10-13T08:08:50.000Z",
       "verifiedAt": "2026-10-13T08:38:01.222Z",
-      "dataStatus": "delayed",
+      "dataStatus": "previous",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
       "changePct": -0.7900095213654978,
       "contract": null,
       "sourceIds": [
-        "src-977e21a36fbe85aa82e451f4"
-      ]
+        "retained-e83464702140e5da63aa4d5b"
+      ],
+      "retention": {
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
+        "asOf": "2026-10-13T08:08:50.000Z",
+        "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
+        "originalStatus": "delayed",
+        "origin": {
+          "runId": "20261013T083745Z-asia-session-quotes",
+          "asOf": "2026-10-13T08:08:50.000Z"
+        }
+      }
     },
     {
       "id": "INDEX:HK:HSCEI",
@@ -3608,14 +3311,26 @@
       "window": "provider-previous-close",
       "asOf": "2026-10-13T08:08:50.000Z",
       "verifiedAt": "2026-10-13T08:38:01.249Z",
-      "dataStatus": "delayed",
+      "dataStatus": "previous",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
       "changePct": 0.3295339763643712,
       "contract": null,
       "sourceIds": [
-        "src-c0124b191492ac42ab36d935"
-      ]
+        "retained-2424dde20a09e61587687608"
+      ],
+      "retention": {
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
+        "asOf": "2026-10-13T08:08:50.000Z",
+        "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
+        "originalStatus": "delayed",
+        "origin": {
+          "runId": "20261013T083745Z-asia-session-quotes",
+          "asOf": "2026-10-13T08:08:50.000Z"
+        }
+      }
     },
     {
       "id": "INDEX:US:SP500",
@@ -3638,11 +3353,11 @@
         "retained-f9d9c166e3eff8dcb0b24a1f"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-12T20:35:01.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261012T210500Z-global-main-quotes",
@@ -3671,11 +3386,11 @@
         "retained-78efbb838fa09d51678a7686"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-12T21:15:59.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261012T220526Z-global-main-quotes",
@@ -3704,11 +3419,11 @@
         "retained-ab0f1fc9bfa3e47ebeddf43a"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-12T21:15:59.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261012T220526Z-global-main-quotes",
@@ -3737,11 +3452,11 @@
         "retained-30f5ca16525f567d5a4a5b33"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-12T20:43:51.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261012T210500Z-global-main-quotes",
@@ -3770,11 +3485,11 @@
         "retained-2ba65870285794d5347740de"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-12T20:30:14.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261012T210500Z-global-main-quotes",
@@ -3803,11 +3518,11 @@
         "retained-6fb47c5c016903fb878dc918"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-13T06:45:03.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261013T070542Z-global-main-quotes",
@@ -3820,17 +3535,17 @@
       "instrumentId": "INDEX:EU:STOXX50",
       "seriesKey": "INDEX:EU:STOXX50",
       "label": "欧洲斯托克50",
-      "displayValue": "6215.77",
-      "rawValue": 6215.77,
+      "displayValue": "6214.91",
+      "rawValue": 6214.91,
       "unit": "index",
       "scope": "Yahoo Finance public chart",
       "window": "provider-previous-close",
-      "asOf": "2026-10-13T08:23:00.000Z",
-      "verifiedAt": "2026-10-13T08:38:01.630Z",
+      "asOf": "2026-10-13T08:46:45.000Z",
+      "verifiedAt": "2026-10-13T09:01:55.789Z",
       "dataStatus": "delayed",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
-      "changePct": 0.23479288719461255,
+      "changePct": 0.2209246260004072,
       "contract": null,
       "sourceIds": [
         "src-440d8c358ccf2eb5de026ded"
@@ -3841,13 +3556,13 @@
       "instrumentId": "CRYPTO:BTC:USD",
       "seriesKey": "CRYPTO:BTC:USD",
       "label": "Bitcoin",
-      "displayValue": "83765.59",
-      "rawValue": 83765.59,
+      "displayValue": "83376.46",
+      "rawValue": 83376.46,
       "unit": "USD",
       "scope": "Coinbase Exchange",
       "window": "venue-last-trade-no-24h-baseline",
-      "asOf": "2026-10-13T08:37:58.300Z",
-      "verifiedAt": "2026-10-13T08:38:01.673Z",
+      "asOf": "2026-10-13T09:01:55.243Z",
+      "verifiedAt": "2026-10-13T09:01:55.815Z",
       "dataStatus": "snapshot",
       "marketState": "provider-snapshot",
       "comparisonBasis": "venue-last-trade-no-24h-baseline",
@@ -3862,13 +3577,13 @@
       "instrumentId": "CRYPTO:ETH:USD",
       "seriesKey": "CRYPTO:ETH:USD",
       "label": "Ethereum",
-      "displayValue": "2527.52",
-      "rawValue": 2527.52,
+      "displayValue": "2510.54",
+      "rawValue": 2510.54,
       "unit": "USD",
       "scope": "Coinbase Exchange",
       "window": "venue-last-trade-no-24h-baseline",
-      "asOf": "2026-10-13T08:37:59.282Z",
-      "verifiedAt": "2026-10-13T08:38:01.675Z",
+      "asOf": "2026-10-13T09:01:55.184Z",
+      "verifiedAt": "2026-10-13T09:01:55.860Z",
       "dataStatus": "snapshot",
       "marketState": "provider-snapshot",
       "comparisonBasis": "venue-last-trade-no-24h-baseline",
@@ -3883,13 +3598,13 @@
       "instrumentId": "CRYPTO:SOL:USD",
       "seriesKey": "CRYPTO:SOL:USD",
       "label": "Solana",
-      "displayValue": "108.23",
-      "rawValue": 108.23,
+      "displayValue": "107.36",
+      "rawValue": 107.36,
       "unit": "USD",
       "scope": "Coinbase Exchange",
       "window": "venue-last-trade-no-24h-baseline",
-      "asOf": "2026-10-13T08:37:51.800Z",
-      "verifiedAt": "2026-10-13T08:38:01.686Z",
+      "asOf": "2026-10-13T09:01:53.730Z",
+      "verifiedAt": "2026-10-13T09:01:55.840Z",
       "dataStatus": "snapshot",
       "marketState": "provider-snapshot",
       "comparisonBasis": "venue-last-trade-no-24h-baseline",
@@ -3904,13 +3619,13 @@
       "instrumentId": "CRYPTO:PEPE:USD",
       "seriesKey": "CRYPTO:PEPE:USD",
       "label": "Pepe",
-      "displayValue": "0.00000413",
-      "rawValue": 0.00000413,
+      "displayValue": "0.00000409",
+      "rawValue": 0.00000409,
       "unit": "USD",
       "scope": "Coinbase Exchange",
       "window": "venue-last-trade-no-24h-baseline",
-      "asOf": "2026-10-13T08:38:01.175Z",
-      "verifiedAt": "2026-10-13T08:38:01.709Z",
+      "asOf": "2026-10-13T09:01:06.463Z",
+      "verifiedAt": "2026-10-13T09:01:55.898Z",
       "dataStatus": "snapshot",
       "marketState": "provider-snapshot",
       "comparisonBasis": "venue-last-trade-no-24h-baseline",
@@ -3925,13 +3640,13 @@
       "instrumentId": "CRYPTO:HYPE:USD",
       "seriesKey": "CRYPTO:HYPE:USD",
       "label": "Hyperliquid",
-      "displayValue": "83.08",
-      "rawValue": 83.08,
+      "displayValue": "82.57",
+      "rawValue": 82.57,
       "unit": "USD",
       "scope": "Coinbase Exchange",
       "window": "venue-last-trade-no-24h-baseline",
-      "asOf": "2026-10-13T08:37:43.700Z",
-      "verifiedAt": "2026-10-13T08:38:01.737Z",
+      "asOf": "2026-10-13T09:01:47.191Z",
+      "verifiedAt": "2026-10-13T09:01:55.912Z",
       "dataStatus": "snapshot",
       "marketState": "provider-snapshot",
       "comparisonBasis": "venue-last-trade-no-24h-baseline",
@@ -3946,17 +3661,17 @@
       "instrumentId": "FX:DXY",
       "seriesKey": "FX:DXY",
       "label": "美元指数",
-      "displayValue": "102.31",
-      "rawValue": 102.31,
+      "displayValue": "102.319",
+      "rawValue": 102.319,
       "unit": "index",
       "scope": "Yahoo Finance public chart",
       "window": "provider-previous-close",
-      "asOf": "2026-10-13T08:28:00.000Z",
-      "verifiedAt": "2026-10-13T08:38:01.813Z",
+      "asOf": "2026-10-13T08:51:54.000Z",
+      "verifiedAt": "2026-10-13T09:01:55.987Z",
       "dataStatus": "delayed",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
-      "changePct": -0.2719589819571211,
+      "changePct": -0.2631861115714118,
       "contract": null,
       "sourceIds": [
         "src-dee9c47e788eb3b5e9957de0"
@@ -3967,17 +3682,17 @@
       "instrumentId": "FX:USDCNY",
       "seriesKey": "FX:USDCNY",
       "label": "在岸人民币",
-      "displayValue": "6.6931",
-      "rawValue": 6.6931,
+      "displayValue": "6.6935",
+      "rawValue": 6.6935,
       "unit": "CNY",
       "scope": "Yahoo Finance public chart",
       "window": "provider-previous-close",
-      "asOf": "2026-10-13T08:37:54.000Z",
-      "verifiedAt": "2026-10-13T08:38:01.824Z",
+      "asOf": "2026-10-13T09:01:53.000Z",
+      "verifiedAt": "2026-10-13T09:01:55.993Z",
       "dataStatus": "delayed",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
-      "changePct": 0.14963115919259806,
+      "changePct": 0.15561640556029932,
       "contract": null,
       "sourceIds": [
         "src-8d5d7352d4aa06cef2c4c9c8"
@@ -3988,17 +3703,17 @@
       "instrumentId": "FX:USDCNH",
       "seriesKey": "FX:USDCNH",
       "label": "离岸人民币",
-      "displayValue": "6.694",
-      "rawValue": 6.694,
+      "displayValue": "6.6948",
+      "rawValue": 6.6948,
       "unit": "CNH",
       "scope": "Yahoo Finance public chart",
       "window": "provider-previous-close",
-      "asOf": "2026-10-13T08:38:00.000Z",
-      "verifiedAt": "2026-10-13T08:38:01.868Z",
+      "asOf": "2026-10-13T09:01:53.000Z",
+      "verifiedAt": "2026-10-13T09:01:56.045Z",
       "dataStatus": "delayed",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
-      "changePct": 0.010458219413456149,
+      "changePct": 0.0224104701716632,
       "contract": null,
       "sourceIds": [
         "src-3d44a550fc9b64a2d1f171c2"
@@ -4009,13 +3724,13 @@
       "instrumentId": "METAL:XAUUSD",
       "seriesKey": "METAL:XAUUSD",
       "label": "现货黄金",
-      "displayValue": "4190.799805",
-      "rawValue": 4190.799805,
+      "displayValue": "4188.100098",
+      "rawValue": 4188.100098,
       "unit": "USD/oz",
       "scope": "Gold API",
       "window": "provider-spot-snapshot-no-change-baseline",
-      "asOf": "2026-10-13T08:37:43.000Z",
-      "verifiedAt": "2026-10-13T08:38:02.233Z",
+      "asOf": "2026-10-13T09:01:43.000Z",
+      "verifiedAt": "2026-10-13T09:01:56.165Z",
       "dataStatus": "snapshot",
       "marketState": "provider-snapshot",
       "comparisonBasis": "provider-spot-snapshot-no-change-baseline",
@@ -4030,13 +3745,13 @@
       "instrumentId": "METAL:XAGUSD",
       "seriesKey": "METAL:XAGUSD",
       "label": "现货白银",
-      "displayValue": "60.713001",
-      "rawValue": 60.713001,
+      "displayValue": "60.603001",
+      "rawValue": 60.603001,
       "unit": "USD/oz",
       "scope": "Gold API",
       "window": "provider-spot-snapshot-no-change-baseline",
-      "asOf": "2026-10-13T08:37:42.000Z",
-      "verifiedAt": "2026-10-13T08:38:02.238Z",
+      "asOf": "2026-10-13T09:01:42.000Z",
+      "verifiedAt": "2026-10-13T09:01:56.330Z",
       "dataStatus": "snapshot",
       "marketState": "provider-snapshot",
       "comparisonBasis": "provider-spot-snapshot-no-change-baseline",
@@ -4051,17 +3766,17 @@
       "instrumentId": "ENERGY:WTI",
       "seriesKey": "ENERGY:WTI",
       "label": "WTI原油",
-      "displayValue": "92.21",
-      "rawValue": 92.21,
+      "displayValue": "92.1",
+      "rawValue": 92.1,
       "unit": "USD/bbl",
       "scope": "Yahoo Finance public chart",
       "window": "provider-previous-close",
-      "asOf": "2026-10-13T08:28:00.000Z",
-      "verifiedAt": "2026-10-13T08:38:01.957Z",
+      "asOf": "2026-10-13T08:51:54.000Z",
+      "verifiedAt": "2026-10-13T09:01:56.170Z",
       "dataStatus": "delayed",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
-      "changePct": -1.6321740985705158,
+      "changePct": -1.7495199487945423,
       "contract": "2026-11",
       "sourceIds": [
         "src-d9a47ba66192b3c04bc8f3f6"
@@ -4088,11 +3803,11 @@
         "retained-0155859ba9a9a6df7072db5f"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-09-30T18:28:15.000Z",
         "reason": "HTTP 404",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261001T211000-global-main-quotes",
@@ -4111,7 +3826,7 @@
       "scope": "US Treasury",
       "window": "daily-par-yield-curve",
       "asOf": null,
-      "verifiedAt": "2026-10-13T08:38:02.215Z",
+      "verifiedAt": "2026-10-13T09:01:56.500Z",
       "dataStatus": "partial",
       "marketState": "provider-snapshot",
       "comparisonBasis": "daily-par-yield-curve",
@@ -4143,11 +3858,11 @@
         "retained-93ff945fa16b1e17cc0bda87"
       ],
       "retention": {
-        "fromRunId": "20261013T080945Z-global-main-quotes",
-        "path": "data/runs/quotes/20261013T080945Z-global-main-quotes.json",
+        "fromRunId": "20261013T083745Z-asia-session-quotes",
+        "path": "data/runs/quotes/20261013T083745Z-asia-session-quotes.json",
         "asOf": "2026-10-12T18:59:53.000Z",
         "reason": "来源观测时点未变，沿用旧观测，不计作新行情",
-        "retainedAt": "2026-10-13T16:41:42.882+08:00",
+        "retainedAt": "2026-10-13T17:06:21.659+08:00",
         "originalStatus": "previous",
         "origin": {
           "runId": "20261012T200543Z-global-main-quotes",
@@ -4160,20 +3875,32 @@
       "instrumentId": "VOL:VIX",
       "seriesKey": "VOL:VIX",
       "label": "波动率指数",
-      "displayValue": "15.45",
-      "rawValue": 15.45,
+      "displayValue": "15.39",
+      "rawValue": 15.39,
       "unit": "index",
       "scope": "Yahoo Finance public chart",
       "window": "provider-previous-close",
-      "asOf": "2026-10-13T08:22:46.000Z",
-      "verifiedAt": "2026-10-13T08:38:02.296Z",
+      "asOf": "2026-10-13T08:46:46.000Z",
+      "verifiedAt": "2026-10-13T09:01:56.400Z",
       "dataStatus": "delayed",
       "marketState": "regular",
       "comparisonBasis": "provider-previous-close",
-      "changePct": 1.5779092702169484,
+      "changePct": 1.183431952662728,
       "contract": null,
       "sourceIds": [
         "src-a7554f3c5fd773eea8743645"
+      ]
+    },
+    {
+      "id": "pbc-repo-20261013",
+      "title": "中国人民银行7天期逆回购",
+      "value": 650,
+      "unit": "亿元人民币",
+      "asOf": "2026-10-13T09:26:00+08:00",
+      "status": "current",
+      "interpretation": "操作利率1.40%且与此前持平，支持短期流动性稳定，但不等于宽松加码。",
+      "sourceIds": [
+        "src-8104520866729a30387377e1"
       ]
     },
     {
@@ -4183,7 +3910,7 @@
       "unit": "%",
       "asOf": "2026-10-12T18:59:53.000Z",
       "status": "previous",
-      "interpretation": "长端收益率高位约束久期资产；供应商标为previous。",
+      "interpretation": "长端收益率高位约束久期资产；供应商标记为previous。",
       "sourceIds": [
         "src-483e50fe4cc003e84c411bec"
       ],
@@ -4191,67 +3918,42 @@
     },
     {
       "id": "us2y-20261009",
-      "title": "美国2年期收益率最近日度文字值",
-      "value": null,
+      "title": "美国2年期收益率日度参考值",
+      "value": 4.8,
       "unit": "%",
       "asOf": null,
+      "observationDate": "2026-10-09",
+      "timePrecision": "date",
       "status": "partial",
-      "displayValue": "4.80%（2026-10-09 日度）",
-      "interpretation": "不能当作10月13日实时短端利率。",
+      "interpretation": "只有财政部业务日期，不伪造盘中时点。",
       "sourceIds": [
         "src-b59d300064ebc2cd8c2acde4"
       ]
     },
     {
-      "id": "dxy-20261013-0810",
-      "title": "美元指数",
-      "value": 102.312,
+      "id": "dxy-20261013",
+      "title": "美元指数延迟观测",
+      "value": 102.319,
       "unit": "index",
-      "asOf": "2026-10-13T08:00:01.000Z",
+      "asOf": "2026-10-13T08:51:54.000Z",
       "status": "delayed",
-      "changePct": -0.27000945520474495,
-      "interpretation": "美元走弱，单点不足以证明单一因果。",
+      "interpretation": "美元小幅走弱，为黄金和非美元资产提供边际缓冲。",
       "sourceIds": [
         "src-dee9c47e788eb3b5e9957de0"
-      ]
-    },
-    {
-      "id": "wti-20261013-0810",
-      "title": "WTI近月合约",
-      "value": 92.03,
-      "unit": "USD/bbl",
-      "asOf": "2026-10-13T08:00:01.000Z",
-      "status": "delayed",
-      "changePct": -1.8241945807552784,
-      "interpretation": "WTI低于前收盘1.82%；缺布伦特与实物供需验证。",
-      "sourceIds": [
-        "src-d9a47ba66192b3c04bc8f3f6"
-      ]
-    },
-    {
-      "id": "vix-20261013-0810",
-      "title": "VIX波动率指数",
-      "value": 15.49,
-      "unit": "index",
-      "asOf": "2026-10-13T07:54:46.000Z",
-      "status": "delayed",
-      "changePct": 1.8408941485864583,
-      "interpretation": "VIX温和上升但绝对水平不支持极端恐慌判断；需下一美股常规盘确认。",
-      "sourceIds": [
-        "src-a7554f3c5fd773eea8743645"
-      ]
+      ],
+      "changePct": -0.2631861115714118
     }
   ],
   "period": {
     "mode": "rolling-24h",
     "coverageMode": "snapshot-span",
-    "from": "2026-10-12 16:41",
-    "to": "2026-10-13 16:41",
-    "coverageHours": 22.561911666666667,
-    "coverageSpanHours": 22.561911666666667,
-    "snapshotCount": 25,
+    "from": "2026-10-12 17:06",
+    "to": "2026-10-13 17:06",
+    "coverageHours": 22.972683055555557,
+    "coverageSpanHours": 22.972683055555557,
+    "snapshotCount": 26,
     "firstSnapshotAt": "2026-10-12 18:08",
-    "lastSnapshotAt": "2026-10-13 16:41",
+    "lastSnapshotAt": "2026-10-13 17:06",
     "isFull24h": false,
     "label": "滚动24小时内已发布/当前快照跨度，非连续采样",
     "gaps": [
@@ -4259,8 +3961,8 @@
     ]
   },
   "recentPeriod": {
-    "from": "2026-10-13 16:38",
-    "to": "2026-10-13 16:41",
+    "from": "2026-10-13 17:01",
+    "to": "2026-10-13 17:06",
     "label": "本轮实际采集与分析窗口"
   },
   "newsroom": {
@@ -4268,21 +3970,21 @@
       {
         "id": "japan-typhoon",
         "reason": "editorial-scope-v1: unrelated weather",
-        "runId": "20261013T080945Z-global-main-news"
+        "runId": "20261013T083745Z-asia-session-news"
       },
       {
         "id": "us_florida_weather",
         "reason": "editorial-scope-v1: unrelated weather",
-        "runId": "20261013T080945Z-global-main-news"
+        "runId": "20261013T083745Z-asia-session-news"
       },
       {
         "id": "world_choiwan",
         "reason": "editorial-scope-v1: unrelated weather",
-        "runId": "20261013T080945Z-global-main-news"
+        "runId": "20261013T083745Z-asia-session-news"
       }
     ],
-    "windowStart": "2026-10-12T08:41:42.882Z",
-    "windowEnd": "2026-10-13T08:41:42.882Z",
+    "windowStart": "2026-10-12T09:06:21.659Z",
+    "windowEnd": "2026-10-13T09:06:21.659Z",
     "items": [
       {
         "eventId": "mofcom-apple-meeting-20261012",
@@ -4323,17 +4025,31 @@
         "sourceDateText": "2026-10-13 10:00（商务部页面）",
         "dateUncertainty": "征求意见稿尚未成为最终规则，生效安排待定。",
         "evidenceStatus": "source-read",
-        "summary": "商务部称拟对符合条件的民航企业在维修、维护、租赁及备件等合理用途下实行登记填报后自动获得出口凭证，并配套报告、文件保存与事后监管。",
+        "summary": "商务部表示，拟对符合条件的民航企业在维修、维护、租赁及备件等合理用途下实行登记填报后自动取得出口凭证，并配套报告、保存和事后监管。",
         "plainImpact": "若最终落地，可缩短合规民航零部件出境维修和备件供应周期；当前不能据此确认订单或利润变化。",
-        "assessment": "事实是制度设计与征求意见；推断是低风险合规出口流程或更便利；风险是最终条文、适用范围和执行时间仍可能调整。",
+        "assessment": "事实是制度设计和公开征求意见；推断是低风险合规出口流程可能更便利；风险是最终条文、适用主体和执行时间仍会调整。",
         "sourceIds": [
-          "news-retained-f1c2bee00d382d61530bfb98"
+          "src-aef113d49f776c795a019f12"
+        ]
+      },
+      {
+        "eventId": "pbc-repo-650-20261013",
+        "title": "央行开展650亿元7天期逆回购，利率维持1.40%",
+        "regions": [
+          "CN"
         ],
-        "retention": {
-          "runId": "20261013T080945Z-global-main-news",
-          "generatedAt": "2026-10-13T16:13:05.021+08:00",
-          "reason": "仍在24小时窗口内，沿用原文、分析及来源时点"
-        }
+        "kind": "market",
+        "publishedAt": "2026-10-13T09:26:00+08:00",
+        "eventAt": "2026-10-13",
+        "sourceDateText": "2026-10-13 09:26（证券时报）",
+        "dateUncertainty": "报道转述央行公告，未取得央行页面正文。",
+        "evidenceStatus": "source-read",
+        "summary": "人民银行以固定利率、数量招标方式开展650亿元7天期逆回购，操作利率1.40%，与此前持平。",
+        "plainImpact": "短期资金面获得流动性支持，但利率未变，不能单凭操作规模判断货币政策转向。",
+        "assessment": "事实是操作规模和利率；推断是维持短期流动性平稳；风险是缺到期量、DR007和银行间资金价格完整数据。",
+        "sourceIds": [
+          "src-8104520866729a30387377e1"
+        ]
       }
     ],
     "legacyItems": [
@@ -7396,41 +7112,77 @@
     ],
     "coverage": {
       "status": "partial",
-      "note": "本轮无符合滚动24小时且成功全文阅读的新新闻；商务部中欧汽车材料超过窗口，IMF日程仅作事件雷达。",
+      "complete": false,
+      "scope": "10份计划文档取得8份并阅读；新闻采用商务部民航出口凭证原文和证券时报央行操作报道，另核对Fed/BLS/BEA/EIA日历。",
+      "note": "NDRC与Eurostat被白名单隔离；中欧汽车材料超过24小时，仅作背景未计入新增新闻。",
       "regions": {
-        "CN": "官方材料已核验但无窗口内新增新闻",
-        "US": "无成功新闻正文",
-        "WORLD": "取得IMF官方日程，仅作事件雷达"
+        "CN": {
+          "status": "partial",
+          "note": "覆盖出口管制便利化与公开市场操作。"
+        },
+        "US": {
+          "status": "partial",
+          "note": "本轮无严格24小时美国综合新闻原文，主要完成官方日历核对。"
+        },
+        "WORLD": {
+          "status": "partial",
+          "note": "覆盖民航跨境合规影响，全球新闻面仍不完整。"
+        }
       },
       "gaps": [
-        "滚动24小时新增新闻正文",
-        "美国新增事件",
-        "亚洲行业与资金流新闻"
+        "缺美国与欧洲严格24小时综合新闻原文。",
+        "没有合格公司事件披露原文研究。",
+        "资金流与全行业排名缺少原始数据。"
       ],
-      "scope": "本轮无符合滚动24小时且成功全文阅读的新新闻；商务部中欧汽车材料超过窗口，IMF日程仅作事件雷达。",
       "targetMin": 18,
-      "verified": 0,
-      "retained": 2,
-      "active": 2,
+      "verified": 2,
+      "retained": 1,
+      "active": 3,
       "legacy": 114,
       "general": 0,
-      "market": 2,
-      "externalVerified": 2,
+      "market": 3,
+      "externalVerified": 3,
       "marketDataOnly": 0,
       "regionCounts": {
-        "CN": 2,
+        "CN": 3,
         "US": 1,
         "WORLD": 2
       },
       "externalRegionCounts": {
-        "CN": 2,
+        "CN": 3,
         "US": 1,
         "WORLD": 2
       },
       "externalGeneral": 0,
       "claimedComplete": false,
-      "complete": false,
       "claimIssue": null
     }
-  }
+  },
+  "events": [
+    {
+      "id": "fed-commercial-paper-20261013",
+      "title": "美联储商业票据统计发布",
+      "at": "2026-10-13T13:00:00-04:00",
+      "timezone": "America/New_York",
+      "summary": "10月13日13:00 ET，对应北京时间10月14日01:00。",
+      "impact": "用于观察短期企业融资条件；日历不是实际数据。",
+      "status": "scheduled",
+      "sourceIds": [
+        "src-b3b5a8feee441c3342754e42"
+      ]
+    },
+    {
+      "id": "fed-h10-h15-20261013",
+      "title": "美联储H.10外汇利率与H.15利率统计发布",
+      "at": "2026-10-13T16:15:00-04:00",
+      "timezone": "America/New_York",
+      "summary": "10月13日16:15 ET，对应北京时间10月14日04:15。",
+      "impact": "可更新汇率和利率背景；日历不是实际结果。",
+      "status": "scheduled",
+      "sourceIds": [
+        "src-b3b5a8feee441c3342754e42"
+      ]
+    }
+  ],
+  "metrics": []
 }
