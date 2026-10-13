@@ -1,14 +1,16 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.macroFacts[0].asOf: asOf必须为有效精确时点或null [timestamp]",
+  "issues": [
+    "editorial.macroFacts[0].asOf: asOf必须为有效精确时点或null [timestamp]"
+  ],
   "execution": {
     "executionId": "20261013T120051Z-global-main",
     "generation": 87
   },
   "deadlineAt": "2026-10-13T12:21:04.147Z",
   "requestId": "20261013T120051Z-global-main",
-  "at": "2026-10-13T12:01:16.121Z",
+  "at": "2026-10-13T12:04:42.238Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +21,29 @@
       "status": "ready-for-analysis",
       "at": "2026-10-13T12:01:16.121Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-13T12:04:42.238Z",
+      "revision": 0
     }
   ],
   "packetHash": "357814b172517880405469e4e85e4405e44c4d04d7f35feee451fd6ea7f5cd6a",
-  "collectionDurationMs": 3347
+  "collectionDurationMs": 3347,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "3f1897b0c8ebf781d2122a4902df865958a1bbc8bd814c96b902ca046f0e4e3f",
+  "validationIssues": [
+    {
+      "path": "editorial.macroFacts[0].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261013T120051Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
