@@ -1,14 +1,19 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.macroFacts[0].asOf: asOf必须为有效精确时点或null [timestamp]\neditorial.macroFacts[1].asOf: asOf必须为有效精确时点或null [timestamp]\neditorial.report.marketCoverage: 必须覆盖BTC [market-coverage]\neditorial.report.marketCoverage: 必须覆盖黄金 [market-coverage]",
+  "issues": [
+    "editorial.macroFacts[0].asOf: asOf必须为有效精确时点或null [timestamp]",
+    "editorial.macroFacts[1].asOf: asOf必须为有效精确时点或null [timestamp]",
+    "editorial.report.marketCoverage: 必须覆盖BTC [market-coverage]",
+    "editorial.report.marketCoverage: 必须覆盖黄金 [market-coverage]"
+  ],
   "execution": {
     "executionId": "20261014T090437Z-global-main",
     "generation": 110
   },
   "deadlineAt": "2026-10-14T09:25:08.589Z",
   "requestId": "20261014T090437Z-global-main",
-  "at": "2026-10-14T09:05:28.953Z",
+  "at": "2026-10-14T09:08:47.382Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +24,44 @@
       "status": "ready-for-analysis",
       "at": "2026-10-14T09:05:28.953Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-14T09:08:47.382Z",
+      "revision": 0
     }
   ],
   "packetHash": "15fe200601f87a69b4eca6b1d47f1c02bed50a586aabb7ae9285f7464cf4e954",
-  "collectionDurationMs": 9651
+  "collectionDurationMs": 9651,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "9d47376c65efd31ce02c7428dc99b3af3d3ecd39818c70c0f24c92cfc43bb65e",
+  "validationIssues": [
+    {
+      "path": "editorial.macroFacts[0].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    },
+    {
+      "path": "editorial.macroFacts[1].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    },
+    {
+      "path": "editorial.report.marketCoverage",
+      "code": "market-coverage",
+      "message": "必须覆盖BTC"
+    },
+    {
+      "path": "editorial.report.marketCoverage",
+      "code": "market-coverage",
+      "message": "必须覆盖黄金"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261014T090437Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
