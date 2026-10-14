@@ -15,5 +15,22 @@ async function route(event,request){
  for(let page=1;page<=5;page++){const r=await request('GET','/commits/'+event.after+'?per_page=100&page='+page);if(r?.sha!==event.after||!Array.isArray(r.files))throw Error('Commit response does not match the event SHA');files.push(...r.files);if(r.files.length<100){finished=true;break;}}
  if(!finished)throw Error('Commit exceeds bounded routing scope');return select(files);
 }
-if(require.main===module){const store=new E.GitHubStore({repository:process.env.GITHUB_REPOSITORY});(async()=>{const event=JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH,'utf8')),r=await route(event,store.request.bind(store));console.log(JSON.stringify({routing:'pinned-commit-api',...r}));cp.execFileSync(process.execPath,['scripts/execution-cli.cjs',r.mode,r.id,String(r.revision||0)],{stdio:'inherit',timeout:240000,env:{...process.env,GDR_HANDOFF_REF:event.after}});})().catch(e=>{console.error(e.stack);process.exitCode=1;});}
-module.exports={route,select};
+// Local diagnostics are uploaded by the existing workflow, even when routing fails.
+// They are not a health heartbeat and never modify a lease, outcome or publication.
+function recordFailure(error,event,handoff,{out=process.env.GDR_EXECUTION_OUTPUT||'/tmp/gdr-execution',summary=process.env.GITHUB_STEP_SUMMARY,now=Date.now(),runId=process.env.GITHUB_RUN_ID}={}){
+ const path=require('node:path'),{details}=require('../lib/github-transport.cjs');
+ const failure={version:1,status:'failed',stage:handoff?'execution':'routing',at:new Date(now).toISOString(),workflowRunId:runId||null,commit:/^[0-9a-f]{40}$/.test(event?.after||'')?event.after:null,handoff:handoff||null,error:details(error),scope:'Workflow failure evidence only; not a task heartbeat or publication receipt'};
+ fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'entry-failure.json'),JSON.stringify(failure,null,2)+'\n');
+ if(summary)fs.appendFileSync(summary,'\n### GDR entry failure\n\n```json\n'+JSON.stringify(failure,null,2).replace(/`/g,'\\u0060')+'\n```\n');
+ return failure;
+}
+async function runEntry({readEvent,store,execute,record=recordFailure,log=console.log}){
+ let event=null,handoff=null;
+ try{event=readEvent();handoff=await route(event,store.request.bind(store));log(JSON.stringify({routing:'pinned-commit-api',...handoff}));return await execute(handoff,event.after);}
+ catch(error){try{record(error,event,handoff);}catch(diagnosticError){console.error('Unable to record entry diagnostic: '+diagnosticError.message);}throw error;}
+}
+if(require.main===module){
+ const store=new E.GitHubStore({repository:process.env.GITHUB_REPOSITORY});
+ runEntry({store,readEvent:()=>JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH,'utf8')),execute:(r,ref)=>cp.execFileSync(process.execPath,['scripts/execution-cli.cjs',r.mode,r.id,String(r.revision||0)],{stdio:'inherit',timeout:240000,env:{...process.env,GDR_HANDOFF_REF:ref}})}).catch(e=>{console.error(e.stack);process.exitCode=1;});
+}
+module.exports={route,select,recordFailure,runEntry};
