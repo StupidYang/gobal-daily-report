@@ -1,0 +1,1244 @@
+{
+  "execution": {
+    "executionId": "20261014T170857Z-global-main",
+    "generation": 118
+  },
+  "editorial": {
+    "packetHash": "e5a94933a15fd0905ceac609ed4e966787514440e13e9fbedf06a419c8a7df88",
+    "analyzedAt": "2026-10-14T17:10:10.664Z",
+    "report": {
+      "overview": "美股风险偏好继续降温：标普约跌1.10%、纳指约跌1.62%、纳指100约跌1.76%，罗素2000约跌1.86%，VIX升至约16.48；美元与高收益率仍构成折现压力。与此同时，BTC、ETH和黄金较上一小时回升，说明跨资产不是无差别抛售。WTI涨幅扩大至约1.80%，能源通胀仍是未来12–24小时最重要的宏观风险。",
+      "rolling24hSummary": "过去24小时，亚洲收盘表现为A股成长显著弱于宽基、港股科技相对抗跌；美国9月CPI环比0.6%、同比3.7%，实际平均时薪环比下降0.5%。至17:09Z，美股主要指数跌势较上一小时继续扩大，VIX上行，资管股普遍承压；BTC和ETH出现小时级反弹。18:00Z褐皮书、次日12:30Z PPI与16:00Z EIA周度石油报告是后续改判节点。",
+      "methodology": "采用本轮成功取得的全部9份官方/市场文档及31项核心资产、41家美股候选报价；各资产保留原asOf与交易状态。Fed、BLS、BEA、EIA日历仅证明未来事件，不当作结果。上一小时公司研究因eventKey冲突导致原子失败，本轮未复用或改写研究身份，researchRecords保持空数组并明确缺口。",
+      "coreAnalysis": {
+        "mainTheme": "热通胀与高折现率继续压制美股成长、小盘和资管股，油价走强提高后续成本扩散风险。",
+        "expectationGap": "核心CPI未继续加速，但总体CPI、能源与实际工资组合仍比温和通胀情景更差；美股跌幅与VIX继续扩大。",
+        "divergence": "股票与资管股偏弱，但BTC、ETH、黄金较上一小时回升，WTI上涨；苹果、NOW和ADBE仍为正。",
+        "regime": "高通胀、高名义收益率与有序风险降温并存，波动率上升但尚未失序。",
+        "priceIn": "成长、小盘、软件和多数资管股已部分计价更高折现率；能源资产计价近端价格压力。",
+        "bullCase": "褐皮书未显示价格压力扩散，美元和收益率回落，美股广度修复，BTC反弹得到风险资产确认。",
+        "bullInvalidation": "VIX继续跃升、美元与收益率走高，纳指和罗素2000扩大跌幅。",
+        "bearCase": "能源压力向生产端扩散，折现率维持高位，风险收缩从成长股延伸到信用与消费。",
+        "bearInvalidation": "PPI温和、EIA未显示库存紧张，WTI回落且美股主要指数收复跌幅。"
+      },
+      "plainLanguage": {
+        "verdict": "美股继续降温，但加密和黄金出现分化式反弹",
+        "bottomLine": "美股跌势与VIX进一步扩大，成长、小盘和资管股更弱；BTC、ETH与黄金则较上一小时回升。短线仍偏谨慎，但这不是所有资产同时崩跌。",
+        "whyNow": "同轮行情显示股票压力延续、油价走高，而褐皮书尚未发布；PPI和EIA库存仍是未来事件。",
+        "horizon": "未来12–24小时",
+        "confidence": "medium-high",
+        "invalidation": "若美元与收益率回落、美股广度显著改善，且褐皮书、PPI与EIA实际结果不支持压力扩散，则下调谨慎判断。",
+        "impacts": [
+          {
+            "asset": "A股",
+            "effect": "短线偏利空、成长更敏感",
+            "reason": "创业板约跌3.10%、科创50约跌3.29%，而外部美元和美债收益率仍高。",
+            "takeaway": "下一交易日先看成长止跌与人民币稳定性。",
+            "horizon": "下一交易日",
+            "counterRisk": "A股收盘早于美国数据，不能把当日跌幅归因于CPI。",
+            "invalidation": "成长指数显著修复并由资金流和行业广度确认。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:CN:SSE",
+              "INDEX:CN:CSI300",
+              "INDEX:CN:SZSE",
+              "INDEX:CN:CHINEXT",
+              "INDEX:CN:STAR50",
+              "FX:USDCNY",
+              "FX:USDCNH"
+            ]
+          },
+          {
+            "asset": "港股",
+            "effect": "相对抗跌但待次日复核",
+            "reason": "恒生科技当日约涨0.91%，收盘早于美国数据与美股调整。",
+            "takeaway": "相对强势需在下一交易日接受外部利率和科技股压力验证。",
+            "horizon": "下一交易日",
+            "counterRisk": "强美元可能压制港股估值。",
+            "invalidation": "恒生科技明显补跌且离岸人民币继续走弱。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "INDEX:HK:HSI",
+              "INDEX:HK:HSCEI",
+              "INDEX:HK:HSTECH",
+              "FX:USDCNH"
+            ]
+          },
+          {
+            "asset": "美股",
+            "effect": "偏空，成长、小盘与资管更弱",
+            "reason": "标普约跌1.10%、纳指约跌1.62%、纳指100约跌1.76%、罗素2000约跌1.86%，VIX约涨7.92%。",
+            "takeaway": "风险降温仍在扩大，但道指跌幅较小、苹果与少数软件为正，尚非无差别抛售。",
+            "horizon": "本交易日及未来24小时",
+            "counterRisk": "报价为盘中延迟快照，不能替代收盘。",
+            "invalidation": "纳指与罗素2000收复大部分跌幅且广度改善。",
+            "confidence": "high",
+            "evidenceFactIds": [
+              "INDEX:US:SP500",
+              "INDEX:US:NASDAQ",
+              "INDEX:US:NDX",
+              "INDEX:US:DOW",
+              "INDEX:US:RUSSELL2000",
+              "VOL:VIX",
+              "RATE:US10Y"
+            ]
+          },
+          {
+            "asset": "BTC",
+            "effect": "币价反弹但相关股票仍弱",
+            "reason": "BTC约81,917美元、ETH约2,445美元，较上一小时回升；COIN与MSTR仍分别约跌4.26%和4.88%。",
+            "takeaway": "现货反弹未被股票映射完全确认，缺ETF流量和OI，暂不写成趋势反转。",
+            "horizon": "未来6–24小时",
+            "counterRisk": "单一交易所快照不代表全市场均价。",
+            "invalidation": "BTC再度下探且美元、收益率走高，或相关股票继续扩大跌幅。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "CRYPTO:BTC:USD",
+              "CRYPTO:ETH:USD",
+              "CRYPTO:SOL:USD",
+              "EQUITY:US:COIN",
+              "EQUITY:US:MSTR",
+              "FX:DXY",
+              "RATE:US10Y"
+            ]
+          },
+          {
+            "asset": "黄金",
+            "effect": "高位震荡、白银更弱",
+            "reason": "黄金约4,082美元、白银约55.71美元；美元指数约102.83、10年期收益率约5.236%。",
+            "takeaway": "避险与通胀支撑被强美元和高利率抵消。",
+            "horizon": "未来12–24小时",
+            "counterRisk": "缺统一同源涨跌、实际利率和持仓数据。",
+            "invalidation": "美元、收益率回落且金银同步回升。",
+            "confidence": "medium-low",
+            "evidenceFactIds": [
+              "METAL:XAUUSD",
+              "METAL:XAGUSD",
+              "FX:DXY",
+              "RATE:US10Y"
+            ]
+          },
+          {
+            "asset": "原油",
+            "effect": "偏强，能源通胀风险继续上升",
+            "reason": "WTI约95.83美元、日内约涨1.80%；9月CPI能源分项环比涨5.2%。",
+            "takeaway": "油价继续走高会提高运输、消费与政策压力。",
+            "horizon": "未来数日",
+            "counterRisk": "Brent端点失败，库存实际结果和期限结构缺失。",
+            "invalidation": "WTI回落且PPI、EIA实际结果不确认成本或供需紧张。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "ENERGY:WTI"
+            ],
+            "sourceUrls": [
+              "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+              "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "asset": "A股",
+          "name": "A股",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T08:29:52.000Z",
+          "summary": "上证约跌0.79%、沪深300约跌1.36%，深证约跌2.21%，创业板与科创50跌幅超过3%。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50"
+          ]
+        },
+        {
+          "asset": "港股",
+          "name": "港股",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T08:08:48.000Z",
+          "summary": "恒指和国企指数约涨0.18%，恒生科技约涨0.91%；均为美国数据前收盘。",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSCEI",
+            "INDEX:HK:HSTECH"
+          ]
+        },
+        {
+          "asset": "美股",
+          "name": "美股",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T17:09:26.000Z",
+          "summary": "标普约跌1.10%、纳指约跌1.62%、纳指100约跌1.76%、罗素2000约跌1.86%，道指约跌0.35%。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "asset": "BTC",
+          "name": "BTC",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T17:09:27.252Z",
+          "summary": "BTC约81,917美元、ETH约2,445美元、SOL约104.95美元；缺统一24小时基线。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD"
+          ]
+        },
+        {
+          "asset": "黄金",
+          "name": "黄金",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T17:09:26.000Z",
+          "summary": "黄金约4,082美元、白银约55.71美元；缺统一涨跌和实际利率。",
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "asset": "原油",
+          "name": "原油",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T16:59:25.000Z",
+          "summary": "WTI约95.83美元、日内约涨1.80%；Brent端点HTTP 404。",
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ]
+        }
+      ],
+      "deepDive": [
+        {
+          "name": "A股",
+          "asset": "A股",
+          "title": "A股：成长显著弱于宽基",
+          "oneLine": "成长风格对风险溢价变化更敏感。",
+          "analysis": "上证约跌0.79%、沪深300约跌1.36%，深证约跌2.21%，创业板与科创50分别约跌3.10%和3.29%；均收盘于美国数据前。",
+          "mechanism": "成长股远期现金流占比更高，风险溢价、流动性和外部折现率影响更大。",
+          "risk": "缺资金流、成交结构与完整行业宽度。",
+          "invalidation": "成长指数次日显著修复并由成交、资金流与行业广度确认。",
+          "horizon": "下一交易日",
+          "factIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "FX:USDCNY"
+          ],
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "FX:USDCNY"
+          ]
+        },
+        {
+          "name": "港股",
+          "asset": "港股",
+          "title": "港股：日内相对强，仍待外部冲击复核",
+          "oneLine": "恒生科技跑赢A股成长，但时序早于美国数据。",
+          "analysis": "恒指与国企指数约涨0.18%，恒生科技约涨0.91%；美国常规时段风险偏好随后走弱。",
+          "mechanism": "港股科技同时受中国风险偏好、美元利率与离岸人民币影响。",
+          "risk": "缺南向资金、完整行业宽度和成分归因。",
+          "invalidation": "下一交易日恒生科技补跌且离岸人民币继续走弱。",
+          "horizon": "下一交易日",
+          "factIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSCEI",
+            "INDEX:HK:HSTECH",
+            "FX:USDCNH"
+          ],
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSCEI",
+            "INDEX:HK:HSTECH",
+            "FX:USDCNH"
+          ]
+        },
+        {
+          "name": "美股",
+          "asset": "美股",
+          "title": "美股：主要指数继续走弱，VIX升至约16.48",
+          "oneLine": "成长、小盘和多数资管股弱于大盘。",
+          "analysis": "标普约跌1.10%、纳指约跌1.62%、纳指100约跌1.76%、罗素2000约跌1.86%，道指约跌0.35%；AMD约跌5.44%、ORCL约跌7.32%，苹果约涨0.82%。",
+          "mechanism": "热通胀抬高政策利率和折现率预期，高久期与融资敏感资产更易承压。",
+          "risk": "盘中延迟快照不能代表收盘；完整广度与资金流缺失。",
+          "invalidation": "纳指与罗素2000收复大部分跌幅，收益率、美元回落且广度改善。",
+          "horizon": "本交易日及未来24小时",
+          "factIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "EQUITY:US:AAPL",
+            "EQUITY:US:AMD",
+            "EQUITY:US:ORCL",
+            "RATE:US10Y",
+            "FX:DXY",
+            "VOL:VIX"
+          ],
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "EQUITY:US:AAPL",
+            "EQUITY:US:AMD",
+            "EQUITY:US:ORCL",
+            "RATE:US10Y",
+            "FX:DXY",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "name": "BTC",
+          "asset": "BTC",
+          "title": "BTC：现货反弹，股票映射仍偏弱",
+          "oneLine": "币价较上一小时回升，但COIN与MSTR仍跌近5%。",
+          "analysis": "BTC约81,917美元、ETH约2,445美元、SOL约104.95美元；COIN约跌4.26%、MSTR约跌4.88%。",
+          "mechanism": "强美元与高收益率提高非收益资产机会成本，但数字资产现货存在独立买盘。",
+          "risk": "单一交易所快照不代表全市场，缺ETF流量、成交量与OI。",
+          "invalidation": "BTC与ETH重新转弱且相关股票继续扩大跌幅。",
+          "horizon": "未来6–24小时",
+          "factIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD",
+            "EQUITY:US:COIN",
+            "EQUITY:US:MSTR",
+            "FX:DXY",
+            "RATE:US10Y"
+          ],
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD",
+            "EQUITY:US:COIN",
+            "EQUITY:US:MSTR",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "name": "黄金",
+          "asset": "黄金",
+          "title": "黄金：高位支撑与高利率压力拉扯",
+          "oneLine": "黄金小幅回升，白银继续偏弱。",
+          "analysis": "黄金约4,082美元、白银约55.71美元；美元指数约102.833、10年期收益率约5.236%。",
+          "mechanism": "避险和通胀支撑黄金，但强美元和高实际利率预期压制贵金属；白银还受增长预期影响。",
+          "risk": "缺实时实际利率、统一涨跌基线和持仓/流量。",
+          "invalidation": "美元与收益率回落、金银同步回升，或二者继续走强而黄金失守。",
+          "horizon": "未来12–24小时",
+          "factIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ],
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "name": "原油",
+          "asset": "原油",
+          "title": "原油：WTI涨幅继续扩大，库存仍是未来事件",
+          "oneLine": "价格压力已确认，库存方向尚未发布。",
+          "analysis": "WTI约95.83美元、日内约涨1.80%；BLS显示9月能源指数环比涨5.2%、汽油涨9.1%。EIA周度报告在10月15日发布。",
+          "mechanism": "油价通过汽油、运输与投入成本影响通胀和家庭预算；库存意外会改变近端供需判断。",
+          "risk": "Brent返回HTTP 404；库存实际值、期限结构和资金流缺失。",
+          "invalidation": "WTI回落且PPI与EIA结果不支持成本或供需紧张。",
+          "horizon": "未来数日",
+          "factIds": [
+            "ENERGY:WTI"
+          ],
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ],
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+            "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+          ]
+        }
+      ],
+      "marketCoverage": [
+        {
+          "market": "A股",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T08:29:52.000Z",
+          "coverage": "上证、沪深300、深证、创业板、科创50与中证500。",
+          "gaps": "资金流、完整行业榜和成交结构。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50"
+          ]
+        },
+        {
+          "market": "港股",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T08:08:48.000Z",
+          "coverage": "恒指、国企指数与恒生科技。",
+          "gaps": "南向资金、完整行业宽度和成分归因。",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSCEI",
+            "INDEX:HK:HSTECH"
+          ]
+        },
+        {
+          "market": "美股",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T17:09:26.000Z",
+          "coverage": "美国常规时段主要宽基、41家候选个股、美元、10年期收益率与VIX延迟报价。",
+          "gaps": "实时全市场广度、完整资金流和行业排名。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "market": "BTC",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T17:09:27.252Z",
+          "coverage": "BTC、ETH、SOL单场所现价及COIN/MSTR行情。",
+          "gaps": "统一24小时涨跌、成交量、OI与ETF资金流。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD"
+          ]
+        },
+        {
+          "market": "黄金",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T17:09:26.000Z",
+          "coverage": "黄金、白银快照及美元/收益率参照。",
+          "gaps": "统一涨跌、实时实际利率、持仓和资金流。",
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "market": "原油",
+          "status": "partial",
+          "dataAsOf": "2026-10-14T16:59:25.000Z",
+          "coverage": "WTI延迟报价、BLS能源分项及EIA官方日历。",
+          "gaps": "Brent HTTP 404、库存实际值、期限结构和资金流。",
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ]
+        }
+      ],
+      "frameworkAnalysis": [
+        {
+          "id": "fw-inflation-income-118",
+          "framework": "通胀与实际收入",
+          "concept": "同时看物价和实际工资，区分名义冲击与居民购买力。",
+          "applicability": "适用于本轮BLS正式数据。",
+          "observed": "CPI环比0.6%、同比3.7%，能源环比5.2%；实际平均时薪环比-0.5%、同比-0.7%。",
+          "mechanism": "物价增速超过名义工资时实际购买力下降，能源会向运输与投入成本传导。",
+          "conclusion": "宏观组合对消费购买力和高估值资产偏不利。",
+          "assumptions": "单月能源冲击未必持续，数据可修订。",
+          "counterEvidence": "核心CPI环比0.3%，未较8月继续加速。",
+          "horizon": "未来1–3个月；市场反应6–24小时",
+          "invalidation": "能源回落、实际工资恢复，或市场快速逆转。",
+          "confidence": "high on facts, medium on transmission",
+          "missingData": "消费高频与后续修订。",
+          "evidenceFactIds": [
+            "RATE:US10Y",
+            "FX:DXY"
+          ],
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+            "https://www.bls.gov/news.release/realer.htm"
+          ]
+        },
+        {
+          "id": "fw-duration-118",
+          "framework": "现金流折现与利率传导",
+          "concept": "折现率上升时，远期现金流权重更高的资产估值更敏感。",
+          "applicability": "适用于成长股、小盘、软件和资管股。",
+          "observed": "纳指100约跌1.76%、罗素2000约跌1.86%，VIX约涨7.92%，美元约涨0.64%、10年期收益率约5.236%。",
+          "mechanism": "较高无风险利率与融资成本压低久期资产现值。",
+          "conclusion": "盘中反应仍符合折现率冲击集中于高久期和融资敏感资产。",
+          "assumptions": "延迟报价可作同轮方向比较。",
+          "counterEvidence": "苹果、NOW、ADBE和欧洲大盘仍为正，10年期收益率较上一小时略回落。",
+          "horizon": "本交易日到未来24小时",
+          "invalidation": "收益率与美元回落，成长和小盘收复跌幅。",
+          "confidence": "medium-high",
+          "missingData": "实时实际利率、完整广度和资金流。",
+          "evidenceFactIds": [
+            "INDEX:US:NDX",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "EQUITY:US:AAPL",
+            "EQUITY:US:NOW",
+            "EQUITY:US:ADBE",
+            "RATE:US10Y",
+            "FX:DXY"
+          ],
+          "sourceUrls": []
+        },
+        {
+          "id": "fw-cross-asset-118",
+          "framework": "跨资产风险传导",
+          "concept": "比较股票、加密、贵金属、原油、美元与利率，识别共同因子与局部分化。",
+          "applicability": "适用于本轮同步行情。",
+          "observed": "美股与资管股继续走弱，BTC/ETH反弹，WTI涨幅扩大，黄金小幅回升、白银偏弱。",
+          "mechanism": "美元和收益率构成共同折现约束，油价受供需与通胀预期驱动，加密现货存在独立流动性。",
+          "conclusion": "共同risk-off仍在，但跨资产并非单一方向，币价反弹和油价走强是重要分化。",
+          "assumptions": "离散快照仅用于方向比较，不插值为连续路径。",
+          "counterEvidence": "BTC和黄金较上一小时回升。",
+          "horizon": "未来6–24小时",
+          "invalidation": "美股广度修复且VIX回落，或BTC反弹失败并与股票同步转弱。",
+          "confidence": "medium",
+          "missingData": "ETF流量、期货持仓、油品库存和实时实际利率。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "VOL:VIX",
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "ENERGY:WTI",
+            "FX:DXY",
+            "RATE:US10Y"
+          ],
+          "sourceUrls": []
+        },
+        {
+          "id": "fw-scenario-118",
+          "framework": "证据更新与情景分析",
+          "concept": "把事实、推断、风险与改判条件分开，随新证据调整权重。",
+          "applicability": "适用于CPI、褐皮书、PPI与EIA连续事件。",
+          "observed": "CPI和盘中价格已确认谨慎方向；褐皮书、PPI和EIA库存仍是未来节点。",
+          "mechanism": "后续证据决定能源冲击是暂时、扩散还是被需求走弱抵消。",
+          "conclusion": "当前偏谨慎，但跨资产分化仍不支持全面恐慌判断。",
+          "assumptions": "官方日历按计划发布。",
+          "counterEvidence": "BTC与黄金回升，部分美股和欧洲大盘仍为正。",
+          "horizon": "未来12–24小时",
+          "invalidation": "褐皮书未显示价格扩散、PPI温和、EIA未显示库存紧张且市场修复。",
+          "confidence": "medium",
+          "missingData": "三项未来事件的实际结果。",
+          "evidenceFactIds": [
+            "VOL:VIX"
+          ],
+          "sourceUrls": [
+            "https://www.federalreserve.gov/newsevents/2026-october.htm",
+            "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm",
+            "https://www.bls.gov/ppi/",
+            "https://www.bls.gov/schedule/2026/10_sched.htm",
+            "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+          ]
+        }
+      ],
+      "frameworkSynthesis": {
+        "verdict": "通胀/收入、折现率和美股广度框架共同偏谨慎；跨资产框架提示BTC与黄金反弹，风险并非单向扩散。",
+        "agreement": "BLS正式数据、美股主要指数、VIX与WTI都支持通胀和折现率压力仍在。",
+        "disagreement": "加密现货与黄金较上一小时回升，部分个股和欧洲大盘仍为正，说明不是全面去杠杆。",
+        "weighting": "BLS正式数据和同轮市场报价权重最高；官方日历仅作未来触发器；未核验公司研究不参与结论。",
+        "invalidation": "美元和收益率回落、美股广度修复，且褐皮书、PPI和EIA实际结果均不支持压力扩散。"
+      },
+      "watch": [
+        {
+          "point": "美股广度与风格",
+          "detail": "观察纳指100、罗素2000、资管股能否收复跌幅，以及少数强势软件能否带动广度。"
+        },
+        {
+          "point": "VIX",
+          "detail": "当前约16.48且约涨7.92%；继续跃升并伴随广度恶化才支持全面risk-off。"
+        },
+        {
+          "point": "美元与10年期收益率",
+          "detail": "若二者重新同步上行，成长、加密和贵金属压力可能扩大。"
+        },
+        {
+          "point": "美联储褐皮书",
+          "detail": "北京时间10月15日02:00（18:00Z）发布，核对价格、劳动力、消费和信贷。"
+        },
+        {
+          "point": "美国PPI",
+          "detail": "北京时间10月15日20:30（12:30Z）发布，检验能源冲击是否进入生产端。"
+        },
+        {
+          "point": "EIA周度石油报告",
+          "detail": "北京时间10月16日00:00（10月15日16:00Z）起发布；日历不代表库存方向。"
+        },
+        {
+          "point": "亚洲次日反馈",
+          "detail": "观察人民币、A股成长与港股科技能否吸收美国市场压力。"
+        }
+      ],
+      "dataDefinitions": [
+        {
+          "term": "previous",
+          "definition": "上一已完成交易时段或较早的有效观测，不等同当前盘中实时值。"
+        },
+        {
+          "term": "delayed",
+          "definition": "已成功取得但相对市场当前时钟存在延迟的报价。"
+        },
+        {
+          "term": "snapshot",
+          "definition": "单一端点当前价格锚；没有同口径基线时不计算或补造涨跌。"
+        },
+        {
+          "term": "partial",
+          "definition": "已取得部分有效证据，但关键字段、市场层级或来源仍有明确缺口。"
+        },
+        {
+          "term": "小时反弹",
+          "definition": "相对上一份已发布或采集快照的方向变化，不等同完整24小时趋势。"
+        },
+        {
+          "term": "事件日历",
+          "definition": "官方计划发布时间，仅证明未来节点，不代表结果已经发布。"
+        }
+      ],
+      "recentChanges": [
+        {
+          "title": "美股跌势再扩大",
+          "detail": "较上一小时，标普由约-1.01%扩大至-1.10%，纳指由约-1.52%扩大至-1.62%，罗素2000由约-1.63%扩大至-1.86%。",
+          "at": "2026-10-14T17:09:26.000Z",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:RUSSELL2000"
+          ]
+        },
+        {
+          "title": "VIX升幅扩大",
+          "detail": "VIX约16.48、日内约涨7.92%，高于上一小时约16.15。",
+          "at": "2026-10-14T16:54:16.000Z",
+          "evidenceFactIds": [
+            "VOL:VIX"
+          ]
+        },
+        {
+          "title": "WTI继续走高",
+          "detail": "WTI约95.83美元、日内约涨1.80%，涨幅高于上一小时。",
+          "at": "2026-10-14T16:59:25.000Z",
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ]
+        },
+        {
+          "title": "加密现货反弹",
+          "detail": "BTC约81,917美元、ETH约2,445美元、SOL约104.95美元，均高于上一小时快照。",
+          "at": "2026-10-14T17:09:27.252Z",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD"
+          ]
+        },
+        {
+          "title": "三类未来官方事件已核验",
+          "detail": "褐皮书、PPI与EIA周度石油报告均按官方日历列入观察；BEA未来24小时无新发布。",
+          "at": "2026-10-14T17:10:10.664Z",
+          "sourceUrls": [
+            "https://www.federalreserve.gov/newsevents/2026-october.htm",
+            "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm",
+            "https://www.bls.gov/ppi/",
+            "https://www.bls.gov/schedule/2026/10_sched.htm",
+            "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+            "https://www.bea.gov/news/schedule/"
+          ]
+        }
+      ],
+      "changes": [
+        {
+          "title": "美股跌势再扩大",
+          "detail": "较上一小时，标普由约-1.01%扩大至-1.10%，纳指由约-1.52%扩大至-1.62%，罗素2000由约-1.63%扩大至-1.86%。",
+          "at": "2026-10-14T17:09:26.000Z",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:RUSSELL2000"
+          ]
+        },
+        {
+          "title": "VIX升幅扩大",
+          "detail": "VIX约16.48、日内约涨7.92%，高于上一小时约16.15。",
+          "at": "2026-10-14T16:54:16.000Z",
+          "evidenceFactIds": [
+            "VOL:VIX"
+          ]
+        },
+        {
+          "title": "WTI继续走高",
+          "detail": "WTI约95.83美元、日内约涨1.80%，涨幅高于上一小时。",
+          "at": "2026-10-14T16:59:25.000Z",
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ]
+        },
+        {
+          "title": "加密现货反弹",
+          "detail": "BTC约81,917美元、ETH约2,445美元、SOL约104.95美元，均高于上一小时快照。",
+          "at": "2026-10-14T17:09:27.252Z",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD"
+          ]
+        },
+        {
+          "title": "三类未来官方事件已核验",
+          "detail": "褐皮书、PPI与EIA周度石油报告均按官方日历列入观察；BEA未来24小时无新发布。",
+          "at": "2026-10-14T17:10:10.664Z",
+          "sourceUrls": [
+            "https://www.federalreserve.gov/newsevents/2026-october.htm",
+            "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm",
+            "https://www.bls.gov/ppi/",
+            "https://www.bls.gov/schedule/2026/10_sched.htm",
+            "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+            "https://www.bea.gov/news/schedule/"
+          ]
+        }
+      ],
+      "evolution24h": [
+        {
+          "title": "亚洲交易日收盘",
+          "detail": "A股成长明显弱于宽基，港股科技小幅上涨；均早于美国数据。",
+          "at": "2026-10-14T08:29:52.000Z",
+          "evidenceFactIds": [
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:HK:HSTECH"
+          ]
+        },
+        {
+          "title": "美国CPI与实际收入发布",
+          "detail": "总体CPI环比0.6%、同比3.7%，实际平均时薪环比下降0.5%。",
+          "at": "2026-10-14T12:30:00Z",
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+            "https://www.bls.gov/news.release/realer.htm"
+          ]
+        },
+        {
+          "title": "美股风险偏好持续走弱",
+          "detail": "至17:09Z，标普约跌1.10%、纳指约跌1.62%，纳指100和罗素2000跌幅接近或超过1.8%。",
+          "at": "2026-10-14T17:09:26.000Z",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "title": "加密现货出现小时级反弹",
+          "detail": "BTC、ETH与SOL均高于上一小时快照，但COIN与MSTR仍弱。",
+          "at": "2026-10-14T17:09:27.252Z",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD",
+            "EQUITY:US:COIN",
+            "EQUITY:US:MSTR"
+          ]
+        },
+        {
+          "title": "WTI涨幅扩大",
+          "detail": "WTI约95.83美元、日内约涨1.80%；库存方向尚待EIA实际结果。",
+          "at": "2026-10-14T16:59:25.000Z",
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ],
+          "sourceUrls": [
+            "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+          ]
+        }
+      ],
+      "narrativeTriggers": [
+        {
+          "title": "褐皮书未显示价格扩散",
+          "effect": "降低能源冲击向更广泛服务价格传导的权重。"
+        },
+        {
+          "title": "PPI超预期",
+          "effect": "提高生产端成本扩散与高利率维持更久的权重。"
+        },
+        {
+          "title": "EIA库存意外下降",
+          "effect": "强化原油近端供需紧张与能源通胀风险。"
+        },
+        {
+          "title": "美元和收益率同步回落",
+          "effect": "缓解成长、加密与贵金属的折现压力。"
+        },
+        {
+          "title": "VIX继续跃升且广度恶化",
+          "effect": "把当前有序调整升级为更广泛risk-off。"
+        }
+      ],
+      "analysisTheses": [
+        {
+          "title": "能源通胀继续主导短线风险",
+          "detail": "CPI能源环比5.2%、WTI约涨1.80%，与美元和高收益率共同约束风险资产。",
+          "status": "active",
+          "sourceUrls": [
+            "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+          ],
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "RATE:US10Y",
+            "FX:DXY"
+          ]
+        },
+        {
+          "title": "美股风险收缩仍在扩大",
+          "detail": "标普、纳指、道指和罗素2000均为负，VIX升幅扩大。",
+          "status": "active",
+          "sourceUrls": [],
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "title": "加密现货与股票映射分化",
+          "detail": "BTC、ETH、SOL反弹，但COIN与MSTR仍跌近5%。",
+          "status": "active",
+          "sourceUrls": [],
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD",
+            "EQUITY:US:COIN",
+            "EQUITY:US:MSTR"
+          ]
+        },
+        {
+          "title": "尚未确认全面恐慌",
+          "detail": "VIX约16.48，苹果、NOW、ADBE和欧洲大盘仍为正。",
+          "status": "active",
+          "sourceUrls": [],
+          "evidenceFactIds": [
+            "VOL:VIX",
+            "EQUITY:US:AAPL",
+            "EQUITY:US:NOW",
+            "EQUITY:US:ADBE",
+            "INDEX:EU:STOXX50"
+          ]
+        }
+      ],
+      "judgmentRevisions": [
+        {
+          "title": "美股谨慎判断再上调",
+          "detail": "主要指数跌幅和VIX升幅较上一小时进一步扩大。",
+          "at": "2026-10-14T17:09:26.000Z",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "title": "加密判断从继续下移改为小时级反弹",
+          "detail": "BTC、ETH与SOL高于上一小时快照，但相关股票仍弱，未升级为趋势反转。",
+          "at": "2026-10-14T17:09:27.252Z",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "CRYPTO:SOL:USD",
+            "EQUITY:US:COIN",
+            "EQUITY:US:MSTR"
+          ]
+        },
+        {
+          "title": "能源风险权重继续上调",
+          "detail": "WTI日内涨幅扩大至约1.80%，EIA库存结果仍在未来。",
+          "at": "2026-10-14T16:59:25.000Z",
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ],
+          "sourceUrls": [
+            "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+          ]
+        }
+      ],
+      "worldEvents": [
+        {
+          "id": "fed-beige-book-20261014",
+          "title": "美联储褐皮书",
+          "at": "2026-10-14T18:00:00Z",
+          "region": "US",
+          "type": "macro-release",
+          "status": "scheduled",
+          "note": "Fed官方日历列示14:00 ET；截至分析时点尚未发布。",
+          "sourceUrls": [
+            "https://www.federalreserve.gov/newsevents/2026-october.htm",
+            "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm"
+          ]
+        },
+        {
+          "id": "bls-ppi-20261015",
+          "title": "美国9月PPI",
+          "at": "2026-10-15T12:30:00Z",
+          "region": "US",
+          "type": "macro-release",
+          "status": "scheduled",
+          "note": "BLS官方页面与日历列示08:30 ET；日历不是结果。",
+          "sourceUrls": [
+            "https://www.bls.gov/ppi/",
+            "https://www.bls.gov/schedule/2026/10_sched.htm"
+          ]
+        },
+        {
+          "id": "eia-wpsr-20261015",
+          "title": "EIA周度石油报告",
+          "at": "2026-10-15T16:00:00Z",
+          "region": "US",
+          "type": "energy-release",
+          "status": "scheduled",
+          "note": "EIA假日安排列示12:00 ET起发布；日历不是库存结果。",
+          "sourceUrls": [
+            "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+          ]
+        }
+      ],
+      "sectionGaps": {
+        "news": {
+          "reason": "本轮成功取得9份官方/市场文档与行情；CN与WORLD独立综合新闻仍不足。"
+        },
+        "funds": {
+          "reason": "未取得跨市场可比、可验证的完整资金流。"
+        },
+        "industry": {
+          "reason": "未取得A股、港股和美股完整行业宽度与排名；候选个股不能充当全行业榜。"
+        },
+        "research": {
+          "reason": "本轮没有合格的新公司事件原文研究，researchRecords保持空数组；上一小时重复eventKey已导致原子拒绝，本轮不复用。"
+        },
+        "energy": {
+          "reason": "Brent端点HTTP 404；EIA库存实际值尚未发布，期限结构与资金流缺失。"
+        }
+      },
+      "metrics": []
+    },
+    "newsItems": [
+      {
+        "eventId": "bls-cpi-sep-2026",
+        "title": "美国9月CPI环比升0.6%、同比升3.7%",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "summary": "BLS正式发布显示9月CPI环比0.6%、同比3.7%；核心CPI环比0.3%、同比2.6%，能源环比5.2%、汽油环比9.1%。",
+        "plainImpact": "能源推动物价加速，增加生活成本与政策利率压力。",
+        "assessment": "正式结果；是否持续仍需PPI与后续数据。",
+        "publishedAt": "2026-10-14T12:30:00Z",
+        "eventAt": "2026-10-14T12:30:00Z",
+        "sourceDateText": "8:30 a.m. ET Wednesday, October 14, 2026",
+        "dateUncertainty": "BLS官方发布时间明确。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+        ]
+      },
+      {
+        "eventId": "bls-real-earnings-sep-2026",
+        "title": "美国9月实际平均时薪环比下降0.5%",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "summary": "BLS显示实际平均时薪环比下降0.5%、同比下降0.7%。",
+        "plainImpact": "工资购买力下降会压缩家庭预算。",
+        "assessment": "实际收入和热通胀同时出现，宏观组合偏谨慎。",
+        "publishedAt": "2026-10-14T12:30:00Z",
+        "eventAt": "2026-10-14T12:30:00Z",
+        "sourceDateText": "8:30 a.m. ET Wednesday, October 14, 2026",
+        "dateUncertainty": "BLS官方发布时间明确。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/realer.htm"
+        ]
+      },
+      {
+        "eventId": "us-session-post-cpi-20261014-1709",
+        "title": "美股主要指数跌幅与VIX升幅继续扩大",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "summary": "约17:09Z，标普约跌1.10%、纳指约跌1.62%、纳指100约跌1.76%、罗素2000约跌1.86%，VIX约涨7.92%。",
+        "plainImpact": "风险降温进一步扩大，但仍有少数个股逆势上涨。",
+        "assessment": "盘中延迟报价，不代表收盘。",
+        "publishedAt": null,
+        "eventAt": "2026-10-14T17:09:26.000Z",
+        "sourceDateText": "2026-10-14美国常规时段延迟行情",
+        "dateUncertainty": "事件时点取行情源asOf。",
+        "sourceUrls": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
+          "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
+          "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
+          "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m"
+        ]
+      },
+      {
+        "eventId": "crypto-hourly-rebound-20261014-1709",
+        "title": "BTC与ETH较上一小时反弹，相关股票仍弱",
+        "regions": [
+          "US",
+          "WORLD"
+        ],
+        "kind": "market",
+        "summary": "BTC约81,917美元、ETH约2,445美元、SOL约104.95美元；COIN与MSTR仍跌约4%至5%。",
+        "plainImpact": "现货反弹显示风险并非单向，但股票映射未确认趋势反转。",
+        "assessment": "缺ETF流量与统一24小时基线。",
+        "publishedAt": null,
+        "eventAt": "2026-10-14T17:09:27.252Z",
+        "sourceDateText": "2026-10-14跨资产端点快照",
+        "dateUncertainty": "各资产保留独立asOf。",
+        "sourceUrls": [
+          "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
+          "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
+          "https://api.exchange.coinbase.com/products/SOL-USD/ticker"
+        ]
+      },
+      {
+        "eventId": "energy-risk-20261014-1659",
+        "title": "WTI日内涨幅扩大至约1.8%",
+        "regions": [
+          "US",
+          "WORLD"
+        ],
+        "kind": "market",
+        "summary": "WTI约95.83美元、日内约涨1.80%；Brent端点仍失败。",
+        "plainImpact": "油价走强提高运输、消费与生产成本压力。",
+        "assessment": "EIA库存数据仍是未来事件，不能解释为已确认的库存紧张。",
+        "publishedAt": null,
+        "eventAt": "2026-10-14T16:59:25.000Z",
+        "sourceDateText": "2026-10-14 WTI延迟行情",
+        "dateUncertainty": "事件时点取行情源asOf。",
+        "sourceUrls": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m"
+        ]
+      }
+    ],
+    "newsCoverage": {
+      "status": "partial",
+      "note": "成功取得BLS正式发布、Fed/BLS/BEA/EIA官方日历、美国财政部曲线页及CN/US/WORLD行情；独立综合新闻和公司研究不足。",
+      "regions": {
+        "CN": "A股与港股收盘行情；缺独立综合新闻。",
+        "US": "CPI、实际收入、美股盘中、利率、美元、原油及未来官方事件。",
+        "WORLD": "欧洲、加密、贵金属与原油行情；独立综合新闻不足。"
+      },
+      "gaps": [
+        "独立综合新闻不足",
+        "跨市场资金流不足",
+        "完整行业宽度缺失",
+        "本轮无合格新公司研究",
+        "Brent端点失败"
+      ]
+    },
+    "macroFacts": [
+      {
+        "id": "US_CPI_MOM_2026_09",
+        "label": "美国CPI环比",
+        "value": 0.6,
+        "unit": "%",
+        "asOf": "2026-10-14T12:30:00Z",
+        "note": "2026年9月，季调后。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+        ]
+      },
+      {
+        "id": "US_CPI_YOY_2026_09",
+        "label": "美国CPI同比",
+        "value": 3.7,
+        "unit": "%",
+        "asOf": "2026-10-14T12:30:00Z",
+        "note": "2026年9月，未季调。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+        ]
+      },
+      {
+        "id": "US_CORE_CPI_MOM_2026_09",
+        "label": "美国核心CPI环比",
+        "value": 0.3,
+        "unit": "%",
+        "asOf": "2026-10-14T12:30:00Z",
+        "note": "扣除食品和能源，季调后。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+        ]
+      },
+      {
+        "id": "US_CORE_CPI_YOY_2026_09",
+        "label": "美国核心CPI同比",
+        "value": 2.6,
+        "unit": "%",
+        "asOf": "2026-10-14T12:30:00Z",
+        "note": "扣除食品和能源。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+        ]
+      },
+      {
+        "id": "US_CPI_ENERGY_MOM_2026_09",
+        "label": "美国CPI能源分项环比",
+        "value": 5.2,
+        "unit": "%",
+        "asOf": "2026-10-14T12:30:00Z",
+        "note": "2026年9月。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+        ]
+      },
+      {
+        "id": "US_CPI_GASOLINE_MOM_2026_09",
+        "label": "美国CPI汽油分项环比",
+        "value": 9.1,
+        "unit": "%",
+        "asOf": "2026-10-14T12:30:00Z",
+        "note": "2026年9月。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+        ]
+      },
+      {
+        "id": "US_REAL_AVG_HOURLY_EARNINGS_MOM_2026_09",
+        "label": "美国实际平均时薪环比",
+        "value": -0.5,
+        "unit": "%",
+        "asOf": "2026-10-14T12:30:00Z",
+        "note": "全体员工，季调后。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/realer.htm"
+        ]
+      },
+      {
+        "id": "US_REAL_AVG_HOURLY_EARNINGS_YOY_2026_09",
+        "label": "美国实际平均时薪同比",
+        "value": -0.7,
+        "unit": "%",
+        "asOf": "2026-10-14T12:30:00Z",
+        "note": "全体员工，季调后。",
+        "sourceUrls": [
+          "https://www.bls.gov/news.release/realer.htm"
+        ]
+      }
+    ],
+    "macroEvents": [
+      {
+        "id": "fed-beige-book-20261014",
+        "title": "美联储褐皮书",
+        "at": "2026-10-14T18:00:00Z",
+        "region": "US",
+        "type": "macro-release",
+        "status": "scheduled",
+        "note": "Fed官方日历列示14:00 ET；截至分析时点尚未发布。",
+        "sourceUrls": [
+          "https://www.federalreserve.gov/newsevents/2026-october.htm",
+          "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm"
+        ]
+      },
+      {
+        "id": "bls-ppi-20261015",
+        "title": "美国9月PPI",
+        "at": "2026-10-15T12:30:00Z",
+        "region": "US",
+        "type": "macro-release",
+        "status": "scheduled",
+        "note": "BLS官方页面与日历列示08:30 ET；日历不是结果。",
+        "sourceUrls": [
+          "https://www.bls.gov/ppi/",
+          "https://www.bls.gov/schedule/2026/10_sched.htm"
+        ]
+      },
+      {
+        "id": "eia-wpsr-20261015",
+        "title": "EIA周度石油报告",
+        "at": "2026-10-15T16:00:00Z",
+        "region": "US",
+        "type": "energy-release",
+        "status": "scheduled",
+        "note": "EIA假日安排列示12:00 ET起发布；日历不是库存结果。",
+        "sourceUrls": [
+          "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "fed-beige-book-20261014",
+        "title": "美联储褐皮书",
+        "at": "2026-10-14T18:00:00Z",
+        "region": "US",
+        "type": "macro-release",
+        "status": "scheduled",
+        "note": "Fed官方日历列示14:00 ET；截至分析时点尚未发布。",
+        "sourceUrls": [
+          "https://www.federalreserve.gov/newsevents/2026-october.htm",
+          "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm"
+        ]
+      },
+      {
+        "id": "bls-ppi-20261015",
+        "title": "美国9月PPI",
+        "at": "2026-10-15T12:30:00Z",
+        "region": "US",
+        "type": "macro-release",
+        "status": "scheduled",
+        "note": "BLS官方页面与日历列示08:30 ET；日历不是结果。",
+        "sourceUrls": [
+          "https://www.bls.gov/ppi/",
+          "https://www.bls.gov/schedule/2026/10_sched.htm"
+        ]
+      },
+      {
+        "id": "eia-wpsr-20261015",
+        "title": "EIA周度石油报告",
+        "at": "2026-10-15T16:00:00Z",
+        "region": "US",
+        "type": "energy-release",
+        "status": "scheduled",
+        "note": "EIA假日安排列示12:00 ET起发布；日历不是库存结果。",
+        "sourceUrls": [
+          "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+        ]
+      }
+    ],
+    "researchRecords": [],
+    "researchChecks": []
+  }
+}
