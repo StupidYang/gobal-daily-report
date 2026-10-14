@@ -4,16 +4,22 @@
   "executionId": "20261014T161056Z-global-main",
   "taskGroup": "global-main",
   "slot": "global-main:2026-10-14T16",
-  "phase": "analyzing",
+  "phase": "failed",
   "startedAt": "2026-10-14T16:11:40.009Z",
   "deadlineAt": "2026-10-14T16:31:40.009Z",
-  "updatedAt": "2026-10-14T16:11:52.783Z",
+  "updatedAt": "2026-10-14T16:15:40.179Z",
   "stages": [
     {
       "phase": "collecting",
       "startedAt": "2026-10-14T16:11:40.009Z",
       "finishedAt": "2026-10-14T16:11:52.783Z",
       "durationMs": 12774
+    },
+    {
+      "phase": "analyzing",
+      "startedAt": "2026-10-14T16:11:52.783Z",
+      "finishedAt": "2026-10-14T16:15:40.179Z",
+      "durationMs": 227396
     }
   ],
   "recentSlots": [
@@ -391,11 +397,14 @@
     },
     {
       "slot": "global-main:2026-10-14T16",
-      "status": "started",
+      "status": "failed",
       "at": "2026-10-14T16:11:40.009Z",
       "executionId": "20261014T161056Z-global-main"
     }
   ],
   "sourcePacketPath": "runtime/results/20261014T161056Z-global-main.json",
-  "sourcePacketHash": "38183302be202a296e537943ca4291eb2e10c52b8f1ec99afc84aaff3c7ad72b"
+  "sourcePacketHash": "38183302be202a296e537943ca4291eb2e10c52b8f1ec99afc84aaff3c7ad72b",
+  "reason": "Atomic batch rejected: [{\"role\":\"quotes\",\"status\":\"published\",\"errors\":[]},{\"role\":\"asia-equities\",\"status\":\"published\",\"errors\":[]},{\"role\":\"us-equities\",\"status\":\"published\",\"errors\":[]},{\"role\":\"news\",\"status\":\"published\",\"errors\":[]},{\"role\":\"macro\",\"status\":\"published\",\"errors\":[]},{\"role\":\"research\",\"status\":\"rejected\",\"errors\":[\"同一eventKey对应不同研究材料，必须创建新事件版本\"]},{\"role\":\"synthesis\",\"status\":\"waiting-dependencies\",\"errors\":[\"DEPENDENCY_MISSING: data/runs/research/20261014T161056Z-global-main-research.json\"]}]",
+  "finishedAt": "2026-10-14T16:15:40.179Z",
+  "totalDurationMs": 240170
 }
