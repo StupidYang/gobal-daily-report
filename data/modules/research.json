@@ -1,14 +1,14 @@
 {
   "moduleVersion": 1,
   "module": "research",
-  "runId": "20261015T020826Z-global-main-research",
-  "generatedAt": "2026-10-15T10:13:34.783+08:00",
+  "runId": "20261015T030903Z-global-main-research",
+  "generatedAt": "2026-10-15T11:12:42.774+08:00",
   "dataAsOf": null,
   "status": "partial",
   "dataMode": "production",
   "validationOnly": false,
   "execution": {
-    "batchId": "20261015T020826Z-global-main",
+    "batchId": "20261015T030903Z-global-main",
     "mode": "scheduled-batch",
     "role": "research"
   },
@@ -1660,96 +1660,90 @@
         "status": "source-unavailable",
         "result": "source-unavailable",
         "note": "发现2026年第三季度业绩原文，但investor.bankofamerica.com被采集器标记host-not-allowed，未取得可提交证据，未形成researchRecord。"
+      },
+      {
+        "instrumentId": "EQUITY:US:JPM",
+        "checkedAt": "2026-10-15T03:12:28.496Z",
+        "status": "source-unavailable",
+        "result": "source-unavailable",
+        "note": "发现JPMorgan Chase 2026年第三季度业绩原文，但jpmorganchase.com被采集器标记host-not-allowed，未取得可提交证据，未形成researchRecord。"
       }
     ],
     "pendingQueue": [
       {
-        "instrumentId": "EQUITY:US:ASML",
-        "reason": "Q3 2026业绩原文已发现但采集域名未获白名单准入，需后续合法来源核验。"
-      },
-      {
-        "instrumentId": "EQUITY:US:BAC",
+        "instrumentId": "EQUITY:US:JPM",
         "reason": "Q3 2026业绩原文已发现但采集域名未获白名单准入，需后续合法来源核验。"
       }
     ],
     "cacheAudit": {
       "added": [],
       "reused": [],
-      "checksRetained": 61,
+      "checksRetained": 63,
       "note": "同事件沿用原分析及analyzedAt；研究检查保留实际checkedAt；新财报/指引/重述/研报需新eventKey。"
     }
   },
   "sources": [
     {
-      "id": "src-0212a829acedbd1772a62187",
-      "name": "Consumer Price Index - September 2026",
-      "short": "bls-cpi-2026-09",
-      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
-      "sourceHash": "b9f981390c08f4a530d839495fce582124015b979bac0398bfcc35ffde0544e4",
-      "retrievedAt": "2026-10-15T02:08:42.506Z",
-      "evidenceKind": "macro"
-    },
-    {
-      "id": "src-a4def0e543600158a18119f6",
-      "name": "BLS October 2026 Release Schedule",
-      "short": "bls-october-2026-calendar",
-      "url": "https://www.bls.gov/schedule/2026/10_sched_list.htm",
-      "sourceHash": "bb86b1bb2616027b0b1751699574f1b1f2d708b3505a84207310cf9ef3920f0b",
-      "retrievedAt": "2026-10-15T02:08:42.520Z",
-      "evidenceKind": "calendar"
-    },
-    {
       "id": "src-4f174cda8a9a92d7a9da2bdd",
       "name": "INDEX:CN:SSE",
       "short": "INDEX:CN:SSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.569Z",
-      "checkedAt": "2026-10-15T02:08:42.569Z",
-      "sourceHash": "8d68bc733ae373e1f0ed929a1df035a8c0a213d5f2918c502b427cb401a1d260"
+      "retrievedAt": "2026-10-15T03:09:18.786Z",
+      "checkedAt": "2026-10-15T03:09:18.786Z",
+      "sourceHash": "5b7bbfce2548af93eb6e0bdc85950012b3ee4abf04854cd72b00754e698902a7"
     },
     {
-      "id": "src-43a3f5dcc80ebd4231e735b1",
-      "name": "EQUITY:US:AAPL",
-      "short": "EQUITY:US:AAPL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.607Z",
-      "checkedAt": "2026-10-15T02:08:42.607Z",
-      "sourceHash": "3d92a91f054169243205451b7070fbe9cad7687d5ecc4552b5fd4700318919bd"
+      "id": "src-a4def0e543600158a18119f6",
+      "name": "BLS October 2026 Release Calendar",
+      "short": "bls-ppi-calendar-2026-10-15",
+      "url": "https://www.bls.gov/schedule/2026/10_sched_list.htm",
+      "sourceHash": "bb86b1bb2616027b0b1751699574f1b1f2d708b3505a84207310cf9ef3920f0b",
+      "retrievedAt": "2026-10-15T03:09:18.850Z",
+      "evidenceKind": "calendar"
     },
     {
-      "id": "src-d842e972a4aec4350bb2cdef",
-      "name": "EQUITY:US:MSFT",
-      "short": "EQUITY:US:MSFT",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.682Z",
-      "checkedAt": "2026-10-15T02:08:42.682Z",
-      "sourceHash": "f0ec7709dc209b312be4ef5fb430cb2cee0a9f718360a129ffb0f1eb4ad95232"
+      "id": "src-0212a829acedbd1772a62187",
+      "name": "Consumer Price Index — September 2026",
+      "short": "bls-cpi-2026-09",
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "sourceHash": "b9f981390c08f4a530d839495fce582124015b979bac0398bfcc35ffde0544e4",
+      "retrievedAt": "2026-10-15T03:09:18.864Z",
+      "evidenceKind": "official"
     },
     {
       "id": "src-56f8b6cf9289eb812069329d",
       "name": "INDEX:CN:SZSE",
       "short": "INDEX:CN:SZSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.696Z",
-      "checkedAt": "2026-10-15T02:08:42.696Z",
-      "sourceHash": "dbd8758ffc6a1d409caa20c4b4e5b978804e917568d31a8b6a5b90f9a59cff5d"
+      "retrievedAt": "2026-10-15T03:09:18.876Z",
+      "checkedAt": "2026-10-15T03:09:18.876Z",
+      "sourceHash": "02fd11a313eb578c6470d1e272c2ebc8a85a4b5ef3b8ca191d09b33a809706e4"
+    },
+    {
+      "id": "src-43a3f5dcc80ebd4231e735b1",
+      "name": "EQUITY:US:AAPL",
+      "short": "EQUITY:US:AAPL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:18.883Z",
+      "checkedAt": "2026-10-15T03:09:18.883Z",
+      "sourceHash": "9b87f93a079185bd7d5630565c022dea2fee97a63f21efce609d945f0c106bd5"
     },
     {
       "id": "src-309c122b92b747ebc9a18759",
-      "name": "Beige Book - October 2026",
+      "name": "Beige Book — October 2026 Summary",
       "short": "fed-beige-book-2026-10",
       "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-summary.htm",
-      "sourceHash": "8b60e46896cd86d3dc13ad83d04ce1cb9a8eabb3071a998a670d201d7db98739",
-      "retrievedAt": "2026-10-15T02:08:42.744Z",
+      "sourceHash": "ff26cd039d1e2ed5e89b3ee2ed36814ceb134e57a815bcb0472c692af2ea081f",
+      "retrievedAt": "2026-10-15T03:09:18.906Z",
       "evidenceKind": "official"
     },
     {
       "id": "src-a871759ffedfd1dec5d9ca5d",
       "name": "BEA Release Schedule",
-      "short": "bea-2026-release-calendar",
+      "short": "bea-release-schedule-2026",
       "url": "https://www.bea.gov/news/schedule/",
       "sourceHash": "296d9e889e4b90e83131f2842a9c9cc54c781360ac76e066d32f5224ffb757a9",
-      "retrievedAt": "2026-10-15T02:08:42.780Z",
+      "retrievedAt": "2026-10-15T03:09:18.921Z",
       "evidenceKind": "calendar"
     },
     {
@@ -1757,621 +1751,639 @@
       "name": "INDEX:CN:CHINEXT",
       "short": "INDEX:CN:CHINEXT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.781Z",
-      "checkedAt": "2026-10-15T02:08:42.781Z",
-      "sourceHash": "100e971a3e38383d5b9dd47b216a699b001dd527725f0d289818cc37f35558e4"
+      "retrievedAt": "2026-10-15T03:09:18.931Z",
+      "checkedAt": "2026-10-15T03:09:18.931Z",
+      "sourceHash": "226aae2e16d9da33d788f321fde171a8ac1e8565aa57538d97b84c7df2fb23af"
     },
     {
       "id": "src-4592d3929976b9dbff4a894e",
       "name": "Federal Reserve October 2026 Calendar",
-      "short": "fed-october-2026-calendar",
+      "short": "fed-calendar-2026-10",
       "url": "https://www.federalreserve.gov/newsevents/2026-october.htm",
-      "sourceHash": "d1c657ad3b053e4821868d6b44aee7a2ef5a9e7e09276a084278bff34be933c3",
-      "retrievedAt": "2026-10-15T02:08:42.811Z",
+      "sourceHash": "879c34d9bdeb35129d6e54003807aa4b96469dde703a2c4b9bf70e9d75ec4afd",
+      "retrievedAt": "2026-10-15T03:09:18.933Z",
       "evidenceKind": "calendar"
+    },
+    {
+      "id": "src-d842e972a4aec4350bb2cdef",
+      "name": "EQUITY:US:MSFT",
+      "short": "EQUITY:US:MSFT",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:18.938Z",
+      "checkedAt": "2026-10-15T03:09:18.938Z",
+      "sourceHash": "e5ee958dbd22b5d27f840a76d5ab8cf74f4d09f15b094caf5c43a6955b9ce123"
+    },
+    {
+      "id": "src-139384716ab8818cbe00ac05",
+      "name": "Producer Price Index — Latest Release and Next Release",
+      "short": "bls-ppi-home-2026-10",
+      "url": "https://www.bls.gov/ppi/",
+      "sourceHash": "1f570bf7848ddc9d768663aa253badedd27b7bf733c07f4e5e38ac39c6747acf",
+      "retrievedAt": "2026-10-15T03:09:18.942Z",
+      "evidenceKind": "official"
     },
     {
       "id": "src-9940126ea964d09e7fafaaff",
       "name": "INDEX:CN:STAR50",
       "short": "INDEX:CN:STAR50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.891Z",
-      "checkedAt": "2026-10-15T02:08:42.891Z",
-      "sourceHash": "68ae763b9afd28627f45ff5dcf7539ce75f8f4acb4648fd0c0ef605fe0f8ea2c"
-    },
-    {
-      "id": "src-34668c6d731a57ed1c1023dc",
-      "name": "EQUITY:US:NVDA",
-      "short": "EQUITY:US:NVDA",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.944Z",
-      "checkedAt": "2026-10-15T02:08:42.944Z",
-      "sourceHash": "ddf3d6c1dd777bbdcef5bae4f1b5afed30efe4b0a8ec93c1681e3b48cc1c5185"
+      "retrievedAt": "2026-10-15T03:09:18.993Z",
+      "checkedAt": "2026-10-15T03:09:18.993Z",
+      "sourceHash": "91f9bc82b6b345eaff39c2aa551a81f965eb720237b6571255bf1a9d98ee4c66"
     },
     {
       "id": "src-184a3aed61d874af1cc937af",
       "name": "EQUITY:US:GOOGL",
       "short": "EQUITY:US:GOOGL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.952Z",
-      "checkedAt": "2026-10-15T02:08:42.952Z",
-      "sourceHash": "5660a1a38ae6b033e5932e98294dc8a319b87fb47cbb14529415c156f29b3d84"
+      "retrievedAt": "2026-10-15T03:09:18.996Z",
+      "checkedAt": "2026-10-15T03:09:18.996Z",
+      "sourceHash": "e144718b291e67afd749d128a125a397c89acf704ca0001b08e3afed3ccfe561"
     },
     {
-      "id": "src-c7ebed6429fdab05af3d4e37",
-      "name": "INDEX:CN:CSI300",
-      "short": "INDEX:CN:CSI300",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:42.988Z",
-      "checkedAt": "2026-10-15T02:08:42.988Z",
-      "sourceHash": "743e2d54d3172c64105a27169f93d22b24ae77e48ab208346c8f476b0261680c"
+      "id": "src-34668c6d731a57ed1c1023dc",
+      "name": "EQUITY:US:NVDA",
+      "short": "EQUITY:US:NVDA",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.029Z",
+      "checkedAt": "2026-10-15T03:09:19.029Z",
+      "sourceHash": "aaf697a28260375f4f34354ab0d125baff97ed05318c157d0adbe9a9e8bacd80"
     },
     {
-      "id": "src-eaadd6d97d93eb6207a16fc2",
-      "name": "INDEX:CN:CSI500",
-      "short": "INDEX:CN:CSI500",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.042Z",
-      "checkedAt": "2026-10-15T02:08:43.042Z",
-      "sourceHash": "798613921d9787321b20fd5aa96752a7baa947c8aa8cc08b1c1262e5274c1f34"
+      "id": "src-51a80160388a414f153d42eb",
+      "name": "EIA Weekly Petroleum Status Report Schedule",
+      "short": "eia-weekly-petroleum-2026-10-15",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/",
+      "sourceHash": "5ba20fb4d123adbf2e3a2f1e78eea3a3a436fb96904379e7ba6648d7a045e349",
+      "retrievedAt": "2026-10-15T03:09:19.057Z",
+      "evidenceKind": "calendar"
     },
     {
       "id": "src-04b8bdcf2a7320327379db05",
       "name": "EQUITY:US:AMZN",
       "short": "EQUITY:US:AMZN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.048Z",
-      "checkedAt": "2026-10-15T02:08:43.048Z",
-      "sourceHash": "513696f50b1c67610c2a37d0e637927c0eba298248172e93f5a0002418bc05ce"
+      "retrievedAt": "2026-10-15T03:09:19.058Z",
+      "checkedAt": "2026-10-15T03:09:19.058Z",
+      "sourceHash": "11486dea0d9d842adf4df57c22470d18a3941b69c3e798ea774bc8bc78600044"
     },
     {
-      "id": "src-51a80160388a414f153d42eb",
-      "name": "EIA Weekly Petroleum Status Report - October 15 Schedule",
-      "short": "eia-wpsr-2026-10-15",
-      "url": "https://www.eia.gov/petroleum/supply/weekly/",
-      "sourceHash": "97b20a88d7eed5f56b13b71f6c4972f281e96ec1c37c36d49c15a003fc236d0d",
-      "retrievedAt": "2026-10-15T02:08:43.091Z",
-      "evidenceKind": "calendar"
+      "id": "src-c7ebed6429fdab05af3d4e37",
+      "name": "INDEX:CN:CSI300",
+      "short": "INDEX:CN:CSI300",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.071Z",
+      "checkedAt": "2026-10-15T03:09:19.071Z",
+      "sourceHash": "864f6fcbb15ca6b33e76c4013df2fb2432ada344007aad32a420f96be13c2943"
     },
     {
-      "id": "src-78e6f09e34616fdc208b1d39",
-      "name": "EQUITY:US:META",
-      "short": "EQUITY:US:META",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.104Z",
-      "checkedAt": "2026-10-15T02:08:43.104Z",
-      "sourceHash": "090dccbfd7963a71efb17fb00c433b7539d2aea4c487e22ca9344fff04c8bbd8"
+      "id": "src-eaadd6d97d93eb6207a16fc2",
+      "name": "INDEX:CN:CSI500",
+      "short": "INDEX:CN:CSI500",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.076Z",
+      "checkedAt": "2026-10-15T03:09:19.076Z",
+      "sourceHash": "656b6b060170c142d4d818e94ab8222cee1f15f4eb5c04f6e01620641347f5c2"
     },
     {
       "id": "src-34bca50b53334f82f208d557",
       "name": "INDEX:HK:HSI",
       "short": "INDEX:HK:HSI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.133Z",
-      "checkedAt": "2026-10-15T02:08:43.133Z",
-      "sourceHash": "20a622ec55fa57fb7b454fbe8fe8b1a3d5103cc53e421cd91fb4526b58e990c8"
-    },
-    {
-      "id": "src-6296613e58b80d5a2541b2bc",
-      "name": "EQUITY:US:TSLA",
-      "short": "EQUITY:US:TSLA",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.147Z",
-      "checkedAt": "2026-10-15T02:08:43.147Z",
-      "sourceHash": "2fba1aeb31b0637c6b35aa8e55377bcda8f741c2f71c49a2d817861431be2ecc"
-    },
-    {
-      "id": "src-2330b34d03dae5a96933f1cd",
-      "name": "EQUITY:US:AVGO",
-      "short": "EQUITY:US:AVGO",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.209Z",
-      "checkedAt": "2026-10-15T02:08:43.209Z",
-      "sourceHash": "10deeae035992dfcbb1895e52a9171bf052bfec222cf929b47988fdba0cb5f60"
-    },
-    {
-      "id": "src-c0124b191492ac42ab36d935",
-      "name": "INDEX:HK:HSCEI",
-      "short": "INDEX:HK:HSCEI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.223Z",
-      "checkedAt": "2026-10-15T02:08:43.223Z",
-      "sourceHash": "c216e7bca6e2b1d976151a906aada22b7166225e3cb7b4856d4f94d7d86e513f"
+      "retrievedAt": "2026-10-15T03:09:19.115Z",
+      "checkedAt": "2026-10-15T03:09:19.115Z",
+      "sourceHash": "1cbb62fafddac46de06f4bbce50caf4c1fb8f60ad457ea404f6dfb10c180f82f"
     },
     {
       "id": "src-977e21a36fbe85aa82e451f4",
       "name": "INDEX:HK:HSTECH",
       "short": "INDEX:HK:HSTECH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.257Z",
-      "checkedAt": "2026-10-15T02:08:43.257Z",
-      "sourceHash": "70e6808e132c60d53c428c1066e6d2f7667ca14914664eed6009790be8cf91fc"
+      "retrievedAt": "2026-10-15T03:09:19.124Z",
+      "checkedAt": "2026-10-15T03:09:19.124Z",
+      "sourceHash": "62e9a0466e314ae11a9c146c3567039490fc363936739afb414cfed67573ca5d"
     },
     {
-      "id": "src-6c0e86c9d9d00b20a083c934",
-      "name": "EQUITY:US:AMD",
-      "short": "EQUITY:US:AMD",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.263Z",
-      "checkedAt": "2026-10-15T02:08:43.263Z",
-      "sourceHash": "d5f3a376a2a51ddc74bf820f9c566d7986f8bcfd36ee87920195282ab06f688c"
+      "id": "src-78e6f09e34616fdc208b1d39",
+      "name": "EQUITY:US:META",
+      "short": "EQUITY:US:META",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.141Z",
+      "checkedAt": "2026-10-15T03:09:19.141Z",
+      "sourceHash": "c8996bc8042ae2159b111d0e6ef72813f9f3f3227c6b4d8a4055bac2b25f13e9"
+    },
+    {
+      "id": "src-c0124b191492ac42ab36d935",
+      "name": "INDEX:HK:HSCEI",
+      "short": "INDEX:HK:HSCEI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.172Z",
+      "checkedAt": "2026-10-15T03:09:19.172Z",
+      "sourceHash": "1a794afbac0b66af71172b3ee8f47e13b4a82fd7dc638d79ff604d46671e50f2"
     },
     {
       "id": "src-d72e220f5f535c1245072385",
       "name": "INDEX:US:SP500",
       "short": "INDEX:US:SP500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.309Z",
-      "checkedAt": "2026-10-15T02:08:43.309Z",
-      "sourceHash": "c1f4705d976f0fdbc6421dcd2cf78b4d717707694c9d2cd7d9581f0711660332"
+      "retrievedAt": "2026-10-15T03:09:19.177Z",
+      "checkedAt": "2026-10-15T03:09:19.177Z",
+      "sourceHash": "3fa968a55eb535e966f302b4e57a7f4bf66abb43052a540a163956aa1c9992a6"
+    },
+    {
+      "id": "src-2330b34d03dae5a96933f1cd",
+      "name": "EQUITY:US:AVGO",
+      "short": "EQUITY:US:AVGO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.197Z",
+      "checkedAt": "2026-10-15T03:09:19.197Z",
+      "sourceHash": "a75d2afcca2764b41aa1beebdb3f2e87ebd60b0f2e1b4db328503a7309e6a2aa"
+    },
+    {
+      "id": "src-6296613e58b80d5a2541b2bc",
+      "name": "EQUITY:US:TSLA",
+      "short": "EQUITY:US:TSLA",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.220Z",
+      "checkedAt": "2026-10-15T03:09:19.220Z",
+      "sourceHash": "95e459aa8621a0683db48ec6ed85223b69c133eb58f7c31ca2bcbc08940040bc"
+    },
+    {
+      "id": "src-6c0e86c9d9d00b20a083c934",
+      "name": "EQUITY:US:AMD",
+      "short": "EQUITY:US:AMD",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.238Z",
+      "checkedAt": "2026-10-15T03:09:19.238Z",
+      "sourceHash": "1f5989568edf387ceae05bc4f1f72b514c79f769077eda9dd91cacf1676658a2"
     },
     {
       "id": "src-a5c669eb8928b350011058da",
       "name": "EQUITY:US:INTC",
       "short": "EQUITY:US:INTC",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.319Z",
-      "checkedAt": "2026-10-15T02:08:43.319Z",
-      "sourceHash": "6fd8275be9b773d64efa3957f7573135ea362f84f857ef1ce189ce9360e41e11"
-    },
-    {
-      "id": "src-772408f27845565f1128d60a",
-      "name": "EQUITY:US:MU",
-      "short": "EQUITY:US:MU",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.357Z",
-      "checkedAt": "2026-10-15T02:08:43.357Z",
-      "sourceHash": "9691ca13db767ec79ade50144a7f54f95e2f7d9ce7fc79928de0a092a70e6563"
+      "retrievedAt": "2026-10-15T03:09:19.243Z",
+      "checkedAt": "2026-10-15T03:09:19.243Z",
+      "sourceHash": "3f79a8980860b02b94956d16ce02b7ddfe16f1381a68c77798847bf0d08895d2"
     },
     {
       "id": "src-4a57b5e12b1c7830f0336dc8",
       "name": "INDEX:US:NASDAQ",
       "short": "INDEX:US:NASDAQ",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.359Z",
-      "checkedAt": "2026-10-15T02:08:43.359Z",
-      "sourceHash": "504f839a4dfeb995f7ca383e1ffc748b1b3dbf325b3c042cb020c48261ce17a5"
-    },
-    {
-      "id": "src-e0bb5fd1bca46282849a8b5f",
-      "name": "INDEX:US:NDX",
-      "short": "INDEX:US:NDX",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.414Z",
-      "checkedAt": "2026-10-15T02:08:43.414Z",
-      "sourceHash": "60343a971c62d4bebe1578f26a2687e9bfe1c9766e470ad53a554eecc4d9ecc4"
+      "retrievedAt": "2026-10-15T03:09:19.260Z",
+      "checkedAt": "2026-10-15T03:09:19.260Z",
+      "sourceHash": "0a0d92c59446f30fa23f3a93fff9e2cc082962dd56b266796b7138a058b19ae4"
     },
     {
       "id": "src-2c82f404902c9e27e70a5709",
       "name": "EQUITY:US:ARM",
       "short": "EQUITY:US:ARM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.417Z",
-      "checkedAt": "2026-10-15T02:08:43.417Z",
-      "sourceHash": "c7736109327263916e988d2413a12431a2f2ce4c6f583e8bc63b14f3961705d0"
+      "retrievedAt": "2026-10-15T03:09:19.297Z",
+      "checkedAt": "2026-10-15T03:09:19.297Z",
+      "sourceHash": "4b810563821c566957f7c41f06aff219886e2e79fd93a4eaa737b76697a4533a"
     },
     {
-      "id": "src-4c2724acd20f3bf712e1b9a9",
-      "name": "INDEX:US:DOW",
-      "short": "INDEX:US:DOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.457Z",
-      "checkedAt": "2026-10-15T02:08:43.457Z",
-      "sourceHash": "8fa2efe93818e8f4742b1c04919c836457e9f3144933282acac964c4225cb004"
+      "id": "src-e0bb5fd1bca46282849a8b5f",
+      "name": "INDEX:US:NDX",
+      "short": "INDEX:US:NDX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.300Z",
+      "checkedAt": "2026-10-15T03:09:19.300Z",
+      "sourceHash": "a5dc93f68da8533e7100c6e71708a11e3de9c696f654f3f6caaed50753cfe540"
     },
     {
-      "id": "src-a1855a700abc50828e0dbe10",
-      "name": "EQUITY:US:TSM",
-      "short": "EQUITY:US:TSM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.464Z",
-      "checkedAt": "2026-10-15T02:08:43.464Z",
-      "sourceHash": "0cd9cf0b9ba7b9a2d079eebf20615843c2567cf8e81317f79d958ecd3098e7bd"
-    },
-    {
-      "id": "src-8793bfe1c682ddb7a690b48f",
-      "name": "EQUITY:US:ASML",
-      "short": "EQUITY:US:ASML",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.510Z",
-      "checkedAt": "2026-10-15T02:08:43.510Z",
-      "sourceHash": "019a249f124b12edd216b3bdb3ee9cc8dd91f93d129e1ba8d38b8601d5c5ccb6"
+      "id": "src-772408f27845565f1128d60a",
+      "name": "EQUITY:US:MU",
+      "short": "EQUITY:US:MU",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.304Z",
+      "checkedAt": "2026-10-15T03:09:19.304Z",
+      "sourceHash": "53dbda98df36e7ee8c39402b5dab6f2c26048a82016f79fad0234709e7f675de"
     },
     {
       "id": "src-3f3171fa7d078be4fc2861fa",
       "name": "INDEX:US:RUSSELL2000",
       "short": "INDEX:US:RUSSELL2000",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.513Z",
-      "checkedAt": "2026-10-15T02:08:43.513Z",
-      "sourceHash": "3d7e4e3f6bebdfefa4082d4e4eea165edd6c6f9c551b296c61d84322081e7866"
+      "retrievedAt": "2026-10-15T03:09:19.352Z",
+      "checkedAt": "2026-10-15T03:09:19.352Z",
+      "sourceHash": "ff71e949de2e638c73f284c34343bf90c63ed756c47a4dab5075eff17d1a3a62"
     },
     {
-      "id": "src-38299ba2f9df25e3bf2df111",
-      "name": "EQUITY:US:ORCL",
-      "short": "EQUITY:US:ORCL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.570Z",
-      "checkedAt": "2026-10-15T02:08:43.570Z",
-      "sourceHash": "50595479e1bf552c2a6e93524b33f7245d0915df0d413a30939383f6b6b862ea"
+      "id": "src-a1855a700abc50828e0dbe10",
+      "name": "EQUITY:US:TSM",
+      "short": "EQUITY:US:TSM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.354Z",
+      "checkedAt": "2026-10-15T03:09:19.354Z",
+      "sourceHash": "9af14617d8e7018b62c1930dd7356cbcbbe1322ee76a441632412cce0a8063d4"
+    },
+    {
+      "id": "src-4c2724acd20f3bf712e1b9a9",
+      "name": "INDEX:US:DOW",
+      "short": "INDEX:US:DOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.364Z",
+      "checkedAt": "2026-10-15T03:09:19.364Z",
+      "sourceHash": "26759eb93482e895b1272eacd26f9b39cfbf5a0eb9e7840353021fdcf69ee65e"
+    },
+    {
+      "id": "src-8793bfe1c682ddb7a690b48f",
+      "name": "EQUITY:US:ASML",
+      "short": "EQUITY:US:ASML",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.375Z",
+      "checkedAt": "2026-10-15T03:09:19.375Z",
+      "sourceHash": "36c79cbaeb35e5095a5977383060927eca503a727c4ffc5784236460eea2c757"
     },
     {
       "id": "src-db321b256a90919f12e35781",
       "name": "INDEX:JP:NIKKEI225",
       "short": "INDEX:JP:NIKKEI225",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.605Z",
-      "checkedAt": "2026-10-15T02:08:43.605Z",
-      "sourceHash": "5bf2fe2081cb4fae66ed5d278c9d8b9ed68c2d9ef023e7ffb223438c6bdfa149"
+      "retrievedAt": "2026-10-15T03:09:19.404Z",
+      "checkedAt": "2026-10-15T03:09:19.404Z",
+      "sourceHash": "86c63dbdbbee03638284d5e6fa431463a2b97d80d67e360ff017d3bbda523130"
+    },
+    {
+      "id": "src-38299ba2f9df25e3bf2df111",
+      "name": "EQUITY:US:ORCL",
+      "short": "EQUITY:US:ORCL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.409Z",
+      "checkedAt": "2026-10-15T03:09:19.409Z",
+      "sourceHash": "d54b8a2d7b288a9de2577949c828fcc964602a5cfe2c6d9f5f80b5ab644ecff6"
     },
     {
       "id": "src-a9fc80df8ffb235e6cd0d757",
       "name": "EQUITY:US:CRM",
       "short": "EQUITY:US:CRM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.619Z",
-      "checkedAt": "2026-10-15T02:08:43.619Z",
-      "sourceHash": "48829edc0405705d1b7523a6a8b63ce04fcfdbd124f2c23f140655f508b34205"
+      "retrievedAt": "2026-10-15T03:09:19.433Z",
+      "checkedAt": "2026-10-15T03:09:19.433Z",
+      "sourceHash": "7cafcc23d73ace24dd6f6f8cc282ede81f38e0264ad69c04a762f8acd65b6aab"
     },
     {
       "id": "src-d0f06544a61c10ea97899aa0",
       "name": "CRYPTO:BTC:USD",
       "short": "CRYPTO:BTC:USD",
       "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
-      "retrievedAt": "2026-10-15T02:08:43.641Z",
-      "checkedAt": "2026-10-15T02:08:43.641Z",
-      "sourceHash": "944ef3a4a2a814e92e2f161fabb13b64a25c995c213f405fe6e99a59de82a646"
-    },
-    {
-      "id": "src-440d8c358ccf2eb5de026ded",
-      "name": "INDEX:EU:STOXX50",
-      "short": "INDEX:EU:STOXX50",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.683Z",
-      "checkedAt": "2026-10-15T02:08:43.683Z",
-      "sourceHash": "5c9d793d204e015305a21814b98485c77ac55dba412649aef124dc0c608db3d3"
-    },
-    {
-      "id": "src-5022e6cea2b9157cf6b11a77",
-      "name": "EQUITY:US:ADBE",
-      "short": "EQUITY:US:ADBE",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.703Z",
-      "checkedAt": "2026-10-15T02:08:43.703Z",
-      "sourceHash": "cc598e39844d3939f7b40035fb596e5f9361293449424d0c9560cdf54877d959"
-    },
-    {
-      "id": "src-ff3513c8c5dcb5dca0085f61",
-      "name": "CRYPTO:SOL:USD",
-      "short": "CRYPTO:SOL:USD",
-      "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
-      "retrievedAt": "2026-10-15T02:08:43.727Z",
-      "checkedAt": "2026-10-15T02:08:43.727Z",
-      "sourceHash": "5b84649eeabcb14272d0a20d4ea155ff86f82c5e1aee8cbc670522cea49c8e1d"
+      "retrievedAt": "2026-10-15T03:09:19.435Z",
+      "checkedAt": "2026-10-15T03:09:19.435Z",
+      "sourceHash": "f89581a1d1e854e5221a7b620a1927566d0ac5ad7fd82401d7b9fad2b063d49b"
     },
     {
       "id": "src-61b7dcccf93560ea56eb3187",
       "name": "CRYPTO:ETH:USD",
       "short": "CRYPTO:ETH:USD",
       "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
-      "retrievedAt": "2026-10-15T02:08:43.728Z",
-      "checkedAt": "2026-10-15T02:08:43.728Z",
-      "sourceHash": "9aa30e5c2c4573a8be34ce2738021ee95bddcc5a5a940c73223c9007bb944f1b"
+      "retrievedAt": "2026-10-15T03:09:19.448Z",
+      "checkedAt": "2026-10-15T03:09:19.448Z",
+      "sourceHash": "065b6d7ba5b7b46145e7fa407732115bf26019e33782675c13304276374a104c"
+    },
+    {
+      "id": "src-5022e6cea2b9157cf6b11a77",
+      "name": "EQUITY:US:ADBE",
+      "short": "EQUITY:US:ADBE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.462Z",
+      "checkedAt": "2026-10-15T03:09:19.462Z",
+      "sourceHash": "bbf2ecdfd470c1c127208dad43647211b6a91ec13e8473a065bf9bba4243313e"
+    },
+    {
+      "id": "src-ff3513c8c5dcb5dca0085f61",
+      "name": "CRYPTO:SOL:USD",
+      "short": "CRYPTO:SOL:USD",
+      "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
+      "retrievedAt": "2026-10-15T03:09:19.466Z",
+      "checkedAt": "2026-10-15T03:09:19.466Z",
+      "sourceHash": "52d5706636b9fb54cc748896104b4cc815d7e96e9d08a6fb2ea8e9caf2844f78"
+    },
+    {
+      "id": "src-440d8c358ccf2eb5de026ded",
+      "name": "INDEX:EU:STOXX50",
+      "short": "INDEX:EU:STOXX50",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.468Z",
+      "checkedAt": "2026-10-15T03:09:19.468Z",
+      "sourceHash": "c16b39ae1a84482d610da119c04ab8a93f43d5c20d0caf50dcc49019a187e1b8"
     },
     {
       "id": "src-620ca0f9ff9da68ab66b8b1c",
       "name": "EQUITY:US:NOW",
       "short": "EQUITY:US:NOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.740Z",
-      "checkedAt": "2026-10-15T02:08:43.740Z",
-      "sourceHash": "bacd621f4c71a23ec9387864a157e4af89f8c7805e56e7583a2d9929ecd1dc4a"
+      "retrievedAt": "2026-10-15T03:09:19.485Z",
+      "checkedAt": "2026-10-15T03:09:19.485Z",
+      "sourceHash": "6dab8cbbd365aa5a399127fe37fd59fb7b22e6d4fdda4e7b3dffbd3b313a85e0"
     },
     {
       "id": "src-e73683bca4f7778e43d2f1e8",
       "name": "CRYPTO:PEPE:USD",
       "short": "CRYPTO:PEPE:USD",
       "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
-      "retrievedAt": "2026-10-15T02:08:43.794Z",
-      "checkedAt": "2026-10-15T02:08:43.794Z",
-      "sourceHash": "d4d6ffdb326ba5c0aae61f69b35708518fe920913246592f5fca8df8c373a094"
+      "retrievedAt": "2026-10-15T03:09:19.487Z",
+      "checkedAt": "2026-10-15T03:09:19.487Z",
+      "sourceHash": "d14308150cca5cbd9e94ebbbc89361f190758228ae1afe2e106a587f6d0ea7a1"
     },
     {
       "id": "src-219ba892243f0871c11511b2",
       "name": "CRYPTO:HYPE:USD",
       "short": "CRYPTO:HYPE:USD",
       "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
-      "retrievedAt": "2026-10-15T02:08:43.795Z",
-      "checkedAt": "2026-10-15T02:08:43.795Z",
-      "sourceHash": "3aadcdeeca09a1601d120fdf6ade2c6457a69dd00efe642f6d87e8d2e3ea1e2e"
-    },
-    {
-      "id": "src-a9cf54901e28ec9b25fe355d",
-      "name": "EQUITY:US:PLTR",
-      "short": "EQUITY:US:PLTR",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.813Z",
-      "checkedAt": "2026-10-15T02:08:43.813Z",
-      "sourceHash": "159707957e532222ae8c0452a77a35c955282c437ea11260b32e336419d7455a"
-    },
-    {
-      "id": "src-c3ce3ea19c5e3ff913bc8e44",
-      "name": "EQUITY:US:NET",
-      "short": "EQUITY:US:NET",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.903Z",
-      "checkedAt": "2026-10-15T02:08:43.903Z",
-      "sourceHash": "c0a9da4fc71eb284f3edbfab6c9851887dc6521d78527afe3f3a290e97355b3e"
-    },
-    {
-      "id": "src-15f5b79b32cba97e05e23d60",
-      "name": "EQUITY:US:SNOW",
-      "short": "EQUITY:US:SNOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.911Z",
-      "checkedAt": "2026-10-15T02:08:43.911Z",
-      "sourceHash": "ac07a5db7a25665d06bb34f53a87d05dca8554a5f3671f578e6f241437e555ba"
+      "retrievedAt": "2026-10-15T03:09:19.505Z",
+      "checkedAt": "2026-10-15T03:09:19.505Z",
+      "sourceHash": "e2e79711047673b4c9cda8a11395c48e0140abdfac8977f2256603420ed884f7"
     },
     {
       "id": "src-dee9c47e788eb3b5e9957de0",
       "name": "FX:DXY",
       "short": "FX:DXY",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.956Z",
-      "checkedAt": "2026-10-15T02:08:43.956Z",
-      "sourceHash": "c09ea59e5e3644b3725ec8f21dd5be72e2327aeb486904d76280f18afe22854b"
+      "retrievedAt": "2026-10-15T03:09:19.511Z",
+      "checkedAt": "2026-10-15T03:09:19.511Z",
+      "sourceHash": "bac6b5c6bc7d82f0be736a3389bdab6b85fd492ff1fe54b9f2c5af1a4da1dc18"
+    },
+    {
+      "id": "src-15f5b79b32cba97e05e23d60",
+      "name": "EQUITY:US:SNOW",
+      "short": "EQUITY:US:SNOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.524Z",
+      "checkedAt": "2026-10-15T03:09:19.524Z",
+      "sourceHash": "91e5abfb020997a46e25997083c19d4c50955f0687a7e6fe3df01b6803ad09b4"
+    },
+    {
+      "id": "src-c3ce3ea19c5e3ff913bc8e44",
+      "name": "EQUITY:US:NET",
+      "short": "EQUITY:US:NET",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.554Z",
+      "checkedAt": "2026-10-15T03:09:19.554Z",
+      "sourceHash": "7dcffa6c09d44532cc3aa74191cc9fb017c1b611f3507af48ddbc20651bf4aea"
     },
     {
       "id": "src-ff2cf19ea64f05b5a5a53285",
       "name": "EQUITY:US:CRWD",
       "short": "EQUITY:US:CRWD",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.972Z",
-      "checkedAt": "2026-10-15T02:08:43.972Z",
-      "sourceHash": "b2de01a3fece40291ded4d927d6c04b22a9ba5ce2d6c5308933dd73e0b2ce44c"
+      "retrievedAt": "2026-10-15T03:09:19.569Z",
+      "checkedAt": "2026-10-15T03:09:19.569Z",
+      "sourceHash": "a1a5e728ca4dd7506a9191115a6536f9fa6821e64620ebce79b18046c4a85002"
     },
     {
       "id": "src-8d5d7352d4aa06cef2c4c9c8",
       "name": "FX:USDCNY",
       "short": "FX:USDCNY",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:43.991Z",
-      "checkedAt": "2026-10-15T02:08:43.991Z",
-      "sourceHash": "5a65ebf47c8a695a3e83c9700a516ac33fb2f29c51f33e322adb25dcad069647"
-    },
-    {
-      "id": "src-3d44a550fc9b64a2d1f171c2",
-      "name": "FX:USDCNH",
-      "short": "FX:USDCNH",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.058Z",
-      "checkedAt": "2026-10-15T02:08:44.058Z",
-      "sourceHash": "43540eb0d5d2d75bd4bed0cdaec27def871c4876a01b160e889ade74cbe794ad"
-    },
-    {
-      "id": "src-326f0b6e68e52c485af15110",
-      "name": "EQUITY:US:COIN",
-      "short": "EQUITY:US:COIN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.066Z",
-      "checkedAt": "2026-10-15T02:08:44.066Z",
-      "sourceHash": "a1ce33b282d37414bac2ee163779d43e2f152616e6627a48ef7ff3487a4e6bd1"
+      "retrievedAt": "2026-10-15T03:09:19.608Z",
+      "checkedAt": "2026-10-15T03:09:19.608Z",
+      "sourceHash": "48732dafc26771d192adfc5bcc7178785753867cc423e22c27c1c992b9530952"
     },
     {
       "id": "src-b9c9b43f7a4ebde198fdf0e4",
       "name": "EQUITY:US:DDOG",
       "short": "EQUITY:US:DDOG",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.069Z",
-      "checkedAt": "2026-10-15T02:08:44.069Z",
-      "sourceHash": "f8fa723e3ee39242d2c772ee2058a15045b1f60940255860e544e967f5e484a6"
+      "retrievedAt": "2026-10-15T03:09:19.612Z",
+      "checkedAt": "2026-10-15T03:09:19.612Z",
+      "sourceHash": "457200d88af590525b320cb499afd82880e40e8ef17a668ba35eb37451ef4656"
+    },
+    {
+      "id": "src-a9cf54901e28ec9b25fe355d",
+      "name": "EQUITY:US:PLTR",
+      "short": "EQUITY:US:PLTR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.617Z",
+      "checkedAt": "2026-10-15T03:09:19.617Z",
+      "sourceHash": "1757f2c9da66b77b655e0deb80d7c931113cac7cf3566de6c59230cd534ca540"
+    },
+    {
+      "id": "src-3d44a550fc9b64a2d1f171c2",
+      "name": "FX:USDCNH",
+      "short": "FX:USDCNH",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.620Z",
+      "checkedAt": "2026-10-15T03:09:19.620Z",
+      "sourceHash": "0f2ba138ef1d642469cad14646806f2464d4ebb029f18383a09476782d545557"
+    },
+    {
+      "id": "src-326f0b6e68e52c485af15110",
+      "name": "EQUITY:US:COIN",
+      "short": "EQUITY:US:COIN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.663Z",
+      "checkedAt": "2026-10-15T03:09:19.663Z",
+      "sourceHash": "5935d4451a9adc9c93b12c2e7332c35ef590c364933905880740560bf67955f9"
     },
     {
       "id": "src-65479f4ce02fa594db0ce3a7",
       "name": "EQUITY:US:MSTR",
       "short": "EQUITY:US:MSTR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.160Z",
-      "checkedAt": "2026-10-15T02:08:44.160Z",
-      "sourceHash": "6de3a06c2c146088cc750295cb604aa432a5087f58816f70df20ea647a698d0e"
+      "retrievedAt": "2026-10-15T03:09:19.676Z",
+      "checkedAt": "2026-10-15T03:09:19.676Z",
+      "sourceHash": "92445bf5a27ec1e42ddd2ec67b9417fbae1803302a7a4f49b11dacf0a4df2c53"
     },
     {
       "id": "src-f870632d144ef25b5d81e0d5",
       "name": "EQUITY:US:BRK.B",
       "short": "EQUITY:US:BRK.B",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BRK-B?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.162Z",
-      "checkedAt": "2026-10-15T02:08:44.162Z",
-      "sourceHash": "a5cda7cc66cdb75672c60862eef94bcdd742f8643de2e20ce8ca5623204e4bf2"
-    },
-    {
-      "id": "src-b4c33f217cb4617da7b6dc01",
-      "name": "EQUITY:US:BLK",
-      "short": "EQUITY:US:BLK",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.253Z",
-      "checkedAt": "2026-10-15T02:08:44.253Z",
-      "sourceHash": "bec6aad97732b608e3d7764fadcc04f8f17a8eeb147c6e1facb3a3d806ff2067"
-    },
-    {
-      "id": "src-395e439b7112bf85673a6beb",
-      "name": "METAL:XAUUSD",
-      "short": "METAL:XAUUSD",
-      "url": "https://api.gold-api.com/price/XAU",
-      "retrievedAt": "2026-10-15T02:08:44.265Z",
-      "checkedAt": "2026-10-15T02:08:44.265Z",
-      "sourceHash": "fe50f182c5a2795fc3b8bdd916cfdb4da5b6a702161ebe887a108cb684fb8241"
-    },
-    {
-      "id": "src-8ada3bfad620c0aaad97dfef",
-      "name": "METAL:XAGUSD",
-      "short": "METAL:XAGUSD",
-      "url": "https://api.gold-api.com/price/XAG",
-      "retrievedAt": "2026-10-15T02:08:44.267Z",
-      "checkedAt": "2026-10-15T02:08:44.267Z",
-      "sourceHash": "fcf4ad3a1b9f3b1cd3bb5d4bbd1ea5113bedc428cdddd8535f8a3436ef4f1ae2"
+      "retrievedAt": "2026-10-15T03:09:19.716Z",
+      "checkedAt": "2026-10-15T03:09:19.716Z",
+      "sourceHash": "694da330798bd589553130276cb7d7a923de28dda0c4a2126a0e6657d4d2cc8e"
     },
     {
       "id": "src-d9a47ba66192b3c04bc8f3f6",
       "name": "ENERGY:WTI",
       "short": "ENERGY:WTI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.269Z",
-      "checkedAt": "2026-10-15T02:08:44.269Z",
-      "sourceHash": "46809164b337ff1dbe036ea6e2a7c813b02526dc33c1c08e00e657b134f8f9a7"
+      "retrievedAt": "2026-10-15T03:09:19.742Z",
+      "checkedAt": "2026-10-15T03:09:19.742Z",
+      "sourceHash": "228a7a2c1f83b0a9191d2444dcf8a3806f6b6bddccc0adce6012d1c95c960761"
+    },
+    {
+      "id": "src-b4c33f217cb4617da7b6dc01",
+      "name": "EQUITY:US:BLK",
+      "short": "EQUITY:US:BLK",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:19.773Z",
+      "checkedAt": "2026-10-15T03:09:19.773Z",
+      "sourceHash": "b827382195a64a6af4b63a3034215882f309f367fab141f288f907dc69c70a2a"
     },
     {
       "id": "src-9df907448534d3354922f821",
       "name": "EQUITY:US:BX",
       "short": "EQUITY:US:BX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.363Z",
-      "checkedAt": "2026-10-15T02:08:44.363Z",
-      "sourceHash": "808db6480b5cdedd4e8c7bdc693f2066c5f314d02f96961f35310c93d1d78e36"
+      "retrievedAt": "2026-10-15T03:09:19.829Z",
+      "checkedAt": "2026-10-15T03:09:19.829Z",
+      "sourceHash": "a9d0200d723da27a48b94d7aafd08e1b64b5048e59c66561fbff617c432fc144"
     },
     {
       "id": "src-7169e336e7f73bbd1e2d1f54",
       "name": "EQUITY:US:KKR",
       "short": "EQUITY:US:KKR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.371Z",
-      "checkedAt": "2026-10-15T02:08:44.371Z",
-      "sourceHash": "f2b199edfbbc04d5bd37f4d10cda32b34970c0495ba7bfd7e82ed667e297463d"
+      "retrievedAt": "2026-10-15T03:09:19.885Z",
+      "checkedAt": "2026-10-15T03:09:19.885Z",
+      "sourceHash": "535b69a2c6392763edaec4a1cfd532e8331e7d995bfb3f01630e883a57e66aa8"
     },
     {
       "id": "src-483e50fe4cc003e84c411bec",
       "name": "RATE:US10Y",
       "short": "RATE:US10Y",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.436Z",
-      "checkedAt": "2026-10-15T02:08:44.436Z",
-      "sourceHash": "71df227ab4ef147cce9d73439948f4bf3bb717e252df452e677054672829f0e1"
+      "retrievedAt": "2026-10-15T03:09:19.936Z",
+      "checkedAt": "2026-10-15T03:09:19.936Z",
+      "sourceHash": "25efcffa5d0cc652008547f33bd27b75a1a01de02015ef2404dd5363d737921a"
     },
     {
       "id": "src-9641ed6e3e9256c44410b13f",
       "name": "EQUITY:US:APO",
       "short": "EQUITY:US:APO",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.459Z",
-      "checkedAt": "2026-10-15T02:08:44.459Z",
-      "sourceHash": "4ce87ff47785723029e7613f8ef8ddd46cbee0452551cf1baec1ec571ccce833"
+      "retrievedAt": "2026-10-15T03:09:19.987Z",
+      "checkedAt": "2026-10-15T03:09:19.987Z",
+      "sourceHash": "c924b5d8c8502ee38eac1c15636e0bb64d24b66085e7991b3441a6da8ac139cf"
+    },
+    {
+      "id": "src-395e439b7112bf85673a6beb",
+      "name": "METAL:XAUUSD",
+      "short": "METAL:XAUUSD",
+      "url": "https://api.gold-api.com/price/XAU",
+      "retrievedAt": "2026-10-15T03:09:20.040Z",
+      "checkedAt": "2026-10-15T03:09:20.040Z",
+      "sourceHash": "f55bc220a5275cfc609d8ace6a730c1624fa0de267ae828f3bb7fdfbc985f944"
     },
     {
       "id": "src-a7554f3c5fd773eea8743645",
       "name": "VOL:VIX",
       "short": "VOL:VIX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.464Z",
-      "checkedAt": "2026-10-15T02:08:44.464Z",
-      "sourceHash": "4d5a21cfe1ef7419ee10da5c092cffeb8bddff1f72e143b35fa308733b4390e6"
+      "retrievedAt": "2026-10-15T03:09:20.043Z",
+      "checkedAt": "2026-10-15T03:09:20.043Z",
+      "sourceHash": "240717218a314e3c698508fe53d04fb671e1e618fae89ea0a8a600ccd0c0b4f6"
     },
     {
-      "id": "src-177a579934a7c61da3eda551",
-      "name": "EQUITY:US:ARES",
-      "short": "EQUITY:US:ARES",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.527Z",
-      "checkedAt": "2026-10-15T02:08:44.527Z",
-      "sourceHash": "2f2356a81e97ae9b87c51cb1d4bc42b8f2f97719a33bf174353857bb9e012880"
-    },
-    {
-      "id": "src-cea9af858dc05581bdc0e5e5",
-      "name": "EQUITY:US:BN",
-      "short": "EQUITY:US:BN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.594Z",
-      "checkedAt": "2026-10-15T02:08:44.594Z",
-      "sourceHash": "a9e4cbae29ab12a263f5892238fd0a6dbfbc4a41c847af0c5903aa0ab8a7f578"
-    },
-    {
-      "id": "src-3f9155e9bb026d51e16a0b29",
-      "name": "EQUITY:US:OWL",
-      "short": "EQUITY:US:OWL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.608Z",
-      "checkedAt": "2026-10-15T02:08:44.608Z",
-      "sourceHash": "f1a616f2cc29830c72db0a731676d38f53eee0dc77dbbc51789990258848da54"
-    },
-    {
-      "id": "src-eb442cf33996fa78a3fa09c9",
-      "name": "EQUITY:US:BAM",
-      "short": "EQUITY:US:BAM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.624Z",
-      "checkedAt": "2026-10-15T02:08:44.624Z",
-      "sourceHash": "657051f4a4dcb9a5f1032c1f875fa61ad59b349fc229357c13fc54dce16ae345"
-    },
-    {
-      "id": "src-921d9df8692f2f48f9e01166",
-      "name": "EQUITY:US:CG",
-      "short": "EQUITY:US:CG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.694Z",
-      "checkedAt": "2026-10-15T02:08:44.694Z",
-      "sourceHash": "7e3b2462968efd2c90cc89ff224160bce9be2526474353de62a6e843b4ec7501"
-    },
-    {
-      "id": "src-6facdc12d1f68f042abf8250",
-      "name": "EQUITY:US:TROW",
-      "short": "EQUITY:US:TROW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.703Z",
-      "checkedAt": "2026-10-15T02:08:44.703Z",
-      "sourceHash": "c6cde1ff45c178cb1ae5afa3a877af82c9c368920f666113ab3585324cd2d7ab"
-    },
-    {
-      "id": "src-237d29e211c4e002af0208a6",
-      "name": "EQUITY:US:BEN",
-      "short": "EQUITY:US:BEN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.720Z",
-      "checkedAt": "2026-10-15T02:08:44.720Z",
-      "sourceHash": "6e3699cd184336090668da6de32433886b21c405e92e366ada9edaf09adf38b7"
-    },
-    {
-      "id": "src-b9801499a70677bb015b218e",
-      "name": "EQUITY:US:SCHW",
-      "short": "EQUITY:US:SCHW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.793Z",
-      "checkedAt": "2026-10-15T02:08:44.793Z",
-      "sourceHash": "980fa404fe0b2c138dc2d10813cae46e4978a0173127f3001e95b7b6f273f3cf"
+      "id": "src-8ada3bfad620c0aaad97dfef",
+      "name": "METAL:XAGUSD",
+      "short": "METAL:XAGUSD",
+      "url": "https://api.gold-api.com/price/XAG",
+      "retrievedAt": "2026-10-15T03:09:20.045Z",
+      "checkedAt": "2026-10-15T03:09:20.045Z",
+      "sourceHash": "05fedecd51e1e2c4619e072def777f7b2d56080a798c59704690dde3e292bcd5"
     },
     {
       "id": "src-b59d300064ebc2cd8c2acde4",
       "name": "RATE:US2Y",
       "short": "RATE:US2Y",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
-      "retrievedAt": "2026-10-15T02:08:44.795Z",
-      "checkedAt": "2026-10-15T02:08:44.795Z",
+      "retrievedAt": "2026-10-15T03:09:20.046Z",
+      "checkedAt": "2026-10-15T03:09:20.046Z",
       "sourceHash": "8cc9a5e9abe390ad4e9476342545746290bb29c1d5229ee2cdece367830638fc"
+    },
+    {
+      "id": "src-177a579934a7c61da3eda551",
+      "name": "EQUITY:US:ARES",
+      "short": "EQUITY:US:ARES",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.096Z",
+      "checkedAt": "2026-10-15T03:09:20.096Z",
+      "sourceHash": "2f2356a81e97ae9b87c51cb1d4bc42b8f2f97719a33bf174353857bb9e012880"
+    },
+    {
+      "id": "src-3f9155e9bb026d51e16a0b29",
+      "name": "EQUITY:US:OWL",
+      "short": "EQUITY:US:OWL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.098Z",
+      "checkedAt": "2026-10-15T03:09:20.098Z",
+      "sourceHash": "34e6c477606643a82a6afcd29186716952b8f1e73f96438d9d6c1a2d3fdf87fd"
+    },
+    {
+      "id": "src-eb442cf33996fa78a3fa09c9",
+      "name": "EQUITY:US:BAM",
+      "short": "EQUITY:US:BAM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.102Z",
+      "checkedAt": "2026-10-15T03:09:20.102Z",
+      "sourceHash": "129e568e869302ecc647ef1d3339cc486d9d6e601f6acc655f11afb958dae831"
+    },
+    {
+      "id": "src-cea9af858dc05581bdc0e5e5",
+      "name": "EQUITY:US:BN",
+      "short": "EQUITY:US:BN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.123Z",
+      "checkedAt": "2026-10-15T03:09:20.123Z",
+      "sourceHash": "e1cd4e266dde73d1a66857cde7114517dfbad14c5a84c25683bba1fec68e6572"
+    },
+    {
+      "id": "src-921d9df8692f2f48f9e01166",
+      "name": "EQUITY:US:CG",
+      "short": "EQUITY:US:CG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.146Z",
+      "checkedAt": "2026-10-15T03:09:20.146Z",
+      "sourceHash": "665b28a61df8a10b39e21565d70817d335d17565f3603319b32f2d6ef2c37985"
+    },
+    {
+      "id": "src-237d29e211c4e002af0208a6",
+      "name": "EQUITY:US:BEN",
+      "short": "EQUITY:US:BEN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.152Z",
+      "checkedAt": "2026-10-15T03:09:20.152Z",
+      "sourceHash": "812b82bfe45b4cb71217bd240e3a64d9cfe64d495f10bd65d1edf59711493b93"
+    },
+    {
+      "id": "src-6facdc12d1f68f042abf8250",
+      "name": "EQUITY:US:TROW",
+      "short": "EQUITY:US:TROW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.188Z",
+      "checkedAt": "2026-10-15T03:09:20.188Z",
+      "sourceHash": "ab70e3397da474fd085c5954863249f9c481de685307ac4843972e6310094ae0"
     },
     {
       "id": "src-65538695782361cfffb29020",
       "name": "EQUITY:US:IBKR",
       "short": "EQUITY:US:IBKR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.803Z",
-      "checkedAt": "2026-10-15T02:08:44.803Z",
-      "sourceHash": "23989846fac1b6cf9c1560587005c073f9f4ea47ba068a15f42848747d669a38"
-    },
-    {
-      "id": "src-81b168263e538041e104ad36",
-      "name": "EQUITY:US:MS",
-      "short": "EQUITY:US:MS",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.895Z",
-      "checkedAt": "2026-10-15T02:08:44.895Z",
-      "sourceHash": "cd8c9619e89aa6d734ffa332f1914b6567a2f3347880d3e5cef5ab659032345d"
+      "retrievedAt": "2026-10-15T03:09:20.198Z",
+      "checkedAt": "2026-10-15T03:09:20.198Z",
+      "sourceHash": "dfd0ac1dcda89394bdc2b8c26c4185b716c4cb13ee637e387c7739ac818d97c0"
     },
     {
       "id": "src-563aa0dacd1aa03dcee1ad85",
       "name": "EQUITY:US:GS",
       "short": "EQUITY:US:GS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-15T02:08:44.904Z",
-      "checkedAt": "2026-10-15T02:08:44.904Z",
-      "sourceHash": "26ef9c59bf2ecac22a35002c947d577e5a9dfee9e7f7c9f908f436c2efa59743"
+      "retrievedAt": "2026-10-15T03:09:20.207Z",
+      "checkedAt": "2026-10-15T03:09:20.207Z",
+      "sourceHash": "ddb073e0eee559c37347d152cc043a36594ca3049edb0889f6450891d4295192"
+    },
+    {
+      "id": "src-b9801499a70677bb015b218e",
+      "name": "EQUITY:US:SCHW",
+      "short": "EQUITY:US:SCHW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.216Z",
+      "checkedAt": "2026-10-15T03:09:20.216Z",
+      "sourceHash": "12fdfe44596c0a71a7aa6a9f7d84e35696ca6b5efda9028c4e5d07dccaad777e"
+    },
+    {
+      "id": "src-81b168263e538041e104ad36",
+      "name": "EQUITY:US:MS",
+      "short": "EQUITY:US:MS",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
+      "retrievedAt": "2026-10-15T03:09:20.243Z",
+      "checkedAt": "2026-10-15T03:09:20.243Z",
+      "sourceHash": "e30dc1bfe728e092908e261972a598db277a98d84f58512b190f8cd700f8ed7b"
     },
     {
       "name": "INDEX:US:SP500",
@@ -2496,96 +2508,6 @@
       "retrievedAt": "2026-10-14T12:09:30.632Z",
       "evidenceKind": "calendar",
       "id": "news-retained-938145927385a66834f5325b"
-    },
-    {
-      "name": "INDEX:CN:SSE",
-      "short": "INDEX:CN:SSE",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:06.535Z",
-      "checkedAt": "2026-10-14T02:05:06.535Z",
-      "sourceHash": "69d7f2952063d50c7e3fb2d7d36826cf30d43828bd0263a925263ef79bb679b1",
-      "id": "news-retained-58377c9f4a8e1e9968a6f046"
-    },
-    {
-      "name": "INDEX:CN:CSI300",
-      "short": "INDEX:CN:CSI300",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:07.032Z",
-      "checkedAt": "2026-10-14T02:05:07.032Z",
-      "sourceHash": "e9dbcae2804cb97d18006a2f424deef719ccee25aba27027de7fd63b67f0f646",
-      "id": "news-retained-552da3abb9d2db53e31f3234"
-    },
-    {
-      "name": "INDEX:CN:SZSE",
-      "short": "INDEX:CN:SZSE",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:06.831Z",
-      "checkedAt": "2026-10-14T02:05:06.831Z",
-      "sourceHash": "37d3fa01193f52d729ec45b6ee558283178c4439f3e126ee189310e6e81bc909",
-      "id": "news-retained-bf47d51b760097a555a44c0d"
-    },
-    {
-      "name": "INDEX:CN:CHINEXT",
-      "short": "INDEX:CN:CHINEXT",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:06.879Z",
-      "checkedAt": "2026-10-14T02:05:06.879Z",
-      "sourceHash": "de1050421e90d29740a9eb79e9fb63621b63749306802989f6a5c5eba6cf132f",
-      "id": "news-retained-e39d30ef9accb93e5545e571"
-    },
-    {
-      "name": "INDEX:CN:CSI500",
-      "short": "INDEX:CN:CSI500",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:07.056Z",
-      "checkedAt": "2026-10-14T02:05:07.056Z",
-      "sourceHash": "5735fe9025bb176f3e9d4bc033ef70c9d49c56eb1218aaced46b4b3d98724367",
-      "id": "news-retained-2757d7a8552acde0c79cde00"
-    },
-    {
-      "name": "INDEX:CN:STAR50",
-      "short": "INDEX:CN:STAR50",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:06.931Z",
-      "checkedAt": "2026-10-14T02:05:06.931Z",
-      "sourceHash": "8f82f902ec16632f09a0320a0c5bad1f5a6baaaada229bc6c16c3920ebdc064d",
-      "id": "news-retained-20571b98724e3e314eac39a8"
-    },
-    {
-      "name": "INDEX:HK:HSI",
-      "short": "INDEX:HK:HSI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:07.103Z",
-      "checkedAt": "2026-10-14T02:05:07.103Z",
-      "sourceHash": "144e7e7c774a0496de258952063c93d73492579212674f063d9cf2e6cf6ab60f",
-      "id": "news-retained-94bc4c48b3fc3b2b4e00a7bf"
-    },
-    {
-      "name": "INDEX:HK:HSCEI",
-      "short": "INDEX:HK:HSCEI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:07.165Z",
-      "checkedAt": "2026-10-14T02:05:07.165Z",
-      "sourceHash": "ed84d4638192c74ea6b09e15730cae081bcff0c7ff74c08fa82991b2eabf43fc",
-      "id": "news-retained-a18375a99c26d2b29056896b"
-    },
-    {
-      "name": "INDEX:HK:HSTECH",
-      "short": "INDEX:HK:HSTECH",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:07.126Z",
-      "checkedAt": "2026-10-14T02:05:07.126Z",
-      "sourceHash": "cf391163de9a997626af34d9b71cf846144c46f4617771aad2f8e0cf30c67269",
-      "id": "news-retained-b3732ac0a3c6af58eb9b672d"
-    },
-    {
-      "name": "FX:USDCNH",
-      "short": "FX:USDCNH",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-14T02:05:07.689Z",
-      "checkedAt": "2026-10-14T02:05:07.689Z",
-      "sourceHash": "5ed44a0cc22c4bd5c51266472872b42ac63ba25505b48fb8b3735833c6556782",
-      "id": "news-retained-13c680e57ad51298b160bd80"
     },
     {
       "name": "INDEX:CN:SSE",
@@ -4199,31 +4121,22 @@
       "id": "news-retained-56c1246a0eba6b162f74a67b"
     },
     {
-      "name": "INDEX:HK:HSI",
-      "short": "INDEX:HK:HSI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
-      "retrievedAt": "2026-10-03T16:36:36.510Z",
-      "checkedAt": "2026-10-03T16:36:36.510Z",
-      "sourceHash": "75a25dbab884494bb66489f0ef4dd9f15b4b342d02709b95244db19e8ee3b5f5",
-      "id": "news-retained-215405580ee42214675dc2cb"
+      "name": "Consumer Price Index - September 2026",
+      "short": "bls-cpi-2026-09",
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "sourceHash": "b9f981390c08f4a530d839495fce582124015b979bac0398bfcc35ffde0544e4",
+      "retrievedAt": "2026-10-15T02:08:42.506Z",
+      "evidenceKind": "macro",
+      "id": "news-retained-4cb3e00e9e3a958b1bd0f5ee"
     },
     {
-      "name": "INDEX:HK:HSTECH",
-      "short": "INDEX:HK:HSTECH",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
-      "retrievedAt": "2026-10-03T16:36:36.700Z",
-      "checkedAt": "2026-10-03T16:36:36.700Z",
-      "sourceHash": "eb8e566aa0f631966c6996635e8d14f2194683571a49b9b6b39cac42e717ccd9",
-      "id": "news-retained-9b9b35c3eabf7343d10e73ba"
-    },
-    {
-      "name": "INDEX:HK:HSCEI",
-      "short": "INDEX:HK:HSCEI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
-      "retrievedAt": "2026-10-03T16:36:36.880Z",
-      "checkedAt": "2026-10-03T16:36:36.880Z",
-      "sourceHash": "a6adf6cae33b483ca448040f04f8b3240836d059ec085ddd262e40e71e2b0bd3",
-      "id": "news-retained-909a735e0864590729700bda"
+      "name": "Beige Book - October 2026",
+      "short": "fed-beige-book-2026-10",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-summary.htm",
+      "sourceHash": "8b60e46896cd86d3dc13ad83d04ce1cb9a8eabb3071a998a670d201d7db98739",
+      "retrievedAt": "2026-10-15T02:08:42.744Z",
+      "evidenceKind": "official",
+      "id": "news-retained-ae1f64e0828eccc88a76c042"
     },
     {
       "name": "INDEX:US:SP500",
@@ -4355,6 +4268,33 @@
       "checkedAt": "2026-10-03T16:36:36.300Z",
       "sourceHash": "c26f54a1cc47494a228c861c88a4eb392afec5ba6eeb5cfc6bbe6b59a78db733",
       "id": "news-retained-50f729c0fc00e07c63aaa339"
+    },
+    {
+      "name": "INDEX:HK:HSI",
+      "short": "INDEX:HK:HSI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
+      "retrievedAt": "2026-10-03T16:36:36.510Z",
+      "checkedAt": "2026-10-03T16:36:36.510Z",
+      "sourceHash": "75a25dbab884494bb66489f0ef4dd9f15b4b342d02709b95244db19e8ee3b5f5",
+      "id": "news-retained-215405580ee42214675dc2cb"
+    },
+    {
+      "name": "INDEX:HK:HSTECH",
+      "short": "INDEX:HK:HSTECH",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
+      "retrievedAt": "2026-10-03T16:36:36.700Z",
+      "checkedAt": "2026-10-03T16:36:36.700Z",
+      "sourceHash": "eb8e566aa0f631966c6996635e8d14f2194683571a49b9b6b39cac42e717ccd9",
+      "id": "news-retained-9b9b35c3eabf7343d10e73ba"
+    },
+    {
+      "name": "INDEX:HK:HSCEI",
+      "short": "INDEX:HK:HSCEI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+      "retrievedAt": "2026-10-03T16:36:36.880Z",
+      "checkedAt": "2026-10-03T16:36:36.880Z",
+      "sourceHash": "a6adf6cae33b483ca448040f04f8b3240836d059ec085ddd262e40e71e2b0bd3",
+      "id": "news-retained-909a735e0864590729700bda"
     },
     {
       "name": "商务部召开例行新闻发布会（2026年9月24日）",
@@ -5390,6 +5330,96 @@
       "id": "news-retained-0b9be9a60a9c467d9829be78"
     },
     {
+      "name": "INDEX:CN:SSE",
+      "short": "INDEX:CN:SSE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:06.535Z",
+      "checkedAt": "2026-10-14T02:05:06.535Z",
+      "sourceHash": "69d7f2952063d50c7e3fb2d7d36826cf30d43828bd0263a925263ef79bb679b1",
+      "id": "news-retained-58377c9f4a8e1e9968a6f046"
+    },
+    {
+      "name": "INDEX:CN:CSI300",
+      "short": "INDEX:CN:CSI300",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:07.032Z",
+      "checkedAt": "2026-10-14T02:05:07.032Z",
+      "sourceHash": "e9dbcae2804cb97d18006a2f424deef719ccee25aba27027de7fd63b67f0f646",
+      "id": "news-retained-552da3abb9d2db53e31f3234"
+    },
+    {
+      "name": "INDEX:CN:SZSE",
+      "short": "INDEX:CN:SZSE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:06.831Z",
+      "checkedAt": "2026-10-14T02:05:06.831Z",
+      "sourceHash": "37d3fa01193f52d729ec45b6ee558283178c4439f3e126ee189310e6e81bc909",
+      "id": "news-retained-bf47d51b760097a555a44c0d"
+    },
+    {
+      "name": "INDEX:CN:CHINEXT",
+      "short": "INDEX:CN:CHINEXT",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:06.879Z",
+      "checkedAt": "2026-10-14T02:05:06.879Z",
+      "sourceHash": "de1050421e90d29740a9eb79e9fb63621b63749306802989f6a5c5eba6cf132f",
+      "id": "news-retained-e39d30ef9accb93e5545e571"
+    },
+    {
+      "name": "INDEX:CN:CSI500",
+      "short": "INDEX:CN:CSI500",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:07.056Z",
+      "checkedAt": "2026-10-14T02:05:07.056Z",
+      "sourceHash": "5735fe9025bb176f3e9d4bc033ef70c9d49c56eb1218aaced46b4b3d98724367",
+      "id": "news-retained-2757d7a8552acde0c79cde00"
+    },
+    {
+      "name": "INDEX:CN:STAR50",
+      "short": "INDEX:CN:STAR50",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:06.931Z",
+      "checkedAt": "2026-10-14T02:05:06.931Z",
+      "sourceHash": "8f82f902ec16632f09a0320a0c5bad1f5a6baaaada229bc6c16c3920ebdc064d",
+      "id": "news-retained-20571b98724e3e314eac39a8"
+    },
+    {
+      "name": "INDEX:HK:HSI",
+      "short": "INDEX:HK:HSI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:07.103Z",
+      "checkedAt": "2026-10-14T02:05:07.103Z",
+      "sourceHash": "144e7e7c774a0496de258952063c93d73492579212674f063d9cf2e6cf6ab60f",
+      "id": "news-retained-94bc4c48b3fc3b2b4e00a7bf"
+    },
+    {
+      "name": "INDEX:HK:HSCEI",
+      "short": "INDEX:HK:HSCEI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:07.165Z",
+      "checkedAt": "2026-10-14T02:05:07.165Z",
+      "sourceHash": "ed84d4638192c74ea6b09e15730cae081bcff0c7ff74c08fa82991b2eabf43fc",
+      "id": "news-retained-a18375a99c26d2b29056896b"
+    },
+    {
+      "name": "INDEX:HK:HSTECH",
+      "short": "INDEX:HK:HSTECH",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:07.126Z",
+      "checkedAt": "2026-10-14T02:05:07.126Z",
+      "sourceHash": "cf391163de9a997626af34d9b71cf846144c46f4617771aad2f8e0cf30c67269",
+      "id": "news-retained-b3732ac0a3c6af58eb9b672d"
+    },
+    {
+      "name": "FX:USDCNH",
+      "short": "FX:USDCNH",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
+      "retrievedAt": "2026-10-14T02:05:07.689Z",
+      "checkedAt": "2026-10-14T02:05:07.689Z",
+      "sourceHash": "5ed44a0cc22c4bd5c51266472872b42ac63ba25505b48fb8b3735833c6556782",
+      "id": "news-retained-13c680e57ad51298b160bd80"
+    },
+    {
       "id": "amd-q2",
       "name": "AMD Q2 2026 financial results",
       "url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
@@ -6055,5 +6085,5 @@
       "evidenceKind": "research"
     }
   ],
-  "_inputHash": "cec08a1a13e620004f6d4c2fb1982060205d8c2086937f54856306b67b920a12"
+  "_inputHash": "96e89eaeac9e5fef87b249b086e9e4f7306ea8b884f7a82a82fcbde4eed0dfd8"
 }
