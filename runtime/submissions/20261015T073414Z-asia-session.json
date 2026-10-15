@@ -1,0 +1,1241 @@
+{
+  "version": 1,
+  "submissionId": "20261015T073414Z-asia-session",
+  "requestId": "20261015T073414Z-asia-session",
+  "taskGroup": "asia-session",
+  "submittedAt": "2026-10-15T07:39:23.521Z",
+  "execution": {
+    "executionId": "20261015T073414Z-asia-session",
+    "generation": 134
+  },
+  "editorial": {
+    "packetHash": "ac3dcde03d2697e605dd017e6e14c63b1358cf68dc43ef82b17e22d40142dcb7",
+    "analyzedAt": "2026-10-15T07:39:23.521Z",
+    "report": {
+      "overview": "A股收盘后风险偏好明显走弱，港股下午仍在交易且科技继续领跌。A股延迟行情显示上证约跌2.46%、沪深300跌1.23%、深证成指跌4.35%、创业板跌2.92%、中证500跌3.02%；其中部分深市报价时间晚于15:00，仍按供应商延迟快照处理，不冒充交易所正式收盘。港股15:19延迟快照显示恒指约跌1.43%、恒生科技跌2.94%、国企指数跌1.18%，科技弱于宽基。",
+      "rolling24hSummary": "过去24小时风险收缩集中在科技、高久期与中小盘：上一交易日纳指100跌约2.02%，当前VIX延迟快照升约15.13%；A股当日午间曾有超过5000只个股下跌，创业板午后跌幅一度扩大至4%，收盘附近仍显著承压；港股下午恒生科技跌幅约为恒指两倍。中国9月PPI同比5.0%、显著高于CPI同比0.9%，而央行开展7000亿元6个月买断式逆回购，形成“成本压力偏强、流动性托底但风险偏好偏弱”的组合。",
+      "methodology": "本轮为A股收盘、港股下午交易节点。仅使用绑定packet中的行情行和7份contentRetrieved=true、带哈希与取得时间的正文；所有sourceUrls限制在这7份成功文档。交易日状态另经上交所与港交所官方日历核对：10月15日为正常交易日；这些日历未进入本轮packet，故不写入editorial sourceUrls。A股行情均标delayed，部分时间戳晚于15:00，不宣称交易所正式收盘值；港股15:19仍为盘中延迟行情，不写成收盘。Brent、A/H资金流、完整行业宽度和公司事件原文研究缺失，均标partial且不补0。",
+      "coreAnalysis": {
+        "mainTheme": "A股收盘附近出现宽基与成长同步下跌，深证与中小盘压力更大；港股下午科技继续弱于宽基。流动性操作缓冲资金面，但PPI快于CPI与隔夜科技下跌共同压制风险偏好。",
+        "expectationGap": "午间A股创业板跌3.42%，13:32一度扩大至4%；最终延迟快照约跌2.92%，显示低位有修复但未扭转风险偏弱结构。港股午间恒生科技跌2.94%，15:19仍约跌2.94%，科技弱势延续。",
+        "divergence": "沪深300约跌1.23%，明显好于深证成指约跌4.35%和中证500约跌3.02%；港股国企指数约跌1.18%，也好于恒生科技约跌2.94%。这说明压力更集中在高久期、成长与中小盘，而非所有资产同幅下跌。",
+        "regime": "成本压力上升、流动性托底、科技与中小盘风险溢价扩张。",
+        "priceIn": "亚洲市场已计入部分隔夜科技抛压和国内成本压力；央行流动性投放尚未转化为广泛风险偏好修复。港股收盘、美国PPI及下一交易日反应尚未计入。",
+        "bullCase": "港股收盘前科技显著收窄跌幅，人民币保持稳定；下一交易日A股成长与中小盘获得成交和广度确认的修复。",
+        "bullInvalidation": "恒生科技收盘仍显著弱于恒指，或下一交易日A股成长和中小盘继续放量走弱。",
+        "bearCase": "PPI-CPI价差与全球久期压力继续压缩中下游利润预期和成长估值，流动性操作只能缓冲而不能逆转风险偏好。",
+        "bearInvalidation": "成本压力缓和、收益率和油价回落，同时A/H科技与中小盘在成交支持下普遍反弹。"
+      },
+      "plainLanguage": {
+        "verdict": "A股今天不是普遍小跌，而是深市、成长与中小盘跌得更重；港股下午科技也继续弱于宽基。",
+        "bottomLine": "央行投放流动性有助于避免资金面过紧，但不能自动抵消估值和利润率压力。短线更应看科技与中小盘能否止跌，而不是把“有流动性”直接等同于股票会上涨。",
+        "whyNow": "A股午间广度恶化、创业板午后一度跌4%，收盘附近虽有修复仍偏弱；港股科技午后跌幅基本未收窄。与此同时，官方价格数据和央行流动性操作提供了宏观解释边界。",
+        "horizon": "港股今日收盘至未来1—2个交易日。",
+        "confidence": "中等偏高：A/H主要指数与三份市场正文一致指向风险偏弱；但A股是延迟行情、港股尚未收盘，且缺资金流与完整行业宽度。",
+        "invalidation": "若港股收盘前恒生科技快速收窄跌幅，下一交易日A股成长与中小盘在成交和广度支持下反弹，则应下调短线偏空判断。",
+        "evidenceFactIds": [
+          "INDEX:CN:SSE",
+          "INDEX:CN:SZSE",
+          "INDEX:CN:CSI300",
+          "INDEX:CN:CHINEXT",
+          "INDEX:CN:CSI500",
+          "INDEX:HK:HSI",
+          "INDEX:HK:HSTECH",
+          "INDEX:US:NDX",
+          "VOL:VIX",
+          "ENERGY:WTI"
+        ],
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4219563.html",
+          "https://www.stcn.com/article/detail/4219682.html",
+          "https://www.stcn.com/article/detail/4219615.html",
+          "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html",
+          "https://www.stcn.com/article/detail/4218380.html"
+        ],
+        "impacts": [
+          {
+            "asset": "A股",
+            "effect": "偏利空，成长与中小盘压力更大",
+            "reason": "上证约-2.46%、沪深300约-1.23%、深证约-4.35%、创业板约-2.92%、中证500约-3.02%；午后创业板一度跌4%。",
+            "takeaway": "市场风险收缩集中在深市、成长和中小盘，低位修复尚未扭转结构。",
+            "horizon": "下一交易日",
+            "counterRisk": "行情为延迟快照，缺交易所正式收盘确认、成交结构和资金流。",
+            "invalidation": "下一交易日成长与中小盘在成交和广度支持下明显跑赢宽基。",
+            "confidence": "medium-high",
+            "evidenceFactIds": [
+              "INDEX:CN:SSE",
+              "INDEX:CN:SZSE",
+              "INDEX:CN:CSI300",
+              "INDEX:CN:CHINEXT",
+              "INDEX:CN:CSI500"
+            ],
+            "sourceUrls": [
+              "https://www.stcn.com/article/detail/4219563.html",
+              "https://www.stcn.com/article/detail/4219682.html"
+            ]
+          },
+          {
+            "asset": "港股",
+            "effect": "盘中偏利空，科技领跌",
+            "reason": "15:19延迟快照显示恒指约-1.43%、恒生科技约-2.94%、国企指数约-1.18%；午间科技跌幅也是2.94%。",
+            "takeaway": "科技弱势从午间延续到下午，但仍需等待16:00收盘确认。",
+            "horizon": "今日收盘前后",
+            "counterRisk": "缺收盘、南向资金、成交额和完整行业归因。",
+            "invalidation": "恒生科技收盘前显著收复跌幅并跑赢恒指。",
+            "confidence": "medium-high",
+            "evidenceFactIds": [
+              "INDEX:HK:HSI",
+              "INDEX:HK:HSTECH",
+              "INDEX:HK:HSCEI",
+              "FX:USDCNH"
+            ],
+            "sourceUrls": [
+              "https://www.stcn.com/article/detail/4219615.html"
+            ]
+          },
+          {
+            "asset": "美股",
+            "effect": "上一交易日风险偏空",
+            "reason": "标普约-1.11%、纳指约-1.88%、纳指100约-2.02%，道指仅约-0.09%；当前VIX延迟快照约+15.13%。",
+            "takeaway": "压力集中在科技与高久期资产，并向亚洲科技传导。",
+            "horizon": "下一美股交易日前",
+            "counterRisk": "缺本轮美国新闻正文、期货与完整行业宽度。",
+            "invalidation": "纳指100与小盘同步修复且VIX回落。",
+            "confidence": "medium-high",
+            "evidenceFactIds": [
+              "INDEX:US:SP500",
+              "INDEX:US:NASDAQ",
+              "INDEX:US:NDX",
+              "INDEX:US:DOW",
+              "INDEX:US:RUSSELL2000",
+              "VOL:VIX"
+            ]
+          },
+          {
+            "asset": "BTC",
+            "effect": "价格锚偏弱但方向不足",
+            "reason": "07:34:50Z Coinbase BTC约81,102.92美元，缺同源24小时基准、ETF流、OI和清算。",
+            "takeaway": "只能确认价格位置，不能据单点快照判断资金流或趋势。",
+            "horizon": "未来12小时",
+            "counterRisk": "单一交易场所和单点现货代表性有限。",
+            "invalidation": "补齐连续价格、衍生品和ETF流后形成一致方向。",
+            "confidence": "low",
+            "evidenceFactIds": [
+              "CRYPTO:BTC:USD"
+            ]
+          },
+          {
+            "asset": "黄金",
+            "effect": "高位震荡，方向未确认",
+            "reason": "07:34:44Z黄金约4,143.50美元/盎司；美元指数约102.086、较前收回落约0.46%，10年期为上一交易日5.19%。",
+            "takeaway": "高价与美元回落不等于新增避险资金已经确认。",
+            "horizon": "未来12—24小时",
+            "counterRisk": "缺黄金同源涨跌、实际利率和ETF流。",
+            "invalidation": "连续数据确认黄金与实际利率、美元形成稳定方向。",
+            "confidence": "low-medium",
+            "evidenceFactIds": [
+              "METAL:XAUUSD",
+              "METAL:XAGUSD",
+              "FX:DXY",
+              "RATE:US10Y"
+            ]
+          },
+          {
+            "asset": "原油",
+            "effect": "高位回落但成本压力仍在",
+            "reason": "WTI 11月合约07:24:49Z约93.91美元、较前收约-1.24%；Brent和库存缺失。",
+            "takeaway": "短线回落不等于成本压力解除，9月PPI仍显示油价向国内生产端传导。",
+            "horizon": "未来12—24小时",
+            "counterRisk": "缺Brent、库存、期限结构和仓位。",
+            "invalidation": "库存与供应证据显示宽松且WTI持续下破。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "ENERGY:WTI",
+              "FX:DXY"
+            ],
+            "sourceUrls": [
+              "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "asset": "A股",
+          "name": "A股",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:19:19.000Z",
+          "summary": "A股已收盘；延迟行情显示上证约-2.46%、沪深300约-1.23%、深证约-4.35%、创业板约-2.92%、中证500约-3.02%。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html"
+          ]
+        },
+        {
+          "asset": "港股",
+          "name": "港股",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:19:50.000Z",
+          "summary": "港股仍在下午交易；恒指约-1.43%、恒生科技约-2.94%、国企指数约-1.18%。",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FX:USDCNH"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        },
+        {
+          "asset": "美股",
+          "name": "美股",
+          "status": "previous",
+          "dataAsOf": "2026-10-14T21:15:59.000Z",
+          "summary": "上一交易日标普约-1.11%、纳指约-1.88%、纳指100约-2.02%，道指约-0.09%；VIX当前延迟快照上升。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "asset": "BTC",
+          "name": "BTC",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:34:50.989Z",
+          "summary": "Coinbase BTC约81,102.92美元，缺同源24小时涨跌及资金流。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        },
+        {
+          "asset": "黄金",
+          "name": "黄金",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:34:44.000Z",
+          "summary": "黄金约4,143.50美元/盎司、白银约56.52美元；缺同源涨跌、实际利率与流量。",
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "asset": "原油",
+          "name": "原油",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:24:49.000Z",
+          "summary": "WTI 11月合约约93.91美元、约-1.24%；Brent与库存缺失。",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "FX:DXY"
+          ],
+          "sourceUrls": [
+            "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+          ]
+        }
+      ],
+      "deepDive": [
+        {
+          "name": "A股",
+          "asset": "A股",
+          "title": "收盘附近深市与中小盘领跌",
+          "oneLine": "深证跌幅显著大于沪深300，风险偏好收缩集中在成长与中小盘。",
+          "analysis": "上证约3707.48、跌2.46%；沪深300约4166.01、跌1.23%；深证成指约11816.79、跌4.35%；创业板约2783.18、跌2.92%；中证500约6769.25、跌3.02%。午间创业板跌3.42%、全市场超5000股下跌，13:32跌幅一度扩大至4%；延迟终值显示有所修复但仍偏弱。",
+          "mechanism": "高久期成长和中小盘对风险溢价、资金成本与流动性变化更敏感；PPI高于CPI也加大部分中下游利润率担忧。",
+          "risk": "行情为供应商延迟值，部分深市时间戳晚于15:00；缺交易所正式收盘、资金流和完整行业宽度。",
+          "invalidation": "下一交易日成长与中小盘在成交和广度支持下明显反弹。",
+          "horizon": "1—2个交易日",
+          "factIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500"
+          ],
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html"
+          ]
+        },
+        {
+          "name": "港股",
+          "asset": "港股",
+          "title": "下午科技持续弱于宽基",
+          "oneLine": "恒生科技约跌2.94%，约为恒指跌幅两倍。",
+          "analysis": "15:19:50延迟行情显示恒指23996.81、跌1.43%，恒生科技4051.61、跌2.94%，国企指数8078.39、跌1.18%。午间新闻同样记录恒生科技跌2.94%，说明科技弱势延续到下午，但此时市场尚未收盘。",
+          "mechanism": "隔夜美股科技下跌、久期估值压力与区域风险偏好共同压制科技股；人民币近乎持平，汇率不是唯一驱动。",
+          "risk": "港股仍在交易，缺16:00收盘、南向资金、成交额和行业全景。",
+          "invalidation": "收盘前恒生科技快速收复跌幅并跑赢恒指。",
+          "horizon": "今日收盘至下一交易日",
+          "factIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FX:USDCNH"
+          ],
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FX:USDCNH"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        },
+        {
+          "name": "美股",
+          "asset": "美股",
+          "title": "科技与小盘继续是弱环节",
+          "oneLine": "纳指100与罗素2000跌幅接近2%，道指近乎平盘。",
+          "analysis": "上一交易日标普约-1.11%、纳指约-1.88%、纳指100约-2.02%、罗素2000约-1.93%，道指约-0.09%；当前VIX延迟快照17.58、较前收约+15.13%。结构显示科技与融资敏感资产承压。",
+          "mechanism": "较高收益率、成本压力与风险溢价上升压低远期现金流估值。",
+          "risk": "本轮无新增美国新闻正文、期货、完整行业宽度和资金流。",
+          "invalidation": "下一交易时段纳指100与小盘同步修复、VIX回落。",
+          "horizon": "未来6—24小时",
+          "factIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y"
+          ],
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "name": "BTC",
+          "asset": "BTC",
+          "title": "单点现货仍不足以确认趋势",
+          "oneLine": "BTC约81,103美元，只能作为价格锚。",
+          "analysis": "07:34:50Z Coinbase BTC-USD约81,102.92美元。未取得同源24小时基准、ETF流、OI、资金费率和清算，无法判断变化是否来自真实增量资金。",
+          "mechanism": "BTC同时受美元、流动性、杠杆与风险偏好影响，单点不能区分驱动。",
+          "risk": "单一交易场所价格不代表全市场加权均价。",
+          "invalidation": "补齐连续价格、衍生品和ETF流后形成一致方向。",
+          "horizon": "未来12小时",
+          "factIds": [
+            "CRYPTO:BTC:USD"
+          ],
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        },
+        {
+          "name": "黄金",
+          "asset": "黄金",
+          "title": "高位与新增避险需求需分开",
+          "oneLine": "黄金约4,143.50美元，但缺涨跌基准与实际利率。",
+          "analysis": "07:34:44Z黄金约4,143.50美元/盎司、白银约56.52美元；美元指数07:24:50Z约102.086、较前收跌0.46%，10年期为上一交易日5.19%。高价可反映通胀和避险，但单点不能确认当日资金流。",
+          "mechanism": "黄金同时受美元、实际利率、通胀预期、避险与实物需求驱动。",
+          "risk": "把高价位误读为当日上涨或ETF流入。",
+          "invalidation": "连续报价、实际利率与ETF流给出一致方向。",
+          "horizon": "未来12—24小时",
+          "factIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ],
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "name": "原油",
+          "asset": "原油",
+          "title": "WTI回落，成本链压力未解除",
+          "oneLine": "WTI约93.91美元、跌1.24%，但PPI仍显示能源向生产端传导。",
+          "analysis": "07:24:49Z WTI 2026年11月合约约93.91美元、较供应商前收跌1.24%。Brent、库存、期限结构、仓位和现货流未更新；国家统计局显示9月石油开采和精炼价格环比分别上涨14.5%和7.4%。",
+          "mechanism": "油价由需求、库存、供应与地缘风险溢价共同决定，生产端价格传导影响企业成本与通胀预期。",
+          "risk": "缺Brent与库存时误判全球供需拐点。",
+          "invalidation": "库存与供应证据显示宽松且WTI持续下破。",
+          "horizon": "未来12—24小时",
+          "factIds": [
+            "ENERGY:WTI",
+            "FX:DXY"
+          ],
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "FX:DXY"
+          ],
+          "sourceUrls": [
+            "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+          ]
+        }
+      ],
+      "marketCoverage": [
+        {
+          "market": "A股",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:19:19.000Z",
+          "coverage": "正常交易日且已收盘；覆盖六项主要指数延迟行情和午间/午后市场正文。",
+          "gaps": [
+            "交易所正式收盘确认",
+            "全市场成交结构",
+            "资金流",
+            "31个申万一级行业完整样本"
+          ],
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html"
+          ]
+        },
+        {
+          "market": "港股",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:19:50.000Z",
+          "coverage": "正常交易日且仍在下午交易；覆盖恒指、恒生科技、国企指数盘中延迟行情及午间正文。",
+          "gaps": [
+            "16:00正式收盘",
+            "成交额",
+            "南向资金",
+            "12个HSICS行业完整样本"
+          ],
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FX:USDCNH"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        },
+        {
+          "market": "美股",
+          "status": "previous",
+          "dataAsOf": "2026-10-14T21:15:59.000Z",
+          "coverage": "上一交易日主要指数、VIX与10年期名义收益率。",
+          "gaps": [
+            "本轮美国新闻正文",
+            "期货",
+            "完整行业宽度",
+            "资金流"
+          ],
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "market": "BTC",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:34:50.989Z",
+          "coverage": "Coinbase USD现货单点快照。",
+          "gaps": [
+            "同源24小时基准",
+            "ETF流",
+            "OI",
+            "资金费率",
+            "清算"
+          ],
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        },
+        {
+          "market": "黄金",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:34:44.000Z",
+          "coverage": "黄金、白银单点参考价及美元、10年期名义收益率。",
+          "gaps": [
+            "同源涨跌",
+            "实际利率",
+            "ETF持仓流"
+          ],
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "market": "原油",
+          "status": "partial",
+          "dataAsOf": "2026-10-15T07:24:49.000Z",
+          "coverage": "WTI 2026年11月合约延迟报价及中国PPI成本传导正文。",
+          "gaps": [
+            "Brent",
+            "库存",
+            "期限结构",
+            "仓位与现货流"
+          ],
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ],
+          "sourceUrls": [
+            "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+          ]
+        }
+      ],
+      "frameworkAnalysis": [
+        {
+          "id": "fw-relative-strength-134",
+          "framework": "跨市场相对强弱",
+          "concept": "比较宽基、成长和中小盘的相对表现，判断风险是否集中在久期资产。",
+          "applicability": "A股收盘附近、港股下午、上一交易日美股。",
+          "observed": "深证约-4.35%、中证500约-3.02%、创业板约-2.92%，弱于沪深300约-1.23%；恒生科技约-2.94%，弱于恒指约-1.43%；纳指100约-2.02%，弱于道指约-0.09%。",
+          "mechanism": "成长和中小盘对折现率、融资条件与风险溢价更敏感。",
+          "conclusion": "本轮更像科技、成长和中小盘的集中风险收缩，而非所有资产同幅下跌。",
+          "assumptions": "延迟报价足以判断相对方向，但不能替代交易所正式收盘。",
+          "counterEvidence": "A股创业板从盘中-4%修复到约-2.92%，且人民币稳定、美元回落。",
+          "horizon": "1—2个交易日",
+          "invalidation": "A/H科技与中小盘在成交和广度支持下持续跑赢宽基。",
+          "confidence": "high",
+          "missingData": "A/H资金流、完整行业广度与正式收盘确认。",
+          "evidenceFactIds": [
+            "INDEX:CN:CSI300",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:CSI500",
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html",
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        },
+        {
+          "id": "fw-price-transmission-134",
+          "framework": "PPI-CPI价格传导",
+          "concept": "比较生产端和消费端价格变化，判断利润率压力所在。",
+          "applicability": "中国股票、原油与制造业成本。",
+          "observed": "9月PPI同比5.0%、环比1.2%，CPI同比0.9%、环比0.2%；石油开采和精炼价格环比上涨14.5%和7.4%。",
+          "mechanism": "上游价格上升只有在中下游具备提价能力时才能转化为广泛盈利改善，否则会挤压利润率。",
+          "conclusion": "成本压力为成长与中下游估值提供了额外约束，不能把PPI上升简单解读为股票利好。",
+          "assumptions": "官方月度价格数据能反映当前成本方向。",
+          "counterEvidence": "WTI本轮回落1.24%，且服务价格环比下降。",
+          "horizon": "1—3个月",
+          "invalidation": "PPI回落且中下游利润率、订单与价格同步改善。",
+          "confidence": "high",
+          "missingData": "行业利润率、订单与更高频价格。",
+          "sourceUrls": [
+            "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+          ],
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ]
+        },
+        {
+          "id": "fw-liquidity-134",
+          "framework": "流动性与信用传导",
+          "concept": "区分央行流动性投放、信用扩张和股票风险偏好。",
+          "applicability": "A股、港股与人民币资金面。",
+          "observed": "央行宣布10月15日开展7000亿元6个月买断式逆回购；前三季度人民币贷款增加11.52万亿元，9月末贷款余额同比4.8%。",
+          "mechanism": "流动性操作缓冲银行体系资金面，但股票上涨仍取决于盈利、风险溢价和资金配置。",
+          "conclusion": "流动性托底并未阻止本轮A/H风险偏弱，说明资金面改善不能直接替代盈利和估值证据。",
+          "assumptions": "公告和金融统计转述准确，操作按计划完成。",
+          "counterEvidence": "人民币稳定，意味着流动性压力不是主要矛盾。",
+          "horizon": "数日至数月",
+          "invalidation": "信用与流动性改善开始由成交、资金流、盈利和风险偏好共同确认。",
+          "confidence": "medium-high",
+          "missingData": "操作中标利率、A/H资金流与信贷实际投向。",
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4218380.html",
+            "https://www.stcn.com/article/detail/4218389.html"
+          ],
+          "evidenceFactIds": [
+            "FX:USDCNY",
+            "FX:USDCNH"
+          ]
+        },
+        {
+          "id": "fw-evidence-quality-134",
+          "framework": "证据分层与情景更新",
+          "concept": "把正式收盘、延迟行情、正文事实和未来日历区分开。",
+          "applicability": "全部六资产。",
+          "observed": "A股已收盘但行情为delayed，港股尚未收盘；7份正文成功取得，Brent、资金流、完整行业与公司研究缺失。",
+          "mechanism": "只让可核验事实进入结论层，缺失项降低置信度而不是补数。",
+          "conclusion": "可确认亚洲风险偏弱和科技领跌，但不能宣称正式收盘、资金流或公司研究完整。",
+          "assumptions": "packet时间戳和contentRetrieved记录可靠。",
+          "counterEvidence": "部分行情在截止前仍可能变化。",
+          "horizon": "本轮至未来24小时",
+          "invalidation": "交易所正式收盘或新官方结果与当前相对方向相反。",
+          "confidence": "high",
+          "missingData": "港股收盘、A股正式收盘文件、Brent、资金流、行业宽度和公司原文。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:HK:HSTECH",
+            "CRYPTO:BTC:USD",
+            "METAL:XAUUSD",
+            "ENERGY:WTI"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html",
+            "https://www.stcn.com/article/detail/4219615.html",
+            "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html",
+            "https://www.stcn.com/article/detail/4218389.html",
+            "https://www.stcn.com/article/detail/4218380.html",
+            "https://www.imf.org/en/meetings/2026/annual/schedule"
+          ]
+        }
+      ],
+      "frameworkSynthesis": {
+        "verdict": "四套框架共同支持短线偏防守：A股深市、成长和中小盘领跌，港股科技盘中继续弱于宽基；流动性投放只能缓冲，不能替代盈利与风险偏好修复。",
+        "agreement": "相对强弱、价格传导和证据分层均指向科技与中小盘更脆弱；流动性框架确认资金面有托底但尚未形成全面股价支撑。",
+        "disagreement": "创业板从盘中-4%修复到约-2.92%，美元回落、人民币稳定和WTI下跌，不支持无差别系统性恐慌。",
+        "weighting": "相对强弱35%，价格传导25%，流动性与信用20%，证据质量20%；对港股未收盘、A股延迟报价和单点商品/加密行情降低权重。",
+        "invalidation": "港股收盘前科技明显修复，下一交易日A股成长和中小盘在成交与广度支持下反弹，同时收益率与油价回落。"
+      },
+      "watch": [
+        {
+          "point": "港股16:00收盘",
+          "detail": "核对恒生科技是否仍显著弱于恒指；当前15:19仅是延迟盘中快照。",
+          "horizon": "约40分钟"
+        },
+        {
+          "point": "A股下一交易日广度与成交",
+          "detail": "观察深证、创业板与中证500是否继续弱于沪深300，并等待涨跌家数、成交结构和资金流。",
+          "horizon": "下一交易日"
+        },
+        {
+          "point": "中国PPI向利润率传导",
+          "detail": "关注资源、化工和制造企业提价能力，以及中下游利润率与订单。",
+          "horizon": "未来1—3个月"
+        },
+        {
+          "point": "央行流动性操作传导",
+          "detail": "观察7000亿元买断式逆回购是否缓解资金面，并由信用、成交和风险偏好共同确认。",
+          "horizon": "未来数日"
+        },
+        {
+          "point": "IMF年会全体会议",
+          "detail": "10月16日10:00（UTC+8）举行；日程只提供观察节点，不预填结论。",
+          "horizon": "约18小时",
+          "sourceUrls": [
+            "https://www.imf.org/en/meetings/2026/annual/schedule"
+          ]
+        },
+        {
+          "point": "美股科技与VIX",
+          "detail": "若纳指100、小盘继续走弱且VIX维持高位，亚洲成长压力更可信。",
+          "horizon": "下一美股交易时段"
+        },
+        {
+          "point": "数据缺口",
+          "detail": "等待Brent、EIA库存、A/H资金流、BTC衍生品与ETF流、黄金实际利率和公司原文研究。",
+          "horizon": "未来24小时"
+        }
+      ],
+      "dataDefinitions": [
+        {
+          "term": "A股延迟收盘附近行情",
+          "definition": "本轮A股报价为delayed，部分时间戳晚于15:00；用于方向与相对强弱，不等同交易所正式收盘确认。"
+        },
+        {
+          "term": "港股盘中",
+          "definition": "本轮最新港股时间为15:19:50（UTC+8），早于16:00收盘，不能写成收盘。"
+        },
+        {
+          "term": "provider-previous-close",
+          "definition": "涨跌幅相对行情供应商前收，不是相对上一份GDR。"
+        },
+        {
+          "term": "snapshot",
+          "definition": "单点现货价格；没有同源基准时不计算涨跌。"
+        },
+        {
+          "term": "PPI-CPI价差",
+          "definition": "生产端与消费端价格同比变化差异，不直接等于企业利润或指数方向。"
+        },
+        {
+          "term": "流动性操作",
+          "definition": "央行向银行体系提供资金的工具，不等同股票市场净流入。"
+        },
+        {
+          "term": "partial",
+          "definition": "已取得部分事实但关键覆盖缺失；未知值不补0。"
+        },
+        {
+          "term": "researchRecord",
+          "definition": "仅放本轮成功取得并阅读的公司事件原文研究；本轮没有合格材料，历史记录由代码保留原analyzedAt。"
+        }
+      ],
+      "recentChanges": [
+        {
+          "title": "A股收盘附近深市与中小盘领跌",
+          "detail": "上证约-2.46%、沪深300约-1.23%、深证约-4.35%、创业板约-2.92%、中证500约-3.02%。",
+          "at": "2026-10-15T07:19:19.000Z",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html"
+          ]
+        },
+        {
+          "title": "港股下午科技弱势延续",
+          "detail": "15:19延迟快照中恒生科技约-2.94%，弱于恒指约-1.43%和国企指数约-1.18%。",
+          "at": "2026-10-15T07:19:50.000Z",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        },
+        {
+          "title": "央行开展7000亿元买断式逆回购",
+          "detail": "期限6个月（182天），用于保持银行体系流动性充裕。",
+          "at": "2026-10-15T00:00:00.000Z",
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4218380.html"
+          ]
+        },
+        {
+          "title": "WTI回落、黄金与BTC仍为单点锚",
+          "detail": "WTI约93.91美元、约-1.24%；黄金约4143.50美元、BTC约81102.92美元，后二者缺同源涨跌。",
+          "at": "2026-10-15T07:34:50.989Z",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "METAL:XAUUSD",
+            "CRYPTO:BTC:USD"
+          ]
+        }
+      ],
+      "changes": [
+        {
+          "title": "A股收盘附近深市与中小盘领跌",
+          "detail": "上证约-2.46%、沪深300约-1.23%、深证约-4.35%、创业板约-2.92%、中证500约-3.02%。",
+          "at": "2026-10-15T07:19:19.000Z",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html"
+          ]
+        },
+        {
+          "title": "港股下午科技弱势延续",
+          "detail": "15:19延迟快照中恒生科技约-2.94%，弱于恒指约-1.43%和国企指数约-1.18%。",
+          "at": "2026-10-15T07:19:50.000Z",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        },
+        {
+          "title": "央行开展7000亿元买断式逆回购",
+          "detail": "期限6个月（182天），用于保持银行体系流动性充裕。",
+          "at": "2026-10-15T00:00:00.000Z",
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4218380.html"
+          ]
+        },
+        {
+          "title": "WTI回落、黄金与BTC仍为单点锚",
+          "detail": "WTI约93.91美元、约-1.24%；黄金约4143.50美元、BTC约81102.92美元，后二者缺同源涨跌。",
+          "at": "2026-10-15T07:34:50.989Z",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "METAL:XAUUSD",
+            "CRYPTO:BTC:USD"
+          ]
+        }
+      ],
+      "evolution24h": [
+        {
+          "title": "中国9月价格数据",
+          "detail": "CPI同比0.9%、PPI同比5.0%，生产端涨价快于消费端。",
+          "at": "2026-10-14T01:30:00.000Z",
+          "sourceUrls": [
+            "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+          ]
+        },
+        {
+          "title": "前三季度金融统计发布",
+          "detail": "人民币贷款增加11.52万亿元；9月末贷款余额同比4.8%。",
+          "at": "2026-10-14T09:15:00.000Z",
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4218389.html"
+          ]
+        },
+        {
+          "title": "A股午间广度恶化、午后创业板一度跌4%",
+          "detail": "午间创业板跌3.42%、全市场超5000股下跌；13:32跌幅扩大至4%。",
+          "at": "2026-10-15T05:32:00.000Z",
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html"
+          ]
+        },
+        {
+          "title": "A股收盘附近与港股下午继续偏弱",
+          "detail": "A股深证和中小盘领跌；港股15:19恒生科技约-2.94%。",
+          "at": "2026-10-15T07:19:50.000Z",
+          "evidenceFactIds": [
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI500",
+            "INDEX:HK:HSTECH"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        }
+      ],
+      "narrativeTriggers": [
+        {
+          "title": "港股收盘前科技修复",
+          "effect": "下调隔夜科技压力持续向亚洲传导的判断。"
+        },
+        {
+          "title": "A股成长与中小盘次日反弹",
+          "effect": "确认风险溢价收缩而非趋势性恶化。"
+        },
+        {
+          "title": "PPI成本向企业利润率扩散",
+          "effect": "强化中下游盈利压力与行业分化。"
+        },
+        {
+          "title": "流动性、成交和资金流共同改善",
+          "effect": "提高政策托底转化为风险偏好修复的权重。"
+        }
+      ],
+      "analysisTheses": [
+        {
+          "title": "久期与中小盘压力主导亚洲结构",
+          "detail": "A股深证、中证500和创业板弱于沪深300，港股恒生科技弱于恒指。",
+          "status": "active",
+          "evidenceFactIds": [
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI500",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:CSI300",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSI"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html",
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        },
+        {
+          "title": "流动性托底与成本压力并存",
+          "detail": "央行开展7000亿元买断式逆回购，但PPI同比5.0%显著高于CPI同比0.9%，股票影响取决于盈利和风险溢价。",
+          "status": "active",
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4218380.html",
+            "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+          ]
+        }
+      ],
+      "judgmentRevisions": [
+        {
+          "title": "从早盘数据不足上调为亚洲风险偏弱确认",
+          "detail": "A股同日延迟行情已补齐并显示深市、成长和中小盘领跌；港股下午科技跌幅仍约2.94%。因此上调短线风险偏弱判断，但因A股非交易所正式收盘、港股尚未收盘仍保留partial。",
+          "at": "2026-10-15T07:19:50.000Z",
+          "evidenceFactIds": [
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:CSI500",
+            "INDEX:HK:HSTECH"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html",
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        }
+      ],
+      "worldEvents": [
+        {
+          "id": "cn-a-close-20261015",
+          "title": "A股10月15日收盘节点",
+          "at": "2026-10-15T07:00:00.000Z",
+          "region": "CN",
+          "type": "market-close",
+          "status": "observed",
+          "note": "市场已收盘；本轮引用延迟行情，不冒充交易所正式收盘确认。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219563.html",
+            "https://www.stcn.com/article/detail/4219682.html"
+          ]
+        },
+        {
+          "id": "hk-afternoon-20261015",
+          "title": "港股10月15日下午连续交易",
+          "at": "2026-10-15T07:19:50.000Z",
+          "region": "CN",
+          "type": "market-session",
+          "status": "observed",
+          "note": "市场尚未收盘；恒生科技弱于宽基。",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4219615.html"
+          ]
+        },
+        {
+          "id": "pbc-buyout-repo-20261015",
+          "title": "央行7000亿元买断式逆回购",
+          "at": "2026-10-15T00:00:00.000Z",
+          "region": "CN",
+          "type": "macro-policy",
+          "status": "observed",
+          "note": "期限6个月（182天），保持银行体系流动性充裕。",
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4218380.html"
+          ]
+        },
+        {
+          "id": "imf-plenary-20261016",
+          "title": "IMF世界银行年会全体会议",
+          "at": "2026-10-16T02:00:00.000Z",
+          "region": "WORLD",
+          "type": "macro-event",
+          "status": "scheduled",
+          "note": "曼谷09:00，对应北京时间10:00；日程不代表结论。",
+          "sourceUrls": [
+            "https://www.imf.org/en/meetings/2026/annual/schedule"
+          ]
+        }
+      ],
+      "sectionGaps": {
+        "news": {
+          "reason": "本轮7份成功正文覆盖A/H市场、国家统计局价格数据、金融统计、流动性操作与IMF日程；美股缺新增新闻正文。"
+        },
+        "funds": {
+          "reason": "缺南向、北向/主力资金、ETF净流、期货持仓和加密资金流。"
+        },
+        "industry": {
+          "reason": "缺31个申万一级、12个HSICS行业的完整成员、统一权重与成交输入；不计算伪Top-N。"
+        },
+        "research": {
+          "reason": "本轮未成功取得并完整阅读新的公司事件原文，researchRecords、researchChecks与researchPendingQueue为空；历史研究由代码保留原analyzedAt。"
+        },
+        "energy": {
+          "reason": "Brent与EIA实际库存缺失；WTI可用但缺期限结构、仓位与现货流。"
+        },
+        "asiaQuotes": {
+          "reason": "A股已收盘但行情为delayed，港股15:19仍在交易；分别标记为收盘附近延迟值和盘中值。"
+        },
+        "sources": {
+          "reason": "11份请求中7份形成contentRetrieved证据；只有这些成功文档进入sourceUrls。交易日状态另由官方日历核对，但未进入packet，不写入editorial引用。"
+        },
+        "events": {
+          "reason": "已核验IMF年会官方日程，列出未来24小时全体会议与AI议题；不预填结论。"
+        }
+      },
+      "metrics": []
+    },
+    "newsItems": [
+      {
+        "eventId": "cn-a-midday-selloff-20261015",
+        "title": "A股午间双创走弱、市场广度恶化",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "summary": "午间上证跌1.98%、深证跌2.78%、创业板跌3.42%，全市场超5000股下跌；PCB、传媒娱乐和创新药局部活跃，存储芯片、航运港口、煤炭等偏弱。",
+        "plainImpact": "不是所有板块一起下跌，但多数股票承压，成长和周期敏感方向风险更集中。",
+        "assessment": "正文提供午间指数与广度证据；不把局部涨停样本当成全行业表现。",
+        "publishedAt": "2026-10-15T11:35:00+08:00",
+        "eventAt": "2026-10-15T11:30:00+08:00",
+        "sourceDateText": "2026-10-15 11:35（证券时报网）",
+        "dateUncertainty": "午间收盘时点按常规11:30描述。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4219563.html"
+        ]
+      },
+      {
+        "eventId": "cn-chinext-intraday-4pct-20261015",
+        "title": "创业板午后跌幅一度扩大至4%",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "summary": "证券时报网13:32快讯显示创业板指盘中跌幅扩大至4%。",
+        "plainImpact": "午后风险偏好进一步恶化，成长资产对估值和成本压力更敏感。",
+        "assessment": "这是盘中阶段事实，后续延迟行情显示跌幅收窄，不能当作最终收盘值。",
+        "publishedAt": "2026-10-15T13:32:00+08:00",
+        "eventAt": "2026-10-15T13:32:00+08:00",
+        "sourceDateText": "2026-10-15 13:32（证券时报网）",
+        "dateUncertainty": "盘中快讯。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4219682.html"
+        ]
+      },
+      {
+        "eventId": "hk-midday-tech-leads-losses-20261015",
+        "title": "港股午间科技跌幅明显大于宽基",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "summary": "午间恒生指数跌1.47%、恒生科技指数跌2.94%；多只科技与制造个股跌幅较大。",
+        "plainImpact": "港股科技承受的估值和风险偏好压力更强，下午能否修复比单一午间点位更重要。",
+        "assessment": "午间正文与15:19延迟行情方向一致，但港股尚未正式收盘。",
+        "publishedAt": "2026-10-15T12:06:00+08:00",
+        "eventAt": "2026-10-15T12:00:00+08:00",
+        "sourceDateText": "2026-10-15 12:06（证券时报网）",
+        "dateUncertainty": "午间收盘时点按常规12:00描述。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4219615.html"
+        ]
+      },
+      {
+        "eventId": "cn-buyout-repo-20261015",
+        "title": "央行开展7000亿元6个月买断式逆回购",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "summary": "央行公告为保持银行体系流动性充裕，10月15日以固定数量、利率招标、多重价位中标方式开展7000亿元买断式逆回购，期限182天。",
+        "plainImpact": "中期流动性得到补充，有助于稳定资金面，但不等同于资金直接流入股票市场。",
+        "assessment": "政策操作能缓冲流动性压力，股价影响仍取决于盈利和风险溢价。",
+        "publishedAt": "2026-10-14T17:11:00+08:00",
+        "eventAt": "2026-10-15",
+        "sourceDateText": "2026-10-14 17:11发布，操作日期2026-10-15",
+        "dateUncertainty": "公告未提供具体操作时分。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4218380.html"
+        ]
+      },
+      {
+        "eventId": "cn-price-data-202609",
+        "title": "中国9月CPI温和、PPI涨幅扩大",
+        "regions": [
+          "CN",
+          "WORLD"
+        ],
+        "kind": "general",
+        "summary": "国家统计局显示9月CPI同比0.9%、环比0.2%，核心CPI同比1.0%；PPI同比5.0%、环比1.2%。",
+        "plainImpact": "上游成本上涨更快，资源品可能受益，但中下游若不能提价，利润率会承压。",
+        "assessment": "官方数据确认价格结构，不足以证明居民需求全面升温或所有股票受益。",
+        "publishedAt": "2026-10-14T09:30:00+08:00",
+        "eventAt": "2026-09-30",
+        "sourceDateText": "2026-10-14 09:30（国家统计局）",
+        "dateUncertainty": "月度数据对应2026年9月。",
+        "sourceUrls": [
+          "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+        ]
+      },
+      {
+        "eventId": "cn-financial-stats-2026q3",
+        "title": "前三季度人民币贷款增加11.52万亿元",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "summary": "央行金融统计转述显示9月末本外币贷款余额287.29万亿元，同比增长4.7%；人民币贷款余额283.44万亿元，同比增长4.8%，前三季度人民币贷款增加11.52万亿元。",
+        "plainImpact": "企业部门仍获得信用支持，但住户贷款减少，信用结构并不等于全面需求走强。",
+        "assessment": "金融统计提供信用背景；股票市场影响取决于资金成本、贷款投向和盈利转化。",
+        "publishedAt": "2026-10-14T17:15:00+08:00",
+        "eventAt": "2026-09-30",
+        "sourceDateText": "2026-10-14 17:15（证券时报网）",
+        "dateUncertainty": "统计对应2026年前三季度及9月末。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4218389.html"
+        ]
+      }
+    ],
+    "newsCoverage": {
+      "status": "partial",
+      "note": "本轮成功取得并阅读7份正文；覆盖A/H市场、国内价格与金融统计、央行流动性操作和IMF日程。港股尚未收盘，美股缺新增新闻正文。",
+      "regions": {
+        "CN": {
+          "status": "covered",
+          "note": "覆盖A股午间/午后、港股午间、价格数据、金融统计与流动性操作；缺A/H资金流和正式收盘文件。"
+        },
+        "US": {
+          "status": "market-data-only",
+          "note": "仅有上一交易日主要指数与当前VIX行情，本轮无新增美国新闻正文。"
+        },
+        "WORLD": {
+          "status": "partial",
+          "note": "IMF年会官方日程可用；缺新增跨区域事件结果正文。"
+        }
+      },
+      "gaps": [
+        "港股正式收盘",
+        "A股交易所正式收盘确认",
+        "Brent与EIA库存",
+        "A/H完整行业广度与资金流",
+        "BTC和黄金资金流",
+        "本轮新公司事件原文研究"
+      ]
+    },
+    "macroFacts": [
+      {
+        "id": "CN_CPI_YOY_2026_09",
+        "label": "中国9月CPI同比",
+        "value": 0.9,
+        "unit": "%",
+        "asOf": "2026-10-14T01:30:00.000Z",
+        "note": "国家统计局；环比0.2%，核心CPI同比1.0%。",
+        "sourceUrls": [
+          "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+        ]
+      },
+      {
+        "id": "CN_PPI_YOY_2026_09",
+        "label": "中国9月PPI同比",
+        "value": 5,
+        "unit": "%",
+        "asOf": "2026-10-14T01:30:00.000Z",
+        "note": "国家统计局；环比1.2%。",
+        "sourceUrls": [
+          "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965475.html"
+        ]
+      },
+      {
+        "id": "CN_RMB_LOAN_FLOW_2026Q3",
+        "label": "中国前三季度人民币贷款增加",
+        "value": 11.52,
+        "unit": "万亿元",
+        "asOf": "2026-10-14T09:15:00.000Z",
+        "note": "住户贷款减少1.03万亿元，企事业单位贷款增加12.55万亿元。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4218389.html"
+        ]
+      },
+      {
+        "id": "CN_BUYOUT_REPO_20261015",
+        "label": "央行6个月买断式逆回购操作",
+        "value": 7000,
+        "unit": "亿元",
+        "asOf": "2026-10-15T00:00:00.000Z",
+        "note": "期限182天，到期日2027年4月15日（遇节假日顺延）。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4218380.html"
+        ]
+      }
+    ],
+    "macroEvents": [
+      {
+        "id": "imf-plenary-20261016",
+        "title": "IMF世界银行年会全体会议",
+        "at": "2026-10-16T02:00:00.000Z",
+        "region": "WORLD",
+        "type": "macro-event",
+        "status": "scheduled",
+        "note": "曼谷09:00，对应北京时间10:00。",
+        "sourceUrls": [
+          "https://www.imf.org/en/meetings/2026/annual/schedule"
+        ]
+      },
+      {
+        "id": "imf-ai-global-economy-20261016",
+        "title": "IMF：人工智能与全球经济",
+        "at": "2026-10-16T04:15:00.000Z",
+        "region": "WORLD",
+        "type": "macro-panel",
+        "status": "scheduled",
+        "note": "曼谷11:15，对应北京时间12:15；关注生产率、增长、劳动力市场与金融稳定。",
+        "sourceUrls": [
+          "https://www.imf.org/en/meetings/2026/annual/schedule"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "imf-plenary-20261016",
+        "title": "IMF世界银行年会全体会议",
+        "at": "2026-10-16T02:00:00.000Z",
+        "region": "WORLD",
+        "type": "macro-event",
+        "status": "scheduled",
+        "note": "曼谷09:00，对应北京时间10:00。",
+        "sourceUrls": [
+          "https://www.imf.org/en/meetings/2026/annual/schedule"
+        ]
+      },
+      {
+        "id": "imf-ai-global-economy-20261016",
+        "title": "IMF：人工智能与全球经济",
+        "at": "2026-10-16T04:15:00.000Z",
+        "region": "WORLD",
+        "type": "macro-panel",
+        "status": "scheduled",
+        "note": "曼谷11:15，对应北京时间12:15；关注生产率、增长、劳动力市场与金融稳定。",
+        "sourceUrls": [
+          "https://www.imf.org/en/meetings/2026/annual/schedule"
+        ]
+      }
+    ],
+    "researchRecords": [],
+    "researchChecks": [],
+    "researchPendingQueue": []
+  }
+}
