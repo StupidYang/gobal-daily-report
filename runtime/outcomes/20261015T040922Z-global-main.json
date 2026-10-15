@@ -1,14 +1,19 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.report.deepDive[5].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php [source-not-retrieved]\neditorial.report.watch[2].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php [source-not-retrieved]\neditorial.macroEvents[1].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php [source-not-retrieved]\neditorial.events[1].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php [source-not-retrieved]",
+  "issues": [
+    "editorial.report.deepDive[5].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php [source-not-retrieved]",
+    "editorial.report.watch[2].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php [source-not-retrieved]",
+    "editorial.macroEvents[1].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php [source-not-retrieved]",
+    "editorial.events[1].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php [source-not-retrieved]"
+  ],
   "execution": {
     "executionId": "20261015T040922Z-global-main",
     "generation": 130
   },
   "deadlineAt": "2026-10-15T04:29:39.400Z",
   "requestId": "20261015T040922Z-global-main",
-  "at": "2026-10-15T04:09:51.523Z",
+  "at": "2026-10-15T04:13:35.969Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +24,44 @@
       "status": "ready-for-analysis",
       "at": "2026-10-15T04:09:51.523Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-15T04:13:35.969Z",
+      "revision": 0
     }
   ],
   "packetHash": "98c4b3ae7afcd11623d27406257fda166b4a03eff95694a19ba9971f8f6ac0b5",
-  "collectionDurationMs": 2207
+  "collectionDurationMs": 2207,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "87aa367d904e8ea009b2ea5f5764cff7f1ccdb0b862b6cc713cf08c06941585c",
+  "validationIssues": [
+    {
+      "path": "editorial.report.deepDive[5].sourceUrls[0]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php"
+    },
+    {
+      "path": "editorial.report.watch[2].sourceUrls[0]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php"
+    },
+    {
+      "path": "editorial.macroEvents[1].sourceUrls[0]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php"
+    },
+    {
+      "path": "editorial.events[1].sourceUrls[0]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.eia.gov/petroleum/supply/weekly/schedule.phpschedule.php"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261015T040922Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
