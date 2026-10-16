@@ -1,14 +1,17 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.newsItems[0].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]\neditorial.newsItems[1].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]",
+  "issues": [
+    "editorial.newsItems[0].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]",
+    "editorial.newsItems[1].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]"
+  ],
   "execution": {
     "executionId": "202610160835384Z-asia-session",
     "generation": 163
   },
   "deadlineAt": "2026-10-16T08:55:50.857Z",
   "requestId": "202610160835384Z-asia-session",
-  "at": "2026-10-16T08:36:03.033Z",
+  "at": "2026-10-16T08:39:31.107Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +22,34 @@
       "status": "ready-for-analysis",
       "at": "2026-10-16T08:36:03.033Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-16T08:39:31.107Z",
+      "revision": 0
     }
   ],
   "packetHash": "6febb0f98ae2d8d68f53888c03b30bf35036d6a36d64a4f930aa26da4761f667",
-  "collectionDurationMs": 4282
+  "collectionDurationMs": 4282,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "2483ad9831042727dd18c530295525b25decc67e37fc4b3fb6b3ecd9c2531160",
+  "validationIssues": [
+    {
+      "path": "editorial.newsItems[0].sourceUrls",
+      "code": "required",
+      "message": "必须提供本轮实际取得的具体sourceUrls"
+    },
+    {
+      "path": "editorial.newsItems[1].sourceUrls",
+      "code": "required",
+      "message": "必须提供本轮实际取得的具体sourceUrls"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/202610160835384Z-asia-session--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
