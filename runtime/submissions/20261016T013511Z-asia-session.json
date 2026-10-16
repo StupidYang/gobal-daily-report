@@ -1,0 +1,1123 @@
+{
+  "version": 1,
+  "submissionId": "20261016T013511Z-asia-session",
+  "requestId": "20261016T013511Z-asia-session",
+  "taskGroup": "asia-session",
+  "submittedAt": "2026-10-16T01:39:21.462Z",
+  "execution": {
+    "executionId": "20261016T013511Z-asia-session",
+    "generation": 154
+  },
+  "editorial": {
+    "packetHash": "2b13774b8e6d32a3af5f9041f869660b379b2caf39c98b230477ad4aa33a9ad6",
+    "analyzedAt": "2026-10-16T01:39:21.462Z",
+    "report": {
+      "overview": "港股在正常交易日开盘反弹，09:20延迟快照中恒指约+1.08%、恒生科技约+1.59%、国企指数约+1.19%，科技略强于宽基。A股同样已开市，但本轮六项指数仍停留在10月15日，不能把旧收盘值当作10月16日开盘。区域信号因此是“港股反弹已观察、A股待新鲜行情确认”，而不是两地同步上涨。",
+      "rolling24hSummary": "过去24小时由前一日亚洲科技与中小盘承压，转为今日港股早盘修复；与此同时，美股上一交易日道指与小盘上涨、纳指100近乎持平，显示宽基修复强于高久期科技。9月中国CPI同比+0.9%、环比+0.2%，需求与价格信号温和；IMF与世行年会全体会议将于北京时间10:00开始，尚无结果。",
+      "methodology": "本轮以UTC+8 2026年10月16日09:35为观察节点。上交所休市公告、市场日历及港股通安排确认沪深港为正常交易日；09:35时A股与港股均已进入连续交易，收盘尚未发生。packet成功取得5/11份文档正文并已阅读，只引用这些成功文档；Reuters为401/限流，HKEX为host-not-allowed，NBS PPI超时，均不进入sourceUrls。行情严格使用packet时间戳：港股为09:20延迟值，A股为前一交易日。黄金与Brent缺失，未知值不补0。",
+      "coreAnalysis": {
+        "mainTheme": "港股早盘修复，但A股实时证据缺位；跨市场风险偏好从前一日急跌转向选择性反弹，尚未得到成交、广度和资金流确认。",
+        "expectationGap": "港股科技早盘涨幅高于宽基，和前一日亚洲科技承压形成方向反转；但A股开盘源没有更新，无法判断修复是否跨市场同步。",
+        "divergence": "恒生科技约+1.59%强于恒指约+1.08%，而上一交易日美股纳指100约-0.05%、道指约+1.08%；亚洲科技的早盘弹性高于隔夜美国科技。",
+        "regime": "高波动后的选择性修复、证据不对称、等待广度与资金流确认。",
+        "priceIn": "港股已计入部分隔夜宽基修复与前一日超跌反弹；A股今日价格尚未计入本报告。",
+        "bullCase": "港股科技涨幅维持且成交、南向流支持，A股新鲜行情随后确认成长与宽基同步修复。",
+        "bullInvalidation": "恒生科技回吐涨幅并弱于宽基，或A股新鲜行情显示广泛下跌。",
+        "bearCase": "早盘反弹只是前一日急跌后的技术修复，缺乏成交与资金流会导致午前回吐。",
+        "bearInvalidation": "A/H在午间前维持广度、成交和资金流共同改善。"
+      },
+      "plainLanguage": {
+        "verdict": "港股今早先弹起来，科技股反弹略强；A股虽然已经开市，但本轮拿到的仍是昨天的数据，所以不能说A股也同步上涨。",
+        "bottomLine": "先把港股视为超跌后的早盘修复，而不是趋势反转。真正的确认条件是A股出现当天时间戳、两地上涨家数和成交改善、以及南向/其他资金流配合。",
+        "whyNow": "09:20港股三大指数均上涨，恒生科技领先；同时交易日历确认两地正常开市，但A股行情源的新鲜度不足。",
+        "horizon": "今日上午盘至午间。",
+        "confidence": "中等：港股价格方向清晰但延迟，A股实时证据缺失，新闻正文覆盖有限。",
+        "invalidation": "若港股科技回落并弱于恒指，或A股新鲜行情确认广泛下跌，则撤销“选择性修复”判断。",
+        "evidenceFactIds": [
+          "INDEX:CN:SSE",
+          "INDEX:CN:SZSE",
+          "INDEX:CN:CHINEXT",
+          "INDEX:HK:HSI",
+          "INDEX:HK:HSTECH",
+          "INDEX:HK:HSCEI",
+          "INDEX:US:NDX",
+          "VOL:VIX",
+          "ENERGY:WTI"
+        ],
+        "sourceUrls": [
+          "https://www.sse.com.cn/disclosure/announcement/general/c/c_20251222_10802507.shtml",
+          "https://www.sse.com.cn/disclosure/dealinstruc/calendar/",
+          "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+        ],
+        "impacts": [
+          {
+            "asset": "A股",
+            "effect": "中性偏谨慎，今日方向未核验",
+            "reason": "交易日已开始，但行情仍是10月15日previous状态。",
+            "takeaway": "不要用昨日跌幅代替今日开盘；等待当天时间戳与广度。",
+            "horizon": "上午盘",
+            "counterRisk": "缺实时指数、成交、广度和资金流。",
+            "invalidation": "取得今日行情并确认多数指数与广度改善。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:CN:SSE",
+              "INDEX:CN:SZSE",
+              "INDEX:CN:CHINEXT"
+            ],
+            "sourceUrls": [
+              "https://www.sse.com.cn/disclosure/announcement/general/c/c_20251222_10802507.shtml",
+              "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+            ]
+          },
+          {
+            "asset": "港股",
+            "effect": "短线偏利多，科技反弹略强",
+            "reason": "09:20延迟快照中恒指约+1.08%、恒生科技约+1.59%、国企指数约+1.19%。",
+            "takeaway": "早盘修复已出现，但需要成交和南向资金确认。",
+            "horizon": "上午盘",
+            "counterRisk": "延迟行情且缺成交、行业广度和资金流。",
+            "invalidation": "恒生科技回吐并持续弱于恒指。",
+            "confidence": "medium-high",
+            "evidenceFactIds": [
+              "INDEX:HK:HSI",
+              "INDEX:HK:HSTECH",
+              "INDEX:HK:HSCEI"
+            ],
+            "sourceUrls": [
+              "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+            ]
+          },
+          {
+            "asset": "美股",
+            "effect": "上一交易日宽基偏强、科技分化",
+            "reason": "道指和罗素2000上涨，纳指100近乎持平，VIX仍上升。",
+            "takeaway": "风险偏好改善不完整，对亚洲科技的支持更像修复而非全面再定价。",
+            "horizon": "下一美股时段",
+            "counterRisk": "缺本轮美国新闻正文与期货。",
+            "invalidation": "纳指100持续跑赢且VIX回落。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:US:SP500",
+              "INDEX:US:NDX",
+              "INDEX:US:DOW",
+              "INDEX:US:RUSSELL2000",
+              "VOL:VIX"
+            ]
+          },
+          {
+            "asset": "BTC",
+            "effect": "方向不足",
+            "reason": "BTC约82174美元，只有单点现货。",
+            "takeaway": "不能据单点判断风险偏好或资金流。",
+            "horizon": "未来12小时",
+            "counterRisk": "缺24小时基准、ETF流与衍生品。",
+            "invalidation": "连续价格和资金流形成一致方向。",
+            "confidence": "low",
+            "evidenceFactIds": [
+              "CRYPTO:BTC:USD"
+            ]
+          },
+          {
+            "asset": "黄金",
+            "effect": "不可判定",
+            "reason": "黄金接口失败，仅有白银、美元和名义利率旁证。",
+            "takeaway": "不能用白银替代黄金，也不能把缺失值补0。",
+            "horizon": "未来12—24小时",
+            "counterRisk": "缺黄金、实际利率和ETF流。",
+            "invalidation": "补齐黄金与实际利率、流量。",
+            "confidence": "low",
+            "evidenceFactIds": [
+              "METAL:XAGUSD",
+              "FX:DXY",
+              "RATE:US10Y"
+            ]
+          },
+          {
+            "asset": "原油",
+            "effect": "高位小幅回落",
+            "reason": "WTI约95.87美元、约-0.65%，Brent缺失。",
+            "takeaway": "回落不足以证明供需转松。",
+            "horizon": "未来12—24小时",
+            "counterRisk": "缺Brent、库存和期限结构。",
+            "invalidation": "跨合约与库存共同确认趋势。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "ENERGY:WTI",
+              "FX:DXY"
+            ]
+          }
+        ]
+      },
+      "assets": [
+        {
+          "asset": "A股",
+          "name": "A股",
+          "status": "previous",
+          "dataAsOf": "2026-10-15T08:29:19.000Z",
+          "summary": "2026-10-16为正常交易日，但本轮A股六项指数行情仍停留在10月15日，不能作为09:35开盘表现；上一交易日上证约-2.46%、深证约-4.35%、创业板约-2.92%。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/announcement/general/c/c_20251222_10802507.shtml",
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+          ]
+        },
+        {
+          "asset": "港股",
+          "name": "港股",
+          "status": "partial",
+          "dataAsOf": "2026-10-16T01:20:48.000Z",
+          "summary": "正常交易日开盘后反弹；09:20:48延迟快照中恒指24321.45（约+1.08%）、恒生科技4125.44（约+1.59%）、国企指数8199.60（约+1.19%）。",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FX:USDCNH"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        },
+        {
+          "asset": "美股",
+          "name": "美股",
+          "status": "previous",
+          "dataAsOf": "2026-10-15T21:15:59.000Z",
+          "summary": "上一交易日道指约+1.08%、标普约+0.33%、纳指约+0.08%，纳指100约-0.05%、罗素2000约+1.38%；宽基修复但大型科技并未同步转强。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "asset": "BTC",
+          "name": "BTC",
+          "status": "partial",
+          "dataAsOf": "2026-10-16T01:35:50.733Z",
+          "summary": "Coinbase BTC-USD约82174.07美元，仅为单点快照；缺同源24小时基准、ETF流、OI、资金费率与清算。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        },
+        {
+          "asset": "黄金",
+          "name": "黄金",
+          "status": "partial",
+          "dataAsOf": "2026-10-16T01:35:46.000Z",
+          "summary": "黄金请求失败；仅白银约57.246美元/盎司、美元指数约102.058和上一交易日10年期收益率5.089%可用，不能推断黄金方向。",
+          "evidenceFactIds": [
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "asset": "原油",
+          "name": "原油",
+          "status": "partial",
+          "dataAsOf": "2026-10-16T01:25:37.000Z",
+          "summary": "WTI约95.87美元/桶、较供应商前收约-0.65%；Brent请求404，且缺库存、期限结构与仓位。",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "FX:DXY"
+          ]
+        }
+      ],
+      "deepDive": [
+        {
+          "name": "A股",
+          "asset": "A股",
+          "title": "交易日确认，但今日开盘价不可用",
+          "oneLine": "09:35节点的A股行情仍是前一交易日，不能用旧值描述今日开盘。",
+          "analysis": "上交所2026年休市安排确认国庆节后10月8日起照常开市，市场日历也列出10月16日事项，因此10月16日不是休市日。可是packet中上证、深证、沪深300、创业板、科创50和中证500的tradingDate均为10月15日并标记previous。上一日上证约-2.46%、深证约-4.35%、创业板约-2.92%，只能作为隔夜背景。",
+          "mechanism": "在连续竞价已开始后仍未取得当日时间戳，说明数据新鲜度不足；用旧收盘替代开盘会把时间错配误认为价格变化。",
+          "risk": "缺今日A股实时指数、上涨家数、成交额、行业广度和资金流。",
+          "invalidation": "取得10月16日09:30之后的交易所或合格行情，并确认时间戳与交易日。",
+          "horizon": "上午盘",
+          "factIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500"
+          ],
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/announcement/general/c/c_20251222_10802507.shtml",
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+          ]
+        },
+        {
+          "name": "港股",
+          "asset": "港股",
+          "title": "开盘反弹，科技略强于宽基",
+          "oneLine": "09:20延迟快照显示恒生科技约+1.59%，强于恒指约+1.08%。",
+          "analysis": "恒指24321.45、约+1.08%；恒生科技4125.44、约+1.59%；国企指数8199.60、约+1.19%，时间均为09:20:48（UTC+8）且标记delayed。港股通安排将10月16日列为交易日。",
+          "mechanism": "上一交易日全球宽基修复和前一日亚洲科技抛压后的均值回归可解释早盘反弹，但尚无成交额、南向流与行业广度确认。",
+          "risk": "数据延迟约15分钟，且不是交易所正式开盘文件；早盘方向可能快速反转。",
+          "invalidation": "恒生科技回落并持续弱于恒指，或成交与南向流不支持上涨。",
+          "horizon": "上午盘至午间",
+          "factIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FX:USDCNH"
+          ],
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FX:USDCNH"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        },
+        {
+          "name": "美股",
+          "asset": "美股",
+          "title": "宽基修复、科技内部仍分化",
+          "oneLine": "道指和小盘上涨，但纳指100近乎持平。",
+          "analysis": "上一交易日道指约+1.08%、标普约+0.33%、纳指约+0.08%、罗素2000约+1.38%，纳指100约-0.05%；VIX约+7.79%。",
+          "mechanism": "防御和周期宽基修复而高久期科技未同步，说明风险偏好改善并不完整。",
+          "risk": "均为上一交易日行情，本轮没有美国公司新闻正文、期货和行业广度。",
+          "invalidation": "纳指100与半导体在VIX回落下持续跑赢宽基。",
+          "horizon": "下一美股交易时段",
+          "factIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ],
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "name": "BTC",
+          "asset": "BTC",
+          "title": "单点价格锚不足以确认风险偏好",
+          "oneLine": "BTC约82174美元，方向与资金流仍未知。",
+          "analysis": "01:35:50Z Coinbase BTC-USD约82174.07美元；packet没有同源前收或24小时变化，也没有ETF净流、OI、资金费率和清算。",
+          "mechanism": "BTC同时受美元、流动性、杠杆和现货资金驱动，单点不能区分趋势与噪声。",
+          "risk": "单一交易场所不代表全市场加权均价。",
+          "invalidation": "连续价格、ETF流和衍生品数据形成一致方向。",
+          "horizon": "未来12小时",
+          "factIds": [
+            "CRYPTO:BTC:USD"
+          ],
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        },
+        {
+          "name": "黄金",
+          "asset": "黄金",
+          "title": "黄金缺失，不能借白银代推",
+          "oneLine": "黄金请求失败，白银和利率只能提供旁证。",
+          "analysis": "黄金接口fetch failed；白银01:35:46Z约57.246美元/盎司，美元指数01:25:51Z约102.058，10年期收益率5.089%为上一交易日数据。",
+          "mechanism": "贵金属方向通常受实际利率、美元和避险需求共同影响；缺黄金本身与实际利率时不能得出方向判断。",
+          "risk": "白银波动结构不同于黄金，不能替代；缺ETF流与实际利率。",
+          "invalidation": "补齐黄金同源现价与变化、实际利率和ETF流。",
+          "horizon": "未来12—24小时",
+          "factIds": [
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ],
+          "evidenceFactIds": [
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "name": "原油",
+          "asset": "原油",
+          "title": "WTI小幅回落，供需结论仍不足",
+          "oneLine": "WTI约95.87美元、约-0.65%，Brent缺失。",
+          "analysis": "01:25:37Z WTI约95.87美元/桶、较供应商前收约-0.65%；Brent请求HTTP 404，且没有库存、现货升贴水、期限结构或仓位。",
+          "mechanism": "单一合约回落可能来自美元、风险偏好或短线仓位，不足以确认供需转松。",
+          "risk": "缺Brent与库存使跨市场验证不完整。",
+          "invalidation": "库存、供应和跨合约结构一致确认宽松或收紧。",
+          "horizon": "未来12—24小时",
+          "factIds": [
+            "ENERGY:WTI",
+            "FX:DXY"
+          ],
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "FX:DXY"
+          ]
+        }
+      ],
+      "marketCoverage": [
+        {
+          "market": "A股",
+          "status": "previous",
+          "dataAsOf": "2026-10-15T08:29:19.000Z",
+          "coverage": "确认交易日并保留前一交易日六项指数，未取得今日开盘。",
+          "gaps": [
+            "10月16日实时指数",
+            "上涨家数与成交额",
+            "行业广度",
+            "资金流"
+          ],
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/announcement/general/c/c_20251222_10802507.shtml",
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+          ]
+        },
+        {
+          "market": "港股",
+          "status": "partial",
+          "dataAsOf": "2026-10-16T01:20:48.000Z",
+          "coverage": "覆盖三项港股指数09:20延迟行情与港股通交易日安排。",
+          "gaps": [
+            "成交额",
+            "南向资金",
+            "行业广度",
+            "非延迟正式行情"
+          ],
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI",
+            "FX:USDCNH"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        },
+        {
+          "market": "美股",
+          "status": "previous",
+          "dataAsOf": "2026-10-15T21:15:59.000Z",
+          "coverage": "覆盖上一交易日五项宽基指数和VIX。",
+          "gaps": [
+            "本轮新增新闻正文",
+            "期货",
+            "行业广度",
+            "资金流"
+          ],
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "market": "BTC",
+          "status": "partial",
+          "dataAsOf": "2026-10-16T01:35:50.733Z",
+          "coverage": "覆盖单一交易所单点现货。",
+          "gaps": [
+            "同源24小时基准",
+            "ETF流",
+            "OI与清算"
+          ],
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        },
+        {
+          "market": "黄金",
+          "status": "partial",
+          "dataAsOf": "2026-10-16T01:35:46.000Z",
+          "coverage": "黄金失败；仅白银、美元和上一交易日名义利率旁证。",
+          "gaps": [
+            "黄金现价与涨跌",
+            "实际利率",
+            "ETF流"
+          ],
+          "evidenceFactIds": [
+            "METAL:XAGUSD",
+            "FX:DXY",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "market": "原油",
+          "status": "partial",
+          "dataAsOf": "2026-10-16T01:25:37.000Z",
+          "coverage": "覆盖WTI延迟行情；Brent失败。",
+          "gaps": [
+            "Brent",
+            "库存",
+            "期限结构",
+            "仓位"
+          ],
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "FX:DXY"
+          ]
+        }
+      ],
+      "frameworkAnalysis": [
+        {
+          "id": "fw-relative-strength-154",
+          "framework": "跨市场相对强弱",
+          "concept": "比较宽基、科技和中小盘的相对表现。",
+          "applicability": "适用于高波动后的开盘修复判断。",
+          "observed": "恒生科技约+1.59%强于恒指约+1.08%；上一交易日道指强于纳指100。",
+          "mechanism": "前一日受压较重的港股科技出现更高反弹弹性，但跨市场同步性尚未确认。",
+          "conclusion": "选择性修复，未达到全面风险偏好回升。",
+          "assumptions": [
+            "港股延迟行情代表同一早盘时点",
+            "供应商涨跌相对前收"
+          ],
+          "counterEvidence": [
+            "A股今日行情缺失",
+            "VIX上一交易日仍上涨"
+          ],
+          "horizon": "上午盘",
+          "invalidation": "港股科技回吐或A股新鲜行情显示广泛走弱。",
+          "confidence": "medium",
+          "missingData": [
+            "A股今日指数",
+            "A/H成交与资金流"
+          ],
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        },
+        {
+          "id": "fw-breadth-volume-154",
+          "framework": "广度与成交确认",
+          "concept": "用上涨家数、成交额和资金流区分技术反弹与广泛修复。",
+          "applicability": "适用于开盘后尚未形成收盘结论的节点。",
+          "observed": "指数价格显示港股反弹，但没有成交额、南向资金和行业广度。",
+          "mechanism": "缺少参与度时，指数上涨可能由少数权重股驱动。",
+          "conclusion": "反弹暂不能升级为趋势反转。",
+          "assumptions": [
+            "指数快照真实但延迟"
+          ],
+          "counterEvidence": [
+            "恒生科技与国企指数同时上涨"
+          ],
+          "horizon": "午间前",
+          "invalidation": "成交、上涨家数与资金流同步改善。",
+          "confidence": "medium-low",
+          "missingData": [
+            "成交额",
+            "南向资金",
+            "行业广度"
+          ],
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ]
+        },
+        {
+          "id": "fw-macro-154",
+          "framework": "宏观与估值传导",
+          "concept": "把通胀数据与利率、汇率和权益估值联系起来。",
+          "applicability": "用于解释风险资产估值环境，不把宏观发布直接等同股价方向。",
+          "observed": "9月CPI同比+0.9%、环比+0.2%；美元指数近持平，10年期收益率为上一交易日5.089%。",
+          "mechanism": "温和消费通胀不构成单独的估值冲击，但工业品、信用与盈利仍需更多证据。",
+          "conclusion": "宏观背景中性偏温和，不能单独解释港股早盘反弹。",
+          "assumptions": [
+            "CPI官方发布可比"
+          ],
+          "counterEvidence": [
+            "PPI正文超时未纳入",
+            "名义利率并非当日实时"
+          ],
+          "horizon": "未来1—2个交易日",
+          "invalidation": "后续官方数据或利率大幅改变通胀与增长预期。",
+          "confidence": "medium",
+          "missingData": [
+            "本轮PPI正文",
+            "实际利率",
+            "信用数据"
+          ],
+          "evidenceFactIds": [
+            "FX:DXY",
+            "RATE:US10Y"
+          ],
+          "sourceUrls": [
+            "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261014_1965477.html"
+          ]
+        },
+        {
+          "id": "fw-evidence-quality-154",
+          "framework": "证据分层与情景更新",
+          "concept": "区分当日、延迟、前收、单点和失败数据。",
+          "applicability": "本轮A/H数据新鲜度显著不对称。",
+          "observed": "港股为当日延迟值；A股为前一交易日；黄金与Brent失败；5/11文档成功。",
+          "mechanism": "时间错配和失败源会制造伪同步，必须降低结论强度。",
+          "conclusion": "港股方向可描述，A股、黄金与Brent仅能标缺口。",
+          "assumptions": [
+            "packet时间戳和状态字段可靠"
+          ],
+          "counterEvidence": [
+            "交易日历确认A股已开市但不提供价格"
+          ],
+          "horizon": "本观察节点",
+          "invalidation": "补齐同一时点的新鲜行情与正文。",
+          "confidence": "high",
+          "missingData": [
+            "A股当日行情",
+            "黄金",
+            "Brent",
+            "被阻止文档"
+          ],
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:HK:HSI",
+            "METAL:XAGUSD",
+            "ENERGY:WTI"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/",
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        }
+      ],
+      "frameworkSynthesis": {
+        "verdict": "港股早盘出现选择性修复，科技略强；A股实时证据缺失，因此不能升级为A/H同步转强。",
+        "agreement": "相对强弱与证据分层都支持“港股反弹已发生、全面风险偏好修复未确认”。",
+        "disagreement": "三项港股指数同涨提供正面信号，但缺成交、资金流与A股当日行情，使广度框架仍保留怀疑。",
+        "weighting": "相对强弱35%，广度与成交30%，宏观与估值20%，证据质量15%；对延迟行情、前收与失败数据降低权重。",
+        "invalidation": "港股科技回吐并弱于宽基，或A股当日行情显示广泛走弱；反之若A/H成交、广度和资金流同步改善则上调判断。"
+      },
+      "watch": [
+        {
+          "point": "A股数据新鲜度",
+          "detail": "等待10月16日09:30之后的上证、深证、创业板与广度数据。",
+          "horizon": "上午盘",
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+          ]
+        },
+        {
+          "point": "港股科技相对强弱",
+          "detail": "观察恒生科技能否维持对恒指的超额表现。",
+          "horizon": "午间前"
+        },
+        {
+          "point": "成交与南向资金",
+          "detail": "验证港股上涨是否由广泛参与而非少数权重驱动。",
+          "horizon": "上午盘"
+        },
+        {
+          "point": "中国通胀传导",
+          "detail": "CPI温和，等待PPI、信用和企业盈利信号交叉验证。",
+          "horizon": "未来数日",
+          "sourceUrls": [
+            "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261014_1965477.html"
+          ]
+        },
+        {
+          "point": "IMF年会全体会议",
+          "detail": "北京时间10:00开始；日程只提供观察节点，不预填结论。",
+          "horizon": "即将开始",
+          "sourceUrls": [
+            "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/annual-meetings-plenary"
+          ]
+        },
+        {
+          "point": "美股科技与VIX",
+          "detail": "若纳指100继续弱于宽基且VIX高位，亚洲成长反弹持续性存疑。",
+          "horizon": "下一美股时段"
+        },
+        {
+          "point": "商品与加密缺口",
+          "detail": "等待黄金、Brent、库存、BTC衍生品与ETF流。",
+          "horizon": "未来24小时"
+        }
+      ],
+      "dataDefinitions": [
+        {
+          "term": "港股延迟快照",
+          "definition": "本轮港股指数时间为2026-10-16 09:20:48（UTC+8），状态为delayed，不是实时成交。"
+        },
+        {
+          "term": "A股previous",
+          "definition": "本轮A股指数tradingDate为2026-10-15，不能描述10月16日开盘。"
+        },
+        {
+          "term": "provider-previous-close",
+          "definition": "涨跌幅相对行情供应商前收，不是相对上一份GDR。"
+        },
+        {
+          "term": "snapshot",
+          "definition": "单点现货价格；没有同源基准时不计算涨跌。"
+        },
+        {
+          "term": "交易日确认",
+          "definition": "官方休市安排和市场日历确认是否开市，不提供指数涨跌。"
+        },
+        {
+          "term": "partial",
+          "definition": "已取得部分事实但关键覆盖缺失；未知值不补0。"
+        },
+        {
+          "term": "researchRecord",
+          "definition": "仅放本轮成功取得并阅读的公司事件原文研究；本轮没有合格材料。"
+        }
+      ],
+      "recentChanges": [
+        {
+          "title": "港股开盘反弹、科技略强",
+          "detail": "09:20延迟快照中恒指约+1.08%、恒生科技约+1.59%、国企指数约+1.19%。",
+          "at": "2026-10-16T01:20:48.000Z",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        },
+        {
+          "title": "A股今日行情未更新",
+          "detail": "六项主要指数仍为10月15日previous状态，不能用于10月16日开盘结论。",
+          "at": "2026-10-16T01:35:50.196Z",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+          ]
+        },
+        {
+          "title": "上一交易日美股宽基修复",
+          "detail": "道指与罗素2000上涨，纳指100近乎持平，科技内部仍分化。",
+          "at": "2026-10-15T21:15:59.000Z",
+          "evidenceFactIds": [
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "INDEX:US:NDX",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "title": "WTI小幅回落，黄金与Brent缺失",
+          "detail": "WTI约95.87美元、约-0.65%；黄金抓取失败、Brent返回404。",
+          "at": "2026-10-16T01:35:53.432Z",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "METAL:XAGUSD"
+          ]
+        }
+      ],
+      "changes": [
+        {
+          "title": "港股开盘反弹、科技略强",
+          "detail": "09:20延迟快照中恒指约+1.08%、恒生科技约+1.59%、国企指数约+1.19%。",
+          "at": "2026-10-16T01:20:48.000Z",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        },
+        {
+          "title": "A股今日行情未更新",
+          "detail": "六项主要指数仍为10月15日previous状态，不能用于10月16日开盘结论。",
+          "at": "2026-10-16T01:35:50.196Z",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+          ]
+        },
+        {
+          "title": "上一交易日美股宽基修复",
+          "detail": "道指与罗素2000上涨，纳指100近乎持平，科技内部仍分化。",
+          "at": "2026-10-15T21:15:59.000Z",
+          "evidenceFactIds": [
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "INDEX:US:NDX",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "title": "WTI小幅回落，黄金与Brent缺失",
+          "detail": "WTI约95.87美元、约-0.65%；黄金抓取失败、Brent返回404。",
+          "at": "2026-10-16T01:35:53.432Z",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "METAL:XAGUSD"
+          ]
+        }
+      ],
+      "evolution24h": [
+        {
+          "title": "中国9月CPI发布",
+          "detail": "同比+0.9%、环比+0.2%，消费价格温和。",
+          "at": "2026-10-14T01:30:00.000Z",
+          "sourceUrls": [
+            "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261014_1965477.html"
+          ]
+        },
+        {
+          "title": "前一日A股指数普遍下跌",
+          "detail": "供应商前一交易日数据显示上证约-2.46%、深证约-4.35%、创业板约-2.92%。",
+          "at": "2026-10-15T08:29:19.000Z"
+        },
+        {
+          "title": "上一交易日美股宽基修复",
+          "detail": "道指和小盘上涨，纳指100近乎持平。",
+          "at": "2026-10-15T21:15:59.000Z"
+        },
+        {
+          "title": "港股今日早盘反弹",
+          "detail": "恒生科技涨幅略高于恒指与国企指数。",
+          "at": "2026-10-16T01:20:48.000Z",
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        }
+      ],
+      "narrativeTriggers": [
+        {
+          "title": "A股当日行情确认",
+          "effect": "决定港股反弹能否被解释为A/H同步修复。"
+        },
+        {
+          "title": "港股成交与南向资金改善",
+          "effect": "把技术反弹升级为参与度更广的修复。"
+        },
+        {
+          "title": "恒生科技回吐并弱于恒指",
+          "effect": "下调早盘修复持续性。"
+        },
+        {
+          "title": "美股科技与VIX再度恶化",
+          "effect": "强化隔夜压力向亚洲成长资产传导。"
+        }
+      ],
+      "analysisTheses": [
+        {
+          "title": "港股早盘选择性修复",
+          "detail": "三项港股指数同涨，恒生科技略强于宽基，但缺成交与资金流确认。",
+          "status": "active",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        },
+        {
+          "title": "A/H同步判断暂不可做",
+          "detail": "A股行情仍停留在前一交易日，时间错配使同步性不可核验。",
+          "status": "active",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:HK:HSI"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/",
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        }
+      ],
+      "judgmentRevisions": [
+        {
+          "title": "从前一日风险收缩改为港股早盘修复、A股待确认",
+          "detail": "港股当日延迟行情已转正，但A股没有当日时间戳，因此只上调港股、不调整A股当日方向。",
+          "at": "2026-10-16T01:35:56.680Z",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:CN:SSE"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/",
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        }
+      ],
+      "worldEvents": [
+        {
+          "id": "cn-market-open-20261016",
+          "title": "A股10月16日开盘节点",
+          "at": "2026-10-16T01:30:00.000Z",
+          "region": "CN",
+          "type": "market-open",
+          "status": "partial",
+          "note": "确认正常交易日，但本轮价格仍为前一交易日。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/disclosure/announcement/general/c/c_20251222_10802507.shtml",
+            "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+          ]
+        },
+        {
+          "id": "hk-market-open-20261016",
+          "title": "港股10月16日开盘",
+          "at": "2026-10-16T01:20:48.000Z",
+          "region": "CN",
+          "type": "market-open",
+          "status": "observed",
+          "note": "延迟行情显示三项主要指数上涨，恒生科技略强。",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ],
+          "sourceUrls": [
+            "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+          ]
+        },
+        {
+          "id": "cn-cpi-202609",
+          "title": "中国9月居民消费价格",
+          "at": "2026-10-14T01:30:00.000Z",
+          "region": "CN",
+          "type": "macro-data",
+          "status": "observed",
+          "note": "CPI同比+0.9%、环比+0.2%。",
+          "sourceUrls": [
+            "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261014_1965477.html"
+          ]
+        },
+        {
+          "id": "imf-plenary-20261016",
+          "title": "IMF与世界银行年会全体会议",
+          "at": "2026-10-16T02:00:00.000Z",
+          "region": "WORLD",
+          "type": "macro-event",
+          "status": "scheduled",
+          "note": "曼谷09:00，对应北京时间10:00；日程不代表结论。",
+          "sourceUrls": [
+            "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/annual-meetings-plenary"
+          ]
+        }
+      ],
+      "sectionGaps": {
+        "news": {
+          "reason": "本轮成功取得5份正文，主要覆盖交易日历、中国CPI与IMF日程；两份Reuters失败，缺当日A/H市场新闻正文。"
+        },
+        "funds": {
+          "reason": "缺南向、北向/主力资金、ETF净流、期货持仓和加密资金流。"
+        },
+        "industry": {
+          "reason": "缺31个申万一级和12个HSICS行业完整成员、权重与成交输入，不计算伪Top-N。"
+        },
+        "research": {
+          "reason": "本轮没有成功取得并完整阅读新的公司事件原文；researchRecords、researchChecks与researchPendingQueue为空。"
+        },
+        "energy": {
+          "reason": "Brent返回HTTP 404，库存、期限结构与现货流缺失；只有WTI延迟行情。"
+        },
+        "asiaQuotes": {
+          "reason": "港股为09:20延迟值；A股仍是10月15日previous状态，不能描述今日开盘。"
+        },
+        "sources": {
+          "reason": "11份请求中5份形成contentRetrieved证据；Reuters 401/限流、HKEX host-not-allowed、NBS PPI超时均未进入sourceUrls。"
+        },
+        "events": {
+          "reason": "IMF官方日程可用但会议结果尚未发生；不预填结论。"
+        }
+      },
+      "metrics": []
+    },
+    "newsItems": [
+      {
+        "eventId": "hk-open-rebound-20261016",
+        "title": "港股开盘反弹、恒生科技略强于宽基",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "summary": "09:20:48延迟快照显示恒指24321.45、约+1.08%，恒生科技4125.44、约+1.59%，国企指数8199.60、约+1.19%。",
+        "plainImpact": "港股出现超跌后的早盘修复，但没有成交额和南向资金，不能直接当作趋势反转。",
+        "assessment": "当日价格方向可用但为延迟行情；港股通官方安排确认10月16日为交易日。",
+        "publishedAt": "2026-10-16T09:35:56+08:00",
+        "eventAt": "2026-10-16T09:20:48+08:00",
+        "sourceDateText": "行情截至2026-10-16 09:20:48（UTC+8）",
+        "dateUncertainty": "行情标记delayed。",
+        "sourceUrls": [
+          "https://www.sse.com.cn/services/hkexsc/home/arrange/"
+        ]
+      },
+      {
+        "eventId": "cn-open-data-gap-20261016",
+        "title": "A股正常开市但本轮行情仍为前一交易日",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "summary": "官方日历确认10月16日为交易日；packet六项A股指数tradingDate仍为10月15日并标记previous。",
+        "plainImpact": "今日A股方向不可核验，不能把昨日下跌复制到今日开盘。",
+        "assessment": "交易状态与价格新鲜度分开处理；只报告数据缺口。",
+        "publishedAt": "2026-10-16T09:35:56+08:00",
+        "eventAt": "2026-10-16T09:30:00+08:00",
+        "sourceDateText": "2026-10-16交易日，行情采集完成于09:35:56",
+        "dateUncertainty": "今日价格未取得。",
+        "sourceUrls": [
+          "https://www.sse.com.cn/disclosure/announcement/general/c/c_20251222_10802507.shtml",
+          "https://www.sse.com.cn/disclosure/dealinstruc/calendar/"
+        ]
+      },
+      {
+        "eventId": "cn-cpi-202609",
+        "title": "中国9月CPI同比上涨0.9%",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "summary": "国家统计局公布9月CPI同比上涨0.9%、环比上涨0.2%；1—9月平均同比上涨0.9%。",
+        "plainImpact": "消费价格温和，单独看不构成明显估值冲击；盈利、信用与PPI仍需交叉验证。",
+        "assessment": "官方数据可核验；本轮PPI正文超时，未并入结论。",
+        "publishedAt": "2026-10-14T09:30:00+08:00",
+        "eventAt": "2026-09-30",
+        "sourceDateText": "2026-10-14 09:30（国家统计局）",
+        "dateUncertainty": "统计期为2026年9月。",
+        "sourceUrls": [
+          "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261014_1965477.html"
+        ]
+      },
+      {
+        "eventId": "imf-plenary-20261016",
+        "title": "IMF与世界银行年会全体会议即将举行",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "summary": "全体会议定于曼谷时间10月16日09:00—10:15，北京时间10:00—11:15，发言人包括IMF总裁、世界银行行长和年会主席。",
+        "plainImpact": "会议可能影响全球增长、金融稳定和政策预期，但日程本身不等于新政策结论。",
+        "assessment": "只列观察节点，不预填尚未发生的讲话结果。",
+        "publishedAt": "2026-10-16T09:35:56+08:00",
+        "eventAt": "2026-10-16T10:00:00+08:00",
+        "sourceDateText": "2026-10-16 09:00—10:15 ICT",
+        "dateUncertainty": "会议结果尚未发生。",
+        "sourceUrls": [
+          "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/annual-meetings-plenary"
+        ]
+      }
+    ],
+    "newsCoverage": {
+      "status": "partial",
+      "note": "5/11份文档成功取得并阅读；覆盖交易日历、中国CPI和IMF日程。缺当日A/H市场新闻正文，港股价格由packet行情提供。",
+      "regions": {
+        "CN": {
+          "status": "partial",
+          "note": "覆盖交易状态、港股早盘行情和CPI；缺A股当日行情、资金流与行业广度。"
+        },
+        "US": {
+          "status": "market-data-only",
+          "note": "仅有上一交易日主要指数与VIX。"
+        },
+        "WORLD": {
+          "status": "partial",
+          "note": "IMF全体会议日程可用，结果尚未发生。"
+        }
+      },
+      "gaps": [
+        "A股10月16日实时行情",
+        "A/H成交与资金流",
+        "当日市场新闻正文",
+        "黄金与Brent",
+        "本轮新公司事件原文研究"
+      ]
+    },
+    "macroFacts": [
+      {
+        "id": "CN_CPI_202609",
+        "label": "中国9月居民消费价格同比",
+        "value": 0.9,
+        "unit": "%",
+        "asOf": "2026-10-14T01:30:00.000Z",
+        "note": "环比上涨0.2%，1—9月平均同比上涨0.9%。",
+        "sourceUrls": [
+          "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202610/t20261014_1965477.html"
+        ]
+      }
+    ],
+    "macroEvents": [
+      {
+        "id": "imf-plenary-20261016",
+        "title": "IMF与世界银行年会全体会议",
+        "at": "2026-10-16T02:00:00.000Z",
+        "region": "WORLD",
+        "type": "macro-event",
+        "status": "scheduled",
+        "note": "曼谷09:00—10:15，对应北京时间10:00—11:15。",
+        "sourceUrls": [
+          "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/annual-meetings-plenary"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "imf-plenary-20261016",
+        "title": "IMF与世界银行年会全体会议",
+        "at": "2026-10-16T02:00:00.000Z",
+        "region": "WORLD",
+        "type": "macro-event",
+        "status": "scheduled",
+        "note": "曼谷09:00—10:15，对应北京时间10:00—11:15。",
+        "sourceUrls": [
+          "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/annual-meetings-plenary"
+        ]
+      }
+    ],
+    "researchRecords": [],
+    "researchChecks": [],
+    "researchPendingQueue": []
+  }
+}
