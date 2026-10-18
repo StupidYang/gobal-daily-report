@@ -1,14 +1,21 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.report.marketCoverage[0].asOf: asOf必须为有效精确时点或null [timestamp]\neditorial.report.marketCoverage[1].asOf: asOf必须为有效精确时点或null [timestamp]\neditorial.report.marketCoverage[2].asOf: asOf必须为有效精确时点或null [timestamp]\neditorial.report.assets[0].asOf: asOf必须为有效精确时点或null [timestamp]\neditorial.report.assets[1].asOf: asOf必须为有效精确时点或null [timestamp]\neditorial.report.assets[2].asOf: asOf必须为有效精确时点或null [timestamp]",
+  "issues": [
+    "editorial.report.marketCoverage[0].asOf: asOf必须为有效精确时点或null [timestamp]",
+    "editorial.report.marketCoverage[1].asOf: asOf必须为有效精确时点或null [timestamp]",
+    "editorial.report.marketCoverage[2].asOf: asOf必须为有效精确时点或null [timestamp]",
+    "editorial.report.assets[0].asOf: asOf必须为有效精确时点或null [timestamp]",
+    "editorial.report.assets[1].asOf: asOf必须为有效精确时点或null [timestamp]",
+    "editorial.report.assets[2].asOf: asOf必须为有效精确时点或null [timestamp]"
+  ],
   "execution": {
     "executionId": "20261018T030220226Z-global-main",
     "generation": 206
   },
   "deadlineAt": "2026-10-18T03:22:31.874Z",
   "requestId": "20261018T030220226Z-global-main",
-  "at": "2026-10-18T03:02:43.515Z",
+  "at": "2026-10-18T03:06:55.214Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +26,54 @@
       "status": "ready-for-analysis",
       "at": "2026-10-18T03:02:43.515Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-18T03:06:55.214Z",
+      "revision": 0
     }
   ],
   "packetHash": "ece14cd409b15a5a2ea109e7a730c3c8efb1e18e3013b3ef554cce0fed2fc1d4",
-  "collectionDurationMs": 3819
+  "collectionDurationMs": 3819,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "f1312b15072978675c5b8f00513cd9a7325db16d4c9c13d821a27b0491f6bf0e",
+  "validationIssues": [
+    {
+      "path": "editorial.report.marketCoverage[0].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    },
+    {
+      "path": "editorial.report.marketCoverage[1].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    },
+    {
+      "path": "editorial.report.marketCoverage[2].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    },
+    {
+      "path": "editorial.report.assets[0].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    },
+    {
+      "path": "editorial.report.assets[1].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    },
+    {
+      "path": "editorial.report.assets[2].asOf",
+      "code": "timestamp",
+      "message": "asOf必须为有效精确时点或null"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261018T030220226Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
