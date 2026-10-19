@@ -110,3 +110,30 @@
 
 HKEX网站及其关联网站的用途条款第5节要求程序化访问、公开再分发等用途取得相应书面许可。当前没有此许可的证据，故采集器不再接受其网站域名的自动化文档请求。不要改用同站其他路径、代理或镜像重取同一受限数据，也不要凭历史采集记录声称已有持续使用许可。新报告应明确相应数据缺口；既有冻结历史和原来源记录保持不变，不能删除历史来掩盖当时的采集事实。恢复此类源须先核验合法的数据授权和允许的访问方式。
 
+## 事实 ID 命名空间（2026-10-19 强制）
+
+事实 ID 不是自由文本，前缀决定它被哪套校验接管。写错前缀会让整轮以系统失败结束，而不是可修订的稿件问题。
+
+**冻结行情前缀：只能引用，不能自造。**
+
+`EQUITY:CN:` / `EQUITY:HK:` / `EQUITY:US:` 开头的任何 `factId`、`factIds`、`evidenceFactIds`，只要不出现在本轮 31 项必看报价中，代码就会到 asia-equities / us-equities 的冻结模块里按 `instrumentId` 查找；找不到即抛出 `Referenced equity fact unavailable in frozen modules: <id>`，本轮以 failed 终止，不产生 needs-revision，也没有 `--r1` 机会。
+
+所以这三类前缀下**不得**构造任何衍生事实：
+
+- 反例 `EQUITY:CN:TURNOVER:2026-10-19`（成交额）、`EQUITY:CN:BREADTH:2026-10-19`（涨跌家数）、`EQUITY:US:SECTOR:AI`（板块）
+- 反例：给政策、宏观或研究结论套 `EQUITY:CN:` 前缀
+
+其余行情前缀（`INDEX:`、`CRYPTO:`、`FX:`、`METAL:`、`ENERGY:`、`RATE:`、`VOL:`）当前不经过这条冻结模块校验，但它们仍只应引用 packet 中真实存在的 `instrumentId`，不得借来承载非行情内容。
+
+**非行情事实统一使用业务前缀，且全篇唯一非空：**
+
+| 前缀 | 用途 | 示例 |
+| --- | --- | --- |
+| `PROP:` | 政策、官员表态、监管动作 | `PROP:PBOC:2026-10-19-FRAMEWORK` |
+| `FLOW:` | 成交额、资金流、涨跌家数、市场宽度 | `FLOW:CN:TURNOVER:2026-10-19` |
+| `RESEARCH:` | 研究结论、公司事件判断 | `RESEARCH:CN:2026-10-19-REFORM` |
+| `MACRO:` | 非行情的宏观数据点 | `MACRO:CN:GDP-2026Q3` |
+
+同一事实在 `facts`、`evidenceFactIds`、`evolution24h`、`deepDive` 之间必须复用完全相同的 ID，不能一处写 `FLOW:CN:TURNOVER:2026-10-19`、另一处写 `CN-TURNOVER-1019`。
+
+**提交前自检**：通读 editorial 里所有 `EQUITY:` 字符串，逐个确认都能在 packet 的 31 项必看报价中找到完全一致的 `instrumentId`；凡属自行拼出的，立即改成上表的业务前缀。
