@@ -4,16 +4,22 @@
   "executionId": "20261020T0355Z-asia-session",
   "taskGroup": "asia-session",
   "slot": "asia-session:2026-10-20T03",
-  "phase": "analyzing",
+  "phase": "failed",
   "startedAt": "2026-10-20T03:55:48.954Z",
   "deadlineAt": "2026-10-20T04:15:48.954Z",
-  "updatedAt": "2026-10-20T03:55:58.829Z",
+  "updatedAt": "2026-10-20T04:01:45.864Z",
   "stages": [
     {
       "phase": "collecting",
       "startedAt": "2026-10-20T03:55:48.954Z",
       "finishedAt": "2026-10-20T03:55:58.829Z",
       "durationMs": 9875
+    },
+    {
+      "phase": "analyzing",
+      "startedAt": "2026-10-20T03:55:58.829Z",
+      "finishedAt": "2026-10-20T04:01:45.864Z",
+      "durationMs": 347035
     }
   ],
   "recentSlots": [
@@ -331,14 +337,17 @@
     },
     {
       "slot": "asia-session:2026-10-20T03",
-      "status": "started",
+      "status": "failed",
       "at": "2026-10-20T03:55:48.954Z",
       "executionId": "20261020T0355Z-asia-session"
     }
   ],
   "sourcePacketPath": "runtime/results/20261020T0355Z-asia-session.json",
   "sourcePacketHash": "674bd6f65eb4f83fbc009b887378f434ab63227cd389482b627406a67a8dff0f",
-  "submissionAttempts": 1,
+  "submissionAttempts": 2,
   "validationReason": "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]\neditorial.report.overview: 不得用天气更新填充市场摘要、新闻或事件雷达 [editorial-scope-v1]\neditorial.report.frameworkAnalysis[2].observed: 不得用天气更新填充市场摘要、新闻或事件雷达 [editorial-scope-v1]\neditorial.report.marketCoverage: 必须覆盖原油 [market-coverage]",
-  "lastValidationAt": "2026-10-20T03:59:18.165Z"
+  "lastValidationAt": "2026-10-20T03:59:18.165Z",
+  "reason": "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]",
+  "finishedAt": "2026-10-20T04:01:45.864Z",
+  "totalDurationMs": 356910
 }
