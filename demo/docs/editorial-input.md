@@ -137,3 +137,30 @@ HKEX网站及其关联网站的用途条款第5节要求程序化访问、公开
 同一事实在 `facts`、`evidenceFactIds`、`evolution24h`、`deepDive` 之间必须复用完全相同的 ID，不能一处写 `FLOW:CN:TURNOVER:2026-10-19`、另一处写 `CN-TURNOVER-1019`。
 
 **提交前自检**：通读 editorial 里所有 `EQUITY:` 字符串，逐个确认都能在 packet 的 31 项必看报价中找到完全一致的 `instrumentId`；凡属自行拼出的，立即改成上表的业务前缀。
+
+## 事实引用闭合规则（2026-10-20 强制）
+
+编译期 `scan()` 会遍历整份 report，任何出现在 `factId`、`factIds`、`evidenceFactIds` 里的字符串，只要不在**本轮最终 canonicalFacts** 里，就报 `未知事实 <id>`，整轮 `failed / UNCLASSIFIED_ERROR`，**不给 needs-revision，也没有 r1 机会**。
+
+### 每个引用的 ID 必须落进以下三处之一
+
+1. 本轮 `editorial.macroFacts` 里自己定义（新事实）；
+2. 列入 `editorial.retainedMacroFactIds`（沿用上一版仍有效的宏观事实，代码会复制原记录与原来源）；
+3. 是 packet 里 31 项必看报价的真实 `instrumentId`（`EQUITY:`/`INDEX:`/`CRYPTO:`/`FX:`/`METAL:`/`ENERGY:`/`RATE:`/`VOL:`）。
+
+第 2 条只接受**上一版 canonicalFacts 中确实存在、且保留锚点在 24 小时内**的 ID；拼错或过期会以 `Selected retained macro fact is unknown or ambiguous` 失败。
+
+### 最容易踩的坑：复制上一版段落
+
+写“相比上一版的变化”时，若从 `data/latest.json` 搬运 `plainLanguage.impacts`、`assets`、`deepDive`、`frameworkAnalysis`、`watch`、`evolution24h`、`analysisTheses` 等段落的 `evidenceFactIds`，那些 ID 属于上一版。本轮 `macroFacts` 一旦提供新事实，canonicalFacts 就是**整条替换**而不是合并，旧 ID 会立刻悬空。
+
+两种处理方式，二选一：
+
+- 去掉旧段落的 `evidenceFactIds`，改用本轮 `sourceUrls` 支撑；或
+- 把这些旧 ID **原样列进 `retainedMacroFactIds`**（含 `PROP:`、`FLOW:`、`RESEARCH:`、`MACRO:` 前缀的都要列）。
+
+注意 `macroEvents`、`news` 这两条 lane 由代码合并保留旧条目，它们自带的 `evidenceFactIds` 同样可能悬空——沿用旧 lane 内容时一并核对。
+
+### 提交前自检（必须做）
+
+把 editorial 里所有 `factId`/`factIds`/`evidenceFactIds` 抽成一个集合，减去「本轮 macroFacts 的 id ∪ retainedMacroFactIds ∪ 31 项报价 instrumentId」，**差集必须为空**。非空就说明这一轮会以 `未知事实` 死掉。
