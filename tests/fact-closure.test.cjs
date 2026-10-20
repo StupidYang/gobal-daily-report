@@ -55,7 +55,9 @@ test('explicit retained ids are merged without duplicates',()=>{
 test('dangling fact references are repairable content, machine faults are not',()=>{
  const {editorial,owned}=L.classifyReportErrors([
   '未知事实 PROP:CSRC:2026-10-20-ACTIVE-ETF',
+  '未解析事实: PROP:CSRC:2026-10-20-ACTIVE-ETF',
   '未知来源 news-retained-abc',
+  '未解析来源: news-retained-abc',
   '重复事实ID',
   '事实ID缺失',
   '缺少完整字段 overview',
@@ -68,7 +70,9 @@ test('dangling fact references are repairable content, machine faults are not',(
  ]);
  assert.deepEqual(editorial,[
   '未知事实 PROP:CSRC:2026-10-20-ACTIVE-ETF',
+  '未解析事实: PROP:CSRC:2026-10-20-ACTIVE-ETF',
   '未知来源 news-retained-abc',
+  '未解析来源: news-retained-abc',
   '重复事实ID',
   '事实ID缺失',
   '缺少完整字段 overview',
