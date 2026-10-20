@@ -1,14 +1,19 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]\neditorial.report.overview: 不得用天气更新填充市场摘要、新闻或事件雷达 [editorial-scope-v1]\neditorial.report.frameworkAnalysis[2].observed: 不得用天气更新填充市场摘要、新闻或事件雷达 [editorial-scope-v1]\neditorial.report.marketCoverage: 必须覆盖原油 [market-coverage]",
+  "issues": [
+    "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]",
+    "editorial.report.overview: 不得用天气更新填充市场摘要、新闻或事件雷达 [editorial-scope-v1]",
+    "editorial.report.frameworkAnalysis[2].observed: 不得用天气更新填充市场摘要、新闻或事件雷达 [editorial-scope-v1]",
+    "editorial.report.marketCoverage: 必须覆盖原油 [market-coverage]"
+  ],
   "execution": {
     "executionId": "20261020T0355Z-asia-session",
     "generation": 235
   },
   "deadlineAt": "2026-10-20T04:15:48.954Z",
   "requestId": "20261020T0355Z-asia-session",
-  "at": "2026-10-20T03:56:00.150Z",
+  "at": "2026-10-20T03:59:19.165Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +24,44 @@
       "status": "ready-for-analysis",
       "at": "2026-10-20T03:56:00.150Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-20T03:59:19.165Z",
+      "revision": 0
     }
   ],
   "packetHash": "674bd6f65eb4f83fbc009b887378f434ab63227cd389482b627406a67a8dff0f",
-  "collectionDurationMs": 3033
+  "collectionDurationMs": 3033,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "d19e9e1b4a17cfe47860f0cd456e379f5daed4eab3022233f8d897ad86daf798",
+  "validationIssues": [
+    {
+      "path": "editorial.analyzedAt",
+      "code": "analysis-time",
+      "message": "分析结束时点必须在实际采集开始之后且不晚于当前时间"
+    },
+    {
+      "path": "editorial.report.overview",
+      "code": "editorial-scope-v1",
+      "message": "不得用天气更新填充市场摘要、新闻或事件雷达"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[2].observed",
+      "code": "editorial-scope-v1",
+      "message": "不得用天气更新填充市场摘要、新闻或事件雷达"
+    },
+    {
+      "path": "editorial.report.marketCoverage",
+      "code": "market-coverage",
+      "message": "必须覆盖原油"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261020T0355Z-asia-session--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
