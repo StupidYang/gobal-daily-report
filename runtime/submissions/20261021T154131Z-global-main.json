@@ -1,0 +1,1639 @@
+{
+  "execution": {
+    "executionId": "20261021T154131Z-global-main",
+    "generation": 264
+  },
+  "editorial": {
+    "packetHash": "ffa769176f2cee37330f739b7fdb9b05638f5da584f906db507974e6808e31e4",
+    "analyzedAt": "2026-10-21T15:47:23Z",
+    "report": {
+      "overview": "10月21日夜间，三套定价同时出现但方向不同：美股在业绩兑现中走强（纳斯达克100涨1.205%、标普500涨0.510%），原油在地缘风险溢价上回吐（WTI盘中破100美元后回落，packet 报96.75美元、跌1.094%），中国资产独自走弱（纳斯达克中国金龙指数跌超3%、恒指跌2.212%、南向净卖出44.35亿港元）。驱动不是统一的风险偏好，而是“和平进程定价”“每股指标与利润的分母效应”“合规成本内部化”三条各自独立的链条。",
+      "rolling24hSummary": "过去24小时的关键变化是原油的方向反转：油价一度突破100美元、涨幅超2.6%，随后在普京会见美方特使、泽连斯基表示可按现状冻结战线的消息下跳水，WTI回落至97美元附近；与此同时英国海上贸易行动办公室通报伊拉克法奥外海与阿曼布哈外海各有一艘油轮遇袭，威胁半径从霍尔木兹向外扩散。权益端，美股三大指数盘中上行、科技与AI硬件领涨，而中概与港股在权重股上被减仓；黄金维持在4137美元上方、10年期美债收益率5.111%、VIX回落至16.56，说明避险需求并未随油价回落而消失。",
+      "methodology": "本轮以 execution 20261021T154131Z-global-main（generation 264）的 packet 为准，18份请求文档全部取得正文（contentRetrieved=true）：每日经济新闻6篇、证券时报5篇、SEC 8-K财报附件4份、美联储/BEA/EIA官方日程3份；packetHash ffa769176f2cee37330f739b7fdb9b05638f5da584f906db507974e6808e31e4。行情取 packet 71条报价快照（东方、港股为收盘价，美股为15:41Z前后延迟报价，加密与贵金属为快照无涨跌幅），业务事实全部在 macroFacts 中重新定义并保留来源与原始时点，未沿用上一版任何价格、asOf 或 packetHash。缺失项在 sectionGaps 与 marketCoverage.gaps 中逐项标注，不补0、不插值。",
+      "coreAnalysis": {
+        "mainTheme": "同一晚三套定价：和平进程压住原油风险溢价、业绩兑现托住美股、合规与利润增速压住中国资产，三者互不传导",
+        "expectationGap": "市场原本预期“袭船扩散→油价续涨”，实际却是油价破100后当日回吐超过3个百分点；预期差不在事件本身，而在市场把“谈判进展”定价得比“实物流量”更重",
+        "divergence": "纳斯达克中国金龙指数跌超3%、恒生科技跌1.264%，与纳斯达克100涨1.205%形成4个百分点以上的同夜背离；同期人民币汇率基本持平（USDCNH 6.6751、USDCNY 6.6642），说明这是资产自身的资金与折价问题，不是汇率冲击",
+        "regime": "高名义利率（10年期美债5.111%）叠加低波动（VIX 16.56）的“高利率+低波动”组合仍在延续，但定价依据从估值扩张切换为盈利兑现，GOOGL逆势跌1.957%与超微电脑涨超12%同时出现，就是这种切换的证据",
+        "priceIn": "美股已定价“AI硬件业绩超预期+并购整合”，原油已定价“谈判有进展”，黄金只定价了“实际利率不下降”，中国资产尚未定价任何正面催化",
+        "bullCase": "若俄乌进入三方正式谈判且袭击不再造成装运中断，油价回落会降低全球通胀预期，高利率压力缓解，美股与中国资产的估值分母同时改善",
+        "bullInvalidation": "若谈判未进入三方会议、或袭击导致港口停装与船舶损毁，油价会以更快速度收复100美元，通胀预期重新上行，本轮反弹的多头逻辑失效",
+        "bearCase": "利润增速跟不上营收（宁德时代三季度营收增58.58%、净利仅增14.54%），每股指标靠回购维持（LAD年内回购8.7%但调整后净利降5%），当分母手段用尽，指数涨幅会被盈利下修吞掉",
+        "bearInvalidation": "若四季度毛利率环比回升、且回购之外出现内生利润加速，则“分母效应”判断失效"
+      },
+      "plainLanguage": {
+        "verdict": "这是三张不同的账单，不是一个市场的涨跌：油价在为和平打折，美股在为业绩付钱，中国资产在为利润与合规买单。",
+        "bottomLine": "别用一个“风险偏好回升”解释今晚所有涨跌。油价的下跌是预期驱动、最脆弱；美股的上涨是业绩驱动、最挑剔；中国资产的下跌是结构驱动、最需要公司层面的证据。",
+        "whyNow": "油价盘中破100后当日回吐超3个百分点，同时油轮遇袭扩散到伊拉克外海；这两件事同晚发生，正好检验市场到底在给“预期”还是“实物”定价。",
+        "horizon": "未来12—24小时看油价能否守住95美元与谈判是否进入三方会议；数周尺度看四季度毛利率与回购节奏。",
+        "confidence": "medium",
+        "invalidation": "若WTI重回100美元上方并站稳，或中国金龙指数次日继续下跌超过2%，则本轮“三套定价互不传导”的判断需要重写。",
+        "evidenceFactIds": [
+          "MACRO:ENERGY:WTI-LAST-2026-10-21",
+          "MACRO:SECURITY:TANKER-ATTACKS-2026-10-21",
+          "FLOW:CN:ADR-GOLDEN-DRAGON-2026-10-21",
+          "FLOW:HK:SOUTHBOUND-NET-2026-10-21",
+          "INDEX:US:NDX",
+          "INDEX:HK:HSI"
+        ],
+        "impacts": [
+          {
+            "asset": "A股",
+            "effect": "偏利空（结构性）",
+            "reason": "上证3713.028点跌0.480%、创业板2694.7131点跌1.624%、科创50涨0.064%，跌幅跨度从0.064%到1.624%；港股与中概的弱势通过情绪与南向渠道传导",
+            "takeaway": "我的判断：A股明天更可能跟随港股与中概的情绪缺口低开，但跌幅集中在高估值成长端，硬科技与有当期订单的环节相对抗跌",
+            "horizon": "1—3个交易日",
+            "counterRisk": "若早盘低开后成交萎缩、且科创50继续逆势上涨，说明抛压仅限局部",
+            "invalidation": "创业板收复2700点且成交放大",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:CN:SSE",
+              "INDEX:CN:CHINEXT",
+              "INDEX:CN:STAR50",
+              "FLOW:CN:ADR-GOLDEN-DRAGON-2026-10-21"
+            ],
+            "sourceUrls": [
+              "https://www.nbd.com.cn/articles/2026-10-21/4611860.html"
+            ]
+          },
+          {
+            "asset": "港股",
+            "effect": "偏利空（资金面）",
+            "reason": "恒指23651.87点跌2.212%、国企指数7943.41点跌2.274%、恒生科技3994.77点跌1.264%；南向净卖出44.35亿港元，腾讯被净卖出17.06亿、收盘跌4.04%",
+            "takeaway": "我的判断：这次下跌的卖方是南向资金而非汇率，权重股是主要减仓对象，光纤与油气逆势获净买入说明是权重切换",
+            "horizon": "2—5个交易日",
+            "counterRisk": "若南向转为净买入但指数仍跌，则卖压来自外资而非南向",
+            "invalidation": "南向连续两日净买入且恒指收复24000点",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:HK:HSI",
+              "INDEX:HK:HSCEI",
+              "INDEX:HK:HSTECH",
+              "FLOW:HK:SOUTHBOUND-NET-2026-10-21",
+              "FLOW:HK:TENCENT-NET-2026-10-21",
+              "RESEARCH:HK:0700-CHG-2026-10-21"
+            ],
+            "sourceUrls": [
+              "https://www.stcn.com/article/detail/4231600.html"
+            ]
+          },
+          {
+            "asset": "美股",
+            "effect": "短线偏利好",
+            "reason": "标普500 7751.89点涨0.510%、纳斯达克100 29845.592点涨1.205%、道指52645.12点涨0.284%、罗素2000涨0.421%；超微电脑涨超12%、SpaceX涨超10%，而奈飞一度跌近5%、AT&T跌6%",
+            "takeaway": "我的判断：指数上涨来自业绩兑现而非估值扩张，个股分化说明市场只奖励超预期，任何指引下修都会被立即惩罚",
+            "horizon": "1—2周（财报季内）",
+            "counterRisk": "若权重股财报指引集体下修，指数涨幅会被个股跌幅抵消",
+            "invalidation": "纳斯达克100跌破29000点且VIX升破20",
+            "confidence": "medium-high",
+            "evidenceFactIds": [
+              "INDEX:US:SP500",
+              "INDEX:US:NDX",
+              "INDEX:US:DOW",
+              "VOL:VIX",
+              "RESEARCH:US:WAB-ADJ-EPS-Q3-2026"
+            ],
+            "sourceUrls": [
+              "https://www.stcn.com/article/detail/4231628.html",
+              "https://www.nbd.com.cn/articles/2026-10-21/4611883.html"
+            ]
+          },
+          {
+            "asset": "BTC",
+            "effect": "中性偏多（跟随风险偏好）",
+            "reason": "比特币84465.89美元快照、每经口径24小时涨1.71%至84478.5美元，以太坊2507.82美元、24小时涨1.57%；本轮 packet 的加密报价无涨跌幅字段，只能用媒体口径补齐方向",
+            "takeaway": "我的判断：涨幅在1%量级且与美股同向，是风险偏好的边际改善，不是独立叙事；不宜把反弹读成趋势",
+            "horizon": "3—7个交易日",
+            "counterRisk": "若美股回落时比特币同步跌破83000美元，说明没有独立买盘",
+            "invalidation": "比特币跌破82000美元且以太坊跌破2400美元",
+            "confidence": "low-medium",
+            "evidenceFactIds": [
+              "CRYPTO:BTC:USD",
+              "CRYPTO:ETH:USD",
+              "MACRO:CRYPTO:BTC-24H-2026-10-21",
+              "MACRO:CRYPTO:ETH-24H-2026-10-21"
+            ],
+            "sourceUrls": [
+              "https://www.nbd.com.cn/articles/2026-10-21/4611875.html"
+            ]
+          },
+          {
+            "asset": "黄金",
+            "effect": "中性（未随油价回落）",
+            "reason": "黄金4137.299805美元/盎司、白银57.814美元/盎司快照，较上一时点基本持平；10年期美债收益率5.111%仍处高位，实际利率没有下行",
+            "takeaway": "我的判断：油价回落没有带走黄金的避险溢价，说明买盘对应的是财政与政治风险（法国宵禁、评级节点），不是通胀交易；名义利率高企限制了上行空间",
+            "horizon": "2—4周",
+            "counterRisk": "若10年期美债收益率跌破4.9%，实际利率下行会同时利好黄金与成长股，避险属性会被削弱",
+            "invalidation": "黄金跌破4050美元且美元指数升破103",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "METAL:XAUUSD",
+              "METAL:XAGUSD",
+              "RATE:US10Y",
+              "FX:DXY",
+              "PROP:FR:CURFEW-COUNT-2026-10-21"
+            ],
+            "sourceUrls": [
+              "https://www.stcn.com/article/detail/4231622.html"
+            ]
+          },
+          {
+            "asset": "原油",
+            "effect": "短线偏空（预期驱动）",
+            "reason": "WTI 96.75美元、跌1.094%，盘中一度破100美元、涨幅超2.6%后回吐；普京会见美方特使、泽连斯基称可按现状冻结战线；但同期伊拉克法奥外海与阿曼布哈外海各有一艘油轮遇袭",
+            "takeaway": "我的判断：当前下跌是“谈判概率”定价，不是“供应恢复”定价——实物端威胁半径还在扩大，这类下跌最容易被一条相反消息打回",
+            "horizon": "未来12—24小时",
+            "counterRisk": "若谈判未进入三方会议，或袭击造成装损与环境影响，油价会快速收复100美元",
+            "invalidation": "WTI站稳100美元上方且布伦特-WTI价差重新走阔",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "ENERGY:WTI",
+              "MACRO:ENERGY:WTI-LAST-2026-10-21",
+              "MACRO:ENERGY:WTI-INTRADAY-HIGH-2026-10-21",
+              "MACRO:SECURITY:TANKER-ATTACKS-2026-10-21"
+            ],
+            "sourceUrls": [
+              "https://www.stcn.com/article/detail/4231603.html",
+              "https://www.nbd.com.cn/articles/2026-10-21/4611855.html"
+            ]
+          }
+        ]
+      },
+      "marketCoverage": [
+        {
+          "market": "A股",
+          "status": "covered",
+          "note": "上证3713.028（-0.480%）、深成11704.354（-0.957%）、创业板2694.7131（-1.624%）、科创50 1343.2819（+0.064%）、沪深300 4111.9326（-0.968%）、中证500 6840.563（-0.013%），均为2026-10-21收盘快照（07:00:39Z—08:29:46Z）",
+          "gaps": "涨跌家数、成交额、两融余额、北向资金本轮无一手来源；交易所公告原文本轮未采集，A股公司事实仅来自媒体转述（容百科技公告、宁德时代三季报与回购）"
+        },
+        {
+          "market": "港股",
+          "status": "covered",
+          "note": "恒指23651.87（-2.212%）、国企指数7943.41（-2.274%）、恒生科技3994.77（-1.264%），收盘快照08:08:42Z；南向资金净卖出44.35亿港元、成交706.95亿港元",
+          "gaps": "港交所网站受使用条款限制，本轮未做程序化采集，无交易所公告原文；恒指当日涨跌幅与南向资金报道中提到的-0.90%存在数值冲突，正文只采用 packet 报价，冲突值未采用"
+        },
+        {
+          "market": "美股",
+          "status": "covered",
+          "note": "标普500 7751.89（+0.510%）、纳斯达克综指26720.44（+1.119%）、纳斯达克100 29845.592（+1.205%）、道指52645.12（+0.284%）、罗素2000 2785.0886（+0.421%），延迟报价约15:41Z；41家候选个股报价同批取得",
+          "gaps": "为盘中延迟快照，非收盘价；板块涨跌家数与资金流未取得；SEC 8-K 只读取了4份财报附件，未做全市场覆盖"
+        },
+        {
+          "market": "BTC",
+          "status": "partial",
+          "note": "比特币84465.89美元、以太坊2507.82美元、SOL 108.58美元均为15:41Z—15:42Z快照；方向与幅度用每经22:09快讯补齐（比特币24小时涨1.71%、以太坊涨1.57%）",
+          "gaps": "packet 加密报价无 changePct 与 asOf 交易日字段，无法计算本轮自身涨跌幅；链上资金流、ETF 申赎与永续合约资金费率本轮无来源"
+        },
+        {
+          "market": "黄金",
+          "status": "partial",
+          "note": "黄金4137.299805美元/盎司、白银57.814美元/盎司，快照时点15:41:36Z—15:41:37Z；与上一时点相比基本持平",
+          "gaps": "无涨跌幅字段；实际利率只能用名义10年期5.111%近似，缺少 TIPS 收益率；央行购金与ETF持仓本轮无来源"
+        },
+        {
+          "market": "原油",
+          "status": "partial",
+          "note": "WTI 96.75美元/桶（-1.094%，15:32:01Z延迟报价）；盘中破100美元、涨超2.6%后回吐的路径来自证券时报22:44发稿",
+          "gaps": "布伦特连续多轮 HTTP 404（ENERGY:BRENT 失败，源 URL 为 BZX26.NYM），布伦特-WTI 价差本轮无法计算；EIA 周度库存数值未取得，只有发布日程"
+        }
+      ],
+      "assets": [
+        {
+          "asset": "A股",
+          "name": "A股",
+          "asOf": "2026-10-21T07:00:39Z",
+          "status": "closed",
+          "view": "上证3713.028跌0.480%、创业板2694.7131跌1.624%、科创50逆势涨0.064%，跌幅跨度从0.064%到1.624%，是久期分层而非全面撤退",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI300"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231643.html"
+          ]
+        },
+        {
+          "asset": "港股",
+          "name": "港股",
+          "asOf": "2026-10-21T08:08:42Z",
+          "status": "closed",
+          "view": "恒指23651.87跌2.212%、国企指数跌2.274%大于恒生科技1.264%，权重股跌幅更大；南向净卖出44.35亿港元、腾讯被净卖出17.06亿并跌4.04%",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSCEI",
+            "INDEX:HK:HSTECH",
+            "FLOW:HK:SOUTHBOUND-NET-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231600.html"
+          ]
+        },
+        {
+          "asset": "美股",
+          "name": "美股",
+          "asOf": "2026-10-21T15:41:59Z",
+          "status": "regular",
+          "view": "纳斯达克100涨1.205%、标普500涨0.510%，超微电脑涨超12%、SpaceX涨超10%，而奈飞一度跌近5%、AT&T跌6%，指数上涨由业绩兑现驱动",
+          "evidenceFactIds": [
+            "INDEX:US:NDX",
+            "INDEX:US:SP500",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231628.html"
+          ]
+        },
+        {
+          "asset": "BTC",
+          "name": "BTC",
+          "asOf": "2026-10-21T15:42:01Z",
+          "status": "snapshot",
+          "view": "比特币84465.89美元、24小时涨1.71%（媒体口径），以太坊2507.82美元、涨1.57%，与美股同向且弹性温和，无独立叙事证据",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "MACRO:CRYPTO:BTC-24H-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611875.html"
+          ]
+        },
+        {
+          "asset": "黄金",
+          "name": "黄金",
+          "asOf": "2026-10-21T15:41:37Z",
+          "status": "snapshot",
+          "view": "黄金4137.299805美元、白银57.814美元，油价回落后未同步回落；10年期美债5.111%仍高，避险买盘对应政治与财政风险而非通胀",
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "RATE:US10Y"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231622.html"
+          ]
+        },
+        {
+          "asset": "原油",
+          "name": "原油",
+          "asOf": "2026-10-21T15:32:01Z",
+          "status": "delayed",
+          "view": "WTI 96.75美元跌1.094%，盘中破100美元后回吐；谈判进展压过袭船扩散，风险溢价被重新定价",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "MACRO:ENERGY:WTI-LAST-2026-10-21",
+            "MACRO:SECURITY:TANKER-ATTACKS-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231603.html",
+            "https://www.nbd.com.cn/articles/2026-10-21/4611855.html"
+          ]
+        }
+      ],
+      "deepDive": [
+        {
+          "asset": "A股",
+          "name": "A股",
+          "title": "跌幅跨度从0.064%到1.624%：同一交易时段里的久期分层",
+          "analysis": "上证3713.028点跌0.480%、深成11704.354点跌0.957%、创业板2694.7131点跌1.624%、沪深300 4111.9326点跌0.968%、中证500 6840.563点跌0.013%、科创50 1343.2819点涨0.064%。六个指数的跌幅分布接近两个数量级，说明卖压集中在估值最贵、盈利最远的一端，而不是全市场风险收缩。盘后两条公司级事实提供了同日的基本面注脚：宁德时代三季度营收1652.21亿元同比增58.58%、归母净利212.46亿元同比仅增14.54%，量增价减的格局没有改变；容百科技因美国供应链合规要求把韩国忠州工厂出租、无形资产转让、订单转为委托加工，关联交易上限23.70亿元，并披露产线闲置年亏损将超2亿元。",
+          "mechanism": "传导链条是“总量政策无增量→宽基缺少估值扩张动力→资金在同一成长板块内部做久期切换”。科创50逆势微涨与创业板跌1.624%并存，说明资金没有离开成长，只是在成长内部从远期盈利转向当期订单与政策确定性。",
+          "risk": "若港股与中概的弱势在次日开盘传导，创业板2694.7131点的位置会被再次测试；两融与量化止损可能放大单日跌幅，而本轮缺少成交额与涨跌家数数据，无法判断抛压是否已经释放。",
+          "invalidation": "创业板收复2700点且成交额放大，或科创50转跌而创业板止跌（说明是风格切换而非风险收缩）。",
+          "horizon": "1—3个交易日",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI500",
+            "RESEARCH:CN:300750-Q3-REV-2026Q3",
+            "RESEARCH:CN:688005-KOREA-LEASE-CAP-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231643.html",
+            "https://www.nbd.com.cn/articles/2026-10-21/4611835.html"
+          ]
+        },
+        {
+          "asset": "港股",
+          "name": "港股",
+          "title": "南向净卖出44.35亿港元：卖方是资金结构，不是汇率",
+          "analysis": "恒指23651.87点跌2.212%、国企指数7943.41点跌2.274%、恒生科技3994.77点跌1.264%，权重类跌幅大于科技类。南向资金全天成交706.95亿港元、买入331.30亿、卖出375.65亿、净卖出44.35亿；腾讯成交105.14亿港元、净卖出17.06亿、收盘跌4.04%，中国移动净卖出10.34亿、阿里巴巴-W净卖出8.78亿；逆势净买入的是长飞光纤光缆2.53亿（收盘涨0.88%）与中国海洋石油1.73亿。同期 USDCNH 6.6751、USDCNY 6.6642，人民币几乎不动，汇率不是解释变量。",
+          "mechanism": "港股的边际定价权集中在南向资金，当南向在权重股上集中减仓时，指数跌幅会大于个股中位数；而资金从平台权重转向光纤、油气，说明是权重切换而非全面撤离。港元端贴现率仍受10年期美债5.111%约束，估值扩张空间被限制，因此任何净卖出都会直接体现为指数下跌。",
+          "risk": "若南向净卖出从单日变为连续多日且成交额同步萎缩，性质会从调仓变成趋势性撤离；港交所公告原文本轮无法采集，公司层面的正面催化缺少一手证据。",
+          "invalidation": "南向连续两日净买入且恒指收复24000点，或腾讯止跌而指数继续下跌（说明卖压转移到其他权重）。",
+          "horizon": "2—5个交易日",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSCEI",
+            "INDEX:HK:HSTECH",
+            "FLOW:HK:SOUTHBOUND-NET-2026-10-21",
+            "FLOW:HK:SOUTHBOUND-TURNOVER-2026-10-21",
+            "FLOW:HK:TENCENT-NET-2026-10-21",
+            "RESEARCH:HK:0700-CHG-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231600.html"
+          ]
+        },
+        {
+          "asset": "美股",
+          "name": "美股",
+          "title": "涨1.205%的不是估值，是业绩：超微涨12%与奈飞跌5%同晚发生",
+          "analysis": "标普500 7751.89点涨0.510%、纳斯达克综指26720.44点涨1.119%、纳斯达克100 29845.592点涨1.205%、道指52645.12点涨0.284%、罗素2000 2785.0886点涨0.421%，小盘与大盘同向。个股层面：超微电脑涨超12%（季度业绩展望远超预期）、SpaceX涨超10%（三季度业绩超预期）并带动特斯拉涨近4%，戴尔与Credo涨8%、Lumentum与应用光电涨6%、英伟达涨近2%；反向的奈飞因营收增速放缓且指引不及预期一度跌近5%，AT&T业绩后跌6%，GOOGL跌1.957%。10年期美债5.111%、VIX回落至16.56。",
+          "mechanism": "高利率环境下估值扩张的空间被压缩，指数上涨只能来自盈利兑现：Wabtec三季度销售额31.2亿美元增8.1%、调整后每股收益2.83美元增22.0%并把全年指引上调，是“量价与利润率同时改善”的样本；而指引不及预期的公司被立即打折。这就是为什么指数涨1.205%却有个股跌6%——市场在做严格的逐股筛选。",
+          "risk": "权重集中度高，若下周财报季出现权重股指引下修，指数层面的涨幅会被迅速抹平；GOOGL的逆势下跌说明资本开支扩张正在被惩罚，这一逻辑若扩散会压制整个AI基础设施链。",
+          "invalidation": "纳斯达克100跌破29000点且VIX升破20，或超预期财报不再带来正收益（利好出尽）。",
+          "horizon": "1—2周（财报季内）",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y",
+            "RESEARCH:US:WAB-REV-Q3-2026",
+            "RESEARCH:US:WAB-ADJ-EPS-Q3-2026"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231628.html",
+            "https://www.sec.gov/Archives/edgar/data/943452/000094345226000017/a3q26pressreleaseword.htm"
+          ]
+        },
+        {
+          "asset": "BTC",
+          "name": "BTC",
+          "title": "涨1.71%的跟随性反弹：与美股同向，缺少独立资金证据",
+          "analysis": "比特币84465.89美元、以太坊2507.82美元、SOL 108.58美元，均为15:41Z—15:42Z快照；每经22:09快讯口径为比特币涨至84478.5美元、24小时涨1.71%，以太坊涨至2501.57美元、24小时涨1.57%。同一晚美股纳斯达克100涨1.205%，加密与美股同向、弹性温和。本轮 packet 的加密报价没有 changePct 字段，因此无法用行情自身计算涨跌幅，只能用媒体口径确认方向。",
+          "mechanism": "加密在高利率环境下缺少现金流锚，定价主要跟随全球流动性预期与风险偏好。当晚美股上涨来自业绩兑现而非流动性宽松（10年期5.111%未降），因此加密只能获得有限的贝塔式上涨，而不是独立行情。",
+          "risk": "涨幅只有1%量级，一旦美股回落极易回吐；且本轮缺少链上资金流、ETF申赎与合约资金费率数据，无法区分真实买盘与杠杆推动。",
+          "invalidation": "比特币跌破82000美元且以太坊跌破2400美元，或在美股下跌时仍守住84000美元上方（后者反而证明存在独立买盘）。",
+          "horizon": "3—7个交易日",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD",
+            "MACRO:CRYPTO:BTC-24H-2026-10-21",
+            "MACRO:CRYPTO:ETH-24H-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611875.html"
+          ]
+        },
+        {
+          "asset": "黄金",
+          "name": "黄金",
+          "title": "油价回落后黄金不跌：买的是政治风险，不是通胀",
+          "analysis": "黄金4137.299805美元/盎司、白银57.814美元/盎司，快照时点与上一时点相比基本持平。当晚原油盘中破100美元后回落、WTI收在96.75美元附近，若黄金买盘来自通胀交易，本该同步回落；实际并未跟随，同时10年期美债收益率仍在5.111%的高位、美元指数101.749几乎不动。同期欧洲出现巴黎本周第三次夜间宵禁、马赛等地对未成年人宵禁至10月23日，法国政治风险从债券利差延伸到社会秩序。",
+          "mechanism": "黄金在此刻由两条相互抵消的力量定价：名义利率高企压制持有成本，政治与财政风险提供避险溢价。油价回落只削弱了通胀渠道，没有削弱政治渠道，因此净效应接近中性。用名义10年期收益率代替实际利率会高估压制力度，本轮缺少TIPS收益率，是判断的薄弱环节。",
+          "risk": "若10年期美债收益率跌破4.9%、实际利率明显下行，成长股与黄金会同涨，黄金的避险属性被流动性属性掩盖；若美元指数升破103，黄金会同时承受汇率与实际利率的双重压力。",
+          "invalidation": "黄金跌破4050美元且美元指数升破103，或法国宵禁解除后金价随油价同步回落（说明买盘确实是通胀交易）。",
+          "horizon": "2—4周",
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD",
+            "RATE:US10Y",
+            "FX:DXY",
+            "PROP:FR:CURFEW-COUNT-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231622.html"
+          ]
+        },
+        {
+          "asset": "原油",
+          "name": "原油",
+          "title": "破100后回吐3个百分点：定价的是谈判概率，不是现货流量",
+          "analysis": "WTI 96.75美元/桶、跌1.094%（15:32:01Z延迟报价）；证券时报22:44发稿记录盘中一度突破100美元、涨幅超2.6%，随后跳水转绿报97.06美元、跌0.78%。触发因素是普京在圣彼得堡会见美国总统特使威特科夫并收到美方解决俄乌冲突构想文件，普京称未来两三天内首艘油轮将启航向美国运输4万吨柴油，泽连斯基表示可在保留至少75%领土控制权基础上达成和平协议。反向证据是同日英国海上贸易行动办公室通报：协调世界时10月20日18:30一艘油轮在伊拉克法奥东南30海里处被击中，10月21日01:45另一艘在阿曼布哈以西11海里处被击中起火。",
+          "mechanism": "原油的边际定价在“预期库存”与“实物流量”之间切换。当谈判headline出现时，市场先下调未来供应中断概率，风险溢价被压缩，价格快速回吐；而袭船事件影响的是保险与运费，对即期装量的影响需要看到港口停装或船舶损毁才会体现。库存数据本轮只有EIA发布日程（每周三美东10:30），没有数值，因此无法验证溢价是否已被现货消化。",
+          "risk": "本轮下跌由预期驱动、仓位拥挤，一条相反的实物消息即可打回；布伦特报价连续多轮 HTTP 404，无法计算布伦特-WTI价差，而价差恰是区域供应风险最直接的度量，这是本轮最关键的数据缺口。",
+          "invalidation": "WTI站稳100美元上方且布伦特-WTI价差重新走阔，或谈判未进入俄美乌三方正式会议。",
+          "horizon": "未来12—24小时",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "MACRO:ENERGY:WTI-LAST-2026-10-21",
+            "MACRO:ENERGY:WTI-INTRADAY-HIGH-2026-10-21",
+            "MACRO:SECURITY:TANKER-ATTACKS-2026-10-21",
+            "PROP:RU:US:PEACE-TALK-2026-10-21",
+            "PROP:UA:CEASEFIRE-75PCT-2026-10-21",
+            "MACRO:CN:LPG-NIGHT-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231603.html",
+            "https://www.nbd.com.cn/articles/2026-10-21/4611855.html",
+            "https://www.nbd.com.cn/articles/2026-10-21/4611867.html"
+          ]
+        }
+      ],
+      "frameworkAnalysis": [
+        {
+          "id": "fw-event-vs-flow",
+          "framework": "事件定价与实物流量的分离",
+          "concept": "同一条产业链上，“预期事件”和“实物中断”是两个不同的定价对象，前者改变概率，后者改变数量。",
+          "applicability": "适用于本轮原油：谈判进展与袭船事件在同一晚发生，方向相反。",
+          "observed": "WTI盘中一度突破100美元、涨幅超2.6%，在普京会见美方特使与泽连斯基75%领土表态后跳水，发稿时报97.06美元、跌0.78%；同日伊拉克法奥外海与阿曼布哈外海各有一艘油轮遇袭，均未报告船舶损毁或环境影响。",
+          "mechanism": "风险溢价=中断概率×中断数量×持续时间。谈判headline压低第一项，袭船只影响运费与保险而没有抬高第三项，因此净效应为负。只有当装运数量真正下降，溢价才会被重新定价。",
+          "conclusion": "本轮的油价下跌是概率下调，不是数量确认；这类定价最脆弱，需要实物证据才能延续。",
+          "assumptions": "假设袭击未造成港口停装与船舶损毁；若出现任何一项，结论反转。",
+          "counterEvidence": "威胁半径从霍尔木兹扩散到法奥外海（远离霍尔木兹），说明中断概率未必下降，只是被谈判新闻暂时压住。",
+          "horizon": "未来12—24小时",
+          "invalidation": "WTI站稳100美元上方或出现港口停装",
+          "confidence": "medium",
+          "missingData": "EIA周度库存数值、布伦特-WTI价差（布伦特连续404）",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "MACRO:ENERGY:WTI-LAST-2026-10-21",
+            "MACRO:ENERGY:WTI-INTRADAY-HIGH-2026-10-21",
+            "MACRO:SECURITY:TANKER-ATTACKS-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231603.html",
+            "https://www.nbd.com.cn/articles/2026-10-21/4611855.html"
+          ]
+        },
+        {
+          "id": "fw-denominator",
+          "framework": "每股指标的分母效应",
+          "concept": "当净利润下降而每股收益上升时，增长来自股本收缩而不是经营改善。",
+          "applicability": "适用于本轮两份一手财报与一家A股龙头的资本动作：Lithia、宁德时代。",
+          "observed": "Lithia三季度调整后净利润229.3百万美元、同比降5%，调整后每股收益10.34美元、同比升9%，年内已回购8.7%流通股、季度内回购8500万美元；GAAP每股13.22美元同比增54%中含Pinewood投资未实现收益。宁德时代当日回购348.86万股、约8亿元，注销式回购方案累计实施超46亿元，而三季度营收增58.58%、净利仅增14.54%。",
+          "mechanism": "回购注销减少分母，在利润下降时仍能维持每股指标上升。这在现金流充裕的公司里可持续，但它不改变总量收缩的事实：营收增速与利润增速的落差才是经营质量信号。",
+          "conclusion": "每股指标繁荣与总量收缩可以同时成立；用EPS判断景气度会系统性高估。",
+          "assumptions": "假设回购继续以自有现金流执行；若转向举债回购，质量下降。",
+          "counterEvidence": "Wabtec同期销售额增8.1%、调整后每股收益增22%，属于收入与利润率同步改善的真实增长，说明分母效应并非普遍现象。",
+          "horizon": "1—2个季度",
+          "invalidation": "四季度毛利率环比回升且利润增速追上营收增速",
+          "confidence": "medium-high",
+          "missingData": "宁德时代回购均价与剩余额度、Lithia回购授权余额",
+          "evidenceFactIds": [
+            "RESEARCH:US:LAD-ADJ-NI-Q3-2026",
+            "RESEARCH:US:LAD-ADJ-EPS-Q3-2026",
+            "RESEARCH:US:LAD-BUYBACK-YTD-2026",
+            "RESEARCH:CN:300750-BUYBACK-DAY-2026-10-21",
+            "RESEARCH:CN:300750-BUYBACK-CUM-2026-10-21",
+            "RESEARCH:CN:300750-Q3-REV-2026Q3",
+            "RESEARCH:CN:300750-Q3-NP-2026Q3"
+          ],
+          "sourceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm",
+            "https://www.stcn.com/article/detail/4231643.html"
+          ]
+        },
+        {
+          "id": "fw-rate-duration",
+          "framework": "利率与久期的分层",
+          "concept": "同样的利率水平，对不同资产的含义取决于它的现金流在什么时候到账。",
+          "applicability": "适用于本轮美股与A股同时出现的“指数微涨、长久期资产下跌”。",
+          "observed": "10年期美债5.111%、VIX回落至16.56；纳斯达克100涨1.205%而GOOGL跌1.957%；A股创业板跌1.624%、科创50涨0.064%。高利率下仍在上涨的是有当期业绩兑现的公司（超微、SpaceX、Wabtec），被惩罚的是资本开支扩张与远期盈利（GOOGL）。",
+          "mechanism": "贴现率高位时，远期现金流的现值对预期变化更敏感，市场因此要求“当期兑现”才给估值。结果是同一个指数内部出现久期分层，指数涨跌掩盖了组内分化。",
+          "conclusion": "高利率不是普跌的理由，而是筛选标准：离现金流越远，越需要超预期来换取涨幅。",
+          "assumptions": "假设10年期收益率维持在5%附近；若快速下行，远期资产会重新获得估值弹性。",
+          "counterEvidence": "罗素2000涨0.421%、小盘并未跑输，说明利率对长久期的压制没有市场想象的强。",
+          "horizon": "2—4周",
+          "invalidation": "10年期跌破4.9%且创业板与GOOGL同步反弹",
+          "confidence": "medium",
+          "missingData": "TIPS实际收益率、行业层面资金流",
+          "evidenceFactIds": [
+            "RATE:US10Y",
+            "VOL:VIX",
+            "INDEX:US:NDX",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231628.html"
+          ]
+        },
+        {
+          "id": "fw-compliance-cost",
+          "framework": "规则成本内部化",
+          "concept": "当贸易壁垒从关税变成供应链合规要求时，成本以产能闲置、租赁与加工费的形式进入损益表。",
+          "applicability": "适用于容百科技韩国产线的租赁与委托加工安排。",
+          "observed": "受美国《大而美法案》供应链合规要求影响，容百科技拟出租韩国忠州工厂6个月（月租金合计38.84亿韩元），按10年预计租赁金额4660.80亿韩元提交股东会，加上1350万美元无形资产转让，关联交易上限约23.70亿元；同时签署来料加工合同，加工费约1.27亿元；并披露产线闲置年亏损将超2亿元。",
+          "mechanism": "合规要求改变的是“产能放在哪里、由谁经营”，而不是产品价格。企业为保住客户把产能出租给关联方、自己收租金与加工费，收入结构从制造利润变成租金加代工费，毛利率与并表范围同时变化。",
+          "conclusion": "这是“规则成本”的会计化：不体现为关税支出，而体现为租赁收益、加工费与并表范围收缩，容易被只看营收增速的分析忽略。",
+          "assumptions": "假设股权转让在年内交割、客户切换于2026年底完成；延期则闲置亏损继续计提。",
+          "counterEvidence": "租赁与委托加工同时保留订单收益，销售利润仍归属上市公司，短期冲击可能小于2亿元的年亏损口径。",
+          "horizon": "2—4个季度",
+          "invalidation": "韩国产线在年内完成交割且租金收益覆盖折旧",
+          "confidence": "medium",
+          "missingData": "韩国产线产能利用率与折旧明细、股东会审议时点",
+          "evidenceFactIds": [
+            "RESEARCH:CN:688005-KOREA-LEASE-CAP-2026-10-21",
+            "RESEARCH:CN:688005-KOREA-IDLE-LOSS-2026-10-21",
+            "RESEARCH:CN:688005-PROCESSING-FEE-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611835.html"
+          ]
+        },
+        {
+          "id": "fw-consumer-split",
+          "framework": "利率敏感品的消费分层",
+          "concept": "高利率打击的不是全部消费，而是需要融资的大件耐用品。",
+          "applicability": "适用于本轮三份美国一手财报：Winnebago（房车）、Lithia（汽车零售与汽车金融）、Equity LifeStyle（住房与房车营地租金）。",
+          "observed": "Winnebago四季度净收入645.1百万美元、同比降17.0%，调整后每股0.49美元（上年0.71）；Lithia三季度营收99亿美元增3%，金融业务收入32.3百万美元增69%、放款9.37亿美元、渗透率18.3%；Equity LifeStyle三季度标准化FFO每股0.79美元增4.6%，制造住房基础租金收入增5.7%、RV与码头仅增2.1%。",
+          "mechanism": "大件耐用品依赖分期，利率高企直接抬高月供，需求被推迟；而住房与汽车金融是“存量+息差”生意，高利率反而扩大金融业务收入。于是同一利率环境下，制造商收缩、金融与租金收租方扩张。",
+          "conclusion": "消费没有整体崩，而是沿着“是否需要融资”分裂：制造端在收缩，金融与租金端在收租。",
+          "assumptions": "假设利率维持当前水平；若快速降息，房车与汽车需求会先于租金反弹。",
+          "counterEvidence": "Equity LifeStyle的RV与码头租金只增2.1%，说明房车相关需求确实在走弱，与其自身住房业务形成内部对冲。",
+          "horizon": "1—2个季度",
+          "invalidation": "Winnebago订单回暖且经销商库存下降",
+          "confidence": "medium-high",
+          "missingData": "美国汽车与房车零售月度销量、消费者信贷拖欠率",
+          "evidenceFactIds": [
+            "RESEARCH:US:WGO-REV-Q4FY26",
+            "RESEARCH:US:WGO-ADJ-EPS-Q4FY26",
+            "RESEARCH:US:LAD-REV-Q3-2026",
+            "RESEARCH:US:LAD-FIN-INCOME-Q3-2026",
+            "RESEARCH:US:ELS-NFFO-Q3-2026",
+            "RESEARCH:US:ELS-MH-RENT-Q3-2026"
+          ],
+          "sourceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/107687/000162828026066605/exh9912026q4earningsrelease.htm",
+            "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm",
+            "https://www.sec.gov/Archives/edgar/data/895417/000162828026066614/elsex9913q26.htm"
+          ]
+        },
+        {
+          "id": "fw-flow-structure",
+          "framework": "资金结构优先于宏观叙事",
+          "concept": "当汇率与利率都没有变化时，资产价格的变化来自谁在买、谁在卖。",
+          "applicability": "适用于港股与中概本轮的同夜下跌。",
+          "observed": "南向资金净卖出44.35亿港元、成交706.95亿，腾讯净卖出17.06亿并跌4.04%，中国移动净卖出10.34亿、阿里巴巴-W净卖出8.78亿；纳斯达克中国金龙指数跌超3%；同期USDCNH 6.6751、USDCNY 6.6642，人民币基本持平；恒生科技跌1.264%小于国企指数2.274%。",
+          "mechanism": "汇率稳定排除了汇率冲击，跌幅集中在权重说明卖出来自持有权重的资金（南向与被动产品）。资金从平台权重转向光纤与油气，是权重重估而不是宏观重定价。",
+          "conclusion": "把中概下跌归因为“外资撤离中国”缺乏本轮证据；可核验的是南向在权重上的集中减仓。",
+          "assumptions": "假设南向成交数据完整反映边际卖压；若外资同步大额卖出，权重跌幅会被放大。",
+          "counterEvidence": "中概ADR跌幅（超3%）大于港股科技（1.264%），说明ADR端还有额外的折价因素，不只是南向。",
+          "horizon": "2—5个交易日",
+          "invalidation": "南向连续两日净买入而指数仍跌",
+          "confidence": "medium",
+          "missingData": "外资托管数据、港股卖空比例",
+          "evidenceFactIds": [
+            "FLOW:HK:SOUTHBOUND-NET-2026-10-21",
+            "FLOW:HK:SOUTHBOUND-TURNOVER-2026-10-21",
+            "FLOW:HK:TENCENT-NET-2026-10-21",
+            "FLOW:CN:ADR-GOLDEN-DRAGON-2026-10-21",
+            "FX:USDCNH"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231600.html",
+            "https://www.nbd.com.cn/articles/2026-10-21/4611860.html"
+          ]
+        }
+      ],
+      "frameworkSynthesis": {
+        "verdict": "六个框架的合成结论是“分层而非共振”：原油在为谈判概率打折，美股在按当期业绩筛选，中国资产在按资金结构调整，黄金在按政治风险定价。四者互不传导，因此任何单一宏观叙事都无法同时解释它们。",
+        "agreement": "事件定价与实物流量分离、利率与久期分层、资金结构优先三个框架在方向上一致：都在说明“价格变化的原因在结构内部，不在总量”。原油的预期驱动下跌与港股的南向减仓都是同一类现象的两种表现。",
+        "disagreement": "规则成本内部化与消费分层两个框架指向中期盈利下修（容百的2亿元闲置亏损、Winnebago的17%收入下滑），与“美股业绩兑现型上涨”形成张力；若成本与消费的收缩扩散到权重股，指数上涨的持续性会被否定。",
+        "weighting": "更看重有原文与时点的一手证据：SEC 四份财报、宁德时代与容百的公告转述、UKMTO 通报的两起袭击。相对不看重媒体对指数涨跌幅的口径（恒指当日涨跌幅存在-0.90%与-2.212%的冲突），因此正文只采用 packet 报价，避免把冲突值当事实。",
+        "invalidation": "若WTI重新站上100美元、且中国金龙指数次日继续下跌超过2%，说明油价与中概回到了同一套“地缘风险”定价上，分层结论失效；若10年期美债跌破4.9%，久期分层框架需要整体重估。"
+      },
+      "watch": [
+        {
+          "point": "WTI能否守住95美元，以及谈判是否进入俄美乌三方正式会议",
+          "detail": "本轮下跌由谈判headline驱动，若三方会议未落地而袭船继续，97美元附近的风险溢价会快速修复；若会议确认，95美元下方才有基本面支撑。"
+        },
+        {
+          "point": "中国金龙指数次日是否延续跌势、南向是否连续净卖出",
+          "detail": "单日净卖出44.35亿是调仓还是趋势，取决于次日；若南向连续净卖出且腾讯继续被减仓，港股的权重折价会扩大。"
+        },
+        {
+          "point": "鲍威尔与法国政治日程：10月23日穆迪对法国评级评估、10月27—28日FOMC",
+          "detail": "法国风险已从债券利差延伸到宵禁，若评级下调，欧洲风险溢价会重新上行；FOMC在27—28日，官方日历未给出决议具体时点。"
+        },
+        {
+          "point": "美国大件耐用品与住房租金的分叉是否持续",
+          "detail": "Winnebago收入降17%、Equity LifeStyle住房租金增5.7%，这一分叉若延续，说明高利率只压制融资型消费，通胀中的住房分项仍粘。"
+        }
+      ],
+      "dataDefinitions": [
+        {
+          "term": "调整后每股收益（adjusted EPS）",
+          "definition": "剔除一次性与未实现损益后的每股收益。本轮 Lithia 的 GAAP 每股13.22美元含 Pinewood 投资未实现收益，调整后为10.34美元，两者差距就是“一次性收益”的规模。"
+        },
+        {
+          "term": "标准化FFO（Normalized FFO）",
+          "definition": "REITs 常用的现金流指标，以净利润加回折旧摊销并剔除一次性项目后按份额计算。Equity LifeStyle 三季度为每股0.79美元。"
+        },
+        {
+          "term": "风险溢价（原油）",
+          "definition": "市场价格中高于供需基本面所隐含价格的部分，通常对应供应中断的概率与持续时间，而不是已经发生的数量损失。"
+        },
+        {
+          "term": "注销式回购",
+          "definition": "回购股份后注销并减少注册资本的安排，直接缩小每股指标的分母，与用于股权激励的回购不同。"
+        },
+        {
+          "term": "渗透率（汽车金融）",
+          "definition": "通过自有金融渠道完成融资的客户占比。Lithia 三季度为18.3%，放款9.37亿美元。"
+        }
+      ],
+      "narrativeTriggers": [
+        {
+          "title": "谈判转正式会议",
+          "effect": "若俄美乌三方会议确定日期，原油风险溢价会二次压缩，WTI可能测试92—94美元区间。"
+        },
+        {
+          "title": "袭击造成装运中断",
+          "effect": "若法奥或布哈外海出现港口停装、船舶损毁，油价会以更快速度收复100美元，通胀预期重新上行。"
+        },
+        {
+          "title": "权重股财报指引下修",
+          "effect": "若下周财报季权重股下调指引，纳斯达克100的1.205%涨幅会被个股跌幅吞掉，VIX 16.56的低波动状态结束。"
+        }
+      ],
+      "analysisTheses": [
+        {
+          "id": "TH-1",
+          "thesis": "原油当前定价的是谈判概率而非现货流量，因此本轮下跌脆弱",
+          "status": "active",
+          "evidence": "WTI破100后回吐超3个百分点，同期两起油轮遇袭未造成装运中断"
+        },
+        {
+          "id": "TH-2",
+          "thesis": "每股指标繁荣掩盖总量收缩，回购是利润增速下行期的工具",
+          "status": "active",
+          "evidence": "Lithia 调整后净利降5%而调整后每股收益升9%、年内回购8.7%；宁德时代营收增58.58%、净利增14.54%并回购46亿元"
+        },
+        {
+          "id": "TH-3",
+          "thesis": "中概与港股下跌是资金结构问题，不是汇率或全球风险偏好问题",
+          "status": "active",
+          "evidence": "南向净卖出44.35亿、人民币基本持平、美股同夜上涨"
+        }
+      ],
+      "judgmentRevisions": [
+        {
+          "id": "JR-1",
+          "previous": "上一版把港股下跌归因为港元端贴现率（10年期5.117%）",
+          "current": "本轮在同一贴现率水平下，跌幅集中在权重且南向净卖出44.35亿，因此把主因修正为南向资金在权重上的集中减仓，贴现率是背景而不是触发",
+          "reason": "南向成交与净卖出方向可核验，且汇率几乎不动"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "纳斯达克100",
+          "value": 29845.592,
+          "unit": "点",
+          "change": 1.205,
+          "asOf": "2026-10-21T15:41:57Z"
+        },
+        {
+          "name": "恒生指数",
+          "value": 23651.87,
+          "unit": "点",
+          "change": -2.212,
+          "asOf": "2026-10-21T08:08:42Z"
+        },
+        {
+          "name": "WTI原油",
+          "value": 96.75,
+          "unit": "USD/bbl",
+          "change": -1.094,
+          "asOf": "2026-10-21T15:32:01Z"
+        },
+        {
+          "name": "10年期美债收益率",
+          "value": 5.111,
+          "unit": "%",
+          "change": -1.1725,
+          "asOf": "2026-10-21T15:26:54Z"
+        },
+        {
+          "name": "VIX",
+          "value": 16.56,
+          "unit": "点",
+          "change": -4.3328,
+          "asOf": "2026-10-21T15:27:01Z"
+        },
+        {
+          "name": "黄金",
+          "value": 4137.299805,
+          "unit": "USD/oz",
+          "change": null,
+          "asOf": "2026-10-21T15:41:37Z"
+        }
+      ],
+      "changes": [
+        {
+          "title": "原油方向反转",
+          "detail": "WTI盘中一度突破100美元、涨幅超2.6%，在普京会见美方特使与泽连斯基75%领土表态后跳水，packet 时报96.75美元、跌1.094%",
+          "evidenceFactIds": [
+            "ENERGY:WTI",
+            "MACRO:ENERGY:WTI-LAST-2026-10-21",
+            "PROP:RU:US:PEACE-TALK-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231603.html"
+          ]
+        },
+        {
+          "title": "油轮遇袭半径扩大",
+          "detail": "英国海上贸易行动办公室通报伊拉克法奥外海与阿曼布哈外海各有一艘油轮被击中，前者未报告损毁，后者起火后扑灭、船舶锚泊",
+          "evidenceFactIds": [
+            "MACRO:SECURITY:TANKER-ATTACKS-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611855.html"
+          ]
+        },
+        {
+          "title": "美股转为盘中上行",
+          "detail": "纳斯达克100涨1.205%、标普500涨0.510%，超微电脑涨超12%、SpaceX涨超10%，奈飞因指引不及预期一度跌近5%",
+          "evidenceFactIds": [
+            "INDEX:US:NDX",
+            "INDEX:US:SP500"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231628.html"
+          ]
+        },
+        {
+          "title": "中概独立下跌",
+          "detail": "纳斯达克中国金龙指数跌超3%，同期美股宽基上涨，人民币汇率基本持平",
+          "evidenceFactIds": [
+            "FLOW:CN:ADR-GOLDEN-DRAGON-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611860.html"
+          ]
+        }
+      ],
+      "recentChanges": [
+        {
+          "title": "港股卖压从“贴现率”改为“南向权重减仓”",
+          "detail": "上一版把港股下跌归因为港元端贴现率；本轮南向净卖出44.35亿港元、腾讯被净卖出17.06亿并跌4.04%，而汇率几乎不动，因此主因修正为资金结构",
+          "evidenceFactIds": [
+            "FLOW:HK:SOUTHBOUND-NET-2026-10-21",
+            "FLOW:HK:TENCENT-NET-2026-10-21",
+            "FX:USDCNH"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231600.html"
+          ]
+        },
+        {
+          "title": "原油从“风险溢价扩张”转为“谈判概率定价”",
+          "detail": "上一版记录了WTI破100美元；本轮同一交易日盘中破100后回吐超3个百分点，定价对象从供应中断转为和平进程",
+          "evidenceFactIds": [
+            "MACRO:ENERGY:WTI-INTRADAY-HIGH-2026-10-21",
+            "MACRO:ENERGY:WTI-LAST-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231603.html"
+          ]
+        },
+        {
+          "title": "新增“规则成本内部化”的公司级证据",
+          "detail": "容百科技因美国供应链合规要求出租韩国忠州工厂，关联交易上限23.70亿元，产线闲置年亏损将超2亿元",
+          "evidenceFactIds": [
+            "RESEARCH:CN:688005-KOREA-LEASE-CAP-2026-10-21",
+            "RESEARCH:CN:688005-KOREA-IDLE-LOSS-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611835.html"
+          ]
+        }
+      ],
+      "evolution24h": [
+        {
+          "at": "2026-10-21T14:44:00Z",
+          "title": "油价冲高后跳水",
+          "detail": "WTI盘中突破100美元、涨幅超2.6%，随后在普京会见美方特使消息下转跌，报97.06美元、跌0.78%",
+          "evidenceFactIds": [
+            "MACRO:ENERGY:WTI-INTRADAY-HIGH-2026-10-21",
+            "MACRO:ENERGY:WTI-LAST-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231603.html"
+          ]
+        },
+        {
+          "at": "2026-10-21T14:52:29Z",
+          "title": "两起油轮遇袭被通报",
+          "detail": "伊拉克法奥东南30海里与阿曼布哈以西11海里各一起，均未报告环境影响",
+          "evidenceFactIds": [
+            "MACRO:SECURITY:TANKER-ATTACKS-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611855.html"
+          ]
+        },
+        {
+          "at": "2026-10-21T14:55:44Z",
+          "title": "中概跌幅扩大至3%",
+          "detail": "纳斯达克中国金龙指数跌超3%，与美股宽基同夜反向",
+          "evidenceFactIds": [
+            "FLOW:CN:ADR-GOLDEN-DRAGON-2026-10-21"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611860.html"
+          ]
+        },
+        {
+          "at": "2026-10-21T15:26:25Z",
+          "title": "美股盘中走强",
+          "detail": "纳斯达克100涨1%、标普500涨0.4%，科技与AI硬件领涨",
+          "evidenceFactIds": [
+            "INDEX:US:NDX",
+            "INDEX:US:SP500"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611883.html"
+          ]
+        },
+        {
+          "at": "2026-10-21T15:41:57Z",
+          "title": "本轮报价快照",
+          "detail": "标普500 7751.89涨0.510%、纳斯达克100 29845.592涨1.205%、WTI 96.75跌1.094%、10年期美债5.111%、VIX 16.56",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NDX",
+            "ENERGY:WTI",
+            "RATE:US10Y",
+            "VOL:VIX"
+          ],
+          "sourceUrls": []
+        }
+      ],
+      "sectionGaps": {
+        "events": {
+          "reason": "本轮核验美联储FOMC日历、BEA发布日程与EIA周度石油报告日程三份官方页面（均取得正文）。未来12—24小时内可确认的排程事件只有巴黎宵禁结束（10月22日06:00当地，含时区换算不确定性）与BEA在10月22日10:00美东发布的实验性研发统计；FOMC在10月27—28日、BEA季度GDP在10月29日，超出24小时窗口，放入 macroEvents。EIA周度报告标准发布时点为每周三美东10:30，本轮对应时点已过，且日程页不含库存数值。"
+        },
+        "research": {
+          "reason": "本轮取得四份美股SEC 8-K财报附件全文（Lithia、Winnebago、Wabtec、Equity LifeStyle）并建立研究记录；A股与港股仅有媒体转述（宁德时代三季报与回购、容百科技公告），未取得交易所公告原文，因此未为A股与港股建立 researchRecords，缺口如实保留。"
+        },
+        "newsroom": {
+          "reason": "滚动24小时目标18—30条，本轮实际取得10条可核验事件，其中非纯金融市场4条（油轮遇袭、容百合规、巴黎宵禁、中方期货与化工分化中的产业观察），不足以达到“约一半为非纯金融”的覆盖目标。全球区域缺一手来源：Reuters 连接失败、AP/OPEC/IEA 此前均为HTTP 403，本轮未再试探；港交所受使用条款限制未做程序化采集。"
+        },
+        "metrics": {
+          "reason": "布伦特原油连续多轮 HTTP 404（ENERGY:BRENT，源URL为BZX26.NYM），布伦特-WTI价差无法计算；两年期美债本轮为空值（partial）；加密与贵金属报价缺少 changePct 与交易日字段，无法从行情自身计算涨跌幅，只能用媒体口径补齐方向。"
+        }
+      },
+      "worldEvents": [
+        {
+          "id": "n-20261021-tanker-iraq",
+          "title": "油轮遇袭扩散至伊拉克法奥与阿曼布哈外海",
+          "region": "WORLD",
+          "detail": "两起袭击分别发生在协调世界时10月20日18:30与10月21日01:45，均未报告船舶损毁或环境影响",
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-10-21/4611855.html"
+          ]
+        },
+        {
+          "id": "n-20261021-france-curfew",
+          "title": "巴黎本周第三次夜间宵禁",
+          "region": "WORLD",
+          "detail": "10月21日23时至22日6时覆盖共和国广场与大堂商业区；马赛等地对未成年人宵禁至10月23日",
+          "sourceUrls": [
+            "https://www.stcn.com/article/detail/4231622.html"
+          ]
+        }
+      ]
+    },
+    "newsItems": [
+      {
+        "eventId": "n-20261021-tanker-iraq",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "publishedAt": "2026-10-21T14:52:29Z",
+        "title": "油轮遇袭从霍尔木兹海峡扩散到伊拉克法奥外海与阿曼布哈外海",
+        "summary": "英国海上贸易行动办公室21日通报，协调世界时20日18时30分一艘油轮在伊拉克南部法奥东南30海里处遭不明发射物击中，船员安全、未报告船舶受损；协调世界时21日1时45分另一艘油轮在阿曼布哈以西11海里处被击中起火，火已扑灭、船舶锚泊、船员安全。法奥外海是进出伊拉克南部港口与海上石油出口设施的重要通道。",
+        "plainImpact": "对普通人是油价与航运保险两条线：油轮保险费率和绕行成本会先涨，成品油与化工原料到岸价随后传导；对航运与炼厂是航线与装卸计划的不确定性上升。",
+        "assessment": "我的判断：这两起事件的地理位置比“霍尔木兹封锁”更值得注意——法奥外海远离霍尔木兹，说明威胁半径在扩大而不是单点封锁。但两起均未造成船舶损毁或环境影响的公开证据，短期是保险费率问题，不是供应中断问题。",
+        "counterRisk": "若后续出现船舶损毁、港口停装或船员伤亡，风险性质会从保险成本升级为实物流量中断。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611855.html",
+          "https://www.stcn.com/article/detail/4231603.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-oil-reversal-peace",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-21T14:44:00Z",
+        "title": "油价盘中破100美元后跳水转跌，普京会见美方特使、泽连斯基称可按现状冻结战线",
+        "summary": "北京时间10月21日晚间国际油价冲高后回落，WTI主力一度突破100美元、涨幅超2.6%，发稿时报97.06美元、跌0.78%。同日普京在圣彼得堡会见美国总统特使威特科夫并收到美方解决俄乌冲突构想文件，称未来两三天内首艘油轮将启航向美国运输4万吨柴油；泽连斯基表示可在保留至少75%领土控制权基础上达成和平协议。",
+        "plainImpact": "国内成品油调价与化工品成本的短期方向被“谈判进展”压过“袭击事件”；对普通人意味着这一轮油价上涨更可能是脉冲而非趋势。",
+        "assessment": "我的判断：原油此刻定价的是谈判概率，而不是现货流量。破100后的当日回吐幅度超过3个百分点，说明多头仓位拥挤、对和平 headline 的敏感度极高；这类由预期驱动的下跌最容易被一条相反的实物消息打回。",
+        "counterRisk": "若谈判未能进入三方正式会议，或袭击导致实际装运中断，回吐会以更快速度修复。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231603.html",
+          "https://www.nbd.com.cn/articles/2026-10-21/4611855.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-cn-adr-drop",
+        "regions": [
+          "CN",
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-21T14:55:44Z",
+        "title": "纳斯达克中国金龙指数盘中跌超3%，与美股大盘走高背离",
+        "summary": "10月21日美股交易时段，纳斯达克中国金龙指数跌超3%；同一时段纳斯达克100指数上涨1%、标普500指数上涨0.4%。",
+        "plainImpact": "对持有中概基金或港股的普通投资者，这是“同一个晚上、两个方向”的净值分化；对跨境业务企业，ADR折价会抬高后续融资成本。",
+        "assessment": "我的判断：这不是全球风险偏好问题——同晚美股宽基与科技股都在涨。中概的独立下跌更接近资产自身的资金与政策折价，需要看后续是否有公司层面的披露来解释，而不是套用“外资撤离中国”的叙事。",
+        "counterRisk": "若次日港股与A股同步补跌，则说明是跨市场的中国资产重定价，而非ADR局部折价。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611860.html",
+          "https://www.nbd.com.cn/articles/2026-10-21/4611883.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-us-intraday-rally",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-21T15:26:25Z",
+        "title": "美股盘中走强：纳斯达克100涨1%、标普500涨0.4%，SpaceX与特斯拉合并进入实质探讨",
+        "summary": "10月21日美股开盘后科技股走高，戴尔科技、Credo涨8%，Lumentum、应用光电涨6%，英伟达涨近2%；SpaceX三季度业绩超预期、股价涨超10%，马斯克称与特斯拉合并是“好主意”，特斯拉涨近4%；超微电脑涨超12%，奈飞因营收增速放缓与指引不及预期一度跌近5%，AT&T发布业绩后跌6%。",
+        "plainImpact": "对美股持有人是权重股继续贡献涨幅；对国内投资者，AI硬件链的情绪外溢仍在，但个股分化极大——同一晚既有涨12%也有跌6%。",
+        "assessment": "我的判断：这是“业绩兑现型”上涨而不是估值扩张型：超微是展望超预期、SpaceX是业绩超预期，而指引不及预期的奈飞与AT&T直接被打。指数涨1%掩盖了个股层面的严格筛选。",
+        "counterRisk": "若后续财报季指引下调扩散到权重股，指数层面的涨幅会迅速被个股跌幅抵消。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231628.html",
+          "https://www.nbd.com.cn/articles/2026-10-21/4611883.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-southbound-sell",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-21T14:44:00Z",
+        "title": "南向资金净卖出44.35亿港元，腾讯单日被净卖出17.06亿",
+        "summary": "10月21日南向资金合计成交706.95亿港元，买入331.30亿、卖出375.65亿，净卖出44.35亿港元；腾讯控股成交105.14亿港元、净卖出17.06亿、收盘跌4.04%，中国移动净卖出10.34亿、阿里巴巴-W净卖出8.78亿；净买入居首为长飞光纤光缆2.53亿港元（收盘涨0.88%）与中国海洋石油1.73亿港元。",
+        "plainImpact": "对港股持有人，这是本地资金在权重股上减仓的直接证据；对普通人是港股账户净值波动放大，而不是汇率损失——同期人民币汇率基本持平。",
+        "assessment": "我的判断：港股当天是“资金结构问题”而非“汇率问题”。净卖出集中在腾讯、中国移动、阿里三只权重，同时光纤与油气获得净买入，属于权重切换而非全面撤退。",
+        "counterRisk": "若南向连续三日净卖出且成交额同步萎缩，才是趋势性撤离。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231600.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-catl-buyback",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-21T14:46:00Z",
+        "title": "宁德时代单日回购8亿元、348.86万股，注销式回购累计实施超46亿元",
+        "summary": "宁德时代10月21日在港交所披露翌日披露报表，当日回购348.86万股，价格区间227.51—231.38元，金额约8亿元；截至10月19日累计回购1292.79万股、约38.55亿元。公司三季报显示三季度营收1652.21亿元、同比增58.58%，归母净利润212.46亿元、同比增14.54%，动力与储能合计销量超260GWh。",
+        "plainImpact": "对股东是每股收益的分母被主动缩小；对产业链是龙头用现金流而非扩产来表达信心，隐含对产能过剩的谨慎。",
+        "assessment": "我的判断：营收增速58.58%对净利增速14.54%的落差，比回购更值得看——量增价减的行业格局没有变，回购是在利润增速下行期维持每股指标的工具，不是需求转强的证据。",
+        "counterRisk": "若四季度单季毛利率环比回升且储能占比继续提升，量增价减的判断需要修正。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231643.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-ronbay-korea",
+        "regions": [
+          "CN"
+        ],
+        "kind": "general",
+        "publishedAt": "2026-10-21T15:03:40Z",
+        "title": "容百科技因美国供应链合规要求出租韩国忠州工厂，闲置年亏损超2亿元",
+        "summary": "容百科技10月21日晚公告，受美国《大而美法案》供应链合规要求影响，韩国子公司拟将忠州工厂及生产资产出租给韩国AKB，首期6个月、月租金合计38.84亿韩元，并按10年预计租赁金额4660.80亿韩元提交股东会，加上1350万美元无形资产转让，关联交易上限约23.70亿元；同时签署来料加工合同，预计加工费1867.41万美元（约1.27亿元），客户切换预计2026年底前完成。公告称若产线闲置，考虑折旧与人员成本每年亏损将超2亿元。",
+        "plainImpact": "对普通人是电池成本链条的一环：合规成本不会消失，会以租金、加工费或售价的形式留在损益表里；对同行是“出海产能可能变成合规负担”的样板。",
+        "assessment": "我的判断：这是本轮最具体的一处“规则成本内部化”——不是关税，而是产能被迫出租、无形资产被转让、订单靠委托加工维持。23.70亿元的上限相对于143.28亿元市值不是小数，且需要股东会审议。",
+        "counterRisk": "若股权转让在年内完成交割且租金收益稳定，则“闲置亏损”风险被证伪。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611835.html",
+          "https://www.stcn.com/article/detail/4231643.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-france-curfew",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "publishedAt": "2026-10-21T14:00:00Z",
+        "title": "巴黎本周第三次实施夜间宵禁，马赛等地对未成年人宵禁延至10月23日",
+        "summary": "巴黎警察总局宣布10月21日23时至22日6时对共和国广场与大堂商业区一带实施宵禁，禁止人员停留，为本周第三次，按法国总理勒科尔尼与内政部长努内兹要求实施；此前巴黎、里昂、里尔、尼斯等地已实施局部宵禁，马赛宣布对未成年人实施宵禁持续至10月23日。",
+        "plainImpact": "对普通人是出行与商业营业时间受限；对市场是把法国政治风险从债券利差延伸到社会秩序层面，欧元资产的短期波动来源增加。",
+        "assessment": "我的判断：法国的问题已经从“预算能否通过”变成“街头能否维持秩序”，这会提高政府对让步的政治成本，从而降低财政紧缩的可执行性。对法国国债是慢变量，对旅游与零售是快变量。",
+        "counterRisk": "若宵禁在数日内解除且预算案按期表决，社会风险溢价会快速回落。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231622.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-cn-futures-night",
+        "regions": [
+          "CN"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-21T15:03:09Z",
+        "title": "国内商品期货夜盘跌多涨少，液化石油气与烧碱跌超2%",
+        "summary": "10月21日夜盘国内商品期货主力合约跌多涨少，烧碱、液化石油气跌超2%，聚丙烯月均、纯碱、丙烯、玻璃跌超1%，短纤跌近1%；涨幅方面苯乙烯涨超2%，聚氯乙烯、乙二醇、纯苯涨近1%。",
+        "plainImpact": "对下游制造企业是原料成本短期回落；对普通人是化工类消费品价格压力减轻，但与油价方向相反的部分说明传导并不线性。",
+        "assessment": "我的判断：LPG跌超2%与国际油价回落方向一致，但苯乙烯涨超2%说明这是品种供需差异而非统一的需求故事。把夜盘当成“经济体温计”会误读。",
+        "counterRisk": "若下周化工品集体转涨且油价重回100美元上方，则本轮回落只是跟随原油的短期修正。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611867.html"
+        ]
+      },
+      {
+        "eventId": "n-20261021-crypto-24h",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-10-21T15:09:46Z",
+        "title": "比特币24小时涨1.71%至84478.5美元，以太坊涨1.57%至2501.57美元",
+        "summary": "10月21日行情显示，比特币涨至84478.5美元、过去24小时涨1.71%；以太坊涨至2501.57美元、过去24小时涨1.57%。",
+        "plainImpact": "对持币者是温和反弹而非趋势反转；对普通人，加密资产与美股同向但弹性更大，波动风险高于股票账户。",
+        "assessment": "我的判断：涨幅1%量级、且与美股同向，说明这是风险偏好的边际改善而不是加密自身的独立叙事。在没有新增资金流入证据前，不宜把反弹读成趋势。",
+        "counterRisk": "若比特币在美股回落时仍能守住84000美元上方，才说明存在独立买盘。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611875.html"
+        ]
+      }
+    ],
+    "newsCoverage": {
+      "status": "partial",
+      "note": "本轮请求18份文档、全部取得HTTP 200与正文：每日经济新闻6篇、证券时报5篇、SEC 8-K财报附件4份、美联储/BEA/EIA官方日程3份，无隔离文档。共10条可核验事件，其中非纯金融市场4条。",
+      "regions": [
+        "CN",
+        "US",
+        "WORLD"
+      ],
+      "gaps": "全球区域缺一手来源：Reuters不可达、AP/OPEC/IEA此前均为HTTP 403，本轮未再试探；港交所受使用条款限制不做程序化采集；法国政治事件仅有央视转述，未取得巴黎警察总局或法国内政部原文；美方对俄乌构想文件本身未公开。"
+    },
+    "macroFacts": [
+      {
+        "id": "PROP:RU:US:PEACE-TALK-2026-10-21",
+        "label": "普京在圣彼得堡会见美国总统特使威特科夫，收到美方解决俄乌冲突构想文件",
+        "value": null,
+        "unit": null,
+        "asOf": null,
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231603.html"
+        ],
+        "note": "会晤发生在10月21日，公开报道未给出精确时点，故 asOf 留空；同场普京称未来两三天内首艘油轮将启航向美国运输4万吨柴油"
+      },
+      {
+        "id": "PROP:UA:CEASEFIRE-75PCT-2026-10-21",
+        "label": "泽连斯基表示可在保留至少75%领土控制权基础上达成和平协议",
+        "value": 75,
+        "unit": "%",
+        "asOf": null,
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231603.html"
+        ],
+        "note": "央视新闻转述的采访表态，原话为“现在我们必须冻结（战线）”，原文未给出采访时刻"
+      },
+      {
+        "id": "MACRO:ENERGY:WTI-INTRADAY-HIGH-2026-10-21",
+        "label": "WTI原油主力盘中一度突破的整数关口",
+        "value": 100,
+        "unit": "USD/bbl",
+        "asOf": "2026-10-21T14:44:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231603.html"
+        ],
+        "note": "证券时报22:44发稿时点回溯的盘中高点区间，非精确逐笔成交价"
+      },
+      {
+        "id": "MACRO:ENERGY:WTI-LAST-2026-10-21",
+        "label": "WTI原油主力合约在证券时报发稿时报97.06美元/桶，跌0.78%",
+        "value": 97.06,
+        "unit": "USD/bbl",
+        "asOf": "2026-10-21T14:44:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231603.html"
+        ],
+        "note": "媒体发稿时点报价，与本轮 packet 的 ENERGY:WTI 属不同时点的独立观测"
+      },
+      {
+        "id": "MACRO:SECURITY:TANKER-ATTACKS-2026-10-21",
+        "label": "英国海上贸易行动办公室通报的油轮遇袭起数（伊拉克法奥外海、阿曼布哈外海各一起）",
+        "value": 2,
+        "unit": "起",
+        "asOf": "2026-10-21T14:52:29Z",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611855.html"
+        ],
+        "note": "两起分别发生在协调世界时10月20日18:30与10月21日01:45，均未报告环境影响"
+      },
+      {
+        "id": "FLOW:HK:SOUTHBOUND-NET-2026-10-21",
+        "label": "南向资金当日合计净卖出",
+        "value": -44.35,
+        "unit": "亿港元",
+        "asOf": "2026-10-21T14:44:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231600.html"
+        ],
+        "note": "买入331.30亿、卖出375.65亿、成交706.95亿港元"
+      },
+      {
+        "id": "FLOW:HK:SOUTHBOUND-TURNOVER-2026-10-21",
+        "label": "南向资金当日合计成交金额",
+        "value": 706.95,
+        "unit": "亿港元",
+        "asOf": "2026-10-21T14:44:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231600.html"
+        ],
+        "note": null
+      },
+      {
+        "id": "FLOW:HK:TENCENT-NET-2026-10-21",
+        "label": "腾讯控股当日南向净卖出金额",
+        "value": -17.06,
+        "unit": "亿港元",
+        "asOf": "2026-10-21T14:44:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231600.html"
+        ],
+        "note": "同日中国移动净卖出10.34亿、阿里巴巴-W净卖出8.78亿港元"
+      },
+      {
+        "id": "RESEARCH:HK:0700-CHG-2026-10-21",
+        "label": "腾讯控股当日收盘跌幅",
+        "value": -4.04,
+        "unit": "%",
+        "asOf": "2026-10-21T08:00:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231600.html"
+        ],
+        "note": "收盘价按港股收市时点，具体分钟未披露"
+      },
+      {
+        "id": "FLOW:CN:ADR-GOLDEN-DRAGON-2026-10-21",
+        "label": "纳斯达克中国金龙指数当日跌幅",
+        "value": -3,
+        "unit": "%",
+        "asOf": "2026-10-21T14:55:44Z",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611860.html"
+        ],
+        "note": "每经快讯口径为“跌超3%”，取3.0为下界"
+      },
+      {
+        "id": "RESEARCH:CN:300750-BUYBACK-DAY-2026-10-21",
+        "label": "宁德时代10月21日单日回购金额（348.86万股，回购价227.51—231.38元）",
+        "value": 8,
+        "unit": "亿元人民币",
+        "asOf": "2026-10-21T14:46:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231643.html"
+        ],
+        "note": null
+      },
+      {
+        "id": "RESEARCH:CN:300750-BUYBACK-CUM-2026-10-21",
+        "label": "宁德时代注销式回购方案累计实施金额（含10月21日当日）",
+        "value": 46,
+        "unit": "亿元人民币",
+        "asOf": "2026-10-21T14:46:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231643.html"
+        ],
+        "note": "截至10月19日累计1292.79万股、38.55亿元；加当日约8亿元合计超46亿元"
+      },
+      {
+        "id": "RESEARCH:CN:300750-Q3-REV-2026Q3",
+        "label": "宁德时代2026年第三季度营业收入（同比+58.58%）",
+        "value": 1652.21,
+        "unit": "亿元人民币",
+        "asOf": "2026-10-20T12:00:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231643.html"
+        ],
+        "note": "三季报于10月20日晚间披露，具体披露分钟未公开"
+      },
+      {
+        "id": "RESEARCH:CN:300750-Q3-NP-2026Q3",
+        "label": "宁德时代2026年第三季度归母净利润（同比+14.54%）",
+        "value": 212.46,
+        "unit": "亿元人民币",
+        "asOf": "2026-10-20T12:00:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231643.html"
+        ],
+        "note": null
+      },
+      {
+        "id": "RESEARCH:CN:300750-Q3-VOL-2026Q3",
+        "label": "宁德时代第三季度动力与储能合计销量",
+        "value": 260,
+        "unit": "GWh",
+        "asOf": "2026-10-20T12:00:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231643.html"
+        ],
+        "note": "储能占比约四分之一，储能销量同比增速接近60%"
+      },
+      {
+        "id": "RESEARCH:CN:688005-KOREA-LEASE-CAP-2026-10-21",
+        "label": "容百科技韩国产线租赁与无形资产转让关联交易金额上限",
+        "value": 23.7,
+        "unit": "亿元人民币",
+        "asOf": "2026-10-21T15:03:40Z",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611835.html"
+        ],
+        "note": "按10年预计租赁金额4660.80亿韩元（约22.79亿元）加无形资产转让9156.78万元合计"
+      },
+      {
+        "id": "RESEARCH:CN:688005-KOREA-IDLE-LOSS-2026-10-21",
+        "label": "容百科技披露韩国产线若闲置无法产生经营收入的预计年亏损",
+        "value": 2,
+        "unit": "亿元人民币/年",
+        "asOf": "2026-10-21T15:03:40Z",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611835.html"
+        ],
+        "note": "公告口径为“超2亿元”，取2.0为下界"
+      },
+      {
+        "id": "RESEARCH:CN:688005-PROCESSING-FEE-2026-10-21",
+        "label": "容百科技韩国委托加工合同预计加工费总额",
+        "value": 1.27,
+        "unit": "亿元人民币",
+        "asOf": "2026-10-21T15:03:40Z",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611835.html"
+        ],
+        "note": "1867.41万美元含税折算，合同有效期3个月，来料加工模式"
+      },
+      {
+        "id": "RESEARCH:US:LAD-ADJ-EPS-Q3-2026",
+        "label": "Lithia & Driveway 2026年三季度调整后摊薄每股收益（同比+9%）",
+        "value": 10.34,
+        "unit": "USD",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm"
+        ],
+        "note": "GAAP摊薄每股收益13.22美元，同比+54%，含Pinewood投资未实现收益"
+      },
+      {
+        "id": "RESEARCH:US:LAD-ADJ-NI-Q3-2026",
+        "label": "Lithia & Driveway 2026年三季度调整后净利润（同比-5%）",
+        "value": 229.3,
+        "unit": "百万美元",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm"
+        ],
+        "note": "上年同期调整后净利240.9百万美元"
+      },
+      {
+        "id": "RESEARCH:US:LAD-REV-Q3-2026",
+        "label": "Lithia & Driveway 2026年三季度营业收入（同比+3%）",
+        "value": 9900,
+        "unit": "百万美元",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm"
+        ],
+        "note": "原文口径为99亿美元，上年同期97亿美元"
+      },
+      {
+        "id": "RESEARCH:US:LAD-BUYBACK-YTD-2026",
+        "label": "Lithia & Driveway 2026年内已回购股份占流通股比例",
+        "value": 8.7,
+        "unit": "%",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm"
+        ],
+        "note": "三季度内回购8500万美元、占流通股1.1%"
+      },
+      {
+        "id": "RESEARCH:US:LAD-FIN-INCOME-Q3-2026",
+        "label": "Lithia & Driveway 三季度金融业务收入（同比+69%）",
+        "value": 32.3,
+        "unit": "百万美元",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm"
+        ],
+        "note": "创纪录放款9.37亿美元，渗透率18.3%"
+      },
+      {
+        "id": "RESEARCH:US:WGO-REV-Q4FY26",
+        "label": "Winnebago 2026财年四季度净收入（同比-17.0%）",
+        "value": 645.1,
+        "unit": "百万美元",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/107687/000162828026066605/exh9912026q4earningsrelease.htm"
+        ],
+        "note": "上年同期777.3百万美元"
+      },
+      {
+        "id": "RESEARCH:US:WGO-ADJ-EPS-Q4FY26",
+        "label": "Winnebago 2026财年四季度调整后每股收益",
+        "value": 0.49,
+        "unit": "USD",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/107687/000162828026066605/exh9912026q4earningsrelease.htm"
+        ],
+        "note": "上年同期0.71美元；净杠杆2.2倍"
+      },
+      {
+        "id": "RESEARCH:US:WAB-REV-Q3-2026",
+        "label": "Wabtec 2026年三季度销售额（同比+8.1%）",
+        "value": 3120,
+        "unit": "百万美元",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/943452/000094345226000017/a3q26pressreleaseword.htm"
+        ],
+        "note": "货运与 transit 双分部均增长"
+      },
+      {
+        "id": "RESEARCH:US:WAB-ADJ-EPS-Q3-2026",
+        "label": "Wabtec 2026年三季度调整后每股收益（同比+22.0%）",
+        "value": 2.83,
+        "unit": "USD",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/943452/000094345226000017/a3q26pressreleaseword.htm"
+        ],
+        "note": "GAAP每股2.42美元、同比+33.7%；调整后营业利润率22.9%、提升1.9个百分点"
+      },
+      {
+        "id": "RESEARCH:US:WAB-DIGITAL-GROWTH-Q3-2026",
+        "label": "Wabtec 三季度数字业务销售增速",
+        "value": 24.2,
+        "unit": "%",
+        "asOf": "2026-10-21T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/943452/000094345226000017/a3q26pressreleaseword.htm"
+        ],
+        "note": "受Frauscher传感器并购与核心数字需求带动"
+      },
+      {
+        "id": "RESEARCH:US:ELS-NFFO-Q3-2026",
+        "label": "Equity LifeStyle Properties 三季度标准化FFO每股（同比+4.6%）",
+        "value": 0.79,
+        "unit": "USD",
+        "asOf": "2026-10-20T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/895417/000162828026066614/elsex9913q26.htm"
+        ],
+        "note": "公司10月20日发布，处于此前指引区间0.76—0.82美元中值"
+      },
+      {
+        "id": "RESEARCH:US:ELS-MH-RENT-Q3-2026",
+        "label": "Equity LifeStyle Properties 三季度核心制造住房基础租金收入增速",
+        "value": 5.7,
+        "unit": "%",
+        "asOf": "2026-10-20T11:00:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/895417/000162828026066614/elsex9913q26.htm"
+        ],
+        "note": "RV与码头基础租金收入同期+2.1%，核心物业收入+4.4%"
+      },
+      {
+        "id": "MACRO:CN:LPG-NIGHT-2026-10-21",
+        "label": "国内商品期货夜盘液化石油气主力合约跌幅",
+        "value": -2,
+        "unit": "%",
+        "asOf": "2026-10-21T15:03:09Z",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611867.html"
+        ],
+        "note": "同夜烧碱亦跌超2%，苯乙烯涨超2%、PVC与乙二醇涨近1%"
+      },
+      {
+        "id": "MACRO:CRYPTO:BTC-24H-2026-10-21",
+        "label": "比特币过去24小时涨幅（每经快讯口径）",
+        "value": 1.71,
+        "unit": "%",
+        "asOf": "2026-10-21T15:09:46Z",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611875.html"
+        ],
+        "note": "同一快讯报比特币84478.5美元，与本轮 packet 的 CRYPTO:BTC:USD 为不同时点观测"
+      },
+      {
+        "id": "MACRO:CRYPTO:ETH-24H-2026-10-21",
+        "label": "以太坊过去24小时涨幅（每经快讯口径）",
+        "value": 1.57,
+        "unit": "%",
+        "asOf": "2026-10-21T15:09:46Z",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-10-21/4611875.html"
+        ],
+        "note": "同一快讯报以太坊2501.57美元"
+      },
+      {
+        "id": "PROP:FR:CURFEW-COUNT-2026-10-21",
+        "label": "巴黎本周实施夜间宵禁的次数（10月21日23时至22日6时，覆盖共和国广场与大堂商业区）",
+        "value": 3,
+        "unit": "次",
+        "asOf": "2026-10-21T14:00:00Z",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231622.html"
+        ],
+        "note": "由巴黎警察总局宣布，按总理勒科尔尼与内政部长努内兹要求实施；马赛等地亦对未成年人实施宵禁至10月23日"
+      }
+    ],
+    "macroEvents": [
+      {
+        "id": "ME-FOMC-20261027",
+        "title": "美联储FOMC会议（10月27—28日）",
+        "at": null,
+        "detail": "美联储官方日历确认为10月27—28日，页面未给出决议具体时点，故 at 留空；10年期美债5.111%是当前定价基准。",
+        "sourceUrls": [
+          "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        ],
+        "evidenceFactIds": [
+          "RATE:US10Y"
+        ]
+      },
+      {
+        "id": "ME-BEA-GDP-20261029",
+        "title": "BEA 2026年三季度GDP初值（10月29日美东8:30）",
+        "at": "2026-10-29T12:30:00Z",
+        "detail": "BEA发布日程页列出10月29日8:30 AM发布，超出未来24小时窗口，放入宏观日历；时区按美东夏令时折算。",
+        "sourceUrls": [
+          "https://www.bea.gov/news/schedule"
+        ],
+        "evidenceFactIds": []
+      },
+      {
+        "id": "ME-EIA-WPSR-WEEKLY",
+        "title": "EIA周度石油状况报告（每周三美东10:30）",
+        "at": null,
+        "detail": "EIA日程页确认标准发布时点为每周三美东10:30；本轮对应时点已过，下周发布时点为10月28日，故不列入未来24小时雷达。",
+        "sourceUrls": [
+          "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+        ],
+        "evidenceFactIds": []
+      }
+    ],
+    "events": [
+      {
+        "id": "EV-FR-CURFEW-END-20261022",
+        "title": "巴黎本轮宵禁结束（10月22日6时当地）",
+        "at": "2026-10-22T04:00:00Z",
+        "detail": "巴黎警察总局宣布10月21日23时至22日6时实施宵禁；结束时点按当地时区折算为协调世界时04:00，若法国已转冬令时则可能相差一小时，此处保留换算不确定性。",
+        "sourceUrls": [
+          "https://www.stcn.com/article/detail/4231622.html"
+        ],
+        "evidenceFactIds": [
+          "PROP:FR:CURFEW-COUNT-2026-10-21"
+        ]
+      },
+      {
+        "id": "EV-BEA-RD-20261022",
+        "title": "BEA发布实验性研发经济统计（10月22日美东10:00）",
+        "at": "2026-10-22T14:00:00Z",
+        "detail": "BEA发布日程列出10月22日10:00 AM的“Experimental Research and Development Economic Statistics, U.S. and States, 2024”；属实验性统计，市场影响有限，作为已核验排程列入而不夸大为数据事件。",
+        "sourceUrls": [
+          "https://www.bea.gov/news/schedule"
+        ],
+        "evidenceFactIds": []
+      }
+    ],
+    "researchRecords": [
+      {
+        "instrumentId": "EQUITY:US:LAD",
+        "eventKey": "US-LAD-2026Q3-000102312826000057",
+        "eventType": "quarterly-earnings",
+        "documentId": "SEC-LAD-8K-2026Q3",
+        "documentUrl": "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm",
+        "period": "2026Q3",
+        "publishedAt": "2026-10-21",
+        "analyzedAt": "2026-10-21T15:47:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm"
+        ],
+        "sourceHash": null,
+        "analysis": {
+          "conclusion": "三季度营收99亿美元增3%、调整后每股收益10.34美元增9%，但调整后净利润229.3百万美元同比降5%，每股增长完全由股本收缩贡献（年内已回购8.7%流通股）；GAAP每股13.22美元增54%中含Pinewood投资未实现收益，属一次性。售后毛利率59.5%、提升100个基点，金融业务收入32.3百万美元增69%、放款9.37亿美元、渗透率18.3%，说明利润质量的分化在“金融与售后”而非“新车销量”。",
+          "evidence": "营收99亿美元（上年97亿）；GAAP摊薄每股13.22美元（上年8.61）；调整后每股10.34美元（上年9.50）；调整后净利229.3百万美元（上年240.9）；三季度回购8500万美元占流通股1.1%、年内累计8.7%；售后毛利率59.5%提升100bp；金融业务收入32.3百万美元增69%、渗透率18.3%；三季度新开2家店、剥离2家店。",
+          "risks": "调整后净利下滑与回购支撑的每股增长组合，若回购放缓则每股增速立即转负；二手车价格与信贷损失是金融业务的主要变量。",
+          "invalidation": "若四季度调整后净利同比转正且回购速度放缓，则“分母效应”判断需要修正。"
+        }
+      },
+      {
+        "instrumentId": "EQUITY:US:WGO",
+        "eventKey": "US-WGO-2026Q4FY-000162828026066605",
+        "eventType": "quarterly-earnings",
+        "documentId": "SEC-WGO-8K-2026Q4",
+        "documentUrl": "https://www.sec.gov/Archives/edgar/data/107687/000162828026066605/exh9912026q4earningsrelease.htm",
+        "period": "FY2026Q4",
+        "publishedAt": "2026-10-21",
+        "analyzedAt": "2026-10-21T15:48:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/107687/000162828026066605/exh9912026q4earningsrelease.htm"
+        ],
+        "sourceHash": null,
+        "analysis": {
+          "conclusion": "四季度净收入645.1百万美元同比降17.0%，调整后每股0.49美元（上年0.71），全年净收入2703.9百万美元降3.4%、调整后每股1.79美元（上年1.67）；收入降幅显著大于全年，说明压力集中在年末季度。管理层把改善寄托于产能优化、产品创新与Barletta浮筒船份额，并称零售环境“持续挑战”；净杠杆2.2倍、季度现金流强劲。",
+          "evidence": "四季度净收入645.1百万美元（上年777.3）；毛利率12.5%（上年12.8%）；净利润9.7百万美元、每股0.34美元；调整后每股0.49美元（上年0.71）；调整后EBITDA 32.6百万美元、利润率5.1%；全年净收入2703.9百万美元、调整后每股1.79美元；净杠杆2.2倍。",
+          "risks": "房车是高单价、依赖融资的可选消费，高利率下需求推迟会延续；产能优化在需求未恢复时只能减速亏损，无法创造增长。",
+          "invalidation": "若经销商库存下降且订单同比转正，说明需求已见底。"
+        }
+      },
+      {
+        "instrumentId": "EQUITY:US:WAB",
+        "eventKey": "US-WAB-2026Q3-000094345226000017",
+        "eventType": "quarterly-earnings",
+        "documentId": "SEC-WAB-8K-2026Q3",
+        "documentUrl": "https://www.sec.gov/Archives/edgar/data/943452/000094345226000017/a3q26pressreleaseword.htm",
+        "period": "2026Q3",
+        "publishedAt": "2026-10-21",
+        "analyzedAt": "2026-10-21T15:49:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/943452/000094345226000017/a3q26pressreleaseword.htm"
+        ],
+        "sourceHash": null,
+        "analysis": {
+          "conclusion": "三季度销售额31.2亿美元增8.1%、GAAP每股2.42美元增33.7%、调整后每股2.83美元增22.0%，调整后营业利润率22.9%提升1.9个百分点，经营现金流4.55亿美元，并上调2026年调整后每股收益指引（中点同比增22%）。增长来自货运与 transit 双分部，数字业务增24.2%含Frauscher并购贡献；公司明确提到汇率等非经营因素对每股收益有正向贡献，利润率改善需区分经营与折算。",
+          "evidence": "销售额31.2亿美元增8.1%；GAAP营业利润率20.0%、调整后22.9%（+1.9pt）；GAAP每股2.42美元（+33.7%）、调整后2.83美元（+22.0%）；经营现金流4.55亿美元；货运分部销售增6.9%、服务增6.7%、设备增0.3%、数字增24.2%、部件增5.3%；上调并收窄2026年调整后每股收益指引。",
+          "risks": "数字业务增速含并购贡献，内生增速未单独披露；每股收益部分来自汇率等非经营因素，若美元走强会逆转。",
+          "invalidation": "若四季度内生数字增速低于10%且利润率回落，则“经营改善”判断需要下调。"
+        }
+      },
+      {
+        "instrumentId": "EQUITY:US:ELS",
+        "eventKey": "US-ELS-2026Q3-000162828026066614",
+        "eventType": "quarterly-earnings",
+        "documentId": "SEC-ELS-8K-2026Q3",
+        "documentUrl": "https://www.sec.gov/Archives/edgar/data/895417/000162828026066614/elsex9913q26.htm",
+        "period": "2026Q3",
+        "publishedAt": "2026-10-20",
+        "analyzedAt": "2026-10-21T15:50:00Z",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/895417/000162828026066614/elsex9913q26.htm"
+        ],
+        "sourceHash": null,
+        "analysis": {
+          "conclusion": "三季度标准化FFO每股0.79美元增4.6%，处于此前指引区间0.76—0.82美元中值；核心物业收入增4.4%、核心物业经营利润增6.7%，制造住房基础租金增5.7%，而RV与码头基础租金仅增2.1%。住房租金粘性与房车相关收入疲弱并存，与Winnebago四季度收入降17%互为印证：高利率压制的是房车这类融资型消费，不是住房租金。",
+          "evidence": "标准化FFO每股0.79美元（+4.6%）、九个月2.36美元（+4.0%）；核心物业收入+4.4%、核心费用（剔除物管）+1.3%、核心物业经营利润+6.7%；制造住房基础租金+5.7%、占用点位增加99个、新房与二手房销售244套；RV与码头基础租金+2.1%、年度基础租金+5.3%、会员订阅+8.4%；季度内含1210万美元递延税估值准备。",
+          "risks": "RV与码头分部增速仅2.1%，若继续放缓会拖累整体FFO；递延税估值准备说明部分业务盈利能力存疑。",
+          "invalidation": "若RV与码头基础租金增速回升至4%以上，则“分层”判断减弱。"
+        }
+      }
+    ],
+    "researchChecks": [
+      {
+        "instrumentId": "EQUITY:US:LAD",
+        "checkedAt": "2026-10-21T15:47:00Z",
+        "status": "material-read",
+        "note": "已阅读SEC 8-K Exhibit 99三季度业绩全文，取得营收、GAAP与调整后每股收益、调整后净利、回购规模与金融业务数据。"
+      },
+      {
+        "instrumentId": "EQUITY:US:WGO",
+        "checkedAt": "2026-10-21T15:48:00Z",
+        "status": "material-read",
+        "note": "已阅读2026财年四季度与全年业绩全文，取得收入、毛利率、调整后每股收益、EBITDA与净杠杆。"
+      },
+      {
+        "instrumentId": "EQUITY:US:WAB",
+        "checkedAt": "2026-10-21T15:49:00Z",
+        "status": "material-read",
+        "note": "已阅读三季度业绩全文，取得销售额、分部增速、利润率、每股收益与指引上调表述。"
+      },
+      {
+        "instrumentId": "EQUITY:US:ELS",
+        "checkedAt": "2026-10-21T15:50:00Z",
+        "status": "material-read",
+        "note": "已阅读三季度业绩全文（10月20日发布），取得标准化FFO、核心物业收入与制造住房/RV基础租金增速。"
+      },
+      {
+        "instrumentId": "EQUITY:CN:300750",
+        "checkedAt": "2026-10-21T15:46:00Z",
+        "status": "media-transcription-only",
+        "note": "仅取得证券时报对三季报与翌日披露报表的转述（营收1652.21亿元、净利212.46亿元、当日回购8亿元），未取得深交所或港交所公告原文，故未建立 researchRecords。"
+      },
+      {
+        "instrumentId": "EQUITY:CN:688005",
+        "checkedAt": "2026-10-21T15:46:00Z",
+        "status": "media-transcription-only",
+        "note": "仅取得每日经济新闻对两则公告的转述（租赁上限23.70亿元、年亏损超2亿元、加工费1.27亿元），未取得上交所公告原文，故未建立 researchRecords。"
+      }
+    ],
+    "researchPendingQueue": [
+      {
+        "instrumentId": "EQUITY:CN:300750",
+        "reason": "需取得深交所三季报与回购实施公告原文，以核实毛利率与回购均价，当前仅有媒体转述"
+      },
+      {
+        "instrumentId": "EQUITY:CN:688005",
+        "reason": "需取得上交所两份关联交易公告原文，核实十年租赁上限的会计处理与股东会时点"
+      }
+    ]
+  }
+}
