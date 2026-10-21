@@ -1,6 +1,6 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
+  "status": "failed",
+  "error": "Atomic batch rejected: [{\"role\":\"quotes\",\"status\":\"published\",\"errors\":[]},{\"role\":\"asia-equities\",\"status\":\"published\",\"errors\":[]},{\"role\":\"us-equities\",\"status\":\"published\",\"errors\":[]},{\"role\":\"news\",\"status\":\"published\",\"errors\":[]},{\"role\":\"macro\",\"status\":\"published\",\"errors\":[]},{\"role\":\"research\",\"status\":\"rejected\",\"errors\":[\"同一eventKey对应不同研究材料，必须创建新事件版本\"]},{\"role\":\"synthesis\",\"status\":\"waiting-dependencies\",\"errors\":[\"DEPENDENCY_MISSING: data/runs/research/20261021T141643Z-global-main-research.json\"]}]",
   "issues": [],
   "execution": {
     "executionId": "20261021T141643Z-global-main",
@@ -8,7 +8,7 @@
   },
   "deadlineAt": "2026-10-21T14:37:03.135Z",
   "requestId": "20261021T141643Z-global-main",
-  "at": "2026-10-21T14:17:19.477Z",
+  "at": "2026-10-21T14:36:38.913Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +19,15 @@
       "status": "ready-for-analysis",
       "at": "2026-10-21T14:17:19.477Z",
       "revision": null
+    },
+    {
+      "status": "failed",
+      "at": "2026-10-21T14:36:38.913Z",
+      "revision": null
     }
   ],
   "packetHash": "a0605e26e3cd8cf3dbb1c80a368b112d00fe667aeb2594f7f97cc951a76975be",
-  "collectionDurationMs": 5601
+  "collectionDurationMs": 5601,
+  "reasonCode": "UNCLASSIFIED_ERROR",
+  "published": false
 }
