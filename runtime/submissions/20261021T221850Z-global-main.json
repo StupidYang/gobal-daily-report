@@ -1,0 +1,1299 @@
+{
+ "execution": {
+  "executionId": "20261021T221850Z-global-main",
+  "generation": 272
+ },
+ "editorial": {
+  "packetHash": "6e53851dc835a4040845e1b2c2e9dcba5a8e066a49ba2219d654d50361fa7458",
+  "analyzedAt": "2026-10-21T22:22:52Z",
+  "report": {
+   "overview": "10月21日全球市场的核心矛盾是分母还在收紧、分子在局部扩张。美国20年期国债续发行得标利率5.469%，创该期限2020年恢复发行以来最高，10年期报5.146%，CME数据显示12月累计加息25个基点的概率为76.0%；但在同一晚，美股三大指数集体收涨，纳指涨1.05%、纳斯达克100涨1.13%，算力、软件与加密代理股领涨。中国资产则相反：恒指跌2.21%、国企指数跌2.27%、金龙中国指数跌2.35%，而离岸人民币6.6733几乎不动——跌幅不是汇率造成的，是贴现率与仓位造成的。原油呈现近端弱、远端稳：WTI结算97.15美元跌0.68%，布伦特结算108.82美元微涨0.03%，价差约11.67美元，沙特谢拜油田遭无人机袭击但生产未受影响。",
+   "rolling24hSummary": "过去24小时的三条主线：一是美国长端利率在财政供给压力下重新定价，20年期一级市场得标利率创恢复发行以来新高；二是美股用AI资本开支的订单可见度对抗贴现率上行，IBM软件+8%、联合租赁上调全年指引、Liberty签署1.2GW数据中心电力协议；三是中国资产被单独折价，恒指与国企指数跌幅是上证的约4.6倍而汇率未动。数据缺口包括布伦特报价源持续404、两年期美债收益率为空、加密货币与贵金属缺少当日涨跌幅。",
+   "methodology": "行情取本轮采集包（2026-10-21T22:19:16Z 抓取，美股为10月21日收盘价，A股与港股为10月21日收盘，商品与加密为22:19Z前后快照）。新闻与财报数字取自本轮实际抓取的16份来源：每日经济新闻8篇快讯、SEC 8-K附件5份（IBM、Liberty Energy、联合租赁、Crown Castle、Sonoco）与Globe Life 1份，以及BEA与美联储官方日历。日历事件按美国东部时间换算为UTC。布伦特缺少可核验报价（Yahoo BZX26.NYM 返回HTTP 404），正文只使用媒体结算口径并标注。两年期美债收益率为空，利率结论只用10年期与20年期一级市场数据。所有事实ID均在本轮macroFacts或报价目录内，未沿用上一版数值与packetHash。",
+   "coreAnalysis": {
+    "mainTheme": "利率在高位重新定价，盈利只在结构里扩张",
+    "expectationGap": "市场预期12月累计加息25个基点概率76.0%，但美股仍在上涨，说明投资者认为AI资本开支带来的盈利上修足以抵消贴现率上行；这个预期差是当前定价的核心。",
+    "divergence": "美股上涨与中国资产下跌同步发生，且离岸人民币几乎不动，分化来自贴现率与资金面而非汇率；同一晚原油近端下跌、远端微涨，价差走阔。",
+    "regime": "处于高名义利率加结构性盈利扩张的组合，属于分子分母对抗型市场，而非全面risk-on或risk-off。",
+    "priceIn": "长端利率上行已被部分定价（20年期创纪录得标），但港股与中国成长股的贴现率压力尚未完全反映；原油的地缘溢价已计入布伦特远端。",
+    "bullCase": "若10年期稳在5.15%附近、AI订单继续兑现（IBM软件、联合租赁指引、数据中心电力协议），美股可以继续由盈利驱动上行，A股与港股在超跌后跟随修复。",
+    "bullInvalidation": "10年期突破5.25%而纳指不跌，或纳指跌破26000点，则分子赢分母框架失效。",
+    "bearCase": "若长端利率继续上行且20年期需求持续疲弱，高久期资产会一次性补跌，港股与中国成长股首当其冲。",
+    "bearInvalidation": "恒指与上证跌幅差收敛到1个百分点以内且南向资金转为净买入，贴现率分层的看空逻辑失效。"
+   },
+   "plainLanguage": {
+    "verdict": "利率还在往上顶，但盈利只在少数结构性行业里扩张，市场因此分裂成两半。",
+    "bottomLine": "美股靠AI订单顶住了长端利率，中国资产没有对冲工具只能承受贴现率压力，原油的地缘溢价记在远端而不是近端。",
+    "whyNow": "20年期美债得标利率5.469%创恢复发行以来新高、12月累计加息25个基点概率76.0%，同时IBM软件+8%、联合租赁上调指引、Liberty签下1.2GW数据中心电力协议，两股力量在同一晚对撞。",
+    "horizon": "短期（12-24小时）看美股能否在长端5.15%附近站稳；中期（1-4周）看10年期是否突破5.25%。",
+    "confidence": "medium",
+    "invalidation": "10年期突破5.25%而纳指不跌，或恒指与上证跌幅差收敛到1个百分点以内，本判断需要重写。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "分化",
+      "reason": "10月21日上证跌0.48%、创业板跌1.62%、科创50微涨0.06%，内部结构分化显著；隔夜金龙中国指数跌2.35%、富时A50夜盘仅涨0.29%，外部指引偏弱。",
+      "takeaway": "我的判断：指数层面缺少方向，跌幅集中在高估值成长，低估值与资源类相对抗跌的格局短期内延续。",
+      "horizon": "未来12-24小时",
+      "counterRisk": "若早盘ETF资金大额流入，分化会收敛。",
+      "invalidation": "上证跌破3680点且成交额同步放大，则区间震荡判断失效。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:CN:SSE",
+       "INDEX:CN:CHINEXT",
+       "INDEX:CN:STAR50",
+       "MACRO:CN:ADR-GOLDENDRAGON-2026-10-21"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/4611939.html"
+      ]
+     },
+     {
+      "asset": "港股",
+      "effect": "偏空",
+      "reason": "恒指跌2.21%、国企指数跌2.27%、恒生科技跌1.26%，跌幅是上证的约4.6倍，而离岸人民币6.6733基本不动。",
+      "takeaway": "我的判断：港元端贴现率与外资仓位调整是主因，不是汇率冲击；在10年期美债5.146%的环境下，港股对长端利率的弹性最大。",
+      "horizon": "未来1-2周",
+      "counterRisk": "若南向资金重新净买入且港元利率回落，跌幅会快速修复。",
+      "invalidation": "恒指与上证单日跌幅差收敛到1个百分点以内，贴现率分层解释失效。",
+      "confidence": "medium-high",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSCEI",
+       "INDEX:HK:HSTECH",
+       "FX:USDCNH",
+       "RATE:US10Y"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/4611939.html"
+      ]
+     },
+     {
+      "asset": "美股",
+      "effect": "短线偏利好",
+      "reason": "三大指数收涨，纳指+1.05%、纳斯达克100+1.13%，半导体与软件领涨（英伟达+2.54%、AMD+3.36%、Datadog+6.50%、Cloudflare+5.32%），VIX回落至16.68。",
+      "takeaway": "我的判断：这轮上涨是盈利与资本开支叙事对抗贴现率上行，属于分子赢分母，可持续性取决于长端是否稳在5.15%附近。",
+      "horizon": "未来12-24小时",
+      "counterRisk": "20年期得标利率5.469%说明长端供给压力真实存在，估值扩张空间有限。",
+      "invalidation": "10年期突破5.25%而纳指不跌，则利率约束判断需修正。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:US:NASDAQ",
+       "INDEX:US:NDX",
+       "INDEX:US:SP500",
+       "EQUITY:US:NVDA",
+       "EQUITY:US:DDOG",
+       "VOL:VIX",
+       "RATE:US10Y"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/4611917.html"
+      ]
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性",
+      "reason": "比特币报84527.62美元（22:19Z快照），加密代理股同步走强：MicroStrategy+7.54%、Coinbase+3.65%，但比特币本身缺少可核验的当日涨跌幅。",
+      "takeaway": "我的判断：加密资产当前跟随风险偏好而非独立叙事，代理股涨幅大于币价本身，说明杠杆与股票端的贝塔更高。",
+      "horizon": "未来12-24小时",
+      "counterRisk": "若长端利率继续上行，高贝塔的代理股回撤会快于币价。",
+      "invalidation": "比特币跌破82000美元且代理股同步下跌，则风险偏好驱动判断被验证向下。",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "EQUITY:US:MSTR",
+       "EQUITY:US:COIN"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/4611917.html"
+      ]
+     },
+     {
+      "asset": "黄金",
+      "effect": "中性",
+      "reason": "现货黄金报4137.90美元/盎司（22:19Z快照），白银57.937美元；当日缺少可核验涨跌幅，无法据此判断方向。",
+      "takeaway": "我的判断：在名义10年期5.146%、且12月加息概率76.0%的组合下，黄金的持有成本上升，但地缘风险（沙特油田袭击）提供对冲需求，两股力量互相抵消。",
+      "horizon": "未来1-2周",
+      "counterRisk": "实际利率若因通胀预期回落而下降，黄金可能突破前高。",
+      "invalidation": "金价单日跌超2%且美元指数同步走强，则对冲需求支撑判断失效。",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "METAL:XAUUSD",
+       "METAL:XAGUSD",
+       "RATE:US10Y"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/4611933.html"
+      ]
+     },
+     {
+      "asset": "原油",
+      "effect": "分化",
+      "reason": "WTI结算97.15美元（-0.68%），布伦特结算108.82美元（+0.03%），价差约11.67美元处于极宽水平；沙特谢拜油田遭无人机袭击但生产未受影响。",
+      "takeaway": "我的判断：近端（WTI）在交易需求与库存，远端（布伦特）在交易地缘风险溢价，两者分离说明市场不认为供应真的断了。",
+      "horizon": "未来数日",
+      "counterRisk": "若出现实际装运中断，价差会以布伦特补涨的方式收敛。",
+      "invalidation": "布伦特与WTI价差收敛到6美元以内且油价同步上行，溢价而非缺口判断失效。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "MACRO:OIL:SETTLE-2026-10-21"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/4611927.html",
+       "https://www.nbd.com.cn/articles/4611933.html"
+      ]
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "partial",
+     "covered": "上证、深成、创业板、科创50、沪深300、中证500共6项10月21日收盘价与涨跌幅",
+     "note": "指数与结构分化完整，但缺少成交额、涨跌家数与行业资金流。",
+     "gaps": [
+      "成交额与涨跌家数本轮未采集"
+     ],
+     "asOf": "2026-10-21T08:29:46Z"
+    },
+    {
+     "market": "港股",
+     "status": "partial",
+     "covered": "恒生指数、恒生科技、国企指数10月21日收盘",
+     "note": "三大指数齐全，但南向资金与HIBOR未取得，贴现率结论缺直接利率证据。",
+     "gaps": [
+      "南向资金净买卖未取得",
+      "港元HIBOR未取得"
+     ],
+     "asOf": "2026-10-21T08:08:42Z"
+    },
+    {
+     "market": "美股",
+     "status": "complete",
+     "covered": "标普500、纳斯达克综合、纳斯达克100、道指、罗素2000收盘，以及41只个股候选报价与6份财报原文",
+     "note": "为10月21日收盘价，抓取时点22:19Z。",
+     "gaps": [],
+     "asOf": "2026-10-21T21:15:59Z"
+    },
+    {
+     "market": "BTC",
+     "status": "partial",
+     "covered": "比特币、以太坊、Solana、Hyperliquid价位快照，以及MicroStrategy、Coinbase等代理股报价",
+     "note": "加密货币只有价位、没有当日涨跌幅，不能声称方向。",
+     "gaps": [
+      "加密货币当日涨跌幅未取得",
+      "链上资金流未取得"
+     ],
+     "asOf": "2026-10-21T22:19:19Z"
+    },
+    {
+     "market": "黄金",
+     "status": "partial",
+     "covered": "现货黄金4137.90美元/盎司、现货白银57.937美元/盎司（22:19Z快照）",
+     "note": "只有价位、没有当日涨跌幅，实际利率无法直接计算。",
+     "gaps": [
+      "金银当日涨跌幅未取得",
+      "通胀预期与实际利率未取得"
+     ],
+     "asOf": "2026-10-21T22:19:08Z"
+    },
+    {
+     "market": "原油",
+     "status": "partial",
+     "covered": "WTI 2026年12月合约97.84美元（22:09Z，+0.71%）、WTI结算97.15美元、布伦特结算108.82美元（媒体口径）",
+     "note": "布伦特报价源Yahoo BZX26.NYM持续HTTP 404，只能使用媒体结算价，价差为媒体口径推算。",
+     "gaps": [
+      "布伦特可核验报价缺失（HTTP 404）",
+      "库存周度数据未取得"
+     ],
+     "asOf": "2026-10-21T22:09:12Z"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "asOf": "2026-10-21T08:29:46Z",
+     "change": "上证-0.48%、深成-0.96%、创业板-1.62%、科创50+0.06%",
+     "judgment": "区间震荡、结构分化，卖压集中在高久期成长",
+     "status": "partial",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI500"
+     ]
+    },
+    {
+     "asset": "港股",
+     "asOf": "2026-10-21T08:08:42Z",
+     "change": "恒指-2.21%、国企-2.27%、恒生科技-1.26%",
+     "judgment": "贴现率冲击的最大承压方，跌幅是上证的约4.6倍",
+     "status": "partial",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSCEI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "asset": "美股",
+     "asOf": "2026-10-21T21:15:59Z",
+     "change": "标普+0.58%、纳指+1.05%、NDX+1.13%、道指+0.69%",
+     "judgment": "分子赢分母，AI资本开支订单支撑估值",
+     "status": "complete",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "asOf": "2026-10-21T22:19:19Z",
+     "change": "价位84527.62美元（无当日涨跌幅）",
+     "judgment": "跟随风险偏好，代理股贝塔高于币价",
+     "status": "partial",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "EQUITY:US:MSTR",
+      "EQUITY:US:COIN"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "asOf": "2026-10-21T22:19:08Z",
+     "change": "价位4137.90美元/盎司（无当日涨跌幅）",
+     "judgment": "持有成本与地缘避险互相抵消，高位横盘",
+     "status": "partial",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    },
+    {
+     "asset": "原油",
+     "asOf": "2026-10-21T22:09:12Z",
+     "change": "WTI 97.84美元（+0.71%），结算97.15美元（-0.68%）；布伦特结算108.82美元（+0.03%）",
+     "judgment": "近端交易库存、远端交易地缘溢价，价差约11.67美元",
+     "status": "partial",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:OIL:SETTLE-2026-10-21"
+     ]
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "analysis": "10月21日上证收3713.028点跌0.4796%，深成指11704.354点跌0.9566%，创业板指2694.7131点跌1.6242%，科创50报1343.2819点涨0.0639%，沪深300报4111.9326点跌0.9676%，中证500报6840.563点跌0.0128%。指数层面是大盘小跌、成长大跌、科创微涨的三段式结构，说明资金在从高估值成长向低估值与硬科技两端移动。隔夜外部指引偏弱：金龙中国指数跌2.35%，富时A50夜盘仅涨0.29%，早盘缺乏强外力。",
+     "mechanism": "机制上，这不是盈利预期变化，而是贴现率与仓位结构的结果：10年期美债5.146%、20年期新券得标5.469%，外资定价的中国成长股分母端被抬高；同时中证500几乎持平而创业板重挫，说明卖压集中在久期长的资产。",
+     "risk": "风险在于成交额若在下跌中放大，说明是主动减仓而非调仓；此外三季报密集披露期，业绩不达预期的个股会放大指数波动。",
+     "invalidation": "若上证重新站上3750点且创业板止跌，则结构性调整判断转为普涨修复。",
+     "horizon": "未来12-24小时（10月22日交易日）",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500",
+      "MACRO:CN:ADR-GOLDENDRAGON-2026-10-21"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611939.html"
+     ]
+    },
+    {
+     "asset": "港股",
+     "analysis": "恒指收23651.87点跌2.2117%，国企指数7943.41点跌2.2740%，恒生科技3994.77点跌1.2640%。三大指数同步下跌且国企指数跌幅最大，说明卖压不在互联网成长端，而在权重金融与中资周期。与上证-0.4796%相比，跌幅差约4.6倍。",
+     "mechanism": "机制是港元端贴现率：在10年期美债5.146%、20年期一级市场得标5.469%的环境下，联系汇率制度把美元长端利率直接传导到港股估值；离岸人民币6.6733几乎不动，说明这不是汇率冲击，而是估值分母。",
+     "risk": "风险是若美债长端继续上行，港股会成为亚洲最脆弱的市场；反之若长端回落，弹性也最大。",
+     "invalidation": "恒指与上证跌幅差收敛至1个百分点以内，或南向资金转为大额净买入，贴现率分层解释失效。",
+     "horizon": "未来1-2周",
+     "confidence": "medium-high",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSCEI",
+      "INDEX:HK:HSTECH",
+      "FX:USDCNH",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611939.html"
+     ]
+    },
+    {
+     "asset": "美股",
+     "analysis": "标普500收7757.17点涨0.5783%，纳斯达克综合26702.857点涨1.0522%，纳斯达克100报29822.518点涨1.1266%，道指52856.09点涨0.6862%，罗素2000涨0.2741%。领涨的是算力与软件：英伟达+2.54%、AMD+3.36%、美光+1.96%、Datadog+6.50%、Cloudflare+5.32%、CrowdStrike+5.26%、Palantir+4.74%；落后的是谷歌-1.62%、亚马逊-0.10%。",
+     "mechanism": "机制是分子赢分母：20年期得标利率5.469%本应压制估值，但AI资本开支的订单可见度（IBM软件+8%、联合租赁上调全年营收指引至180亿-182亿美元、Liberty签署1.2GW数据中心电力协议）给了盈利端支撑，资金选择相信现金流而非贴现率。",
+     "risk": "风险是这种对抗不可长期持续：VIX已回落至16.68，波动率便宜意味着下行保护变贵；一旦盈利叙事出现裂缝，估值端会一次性补跌。",
+     "invalidation": "10年期突破5.25%而纳指不跌，或纳指跌破26000点，分子赢分母框架需重写。",
+     "horizon": "未来12-24小时至1周",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "EQUITY:US:NVDA",
+      "EQUITY:US:AMD",
+      "EQUITY:US:DDOG",
+      "VOL:VIX",
+      "RATE:US10Y",
+      "MACRO:US:IBM-Q3-2026"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611917.html",
+      "https://www.nbd.com.cn/articles/4611922.html",
+      "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1067701/000106770126000036/uri-9302026xex991.htm"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "analysis": "比特币22:19Z报84527.62美元，以太坊2485.64美元，Solana 107.57美元，Hyperliquid 81.17美元。本轮快照未提供加密货币的当日涨跌幅，因此只能引用价位，不能声称涨跌。加密相关股票当日明显走强：MicroStrategy+7.54%、Coinbase+3.65%。",
+     "mechanism": "机制是贝塔传导：在风险偏好回升、VIX回落至16.68的环境里，加密代理股（含杠杆与交易量弹性）先于现货反应；现货价格缺少方向数据，说明本轮驱动来自股票端的风险预算，而非链上资金流。",
+     "risk": "风险是若长端利率继续上行，杠杆型代理股的回撤会显著大于币价；此外缺少涨跌幅意味着无法排除股票涨、币价横盘这种背离扩大。",
+     "invalidation": "若比特币跌破82000美元而代理股仍上涨，则股票端驱动判断被证伪。",
+     "horizon": "未来12-24小时",
+     "confidence": "low",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "EQUITY:US:MSTR",
+      "EQUITY:US:COIN",
+      "VOL:VIX"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611917.html"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "analysis": "现货黄金22:19Z报4137.90美元/盎司，现货白银57.937美元/盎司。本轮快照不含当日涨跌幅，故只记录价位与时间；贵金属缺少方向性证据，是本轮的数据缺口之一。",
+     "mechanism": "机制上黄金同时受两条线拉扯：名义10年期5.146%与12月累计加息25个基点概率76.0%抬高持有成本（利空），而沙特谢拜油田遭无人机袭击等地缘事件提供避险需求（利多）。两者相互抵消，解释了价格为何在高位横盘而非突破。",
+     "risk": "风险是若市场把加息重新定价为更高更久，实际利率上行会压制金价；反之若财政供给压力引发对长端债务可持续性的担忧，黄金会重新获得买盘。",
+     "invalidation": "金价单日跌超2%且美元指数同步走强，避险与成本对冲判断失效；金价突破4250美元则上行突破成立。",
+     "horizon": "未来1-2周",
+     "confidence": "low",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "RATE:US10Y",
+      "FX:DXY",
+      "MACRO:US:FEDWATCH-2026-10-21"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611933.html",
+      "https://www.nbd.com.cn/articles/4611947.html"
+     ]
+    },
+    {
+     "asset": "原油",
+     "analysis": "WTI 10月21日结算97.15美元/桶（-0.67，-0.68%），电子盘22:09Z回升至97.84美元；布伦特结算108.82美元/桶（+0.03，+0.03%）。两者价差约11.67美元，处于异常宽的水平。沙特谢拜油田遭无人机袭击，碎片致2死2伤，但官方明确生产运营未受影响。",
+     "mechanism": "机制是近端看库存与需求、远端看地缘溢价：WTI代表北美供需，结算下跌说明实货并不紧张；布伦特代表海运与地缘风险，微涨说明市场愿意为下一次不设防的概率付费。价差走阔本身就是风险溢价被计入远端的证据。",
+     "risk": "风险在于价差极宽时，任何实际装运中断都会让布伦特补涨、价差以剧烈方式收敛；反之若地缘缓和，布伦特回吐幅度会大于WTI。",
+     "invalidation": "布伦特与WTI价差收敛到6美元以内且油价同步上行，溢价而非缺口判断失效。",
+     "horizon": "未来数日",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:OIL:SETTLE-2026-10-21",
+      "MACRO:SA:OILFIELD-ATTACK-2026-10-21"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611927.html",
+      "https://www.nbd.com.cn/articles/4611933.html"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "id": "FW-RATE",
+     "framework": "现金流折现与利率传导",
+     "concept": "资产价格等于未来现金流按贴现率折现，长端利率抬升会直接压低高久期资产的估值。",
+     "applicability": "适用于港股、美股成长股与黄金的当期定价。",
+     "observed": "20年期国债得标利率5.469%创2020年恢复发行以来最高，10年期报5.146%，同时纳指涨1.05%、恒指跌2.21%。",
+     "mechanism": "同一条长端利率，对美股是盈利预期上调快于贴现率，对港股是贴现率上行而盈利预期不变，因此同一冲击产生相反结果。",
+     "conclusion": "贴现率上行尚未被完全定价，但市场用盈利叙事在美股端做了对冲；港股缺少对冲工具，直接承受分母压力。",
+     "assumptions": [
+      "长端利率主要由期限溢价而非降息预期驱动",
+      "港股盈利预期本轮未上修"
+     ],
+     "counterEvidence": "若港股盈利预期同步上修，跌幅差无法用贴现率解释。",
+     "horizon": "未来1-4周",
+     "invalidation": "恒指与上证跌幅差收敛到1个百分点以内。",
+     "confidence": "medium-high",
+     "missingData": [
+      "港股盈利预期修订数据",
+      "港元HIBOR与南向资金明细本轮未取得"
+     ],
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "MACRO:US:20Y-AUCTION-2026-10-21",
+      "INDEX:HK:HSI",
+      "INDEX:CN:SSE",
+      "INDEX:US:NASDAQ"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611926.html",
+      "https://www.nbd.com.cn/articles/4611939.html"
+     ]
+    },
+    {
+     "id": "FW-MARGIN",
+     "framework": "增长与利润分离（收入—利润率分解）",
+     "concept": "收入增长不等于利润增长，要看利润率与一次性项目，否则会把会计结果当成经营改善。",
+     "applicability": "适用于本轮五份美股财报的横向比较。",
+     "observed": "IBM营收+5%而毛利率降50bp、经营利润率反升70bp；Meta营收+26%而经营利润-37%、每股收益却从1.05升至3.83；Sonoco收入持平但商誉减值8.29亿美元致GAAP每股-7.36美元；Crown Castle场地租赁收入指引-4%而每股AFFO+6%；Liberty营收+26%却净亏0.39亿美元。",
+     "mechanism": "收入端由价格与结构决定，利润端被减值、折旧、资本开支与非经营项改写；当两者背离时，每股收益的方向往往由非经营项决定。",
+     "conclusion": "本轮美股的盈利改善多数是结构性与会计性的：成本削减、资产剥离、非经营收益，而非需求扩张。",
+     "assumptions": [
+      "公司披露的调整后口径可用于横向比较",
+      "非经营项不可持续"
+     ],
+     "counterEvidence": "联合租赁营收与利润率同步创纪录（调整后EBITDA利润率47.6%），说明真需求扩张仍存在。",
+     "horizon": "未来1-2个季度",
+     "invalidation": "下一季度若收入增速与经营利润率同时上行，则分离判断转向同步改善。",
+     "confidence": "medium-high",
+     "missingData": [
+      "Meta非经营项的具体构成未在快讯中披露"
+     ],
+     "evidenceFactIds": [
+      "MACRO:US:IBM-Q3-2026",
+      "MACRO:US:META-Q3-2026",
+      "MACRO:US:SON-Q3-2026",
+      "MACRO:US:CCI-Q3-2026",
+      "MACRO:US:LBRT-Q3-2026",
+      "MACRO:US:URI-Q3-2026"
+     ],
+     "sourceUrls": [
+      "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021xex991.htm",
+      "https://www.nbd.com.cn/articles/4611944.html",
+      "https://www.sec.gov/Archives/edgar/data/91767/000009176726000047/ex99q32026earningsrelease.htm",
+      "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000085/q32026earningsrelease.htm",
+      "https://www.sec.gov/Archives/edgar/data/1694028/000169402826000055/q32026-earningsrelease.htm",
+      "https://www.sec.gov/Archives/edgar/data/1067701/000106770126000036/uri-9302026xex991.htm"
+     ]
+    },
+    {
+     "id": "FW-PREMIUM",
+     "framework": "供需、库存与风险溢价",
+     "concept": "价格可以因预期供应中断上涨，而不需要真实产量减少。",
+     "applicability": "适用于原油与贵金属的当期定价。",
+     "observed": "沙特谢拜油田遭无人机袭击但官方称生产未受影响；WTI结算跌0.68%，布伦特微涨0.03%，价差约11.67美元；黄金4137.90美元高位横盘。",
+     "mechanism": "近端合约反映实货库存，远端合约反映地缘概率；当袭击未造成装运损失时，涨幅只出现在远端与价差上。",
+     "conclusion": "当前油价包含的是风险溢价而不是供给缺口，溢价集中在布伦特而非WTI。",
+     "assumptions": [
+      "布伦特与WTI的价差主要反映海运与地缘风险",
+      "袭击未影响出口装船"
+     ],
+     "counterEvidence": "若沙特出口量或装船数据出现下降，溢价会转为缺口。",
+     "horizon": "未来数日",
+     "invalidation": "价差收敛到6美元以内且油价同步上行。",
+     "confidence": "medium",
+     "missingData": [
+      "布伦特报价源返回HTTP 404，仅有媒体结算口径",
+      "库存周度数据本轮未取得"
+     ],
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:OIL:SETTLE-2026-10-21",
+      "MACRO:SA:OILFIELD-ATTACK-2026-10-21",
+      "METAL:XAUUSD"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611927.html",
+      "https://www.nbd.com.cn/articles/4611933.html"
+     ]
+    },
+    {
+     "id": "FW-CAPEX",
+     "framework": "资本开支周期与设备租赁",
+     "concept": "当算力投资从芯片扩散到电力与场地，受益方会变成设备与基础设施供应商。",
+     "applicability": "适用于联合租赁与Liberty Energy的本轮披露。",
+     "observed": "联合租赁三季度营收48.93亿美元创纪录、机队生产率+6.5%、全年营收指引上调至180亿-182亿美元；Liberty Energy与前沿AI实验室签署1.2GW数据中心园区综合电力服务协议，同时季度股息上调11%。",
+     "mechanism": "AI数据中心的瓶颈从芯片转向电力与施工设备，租赁与油服公司用既有资产承接新需求，资本开支前置、收入后置。",
+     "conclusion": "AI资本开支已经外溢到传统工业与能源服务，这是本轮最可验证的跨行业传导。",
+     "assumptions": [
+      "数据中心电力需求真实落地而非意向",
+      "租赁利用率可维持"
+     ],
+     "counterEvidence": "Liberty营收+26%仍净亏0.39亿美元，说明承接新业务需要先承担成本。",
+     "horizon": "未来2-4个季度",
+     "invalidation": "若联合租赁下调指引或机队生产率转负，传导链条中断。",
+     "confidence": "medium",
+     "missingData": [
+      "Liberty 1.2GW协议的合同金额与时间表未披露"
+     ],
+     "evidenceFactIds": [
+      "MACRO:US:URI-Q3-2026",
+      "MACRO:US:LBRT-Q3-2026"
+     ],
+     "sourceUrls": [
+      "https://www.sec.gov/Archives/edgar/data/1067701/000106770126000036/uri-9302026xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1694028/000169402826000055/q32026-earningsrelease.htm"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "四个框架共同指向同一结论：当前是利润率与贴现率的对抗期，而不是总量扩张期，仓位应偏向有订单可见度的资产。",
+    "agreement": "利率传导框架与增长利润分离框架互相支持：长端利率抬升压制高久期资产，同时企业利润改善主要来自成本与结构而非需求，两者共同解释了美股涨、港股跌、油价近端弱。",
+    "disagreement": "资本开支框架给出相反信号——联合租赁指引上调与数据中心电力协议说明真实需求在扩张，与利润只靠削减成本的判断冲突；这一分歧只能靠下一季度收入与利润率是否同步上修来裁决。",
+    "weighting": "更看重可核验的一级市场数据（20年期得标利率5.469%）与公司原文（IBM、联合租赁、Meta），弱化媒体转述的指数涨跌幅与缺少涨跌幅的加密、贵金属价位；对缺乏直接利率证据的港股结论标注为中等偏高置信。",
+    "invalidation": "若10年期突破5.25%而纳指不跌，或恒指与上证跌幅差收敛到1个百分点以内，或联合租赁下季度下调指引，则本综合判断需要重写。"
+   },
+   "watch": [
+    {
+     "point": "10年期美债收益率能否守住5.15%",
+     "detail": "若上行突破5.25%且纳指不跌，说明盈利叙事足以吸收贴现率，需上修风险偏好；若突破且纳指下跌，则分母主导回归。"
+    },
+    {
+     "point": "恒指与上证的跌幅差",
+     "detail": "当前约4.6倍。收敛到1个百分点以内则贴现率分层解释失效，需转向盈利或政策解释。"
+    },
+    {
+     "point": "布伦特与WTI价差",
+     "detail": "当前约11.67美元。收敛到6美元以内且油价同步上行，说明风险溢价转为供给缺口。"
+    },
+    {
+     "point": "离岸人民币6.6733",
+     "detail": "若在港股继续下跌时明显走弱，则不是汇率冲击的判断需修正。"
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "得标利率（High Yield）",
+     "definition": "美国国债拍卖中最后中标的那一档收益率，反映一级市场为完成发行必须支付的价格，与该期限的二级市场收益率不完全相同。"
+    },
+    {
+     "term": "AFFO",
+     "definition": "调整后运营资金，REITs常用的现金流口径，等于运营资金扣除经常性资本开支后的部分，比净利润更能反映分红能力。"
+    },
+    {
+     "term": "风险溢价与供给缺口的区别",
+     "definition": "风险溢价是市场为可能发生的供应中断提前支付的价格，供给缺口是已经发生的产量或装运损失；前者可在一夜之间回吐，后者需要实物恢复。"
+    },
+    {
+     "term": "机队生产率",
+     "definition": "租赁设备单位时间产生的收入，剔除价格与规模因素后反映利用率与定价能力的组合结果。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "id": "THESIS-DENOMINATOR",
+     "title": "分母端仍在收紧但被局部盈利对冲",
+     "statement": "20年期得标5.469%与12月累计加息25个基点概率76.0%构成贴现率上行压力，但AI资本开支订单支撑了美股盈利预期，形成分子分母对抗。",
+     "evidenceFactIds": [
+      "MACRO:US:20Y-AUCTION-2026-10-21",
+      "MACRO:US:FEDWATCH-2026-10-21",
+      "RATE:US10Y",
+      "INDEX:US:NASDAQ"
+     ],
+     "invalidation": "10年期突破5.25%而纳指不跌，或纳指跌破26000点。",
+     "confidence": "medium"
+    },
+    {
+     "id": "THESIS-MARGIN-MIX",
+     "title": "盈利改善来自结构而非需求",
+     "statement": "IBM咨询零增长、Meta经营利润-37%、Sonoco靠减值转亏、Crown Castle收入-4%但每股AFFO+6%，说明利润改善主要来自成本与结构。",
+     "evidenceFactIds": [
+      "MACRO:US:IBM-Q3-2026",
+      "MACRO:US:META-Q3-2026",
+      "MACRO:US:SON-Q3-2026",
+      "MACRO:US:CCI-Q3-2026"
+     ],
+     "invalidation": "下一季度收入与经营利润率同时上行。",
+     "confidence": "medium-high"
+    },
+    {
+     "id": "THESIS-PREMIUM",
+     "title": "原油定价的是溢价不是缺口",
+     "statement": "沙特油田遭袭但生产未受影响，WTI结算下跌而布伦特微涨，价差约11.67美元，溢价集中在远端。",
+     "evidenceFactIds": [
+      "MACRO:SA:OILFIELD-ATTACK-2026-10-21",
+      "MACRO:OIL:SETTLE-2026-10-21",
+      "ENERGY:WTI"
+     ],
+     "invalidation": "价差收敛到6美元以内且油价同步上行。",
+     "confidence": "medium"
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "id": "REV-HK-DISCOUNT",
+     "title": "维持港股贴现率分层判断并获得一级市场证据",
+     "previous": "上一版认为恒指跌幅4.6倍于上证来自港元端贴现率，而非外资撤离叙事。",
+     "current": "本轮得到一级市场证据支持：20年期得标利率创恢复发行以来新高，10年期5.146%，而离岸人民币6.6733基本不动。",
+     "reason": "新增了长端利率的一手定价证据。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "MACRO:US:20Y-AUCTION-2026-10-21",
+      "INDEX:HK:HSI",
+      "FX:USDCNH"
+     ]
+    },
+    {
+     "id": "REV-OIL-BRENT",
+     "title": "布伦特缺口由媒体口径补足但仍标partial",
+     "previous": "此前多轮布伦特报价源返回HTTP 404，价差无法计算。",
+     "current": "本轮通过媒体结算口径得到布伦特108.82美元，价差约11.67美元，但明确标注为媒体口径而非供应商报价。",
+     "reason": "缺少可核验的一手报价，不能当作完整数据。",
+     "evidenceFactIds": [
+      "MACRO:OIL:SETTLE-2026-10-21",
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "若10年期突破5.25%",
+     "effect": "高久期成长股与港股承压，黄金持有成本上升，需下调风险偏好判断。"
+    },
+    {
+     "title": "若20年期下次拍卖需求回暖",
+     "effect": "长端期限溢价回落，港股与成长股弹性最大。"
+    },
+    {
+     "title": "若出现实际装运中断",
+     "effect": "布伦特补涨、价差剧烈收敛，原油从溢价切换到缺口定价。"
+    }
+   ],
+   "changes": [
+    {
+     "title": "美股由盘中上涨确认为收盘上涨，纳指+1.05%",
+     "detail": "标普500涨0.5783%、纳斯达克综合涨1.0522%、纳斯达克100涨1.1266%，算力与软件板块领涨。",
+     "evidenceFactIds": [
+      "INDEX:US:NASDAQ",
+      "INDEX:US:SP500",
+      "EQUITY:US:DDOG"
+     ]
+    },
+    {
+     "title": "20年期美债得标利率5.469%创恢复发行以来新高",
+     "detail": "新增一级市场证据，此前只有二级市场10年期收益率。",
+     "evidenceFactIds": [
+      "MACRO:US:20Y-AUCTION-2026-10-21"
+     ]
+    },
+    {
+     "title": "布伦特结算价首次取得（媒体口径）",
+     "detail": "布伦特108.82美元、WTI 97.15美元，价差约11.67美元，此前多轮因报价源404无法计算。",
+     "evidenceFactIds": [
+      "MACRO:OIL:SETTLE-2026-10-21",
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "中国资产跌幅确认",
+     "detail": "金龙中国指数收跌2.35%报5584.79点，恒指-2.21%、国企-2.27%，与上证-0.48%形成明显落差。",
+     "evidenceFactIds": [
+      "MACRO:CN:ADR-GOLDENDRAGON-2026-10-21",
+      "INDEX:HK:HSI",
+      "INDEX:CN:SSE"
+     ]
+    },
+    {
+     "title": "AI资本开支外溢到电力与租赁",
+     "detail": "联合租赁上调全年营收指引至180亿-182亿美元；Liberty Energy签署1.2GW数据中心园区综合电力服务协议。",
+     "evidenceFactIds": [
+      "MACRO:US:URI-Q3-2026",
+      "MACRO:US:LBRT-Q3-2026"
+     ]
+    },
+    {
+     "title": "地缘事件未转化为供给损失",
+     "detail": "沙特谢拜油田遭无人机袭击被拦截，2死2伤，官方称生产运营未受影响，布伦特仅涨0.03%。",
+     "evidenceFactIds": [
+      "MACRO:SA:OILFIELD-ATTACK-2026-10-21",
+      "MACRO:OIL:SETTLE-2026-10-21"
+     ]
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-10-21T08:08:42Z",
+     "title": "港股收盘",
+     "detail": "恒指23651.87跌2.2117%、国企7943.41跌2.2740%，跌幅显著大于A股。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSCEI"
+     ]
+    },
+    {
+     "at": "2026-10-21T08:29:46Z",
+     "title": "A股收盘",
+     "detail": "上证3713.028跌0.4796%、创业板跌1.6242%、科创50微涨0.0639%。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50"
+     ]
+    },
+    {
+     "at": "2026-10-21T18:30:00Z",
+     "title": "原油结算",
+     "detail": "WTI结算97.15美元跌0.68%，布伦特结算108.82美元涨0.03%，价差走阔至约11.67美元。",
+     "evidenceFactIds": [
+      "MACRO:OIL:SETTLE-2026-10-21",
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "at": "2026-10-21T20:00:00Z",
+     "title": "美股收盘",
+     "detail": "标普7757.17涨0.5783%、纳指26702.857涨1.0522%，金龙中国指数反向跌2.35%。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "MACRO:CN:ADR-GOLDENDRAGON-2026-10-21"
+     ]
+    },
+    {
+     "at": "2026-10-21T21:14:31Z",
+     "title": "20年期国债招标结果",
+     "detail": "130亿美元续发行得标利率5.469%，创2020年恢复发行以来最高，需求不及预期。",
+     "evidenceFactIds": [
+      "MACRO:US:20Y-AUCTION-2026-10-21"
+     ]
+    }
+   ],
+   "worldEvents": [
+    {
+     "id": "SA-OILFIELD-ATTACK-2026-10-21",
+     "title": "沙特谢拜油田遭无人机袭击",
+     "detail": "防空部队拦截，碎片致2死2伤，生产运营未受影响。",
+     "at": "2026-10-21T18:00:00Z",
+     "regions": [
+      "WORLD"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/4611933.html"
+     ]
+    }
+   ],
+   "metrics": [],
+   "sectionGaps": {
+    "brent": {
+     "reason": "布伦特报价源 Yahoo BZX26.NYM 连续多轮返回HTTP 404，本轮只能用媒体结算口径，无法取得可核验的供应商报价与盘中时点。"
+    },
+    "rates": {
+     "reason": "两年期美债收益率本轮为空值，利率结论只使用10年期与20年期一级市场数据。"
+    },
+    "crypto": {
+     "reason": "加密货币仅有价位快照，未取得当日涨跌幅与链上资金流。"
+    },
+    "metals": {
+     "reason": "金银仅有价位快照，未取得当日涨跌幅，也无法计算实际利率。"
+    },
+    "cnFlows": {
+     "reason": "A股成交额、涨跌家数与南向资金本轮未采集，港股贴现率结论缺少港元利率直接证据。"
+    }
+   }
+  },
+  "newsItems": [
+   {
+    "eventId": "US-CLOSE-2026-10-21",
+    "title": "美股三大指数10月21日集体收涨，半导体与加密概念领涨",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-21T21:05:46Z",
+    "updateType": "new",
+    "summary": "道指涨0.69%、纳指涨1.05%、标普500涨0.59%；SpaceX涨超7%，特斯拉涨超3%，英伟达、美光、SK海力士涨超2%，谷歌跌超1%；超微电脑涨超9%、戴尔涨超5%、Circle涨超4%、Coinbase涨超3%；锂矿与包装食品走低，通用磨坊跌超2%。",
+    "plainImpact": "持有美股与相关QDII的投资者当天账面回血，但涨幅集中在算力、硬件与加密代理股，防守型消费与锂矿仍在下跌，说明这是结构性行情不是全面反弹。",
+    "assessment": "我的判断：指数上涨由盈利预期与AI资本开支叙事驱动，而当日20年期国债得标利率创2020年以来新高，估值端的逆风并未消失，只是暂时被盈利叙事盖住。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611917.html"
+    ],
+    "marketImpact": "纳指与半导体板块同向，VIX回落至16.68，风险偏好回升。",
+    "counterRisk": "若长端利率继续上行，高久期成长股的回撤弹性同样最大。",
+    "horizon": "未来12-24小时",
+    "confidence": "medium"
+   },
+   {
+    "eventId": "US-20Y-AUCTION-2026-10-21",
+    "title": "美国20年期国债续发行需求不佳，得标利率5.469%创恢复发行以来最高",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-21T21:14:31Z",
+    "updateType": "new",
+    "summary": "美国财政部续发行130亿美元20年期国债，中标收益率5.469%，为该期限2020年恢复发行以来的最高水平，认购需求不及预期。",
+    "plainImpact": "长端融资成本再上台阶，房贷、企业债与高估值资产的贴现率都被推高；对普通家庭意味着长期贷款成本更难下降。",
+    "assessment": "我的判断：这不是一次孤立的技术性尾部，而是期限溢价在财政供给压力下的重新定价；它与联邦基金利率路径预期（12月累计加息25个基点概率76.0%）叠加，构成对全球风险资产分母端的持续压力。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611926.html",
+     "https://www.nbd.com.cn/articles/4611947.html"
+    ],
+    "marketImpact": "10年期美债收益率报5.146%，美元指数101.691基本走平，说明压力集中在期限溢价而非汇率。",
+    "counterRisk": "若后续拍卖需求回暖且通胀预期回落，长端可能快速回吐。",
+    "horizon": "未来1-4周",
+    "confidence": "medium-high"
+   },
+   {
+    "eventId": "US-IBM-Q3-2026",
+    "title": "IBM第三季度营收171亿美元同比增长4.7%，软件领涨并上调全年自由现金流",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-21T21:10:39Z",
+    "updateType": "new",
+    "summary": "营收171亿美元（预估168.3亿），同比+5%（不变汇率+6%）；软件收入+8%、咨询持平、基础设施+4%；经营每股收益2.95美元（上年2.65）；自由现金流30.3亿美元同比+28%；全年自由现金流增幅指引上调至超过10亿美元。",
+    "plainImpact": "企业级IT预算没有整体扩张，钱在从咨询转向软件与AI落地，这对做实施服务的公司不是好消息。",
+    "assessment": "我的判断：IBM这份报表是结构性增长的干净样本——咨询零增长而软件中高个位数增长，说明AI订单先落在软件许可与订阅，而不是人力密集型项目。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611922.html",
+     "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021xex991.htm"
+    ],
+    "marketImpact": "软件与基础设施同向改善，毛利率仍小幅下滑（GAAP 56.8%，-50bp），增长靠结构不靠提价。",
+    "counterRisk": "软件增长若来自并购而非内生，2027年基数会变差。",
+    "horizon": "未来1-2个季度",
+    "confidence": "medium"
+   },
+   {
+    "eventId": "US-META-Q3-2026",
+    "title": "Meta第三季度营收646亿美元增26%，但经营利润同比下降37%",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-21T21:28:51Z",
+    "updateType": "new",
+    "summary": "营收646亿美元（预估633.3亿）同比+26%；经营利润129.9亿美元（预估208.5亿）同比-37%；每股收益3.83美元（上年1.05）；四季度营收指引730亿-760亿美元；全年资本开支指引由1300亿-1450亿上调至1350亿-1450亿美元；同时披露新的无投票权C类普通股发行计划。",
+    "plainImpact": "收入还在高速增长，但利润被AI基础设施开支吞掉，普通用户短期内看到的是广告更贵、产品更激进；股东看到的是增长换利润。",
+    "assessment": "我的判断：每股收益从1.05跳到3.83而经营利润下降37%，说明利润表底部有非经营项目托举，用每股收益讲盈利改善是误导；真正可验证的是资本开支上限被抬高、且用无投票权股票锁定控制权。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611944.html"
+    ],
+    "marketImpact": "Meta当日仅涨0.47%，明显弱于纳指1.05%，市场已在给资本开支折价。",
+    "counterRisk": "若四季度营收落在指引上沿且开支不再上调，折价可能修复。",
+    "horizon": "未来1-2个季度",
+    "confidence": "medium-high"
+   },
+   {
+    "eventId": "SA-OILFIELD-ATTACK-2026-10-21",
+    "title": "沙特谢拜油田遭无人机袭击被拦截，碎片致2死2伤、生产未受影响",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-21T21:19:12Z",
+    "updateType": "new",
+    "summary": "沙特能源部声明，防空部队拦截一架试图袭击东部省谢拜油田（隶属沙特阿美）设施的无人机，碎片坠落造成两名外籍劳工死亡、两人受伤，厂区外一辆车起火；有关部门已处置，油田生产运营未受影响。",
+    "plainImpact": "对普通人最直接的是油价的风险溢价而非供应中断——袭击被拦截、产量未损，但市场会为下一次不设防的概率付钱。",
+    "assessment": "我的判断：这类事件对油价的影响是溢价而不是缺口；布伦特结算108.82美元对WTI 97.15美元、价差约11.67美元，说明地缘风险已计入远端而非近端。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611933.html",
+     "https://www.nbd.com.cn/articles/4611927.html"
+    ],
+    "marketImpact": "布伦特当日仅涨0.03%，WTI结算跌0.68%，风险溢价并未扩散为全面上涨。",
+    "counterRisk": "若出现实际装船或码头受损证据，溢价会立刻转为缺口定价。",
+    "horizon": "未来数日",
+    "confidence": "medium"
+   },
+   {
+    "eventId": "CN-ADR-GOLDENDRAGON-2026-10-21",
+    "title": "纳斯达克金龙中国指数收跌2.35%，热门中概股普跌",
+    "regions": [
+     "CN",
+     "US"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-21T21:22:55Z",
+    "updateType": "new",
+    "summary": "金龙中国指数收跌2.35%报5584.79点；小鹏跌超5%，阿里巴巴、京东、理想汽车、拼多多跌超3%，哔哩哔哩、百度、蔚来跌超2%，网易、知乎跌超1%。",
+    "plainImpact": "持有中概与港股资产的投资者当天继续缩水，跌幅大于同期美股大盘，说明中国资产在被单独定价，而不是跟着全球风险偏好走。",
+    "assessment": "我的判断：当日离岸人民币报6.6733、几乎走平，汇率没有提供解释，跌幅更可能来自中国资产自身的贴现率与资金面；这与恒指-2.21%、国企指数-2.27%同向，构成跨市场一致的分母端证据。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611939.html"
+    ],
+    "marketImpact": "中概普跌与美股上涨背离，区域分化明显。",
+    "counterRisk": "若次日南向资金转为净买入且人民币走强，则资金撤离解释会失效。",
+    "horizon": "未来12-24小时",
+    "confidence": "medium"
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "滚动24小时窗口内，中国、美国与全球三类均有可核验事件，但全球其他地区仅取得沙特油田袭击一条转述稿，欧洲与亚洲其他地区缺口明显。",
+   "regions": [
+    "CN",
+    "US",
+    "WORLD"
+   ],
+   "gaps": [
+    "WORLD区域缺少可直接抓取的通讯社一手稿",
+    "本轮未纳入A股与港股公司公告",
+    "加密货币与贵金属缺少当日涨跌幅"
+   ]
+  },
+  "macroFacts": [
+   {
+    "id": "MACRO:US:20Y-AUCTION-2026-10-21",
+    "label": "美国20年期国债续发行得标利率",
+    "value": 5.469,
+    "unit": "%",
+    "asOf": "2026-10-21T17:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611926.html"
+    ],
+    "note": "美国财政部续发行130亿美元20年期国债，中标收益率5.469%，为该期限2020年恢复发行以来最高；投标需求不及预期。"
+   },
+   {
+    "id": "MACRO:US:FEDWATCH-2026-10-21",
+    "label": "CME美联储观察10月按兵不动概率",
+    "value": 83.9,
+    "unit": "%",
+    "asOf": "2026-10-21T22:11:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611947.html"
+    ],
+    "note": "10月维持利率不变83.9%、加息25个基点16.1%；12月维持不变9.9%、累计加息25个基点76.0%、加息50个基点14.2%。"
+   },
+   {
+    "id": "MACRO:US:IBM-Q3-2026",
+    "label": "IBM第三季度营收",
+    "value": 17.1,
+    "unit": "十亿美元",
+    "asOf": "2026-10-21T20:19:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611922.html",
+     "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021xex991.htm"
+    ],
+    "note": "营收171亿美元同比+5%（不变汇率+6%），软件+8%、咨询持平、基础设施+4%；经营EPS 2.95美元；自由现金流30.3亿美元同比+28%。"
+   },
+   {
+    "id": "MACRO:US:META-Q3-2026",
+    "label": "Meta第三季度营收",
+    "value": 64.6,
+    "unit": "十亿美元",
+    "asOf": "2026-10-21T20:30:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611944.html"
+    ],
+    "note": "营收646亿美元同比+26%（预期633.3亿）；经营利润129.9亿美元同比-37%（预期208.5亿）；EPS 3.83美元；全年资本开支指引上调至1350亿-1450亿美元。"
+   },
+   {
+    "id": "MACRO:SA:OILFIELD-ATTACK-2026-10-21",
+    "label": "沙特谢拜油田无人机袭击后果",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-21T18:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611933.html"
+    ],
+    "note": "沙特能源部称防空部队拦截一架试图袭击东部省谢拜油田（沙特阿美旗下）设施的无人机，碎片坠落致2死2伤，油田生产运营未受影响。"
+   },
+   {
+    "id": "MACRO:OIL:SETTLE-2026-10-21",
+    "label": "WTI原油结算价",
+    "value": 97.15,
+    "unit": "美元/桶",
+    "asOf": "2026-10-21T18:30:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611927.html"
+    ],
+    "note": "WTI结算97.15美元/桶（-0.67，-0.68%）；布伦特结算108.82美元/桶（+0.03，+0.03%）。"
+   },
+   {
+    "id": "MACRO:CN:ADR-GOLDENDRAGON-2026-10-21",
+    "label": "纳斯达克金龙中国指数",
+    "value": 5584.79,
+    "unit": "点",
+    "asOf": "2026-10-21T20:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/4611939.html"
+    ],
+    "note": "金龙中国指数收跌2.35%，小鹏跌超5%，阿里、京东、理想、拼多多跌超3%，哔哩哔哩、百度、蔚来跌超2%。"
+   },
+   {
+    "id": "MACRO:US:URI-Q3-2026",
+    "label": "联合租赁第三季度营收",
+    "value": 4.893,
+    "unit": "十亿美元",
+    "asOf": "2026-10-21T20:25:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1067701/000106770126000036/uri-9302026xex991.htm"
+    ],
+    "note": "营收48.93亿美元，租赁收入43.16亿美元，调整后EPS 15.55美元，调整后EBITDA 23.31亿美元（利润率47.6%），机队生产率同比+6.5%，全年营收指引上调至180亿-182亿美元。"
+   },
+   {
+    "id": "MACRO:US:CCI-Q3-2026",
+    "label": "Crown Castle全年每股AFFO指引中值",
+    "value": 4.6,
+    "unit": "美元/股",
+    "asOf": "2026-10-21T20:17:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000085/q32026earningsrelease.htm"
+    ],
+    "note": "全年场地租赁收入指引中值38.75亿美元（同比-4%），净利润8.95亿美元（+102%），AFFO 19.80亿美元（+4%），每股AFFO 4.60美元（+6%）。"
+   },
+   {
+    "id": "MACRO:US:SON-Q3-2026",
+    "label": "Sonoco第三季度GAAP每股亏损",
+    "value": -7.36,
+    "unit": "美元/股",
+    "asOf": "2026-10-21T20:10:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/91767/000009176726000047/ex99q32026earningsrelease.htm"
+    ],
+    "note": "净销售额20亿美元（剔除剥离后基本持平）；因消费包装EMEA/APAC与工业APAC商誉非现金减值8.29亿美元，GAAP净亏损7.32亿美元、每股-7.36美元；调整后净利1.67亿美元、每股1.67美元（上年1.92）。"
+   },
+   {
+    "id": "MACRO:US:LBRT-Q3-2026",
+    "label": "Liberty Energy第三季度营收",
+    "value": 1.2,
+    "unit": "十亿美元",
+    "asOf": "2026-10-21T21:30:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1694028/000169402826000055/q32026-earningsrelease.htm"
+    ],
+    "note": "营收12亿美元同比+26%；净亏损0.39亿美元、每股-0.24美元；调整后净利0.10亿美元、每股0.06美元；调整后EBITDA 1.42亿美元；季度股息上调11%至0.10美元；与前沿AI实验室及基础设施平台签署1.2GW数据中心园区综合电力服务协议。"
+   },
+   {
+    "id": "MACRO:US:GL-Q3-2026",
+    "label": "Globe Life第三季度每股营业利润",
+    "value": 4.84,
+    "unit": "美元/股",
+    "asOf": "2026-10-21T20:39:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/320335/000032033526000224/q3fy2026earningsrelease.htm"
+    ],
+    "note": "每股净利润4.62美元（上年4.73），每股营业利润4.84美元（上年4.81）；总保费收入同比+7%；每股账面价值85.35美元（+23%），剔除AOCI为103.62美元（+11%）。"
+   }
+  ],
+  "macroEvents": [
+   {
+    "id": "EV-FOMC-2026-10-28",
+    "title": "美联储FOMC会议（10月27-28日）",
+    "at": "2026-10-28T18:00:00Z",
+    "type": "central-bank",
+    "note": "美联储官方日程确认10月27-28日会议，决议与新闻发布会为10月28日14:00（美东）。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   },
+   {
+    "id": "EV-BEA-GDP-2026-10-29",
+    "title": "BEA发布2026年三季度GDP初值与9月个人收入支出",
+    "at": "2026-10-29T12:30:00Z",
+    "type": "official-calendar",
+    "note": "BEA官方日程：10月29日08:30（美东）同时发布两项数据。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   }
+  ],
+  "events": [
+   {
+    "id": "EV-BEA-RD-2026-10-22",
+    "title": "BEA发布2024年实验性研发经济统计（美国与各州）",
+    "at": "2026-10-22T14:00:00Z",
+    "type": "official-calendar",
+    "note": "BEA官方日程：10月22日10:00（美东）发布，属统计口径类数据，不是本轮已发生结果。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   },
+   {
+    "id": "EV-US-PREOPEN-EARNINGS-2026-10-22",
+    "title": "美股10月22日盘前财报披露窗口",
+    "at": "2026-10-22T11:00:00Z",
+    "type": "market-window",
+    "note": "具体公司名单未在官方日历中确认，此处仅标注盘前披露窗口，不作为已发生结果。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   }
+  ],
+  "researchRecords": [
+   {
+    "instrumentId": "EQUITY:US:IBM",
+    "eventKey": "US-IBM-2026Q3-0000051143-26-000093",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-IBM-EX991-2026Q3",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021xex991.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-21",
+    "analyzedAt": "2026-10-21T22:22:52Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021xex991.htm",
+     "https://www.nbd.com.cn/articles/4611922.html"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "软件领涨、咨询持平的结构说明AI订单先落在软件与订阅；毛利率仍降50bp，经营利润率却升70bp，改善来自费用控制而非提价；自由现金流30.3亿美元同比+28%并上调全年指引，是本轮最有现金流支撑的一份财报。",
+     "evidence": [
+      "营收171亿美元同比+5%",
+      "软件+8%、咨询持平、基础设施+4%",
+      "经营每股收益2.95美元",
+      "自由现金流30.3亿美元+28%"
+     ],
+     "risk": "软件增长若含并购贡献，2027年基数会变差。",
+     "invalidation": "下一季度软件增速回落至5%以下且咨询继续零增长。"
+    }
+   },
+   {
+    "instrumentId": "EQUITY:US:LBRT",
+    "eventKey": "US-LBRT-2026Q3-0001694028-26-000055",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-LBRT-EX991-2026Q3",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/1694028/000169402826000055/q32026-earningsrelease.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-21",
+    "analyzedAt": "2026-10-21T22:22:52Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1694028/000169402826000055/q32026-earningsrelease.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "营收12亿美元同比+26%但净亏0.39亿美元，说明压裂服务价格仅温和上涨而成本与钻井延迟吞掉利润；真正的新变量是与前沿AI实验室签署1.2GW数据中心园区综合电力服务协议，把油服资产接入算力电力需求。",
+     "evidence": [
+      "营收12亿美元+26%",
+      "调整后EBITDA 1.42亿美元",
+      "净亏0.39亿美元、每股-0.24美元",
+      "股息上调11%至0.10美元",
+      "1.2GW数据中心电力协议"
+     ],
+     "risk": "AI电力协议尚未披露合同金额与时间表，落地节奏不确定。",
+     "invalidation": "下季度调整后EBITDA利润率未改善且电力协议无收入确认。"
+    }
+   },
+   {
+    "instrumentId": "EQUITY:US:URI",
+    "eventKey": "US-URI-2026Q3-0001067701-26-000036",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-URI-EX991-2026Q3",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/1067701/000106770126000036/uri-9302026xex991.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-21",
+    "analyzedAt": "2026-10-21T22:22:52Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1067701/000106770126000036/uri-9302026xex991.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "营收48.93亿美元创纪录、调整后EBITDA利润率47.6%、机队生产率+6.5%，并把全年营收指引从175亿-178亿美元上调至180亿-182亿美元，是本轮唯一收入与利润率同步改善的样本，说明设备租赁的真实需求扩张。",
+     "evidence": [
+      "营收48.93亿美元",
+      "租赁收入43.16亿美元",
+      "调整后每股收益15.55美元",
+      "机队生产率+6.5%",
+      "全年指引180亿-182亿美元"
+     ],
+     "risk": "指引上调依赖大型项目排期，若项目延后会形成基数压力。",
+     "invalidation": "下季度机队生产率转负或指引下调。"
+    }
+   },
+   {
+    "instrumentId": "EQUITY:US:CCI",
+    "eventKey": "US-CCI-2026Q3-0001051470-26-000085",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-CCI-EX991-2026Q3",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000085/q32026earningsrelease.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-21",
+    "analyzedAt": "2026-10-21T22:22:52Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000085/q32026earningsrelease.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "全年场地租赁收入指引中值38.75亿美元同比-4%，但每股AFFO 4.60美元同比+6%、净利润+102%，是收入下降而每股现金流上升的典型：剥离光纤业务与费用优化重塑了分母。在10年期5.146%的环境下，这类资产的分红吸引力取决于长端能否稳住。",
+     "evidence": [
+      "场地租赁收入指引38.75亿美元-4%",
+      "AFFO 19.80亿美元+4%",
+      "每股AFFO 4.60美元+6%",
+      "净利润8.95亿美元+102%"
+     ],
+     "risk": "收入端持续负增长会削弱分红可持续性。",
+     "invalidation": "每股AFFO增速转负。"
+    }
+   },
+   {
+    "instrumentId": "EQUITY:US:SON",
+    "eventKey": "US-SON-2026Q3-0000091767-26-000047",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-SON-EX99-2026Q3",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000047/ex99q32026earningsrelease.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-21",
+    "analyzedAt": "2026-10-21T22:22:52Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/91767/000009176726000047/ex99q32026earningsrelease.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "净销售额20亿美元、剔除剥离后基本持平，但消费包装EMEA/APAC与工业APAC计提8.29亿美元非现金商誉减值，导致GAAP每股-7.36美元；调整后每股1.67美元低于上年1.92美元。这是收入持平、利润下修、资产减值的组合，反映包装需求疲弱与海外资产估值下修。",
+     "evidence": [
+      "净销售额20亿美元基本持平",
+      "商誉减值8.29亿美元",
+      "GAAP每股-7.36美元",
+      "调整后每股1.67美元（上年1.92）"
+     ],
+     "risk": "若减值后仍无法改善海外产能利用率，可能触发第二轮重组。",
+     "invalidation": "下季度调整后每股回升至1.90美元以上。"
+    }
+   }
+  ],
+  "researchChecks": [
+   {
+    "instrumentId": "EQUITY:US:IBM",
+    "checkedAt": "2026-10-21T22:22:52Z",
+    "status": "material-read",
+    "note": "已实际阅读本轮取得的SEC 8-K附件原文并提取核心财务数据。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021xex991.htm",
+     "https://www.nbd.com.cn/articles/4611922.html"
+    ]
+   },
+   {
+    "instrumentId": "EQUITY:US:LBRT",
+    "checkedAt": "2026-10-21T22:22:52Z",
+    "status": "material-read",
+    "note": "已实际阅读本轮取得的SEC 8-K附件原文并提取核心财务数据。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1694028/000169402826000055/q32026-earningsrelease.htm"
+    ]
+   },
+   {
+    "instrumentId": "EQUITY:US:URI",
+    "checkedAt": "2026-10-21T22:22:52Z",
+    "status": "material-read",
+    "note": "已实际阅读本轮取得的SEC 8-K附件原文并提取核心财务数据。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1067701/000106770126000036/uri-9302026xex991.htm"
+    ]
+   },
+   {
+    "instrumentId": "EQUITY:US:CCI",
+    "checkedAt": "2026-10-21T22:22:52Z",
+    "status": "material-read",
+    "note": "已实际阅读本轮取得的SEC 8-K附件原文并提取核心财务数据。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000085/q32026earningsrelease.htm"
+    ]
+   },
+   {
+    "instrumentId": "EQUITY:US:SON",
+    "checkedAt": "2026-10-21T22:22:52Z",
+    "status": "material-read",
+    "note": "已实际阅读本轮取得的SEC 8-K附件原文并提取核心财务数据。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/91767/000009176726000047/ex99q32026earningsrelease.htm"
+    ]
+   }
+  ]
+ }
+}
