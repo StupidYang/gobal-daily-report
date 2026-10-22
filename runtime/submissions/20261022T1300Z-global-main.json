@@ -1,0 +1,1326 @@
+{
+ "execution": {
+  "executionId": "20261022T1300Z-global-main",
+  "generation": 286
+ },
+ "editorial": {
+  "packetHash": "da6678eb969978d6226a32e68fdb6d261407e9e1977d6f7ae592ede4e02751e4",
+  "analyzedAt": "2026-10-22T13:03:59Z",
+  "report": {
+   "overview": "10 月 22 日亚欧时段的真实变化不是\"跌了多少\"，而是\"跌的东西不是一回事\"。A 股上证 -2.0706%、创业板 -4.3720%、恒生科技 -5.0276%、日经 -2.6515%、欧洲斯托克50 -1.2633% 全线下跌，但同期美债 10 年期回落到 5.036（-2.1376%）、美元指数 101.77 几乎不动、美元兑离岸人民币 6.6735 也不动。利率在往下、汇率没在跑，股票却在跌——这不是贴现率冲击，也不是资本外逃，而是\"现金流可预测性\"在重新定价。",
+   "rolling24hSummary": "过去 24 小时的证据链集中在同一个方向：油价把利润从下游搬到上游。EIA 三季度回顾显示美国炼厂开工率 95%、汽油裂解价差同比翻倍以上、馏分油与航煤接近三倍、馏分油库存低于五年均值 13%；瓦莱罗三季度炼油经营利润 88 亿美元、去年同期 16 亿美元；而联合太平洋披露燃油拖累营运比率 140bp、诺福克南方调整后营运比率同比恶化 210bp、普尔泰格因房贷利率把订单打掉 6%。同一天，天孚通信明确 CPO/NPO 提产节奏未变、进出口政策未约束光器件，直接反证了昨日\"上游扩产压中游\"的解释。",
+   "methodology": "本轮以 20261022T1300Z-global-main 请求 15 份文档，采集窗口 2026-10-22T13:01:22.083Z–2026-10-22T13:01:27.850Z（5767 毫秒），15/15 contentRetrieved=true、blockedDocuments=0；行情取自同一 packet（packetHash da6678eb9699…，generation 286），分析结束于 2026-10-22T13:03:59Z。口径处理：一、A 股与港股涨跌幅沿用 packet 值，其前收基准与媒体收盘口径可能不同，正文一律用 packet；二、美股为 10-21 收盘（status=previous），当日 13:30Z 才开盘，故美股只有盘前公司披露、无当日指数；三、BTC、ETH、SOL、HYPE、XAU、XAG 只有快照无涨跌幅，只给水平值，不插值、不计算当日变动；四、ENERGY:BRENT 返回 HTTP 404，只有 WTI（2026 年 12 月合约）可用，布伦特缺口单列；五、RATE:US2Y 为空（status=partial），2 年期改用财政部日度曲线 2026-10-21 的 4.81%，与 packet 的 RATE:US10Y 5.036 分属不同时点，不混用；六、所有 factId 只引用本轮 packet 的 instrumentId 或本轮 macroFacts，未沿用上一版正文的价格、asOf 或事实编号。",
+   "deepDive": [
+    {
+     "asset": "A股",
+     "analysis": "上证收 3658.026（-2.0706%），深成 11357.319（-3.7621%），创业板 2576.901（-4.3720%），科创50 1305.873（-2.7849%），沪深300 4036.2966（-1.8394%），中证500 6655.25（-2.7090%）。指数跌幅从沪深300 的 1.84% 一路放大到创业板的 4.37%，是典型的\"久期越长、跌得越深\"，而不是全面风险平仓。",
+     "mechanism": "央行当日 7 天期逆回购归零、改用 1730 亿元隔夜（PROP:PBOC:2026-10-22-OMO），投放量还在但久期缩到一天：短端不缺钱，机构却不愿用隔夜负债去持有高波动成长股。叠加 10 年期美债仍在 5% 以上（5.036），全球久期资产的估值分母没有松动，创业板这类高久期资产首先被减仓。",
+     "risk": "若隔夜投放持续替代 7 天期，银行间负债久期会进一步缩短，货币基金与短债的配置需求上升、权益的边际资金来源下降，成长股可能进入\"缩量阴跌\"而非一次性出清。",
+     "invalidation": "若未来两个交易日创业板相对沪深300 的跌幅收敛到 1 个百分点以内，且央行恢复 7 天期净投放，则\"久期收缩驱动\"的判断失效，应改判为一次性事件冲击。",
+     "horizon": "未来 1—2 个交易日；中期看三季报现金流与回购力度。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500",
+      "PROP:PBOC:2026-10-22-OMO",
+      "FLOW:CN:CATL-BUYBACK-2026-10-22",
+      "RESEARCH:CN:TIANFU-CPO-2026-10-22",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102208470683333/index.html",
+      "https://www.nbd.com.cn/articles/2026-10-22/4613376.html",
+      "https://www.nbd.com.cn/articles/2026-10-22/4613419.html"
+     ]
+    },
+    {
+     "asset": "港股",
+     "analysis": "恒指 22934.68（-3.9091%），恒生科技 3793.93（-5.0276%），国企指数 7689.19（-4.2473%）。恒生科技跌幅 5.03% 是恒指 3.91% 的 1.29 倍，离岸成长股再次成为亚洲最强的下跌放大器。",
+     "mechanism": "港元资产同时承受两个折现：一是美元利率（10 年期 5.036 仍高），二是全球风险预算。当日美元指数 101.77（-0.0098%）几乎不动、美元兑离岸人民币 6.6735（+0.0045%）也几乎不动，说明这不是汇率贬值触发的资本外逃，而是外资在亚洲内部降低高 beta 敞口。",
+     "risk": "港股没有本土增量资金对冲，一旦外资风险预算持续收缩，恒生科技会先于 A 股见底、也先于 A 股反弹，波动率显著更大；同时港股对油价与运费的敏感度高于 A 股（航空、航运权重）。",
+     "invalidation": "若美元兑离岸人民币升破 6.70 且恒生科技继续跑输恒指，则判断从\"风险预算重排\"改为\"汇率驱动的资金外流\"。",
+     "horizon": "未来 1—3 个交易日，跟随美股开盘后的风险偏好。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "FX:DXY",
+      "FX:USDCNH",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "美股",
+     "analysis": "标普 500 收 7757.17（+0.5783%），纳指 26702.857（+1.0522%），纳斯达克100 29822.518（+1.1266%），道指 52856.09（+0.6861%），罗素2000 2781.021（+0.2741%）——均为 10-21 收盘，当日尚未开盘（13:30Z），盘前只有公司披露。上一交易日是普涨，纳指强于道指，与今日亚洲的杀跌方向相反。",
+     "mechanism": "今天真正的新信息在盘前财报里，而不是指数里。炼厂（VLO 炼油经营利润 88 亿美元 vs 16 亿）、铁路（UNP 燃油拖累营运比率 140bp、NSC 调整后营运比率恶化 210bp）、住房（PHM 订单 -6%、毛利率 -140bp）三家给出同一件事的三个切面：油价推高成本，利率压制需求，能转嫁的转嫁、不能转嫁的吃毛利。",
+     "risk": "盘前财报的分化意味着开盘后指数层面的方向可能由权重科技股决定，而基本面已经在向\"成本上升、需求分化\"倾斜。若开盘后能源与工业强于科技，说明市场在为\"实物资产>长久期\"重新定价。",
+     "invalidation": "若开盘后纳指显著跑赢道指且 VIX 回落至 16 以下，则\"成本冲击主导\"的判断需下调权重，改判为一次性仓位调整。",
+     "horizon": "当日开盘至未来 1 周；关键节点是 10-29 的 GDP 与 PCE。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "VOL:VIX",
+      "MACRO:US:VLO-Q3-2026",
+      "MACRO:US:UNP-Q3-2026",
+      "MACRO:US:NSC-Q3-2026",
+      "MACRO:US:PHM-Q3-2026",
+      "MACRO:US:CMCSA-Q3-2026"
+     ],
+     "sourceUrls": [
+      "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm",
+      "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm",
+      "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm",
+      "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm",
+      "https://www.sec.gov/Archives/edgar/data/1166691/000162828026066783/ex991-9302026.htm"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "analysis": "BTC 报 81620.57 美元（快照，无当日涨跌幅），ETH 2398.31、SOL 104.26、HYPE 77.92。加密资产本轮只有水平值，没有可比的日内变动，无法据此断言方向。",
+     "mechanism": "在 VIX 17.99（+7.8537%）的温和避险环境里，BTC 的角色更接近高 beta 的流动性资产：名义利率下行（10 年期 5.036，-2.1376%）对它是顺风，但美元指数横盘、实际利率仍高，对它是逆风。两个方向相互抵消，所以价格停在 8.1 万美元附近而不是跟随纳指昨日上涨。",
+     "risk": "BTC 没有现金流锚，在\"现金流可预测性重定价\"的环境里最容易被当成提款机；若权益市场继续下跌，它的回撤弹性会大于黄金。",
+     "invalidation": "若 BTC 在美元指数不走弱的情况下单日跌破 78000，则\"流动性中性\"判断失效，应改判为风险资产同步去杠杆。",
+     "horizon": "未来 24—72 小时。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "CRYPTO:HYPE:USD",
+      "VOL:VIX",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "analysis": "现货金 4083.60 美元/盎司，现货银 55.894 美元/盎司（均为快照，无当日涨跌幅），金银比约 73.1。黄金在高油价、高波动的一天里几乎不动，是六类资产中最\"无反应\"的一个。",
+     "mechanism": "黄金此刻同时受到两股力量：地缘供给中断与通胀预期（利多），以及名义利率仍在 5% 以上、美元指数横盘（利空）。EIA 明确指出三季度油价上行来自供给中断而非需求扩张（MACRO:ENERGY:REFINERY-MARGIN-3Q26），这属于\"滞胀型\"冲击——历史上这种组合对黄金是慢变量利多，不会在一天内体现在价格上。",
+     "risk": "若油价继续上行而黄金不涨，说明市场把油价当成\"一次性供给冲击\"而非\"货币贬值\"，黄金的抗通胀溢价会被推迟而不是取消；反过来，若白银跌幅持续大于黄金，说明贵金属内部在做去杠杆，黄金的避险属性也会被稀释。",
+     "invalidation": "若金价在美元指数不走弱的前提下站上 4150 且金银比回落至 70 以下，则\"慢变量\"判断需要上修为\"避险资金进场\"。",
+     "horizon": "数周；短期跟随实际利率与美元。",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "FX:DXY",
+      "RATE:US10Y",
+      "MACRO:ENERGY:REFINERY-MARGIN-3Q26"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/todayinenergy/detail.php?id=68245",
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "原油",
+     "analysis": "WTI 报 99.48 美元/桶（+2.3984%，2026 年 12 月合约），布伦特代码源本轮再次 HTTP 404，只有 WTI 可用。油价在 100 美元附近反复，是当前所有资产价格的共同上游。",
+     "mechanism": "EIA 的三季度回顾给出了完整链条：霍尔木兹流量受扰、美国封锁伊朗原油出口、沙特东西管道泵站与红海油轮遇袭、乌克兰无人机袭击新罗西斯克码头，布伦特从 7 月 1 日的 72 美元一路上到 9 月 9 日再破 100 美元（MACRO:ENERGY:REFINERY-MARGIN-3Q26）。美国炼厂以 95% 的开工率吃下缺口，汽油裂解价差同比翻倍、馏分油与航煤接近三倍。下游的证据是 AAL 燃油成本同比多 19 亿美元转亏、UNP 燃油拖累营运比率 140bp。",
+     "risk": "高价本身会摧毁需求：馏分油库存低于五年均值 13% 意味着任何一次额外的装置事故都会让裂解价差再跳一档，但也意味着一旦需求转弱、库存回补，价格下跌会比上涨更快。炼厂利润是这条链上最脆弱的一环。",
+     "invalidation": "若 WTI 回落至 92 美元下方且裂解价差同步收窄，则\"供给中断定价\"的判断失效，应改判为需求破坏开始主导。",
+     "horizon": "未来 1—2 周；下一个官方节点是 10-28 的 EIA 周度库存报告。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:ENERGY:REFINERY-MARGIN-3Q26",
+      "MACRO:US:VLO-Q3-2026",
+      "MACRO:US:UNP-Q3-2026",
+      "MACRO:US:NSC-Q3-2026"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/todayinenergy/detail.php?id=68245",
+      "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm",
+      "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm",
+      "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm",
+      "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+     ]
+    }
+   ],
+   "coreAnalysis": {
+    "mainTheme": "油价把利润从下游搬到上游，利率下行救不了久期资产",
+    "expectationGap": "市场原本预期\"美债收益率回落 → 成长股修复\"。今天 10 年期回落到 5.036（-2.1376%），但创业板跌 4.37%、恒生科技跌 5.03%——预期差在于：分母松动的同时，分子（可预测现金流）正在被成本端啃。",
+    "divergence": "同一天里，炼厂与铁路拿到了油价的收入端（VLO 炼油经营利润 88 亿美元、UNP 营收 +15%），航空与住房拿到了成本端（PHM 订单 -6%、毛利率 -140bp），而股票市场统一按\"高久期先卖\"处理。价格分化大于基本面分化。",
+    "regime": "滞胀型供给冲击下的\"分层紧缩\"：商品强、利率高但边际回落、股票杀久期、美元不弱、黄金钝化。这个组合里没有单一资产的顺风，只有相对强弱的轮换。",
+    "priceIn": "WTI 99.48 已经 price in 霍尔木兹与俄罗斯出口设施的中断；10 年期 5.036 已 price in 一次不降息的会议；A 股与港股已 price in 外资风险预算收缩。尚未 price in 的是：裂解价差回落、以及需求端被高价摧毁后的第二波下修。",
+    "bullCase": "若油价在 100 附近稳定、裂解价差维持，能源与工业现金流继续超预期，同时 10 年期跌向 4.9，则权益市场会从\"杀久期\"切换到\"买现金流\"，指数级修复由价值股带动。",
+    "bullInvalidation": "若 WTI 跌破 92 且裂解价差同步收窄，能源板块的盈利上修结束，价值股接力失败，多头逻辑作废。",
+    "bearCase": "若油价维持 100 以上而需求端开始走弱（住房订单已 -6%、铁路运量靠附加费撑营收），滞胀会从成本端转向毛利端，届时利率下行不再利好股票，而是衰退定价的开始。",
+    "bearInvalidation": "若 10 年期跌破 4.8 且 VIX 回落至 16 以下、同时住房订单环比转正，则\"滞胀转衰退\"的路径被推迟，空头逻辑需要下修。"
+   },
+   "plainLanguage": {
+    "verdict": "今天不是一个方向的下跌，而是同一条成本链在不同资产上算出相反符号：上游与炼厂赚，下游与长久期资产亏。",
+    "bottomLine": "利率在降、汇率没跑、股票在跌，说明市场卖的是\"看得清的未来\"，不是\"便宜的贴现率\"。",
+    "whyNow": "本轮最重要的三条证据都来自今天盘前的原文：瓦莱罗炼油经营利润 88 亿美元（去年 16 亿）、联合太平洋燃油拖累营运比率 140bp、普尔泰格订单 -6% 且直指房贷利率；加上 EIA 三季度炼厂开工 95%、馏分油库存低于五年均值 13%。",
+    "horizon": "短期（1—3 个交易日）看美股开盘后的风格；中期（数周）看裂解价差与 10-29 的 GDP/PCE。",
+    "confidence": "medium",
+    "invalidation": "若 WTI 跌破 92 美元且裂解价差同步收窄，或 10 年期跌破 4.8 而住房订单转正，本轮\"成本端主导\"的判断需要整体下调。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "偏利空（结构分化）",
+      "reason": "创业板 -4.3720% 显著弱于沪深300 -1.8394%，央行 7 天期逆回购归零、改用 1730 亿元隔夜，负债久期被压缩，高估值成长股首当其冲。",
+      "takeaway": "（推断）先看久期，再看业绩：同样的三季报，现金流稳、有回购注销的公司抗跌，纯估值驱动的先跌。",
+      "horizon": "1—2 个交易日",
+      "counterRisk": "若央行恢复 7 天期净投放，成长股可能快速反弹，跌幅收敛即证伪。",
+      "invalidation": "创业板相对沪深300 的跌幅收敛到 1 个百分点以内。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:CN:CHINEXT",
+       "INDEX:CN:CSI300",
+       "PROP:PBOC:2026-10-22-OMO",
+       "FLOW:CN:CATL-BUYBACK-2026-10-22"
+      ],
+      "sourceUrls": [
+       "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102208470683333/index.html",
+       "https://www.nbd.com.cn/articles/2026-10-22/4613419.html"
+      ]
+     },
+     {
+      "asset": "港股",
+      "effect": "偏利空",
+      "reason": "恒生科技 -5.0276% 跌幅是恒指 -3.9091% 的 1.29 倍，而美元指数 -0.0098% 与美元兑离岸人民币 +0.0045% 几乎不动。",
+      "takeaway": "（推断）不是资金外逃，是外资在亚洲内部砍高 beta，港股的波动率会持续大于 A 股。",
+      "horizon": "1—3 个交易日",
+      "counterRisk": "若离岸人民币明显走弱，性质会从风险预算变成汇率驱动，跌幅会更大。",
+      "invalidation": "美元兑离岸人民币升破 6.70 且恒生科技继续跑输恒指。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH",
+       "FX:DXY",
+       "FX:USDCNH"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "美股",
+      "effect": "分化",
+      "reason": "10-21 收盘普涨（纳指 +1.0522%），但今天盘前披露的炼油、铁路、住房、传媒四组财报给出的是\"成本上升、需求分化\"。",
+      "takeaway": "（推断）开盘后风格比方向更重要：能源与工业强于科技，才是这轮定价逻辑被确认。",
+      "horizon": "当日开盘至 1 周",
+      "counterRisk": "若纳指显著跑赢道指且 VIX 回落，成本冲击叙事要降权。",
+      "invalidation": "VIX 回落至 16 以下且纳指跑赢道指。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:US:NASDAQ",
+       "INDEX:US:DOW",
+       "VOL:VIX",
+       "MACRO:US:VLO-Q3-2026",
+       "MACRO:US:UNP-Q3-2026",
+       "MACRO:US:PHM-Q3-2026"
+      ],
+      "sourceUrls": [
+       "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm",
+       "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm",
+       "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm"
+      ]
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性（证据不足）",
+      "reason": "BTC 81620.57 美元只有快照无涨跌幅，VIX 17.99 属温和避险，名义利率下行与美元横盘正负抵消。",
+      "takeaway": "（推断）没有现金流锚的资产在这轮\"重定价可预测现金流\"的环境里没有独立行情，只能跟随流动性。",
+      "horizon": "24—72 小时",
+      "counterRisk": "若权益继续下跌，BTC 的回撤弹性会大于黄金。",
+      "invalidation": "美元不走弱而 BTC 单日跌破 78000。",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "VOL:VIX"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "黄金",
+      "effect": "中性偏多（慢变量）",
+      "reason": "金价 4083.60、银 55.894，金银比约 73.1；EIA 确认油价上行来自供给中断而非需求扩张，属滞胀型冲击。",
+      "takeaway": "（推断）黄金现在买的是\"货币贬值\"，不是\"通胀\"，所以油价涨它不跟，真正跟的是实际利率与美元。",
+      "horizon": "数周",
+      "counterRisk": "若白银持续弱于黄金，贵金属内部去杠杆会把黄金也拖下来。",
+      "invalidation": "美元不走弱而金价站上 4150、金银比跌破 70。",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "METAL:XAUUSD",
+       "METAL:XAGUSD",
+       "FX:DXY",
+       "MACRO:ENERGY:REFINERY-MARGIN-3Q26"
+      ],
+      "sourceUrls": [
+       "https://www.eia.gov/todayinenergy/detail.php?id=68245"
+      ]
+     },
+     {
+      "asset": "原油",
+      "effect": "偏多（供给端）",
+      "reason": "WTI +2.3984% 报 99.48 美元（2026 年 12 月合约），EIA 列出霍尔木兹、伊朗出口封锁、沙特管道与红海油轮、新罗西斯克码头四类中断。",
+      "takeaway": "（推断）这是供给溢价不是需求繁荣，价格越高、需求破坏的临界点越近，追高的风险收益在恶化。",
+      "horizon": "1—2 周",
+      "counterRisk": "高价摧毁需求会让裂解价差先于油价崩。",
+      "invalidation": "WTI 回落至 92 美元下方且裂解价差收窄。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "MACRO:ENERGY:REFINERY-MARGIN-3Q26"
+      ],
+      "sourceUrls": [
+       "https://www.eia.gov/todayinenergy/detail.php?id=68245"
+      ]
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "covered",
+     "asOf": "2026-10-22T07:00:24.000Z",
+     "note": "六大指数收盘齐全；成交额、涨跌家数、南向资金未采集。"
+    },
+    {
+     "market": "港股",
+     "status": "covered",
+     "asOf": "2026-10-22T08:08:58.000Z",
+     "note": "恒指、恒生科技、国企指数收盘齐全；卖空比例与南向明细未采集。"
+    },
+    {
+     "market": "美股",
+     "status": "partial",
+     "asOf": "2026-10-21T20:31:21.000Z",
+     "note": "指数为 10-21 收盘，当日 13:30Z 才开盘；盘前只有 5 份原文财报，无盘前指数。"
+    },
+    {
+     "market": "BTC",
+     "status": "partial",
+     "asOf": "2026-10-22T13:01:24.913Z",
+     "note": "仅快照价格，无 24 小时涨跌幅与成交量；ETH、SOL、HYPE 同。"
+    },
+    {
+     "market": "黄金",
+     "status": "partial",
+     "asOf": "2026-10-22T13:01:10.000Z",
+     "note": "现货金与现货银仅快照价格，无当日涨跌幅；实际利率需自行推算。"
+    },
+    {
+     "market": "原油",
+     "status": "partial",
+     "asOf": "2026-10-22T12:51:23.000Z",
+     "note": "WTI 2026 年 12 月合约为 delayed 口径；布伦特 ENERGY:BRENT 返回 HTTP 404，缺口未补。"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "status": "previous",
+     "asOf": "2026-10-22T07:00:24.000Z",
+     "price": 3658.026,
+     "change": "-2.0706%",
+     "view": "久期分层下跌，创业板最弱",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "PROP:PBOC:2026-10-22-OMO"
+     ]
+    },
+    {
+     "asset": "港股",
+     "status": "previous",
+     "asOf": "2026-10-22T08:08:58.000Z",
+     "price": 22934.68,
+     "change": "-3.9091%",
+     "view": "离岸高 beta 放大跌幅",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "asset": "美股",
+     "status": "previous",
+     "asOf": "2026-10-21T20:31:21.000Z",
+     "price": 7757.17,
+     "change": "+0.5783%",
+     "view": "10-21 收盘普涨，当日盘前只有财报",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "status": "snapshot",
+     "asOf": "2026-10-22T13:01:24.913Z",
+     "price": 81620.57,
+     "change": null,
+     "view": "无涨跌幅，水平值 81620.57 美元",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "status": "snapshot",
+     "asOf": "2026-10-22T13:01:10.000Z",
+     "price": 4083.600098,
+     "change": null,
+     "view": "横盘，金银比约 73.1",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    },
+    {
+     "asset": "原油",
+     "status": "delayed",
+     "asOf": "2026-10-22T12:51:23.000Z",
+     "price": 99.48,
+     "change": "+2.3984%",
+     "view": "WTI 12 月合约在 100 美元下方反复",
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "id": "FW-DCF-RATE",
+     "framework": "现金流折现与利率传导",
+     "concept": "资产价格等于未来现金流按利率折现，久期越长对利率越敏感。",
+     "applicability": "适用于把 A 股创业板、恒生科技与 10 年期美债放在一起看的场景。",
+     "observed": "10 年期美债 5.036（-2.1376%，较前值回落），但创业板 -4.3720%、恒生科技 -5.0276% 跌幅最大。",
+     "mechanism": "分母松动本应抬升估值，但今天的分子端同时被成本抬高（油价、运费、燃油附加费滞后），两者方向相反，市场选择先卖久期。",
+     "conclusion": "（推断）单日利率回落不足以驱动久期资产修复，因为这一天的分子恶化速度超过了分母改善速度。",
+     "assumptions": "假设贴现率与现金流可分离、且市场对两者的反应速度不同。",
+     "counterEvidence": "若后续 10 年期持续下行且企业毛利率不再恶化，则分子改善会追上分母。",
+     "horizon": "1—3 个交易日",
+     "invalidation": "创业板相对沪深300 的跌幅收敛至 1 个百分点以内。",
+     "confidence": "medium",
+     "missingData": "A 股成交额与涨跌家数缺失，无法验证是否为缩量下跌。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "INDEX:CN:CHINEXT",
+      "INDEX:HK:HSTECH",
+      "INDEX:CN:CSI300"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "id": "FW-COST-PASSTHROUGH",
+     "framework": "成本传导与毛利分配",
+     "concept": "上游涨价在产业链内部重新分配毛利，能转嫁的赚、不能转嫁的亏。",
+     "applicability": "适用于油价 100 美元附近、同时看到炼厂、铁路、航空与住房财报的时点。",
+     "observed": "瓦莱罗炼油经营利润 88 亿美元（去年同期 16 亿）；联合太平洋燃油拖累营运比率 140bp；诺福克南方燃油附加费贡献 14 个百分点收入增长中的 8 个；EIA 称馏分油库存低于五年均值 13%（MACRO:ENERGY:REFINERY-MARGIN-3Q26）。",
+     "mechanism": "裂解价差是炼厂的加价权，燃油附加费是运输业的部分转嫁工具，住房与消费则没有对应的转嫁条款，只能压缩毛利率（PHM 毛利率从 26.2% 降到 24.8%）。",
+     "conclusion": "（推断）本轮油价冲击的赢家是拥有定价环节的资产（炼厂），输家是转嫁滞后或无法转嫁的资产（航空、住房、消费）。",
+     "assumptions": "假设裂解价差与原油价格同向且不同步。",
+     "counterEvidence": "若裂解价差在四季度收窄而油价维持，炼厂会从赢家变成最先受伤的一方。",
+     "horizon": "数周",
+     "invalidation": "WTI 跌破 92 且裂解价差同步收窄。",
+     "confidence": "high",
+     "missingData": "布伦特缺失，跨区价差与欧洲炼厂毛利无法核验。",
+     "evidenceFactIds": [
+      "MACRO:ENERGY:REFINERY-MARGIN-3Q26",
+      "MACRO:US:VLO-Q3-2026",
+      "MACRO:US:UNP-Q3-2026",
+      "MACRO:US:NSC-Q3-2026",
+      "MACRO:US:PHM-Q3-2026",
+      "ENERGY:WTI"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/todayinenergy/detail.php?id=68245",
+      "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm",
+      "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm",
+      "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm",
+      "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm"
+     ]
+    },
+    {
+     "id": "FW-LIQUIDITY",
+     "framework": "市场微观结构与融资流动性",
+     "concept": "负债久期决定持有风险资产的能力，短钱撑不起长久期头寸。",
+     "applicability": "适用于央行公开市场操作结构变化的日子。",
+     "observed": "央行 10-22 的 7 天期逆回购投标量与中标量均为 0，同时开展 1730 亿元隔夜逆回购（PROP:PBOC:2026-10-22-OMO）；同日创业板跌 4.37%。",
+     "mechanism": "隔夜投放能平抑短期头寸，但机构无法用一天的资金去持有波动大的成长股，于是减仓发生在久期最长的一端。",
+     "conclusion": "（推断）\"量足、久期短\"是缓冲而非催化：它阻止流动性事故，但不提供加杠杆的理由。",
+     "assumptions": "假设银行间负债久期与权益仓位久期正相关。",
+     "counterEvidence": "若后续恢复 7 天期净投放且成长股反弹，说明隔夜替代只是单日技术安排。",
+     "horizon": "1—2 个交易日",
+     "invalidation": "央行恢复 7 天期净投放。",
+     "confidence": "medium",
+     "missingData": "DR007、银行间质押式回购成交量未采集。",
+     "evidenceFactIds": [
+      "PROP:PBOC:2026-10-22-OMO",
+      "INDEX:CN:CHINEXT"
+     ],
+     "sourceUrls": [
+      "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102208470683333/index.html"
+     ]
+    },
+    {
+     "id": "FW-CAPITAL-RETURN",
+     "framework": "股东回报与每股口径",
+     "concept": "当增长不可定价时，股本减少本身会成为每股收益的来源。",
+     "applicability": "适用于同日出现多家公司回购、注销的时点。",
+     "observed": "康卡斯特营收 -6.1% 但 EPS +7.2%；宁德时代两日回购近 13 亿元拟全部注销（FLOW:CN:CATL-BUYBACK-2026-10-22）；普尔泰格三季度回购 3.5 亿美元。",
+     "mechanism": "回购注销减少分母，在净利润下降时仍能维持或抬升每股收益，为估值提供下限。",
+     "conclusion": "（推断）\"减法增长\"会在高利率环境里扩散：它不创造现金流，但能在杀估值阶段保住每股口径。",
+     "assumptions": "假设回购资金来自自由现金流而非加杠杆。",
+     "counterEvidence": "若公司靠发债回购，则在 5% 利率下会侵蚀利息覆盖倍数，反而放大风险。",
+     "horizon": "数周",
+     "invalidation": "出现以债务融资为主的大规模回购。",
+     "confidence": "medium",
+     "missingData": "A 股全市场回购总额未采集。",
+     "evidenceFactIds": [
+      "MACRO:US:CMCSA-Q3-2026",
+      "FLOW:CN:CATL-BUYBACK-2026-10-22",
+      "MACRO:US:PHM-Q3-2026"
+     ],
+     "sourceUrls": [
+      "https://www.sec.gov/Archives/edgar/data/1166691/000162828026066783/ex991-9302026.htm",
+      "https://www.nbd.com.cn/articles/2026-10-22/4613419.html",
+      "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm"
+     ]
+    },
+    {
+     "id": "FW-EVENT-STUDY",
+     "framework": "预期差与事件研究",
+     "concept": "价格反应取决于事件相对预期的偏差，而不是事件的绝对好坏。",
+     "applicability": "适用于公司澄清与财报同日出现的场景。",
+     "observed": "天孚通信明确 CPO/NPO 提产节奏未变、进出口政策未约束光器件（RESEARCH:CN:TIANFU-CPO-2026-10-22）；而昨日 A 股光器件板块大幅下跌。",
+     "mechanism": "昨日下跌的隐含假设是\"订单节奏变化 + 政策约束\"，公司记录同时否掉两者，构成负向预期差。",
+     "conclusion": "（推断）昨日\"上游扩产削弱中游稀缺性\"的解释需要降级：定价压力更多来自仓位与估值，而不是订单。",
+     "assumptions": "假设公司披露真实且完整。",
+     "counterEvidence": "若后续龙头三季报出现砍单或交付延期，则该反证失效。",
+     "horizon": "1—3 个交易日",
+     "invalidation": "出现龙头砍单或延期交付的原文证据。",
+     "confidence": "medium",
+     "missingData": "缺少公司订单量化数据，只有定性表述。",
+     "evidenceFactIds": [
+      "RESEARCH:CN:TIANFU-CPO-2026-10-22"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-22/4613376.html"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "五个框架指向同一结论：这是成本与久期的双重挤压，不是流动性危机，也不是汇率危机。",
+    "agreement": "成本传导、流动性结构、股东回报、事件研究四个框架一致支持\"上游受益、下游与长久期受损\"；折现率框架与它们部分对冲，是本轮唯一的多头来源。",
+    "disagreement": "折现率框架认为分母改善应带来修复，成本传导框架认为分子在恶化，两者对同一组价格给出相反解读。分歧点是：10 年期一天的 11bp 回落，是趋势开始还是噪声。",
+    "weighting": "更看重成本传导与事件研究，因为它们的证据是原文财报与公司记录（可核验、有时点），而折现率框架依赖的是单日行情，噪声占比更高；流动性结构只作为约束条件，不作为方向依据。",
+    "invalidation": "若 WTI 跌破 92 且裂解价差收窄、同时 10 年期跌破 4.8、住房订单环比转正，则成本传导框架失效，权重应转移到折现率框架。"
+   },
+   "watch": [
+    {
+     "point": "美股开盘后风格（能源/工业 vs 科技）",
+     "detail": "若能源与工业相对科技走强，确认\"实物资产>长久期\"；若纳指领涨且 VIX 回落至 16 以下，则本轮成本叙事降权。"
+    },
+    {
+     "point": "WTI 是否守住 92 美元",
+     "detail": "跌破意味着供给中断定价结束，炼厂裂解价差会先于油价收窄，能源板块盈利上修终止。"
+    },
+    {
+     "point": "裂解价差与馏分油库存",
+     "detail": "EIA 周度报告 10-28 发布，馏分油库存能否从低于五年均值 13% 的位置回补，决定炼厂利润的持续性。"
+    },
+    {
+     "point": "央行公开市场久期结构",
+     "detail": "7 天期逆回购若继续为零、隔夜继续放量，成长股的边际资金来源会持续收紧。"
+    },
+    {
+     "point": "10-29 BEA 的 GDP 初值与 9 月 PCE",
+     "detail": "这是判断\"滞胀\"是否成立的下一个官方节点，也是 10-28 FOMC 决议后的第一次数据验证。"
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "创业板跌幅扩大到 4.37%，远超沪深300 的 1.84%",
+     "detail": "本轮 packet 中 INDEX:CN:CHINEXT -4.3720% 对 INDEX:CN:CSI300 -1.8394%，久期分层在指数内部就能看到。",
+     "evidenceFactIds": [
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:CSI300"
+     ]
+    },
+    {
+     "title": "10 年期美债回落到 5.036，但没有救起成长股",
+     "detail": "RATE:US10Y 报 5.036（-2.1376%），与财政部 2026-10-21 日度曲线的 5.13 相比明显下行；同期恒生科技跌 5.03%。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "INDEX:HK:HSTECH",
+      "MACRO:US:CURVE-2026-10-21"
+     ]
+    },
+    {
+     "title": "炼厂利润被财报与官方数据双重证实",
+     "detail": "瓦莱罗炼油经营利润 88 亿美元（去年同期 16 亿），EIA 同期确认炼厂开工率 95%、馏分油库存低于五年均值 13%。",
+     "evidenceFactIds": [
+      "MACRO:US:VLO-Q3-2026",
+      "MACRO:ENERGY:REFINERY-MARGIN-3Q26"
+     ]
+    },
+    {
+     "title": "铁路用燃油附加费转嫁，但没转嫁完",
+     "detail": "UNP 燃油拖累营运比率 140bp；NSC 燃油附加费贡献 8 个百分点收入增长，调整后营运比率仍恶化 210bp。",
+     "evidenceFactIds": [
+      "MACRO:US:UNP-Q3-2026",
+      "MACRO:US:NSC-Q3-2026"
+     ]
+    },
+    {
+     "title": "光器件龙头的澄清推翻了昨日的下跌解释",
+     "detail": "天孚通信称 CPO/NPO 提产节奏未变、进出口政策未约束光器件，昨日\"上游扩产压中游\"的判断需要降级。",
+     "evidenceFactIds": [
+      "RESEARCH:CN:TIANFU-CPO-2026-10-22"
+     ]
+    }
+   ],
+   "changes": [
+    {
+     "title": "央行流动性操作结构变化",
+     "detail": "7 天期逆回购归零、隔夜 1730 亿元，投放总量未减但久期压缩到一天。",
+     "evidenceFactIds": [
+      "PROP:PBOC:2026-10-22-OMO"
+     ]
+    },
+    {
+     "title": "美国住房订单与毛利率双降",
+     "detail": "普尔泰格三季度订单 -6%、毛利率 24.8%（去年同期 26.2%），公司直指房贷利率。",
+     "evidenceFactIds": [
+      "MACRO:US:PHM-Q3-2026"
+     ]
+    },
+    {
+     "title": "康卡斯特靠回购维持每股收益",
+     "detail": "营收 -6.1%、调整后 EBITDA -5.8%，但 EPS +7.2%，自由现金流 42 亿美元。",
+     "evidenceFactIds": [
+      "MACRO:US:CMCSA-Q3-2026"
+     ]
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-10-21T20:00:00Z",
+     "title": "美股 10-21 收盘普涨",
+     "detail": "标普 +0.5783%、纳指 +1.0522%，罗素2000 仅 +0.2741%，大盘强于小盘。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:RUSSELL2000"
+     ]
+    },
+    {
+     "at": "2026-10-22T01:20:30Z",
+     "title": "央行公告 7 天期逆回购归零",
+     "detail": "同日开展 1730 亿元隔夜逆回购。",
+     "evidenceFactIds": [
+      "PROP:PBOC:2026-10-22-OMO"
+     ]
+    },
+    {
+     "at": "2026-10-22T06:45:03Z",
+     "title": "日经收跌 2.65%",
+     "detail": "INDEX:JP:NIKKEI225 报 62907.84，亚洲早盘已定调风险偏好收缩。",
+     "evidenceFactIds": [
+      "INDEX:JP:NIKKEI225"
+     ]
+    },
+    {
+     "at": "2026-10-22T07:00:24Z",
+     "title": "A 股收盘，创业板重挫",
+     "detail": "上证 -2.0706%、创业板 -4.3720%。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT"
+     ]
+    },
+    {
+     "at": "2026-10-22T08:08:58Z",
+     "title": "港股收盘，恒生科技跌 5.03%",
+     "detail": "恒指 -3.9091%、恒生科技 -5.0276%。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "at": "2026-10-22T11:06:00Z",
+     "title": "康卡斯特盘前披露三季度",
+     "detail": "营收 -6.1%、EPS +7.2%。",
+     "evidenceFactIds": [
+      "MACRO:US:CMCSA-Q3-2026"
+     ]
+    },
+    {
+     "at": "2026-10-22T11:46:00Z",
+     "title": "联合太平洋盘前披露，燃油拖累 140bp",
+     "detail": "营运比率 59.1%，营收 +15%。",
+     "evidenceFactIds": [
+      "MACRO:US:UNP-Q3-2026"
+     ]
+    },
+    {
+     "at": "2026-10-22T12:20:00Z",
+     "title": "瓦莱罗与诺福克南方盘前披露",
+     "detail": "VLO 炼油经营利润 88 亿美元；NSC 调整后营运比率恶化 210bp。",
+     "evidenceFactIds": [
+      "MACRO:US:VLO-Q3-2026",
+      "MACRO:US:NSC-Q3-2026"
+     ]
+    },
+    {
+     "at": "2026-10-22T12:46:13Z",
+     "title": "美债 10 年期回落至 5.036",
+     "detail": "RATE:US10Y -2.1376%，VIX 17.99（+7.8537%）。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "VOL:VIX"
+     ]
+    },
+    {
+     "at": "2026-10-22T13:01:24Z",
+     "title": "加密与贵金属快照",
+     "detail": "BTC 81620.57 美元、金 4083.600098 美元、银 55.894001 美元，均无涨跌幅。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "裂解价差（crack spread）",
+     "definition": "成品油价格减去原油价格的差额，衡量炼厂把一桶原油加工成汽油、柴油、航煤后的毛利。EIA 本轮用纽约港现货价减 Dated Brent 计算。"
+    },
+    {
+     "term": "营运比率（operating ratio）",
+     "definition": "铁路运营支出占营收的比例，越低越好。燃油价格上涨会直接抬高这个比率，燃油附加费则抬高营收、部分抵消。"
+    },
+    {
+     "term": "隔夜逆回购",
+     "definition": "期限为一天的逆回购操作，向市场投放一天期资金。它平抑短期头寸，但不构成跨期负债，机构无法用它支撑长久期资产。"
+    },
+    {
+     "term": "金银比",
+     "definition": "金价除以银价。本轮约 73.1（4083.60 / 55.894），比值上升通常意味着避险需求强于工业需求。"
+    },
+    {
+     "term": "status=previous / delayed / snapshot",
+     "definition": "packet 内的行情状态标记：previous 为上一交易日收盘，delayed 为延迟报价，snapshot 为单点快照（无涨跌幅）。"
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "美股开盘后能源与工业是否跑赢科技",
+     "effect": "确认则\"实物资产>长久期\"成立；否则本轮成本叙事需要降权，改由利率叙事主导。"
+    },
+    {
+     "title": "WTI 是否跌破 92 美元",
+     "effect": "跌破则供给中断定价结束，炼厂利润先于油价见顶。"
+    },
+    {
+     "title": "10-28 EIA 周度库存与 10-29 GDP/PCE",
+     "effect": "决定滞胀是否从成本端进入需求端。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "title": "油价冲击是分配问题而非总量问题",
+     "detail": "（推断）同一桶油在炼厂是毛利、在航空是成本、在住房是购买力，指数层面的统一下跌掩盖了这种反向符号。",
+     "confidence": "high",
+     "evidenceFactIds": [
+      "MACRO:ENERGY:REFINERY-MARGIN-3Q26",
+      "MACRO:US:VLO-Q3-2026",
+      "MACRO:US:UNP-Q3-2026",
+      "MACRO:US:PHM-Q3-2026"
+     ]
+    },
+    {
+     "title": "利率下行对久期资产暂时失效",
+     "detail": "（推断）10 年期回落 11bp 未能阻止创业板跌 4.37%，说明市场在给\"现金流可预测性\"定价，而非贴现率。",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "INDEX:CN:CHINEXT"
+     ]
+    },
+    {
+     "title": "股东回报成为估值下限",
+     "detail": "（推断）宁德时代注销式回购、康卡斯特与普尔泰格的持续回购，是在增长不可定价时唯一可用的锚。",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "FLOW:CN:CATL-BUYBACK-2026-10-22",
+      "MACRO:US:CMCSA-Q3-2026",
+      "MACRO:US:PHM-Q3-2026"
+     ]
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "title": "下调\"上游扩产削弱中游稀缺性\"的权重",
+     "detail": "天孚通信明确 CPO/NPO 提产节奏未变、进出口政策未约束光器件，昨日把光器件下跌归因于上游扩产的判断缺少订单侧证据，改为\"估值与仓位调整为主\"。",
+     "evidenceFactIds": [
+      "RESEARCH:CN:TIANFU-CPO-2026-10-22"
+     ]
+    },
+    {
+     "title": "上调\"成本端主导\"的权重",
+     "detail": "瓦莱罗、联合太平洋、诺福克南方、普尔泰格四份原文财报同日指向成本与转嫁，比单日行情更有解释力。",
+     "evidenceFactIds": [
+      "MACRO:US:VLO-Q3-2026",
+      "MACRO:US:UNP-Q3-2026",
+      "MACRO:US:NSC-Q3-2026",
+      "MACRO:US:PHM-Q3-2026"
+     ]
+    }
+   ],
+   "metrics": [
+    {
+     "name": "标普500",
+     "value": 7757.17,
+     "unit": "点",
+     "asOf": "2026-10-21T20:31:21.000Z"
+    },
+    {
+     "name": "恒生科技",
+     "value": 3793.93,
+     "unit": "点",
+     "asOf": "2026-10-22T08:08:58.000Z"
+    },
+    {
+     "name": "创业板指",
+     "value": 2576.901,
+     "unit": "点",
+     "asOf": "2026-10-22T08:29:16.000Z"
+    },
+    {
+     "name": "WTI（2026-12）",
+     "value": 99.48,
+     "unit": "美元/桶",
+     "asOf": "2026-10-22T12:51:23.000Z"
+    },
+    {
+     "name": "美债10年",
+     "value": 5.036,
+     "unit": "%",
+     "asOf": "2026-10-22T12:46:13.000Z"
+    },
+    {
+     "name": "金银比",
+     "value": 73.06,
+     "unit": "倍",
+     "asOf": "2026-10-22T13:01:10.000Z"
+    }
+   ],
+   "worldEvents": [],
+   "sectionGaps": {
+    "events": {
+     "reason": "本轮实际抓取并解析了 BEA 发布日程、FOMC 2026 年会议日历与 EIA 周度石油库存日程：未来 24 小时内 BEA 的 10-22 14:00Z 实验性研发统计属统计口径更新、不构成市场事件；10-23 无官方一级数据发布。故 events 为空，不编造时点。"
+    },
+    "research": {
+     "reason": "本轮完成 5 家公司原文研究（VLO、UNP、NSC、CMCSA、PHM），均为当日盘前 8-K 附件原文；无新增 pending 标的。"
+    },
+    "brent": {
+     "reason": "ENERGY:BRENT 代码源返回 HTTP 404，布伦特只有缺口，未用期货替代现货、未补 0。"
+    },
+    "southbound": {
+     "reason": "港股通南向资金本轮未采集，正文未给具体数值。"
+    }
+   }
+  },
+  "newsItems": [
+   {
+    "eventId": "CN-PBOC-OMO-2026-10-22",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "央行 7 天期逆回购归零，改用 1730 亿元隔夜投放",
+    "publishedAt": "2026-10-22T09:20:30+08:00",
+    "eventAt": "2026-10-22T09:20:30+08:00",
+    "summary": "央行公开市场业务公告[2026]第204号称，当日 7 天期逆回购投标量与中标量均为 0 亿元，同时开展 1730 亿元隔夜逆回购操作。",
+    "plainImpact": "投放总量还在，但资金被压缩到一天期限。对银行间市场是\"量足、久期短\"：短端不缺钱，但机构不敢把负债久期拉长去配长债和成长股。",
+    "assessment": "（推断）这是本轮 A 股跌 2.07%、创业板跌 4.37% 时唯一还在净投放的政策变量，但它只能缓冲、不能扭转。7 天期归零意味着央行不愿用跨周资金为风险资产加杠杆背书，货币端的态度是\"稳定\"而不是\"宽松\"。",
+    "sourceUrls": [
+     "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102208470683333/index.html"
+    ]
+   },
+   {
+    "eventId": "CN-TIANFU-CPO-2026-10-22",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "天孚通信回应：CPO/NPO 提产节奏未变，进出口政策未约束光器件",
+    "publishedAt": "2026-10-22T20:45:18+08:00",
+    "eventAt": "2026-10-22T20:45:18+08:00",
+    "summary": "天孚通信在投资者关系活动记录表中表示，CPO 配套 FAU、ELS 等产品已具备较好基础并按客户需求持续提产，NPO 处于样品阶段，CPO/NPO 提产节奏近期未出现明显变化；有源光器件关键瓶颈物料供给较上半年改善，积极影响将在三、四季度逐步释放；并明确目前发布的进出口政策未对光器件产品形成约束。",
+    "plainImpact": "昨天光模块产业链集体杀跌，市场默认的逻辑是\"上游扩产+出口管制压中游\"。公司这条记录同时否掉了两个前提：订单节奏没变、政策没管到它。",
+    "assessment": "（推断）这是对昨日\"上游扩产削弱中游稀缺性\"判断的直接反证。它不能证明股价该涨，但能证明这两天硬件股的下跌主因不是订单或政策，而是估值与仓位。改判条件：如果后续龙头三季报出现砍单或交付延期，这条反证失效。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-22/4613376.html"
+    ]
+   },
+   {
+    "eventId": "CN-CATL-BUYBACK-2026-10-22",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "宁德时代连续两日回购 A 股，累计近 13 亿元拟全部注销",
+    "publishedAt": "2026-10-22T20:57:00+08:00",
+    "eventAt": "2026-10-22T20:57:00+08:00",
+    "summary": "宁德时代 10 月 22 日再次回购 A 股，两个交易日累计耗资近 13 亿元，回购股份拟全部注销。",
+    "plainImpact": "注销式回购直接减少总股本、抬高每股收益，是现金流充裕的公司在大跌里最直接的\"自我定价\"。",
+    "assessment": "（推断）在创业板单日跌 4.37%、成长股集体杀估值的一天，龙头用真金白银回购注销，说明产业资本对自身现金流的判断与二级市场定价出现分歧。这类行为对指数的托底作用有限，但对个股估值下限有意义。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-22/4613419.html"
+    ]
+   },
+   {
+    "eventId": "US-VLO-Q3-2026-10-22",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "瓦莱罗三季度净利 68 亿美元，炼油经营利润从 16 亿跳到 88 亿美元",
+    "publishedAt": "2026-10-22T08:20:00-04:00",
+    "eventAt": "2026-10-22T08:20:00-04:00",
+    "summary": "瓦莱罗能源三季度归母净利 68 亿美元（每股 23.89 美元），去年同期 11 亿美元（3.53 美元）；炼油板块经营利润 88 亿美元，去年同期 16 亿美元；炼厂加工量 3.0 百万桶/日，经营现金流 69 亿美元。",
+    "plainImpact": "WTI 破 100 美元，最先兑现利润的不是挖油的而是炼油的。原油成本上涨被成品油裂解价差放大后转嫁给下游，炼厂是这条链上唯一的\"加价环节\"。",
+    "assessment": "（推断）这份财报把\"油价上涨=通胀\"这个笼统说法拆开了：对炼厂是毛利扩张，对航空与铁路是成本上升。同一桶油在不同资产负债表上的符号相反，这是本轮跨资产分化的根。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm",
+     "https://www.eia.gov/todayinenergy/detail.php?id=68245"
+    ]
+   },
+   {
+    "eventId": "US-RAIL-Q3-2026-10-22",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "美国两大铁路同日均报纪录营收，燃油同时拖累营运比率",
+    "publishedAt": "2026-10-22T08:20:00-04:00",
+    "eventAt": "2026-10-22T08:20:00-04:00",
+    "summary": "联合太平洋三季度营收 72 亿美元 +15%、EPS 3.49 美元 +16%，营运比率 59.1%，公司披露燃油价格上涨对营运比率造成 140bp 不利影响；诺福克南方营收 35 亿美元创纪录 +14%，其中燃油附加费贡献 8 个百分点，调整后营运比率 65.4% 同比恶化 210bp。两家公司均在推进合并审查。",
+    "plainImpact": "铁路是最典型的\"成本可转嫁但不完全\"的行业：燃油附加费能把大部分油价上涨传给货主，但有时滞、有折扣，剩下的一截自己吃。",
+    "assessment": "（推断）UNP 剔除燃油附加费的货运收入 +6%、运量 +6%，说明实体货运量还在，问题不在需求端；NSC 调整后营运比率恶化 210bp 说明成本端还没转嫁完。这组数据支持\"通胀在成本端二次抬头\"，不支持\"需求衰退\"。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm",
+     "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm"
+    ]
+   },
+   {
+    "eventId": "US-HOUSING-PHM-2026-10-22",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "普尔泰格三季度订单与毛利率双降，公司直指房贷利率",
+    "publishedAt": "2026-10-22T07:28:00-04:00",
+    "eventAt": "2026-10-22T07:28:00-04:00",
+    "summary": "普尔泰格三季度 EPS 2.53 美元（去年同期 2.96），交付 6876 套 -9%、营收 39 亿美元 -9%，毛利率 24.8%（去年同期 26.2%），净新订单 6208 套 -6%；公司称房贷利率快速上升进一步压缩可负担性，把更多消费者推到观望席。",
+    "plainImpact": "10 年期美债 5% 以上，直接卡住的是房贷。住房是最利率敏感的实体部门，它的订单比股市更早反映\"高利率还要维持多久\"。",
+    "assessment": "（推断）这条与\"利率下行利好风险资产\"的直觉冲突：10 年期今天回落约 11bp，但按揭利率的下行远慢于国债，住房需求没有因为一天的收益率回落而修复。久期资产的重定价看的是利率的水平和持续性，不是单日方向。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm"
+    ]
+   },
+   {
+    "eventId": "US-CMCSA-Q3-2026-10-22",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "康卡斯特营收降 6.1%，靠回购把每股收益做高 7.2%",
+    "publishedAt": "2026-10-22T07:06:00-04:00",
+    "eventAt": "2026-10-22T07:06:00-04:00",
+    "summary": "康卡斯特三季度营收 292.98 亿美元同比 -6.1%（备考 +0.5%），调整后 EBITDA 91.06 亿美元 -5.8%，EPS 0.97 美元 +7.2%，自由现金流 42 亿美元；Peacock 连续第二个季度盈利，主题公园受周期性逆风，NBCUniversal 与 Sky 分拆按计划推进。",
+    "plainImpact": "收入在缩、每股收益在涨，差额来自股本减少。这种\"减法增长\"在利率高位时会越来越多。",
+    "assessment": "（推断）当分子（增长）不可定价时，分母（股本）就成了定价锚。康卡斯特、普尔泰格、宁德时代今天在做同一件事：用回购或注销把每股口径撑住。这是\"股东回报替代增长\"的直接证据。",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1166691/000162828026066783/ex991-9302026.htm"
+    ]
+   },
+   {
+    "eventId": "WORLD-REFINERY-MARGIN-3Q26",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "market",
+    "title": "EIA：三季度原油与炼油毛利同步上行，供给中断集中在霍尔木兹与俄罗斯出口设施",
+    "publishedAt": "2026-10-21",
+    "eventAt": null,
+    "eventAtNote": "EIA Today in Energy 只标注 10 月 21 日，未给出具体发布时间，故 eventAt 留空。",
+    "summary": "EIA 季报回顾显示，2026 年三季度布伦特首月期货 7 月 1 日报 72 美元/桶，7 月 23 日突破 100 美元，9 月 9 日再度破百；中断来源包括霍尔木兹海峡流量、美国对伊朗原油出口的封锁、沙特东西管道泵站与红海油轮遇袭、乌克兰无人机袭击新罗西斯克油码头。美国炼厂三季度开工率 95%，汽油裂解价差同比翻倍以上，馏分油和航煤裂解价差接近三倍，馏分油库存低于五年均值 13%。",
+    "plainImpact": "这不是需求驱动的涨价，是供给端被打断后的重新定价。全球炼能因为俄罗斯、中国、中东的装置受扰而更紧，美国炼厂成了唯一的边际供给方。",
+    "assessment": "（推断）供给冲击 + 炼能受限 = 裂解价差扩张，这解释了为什么 WTI 从 72 涨到 100 的过程中，炼厂利润涨幅远大于油价涨幅。风险在于：一旦霍尔木兹流量恢复或需求端被高价摧毁，裂解价差会比油价跌得更快。",
+    "sourceUrls": [
+     "https://www.eia.gov/todayinenergy/detail.php?id=68245"
+    ]
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮 15 份文档全部 contentRetrieved=true、blockedDocuments=0：中文财经媒体 2 份（每经，按同域默认上限）、央行公告 1 份、中国政府网 1 份、SEC 8-K 清单 1 份、SEC 原文财报 5 份、EIA 研究 1 份、财政部收益率曲线 1 份、官方日历 3 份（BEA、FOMC、EIA）。美股尚未开盘（13:30Z），当日只有盘前披露与 10-21 收盘；A 股、港股为收盘口径。世界其他地区缺少可抓取的一手媒体（路透抓取失败、AP 被拦截），仅有 EIA 官方季报一条，因此不声明 complete。",
+   "regions": [
+    {
+     "region": "CN",
+     "status": "partial",
+     "note": "覆盖货币政策操作、A 股龙头回购、光器件产业链澄清；成交额、涨跌家数与南向资金本轮未采集。"
+    },
+    {
+     "region": "US",
+     "status": "partial",
+     "note": "覆盖盘前 5 份原文财报（炼油、铁路、住房、传媒），8-K 密度已核对；当日盘中行情未开始。"
+    },
+    {
+     "region": "WORLD",
+     "status": "partial",
+     "note": "仅有 EIA 官方季报一条能源供给证据；欧洲、中东、新兴市场缺可抓取一手来源。"
+    }
+   ],
+   "gaps": [
+    "布伦特原油代码源 ENERGY:BRENT 连续多轮 HTTP 404，只有 WTI 可用，跨区价差无法核验。",
+    "RATE:US2Y 为空（status=partial），2 年期改用财政部日度曲线 4.81%，与 packet 的 RATE:US10Y 5.036 分属不同时点。",
+    "BTC、ETH、SOL、XAU、XAG 只有快照无涨跌幅，只给水平值不计算当日变动。",
+    "A 股成交额、涨跌家数、南向资金本轮未采集；港股通数据缺口如实标注。",
+    "中东地缘事件缺一手来源，只引用 EIA 对供给中断的官方描述，不对袭击计划本身作事实陈述。"
+   ]
+  },
+  "macroFacts": [
+   {
+    "id": "MACRO:US:CURVE-2026-10-21",
+    "label": "美国财政部日度国债收益率曲线（2026-10-21）",
+    "value": 5.13,
+    "unit": "%",
+    "asOf": "2026-10-21T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "detail": "10 年期 5.13%、2 年期 4.81%、20 年期 5.47%、30 年期 5.42%；20 年期高于 30 年期，曲线长端仍倒挂。"
+   },
+   {
+    "id": "MACRO:ENERGY:REFINERY-MARGIN-3Q26",
+    "label": "EIA：2026 年三季度美国炼厂开工率与裂解价差",
+    "value": 95,
+    "unit": "%",
+    "asOf": "2026-10-21T20:00:00Z",
+    "sourceUrls": [
+     "https://www.eia.gov/todayinenergy/detail.php?id=68245"
+    ],
+    "detail": "三季度美国炼厂开工率均值 95%，为 2019 年以来同期最高原油加工量；汽油裂解价差同比翻倍以上，馏分油与航煤裂解价差接近去年三倍；截至 9 月 25 日当周馏分油库存低于五年均值 13%。"
+   },
+   {
+    "id": "MACRO:US:VLO-Q3-2026",
+    "label": "瓦莱罗能源 2026Q3 归母净利",
+    "value": 68,
+    "unit": "亿美元",
+    "asOf": "2026-10-22T12:20:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm"
+    ],
+    "detail": "归母净利 68 亿美元（每股 23.89 美元），去年同期 11 亿美元（3.53 美元）；炼油板块经营利润 88 亿美元，去年同期 16 亿美元；炼厂加工量 3.0 百万桶/日；经营现金流 69 亿美元。"
+   },
+   {
+    "id": "MACRO:US:UNP-Q3-2026",
+    "label": "联合太平洋 2026Q3 摊薄 EPS 与营运比率",
+    "value": 3.49,
+    "unit": "美元/股",
+    "asOf": "2026-10-22T11:46:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm"
+    ],
+    "detail": "摊薄 EPS 3.49 美元同比 +16%，调整后 3.53 美元 +15%；营运比率 59.1%、调整后 58.8%（同比升 30bp）；营收 72 亿美元 +15%，车厢量 +6%，剔除燃油附加费的货运收入 +6%；公司明确\"燃油价格上涨对营运比率造成 140bp 不利影响\"。"
+   },
+   {
+    "id": "MACRO:US:NSC-Q3-2026",
+    "label": "诺福克南方 2026Q3 营收与调整后营运比率",
+    "value": 35,
+    "unit": "亿美元",
+    "asOf": "2026-10-22T12:20:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm"
+    ],
+    "detail": "营收 35 亿美元创季度纪录、同比 +14%，其中燃油附加费贡献 14 个百分点中的 8 个点；运量 +3%；调整后营运比率 65.4%，同比恶化 210bp；调整后摊薄 EPS 3.62 美元 +10%。"
+   },
+   {
+    "id": "MACRO:US:CMCSA-Q3-2026",
+    "label": "康卡斯特 2026Q3 营收与调整后 EBITDA",
+    "value": 292.98,
+    "unit": "亿美元",
+    "asOf": "2026-10-22T11:06:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1166691/000162828026066783/ex991-9302026.htm"
+    ],
+    "detail": "营收 292.98 亿美元同比 -6.1%（备考口径 +0.5%），调整后 EBITDA 91.06 亿美元 -5.8%（备考 +0.8%），EPS 0.97 美元 +7.2%，自由现金流 42 亿美元；Peacock 连续第二个季度盈利，调整后 EBITDA 2.61 亿美元。"
+   },
+   {
+    "id": "MACRO:US:PHM-Q3-2026",
+    "label": "普尔泰格 2026Q3 每股收益与订单",
+    "value": 2.53,
+    "unit": "美元/股",
+    "asOf": "2026-10-22T11:28:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm"
+    ],
+    "detail": "EPS 2.53 美元（去年同期 2.96 美元）；交付 6876 套 -9%，营收 39 亿美元 -9%；毛利率 24.8%（去年同期 26.2%，含 2600 万美元土地减值约 70bp）；净新订单 6208 套 -6%；公司称\"房贷利率快速上升把更多消费者推到观望席\"。"
+   },
+   {
+    "id": "MACRO:CN:GDP-2026Q3",
+    "label": "中国 2026 年前三季度 GDP 同比",
+    "value": 4.6,
+    "unit": "%",
+    "asOf": "2026-10-19T05:37:00Z",
+    "sourceUrls": [
+     "https://www.gov.cn/lianbo/202610/content_7083662.htm"
+    ],
+    "detail": "前三季度 GDP 107.11 万亿元、同比 +4.6%（一季度 5.0%、二季度 4.3%、三季度 4.5%）；规上工业增加值 +5.3%、社零 +2.6%、进出口 +18.8%；CPI +0.9%、PPI +2.3%；城镇调查失业率均值 5.2%。"
+   },
+   {
+    "id": "PROP:PBOC:2026-10-22-OMO",
+    "label": "央行 2026-10-22 公开市场操作",
+    "value": 1730,
+    "unit": "亿元",
+    "asOf": "2026-10-22T01:20:30Z",
+    "sourceUrls": [
+     "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102208470683333/index.html"
+    ],
+    "detail": "公告[2026]第204号：7 天期逆回购投标量、中标量均为 0 亿元，同时开展 1730 亿元隔夜逆回购操作。"
+   },
+   {
+    "id": "RESEARCH:CN:TIANFU-CPO-2026-10-22",
+    "label": "天孚通信投资者关系记录：CPO/NPO 提产节奏",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-22T12:45:18Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-22/4613376.html"
+    ],
+    "detail": "公司称 CPO 配套 FAU、ELS 等产品已具备较好基础并按客户需求持续提产，NPO 配套处于样品阶段，CPO/NPO 提产节奏近期未出现明显变化；有源光器件关键瓶颈物料供给较上半年改善，积极影响将在 Q3、Q4 逐步释放；\"目前发布的相关进出口政策未对光器件产品进行约束，不涉及对公司业务产生影响\"。"
+   },
+   {
+    "id": "FLOW:CN:CATL-BUYBACK-2026-10-22",
+    "label": "宁德时代两日 A 股回购金额",
+    "value": 13,
+    "unit": "亿元",
+    "asOf": "2026-10-22T12:57:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-22/4613419.html"
+    ],
+    "detail": "10 月 22 日再次回购 A 股，两日累计耗资近 13 亿元，回购股份拟全部注销。"
+   },
+   {
+    "id": "MACRO:US:8K-PIPELINE-2026-10-22",
+    "label": "10-22 美股盘前 8-K 申报密度",
+    "value": 100,
+    "unit": "份（SEC 最新列表上限）",
+    "asOf": "2026-10-22T12:56:00Z",
+    "sourceUrls": [
+     "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&dateb=&owner=include&count=100&output=atom"
+    ],
+    "detail": "SEC 最新 8-K 列表 100 条中，10-22 当日 07:05–08:56 ET 密集出现 Q3 业绩披露：康卡斯特、纳斯达克、拖拉机供应、普尔泰格、联合太平洋、诺福克南方、瓦莱罗、Old Republic 等；其中 UNP 与 NSC 均于当日盘前披露，且均提及正在推进的合并审查。"
+   }
+  ],
+  "macroEvents": [
+   {
+    "id": "EV-BEA-GDP-2026Q3-ADV",
+    "title": "BEA 三季度 GDP 初值",
+    "at": "2026-10-29T12:30:00Z",
+    "region": "US",
+    "note": "BEA 日程页标注 8:30 AM ET，与 9 月个人收入与支出同发。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   },
+   {
+    "id": "EV-BEA-PCE-2026-09",
+    "title": "BEA 9 月个人收入与支出（含 PCE 物价）",
+    "at": "2026-10-29T12:30:00Z",
+    "region": "US",
+    "note": "与 GDP 初值同一时段发布。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   },
+   {
+    "id": "EV-FOMC-2026-10",
+    "title": "FOMC 10 月议息会议（10-27 至 10-28）",
+    "at": "2026-10-28T18:00:00Z",
+    "region": "US",
+    "note": "会议日期取自美联储官方日历 10 月 27-28 日；决议时点为惯例 14:00 ET，官方日历未单列时间。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   },
+   {
+    "id": "EV-EIA-WPSR-2026-10-28",
+    "title": "EIA 周度石油状况报告（截至 10-23 当周）",
+    "at": "2026-10-28T14:30:00Z",
+    "region": "US",
+    "note": "EIA 周度日程为每周三 10:30 AM ET。",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ]
+   },
+   {
+    "id": "EV-BEA-RD-2026-10-22",
+    "title": "BEA 实验性研发经济统计（2024 年，美国与各州）",
+    "at": "2026-10-22T14:00:00Z",
+    "region": "US",
+    "note": "BEA 日程页标注 10:00 AM ET，属统计口径更新。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   }
+  ],
+  "events": [],
+  "researchRecords": [
+   {
+    "instrumentId": "EQUITY:US/VLO",
+    "eventKey": "VLO-Q3-2026-EARNINGS",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-VLO-EX991-Q3-2026",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-22",
+    "analyzedAt": "2026-10-22T13:02:29Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "三季度归母净利 68 亿美元（每股 23.89 美元），去年同期 11 亿美元（3.53 美元）；炼油板块经营利润 88 亿美元对 16 亿美元，加工量 3.0 百万桶/日，经营现金流 69 亿美元，净负债/资本 4%。在高油价与 95% 开工率下，炼厂是本轮成本冲击中唯一具备加价权的环节。",
+     "guidance": "公司未在新闻稿中给出四季度量化指引，仅确认 St. Charles FCC 优化项目按期完工以提升高价值产品产能。",
+     "risks": "裂解价差一旦收窄，炼油利润的弹性会反向放大；加州与低碳燃料监管、关税仍是尾部风险。",
+     "invalidation": "若四季度裂解价差同比转负，则本轮\"炼厂加价权\"结论失效。"
+    }
+   },
+   {
+    "instrumentId": "EQUITY:US/UNP",
+    "eventKey": "UNP-Q3-2026-EARNINGS",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-UNP-EX991-Q3-2026",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-22",
+    "analyzedAt": "2026-10-22T13:02:29Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "营收 72 亿美元 +15%、车厢量 +6%、剔除燃油附加费货运收入 +6%，营运比率 59.1%、调整后 58.8%（同比升 30bp），公司明确燃油价格对营运比率造成 140bp 不利影响；EPS 3.49 美元 +16%。需求端仍在，成本端未完全转嫁。",
+     "guidance": "维持全年高个位数 EPS 增长与 2027 年高个位数至低双位数三年复合目标。",
+     "risks": "燃油附加费的滞后与折扣会持续侵蚀营运比率；与诺福克南方的合并需通过地面运输委员会审查。",
+     "invalidation": "若四季度营运比率同比改善且燃油影响消失，则成本压力判断需下修。"
+    }
+   },
+   {
+    "instrumentId": "EQUITY:US/NSC",
+    "eventKey": "NSC-Q3-2026-EARNINGS",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-NSC-EX991-Q3-2026",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-22",
+    "analyzedAt": "2026-10-22T13:02:29Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "营收 35 亿美元创季度纪录 +14%，其中燃油附加费贡献 8 个百分点，运量 +3%；调整后营运比率 65.4%（同比恶化 210bp），调整后摊薄 EPS 3.62 美元 +10%。管理层称在燃油成本上升下仍维持成本纪律，并提到卡车市场趋紧有利于铁路。",
+     "guidance": "未给出量化全年指引，仅表述需求改善与合并推进。",
+     "risks": "合并相关费用与俄亥俄州事件相关支出仍在影响报表；燃油成本上升对营运比率的拖累大于附加费回收。",
+     "invalidation": "若四季度调整后营运比率同比转好，则\"转嫁不完全\"的判断需修正。"
+    }
+   },
+   {
+    "instrumentId": "EQUITY:US/CMCSA",
+    "eventKey": "CMCSA-Q3-2026-EARNINGS",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-CMCSA-EX991-Q3-2026",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/1166691/000162828026066783/ex991-9302026.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-22",
+    "analyzedAt": "2026-10-22T13:02:29Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/1166691/000162828026066783/ex991-9302026.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "营收 292.98 亿美元 -6.1%（备考 +0.5%），调整后 EBITDA 91.06 亿美元 -5.8%（备考 +0.8%），EPS 0.97 美元 +7.2%，自由现金流 42 亿美元；Peacock 连续第二季盈利（调整后 EBITDA 2.61 亿美元），主题公园受周期性逆风，NBCUniversal 与 Sky 分拆按计划推进。",
+     "guidance": "分拆仍在轨道上，未给出合并口径的量化指引。",
+     "risks": "宽带用户与连接业务的投资回报周期；主题公园的周期性与国际游客减少。",
+     "invalidation": "若连接业务收入与 EBITDA 在四季度恢复同比正增长，则\"减法增长\"判断需下调。"
+    }
+   },
+   {
+    "instrumentId": "EQUITY:US/PHM",
+    "eventKey": "PHM-Q3-2026-EARNINGS",
+    "eventType": "quarterly-earnings",
+    "documentId": "SEC-PHM-EX991-Q3-2026",
+    "documentUrl": "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm",
+    "period": "2026Q3",
+    "publishedAt": "2026-10-22",
+    "analyzedAt": "2026-10-22T13:02:29Z",
+    "sourceUrls": [
+     "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm"
+    ],
+    "sourceHash": null,
+    "analysis": {
+     "conclusion": "EPS 2.53 美元（去年同期 2.96），交付 6876 套 -9%、营收 39 亿美元 -9%、均价 56.1 万美元 -1%，毛利率 24.8%（去年同期 26.2%，含 2600 万美元土地减值），净新订单 6208 套 -6%，回购 3.5 亿美元。公司明确房贷利率上升压缩可负担性并把消费者推到观望席。",
+     "guidance": "未给出量化全年指引，强调在价格与速度之间平衡、资本配置纪律。",
+     "risks": "按揭利率维持高位会继续压制订单；土地减值若扩大将侵蚀毛利率。",
+     "invalidation": "若四季度净新订单环比转正且毛利率企稳，则\"利率压制需求\"的判断需下修。"
+    }
+   }
+  ],
+  "researchChecks": [
+   {
+    "instrumentId": "EQUITY:US/VLO",
+    "checkedAt": "2026-10-22T13:02:29Z",
+    "status": "material-reviewed",
+    "note": "已阅读 2026Q3 8-K 附件原文（SEC-VLO-EX991-Q3-2026），提取营收、利润率与指引表述；非行情推断。"
+   },
+   {
+    "instrumentId": "EQUITY:US/UNP",
+    "checkedAt": "2026-10-22T13:02:29Z",
+    "status": "material-reviewed",
+    "note": "已阅读 2026Q3 8-K 附件原文（SEC-UNP-EX991-Q3-2026），提取营收、利润率与指引表述；非行情推断。"
+   },
+   {
+    "instrumentId": "EQUITY:US/NSC",
+    "checkedAt": "2026-10-22T13:02:29Z",
+    "status": "material-reviewed",
+    "note": "已阅读 2026Q3 8-K 附件原文（SEC-NSC-EX991-Q3-2026），提取营收、利润率与指引表述；非行情推断。"
+   },
+   {
+    "instrumentId": "EQUITY:US/CMCSA",
+    "checkedAt": "2026-10-22T13:02:29Z",
+    "status": "material-reviewed",
+    "note": "已阅读 2026Q3 8-K 附件原文（SEC-CMCSA-EX991-Q3-2026），提取营收、利润率与指引表述；非行情推断。"
+   },
+   {
+    "instrumentId": "EQUITY:US/PHM",
+    "checkedAt": "2026-10-22T13:02:29Z",
+    "status": "material-reviewed",
+    "note": "已阅读 2026Q3 8-K 附件原文（SEC-PHM-EX991-Q3-2026），提取营收、利润率与指引表述；非行情推断。"
+   }
+  ]
+ }
+}
