@@ -1,9 +1,13 @@
 {
-  "status": "needs-revision",
-  "error": "editorial.report.marketCoverage: 必须是数组 [type]\neditorial.report.deepDive: 必须是数组 [type]\neditorial.report.frameworkAnalysis: 必须是数组 [type]\neditorial.report.frameworkSynthesis: 必须是对象 [type]\neditorial.report.watch: 无观察条件时须提供sectionGaps.watch.reason [gap-required]\neditorial.report.dataDefinitions: 无术语时须提供sectionGaps.dataDefinitions.reason [gap-required]",
+  "status": "editorial-rejected",
+  "error": "editorial.report.deepDive: 缺少独立资产详报A股 [market-coverage]\neditorial.report.deepDive: 缺少独立资产详报港股 [market-coverage]\neditorial.report.deepDive: 缺少独立资产详报美股 [market-coverage]\neditorial.report.deepDive: 缺少独立资产详报BTC [market-coverage]\neditorial.report.deepDive: 缺少独立资产详报黄金 [market-coverage]\neditorial.report.deepDive: 缺少独立资产详报原油 [market-coverage]\neditorial.report.frameworkAnalysis: 必须是数组 [type]\neditorial.report.frameworkSynthesis: 必须是对象 [type]\neditorial.report.watch: 无观察条件时须提供sectionGaps.watch.reason [gap-required]\neditorial.report.dataDefinitions: 无术语时须提供sectionGaps.dataDefinitions.reason [gap-required]",
   "issues": [
-    "editorial.report.marketCoverage: 必须是数组 [type]",
-    "editorial.report.deepDive: 必须是数组 [type]",
+    "editorial.report.deepDive: 缺少独立资产详报A股 [market-coverage]",
+    "editorial.report.deepDive: 缺少独立资产详报港股 [market-coverage]",
+    "editorial.report.deepDive: 缺少独立资产详报美股 [market-coverage]",
+    "editorial.report.deepDive: 缺少独立资产详报BTC [market-coverage]",
+    "editorial.report.deepDive: 缺少独立资产详报黄金 [market-coverage]",
+    "editorial.report.deepDive: 缺少独立资产详报原油 [market-coverage]",
     "editorial.report.frameworkAnalysis: 必须是数组 [type]",
     "editorial.report.frameworkSynthesis: 必须是对象 [type]",
     "editorial.report.watch: 无观察条件时须提供sectionGaps.watch.reason [gap-required]",
@@ -15,7 +19,7 @@
   },
   "deadlineAt": "2026-10-22T18:16:03.591Z",
   "requestId": "20261022T1755Z-us-session",
-  "at": "2026-10-22T18:07:50.009Z",
+  "at": "2026-10-22T18:11:09.699Z",
   "history": [
     {
       "status": "collecting",
@@ -31,23 +35,48 @@
       "status": "needs-revision",
       "at": "2026-10-22T18:07:50.009Z",
       "revision": 0
+    },
+    {
+      "status": "editorial-rejected",
+      "at": "2026-10-22T18:11:09.699Z",
+      "revision": 1
     }
   ],
   "packetHash": "48947db91d15f5de1df4545c4d026f6216f4b396df950cdfc65950cfbda1a77e",
   "collectionDurationMs": 2558,
   "reasonCode": "EDITORIAL_VALIDATION_FAILED",
-  "revision": 0,
-  "submissionHash": "36ae42a95d99ab4aec1b76e7dfd756efc0d9eb07f66764df53579369c9e9b1a6",
+  "revision": 1,
+  "submissionHash": "0afeacc40f3f661672e1dc57bcf3b3df39fe35e2782648a8880ce571691ded90",
   "validationIssues": [
     {
-      "path": "editorial.report.marketCoverage",
-      "code": "type",
-      "message": "必须是数组"
+      "path": "editorial.report.deepDive",
+      "code": "market-coverage",
+      "message": "缺少独立资产详报A股"
     },
     {
       "path": "editorial.report.deepDive",
-      "code": "type",
-      "message": "必须是数组"
+      "code": "market-coverage",
+      "message": "缺少独立资产详报港股"
+    },
+    {
+      "path": "editorial.report.deepDive",
+      "code": "market-coverage",
+      "message": "缺少独立资产详报美股"
+    },
+    {
+      "path": "editorial.report.deepDive",
+      "code": "market-coverage",
+      "message": "缺少独立资产详报BTC"
+    },
+    {
+      "path": "editorial.report.deepDive",
+      "code": "market-coverage",
+      "message": "缺少独立资产详报黄金"
+    },
+    {
+      "path": "editorial.report.deepDive",
+      "code": "market-coverage",
+      "message": "缺少独立资产详报原油"
     },
     {
       "path": "editorial.report.frameworkAnalysis",
@@ -71,8 +100,8 @@
     }
   ],
   "validationStage": "editorial-input",
-  "terminal": false,
-  "revisionPath": "runtime/submissions/20261022T1755Z-us-session--r1.json",
+  "terminal": true,
+  "revisionPath": null,
   "published": false,
   "repositoryPublished": false,
   "deployed": false
