@@ -1,14 +1,14 @@
 {
   "moduleVersion": 1,
   "module": "macro",
-  "runId": "20261022T1136Z-global-main-macro",
-  "generatedAt": "2026-10-22T19:40:22.046+08:00",
+  "runId": "20261022T1300Z-global-main-macro",
+  "generatedAt": "2026-10-22T21:04:58.656+08:00",
   "dataAsOf": null,
   "status": "partial",
   "dataMode": "production",
   "validationOnly": false,
   "execution": {
-    "batchId": "20261022T1136Z-global-main",
+    "batchId": "20261022T1300Z-global-main",
     "mode": "scheduled-batch",
     "role": "macro"
   },
@@ -17,150 +17,135 @@
     "canonicalFacts": [
       {
         "id": "MACRO:US:CURVE-2026-10-21",
-        "label": "美国国债收益率曲线（财政部日度口径，2026-10-21 收盘）",
+        "label": "美国财政部日度国债收益率曲线（2026-10-21）",
         "value": 5.13,
         "unit": "%",
         "asOf": "2026-10-21T20:00:00Z",
         "sourceIds": [
           "src-393257adb975208c7f208554"
         ],
-        "note": "10 年期 5.13%、2 年期 4.81%、7 年期 5.03%、30 年期 5.42%、20 年期 5.47%、3 个月 4.25%。2s10s 为正 32bp，但 20 年高于 30 年 5bp，长端出现局部倒挂。与 packet 中 RATE:US10Y 的 5.146 属不同供应商口径，本文正文以 packet 为准，曲线结构只用财政部口径。"
+        "detail": "10 年期 5.13%、2 年期 4.81%、20 年期 5.47%、30 年期 5.42%；20 年期高于 30 年期，曲线长端仍倒挂。"
       },
       {
-        "id": "MACRO:US:PG-Q1FY27-2026-10-22",
-        "label": "宝洁 2027 财年一季度业绩（净销售，十亿美元）",
-        "value": 23.3,
-        "unit": "十亿美元",
-        "asOf": null,
+        "id": "MACRO:ENERGY:REFINERY-MARGIN-3Q26",
+        "label": "EIA：2026 年三季度美国炼厂开工率与裂解价差",
+        "value": 95,
+        "unit": "%",
+        "asOf": "2026-10-21T20:00:00Z",
         "sourceIds": [
-          "src-0ad4ec3b902a55d7671405dd",
-          "src-100224b9a2c614bc6682767a"
+          "src-73998ce676150f5cf0a3c1ae"
         ],
-        "note": "原文发布日 2026-10-22，未标注具体时点。净销售 233 亿美元同比 +4.0%，有机销售同样 +4.0%；摊薄 EPS 1.97 美元 +1%，核心 EPS 2.00 美元 +1%；经营现金流 58 亿美元、净利 48 亿美元、自由现金流转化率 93%；股息 26 亿 + 回购 13 亿共回馈 39 亿美元；维持全年有机销售、EPS 增长与现金回报指引，仅因 Thorne 收购调整净销售指引。"
+        "detail": "三季度美国炼厂开工率均值 95%，为 2019 年以来同期最高原油加工量；汽油裂解价差同比翻倍以上，馏分油与航煤裂解价差接近去年三倍；截至 9 月 25 日当周馏分油库存低于五年均值 13%。"
       },
       {
-        "id": "MACRO:US:AAL-Q3-FUEL-2026-10-22",
-        "label": "美国航空 2026 年三季度燃油成本同比增量（十亿美元）",
-        "value": 1.9,
-        "unit": "十亿美元",
-        "asOf": null,
+        "id": "MACRO:US:VLO-Q3-2026",
+        "label": "瓦莱罗能源 2026Q3 归母净利",
+        "value": 68,
+        "unit": "亿美元",
+        "asOf": "2026-10-22T12:20:00Z",
         "sourceIds": [
-          "src-ea881adcadec670e44fc62cc",
-          "src-100224b9a2c614bc6682767a"
+          "src-cc41cc3017b2d43e0ac19728"
         ],
-        "note": "原文发布日 2026-10-22。燃油支出同比增加 19 亿美元、增幅 67.5%；总收入 163 亿美元 +19.3% 高于此前指引上限；CASM-ex +3.0%；GAAP 净亏 2.69 亿美元（每股 -0.41），调整后净亏 1.82 亿美元（每股 -0.28），调整后亏损仅比 2025 年三季度多 7100 万美元。"
+        "detail": "归母净利 68 亿美元（每股 23.89 美元），去年同期 11 亿美元（3.53 美元）；炼油板块经营利润 88 亿美元，去年同期 16 亿美元；炼厂加工量 3.0 百万桶/日；经营现金流 69 亿美元。"
       },
       {
-        "id": "MACRO:ENERGY:BRENT-MEDIA-2026-10-22",
-        "label": "布伦特原油（媒体快讯口径，美元/桶）",
-        "value": 112.525,
-        "unit": "美元/桶",
-        "asOf": "2026-10-22T09:01:31Z",
+        "id": "MACRO:US:UNP-Q3-2026",
+        "label": "联合太平洋 2026Q3 摊薄 EPS 与营运比率",
+        "value": 3.49,
+        "unit": "美元/股",
+        "asOf": "2026-10-22T11:46:00Z",
         "sourceIds": [
-          "src-1a7323c9cd79ad16b012d23e"
+          "src-bac43a6b7b3dcc784048013f"
         ],
-        "note": "同一快讯报 WTI 100.01 美元（+2.86%）、布伦特 112.525 美元（+3.40%）。本轮代码源 ENERGY:BRENT 仍为 HTTP 404，故布伦特只有媒体口径，不与 packet 的 ENERGY:WTI 混用。"
+        "detail": "摊薄 EPS 3.49 美元同比 +16%，调整后 3.53 美元 +15%；营运比率 59.1%、调整后 58.8%（同比升 30bp）；营收 72 亿美元 +15%，车厢量 +6%，剔除燃油附加费的货运收入 +6%；公司明确\"燃油价格上涨对营运比率造成 140bp 不利影响\"。"
       },
       {
-        "id": "FLOW:HK:SOUTHBOUND-2026-10-22",
-        "label": "南向资金当日净卖出港股（亿港元）",
-        "value": -92,
-        "unit": "亿港元",
-        "asOf": "2026-10-22T08:00:00Z",
+        "id": "MACRO:US:NSC-Q3-2026",
+        "label": "诺福克南方 2026Q3 营收与调整后营运比率",
+        "value": 35,
+        "unit": "亿美元",
+        "asOf": "2026-10-22T12:20:00Z",
         "sourceIds": [
-          "src-332d0ee8dee3adaa6a35b5b1"
+          "src-068dd1258de95e50e4256249"
         ],
-        "note": "原文为\"截至收盘，南向资金净卖出港股超 92 亿港元\"。收盘口径，不含盘后。"
+        "detail": "营收 35 亿美元创季度纪录、同比 +14%，其中燃油附加费贡献 14 个百分点中的 8 个点；运量 +3%；调整后营运比率 65.4%，同比恶化 210bp；调整后摊薄 EPS 3.62 美元 +10%。"
       },
       {
-        "id": "MACRO:HK:HSTECH-LOW-2026-10-22",
-        "label": "恒生科技指数收盘点位与阶段新低",
-        "value": 3793.93,
-        "unit": "点",
-        "asOf": "2026-10-22T08:08:58Z",
+        "id": "MACRO:US:CMCSA-Q3-2026",
+        "label": "康卡斯特 2026Q3 营收与调整后 EBITDA",
+        "value": 292.98,
+        "unit": "亿美元",
+        "asOf": "2026-10-22T11:06:00Z",
         "sourceIds": [
-          "src-332d0ee8dee3adaa6a35b5b1"
+          "src-aac3d704246f462180affcfc"
         ],
-        "note": "媒体收盘口径：恒生科技收 3793.93 点、跌 200.84 点、跌幅 5.03%，创 2024-09-25 以来新低，较去年 10 月高点回撤 43%；恒指收 22934.68 点、跌 3.03%。packet 的 INDEX:HK:HSTECH 为 -5.0276%、INDEX:HK:HSI 为 -3.9091%，点位同为 3793.93 与 22934.68，涨幅分母基准不同。"
+        "detail": "营收 292.98 亿美元同比 -6.1%（备考口径 +0.5%），调整后 EBITDA 91.06 亿美元 -5.8%（备考 +0.8%），EPS 0.97 美元 +7.2%，自由现金流 42 亿美元；Peacock 连续第二个季度盈利，调整后 EBITDA 2.61 亿美元。"
       },
       {
-        "id": "FLOW:CN:ACTIVE-ETF-SELFBUY-2026-10-22",
-        "label": "首批主动 ETF 募集期基金公司自购合计金额（亿元）",
+        "id": "MACRO:US:PHM-Q3-2026",
+        "label": "普尔泰格 2026Q3 每股收益与订单",
+        "value": 2.53,
+        "unit": "美元/股",
+        "asOf": "2026-10-22T11:28:00Z",
+        "sourceIds": [
+          "src-f15d4976246edc7df9476939"
+        ],
+        "detail": "EPS 2.53 美元（去年同期 2.96 美元）；交付 6876 套 -9%，营收 39 亿美元 -9%；毛利率 24.8%（去年同期 26.2%，含 2600 万美元土地减值约 70bp）；净新订单 6208 套 -6%；公司称\"房贷利率快速上升把更多消费者推到观望席\"。"
+      },
+      {
+        "id": "MACRO:CN:GDP-2026Q3",
+        "label": "中国 2026 年前三季度 GDP 同比",
+        "value": 4.6,
+        "unit": "%",
+        "asOf": "2026-10-19T05:37:00Z",
+        "sourceIds": [
+          "src-6d3e67654dadd7ef64ebf606"
+        ],
+        "detail": "前三季度 GDP 107.11 万亿元、同比 +4.6%（一季度 5.0%、二季度 4.3%、三季度 4.5%）；规上工业增加值 +5.3%、社零 +2.6%、进出口 +18.8%；CPI +0.9%、PPI +2.3%；城镇调查失业率均值 5.2%。"
+      },
+      {
+        "id": "PROP:PBOC:2026-10-22-OMO",
+        "label": "央行 2026-10-22 公开市场操作",
+        "value": 1730,
+        "unit": "亿元",
+        "asOf": "2026-10-22T01:20:30Z",
+        "sourceIds": [
+          "src-9f41369ae5a4dfb672b32ac6"
+        ],
+        "detail": "公告[2026]第204号：7 天期逆回购投标量、中标量均为 0 亿元，同时开展 1730 亿元隔夜逆回购操作。"
+      },
+      {
+        "id": "RESEARCH:CN:TIANFU-CPO-2026-10-22",
+        "label": "天孚通信投资者关系记录：CPO/NPO 提产节奏",
+        "value": null,
+        "unit": null,
+        "asOf": "2026-10-22T12:45:18Z",
+        "sourceIds": [
+          "src-09dad08ebd7c1fc46a970172"
+        ],
+        "detail": "公司称 CPO 配套 FAU、ELS 等产品已具备较好基础并按客户需求持续提产，NPO 配套处于样品阶段，CPO/NPO 提产节奏近期未出现明显变化；有源光器件关键瓶颈物料供给较上半年改善，积极影响将在 Q3、Q4 逐步释放；\"目前发布的相关进出口政策未对光器件产品进行约束，不涉及对公司业务产生影响\"。"
+      },
+      {
+        "id": "FLOW:CN:CATL-BUYBACK-2026-10-22",
+        "label": "宁德时代两日 A 股回购金额",
         "value": 13,
         "unit": "亿元",
-        "asOf": "2026-10-22T10:45:22Z",
+        "asOf": "2026-10-22T12:57:00Z",
         "sourceIds": [
-          "src-165e7ac2b4c234eb7a5e3284"
+          "src-ee34b81491386fe26632f483"
         ],
-        "note": "易方达、华夏、富国、汇添富 10 月 22 日各公告以固有资金 2 亿元认购旗下主动 ETF；两天前摩根基金已公告 5 亿元，合计 13 亿元。原文称首批主动 ETF 集中发行\"倒计时仅剩 1 天\"。"
-      },
-      {
-        "id": "PROP:CN:2026-10-21-KJ-CYFUSION",
-        "label": "中办国办《关于推动科技创新和产业创新深度融合的意见》",
-        "value": null,
-        "unit": null,
-        "asOf": "2026-10-21T18:17:00Z",
-        "sourceIds": [
-          "src-2edcbd6038edfeaf127ec23f"
-        ],
-        "note": "新华社 2026-10-21 18:17 发布。要点：以发展新质生产力、建设现代化产业体系为目标；构建企业主导、各主体协同的产学研融通创新体系；坚持围绕产业链部署创新链、围绕创新链布局产业链；强化企业创新主体地位，推动创新资源向企业集聚。属中长期制度供给，不含当期资金规模或补贴数字。"
-      },
-      {
-        "id": "RESEARCH:US:LSCC-BOARD-2026-10-22",
-        "label": "莱迪思半导体（LSCC）董事会改组",
-        "value": null,
-        "unit": null,
-        "asOf": "2026-10-22T11:32:07Z",
-        "sourceIds": [
-          "src-09fe135893ac8807507ad297",
-          "src-100224b9a2c614bc6682767a"
-        ],
-        "note": "2026-10-22 公告、10-21 生效：增补 John McCool（Arista Networks 高级副总裁兼 CEO 特别顾问，此前任 Arista 高级副总裁兼首席平台官，负责硬件工程、制造运营与供应链）与 Raejeanne Skillern（30 余年云计算、数据中心基础设施与人工智能经验，2022—2024 年曾任 Lattice 董事）。公告不含任何财务数据。"
+        "detail": "10 月 22 日再次回购 A 股，两日累计耗资近 13 亿元，回购股份拟全部注销。"
       },
       {
         "id": "MACRO:US:8K-PIPELINE-2026-10-22",
-        "label": "美股当日 8-K 财报申报密度（2026-10-22 盘前）",
-        "value": null,
-        "unit": null,
-        "asOf": "2026-10-22T11:32:07Z",
+        "label": "10-22 美股盘前 8-K 申报密度",
+        "value": 100,
+        "unit": "份（SEC 最新列表上限）",
+        "asOf": "2026-10-22T12:56:00Z",
         "sourceIds": [
           "src-100224b9a2c614bc6682767a"
         ],
-        "note": "SEC EDGAR 最新 8-K 清单显示 07:00—07:32 ET 集中申报，含宝洁、康卡斯特、纳斯达克、拖拉机供应、普得集团、罗珀科技、都福、CBRE、美国航空、莱迪思半导体、联合治疗、蓝鸟生物等；这是披露密度证据，不代表已逐份研究。"
-      },
-      {
-        "id": "FACT:US:GETY-2026-10-212201-DEBT-CALL",
-        "label": "Getty Images 第11章申报时被加速的债务本金合计下限",
-        "value": 1007.3,
-        "unit": "USD mn",
-        "asOf": "2026-10-21T13:00:00Z",
-        "sourceIds": [
-          "macro-retained-f096e77b01d46a776f21ccf1"
-        ],
-        "note": "按8-K逐项加总：约40.1百万美元定期贷款、约4.07亿欧元定期贷款、约1.5亿美元循环贷、约5.399亿美元11.250%优先担保票据(2030)、约2.647亿美元14.000%优先票据(2028)、约530万美元9.750%票据(2027)。欧元部分未折算，故数值为下限量级而非精确合计。",
-        "retention": {
-          "runId": "20261021T1833Z-global-main-macro",
-          "generatedAt": "2026-10-22T02:37:40.604+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "FACT:US:GETY-2026-10-21-EQUITY-CANCEL",
-        "label": "Getty Images 重整计划对现有普通股的处置",
-        "value": null,
-        "unit": null,
-        "asOf": "2026-10-21T13:00:00Z",
-        "sourceIds": [
-          "macro-retained-f096e77b01d46a776f21ccf1"
-        ],
-        "note": "8-K明确：计划生效日全部A类普通股及其他现有权益将被注销、解除并消灭，持有人在计划获确认时不会获得任何分配、回收或财产，包括多数股东。公司同时提示存续期交易高度投机，普通股已转至OTC Pink Limited市场交易。",
-        "retention": {
-          "runId": "20261021T1833Z-global-main-macro",
-          "generatedAt": "2026-10-22T02:37:40.604+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
+        "detail": "SEC 最新 8-K 列表 100 条中，10-22 当日 07:05–08:56 ET 密集出现 Q3 业绩披露：康卡斯特、纳斯达克、拖拉机供应、普尔泰格、联合太平洋、诺福克南方、瓦莱罗、Old Republic 等；其中 UNP 与 NSC 均于当日盘前披露，且均提及正在推进的合并审查。"
       },
       {
         "id": "FACT:US:GPI-2026-10-19-HENNESSY-CONSIDERATION",
@@ -189,23 +174,6 @@
           "macro-retained-dd41d8ac0c680c33c7cb6752"
         ],
         "note": "6.250% 2032年到期与6.625% 2035年到期各6.25亿美元，合计12.5亿美元私募发行净额，加上在手现金完成交割。",
-        "retention": {
-          "runId": "20261021T1833Z-global-main-macro",
-          "generatedAt": "2026-10-22T02:37:40.604+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "FACT:US:ELMT-2026-10-16-BLUEMOON-UNITS",
-        "label": "Elmet 认购 Blue Moon 新股的单位数量",
-        "value": 3.5,
-        "unit": "百万单位",
-        "asOf": "2026-10-16T13:00:00Z",
-        "sourceIds": [
-          "macro-retained-cc6fbfd6876a4269d6c3c61e"
-        ],
-        "note": "每单位含1股普通股与1份认股权证，单价10.00加元，合计3500万加元；权证行权价10.80加元，2027年2月17日后可行权，2029年10月16日到期；同时取得Blue Moon董事提名权。",
         "retention": {
           "runId": "20261021T1833Z-global-main-macro",
           "generatedAt": "2026-10-22T02:37:40.604+08:00",
@@ -333,6 +301,57 @@
         }
       },
       {
+        "id": "FACT:US:GETY-2026-10-212201-DEBT-CALL",
+        "label": "Getty Images 第11章申报时被加速的债务本金合计下限",
+        "value": 1007.3,
+        "unit": "USD mn",
+        "asOf": "2026-10-21T13:00:00Z",
+        "sourceIds": [
+          "macro-retained-f096e77b01d46a776f21ccf1"
+        ],
+        "note": "按8-K逐项加总：约40.1百万美元定期贷款、约4.07亿欧元定期贷款、约1.5亿美元循环贷、约5.399亿美元11.250%优先担保票据(2030)、约2.647亿美元14.000%优先票据(2028)、约530万美元9.750%票据(2027)。欧元部分未折算，故数值为下限量级而非精确合计。",
+        "retention": {
+          "runId": "20261021T1833Z-global-main-macro",
+          "generatedAt": "2026-10-22T02:37:40.604+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "FACT:US:GETY-2026-10-21-EQUITY-CANCEL",
+        "label": "Getty Images 重整计划对现有普通股的处置",
+        "value": null,
+        "unit": null,
+        "asOf": "2026-10-21T13:00:00Z",
+        "sourceIds": [
+          "macro-retained-f096e77b01d46a776f21ccf1"
+        ],
+        "note": "8-K明确：计划生效日全部A类普通股及其他现有权益将被注销、解除并消灭，持有人在计划获确认时不会获得任何分配、回收或财产，包括多数股东。公司同时提示存续期交易高度投机，普通股已转至OTC Pink Limited市场交易。",
+        "retention": {
+          "runId": "20261021T1833Z-global-main-macro",
+          "generatedAt": "2026-10-22T02:37:40.604+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "FACT:US:ELMT-2026-10-16-BLUEMOON-UNITS",
+        "label": "Elmet 认购 Blue Moon 新股的单位数量",
+        "value": 3.5,
+        "unit": "百万单位",
+        "asOf": "2026-10-16T13:00:00Z",
+        "sourceIds": [
+          "macro-retained-cc6fbfd6876a4269d6c3c61e"
+        ],
+        "note": "每单位含1股普通股与1份认股权证，单价10.00加元，合计3500万加元；权证行权价10.80加元，2027年2月17日后可行权，2029年10月16日到期；同时取得Blue Moon董事提名权。",
+        "retention": {
+          "runId": "20261021T1833Z-global-main-macro",
+          "generatedAt": "2026-10-22T02:37:40.604+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
         "id": "FACT:US:TMQ-2026-FIELD-HOLES",
         "label": "Trilogy Metals 2026野外季完成钻孔数",
         "value": 42,
@@ -351,11 +370,8 @@
       }
     ],
     "retainedFactIds": [
-      "FACT:US:GETY-2026-10-212201-DEBT-CALL",
-      "FACT:US:GETY-2026-10-21-EQUITY-CANCEL",
       "FACT:US:GPI-2026-10-19-HENNESSY-CONSIDERATION",
       "FACT:US:GPI-2026-10-19-NOTES-SIZE",
-      "FACT:US:ELMT-2026-10-16-BLUEMOON-UNITS",
       "FACT:CN:SSE-ETF-2026-09-SCALE",
       "FACT:CN:SSE-ETF-2026-09-MIDLONG-HOLD",
       "FACT:CN:SSE-ETF-2026-09-COUNT",
@@ -363,55 +379,64 @@
       "FACT:CN:A-SHARE-2026-10-21-TURNOVER",
       "FACT:CN:601168-2026-9M-REVENUE",
       "FACT:CN:601168-2026-9M-NETPROFIT",
+      "FACT:US:GETY-2026-10-212201-DEBT-CALL",
+      "FACT:US:GETY-2026-10-21-EQUITY-CANCEL",
+      "FACT:US:ELMT-2026-10-16-BLUEMOON-UNITS",
       "FACT:US:TMQ-2026-FIELD-HOLES"
     ],
     "macroEvents": [
       {
-        "id": "EVT-FOMC-20261027",
-        "title": "美联储 FOMC 会议（10 月 27—28 日）",
-        "at": "2026-10-27T18:00:00Z",
-        "atNote": "会议为期两日，决议与新闻发布会通常在第二日 14:00 ET（18:00Z）",
-        "kind": "calendar",
+        "id": "EV-BEA-GDP-2026Q3-ADV",
+        "title": "BEA 三季度 GDP 初值",
+        "at": "2026-10-29T12:30:00Z",
+        "region": "US",
+        "note": "BEA 日程页标注 8:30 AM ET，与 9 月个人收入与支出同发。",
+        "sourceIds": [
+          "src-fd4e4b2ac67cbbe5507866a6"
+        ]
+      },
+      {
+        "id": "EV-BEA-PCE-2026-09",
+        "title": "BEA 9 月个人收入与支出（含 PCE 物价）",
+        "at": "2026-10-29T12:30:00Z",
+        "region": "US",
+        "note": "与 GDP 初值同一时段发布。",
+        "sourceIds": [
+          "src-fd4e4b2ac67cbbe5507866a6"
+        ]
+      },
+      {
+        "id": "EV-FOMC-2026-10",
+        "title": "FOMC 10 月议息会议（10-27 至 10-28）",
+        "at": "2026-10-28T18:00:00Z",
+        "region": "US",
+        "note": "会议日期取自美联储官方日历 10 月 27-28 日；决议时点为惯例 14:00 ET，官方日历未单列时间。",
         "sourceIds": [
           "src-fe3255ea546db4b012c0272c"
-        ],
-        "note": "官方日历已核验，落在 12—24 小时窗口之外，列为中期背景。"
+        ]
       },
       {
-        "id": "EVT-BEA-GDP-20261029",
-        "title": "BEA 发布 2026 年三季度 GDP 初值与 9 月个人收入与支出",
-        "at": "2026-10-29T12:30:00Z",
-        "atNote": "官方日程 8:30 AM ET",
-        "kind": "calendar",
+        "id": "EV-EIA-WPSR-2026-10-28",
+        "title": "EIA 周度石油状况报告（截至 10-23 当周）",
+        "at": "2026-10-28T14:30:00Z",
+        "region": "US",
+        "note": "EIA 周度日程为每周三 10:30 AM ET。",
         "sourceIds": [
-          "src-fd4e4b2ac67cbbe5507866a6"
-        ],
-        "note": "两项数据同日发布，是下一周最重要的宏观节点。"
-      }
-    ],
-    "events": [
+          "src-aaabb3face464c1123b1140e"
+        ]
+      },
       {
-        "id": "EVT-BEA-RD-20261022",
-        "title": "BEA 发布实验性研发经济统计数据（美国与各州，2024 年）",
+        "id": "EV-BEA-RD-2026-10-22",
+        "title": "BEA 实验性研发经济统计（2024 年，美国与各州）",
         "at": "2026-10-22T14:00:00Z",
-        "kind": "calendar",
+        "region": "US",
+        "note": "BEA 日程页标注 10:00 AM ET，属统计口径更新。",
         "sourceIds": [
           "src-fd4e4b2ac67cbbe5507866a6"
-        ],
-        "note": "官方日程 10:00 ET，落在本轮 12—24 小时窗口内；是计划而非结果。"
-      },
-      {
-        "id": "EVT-ACTIVE-ETF-LAUNCH-20261023",
-        "title": "首批主动 ETF 集中发行启动",
-        "at": null,
-        "atNote": "原文称\"倒计时仅剩 1 天\"，具体发行时点未在来源中给出",
-        "kind": "calendar",
-        "sourceIds": [
-          "src-165e7ac2b4c234eb7a5e3284"
-        ],
-        "note": "多家基金公司 13 亿元自购对应同一发行环节；时点待定，不编整点。"
+        ]
       }
     ],
+    "events": [],
     "fundingNotes": [],
     "coverage": {
       "status": "partial",
@@ -429,35 +454,26 @@
       "name": "INDEX:CN:SSE",
       "short": "INDEX:CN:SSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:04.656Z",
-      "checkedAt": "2026-10-22T11:37:04.656Z",
-      "sourceHash": "886325b600929bc357c1a87c09baebedf7a898dcce83155ace142dc4bba53f7d"
+      "retrievedAt": "2026-10-22T13:01:22.282Z",
+      "checkedAt": "2026-10-22T13:01:22.282Z",
+      "sourceHash": "d5cbe6e71b0f353e9c06d27ac732fd30bfb1e2d2336bca37ffc0f437d80706e7"
     },
     {
       "id": "src-43a3f5dcc80ebd4231e735b1",
       "name": "EQUITY:US:AAPL",
       "short": "EQUITY:US:AAPL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:04.745Z",
-      "checkedAt": "2026-10-22T11:37:04.745Z",
-      "sourceHash": "095ae9edcae87471bc9da817ebdeb036a751ea515b2e1d9f8c5c21984206d78a"
-    },
-    {
-      "id": "src-100224b9a2c614bc6682767a",
-      "name": "SEC EDGAR latest 8-K filings (current)",
-      "short": "SEC-8K-CURRENT-20261022",
-      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&dateb=&owner=include&count=100&output=atom",
-      "sourceHash": "0d8add94901b97dfbad89ee7b021eb221a751419fd63366fe4efb0731326041f",
-      "retrievedAt": "2026-10-22T11:37:04.969Z",
-      "evidenceKind": "research"
+      "retrievedAt": "2026-10-22T13:01:22.396Z",
+      "checkedAt": "2026-10-22T13:01:22.396Z",
+      "sourceHash": "775941750448e4dddd6f66d7fc0cc0d94afe2dfe3da1170dbfc7fbfbf83789af"
     },
     {
       "id": "src-fd4e4b2ac67cbbe5507866a6",
       "name": "BEA release schedule (October 2026)",
-      "short": "BEA-SCHEDULE-20261022",
+      "short": "BEA-SCHEDULE-2026-10",
       "url": "https://www.bea.gov/news/schedule",
-      "sourceHash": "b2d7b9bd0326e9ae2a938dc640072f6ab36d9cdbf8e9a83098a755dce3ef0692",
-      "retrievedAt": "2026-10-22T11:37:04.984Z",
+      "sourceHash": "7b8d9dadb77ebe1d1096aab436c012417685b4dbba0f3396c25923c9714939ec",
+      "retrievedAt": "2026-10-22T13:01:22.445Z",
       "evidenceKind": "calendar"
     },
     {
@@ -465,702 +481,747 @@
       "name": "INDEX:CN:SZSE",
       "short": "INDEX:CN:SZSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.028Z",
-      "checkedAt": "2026-10-22T11:37:05.028Z",
-      "sourceHash": "870ee91d40f2049cc4894ab14cae31018d9d09f3a5cc8e61341d2e761b53ddac"
+      "retrievedAt": "2026-10-22T13:01:22.533Z",
+      "checkedAt": "2026-10-22T13:01:22.533Z",
+      "sourceHash": "79700f663c7aefca29a12dd50845e6eed66ba05c309fa5040c597f8cb2b36a9f"
     },
     {
       "id": "src-fe3255ea546db4b012c0272c",
       "name": "Federal Open Market Committee meeting calendar 2026",
       "short": "FED-FOMC-CALENDAR-2026",
       "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-      "sourceHash": "00cb898f9e423662517799a81179b32452112ba5ed779085153010d005bf301e",
-      "retrievedAt": "2026-10-22T11:37:05.052Z",
+      "sourceHash": "e0322ffcbd74e18702cf4c85ef59733ff1ef8a0c7d62c2247e214e38ddb37752",
+      "retrievedAt": "2026-10-22T13:01:22.715Z",
       "evidenceKind": "calendar"
     },
     {
-      "id": "src-393257adb975208c7f208554",
-      "name": "Daily Treasury Par Yield Curve Rates (through 2026-10-21)",
-      "short": "TREAS-YIELD-CURVE-20261021",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
-      "sourceHash": "3d6ded08e16fada9047cf1a86a9fd3ba1113b6cf88d5d4fe05eeb12559a37ab3",
-      "retrievedAt": "2026-10-22T11:37:05.501Z",
-      "evidenceKind": "macro"
+      "id": "src-100224b9a2c614bc6682767a",
+      "name": "SEC EDGAR latest 8-K filings (current)",
+      "short": "SEC-8K-CURRENT-20261022",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&dateb=&owner=include&count=100&output=atom",
+      "sourceHash": "ce46fecb807cc9ffc9ad89039daefb95399b7b871175c6cc4ce4648e5ae39fcf",
+      "retrievedAt": "2026-10-22T13:01:22.754Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-09dad08ebd7c1fc46a970172",
+      "name": "天孚通信：CPO/NPO提产节奏近期未出现明显变化，相关进出口政策未对光器件产品形成约束",
+      "short": "NBD-TIANFU-CPO-20261022-4613376",
+      "url": "https://www.nbd.com.cn/articles/2026-10-22/4613376.html",
+      "sourceHash": "318de6e514bd7f973f3a2e97cec7fc99ec1d8541878199e41ca0abed61c62691",
+      "retrievedAt": "2026-10-22T13:01:23.358Z",
+      "evidenceKind": "news"
     },
     {
       "id": "src-d842e972a4aec4350bb2cdef",
       "name": "EQUITY:US:MSFT",
       "short": "EQUITY:US:MSFT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.560Z",
-      "checkedAt": "2026-10-22T11:37:05.560Z",
-      "sourceHash": "886c19f92a16aea0f2ca02b440fefeb834f4b3b22ea3b6bbb5fc44a95fd15232"
+      "retrievedAt": "2026-10-22T13:01:23.585Z",
+      "checkedAt": "2026-10-22T13:01:23.585Z",
+      "sourceHash": "3b275ec33a5bfe871d4a287c2c15663cfa872621c3af504e76ed4cbb87798eed"
     },
     {
-      "id": "src-332d0ee8dee3adaa6a35b5b1",
-      "name": "港股遭遇“黑色星期四”：恒科跌超5%创两年多来新低、南向资金净卖出超92亿港元",
-      "short": "NBD-HK-CLOSE-20261022-4612619",
-      "url": "https://www.nbd.com.cn/articles/2026-10-22/4612619.html",
-      "sourceHash": "f4a5c1f16a2cd1a7d4de6c3dcf53d91f879637d13e41bb303cedf6033c8e5bb2",
-      "retrievedAt": "2026-10-22T11:37:05.581Z",
-      "evidenceKind": "news"
+      "id": "src-9f41369ae5a4dfb672b32ac6",
+      "name": "公开市场业务交易公告[2026]第204号（7天期逆回购为零，隔夜逆回购1730亿元）",
+      "short": "PBC-OMO-2026-10-22-204",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102208470683333/index.html",
+      "sourceHash": "f8ae2770729e46ba7ba4acf794e74c066dde64ddd5266ad6b397be05fe080e61",
+      "retrievedAt": "2026-10-22T13:01:24.015Z",
+      "evidenceKind": "official"
     },
     {
       "id": "src-d710626606bba04bd08ad849",
       "name": "INDEX:CN:CHINEXT",
       "short": "INDEX:CN:CHINEXT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.636Z",
-      "checkedAt": "2026-10-22T11:37:05.636Z",
-      "sourceHash": "37a408105ae3a34cfd1dac3d4a1bc77b33a09a4524b5f84784ecded983418b3d"
+      "retrievedAt": "2026-10-22T13:01:24.094Z",
+      "checkedAt": "2026-10-22T13:01:24.094Z",
+      "sourceHash": "1b356c28fa03a85e52655dfbfa16d309875755de45dd8757c31d83db1e6bb2f5"
     },
     {
-      "id": "src-0ad4ec3b902a55d7671405dd",
-      "name": "P&G announces fiscal year 2027 first quarter results (EX-99.1)",
-      "short": "SEC-PG-EX991-Q1FY27-20261022",
-      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000250/fy2627q1jas8-kexhibit991.htm",
-      "sourceHash": "abfd4093daf0e5d90f11fb1ab59bc49c0668723bfef4edda086b13db1f2e0f6a",
-      "retrievedAt": "2026-10-22T11:37:05.639Z",
-      "evidenceKind": "research"
+      "id": "src-aaabb3face464c1123b1140e",
+      "name": "EIA Weekly Petroleum Status Report release schedule (October 2026)",
+      "short": "EIA-WPSR-SCHEDULE-2026-10",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+      "sourceHash": "9089e924ed233d8bc5c6a95345f7396b3ee695344cd39a0b643650103c2bc849",
+      "retrievedAt": "2026-10-22T13:01:24.339Z",
+      "evidenceKind": "calendar"
+    },
+    {
+      "id": "src-6d3e67654dadd7ef64ebf606",
+      "name": "前三季度我国GDP同比增长4.6%（三季度4.5%）",
+      "short": "GOV-CN-GDP-2026Q1Q3",
+      "url": "https://www.gov.cn/lianbo/202610/content_7083662.htm",
+      "sourceHash": "b17bcc081c2f9ed2623fc6c4cddb3b55e42d68036d62a65016091f16fe285780",
+      "retrievedAt": "2026-10-22T13:01:24.361Z",
+      "evidenceKind": "macro"
     },
     {
       "id": "src-34668c6d731a57ed1c1023dc",
       "name": "EQUITY:US:NVDA",
       "short": "EQUITY:US:NVDA",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.698Z",
-      "checkedAt": "2026-10-22T11:37:05.698Z",
-      "sourceHash": "9766f3685712409a136aef80f3982f70e4d6a05d60facf62f095ab47c80a1d7e"
+      "retrievedAt": "2026-10-22T13:01:24.499Z",
+      "checkedAt": "2026-10-22T13:01:24.499Z",
+      "sourceHash": "c25a7eb90f7744175a75b4a8f635e3964d2e7142cf4eb604a019f762207a4897"
     },
     {
-      "id": "src-ea881adcadec670e44fc62cc",
-      "name": "American Airlines third quarter 2026 results (EX-99.1)",
-      "short": "SEC-AAL-EX991-Q3-2026-20261022",
-      "url": "https://www.sec.gov/Archives/edgar/data/4515/000000620126000064/a8kerexhibit991q3-26.htm",
-      "sourceHash": "e6a70364d0c59cece36d8bf66b9dd4802c6e7a9108abb3e97c95ad1394173cf6",
-      "retrievedAt": "2026-10-22T11:37:05.726Z",
-      "evidenceKind": "research"
-    },
-    {
-      "id": "src-1a7323c9cd79ad16b012d23e",
-      "name": "WTI原油期货突破100美元/桶",
-      "short": "NBD-WTI-100-20261022-4612714",
-      "url": "https://www.nbd.com.cn/articles/2026-10-22/4612714.html",
-      "sourceHash": "ae4a77f6c417c5d39e6a93bdc14c7279b2cfda6c5f82f954423feb51f3d38fce",
-      "retrievedAt": "2026-10-22T11:37:05.778Z",
-      "evidenceKind": "market"
+      "id": "src-ee34b81491386fe26632f483",
+      "name": "宁德时代今日再回购A股，两日耗资近13亿元，拟全部注销",
+      "short": "NBD-CATL-BUYBACK-20261022-4613419",
+      "url": "https://www.nbd.com.cn/articles/2026-10-22/4613419.html",
+      "sourceHash": "0c0afe4519ae6995e9e55314612f4bcfae512a0aed7d9129d04b31747ff6e26d",
+      "retrievedAt": "2026-10-22T13:01:24.504Z",
+      "evidenceKind": "news"
     },
     {
       "id": "src-9940126ea964d09e7fafaaff",
       "name": "INDEX:CN:STAR50",
       "short": "INDEX:CN:STAR50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.787Z",
-      "checkedAt": "2026-10-22T11:37:05.787Z",
-      "sourceHash": "a3296b8406a79253f29af60e01f067d6ccc21a04096a36cc284e56f83d794c5b"
+      "retrievedAt": "2026-10-22T13:01:24.582Z",
+      "checkedAt": "2026-10-22T13:01:24.582Z",
+      "sourceHash": "b3f4667c31155d820fa5c409166f2fe85ffc836dfa7807cffa2020d3621e50b7"
     },
     {
       "id": "src-184a3aed61d874af1cc937af",
       "name": "EQUITY:US:GOOGL",
       "short": "EQUITY:US:GOOGL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.839Z",
-      "checkedAt": "2026-10-22T11:37:05.839Z",
-      "sourceHash": "38244ff9d7efeeddb0b344364ff9923cb9d2ce8419d78b0cff5d812ce04499a6"
+      "retrievedAt": "2026-10-22T13:01:24.669Z",
+      "checkedAt": "2026-10-22T13:01:24.669Z",
+      "sourceHash": "d16ee7df653cb14866b66ae6088ce680614447c168ff349eb09db60272232a75"
     },
     {
-      "id": "src-09fe135893ac8807507ad297",
-      "name": "Lattice Semiconductor appoints John McCool and Raejeanne Skillern to Board of Directors (EX-99.1)",
-      "short": "SEC-LSCC-EX991-20261022",
-      "url": "https://www.sec.gov/Archives/edgar/data/855658/000143774926033171/ex_1028812.htm",
-      "sourceHash": "adfa66613e039f82a016bfb73ed504e5f28e229f678d82d9836935d1ee56bec6",
-      "retrievedAt": "2026-10-22T11:37:05.856Z",
-      "evidenceKind": "research"
-    },
-    {
-      "id": "src-04b8bdcf2a7320327379db05",
-      "name": "EQUITY:US:AMZN",
-      "short": "EQUITY:US:AMZN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.861Z",
-      "checkedAt": "2026-10-22T11:37:05.861Z",
-      "sourceHash": "899cc185e4af7b8d0075a0f637c2c294dc88b23655eb5e71902b4db60fc3af01"
+      "id": "src-393257adb975208c7f208554",
+      "name": "Daily Treasury Par Yield Curve Rates (through 2026-10-21)",
+      "short": "TREAS-YIELD-CURVE-2026-10-21",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "sourceHash": "3f19ac10ea2116ef36f78425ea03f6922cb52a19fac9d1d193344e1e84cc749b",
+      "retrievedAt": "2026-10-22T13:01:24.949Z",
+      "evidenceKind": "macro"
     },
     {
       "id": "src-c7ebed6429fdab05af3d4e37",
       "name": "INDEX:CN:CSI300",
       "short": "INDEX:CN:CSI300",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.894Z",
-      "checkedAt": "2026-10-22T11:37:05.894Z",
-      "sourceHash": "b999cc5807b378fffed9910588c78b429867f51456a2896747fc8079f84109c1"
+      "retrievedAt": "2026-10-22T13:01:25.030Z",
+      "checkedAt": "2026-10-22T13:01:25.030Z",
+      "sourceHash": "824164b93b63bc742b391b280c2ea9b424c8ee2e39b02dbeb7359ae7c9abc088"
+    },
+    {
+      "id": "src-04b8bdcf2a7320327379db05",
+      "name": "EQUITY:US:AMZN",
+      "short": "EQUITY:US:AMZN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:25.115Z",
+      "checkedAt": "2026-10-22T13:01:25.115Z",
+      "sourceHash": "575e8499fd233d53766b1e749f99ad119b07b1e2735d5c98317bc354b9f8be75"
+    },
+    {
+      "id": "src-068dd1258de95e50e4256249",
+      "name": "Norfolk Southern reports third quarter 2026 results (EX-99.1)",
+      "short": "SEC-NSC-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm",
+      "sourceHash": "948bfeb9b4c61a41c3d06a4792a3db1f2788d04ad99dfa6514efd64c6e6664b9",
+      "retrievedAt": "2026-10-22T13:01:25.537Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-cc41cc3017b2d43e0ac19728",
+      "name": "Valero Energy reports third quarter 2026 results (EX-99.01)",
+      "short": "SEC-VLO-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm",
+      "sourceHash": "c97f10c98d37a00ab928ec49d3376e2130fff4629d836d9b26f50f296fb41175",
+      "retrievedAt": "2026-10-22T13:01:25.587Z",
+      "evidenceKind": "research"
     },
     {
       "id": "src-eaadd6d97d93eb6207a16fc2",
       "name": "INDEX:CN:CSI500",
       "short": "INDEX:CN:CSI500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.926Z",
-      "checkedAt": "2026-10-22T11:37:05.926Z",
-      "sourceHash": "a32d543b7756359d9559e7f4753235b8a916a421fec3fa7396ffe84e53f143b1"
+      "retrievedAt": "2026-10-22T13:01:25.634Z",
+      "checkedAt": "2026-10-22T13:01:25.634Z",
+      "sourceHash": "96ee92a76c74bbe1e6b6e5cf1d664b9bdf62aa2c7a2d5f5c174df01858904e99"
     },
     {
       "id": "src-78e6f09e34616fdc208b1d39",
       "name": "EQUITY:US:META",
       "short": "EQUITY:US:META",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.951Z",
-      "checkedAt": "2026-10-22T11:37:05.951Z",
-      "sourceHash": "73dab65a0d35bc6e636eab6580286f92745c9c2fef637534241039be219613e2"
+      "retrievedAt": "2026-10-22T13:01:25.733Z",
+      "checkedAt": "2026-10-22T13:01:25.733Z",
+      "sourceHash": "463c267f8bdd1f8be44005455da2fe5c3ed3232d2def7ec475a9b3dfc5defb2b"
     },
     {
       "id": "src-34bca50b53334f82f208d557",
       "name": "INDEX:HK:HSI",
       "short": "INDEX:HK:HSI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:05.984Z",
-      "checkedAt": "2026-10-22T11:37:05.984Z",
-      "sourceHash": "474909be73209e48593c6af48d08cef5c6a51b8366debb6bcdefd8c37ec57953"
+      "retrievedAt": "2026-10-22T13:01:25.817Z",
+      "checkedAt": "2026-10-22T13:01:25.817Z",
+      "sourceHash": "cba7c39e61c7f7b9307bdc721c593593863149e5933f0d8bc580d795302da64e"
+    },
+    {
+      "id": "src-bac43a6b7b3dcc784048013f",
+      "name": "Union Pacific reports third quarter 2026 results (EX-99.1)",
+      "short": "SEC-UNP-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm",
+      "sourceHash": "4413e365f7cca3591c4e067f9da25bc1815cdde6829db5279a081c1a237c0a20",
+      "retrievedAt": "2026-10-22T13:01:25.898Z",
+      "evidenceKind": "research"
     },
     {
       "id": "src-6296613e58b80d5a2541b2bc",
       "name": "EQUITY:US:TSLA",
       "short": "EQUITY:US:TSLA",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.006Z",
-      "checkedAt": "2026-10-22T11:37:06.006Z",
-      "sourceHash": "9143b821f4a934b219c29923c88c79bfd657439387cdb9df037845dcd1697f7b"
+      "retrievedAt": "2026-10-22T13:01:25.910Z",
+      "checkedAt": "2026-10-22T13:01:25.910Z",
+      "sourceHash": "c0bb4b8a3bd94b85f7eb963e1d67f9be205f5d0a4d109c9ae2ff3b53651db90e"
     },
     {
       "id": "src-977e21a36fbe85aa82e451f4",
       "name": "INDEX:HK:HSTECH",
       "short": "INDEX:HK:HSTECH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.038Z",
-      "checkedAt": "2026-10-22T11:37:06.038Z",
-      "sourceHash": "5b59204eff5bc3df2b0d8b6eec00d800599ca6d786967e15cf99dc0b77040796"
+      "retrievedAt": "2026-10-22T13:01:25.993Z",
+      "checkedAt": "2026-10-22T13:01:25.993Z",
+      "sourceHash": "8166ec03322242851a16a97d87f2933d3ea4efbd89efc1dc72a7dd0c51251da3"
     },
     {
       "id": "src-2330b34d03dae5a96933f1cd",
       "name": "EQUITY:US:AVGO",
       "short": "EQUITY:US:AVGO",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.062Z",
-      "checkedAt": "2026-10-22T11:37:06.062Z",
-      "sourceHash": "204f06af38b229672877c686a446f0dbe598f6d93db1494d007e6809110f92b6"
+      "retrievedAt": "2026-10-22T13:01:26.081Z",
+      "checkedAt": "2026-10-22T13:01:26.081Z",
+      "sourceHash": "cdee6f182ccea030f30b319783c9d2ea0c37e49c43b5b50482e75e98a3fc6dc5"
     },
     {
-      "id": "src-c0124b191492ac42ab36d935",
-      "name": "INDEX:HK:HSCEI",
-      "short": "INDEX:HK:HSCEI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.096Z",
-      "checkedAt": "2026-10-22T11:37:06.096Z",
-      "sourceHash": "2fe13f3b42e89924dabc3d6cc1e8f7e98df11ec903c6e4ae6b6c5d69d15cce73"
+      "id": "src-73998ce676150f5cf0a3c1ae",
+      "name": "Crude oil prices and refinery margins generally increased throughout the third quarter (EIA Today in Energy)",
+      "short": "EIA-TIE-REFINERY-MARGINS-2026Q3",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68245",
+      "sourceHash": "9f79b84f9d246886b2ef9536f60306abf4cb9211687c186dbe2fe925294a8eea",
+      "retrievedAt": "2026-10-22T13:01:26.132Z",
+      "evidenceKind": "research"
     },
     {
       "id": "src-6c0e86c9d9d00b20a083c934",
       "name": "EQUITY:US:AMD",
       "short": "EQUITY:US:AMD",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.117Z",
-      "checkedAt": "2026-10-22T11:37:06.117Z",
-      "sourceHash": "3307ae2ec46d1e44faa038db409ff2305af37b6567cffa42cf9ff521c7f5d8a8"
+      "retrievedAt": "2026-10-22T13:01:26.215Z",
+      "checkedAt": "2026-10-22T13:01:26.215Z",
+      "sourceHash": "5c5b25cecd7dc4c7929f99b664ef34f9d16361df24e58f59e3f5521d41c9216a"
     },
     {
-      "id": "src-2edcbd6038edfeaf127ec23f",
-      "name": "中共中央办公厅 国务院办公厅关于推动科技创新和产业创新深度融合的意见",
-      "short": "GOV-KJ-CYFUSION-20261021-7083929",
-      "url": "https://www.gov.cn/yaowen/liebiao/202610/content_7083929.htm",
-      "sourceHash": "9e77dc1e75513d83a8f7281568bcd7ed15ec1c26b1a5051ae8d9f7a05a1f8860",
-      "retrievedAt": "2026-10-22T11:37:06.125Z",
-      "evidenceKind": "official"
+      "id": "src-c0124b191492ac42ab36d935",
+      "name": "INDEX:HK:HSCEI",
+      "short": "INDEX:HK:HSCEI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:26.217Z",
+      "checkedAt": "2026-10-22T13:01:26.217Z",
+      "sourceHash": "0da0d26829fa73e022755b6bd302139adb914d7afdb071fcd2e363671ab82bfd"
     },
     {
       "id": "src-d72e220f5f535c1245072385",
       "name": "INDEX:US:SP500",
       "short": "INDEX:US:SP500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.151Z",
-      "checkedAt": "2026-10-22T11:37:06.151Z",
-      "sourceHash": "396b48a341747dfbcc0f734f5f64a835d14d8f67fb2c2d9715fd52caa26ee392"
+      "retrievedAt": "2026-10-22T13:01:26.296Z",
+      "checkedAt": "2026-10-22T13:01:26.296Z",
+      "sourceHash": "e2ce9b9377c277f0ce15e79fa0c3ec4cb7dbe35166d84098d940e8786979ad13"
     },
     {
       "id": "src-a5c669eb8928b350011058da",
       "name": "EQUITY:US:INTC",
       "short": "EQUITY:US:INTC",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.172Z",
-      "checkedAt": "2026-10-22T11:37:06.172Z",
-      "sourceHash": "a3a377e6995c5a91bce3cda94d0f00a3c8cdc7b2b96eb842160fc2419ba50c65"
+      "retrievedAt": "2026-10-22T13:01:26.307Z",
+      "checkedAt": "2026-10-22T13:01:26.307Z",
+      "sourceHash": "056fe749d04fec30d6b8c8f031df2d8cf0e882ebcaf444efd4f412428a8bc5fc"
     },
     {
       "id": "src-4a57b5e12b1c7830f0336dc8",
       "name": "INDEX:US:NASDAQ",
       "short": "INDEX:US:NASDAQ",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.185Z",
-      "checkedAt": "2026-10-22T11:37:06.185Z",
-      "sourceHash": "b702e1a5472df33402e98a49afa1f82994d994efe12d0ff1ab888627040df6ba"
+      "retrievedAt": "2026-10-22T13:01:26.379Z",
+      "checkedAt": "2026-10-22T13:01:26.379Z",
+      "sourceHash": "39c804ccf93275dc6cf60e5722f089f0afdcd2814d200ca89d4511392aed47d7"
     },
     {
       "id": "src-772408f27845565f1128d60a",
       "name": "EQUITY:US:MU",
       "short": "EQUITY:US:MU",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.207Z",
-      "checkedAt": "2026-10-22T11:37:06.207Z",
-      "sourceHash": "cc2829709500a19f0de3c99445bf02711731fd50dc730fa95f803d31a9bd6206"
+      "retrievedAt": "2026-10-22T13:01:26.395Z",
+      "checkedAt": "2026-10-22T13:01:26.395Z",
+      "sourceHash": "6dfcaa2f1291b284400f602c6a9b88f5917052a34023f04d69534c9092150d63"
+    },
+    {
+      "id": "src-f15d4976246edc7df9476939",
+      "name": "PulteGroup reports third quarter 2026 financial results (EX-99.1)",
+      "short": "SEC-PHM-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm",
+      "sourceHash": "b219a4a54d862a89f88b4b9be96e876855c6b5ab1989eea94a09c1482423c115",
+      "retrievedAt": "2026-10-22T13:01:26.410Z",
+      "evidenceKind": "research"
     },
     {
       "id": "src-e0bb5fd1bca46282849a8b5f",
       "name": "INDEX:US:NDX",
       "short": "INDEX:US:NDX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.227Z",
-      "checkedAt": "2026-10-22T11:37:06.227Z",
-      "sourceHash": "d75f259c182927f3acfebb850a36a373f48c4aed6c60bde2878b77ec349436bf"
+      "retrievedAt": "2026-10-22T13:01:26.460Z",
+      "checkedAt": "2026-10-22T13:01:26.460Z",
+      "sourceHash": "1fa2123dd82ddcfd69ffe18ae971b12b50a4a3d1de9b821d35ae457fd4c0afb6"
     },
     {
       "id": "src-2c82f404902c9e27e70a5709",
       "name": "EQUITY:US:ARM",
       "short": "EQUITY:US:ARM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.238Z",
-      "checkedAt": "2026-10-22T11:37:06.238Z",
-      "sourceHash": "d1e2390e9d2598e1735bb8abed06a59dd811a1a2e815e2aa6669f8c41c582642"
-    },
-    {
-      "id": "src-4c2724acd20f3bf712e1b9a9",
-      "name": "INDEX:US:DOW",
-      "short": "INDEX:US:DOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.260Z",
-      "checkedAt": "2026-10-22T11:37:06.260Z",
-      "sourceHash": "3555df0622a6b910e07099f54cef93bbf22734bf994e0538d109e2cf640ccbeb"
+      "retrievedAt": "2026-10-22T13:01:26.476Z",
+      "checkedAt": "2026-10-22T13:01:26.476Z",
+      "sourceHash": "3f6420a254a283fac260877adf664a44591e569a0c7272a40c97b63736513e5d"
     },
     {
       "id": "src-a1855a700abc50828e0dbe10",
       "name": "EQUITY:US:TSM",
       "short": "EQUITY:US:TSM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.284Z",
-      "checkedAt": "2026-10-22T11:37:06.284Z",
-      "sourceHash": "54fad419b33552072b88d9a7e5ca7036afe66c70c0b07a90d44d41f0d61243a1"
-    },
-    {
-      "id": "src-8793bfe1c682ddb7a690b48f",
-      "name": "EQUITY:US:ASML",
-      "short": "EQUITY:US:ASML",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.317Z",
-      "checkedAt": "2026-10-22T11:37:06.317Z",
-      "sourceHash": "7ec0532f8616d40bc5b62a613a1c578192cdad5d91a54627fa88e3ae982d471b"
-    },
-    {
-      "id": "src-db321b256a90919f12e35781",
-      "name": "INDEX:JP:NIKKEI225",
-      "short": "INDEX:JP:NIKKEI225",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.341Z",
-      "checkedAt": "2026-10-22T11:37:06.341Z",
-      "sourceHash": "5173def2c52f969207ba45f6ac68a57163a39fb5702aaacf4adffa7cadcfeae8"
+      "retrievedAt": "2026-10-22T13:01:26.545Z",
+      "checkedAt": "2026-10-22T13:01:26.545Z",
+      "sourceHash": "182ef69bce39be842364acb587a12cf4dd1b9d50ec71af8c5322bf0cd88e75ae"
     },
     {
       "id": "src-3f3171fa7d078be4fc2861fa",
       "name": "INDEX:US:RUSSELL2000",
       "short": "INDEX:US:RUSSELL2000",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.346Z",
-      "checkedAt": "2026-10-22T11:37:06.346Z",
-      "sourceHash": "faffa3da2f05e7e6d33dc4349f37bbaaa616cd265df510fbd1c27373ed142792"
+      "retrievedAt": "2026-10-22T13:01:26.557Z",
+      "checkedAt": "2026-10-22T13:01:26.557Z",
+      "sourceHash": "99b610d6522bf401ec757625bc80ab81f27de8c147921490a5444567d7fedf57"
     },
     {
-      "id": "src-a9fc80df8ffb235e6cd0d757",
-      "name": "EQUITY:US:CRM",
-      "short": "EQUITY:US:CRM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.351Z",
-      "checkedAt": "2026-10-22T11:37:06.351Z",
-      "sourceHash": "f64d27df694195a425f356c64d29527315d45de669ad585209aef5fed7ef5c46"
+      "id": "src-4c2724acd20f3bf712e1b9a9",
+      "name": "INDEX:US:DOW",
+      "short": "INDEX:US:DOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:26.563Z",
+      "checkedAt": "2026-10-22T13:01:26.563Z",
+      "sourceHash": "28bac7ac64e286987f6daaea4a62bafe1744cc54f39add6b010671f6cfb838dd"
+    },
+    {
+      "id": "src-8793bfe1c682ddb7a690b48f",
+      "name": "EQUITY:US:ASML",
+      "short": "EQUITY:US:ASML",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:26.625Z",
+      "checkedAt": "2026-10-22T13:01:26.625Z",
+      "sourceHash": "7637fc7469e447f8819c2c9825a8d11d285e0e898f755a59a3b5e6233edabe3f"
+    },
+    {
+      "id": "src-db321b256a90919f12e35781",
+      "name": "INDEX:JP:NIKKEI225",
+      "short": "INDEX:JP:NIKKEI225",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:26.637Z",
+      "checkedAt": "2026-10-22T13:01:26.637Z",
+      "sourceHash": "dfe9d11f74ae17d87694e3d5b0695a721781e48da67782d85f812195dd86e588"
     },
     {
       "id": "src-38299ba2f9df25e3bf2df111",
       "name": "EQUITY:US:ORCL",
       "short": "EQUITY:US:ORCL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.373Z",
-      "checkedAt": "2026-10-22T11:37:06.373Z",
-      "sourceHash": "d713f8a4856f358a385f6616909618b09fe32376337f2240b505f576b47d97f6"
-    },
-    {
-      "id": "src-d0f06544a61c10ea97899aa0",
-      "name": "CRYPTO:BTC:USD",
-      "short": "CRYPTO:BTC:USD",
-      "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
-      "retrievedAt": "2026-10-22T11:37:06.375Z",
-      "checkedAt": "2026-10-22T11:37:06.375Z",
-      "sourceHash": "66dab67d94cbc8b6b0080a8711baf5b0f11617855baa379f8706a9f8a717369b"
-    },
-    {
-      "id": "src-5022e6cea2b9157cf6b11a77",
-      "name": "EQUITY:US:ADBE",
-      "short": "EQUITY:US:ADBE",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.379Z",
-      "checkedAt": "2026-10-22T11:37:06.379Z",
-      "sourceHash": "108ad079b7df7eef7ef9bd04f30c5f08477d9453547002322b3c354b7e38d97e"
-    },
-    {
-      "id": "src-61b7dcccf93560ea56eb3187",
-      "name": "CRYPTO:ETH:USD",
-      "short": "CRYPTO:ETH:USD",
-      "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
-      "retrievedAt": "2026-10-22T11:37:06.385Z",
-      "checkedAt": "2026-10-22T11:37:06.385Z",
-      "sourceHash": "6df8b61a2d5a93aad91468cd5443f05e68d97c9907a57343623f347743536868"
+      "retrievedAt": "2026-10-22T13:01:26.650Z",
+      "checkedAt": "2026-10-22T13:01:26.650Z",
+      "sourceHash": "9a6412904bd8a1ab2d7e48bcd881533b649ea921f96ee27fed7bb6860a776758"
     },
     {
       "id": "src-440d8c358ccf2eb5de026ded",
       "name": "INDEX:EU:STOXX50",
       "short": "INDEX:EU:STOXX50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.392Z",
-      "checkedAt": "2026-10-22T11:37:06.392Z",
-      "sourceHash": "c2f504c7ab8c774d027765feafd8e1a30a5e47bdb63e5746180f8b64366a75ce"
+      "retrievedAt": "2026-10-22T13:01:26.706Z",
+      "checkedAt": "2026-10-22T13:01:26.706Z",
+      "sourceHash": "9f9a039b842f5d45bb9585dad58c262a098976d98c605ff908b5145cd48da75d"
+    },
+    {
+      "id": "src-a9fc80df8ffb235e6cd0d757",
+      "name": "EQUITY:US:CRM",
+      "short": "EQUITY:US:CRM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:26.719Z",
+      "checkedAt": "2026-10-22T13:01:26.719Z",
+      "sourceHash": "805872240b27ebd52abf847f00a634bbfcac23d2ecefcc66a1df484e2f0ff27d"
+    },
+    {
+      "id": "src-5022e6cea2b9157cf6b11a77",
+      "name": "EQUITY:US:ADBE",
+      "short": "EQUITY:US:ADBE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:26.786Z",
+      "checkedAt": "2026-10-22T13:01:26.786Z",
+      "sourceHash": "ceb59c2f06cc630be71117f13282d3f6e7ed3a8b29a1dcac6e6b9d2a06d50c50"
+    },
+    {
+      "id": "src-d0f06544a61c10ea97899aa0",
+      "name": "CRYPTO:BTC:USD",
+      "short": "CRYPTO:BTC:USD",
+      "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
+      "retrievedAt": "2026-10-22T13:01:26.800Z",
+      "checkedAt": "2026-10-22T13:01:26.800Z",
+      "sourceHash": "ac73899bfb7bd0f95f3efc11ab9bf6c95aba6cf00a3794ee5bdb4257195660ee"
+    },
+    {
+      "id": "src-61b7dcccf93560ea56eb3187",
+      "name": "CRYPTO:ETH:USD",
+      "short": "CRYPTO:ETH:USD",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
+      "retrievedAt": "2026-10-22T13:01:26.805Z",
+      "checkedAt": "2026-10-22T13:01:26.805Z",
+      "sourceHash": "bebec167c2ffc7c7cd8ed18e478284c11e58a075586b5f32f214306926100f2f"
     },
     {
       "id": "src-ff3513c8c5dcb5dca0085f61",
       "name": "CRYPTO:SOL:USD",
       "short": "CRYPTO:SOL:USD",
       "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
-      "retrievedAt": "2026-10-22T11:37:06.395Z",
-      "checkedAt": "2026-10-22T11:37:06.395Z",
-      "sourceHash": "5b0f2a21af240ca6dc1017b33784832cc574777eda99b07665aabf7520b141b5"
+      "retrievedAt": "2026-10-22T13:01:26.828Z",
+      "checkedAt": "2026-10-22T13:01:26.828Z",
+      "sourceHash": "ce0d81c98e040a6ce231e4b8376464b7509c99130b90fa036431e5f130919140"
     },
     {
       "id": "src-620ca0f9ff9da68ab66b8b1c",
       "name": "EQUITY:US:NOW",
       "short": "EQUITY:US:NOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.434Z",
-      "checkedAt": "2026-10-22T11:37:06.434Z",
-      "sourceHash": "a9623d130cb0bd7edc07d36302ba2250d2e1937dc25bdb5160402955b37546a8"
-    },
-    {
-      "id": "src-165e7ac2b4c234eb7a5e3284",
-      "name": "易方达、华夏、富国、汇添富基金各斥资2亿元自购 更多基金公司将加入自购行列",
-      "short": "NBD-FUND-SELFBUY-20261022-4613036",
-      "url": "https://www.nbd.com.cn/articles/2026-10-22/4613036.html",
-      "sourceHash": "8cde7620e8449487c82528a521a707e4bc4a6f3aec8338b32afd3692bbb8248c",
-      "retrievedAt": "2026-10-22T11:37:06.483Z",
-      "evidenceKind": "news"
-    },
-    {
-      "id": "src-15f5b79b32cba97e05e23d60",
-      "name": "EQUITY:US:SNOW",
-      "short": "EQUITY:US:SNOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.490Z",
-      "checkedAt": "2026-10-22T11:37:06.490Z",
-      "sourceHash": "dc94dd2acae3c07fd3fd3f222c3ca114775946c138a3a473c12dd5cc2a0a322c"
+      "retrievedAt": "2026-10-22T13:01:26.876Z",
+      "checkedAt": "2026-10-22T13:01:26.876Z",
+      "sourceHash": "d01e558961576d08b3b74abfe2b628c23018e9df5580963fbc3711ac0591a69d"
     },
     {
       "id": "src-e73683bca4f7778e43d2f1e8",
       "name": "CRYPTO:PEPE:USD",
       "short": "CRYPTO:PEPE:USD",
       "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
-      "retrievedAt": "2026-10-22T11:37:06.493Z",
-      "checkedAt": "2026-10-22T11:37:06.493Z",
-      "sourceHash": "3ceb2f6ae7c2b819059d2ed1678eae7e4e847cf45260e01c0a9533ac1b620efe"
-    },
-    {
-      "id": "src-219ba892243f0871c11511b2",
-      "name": "CRYPTO:HYPE:USD",
-      "short": "CRYPTO:HYPE:USD",
-      "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
-      "retrievedAt": "2026-10-22T11:37:06.503Z",
-      "checkedAt": "2026-10-22T11:37:06.503Z",
-      "sourceHash": "d7dd0f0b18324aabccf579a18903cdbe0511d2399153dd444f67464c7ceb4ba5"
+      "retrievedAt": "2026-10-22T13:01:26.891Z",
+      "checkedAt": "2026-10-22T13:01:26.891Z",
+      "sourceHash": "e0ef34e965254b64c48152bcdda5f7b145ca37dad688dc3a89652833de08ba90"
     },
     {
       "id": "src-a9cf54901e28ec9b25fe355d",
       "name": "EQUITY:US:PLTR",
       "short": "EQUITY:US:PLTR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.506Z",
-      "checkedAt": "2026-10-22T11:37:06.506Z",
-      "sourceHash": "c9ab0af8d70583dccf11f8ec10b1b1529792ced4626e343e9d35887a2272aa46"
+      "retrievedAt": "2026-10-22T13:01:26.893Z",
+      "checkedAt": "2026-10-22T13:01:26.893Z",
+      "sourceHash": "b6080ec347a2309230542b1c53016552d211df248d37dfa47b52de2d5b5ba14e"
+    },
+    {
+      "id": "src-219ba892243f0871c11511b2",
+      "name": "CRYPTO:HYPE:USD",
+      "short": "CRYPTO:HYPE:USD",
+      "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
+      "retrievedAt": "2026-10-22T13:01:26.921Z",
+      "checkedAt": "2026-10-22T13:01:26.921Z",
+      "sourceHash": "7a81cb1ccd476a6fa28470eb4e9452b24f2b563c7b97c2c81304bb47d0533376"
     },
     {
       "id": "src-c3ce3ea19c5e3ff913bc8e44",
       "name": "EQUITY:US:NET",
       "short": "EQUITY:US:NET",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.546Z",
-      "checkedAt": "2026-10-22T11:37:06.546Z",
-      "sourceHash": "9291c42344098069d2e6bc0e6a52a93476a103919c25793f8f8af78ce15ef756"
+      "retrievedAt": "2026-10-22T13:01:26.974Z",
+      "checkedAt": "2026-10-22T13:01:26.974Z",
+      "sourceHash": "dc1c447106e6971d8d7885cc07e77afddd72cf0037a12787e0db8174b0a3c893"
+    },
+    {
+      "id": "src-aac3d704246f462180affcfc",
+      "name": "Comcast reports 3rd quarter 2026 results (EX-99.1)",
+      "short": "SEC-CMCSA-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1166691/000162828026066783/ex991-9302026.htm",
+      "sourceHash": "ef398ea0cb1eec166fa1d1c7859406d82f5b8c3eef1b9b7b287756573c3f5a65",
+      "retrievedAt": "2026-10-22T13:01:26.983Z",
+      "evidenceKind": "research"
     },
     {
       "id": "src-dee9c47e788eb3b5e9957de0",
       "name": "FX:DXY",
       "short": "FX:DXY",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.548Z",
-      "checkedAt": "2026-10-22T11:37:06.548Z",
-      "sourceHash": "524af56afb5c467f16155a8cbf928abceeb1e8ff20f38208da8812b090f2a9db"
+      "retrievedAt": "2026-10-22T13:01:27.002Z",
+      "checkedAt": "2026-10-22T13:01:27.002Z",
+      "sourceHash": "9a70a29ac1fda65a0520d680f70be1b20460fa3c515043fff7abd66f571ebca7"
     },
     {
-      "id": "src-8d5d7352d4aa06cef2c4c9c8",
-      "name": "FX:USDCNY",
-      "short": "FX:USDCNY",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.560Z",
-      "checkedAt": "2026-10-22T11:37:06.560Z",
-      "sourceHash": "217d5766033ff74a62e1a5b144452a6dacf9adad6d76fcb8882e14a5a99f613b"
+      "id": "src-15f5b79b32cba97e05e23d60",
+      "name": "EQUITY:US:SNOW",
+      "short": "EQUITY:US:SNOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.013Z",
+      "checkedAt": "2026-10-22T13:01:27.013Z",
+      "sourceHash": "f6ed2a2c8de83db7b8c595238de5dd2ffc8dc8189c3ddbf497ad9ce63ea1417d"
     },
     {
       "id": "src-ff2cf19ea64f05b5a5a53285",
       "name": "EQUITY:US:CRWD",
       "short": "EQUITY:US:CRWD",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.565Z",
-      "checkedAt": "2026-10-22T11:37:06.565Z",
-      "sourceHash": "7c3ac54696a5a461347ac66b7e2628b7e7d0f29effab8a7d60ad9b103e592e09"
+      "retrievedAt": "2026-10-22T13:01:27.058Z",
+      "checkedAt": "2026-10-22T13:01:27.058Z",
+      "sourceHash": "156be5012ca44ba456a689717a5a8798030cd39eaa15b3120f831279695e8e46"
     },
     {
       "id": "src-b9c9b43f7a4ebde198fdf0e4",
       "name": "EQUITY:US:DDOG",
       "short": "EQUITY:US:DDOG",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.601Z",
-      "checkedAt": "2026-10-22T11:37:06.601Z",
-      "sourceHash": "e76b627f09b823f0f49d88059b24ffa7fe0306151d7eddc36d0b23ee9079eaee"
+      "retrievedAt": "2026-10-22T13:01:27.082Z",
+      "checkedAt": "2026-10-22T13:01:27.082Z",
+      "sourceHash": "31d8558b2fb651d3c6412005749f5109f8606a696b7ec91573167e54e8c80473"
     },
     {
       "id": "src-3d44a550fc9b64a2d1f171c2",
       "name": "FX:USDCNH",
       "short": "FX:USDCNH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.603Z",
-      "checkedAt": "2026-10-22T11:37:06.603Z",
-      "sourceHash": "7d163feca8738d0909cd176bb072981abf4c2b1db98645b6d69ddbf0f4ab6ec2"
+      "retrievedAt": "2026-10-22T13:01:27.098Z",
+      "checkedAt": "2026-10-22T13:01:27.098Z",
+      "sourceHash": "82739c7160286d3257f25bf1f53eefc0ff050928f38a77dc1d946d5362f114a3"
+    },
+    {
+      "id": "src-8d5d7352d4aa06cef2c4c9c8",
+      "name": "FX:USDCNY",
+      "short": "FX:USDCNY",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.126Z",
+      "checkedAt": "2026-10-22T13:01:27.126Z",
+      "sourceHash": "d52726dff35203bd73b74bb523b5b53615b6d634a72c8002ea9107b6455ba2eb"
     },
     {
       "id": "src-326f0b6e68e52c485af15110",
       "name": "EQUITY:US:COIN",
       "short": "EQUITY:US:COIN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.618Z",
-      "checkedAt": "2026-10-22T11:37:06.618Z",
-      "sourceHash": "0e63e3e92213e62e9521ff9a7f879db45dcb8c5d61bb9c4d3f351e0a508c2f6b"
-    },
-    {
-      "id": "src-8ada3bfad620c0aaad97dfef",
-      "name": "METAL:XAGUSD",
-      "short": "METAL:XAGUSD",
-      "url": "https://api.gold-api.com/price/XAG",
-      "retrievedAt": "2026-10-22T11:37:06.631Z",
-      "checkedAt": "2026-10-22T11:37:06.631Z",
-      "sourceHash": "da9fdc5a90c0a3b5fa547f526dbe6ec8176df80f61a0188530e16598ce841fec"
-    },
-    {
-      "id": "src-395e439b7112bf85673a6beb",
-      "name": "METAL:XAUUSD",
-      "short": "METAL:XAUUSD",
-      "url": "https://api.gold-api.com/price/XAU",
-      "retrievedAt": "2026-10-22T11:37:06.634Z",
-      "checkedAt": "2026-10-22T11:37:06.634Z",
-      "sourceHash": "6dc64d80a007de186b1546e2d7b225687d32552b7dcd4dccb1109d18e7654f96"
+      "retrievedAt": "2026-10-22T13:01:27.144Z",
+      "checkedAt": "2026-10-22T13:01:27.144Z",
+      "sourceHash": "d4fa66f37f7883a6085000a782d9052ab39bbe3ca0851c06c95d47d9b5bdedab"
     },
     {
       "id": "src-65479f4ce02fa594db0ce3a7",
       "name": "EQUITY:US:MSTR",
       "short": "EQUITY:US:MSTR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.659Z",
-      "checkedAt": "2026-10-22T11:37:06.659Z",
-      "sourceHash": "ed4b0b4a9160f823ea71a8bb17da66a321794759cd8234253031bfd4f54649b1"
+      "retrievedAt": "2026-10-22T13:01:27.189Z",
+      "checkedAt": "2026-10-22T13:01:27.189Z",
+      "sourceHash": "c80f09a27aff95735b7d3c8d6a6fac867a3c22e3f695ec7020876c7f880b1b3e"
     },
     {
       "id": "src-f870632d144ef25b5d81e0d5",
       "name": "EQUITY:US:BRK.B",
       "short": "EQUITY:US:BRK.B",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BRK-B?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.671Z",
-      "checkedAt": "2026-10-22T11:37:06.671Z",
-      "sourceHash": "813f34ab9b375c732c6c145868d2a9028902f98f759fef5c3b240d6d7ef8f1dc"
+      "retrievedAt": "2026-10-22T13:01:27.223Z",
+      "checkedAt": "2026-10-22T13:01:27.223Z",
+      "sourceHash": "e9b7de5fe1e61844cc7feffe165e1d978c8ff8b4e29eb62d7154f8ad7cf8223a"
     },
     {
       "id": "src-d9a47ba66192b3c04bc8f3f6",
       "name": "ENERGY:WTI",
       "short": "ENERGY:WTI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.683Z",
-      "checkedAt": "2026-10-22T11:37:06.683Z",
-      "sourceHash": "2f6d0fdc40e333569df587e9d952ae2d197c27ef167a08a844a1efd4fa253fb5"
+      "retrievedAt": "2026-10-22T13:01:27.268Z",
+      "checkedAt": "2026-10-22T13:01:27.268Z",
+      "sourceHash": "20d03bd6135f2154cc08786c038ceeeda43fa9456b0356eaa54ad489bc648686"
     },
     {
       "id": "src-b4c33f217cb4617da7b6dc01",
       "name": "EQUITY:US:BLK",
       "short": "EQUITY:US:BLK",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.691Z",
-      "checkedAt": "2026-10-22T11:37:06.691Z",
-      "sourceHash": "3d1f177b9c216458cd4ffd5c3ae16f253ce89a603d13b5c2ea172b41b0707994"
+      "retrievedAt": "2026-10-22T13:01:27.303Z",
+      "checkedAt": "2026-10-22T13:01:27.303Z",
+      "sourceHash": "8177af0ecd08085d1f8c479c48d2b58334a426a569b65eb7adedb9eb642d9219"
     },
     {
       "id": "src-9df907448534d3354922f821",
       "name": "EQUITY:US:BX",
       "short": "EQUITY:US:BX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.726Z",
-      "checkedAt": "2026-10-22T11:37:06.726Z",
-      "sourceHash": "a93bd4f782fe4c1269dfc2488d03d984b14d2235b3c9b5d07ca7e6a120ffa463"
+      "retrievedAt": "2026-10-22T13:01:27.383Z",
+      "checkedAt": "2026-10-22T13:01:27.383Z",
+      "sourceHash": "b649408baca85c7dc2f15ad63c118dd473836899b0aa5ae870795b8e7200d170"
     },
     {
       "id": "src-7169e336e7f73bbd1e2d1f54",
       "name": "EQUITY:US:KKR",
       "short": "EQUITY:US:KKR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.757Z",
-      "checkedAt": "2026-10-22T11:37:06.757Z",
-      "sourceHash": "14cac0209e3113a67457a769ca87dc1e5d07e065320ea466d2d89fc4f2b517b9"
-    },
-    {
-      "id": "src-483e50fe4cc003e84c411bec",
-      "name": "RATE:US10Y",
-      "short": "RATE:US10Y",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.760Z",
-      "checkedAt": "2026-10-22T11:37:06.760Z",
-      "sourceHash": "f34f14a5ca8b0e847eeef4f368f1173bc548745438e21f3a556031bbc58d9ea2"
-    },
-    {
-      "id": "src-9641ed6e3e9256c44410b13f",
-      "name": "EQUITY:US:APO",
-      "short": "EQUITY:US:APO",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.788Z",
-      "checkedAt": "2026-10-22T11:37:06.788Z",
-      "sourceHash": "dd2eeb910e37be326f134b785daf3a7fd8b2a4d410c35b0a75d3e5d4f29ed358"
-    },
-    {
-      "id": "src-a7554f3c5fd773eea8743645",
-      "name": "VOL:VIX",
-      "short": "VOL:VIX",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.809Z",
-      "checkedAt": "2026-10-22T11:37:06.809Z",
-      "sourceHash": "01dd8b98a50dc5ccd007e34337d88a191b84b1773c225d506528390a75f7bf99"
-    },
-    {
-      "id": "src-177a579934a7c61da3eda551",
-      "name": "EQUITY:US:ARES",
-      "short": "EQUITY:US:ARES",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.812Z",
-      "checkedAt": "2026-10-22T11:37:06.812Z",
-      "sourceHash": "d37a26a3bbed04e25a7ce57901ec64c2a7137b7e5681587319389a6b34d09ec7"
-    },
-    {
-      "id": "src-3f9155e9bb026d51e16a0b29",
-      "name": "EQUITY:US:OWL",
-      "short": "EQUITY:US:OWL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.846Z",
-      "checkedAt": "2026-10-22T11:37:06.846Z",
-      "sourceHash": "13c2a83468db5cadec6b4d6bc08099f2702a53e05cf7ffe976d9d3e5f05ffdf5"
-    },
-    {
-      "id": "src-cea9af858dc05581bdc0e5e5",
-      "name": "EQUITY:US:BN",
-      "short": "EQUITY:US:BN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.866Z",
-      "checkedAt": "2026-10-22T11:37:06.866Z",
-      "sourceHash": "020f774098e8e23a906beed2dbf9877ce5020ad354dddc44af0e04009afc0c9c"
-    },
-    {
-      "id": "src-eb442cf33996fa78a3fa09c9",
-      "name": "EQUITY:US:BAM",
-      "short": "EQUITY:US:BAM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.867Z",
-      "checkedAt": "2026-10-22T11:37:06.867Z",
-      "sourceHash": "3ce6d58a263d4fe7d19187519c7bd2519d805c165b3da8b79ba7bfefc443e152"
-    },
-    {
-      "id": "src-921d9df8692f2f48f9e01166",
-      "name": "EQUITY:US:CG",
-      "short": "EQUITY:US:CG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.902Z",
-      "checkedAt": "2026-10-22T11:37:06.902Z",
-      "sourceHash": "743f3278a38feb17074caf7d5d17e60590629465a47c3a062d2e1d9f3a34669f"
-    },
-    {
-      "id": "src-237d29e211c4e002af0208a6",
-      "name": "EQUITY:US:BEN",
-      "short": "EQUITY:US:BEN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.920Z",
-      "checkedAt": "2026-10-22T11:37:06.920Z",
-      "sourceHash": "1b1d21b7a489b104dac5868d96ab3b18b59bb5030cc3e12cf268a2c8ee764029"
+      "retrievedAt": "2026-10-22T13:01:27.466Z",
+      "checkedAt": "2026-10-22T13:01:27.466Z",
+      "sourceHash": "7f3c6d7dbbd0356d314105e6d194603f04f7c02ad52659775bde31e8daff80a1"
     },
     {
       "id": "src-b59d300064ebc2cd8c2acde4",
       "name": "RATE:US2Y",
       "short": "RATE:US2Y",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
-      "retrievedAt": "2026-10-22T11:37:06.941Z",
-      "checkedAt": "2026-10-22T11:37:06.941Z",
+      "retrievedAt": "2026-10-22T13:01:27.518Z",
+      "checkedAt": "2026-10-22T13:01:27.518Z",
       "sourceHash": "8295293fa0cb705debccb201323ad06efa69293e3b9f57bbd0ff92f25cab745b"
     },
     {
-      "id": "src-b9801499a70677bb015b218e",
-      "name": "EQUITY:US:SCHW",
-      "short": "EQUITY:US:SCHW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.967Z",
-      "checkedAt": "2026-10-22T11:37:06.967Z",
-      "sourceHash": "6ca3f431027b73f001bf725d34649d8b1a30bc0b5abd72e46acdf4031d860a6b"
+      "id": "src-8ada3bfad620c0aaad97dfef",
+      "name": "METAL:XAGUSD",
+      "short": "METAL:XAGUSD",
+      "url": "https://api.gold-api.com/price/XAG",
+      "retrievedAt": "2026-10-22T13:01:27.528Z",
+      "checkedAt": "2026-10-22T13:01:27.528Z",
+      "sourceHash": "db78c2a885240dc0a3c915b518bc4f83ef54479e06e15eee3c9ce71e4820f248"
+    },
+    {
+      "id": "src-483e50fe4cc003e84c411bec",
+      "name": "RATE:US10Y",
+      "short": "RATE:US10Y",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.530Z",
+      "checkedAt": "2026-10-22T13:01:27.530Z",
+      "sourceHash": "e8a1de65d9198af83d8b82fc33b2b11276c20d395f75df99034af65392e9b6c4"
+    },
+    {
+      "id": "src-395e439b7112bf85673a6beb",
+      "name": "METAL:XAUUSD",
+      "short": "METAL:XAUUSD",
+      "url": "https://api.gold-api.com/price/XAU",
+      "retrievedAt": "2026-10-22T13:01:27.540Z",
+      "checkedAt": "2026-10-22T13:01:27.540Z",
+      "sourceHash": "a401abdca8e42e2ed4f6a6d3dbd7bfcb913ac29d1cbe1077dbd007bca443655c"
+    },
+    {
+      "id": "src-a7554f3c5fd773eea8743645",
+      "name": "VOL:VIX",
+      "short": "VOL:VIX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.605Z",
+      "checkedAt": "2026-10-22T13:01:27.605Z",
+      "sourceHash": "6dc7bdd95a5a84ea1337e517a5135f7488a98a419d080cb312cd40c16c42fbf6"
+    },
+    {
+      "id": "src-177a579934a7c61da3eda551",
+      "name": "EQUITY:US:ARES",
+      "short": "EQUITY:US:ARES",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.609Z",
+      "checkedAt": "2026-10-22T13:01:27.609Z",
+      "sourceHash": "d6e8ba6019c641b560c644e6e215473d77090c92828c1292991c9c524e31cd5e"
+    },
+    {
+      "id": "src-9641ed6e3e9256c44410b13f",
+      "name": "EQUITY:US:APO",
+      "short": "EQUITY:US:APO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.611Z",
+      "checkedAt": "2026-10-22T13:01:27.611Z",
+      "sourceHash": "2e554475e3fe93505fc0561f3b7cb989431f587f2a121befe6a9150d6cfc8696"
+    },
+    {
+      "id": "src-3f9155e9bb026d51e16a0b29",
+      "name": "EQUITY:US:OWL",
+      "short": "EQUITY:US:OWL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.627Z",
+      "checkedAt": "2026-10-22T13:01:27.627Z",
+      "sourceHash": "861cbac062da17ea125b695f646bc48e5653aece20f14aed64bba54951f09bc2"
+    },
+    {
+      "id": "src-cea9af858dc05581bdc0e5e5",
+      "name": "EQUITY:US:BN",
+      "short": "EQUITY:US:BN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.686Z",
+      "checkedAt": "2026-10-22T13:01:27.686Z",
+      "sourceHash": "11f20448daa2387fad7699425b285760d6741d21bf25eb08504c0c4ef4696304"
+    },
+    {
+      "id": "src-921d9df8692f2f48f9e01166",
+      "name": "EQUITY:US:CG",
+      "short": "EQUITY:US:CG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.690Z",
+      "checkedAt": "2026-10-22T13:01:27.690Z",
+      "sourceHash": "bee1e7f11f44b501142b9a5c00f05556126e6526cb108eb609e304d0eaf314f5"
+    },
+    {
+      "id": "src-eb442cf33996fa78a3fa09c9",
+      "name": "EQUITY:US:BAM",
+      "short": "EQUITY:US:BAM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.691Z",
+      "checkedAt": "2026-10-22T13:01:27.691Z",
+      "sourceHash": "540dfb5b5a4975bdbbaa8166e908090490c9e3b76bef64d162d0781dcfa94dac"
     },
     {
       "id": "src-6facdc12d1f68f042abf8250",
       "name": "EQUITY:US:TROW",
       "short": "EQUITY:US:TROW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.970Z",
-      "checkedAt": "2026-10-22T11:37:06.970Z",
-      "sourceHash": "ba636744e8187eff1c59a45f7162393993b872c192c22885c8c3bafc30c6b64e"
+      "retrievedAt": "2026-10-22T13:01:27.708Z",
+      "checkedAt": "2026-10-22T13:01:27.708Z",
+      "sourceHash": "b84d03b68a5825bfdf0013c6b657c37e2104e6b2cddc85ddf36d96d3a3579464"
+    },
+    {
+      "id": "src-237d29e211c4e002af0208a6",
+      "name": "EQUITY:US:BEN",
+      "short": "EQUITY:US:BEN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.769Z",
+      "checkedAt": "2026-10-22T13:01:27.769Z",
+      "sourceHash": "9a4f84af676cdd6e66fdc5a12ab45f90ffadeb4fe93ebbea3d553b886254f39b"
+    },
+    {
+      "id": "src-b9801499a70677bb015b218e",
+      "name": "EQUITY:US:SCHW",
+      "short": "EQUITY:US:SCHW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
+      "retrievedAt": "2026-10-22T13:01:27.772Z",
+      "checkedAt": "2026-10-22T13:01:27.772Z",
+      "sourceHash": "d0fddfc2520f796d6edb000335caa13d2717e694279d6c4ae4cdcc9cb7e414d9"
     },
     {
       "id": "src-65538695782361cfffb29020",
       "name": "EQUITY:US:IBKR",
       "short": "EQUITY:US:IBKR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:06.974Z",
-      "checkedAt": "2026-10-22T11:37:06.974Z",
-      "sourceHash": "fd4db56d70d55450c79c672498a23bca7ade85e40281c7661d59fd932c2043c5"
+      "retrievedAt": "2026-10-22T13:01:27.783Z",
+      "checkedAt": "2026-10-22T13:01:27.783Z",
+      "sourceHash": "2a78563751e452c0a68366b873c4d155088248bf9cce8be9aec49b2b548ce10a"
     },
     {
       "id": "src-563aa0dacd1aa03dcee1ad85",
       "name": "EQUITY:US:GS",
       "short": "EQUITY:US:GS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:07.002Z",
-      "checkedAt": "2026-10-22T11:37:07.002Z",
-      "sourceHash": "7b7be11655a307987aa87d672258f0c86613c5a6eaa1b11c31523ed7426f3e8c"
+      "retrievedAt": "2026-10-22T13:01:27.797Z",
+      "checkedAt": "2026-10-22T13:01:27.797Z",
+      "sourceHash": "df51412fc04785590108ad7d71811a0123323357a1b7539b995414a9414f5c07"
     },
     {
       "id": "src-81b168263e538041e104ad36",
       "name": "EQUITY:US:MS",
       "short": "EQUITY:US:MS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T11:37:07.025Z",
-      "checkedAt": "2026-10-22T11:37:07.025Z",
-      "sourceHash": "94484bfa787a4d6107884f695c870e7a625da679e1e6090c172ae87448b86513"
+      "retrievedAt": "2026-10-22T13:01:27.849Z",
+      "checkedAt": "2026-10-22T13:01:27.849Z",
+      "sourceHash": "208c404fcf0fc4a9082eefc0416a573f7f0c1c8235a9dd2a8f76d15aecc52959"
     },
     {
       "name": "INDEX:CN:SSE",
@@ -1283,10 +1344,10 @@
       "name": "INDEX:US:RUSSELL2000",
       "short": "INDEX:US:RUSSELL2000",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
-      "retrievedAt": "2026-10-22T10:13:56.193Z",
-      "checkedAt": "2026-10-22T10:13:56.193Z",
-      "sourceHash": "ae1eebdfcf928f2ed694cce281ff24a52b8bdb707e9754474db8a4de2757faf6",
-      "id": "retained-f3ebf0ae8b18a80b3128f682"
+      "retrievedAt": "2026-10-22T11:37:06.346Z",
+      "checkedAt": "2026-10-22T11:37:06.346Z",
+      "sourceHash": "faffa3da2f05e7e6d33dc4349f37bbaaa616cd265df510fbd1c27373ed142792",
+      "id": "retained-7d7cd68af966cab9ec85695a"
     },
     {
       "name": "INDEX:US:RUSSELL2000",
@@ -1314,15 +1375,6 @@
       "checkedAt": "2026-10-01T13:10:27.524Z",
       "sourceHash": "5b1234998e8baeec2861299206321fb9c369ca19786679d19fc32e616f34785e",
       "id": "retained-0155859ba9a9a6df7072db5f"
-    },
-    {
-      "name": "RATE:US10Y",
-      "short": "RATE:US10Y",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
-      "retrievedAt": "2026-10-21T19:55:18.519Z",
-      "checkedAt": "2026-10-21T19:55:18.519Z",
-      "sourceHash": "474b3c51b6d7fd1d71a48fc29580a2f1aee8bbfa29ab646e832439661e00ca95",
-      "id": "retained-3d8bed878ed190e0f62efd49"
     },
     {
       "name": "新浪转载/每日经济新闻 · A股午间个股样本",
@@ -1375,141 +1427,6 @@
       "retrievedAt": "2026-10-21T23:33:34.393Z",
       "evidenceKind": "market",
       "id": "news-retained-d81614fe283f1a54b752d547"
-    },
-    {
-      "name": "WTI原油期货价格突破100美元/桶",
-      "short": "STCN-WTI-20261021",
-      "url": "https://www.stcn.com/article/detail/4230775.html",
-      "sourceHash": "54c3592ea64ab7e2a694ec623b3b7dc1134944ffe344d8cc00b04f85d8b55d02",
-      "retrievedAt": "2026-10-21T10:32:47.208Z",
-      "evidenceKind": "market",
-      "id": "news-retained-7e39f5f53467795183a42c6a"
-    },
-    {
-      "name": "债市重回升势，养殖板块大涨——10月21日盘后播报",
-      "short": "NBD-PANHOU-20261021",
-      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611496.html",
-      "sourceHash": "4f4e9eb5505c524295275e385dd1d025a571613b0efe8eaa617aa30b2eb6151d",
-      "retrievedAt": "2026-10-21T10:32:47.689Z",
-      "evidenceKind": "market",
-      "id": "news-retained-eaa9a6f0f2e8f86c751aedb2"
-    },
-    {
-      "name": "市场监管总局召开平台产品和服务质量提升专题座谈会",
-      "short": "NBD-SAMR-PLATFORM",
-      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611654.html",
-      "sourceHash": "e9f14430b3ba51eba5f127948791fe695c7585265771f35a2ee9d3718e291913",
-      "retrievedAt": "2026-10-21T11:47:13.593Z",
-      "evidenceKind": "news",
-      "id": "news-retained-1a772ed5aa9460c21d4b6544"
-    },
-    {
-      "name": "小米雷军：未来5年将在AI等领域投入超2000亿元",
-      "short": "NBD-XIAOMI-AI200B",
-      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611603.html",
-      "sourceHash": "d8118e880fc9fb58330d6095d298a2469756be84b6d343f6eb3b6f05d13330de",
-      "retrievedAt": "2026-10-21T11:47:12.675Z",
-      "evidenceKind": "news",
-      "id": "news-retained-7138e718f28d9630855b81cd"
-    },
-    {
-      "name": "中国长安汽车集团总经理赵非：预计2027年将实现L3级自动驾驶量产",
-      "short": "NBD-CHANGAN-L3",
-      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611652.html",
-      "sourceHash": "48212be0f137c37da4e246997e8c882efd57aeb42e68bfcf23041d8f7eb1181d",
-      "retrievedAt": "2026-10-21T11:47:12.673Z",
-      "evidenceKind": "news",
-      "id": "news-retained-e9613b73bd5a582bcb5b42b0"
-    },
-    {
-      "name": "梅赛德斯-奔驰康林松：要保持技术前沿地位，需要积极参与中国市场",
-      "short": "NBD-BENZ-KALLENIUS",
-      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611649.html",
-      "sourceHash": "ae58a17ce71e5350518d45ce12146527c3052f3979ba560374d084fd43be7fff",
-      "retrievedAt": "2026-10-21T11:47:14.226Z",
-      "evidenceKind": "news",
-      "id": "news-retained-da080fdadbb38f97e5ffa449"
-    },
-    {
-      "name": "宁德时代：10月21日斥资约8亿元回购348.86万股",
-      "short": "NBD-CATL-BUYBACK",
-      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611630.html",
-      "sourceHash": "74861cd75e211c095c6bbec55a88e2ccb8caff99af880ae708d4d6bcf2ffc9b2",
-      "retrievedAt": "2026-10-21T11:47:12.674Z",
-      "evidenceKind": "news",
-      "id": "news-retained-8da86bd4ad057d176be0e7da"
-    },
-    {
-      "name": "4天3板南威软件：因AI短剧及智算中心业务信披不准确收监管警示",
-      "short": "NBD-NANWEI-WARNING",
-      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611672.html",
-      "sourceHash": "03073b231adaca1a7e3eabfd6d3f33803785a79b6eff65824d6e187daa11c97a",
-      "retrievedAt": "2026-10-21T11:47:13.461Z",
-      "evidenceKind": "news",
-      "id": "news-retained-d241155d21a4ec22a6bd6d1c"
-    },
-    {
-      "name": "久远银海两大股东拟转让合计25%股份 或致实控人变更",
-      "short": "STCN-JIUYUAN-TRANSFER",
-      "url": "https://www.stcn.com/article/detail/4231356.html",
-      "sourceHash": "c8c1dfc0999090f14cbc4902b66e234eda06138dc92ae6709f185c01fbcffccd",
-      "retrievedAt": "2026-10-21T11:47:14.746Z",
-      "evidenceKind": "news",
-      "id": "news-retained-0652969bc3cd15a5dae2eebb"
-    },
-    {
-      "name": "301221第三季度净利暴增近1500% 多家公司业绩利好",
-      "short": "STCN-Q3-EARNINGS-WAVE",
-      "url": "https://www.stcn.com/article/detail/4231346.html",
-      "sourceHash": "461e2aa495e2b34f70e44c75600247d6730354210fb233e4e0dbff083037e57c",
-      "retrievedAt": "2026-10-21T11:47:15.085Z",
-      "evidenceKind": "news",
-      "id": "news-retained-7258805bf0201efb4ce360d6"
-    },
-    {
-      "name": "9个交易日涨超58% 百洋股份紧急公告",
-      "short": "STCN-BAIYANG-FISHMEAL",
-      "url": "https://www.stcn.com/article/detail/4231347.html",
-      "sourceHash": "1c0af536ab5e998bae977071273879f72a3fed6d1ac9e20ba2bb11d72498193e",
-      "retrievedAt": "2026-10-21T11:47:15.475Z",
-      "evidenceKind": "news",
-      "id": "news-retained-d67d79d314ee8ff5bafa1198"
-    },
-    {
-      "name": "Abbott Reports Third-Quarter 2026 Results and Reaffirms Full-Year EPS Guidance",
-      "short": "SEC-ABT-Q3-2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/1800/000162828026066601/abt-2026q3xexhibitx991.htm",
-      "sourceHash": "4c9cb29fdae566b0d11470d1a0d2712252a5a7984fd49deeae408dfdc85861d0",
-      "retrievedAt": "2026-10-21T11:47:11.598Z",
-      "evidenceKind": "research",
-      "id": "news-retained-b3c3c8c06c5d2741641845d2"
-    },
-    {
-      "name": "AT&T Delivers Strong Third-Quarter 2026 Results",
-      "short": "SEC-T-Q3-2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000370/t-3q2026exhibit991.htm",
-      "sourceHash": "3a404d4040e386947c6613bdaf273715d0da9daf979a64c129f47d0bdb639519",
-      "retrievedAt": "2026-10-21T11:47:12.324Z",
-      "evidenceKind": "research",
-      "id": "news-retained-7e9a678a86b88be2ca207b1b"
-    },
-    {
-      "name": "Philip Morris International Reports 2026 Third-Quarter Results",
-      "short": "SEC-PM-Q3-2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/1413329/000162828026066596/earningsreleasepm-ex991xq3.htm",
-      "sourceHash": "1f647312c4ae776de41b9a27bcf62f48f8da10fd2d6e7ba7a2025e75dd7abe9d",
-      "retrievedAt": "2026-10-21T11:47:12.769Z",
-      "evidenceKind": "research",
-      "id": "news-retained-6d088a07c3eea352d38eef56"
-    },
-    {
-      "name": "CME Group Inc. Reports Highest Q3 Revenue on Record for Q3 2026",
-      "short": "SEC-CME-Q3-2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/1156375/000115637526000065/exhibit9919302026.htm",
-      "sourceHash": "64615c2ba17ba2ee9f18b71ab894dff85ab0953a941b3c90479bdd99d238c9fe",
-      "retrievedAt": "2026-10-21T11:47:13.056Z",
-      "evidenceKind": "research",
-      "id": "news-retained-6a3b87fb42fd1bd623e36a69"
     },
     {
       "name": "从7天到隔夜，政策利率换锚，原因几何？",
@@ -2934,175 +2851,67 @@
       "id": "news-retained-bfe6b4e4b6bac9c872cc9479"
     },
     {
-      "name": "国际油价持续走低 布伦特原油期货跌幅扩大至近3%",
-      "short": "STCN-4229015-BRENT-FALL",
-      "url": "https://www.stcn.com/article/detail/4229015.html",
-      "sourceHash": "ccb3d3bc6ceca74f0134ae7932eaa53247d89a342250aabe8e6114c29a819135",
-      "retrievedAt": "2026-10-20T17:53:23.493Z",
+      "name": "WTI原油期货突破100美元/桶",
+      "short": "NBD-WTI-100-20261022-4612714",
+      "url": "https://www.nbd.com.cn/articles/2026-10-22/4612714.html",
+      "sourceHash": "ae4a77f6c417c5d39e6a93bdc14c7279b2cfda6c5f82f954423feb51f3d38fce",
+      "retrievedAt": "2026-10-22T11:37:05.778Z",
       "evidenceKind": "market",
-      "id": "news-retained-213f7d8b366c9fc0438f3519"
+      "id": "news-retained-962597a6079c804ffdb84aa5"
     },
     {
-      "name": "国内期市夜盘收盘 燃油跌超5%",
-      "short": "STCN-4229043-FUTURES-NIGHT",
-      "url": "https://www.stcn.com/article/detail/4229043.html",
-      "sourceHash": "48329fb51519d855a80cdaab38b24582b3575ca22b669c2a4c55c79ae066a47c",
-      "retrievedAt": "2026-10-20T17:53:23.766Z",
-      "evidenceKind": "market",
-      "id": "news-retained-10d32a984e79e92cd2e19ed0"
+      "name": "港股遭遇“黑色星期四”：恒科跌超5%创两年多来新低、南向资金净卖出超92亿港元",
+      "short": "NBD-HK-CLOSE-20261022-4612619",
+      "url": "https://www.nbd.com.cn/articles/2026-10-22/4612619.html",
+      "sourceHash": "f4a5c1f16a2cd1a7d4de6c3dcf53d91f879637d13e41bb303cedf6033c8e5bb2",
+      "retrievedAt": "2026-10-22T11:37:05.581Z",
+      "evidenceKind": "news",
+      "id": "news-retained-c95b1e63c33f0316723c59b3"
     },
     {
-      "name": "国际油价短线拉升收窄跌幅，WTI原油期货价格跌1.46%，报97.099美元/桶",
-      "short": "NBD-4610366-WTI-REBOUND",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610366.html",
-      "sourceHash": "616829a95d41b86c266c22539d387a89ef392a759348b1415d2f6fb97c1cb6dc",
-      "retrievedAt": "2026-10-20T17:53:24.678Z",
-      "evidenceKind": "market",
-      "id": "news-retained-7c79a9caaba115d739e0ba5a"
+      "name": "易方达、华夏、富国、汇添富基金各斥资2亿元自购 更多基金公司将加入自购行列",
+      "short": "NBD-FUND-SELFBUY-20261022-4613036",
+      "url": "https://www.nbd.com.cn/articles/2026-10-22/4613036.html",
+      "sourceHash": "8cde7620e8449487c82528a521a707e4bc4a6f3aec8338b32afd3692bbb8248c",
+      "retrievedAt": "2026-10-22T11:37:06.483Z",
+      "evidenceKind": "news",
+      "id": "news-retained-782296cc1e8c47ceb5c2fa61"
     },
     {
-      "name": "美国财政部拍卖六周期国债，得标利率3.975%，投标倍数2.74",
-      "short": "NBD-4610375-TBILL-AUCTION",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610375.html",
-      "sourceHash": "308b5a1a5e2a819dcaab07c41ba5dbb53ee8b7cb88d265552fdd8a0da098526f",
-      "retrievedAt": "2026-10-20T17:53:21.901Z",
+      "name": "P&G announces fiscal year 2027 first quarter results (EX-99.1)",
+      "short": "SEC-PG-EX991-Q1FY27-20261022",
+      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000250/fy2627q1jas8-kexhibit991.htm",
+      "sourceHash": "abfd4093daf0e5d90f11fb1ab59bc49c0668723bfef4edda086b13db1f2e0f6a",
+      "retrievedAt": "2026-10-22T11:37:05.639Z",
+      "evidenceKind": "research",
+      "id": "news-retained-178146349aaf096d35b0bf77"
+    },
+    {
+      "name": "American Airlines third quarter 2026 results (EX-99.1)",
+      "short": "SEC-AAL-EX991-Q3-2026-20261022",
+      "url": "https://www.sec.gov/Archives/edgar/data/4515/000000620126000064/a8kerexhibit991q3-26.htm",
+      "sourceHash": "e6a70364d0c59cece36d8bf66b9dd4802c6e7a9108abb3e97c95ad1394173cf6",
+      "retrievedAt": "2026-10-22T11:37:05.726Z",
+      "evidenceKind": "research",
+      "id": "news-retained-dc62369eb477fb8ccb5d9000"
+    },
+    {
+      "name": "Lattice Semiconductor appoints John McCool and Raejeanne Skillern to Board of Directors (EX-99.1)",
+      "short": "SEC-LSCC-EX991-20261022",
+      "url": "https://www.sec.gov/Archives/edgar/data/855658/000143774926033171/ex_1028812.htm",
+      "sourceHash": "adfa66613e039f82a016bfb73ed504e5f28e229f678d82d9836935d1ee56bec6",
+      "retrievedAt": "2026-10-22T11:37:05.856Z",
+      "evidenceKind": "research",
+      "id": "news-retained-5791709e7ef28202c3fb44a7"
+    },
+    {
+      "name": "Daily Treasury Par Yield Curve Rates (through 2026-10-21)",
+      "short": "TREAS-YIELD-CURVE-20261021",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "sourceHash": "3d6ded08e16fada9047cf1a86a9fd3ba1113b6cf88d5d4fe05eeb12559a37ab3",
+      "retrievedAt": "2026-10-22T11:37:05.501Z",
       "evidenceKind": "macro",
-      "id": "news-retained-404b4b661f7a9f4d6964b285"
-    },
-    {
-      "name": "欧洲主要股指收盘集体下跌",
-      "short": "NBD-4610374-EUROPE-CLOSE",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610374.html",
-      "sourceHash": "73eab5f050eb2dac60b85d152e2d831b6c0a6524e2ef59deab870f140f21ab0e",
-      "retrievedAt": "2026-10-20T17:53:23.961Z",
-      "evidenceKind": "market",
-      "id": "news-retained-097d2b4b7b071362286f9604"
-    },
-    {
-      "name": "CoreWeave盘中逆转涨4% 此前一度跌逾6%",
-      "short": "NBD-4610347-COREWEAVE",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610347.html",
-      "sourceHash": "17cab061133e25e9d285db586dd8fbe65f5e6d3b26132306c8aea179207a1d25",
-      "retrievedAt": "2026-10-20T17:53:23.546Z",
-      "evidenceKind": "market",
-      "id": "news-retained-530a2d7170785730fc2f58e0"
-    },
-    {
-      "name": "以方证实以总理会见美防长 就中东局势展开密谈",
-      "short": "NBD-4610364-ISRAEL-US-DEFENSE",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610364.html",
-      "sourceHash": "84f6815ad0044193a279999915a3c41e011b9b53f350ccc83dd0d3359dd9f6b3",
-      "retrievedAt": "2026-10-20T17:53:25.317Z",
-      "evidenceKind": "news",
-      "id": "news-retained-5710ac725c19fb99c11fe6a4"
-    },
-    {
-      "name": "欧盟发布新版北极战略 聚焦安全、气候与经济发展",
-      "short": "NBD-4610365-EU-ARCTIC",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610365.html",
-      "sourceHash": "244504f941bb2409780535ec090623d4c2be7663795baa9317f989bf80ae5d10",
-      "retrievedAt": "2026-10-20T17:53:25.733Z",
-      "evidenceKind": "news",
-      "id": "news-retained-4ac1e57fe7289f71655bf640"
-    },
-    {
-      "name": "现货白银日内涨幅扩大至超1%",
-      "short": "STCN-4229008-SILVER",
-      "url": "https://www.stcn.com/article/detail/4229008.html",
-      "sourceHash": "c5226bb61f62c4c5fa795b38c44e494c7ad2d7208adea8c84d3d84abba7954b3",
-      "retrievedAt": "2026-10-20T17:53:24.478Z",
-      "evidenceKind": "market",
-      "id": "news-retained-14e8accdfa4b29cbab7875ca"
-    },
-    {
-      "name": "深夜，大反攻！刚刚，全线拉升！美联储传来大消息",
-      "short": "stcn-4229041",
-      "url": "https://www.stcn.com/article/detail/4229041.html",
-      "sourceHash": "f9ce38df53958d28ee59f421a91de84d645f3457663c2d28621e0b311bc2744c",
-      "retrievedAt": "2026-10-20T19:05:51.459Z",
-      "evidenceKind": "news",
-      "id": "news-retained-11579e6eb0a30b5a1ac9f044"
-    },
-    {
-      "name": "标普500指数涨幅迅速收窄至0.3%",
-      "short": "nbd-4610363",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610363.html",
-      "sourceHash": "ad2723b28f69829dd7d309a75ab8d64bc85b41892e3cf6c6bf1a3c974adc472d",
-      "retrievedAt": "2026-10-20T19:05:49.277Z",
-      "evidenceKind": "market",
-      "id": "news-retained-9becb2aa351b6a6e63f2c01b"
-    },
-    {
-      "name": "美国财政部拍卖六周期国债，得标利率3.975%，投标倍数2.74",
-      "short": "nbd-4610375",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610375.html",
-      "sourceHash": "fcc57b8e223c3407d87b63fa70c83913fd4c65f42623752b6bec0f7804d9d546",
-      "retrievedAt": "2026-10-20T19:05:48.260Z",
-      "evidenceKind": "macro",
-      "id": "news-retained-11baddae2fb305fc94ccf0e0"
-    },
-    {
-      "name": "伊朗革命卫队：两艘\"违规\"油轮在霍尔木兹海峡触雷",
-      "short": "nbd-4610373",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610373.html",
-      "sourceHash": "ac45244c28e356132f3768c38ef8128048af30aa71a8449e2fb6990fe55d749e",
-      "retrievedAt": "2026-10-20T19:05:48.215Z",
-      "evidenceKind": "news",
-      "id": "news-retained-4ad11b062a476700de6194c3"
-    },
-    {
-      "name": "国际油价持续走低 布伦特原油期货跌幅扩大至近3%",
-      "short": "stcn-4229015",
-      "url": "https://www.stcn.com/article/detail/4229015.html",
-      "sourceHash": "ccb3d3bc6ceca74f0134ae7932eaa53247d89a342250aabe8e6114c29a819135",
-      "retrievedAt": "2026-10-20T19:05:51.228Z",
-      "evidenceKind": "market",
-      "id": "news-retained-da4a720b4162fca9eb30a78c"
-    },
-    {
-      "name": "布伦特原油跌破106美元/桶",
-      "short": "stcn-4229022",
-      "url": "https://www.stcn.com/article/detail/4229022.html",
-      "sourceHash": "1a15dedb8b6ed422cb1f9dd49d4228f915a36ba5815daa8eb91f4068fc12802c",
-      "retrievedAt": "2026-10-20T19:05:51.671Z",
-      "evidenceKind": "market",
-      "id": "news-retained-de31965e66f9b4613d5dd5bf"
-    },
-    {
-      "name": "国际油价短线拉升收窄跌幅，WTI原油期货跌1.46%报97.099美元/桶",
-      "short": "nbd-4610366",
-      "url": "https://www.nbd.com.cn/articles/2026-10-20/4610366.html",
-      "sourceHash": "f635d589848bfcc555482949e58901ccc050b4e91fac18fea95baba95f8f26e7",
-      "retrievedAt": "2026-10-20T19:05:48.492Z",
-      "evidenceKind": "market",
-      "id": "news-retained-e3f107df9b85f9399d912dc7"
-    },
-    {
-      "name": "国内期市夜盘收盘 燃油跌超5%",
-      "short": "stcn-4229043",
-      "url": "https://www.stcn.com/article/detail/4229043.html",
-      "sourceHash": "48329fb51519d855a80cdaab38b24582b3575ca22b669c2a4c55c79ae066a47c",
-      "retrievedAt": "2026-10-20T19:05:51.393Z",
-      "evidenceKind": "market",
-      "id": "news-retained-d91fde6df16856cfef37706a"
-    },
-    {
-      "name": "一边降温一边加码，银行黄金业务为何冷热分化？",
-      "short": "stcn-4229024",
-      "url": "https://www.stcn.com/article/detail/4229024.html",
-      "sourceHash": "87600495aaf8f24427cfdfe43d19857c30b645ff568c32582813298ec80773a1",
-      "retrievedAt": "2026-10-20T19:05:52.035Z",
-      "evidenceKind": "news",
-      "id": "news-retained-70bb5179c934a1e5cd16ce7a"
-    },
-    {
-      "name": "现货白银日内涨幅扩大至超1%",
-      "short": "stcn-4229008",
-      "url": "https://www.stcn.com/article/detail/4229008.html",
-      "sourceHash": "c5226bb61f62c4c5fa795b38c44e494c7ad2d7208adea8c84d3d84abba7954b3",
-      "retrievedAt": "2026-10-20T19:05:51.983Z",
-      "evidenceKind": "market",
-      "id": "news-retained-801c66659dbfd16c30e0b2d8"
+      "id": "news-retained-d4eab2cb339b36053851efc7"
     },
     {
       "name": "CoreWeave盘中逆转涨4% 此前一度跌逾6%",
@@ -4176,13 +3985,148 @@
       "id": "news-retained-3f1baa2580c10d6f03452741"
     },
     {
-      "name": "Getty Images Holdings, Inc. Form 8-K (Item 1.03 Bankruptcy or Receivership)",
-      "short": "SEC-GETY-8K-20261021",
-      "url": "https://www.sec.gov/Archives/edgar/data/1898496/000121390026111193/ea0309225-8k_getty.htm",
-      "sourceHash": "1bea7584cfae9ecb1641f0eca242e8631a42853435f325c6ef1e7264335b6648",
-      "retrievedAt": "2026-10-21T18:34:07.202Z",
+      "name": "WTI原油期货价格突破100美元/桶",
+      "short": "STCN-WTI-20261021",
+      "url": "https://www.stcn.com/article/detail/4230775.html",
+      "sourceHash": "54c3592ea64ab7e2a694ec623b3b7dc1134944ffe344d8cc00b04f85d8b55d02",
+      "retrievedAt": "2026-10-21T10:32:47.208Z",
+      "evidenceKind": "market",
+      "id": "news-retained-7e39f5f53467795183a42c6a"
+    },
+    {
+      "name": "债市重回升势，养殖板块大涨——10月21日盘后播报",
+      "short": "NBD-PANHOU-20261021",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611496.html",
+      "sourceHash": "4f4e9eb5505c524295275e385dd1d025a571613b0efe8eaa617aa30b2eb6151d",
+      "retrievedAt": "2026-10-21T10:32:47.689Z",
+      "evidenceKind": "market",
+      "id": "news-retained-eaa9a6f0f2e8f86c751aedb2"
+    },
+    {
+      "name": "市场监管总局召开平台产品和服务质量提升专题座谈会",
+      "short": "NBD-SAMR-PLATFORM",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611654.html",
+      "sourceHash": "e9f14430b3ba51eba5f127948791fe695c7585265771f35a2ee9d3718e291913",
+      "retrievedAt": "2026-10-21T11:47:13.593Z",
+      "evidenceKind": "news",
+      "id": "news-retained-1a772ed5aa9460c21d4b6544"
+    },
+    {
+      "name": "小米雷军：未来5年将在AI等领域投入超2000亿元",
+      "short": "NBD-XIAOMI-AI200B",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611603.html",
+      "sourceHash": "d8118e880fc9fb58330d6095d298a2469756be84b6d343f6eb3b6f05d13330de",
+      "retrievedAt": "2026-10-21T11:47:12.675Z",
+      "evidenceKind": "news",
+      "id": "news-retained-7138e718f28d9630855b81cd"
+    },
+    {
+      "name": "中国长安汽车集团总经理赵非：预计2027年将实现L3级自动驾驶量产",
+      "short": "NBD-CHANGAN-L3",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611652.html",
+      "sourceHash": "48212be0f137c37da4e246997e8c882efd57aeb42e68bfcf23041d8f7eb1181d",
+      "retrievedAt": "2026-10-21T11:47:12.673Z",
+      "evidenceKind": "news",
+      "id": "news-retained-e9613b73bd5a582bcb5b42b0"
+    },
+    {
+      "name": "梅赛德斯-奔驰康林松：要保持技术前沿地位，需要积极参与中国市场",
+      "short": "NBD-BENZ-KALLENIUS",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611649.html",
+      "sourceHash": "ae58a17ce71e5350518d45ce12146527c3052f3979ba560374d084fd43be7fff",
+      "retrievedAt": "2026-10-21T11:47:14.226Z",
+      "evidenceKind": "news",
+      "id": "news-retained-da080fdadbb38f97e5ffa449"
+    },
+    {
+      "name": "宁德时代：10月21日斥资约8亿元回购348.86万股",
+      "short": "NBD-CATL-BUYBACK",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611630.html",
+      "sourceHash": "74861cd75e211c095c6bbec55a88e2ccb8caff99af880ae708d4d6bcf2ffc9b2",
+      "retrievedAt": "2026-10-21T11:47:12.674Z",
+      "evidenceKind": "news",
+      "id": "news-retained-8da86bd4ad057d176be0e7da"
+    },
+    {
+      "name": "4天3板南威软件：因AI短剧及智算中心业务信披不准确收监管警示",
+      "short": "NBD-NANWEI-WARNING",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4611672.html",
+      "sourceHash": "03073b231adaca1a7e3eabfd6d3f33803785a79b6eff65824d6e187daa11c97a",
+      "retrievedAt": "2026-10-21T11:47:13.461Z",
+      "evidenceKind": "news",
+      "id": "news-retained-d241155d21a4ec22a6bd6d1c"
+    },
+    {
+      "name": "久远银海两大股东拟转让合计25%股份 或致实控人变更",
+      "short": "STCN-JIUYUAN-TRANSFER",
+      "url": "https://www.stcn.com/article/detail/4231356.html",
+      "sourceHash": "c8c1dfc0999090f14cbc4902b66e234eda06138dc92ae6709f185c01fbcffccd",
+      "retrievedAt": "2026-10-21T11:47:14.746Z",
+      "evidenceKind": "news",
+      "id": "news-retained-0652969bc3cd15a5dae2eebb"
+    },
+    {
+      "name": "301221第三季度净利暴增近1500% 多家公司业绩利好",
+      "short": "STCN-Q3-EARNINGS-WAVE",
+      "url": "https://www.stcn.com/article/detail/4231346.html",
+      "sourceHash": "461e2aa495e2b34f70e44c75600247d6730354210fb233e4e0dbff083037e57c",
+      "retrievedAt": "2026-10-21T11:47:15.085Z",
+      "evidenceKind": "news",
+      "id": "news-retained-7258805bf0201efb4ce360d6"
+    },
+    {
+      "name": "9个交易日涨超58% 百洋股份紧急公告",
+      "short": "STCN-BAIYANG-FISHMEAL",
+      "url": "https://www.stcn.com/article/detail/4231347.html",
+      "sourceHash": "1c0af536ab5e998bae977071273879f72a3fed6d1ac9e20ba2bb11d72498193e",
+      "retrievedAt": "2026-10-21T11:47:15.475Z",
+      "evidenceKind": "news",
+      "id": "news-retained-d67d79d314ee8ff5bafa1198"
+    },
+    {
+      "name": "Abbott Reports Third-Quarter 2026 Results and Reaffirms Full-Year EPS Guidance",
+      "short": "SEC-ABT-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1800/000162828026066601/abt-2026q3xexhibitx991.htm",
+      "sourceHash": "4c9cb29fdae566b0d11470d1a0d2712252a5a7984fd49deeae408dfdc85861d0",
+      "retrievedAt": "2026-10-21T11:47:11.598Z",
+      "evidenceKind": "research",
+      "id": "news-retained-b3c3c8c06c5d2741641845d2"
+    },
+    {
+      "name": "AT&T Delivers Strong Third-Quarter 2026 Results",
+      "short": "SEC-T-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000370/t-3q2026exhibit991.htm",
+      "sourceHash": "3a404d4040e386947c6613bdaf273715d0da9daf979a64c129f47d0bdb639519",
+      "retrievedAt": "2026-10-21T11:47:12.324Z",
+      "evidenceKind": "research",
+      "id": "news-retained-7e9a678a86b88be2ca207b1b"
+    },
+    {
+      "name": "Philip Morris International Reports 2026 Third-Quarter Results",
+      "short": "SEC-PM-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1413329/000162828026066596/earningsreleasepm-ex991xq3.htm",
+      "sourceHash": "1f647312c4ae776de41b9a27bcf62f48f8da10fd2d6e7ba7a2025e75dd7abe9d",
+      "retrievedAt": "2026-10-21T11:47:12.769Z",
+      "evidenceKind": "research",
+      "id": "news-retained-6d088a07c3eea352d38eef56"
+    },
+    {
+      "name": "CME Group Inc. Reports Highest Q3 Revenue on Record for Q3 2026",
+      "short": "SEC-CME-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1156375/000115637526000065/exhibit9919302026.htm",
+      "sourceHash": "64615c2ba17ba2ee9f18b71ab894dff85ab0953a941b3c90479bdd99d238c9fe",
+      "retrievedAt": "2026-10-21T11:47:13.056Z",
+      "evidenceKind": "research",
+      "id": "news-retained-6a3b87fb42fd1bd623e36a69"
+    },
+    {
+      "name": "中共中央办公厅 国务院办公厅关于推动科技创新和产业创新深度融合的意见",
+      "short": "GOV-KJ-CYFUSION-20261021-7083929",
+      "url": "https://www.gov.cn/yaowen/liebiao/202610/content_7083929.htm",
+      "sourceHash": "9e77dc1e75513d83a8f7281568bcd7ed15ec1c26b1a5051ae8d9f7a05a1f8860",
+      "retrievedAt": "2026-10-22T11:37:06.125Z",
       "evidenceKind": "official",
-      "id": "macro-retained-f096e77b01d46a776f21ccf1"
+      "id": "news-retained-4308b0cb9b08b6d8d48d264f"
     },
     {
       "name": "Group 1 Automotive, Inc. Form 8-K (Item 2.01 Completion of Acquisition)",
@@ -4192,15 +4136,6 @@
       "retrievedAt": "2026-10-21T18:34:07.194Z",
       "evidenceKind": "official",
       "id": "macro-retained-dd41d8ac0c680c33c7cb6752"
-    },
-    {
-      "name": "Elmet Group Co. Form 8-K (Item 1.01 Material Definitive Agreement)",
-      "short": "SEC-ELMT-8K-20261021",
-      "url": "https://www.sec.gov/Archives/edgar/data/2101698/000121390026111199/ea0309114-8k_elmet.htm",
-      "sourceHash": "6d3c79202dbb8187b92c3a418c7f8b9dc5b2d9e4b721199a71f850e01a03b51e",
-      "retrievedAt": "2026-10-21T18:34:07.357Z",
-      "evidenceKind": "official",
-      "id": "macro-retained-cc6fbfd6876a4269d6c3c61e"
     },
     {
       "name": "上交所召开首批主动ETF市场动员会 提升中长期资金A股投资比例与稳定性",
@@ -4239,6 +4174,24 @@
       "id": "macro-retained-0a26767eb9c18552059e9763"
     },
     {
+      "name": "Getty Images Holdings, Inc. Form 8-K (Item 1.03 Bankruptcy or Receivership)",
+      "short": "SEC-GETY-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/1898496/000121390026111193/ea0309225-8k_getty.htm",
+      "sourceHash": "1bea7584cfae9ecb1641f0eca242e8631a42853435f325c6ef1e7264335b6648",
+      "retrievedAt": "2026-10-21T18:34:07.202Z",
+      "evidenceKind": "official",
+      "id": "macro-retained-f096e77b01d46a776f21ccf1"
+    },
+    {
+      "name": "Elmet Group Co. Form 8-K (Item 1.01 Material Definitive Agreement)",
+      "short": "SEC-ELMT-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/2101698/000121390026111199/ea0309114-8k_elmet.htm",
+      "sourceHash": "6d3c79202dbb8187b92c3a418c7f8b9dc5b2d9e4b721199a71f850e01a03b51e",
+      "retrievedAt": "2026-10-21T18:34:07.357Z",
+      "evidenceKind": "official",
+      "id": "macro-retained-cc6fbfd6876a4269d6c3c61e"
+    },
+    {
       "name": "Trilogy Metals Inc. Form 8-K Exhibit 99.1",
       "short": "SEC-TMQ-EX991-20261021",
       "url": "https://www.sec.gov/Archives/edgar/data/1543418/000127956926000990/ex991.htm",
@@ -4248,5 +4201,5 @@
       "id": "macro-retained-fe51ca146b1c735ac734764c"
     }
   ],
-  "_inputHash": "fdb8c0c116b7c3346fbc7952285d56c8a533a3d7db7c2df2ee629fa291257f88"
+  "_inputHash": "e86f80489f8cf24564f051fcfe89d6e028cb7ee7bfd5d799b1a7c25de6a79560"
 }
