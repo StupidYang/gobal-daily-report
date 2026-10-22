@@ -1,14 +1,21 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.report.marketCoverage: 必须是数组 [type]\neditorial.report.deepDive: 必须是数组 [type]\neditorial.report.frameworkAnalysis: 必须是数组 [type]\neditorial.report.frameworkSynthesis: 必须是对象 [type]\neditorial.report.watch: 无观察条件时须提供sectionGaps.watch.reason [gap-required]\neditorial.report.dataDefinitions: 无术语时须提供sectionGaps.dataDefinitions.reason [gap-required]",
+  "issues": [
+    "editorial.report.marketCoverage: 必须是数组 [type]",
+    "editorial.report.deepDive: 必须是数组 [type]",
+    "editorial.report.frameworkAnalysis: 必须是数组 [type]",
+    "editorial.report.frameworkSynthesis: 必须是对象 [type]",
+    "editorial.report.watch: 无观察条件时须提供sectionGaps.watch.reason [gap-required]",
+    "editorial.report.dataDefinitions: 无术语时须提供sectionGaps.dataDefinitions.reason [gap-required]"
+  ],
   "execution": {
     "executionId": "20261022T1755Z-us-session",
     "generation": 292
   },
   "deadlineAt": "2026-10-22T18:16:03.591Z",
   "requestId": "20261022T1755Z-us-session",
-  "at": "2026-10-22T17:56:17.201Z",
+  "at": "2026-10-22T18:07:50.009Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +26,54 @@
       "status": "ready-for-analysis",
       "at": "2026-10-22T17:56:17.201Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-22T18:07:50.009Z",
+      "revision": 0
     }
   ],
   "packetHash": "48947db91d15f5de1df4545c4d026f6216f4b396df950cdfc65950cfbda1a77e",
-  "collectionDurationMs": 2558
+  "collectionDurationMs": 2558,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "36ae42a95d99ab4aec1b76e7dfd756efc0d9eb07f66764df53579369c9e9b1a6",
+  "validationIssues": [
+    {
+      "path": "editorial.report.marketCoverage",
+      "code": "type",
+      "message": "必须是数组"
+    },
+    {
+      "path": "editorial.report.deepDive",
+      "code": "type",
+      "message": "必须是数组"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis",
+      "code": "type",
+      "message": "必须是数组"
+    },
+    {
+      "path": "editorial.report.frameworkSynthesis",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.watch",
+      "code": "gap-required",
+      "message": "无观察条件时须提供sectionGaps.watch.reason"
+    },
+    {
+      "path": "editorial.report.dataDefinitions",
+      "code": "gap-required",
+      "message": "无术语时须提供sectionGaps.dataDefinitions.reason"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261022T1755Z-us-session--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
