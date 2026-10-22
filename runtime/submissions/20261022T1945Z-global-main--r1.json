@@ -1,0 +1,1003 @@
+{
+ "execution": {
+  "executionId": "20261022T1945Z-global-main",
+  "generation": 295
+ },
+ "editorial": {
+  "packetHash": "c6a7b740a8f7148dcd2ec1de4c1bb69b06463f51f36a15230aab52f8a583c661",
+  "analyzedAt": "2026-10-22T19:47:30Z",
+  "report": {
+   "overview": "本轮（UTC 19:45 前后）最重要的变化不是方向，而是分化在收盘前被进一步拉大：标普500 7645.85 点、-1.4351%，纳斯达克综指 25941.35 点、-2.8518%，纳指100 28882.96 点、-3.1505%，但道指 52806.62 点仅 -0.0936%、罗素2000 2780.04 点仅 -0.0352%；同一时点 VIX 19.36（+16.0671%）、10年期收益率 4.953%（较财政部 10/21 官定收盘 5.13% 低约17.7个基点）。也就是说，指数层面的下跌几乎全部来自市值加权的高估值科技权重，而不是广度恶化。亚洲时段已经把这条路走完：上证 3658.026 点（-2.0706%）、创业板指 2576.901 点（-4.3720%）、恒生科技 3793.93 点（-5.0276%）。与此同时，两条新的官方证据进入了定价：白宫 10 月 22 日以 232 条款启动风机及零部件进口谈判（180 天内谈协议，未即时加征新关税，但部分组件已在钢铝铜 232 关税覆盖内），以及 EIA 同日说明美国炼厂 5—9 月开工率均值超 95%、为 1998 年以来最高、炼能较 2019 年下降 4%。前者把可再生能源的成本曲线重新挂到关税框架上，后者解释了为什么油价在需求并不强劲的年份仍能维持 99 美元附近的高位——溢价在加工能力与产品端，不在原油需求端。",
+   "rolling24hSummary": "滚动24小时的骨架是「分母让路、分子重估、风格换仓」。利率端连续两日回落：财政部官定曲线显示 10 年期从 10/20 的 5.12% 降至 10/21 的 5.13%—口径上 10/20 为 5.12%、10/21 为 5.13%，而本轮盘中已到 4.953%，等于把两日的净回落重新拉大到约 17 个基点；2 年期官定 4.81%，20 年期 5.47% 仍高于 30 年期 5.42%，长端倒挂未修复。按理这是成长股的顺风，但实际发生的是反向：半导体成为最弱一环（AMD -8.9259%、英特尔 -8.6887%、Arm -7.6195%、ASML -7.0730%、美光 -6.9100%），而软件与另类资管成为最强一环（Adobe +6.3044%、黑石 +7.6846%、Blue Owl +5.3980%、Ares +5.2645%、凯雷 +4.7760%）。商品端同样分化：WTI 99.38 美元、+2.2954%，而黄金 4023.90 美元继续走低、白银 54.695 美元，金银比约 73.6；BTC 81270.7 美元较上一版快照小幅回升但仍处低位。跨资产合起来看，这不是流动性事件，是一次关于「谁的现金流更可预测」的重新排序：硬件卖的是产能与残值，软件与资管卖的是续费与管理费；在利率下行、地缘与关税不确定性上升的组合里，后者被加价、前者被折价。",
+   "methodology": "数据来源与口径：全部报价取本轮 packet（packetHash c6a7b740a8f7148d…，generation 295），由代码于 2026-10-22T19:44:57Z—19:45:05Z 采集。美股与美股个股为 delayed 盘中快照（asOf 约 19:44:58Z—19:45:05Z，对应美东 15:44—15:45，收盘前约15分钟）；A股 6 项指数 asOf 07:00:24Z 与 08:29:01Z—08:29:16Z，status=previous，为 10 月 22 日收盘；港股 3 项 asOf 08:08:58Z，为 10 月 22 日收盘；欧股 STOXX50 与日经 225 为 10 月 22 日收盘/收盘前快照。BTC、ETH、SOL、HYPE、XAU、XAG 为 snapshot 型实时快照（约 19:44:40Z—19:45:03Z），无涨跌幅字段，正文只给水平值不给涨跌幅。WTI 为 19:35:01Z 的 delayed 报价。10 年期收益率 4.953% 为 18:59:53Z 的延迟报价，2 年期本轮为空（partial），因此曲线形态一律引用财政部 10 月 21 日官定收盘，不把盘中与官定混用。文档证据 6 份全部 contentRetrieved=true、blockedDocuments=0：白宫 232 风机公告、EIA 10/22 炼厂开工分析、财政部日度收益率曲线、BEA 发布日程、美联储 FOMC 日历、中国政府网科技部答问。已知缺口：布伦特 BZX26.NYM 本轮仍为 HTTP 404（连续多轮），港股与 A 股成交额、涨跌家数、南向资金未采集，SEC 原文本轮未纳入（该域对采集器返回 403），故 researchRecords 为空。指数涨跌幅沿用提供方前收基准，与交易所口径存在差异时以 packet 为准并在正文标注，不另行换算。",
+   "coreAnalysis": {
+    "mainTheme": "分母让路、分子重排：利率下行没有救起高估值硬件，却把资金推向现金流更可预测的软件与资管，指数跌幅因此高度集中在权重科技股上。",
+    "expectationGap": "市场原本的隐含假设是「10年期回落＝成长股修复」。本轮实际相反：10年期较官定收盘低约17个基点，纳指100 仍 -3.1505%，半导体跌幅是软件涨幅的两倍以上，预期差在于分母改善被分子（产能、残值、份额）的重新定价完全吃掉。",
+    "divergence": "道指 -0.0936%、罗素2000 -0.0352% 对纳指100 -3.1505%，同时 VIX 只到 19.36；A股内部创业板 -4.3720% 对沪深300 -1.8394%，港股恒生科技 -5.0276% 对恒指 -3.9091%——三个市场同一天出现同一种「越大越贵越挨打」的结构。",
+    "regime": "当前处于「利率见顶回落 + 供给端摩擦上升」的组合区间：名义利率给估值松绑，但关税、炼能、航运与地缘把成本下限抬高。这个区间里，久期长但现金流不确定的资产最难受，久期短或收费型现金流的资产最舒服。",
+    "priceIn": "已定价的部分：半导体产能扩张带来的份额与毛利下修、AI资本开支从「无限」转为「看回报」。尚未定价的部分：232 条款向风机等清洁能源设备延伸后，美国可再生能源项目的成本曲线抬升幅度；以及炼能四年下降4%对成品油裂解的持续性支撑。",
+    "bullCase": "看多情形：10年期继续向4.90%靠拢，同时半导体跌幅在收盘前收敛，说明这只是仓位再平衡而非盈利预期下修；此时纳指100 的 -3.15% 会在1—2个交易日内被买回，A股与港股的成长端跟随修复。",
+    "bullInvalidation": "看多失效：若收盘费半跌幅仍大于纳指100 两倍，或下一交易日 A股创业板不能收复2600点且成交额萎缩，则「仓位再平衡」不成立，应改为「盈利预期下修」。",
+    "bearCase": "看空情形：232 条款从风机延伸到更多设备、叠加炼能不足推高成品油价，形成「成本推动 + 关税推动」的双重供给冲击；此时利率下行反而会被解读为增长走弱，股债同跌。",
+    "bearInvalidation": "看空失效：若 WTI 回落至95美元下方且10年期守住4.95%以上，说明供给溢价在消退、利率下行不是衰退定价，双杀情形不成立。"
+   },
+   "plainLanguage": {
+    "verdict": "利率在让路，钱在换仓：卖产能不确定的硬件，买收费确定的软件与资管。",
+    "bottomLine": "指数跌得像系统性风险，但道指与罗素几乎不动、VIX 只到19.36，说明这是权重科技股的局部重定价。",
+    "whyNow": "10年期较官定收盘低约17个基点仍在跌，同时白宫把风机纳入232谈判、EIA确认炼能四年降4%，供给端证据在本轮同时落地。",
+    "horizon": "未来12—24小时看美股收盘与A股开盘的补跌幅度；数周尺度看232谈判与炼能约束对成本端的传导。",
+    "confidence": "medium",
+    "invalidation": "若收盘费半跌幅收敛到纳指100 的1.5倍以内，或10年期跌破4.90%而纳指转涨，则「分子主导」的判断需要改写。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "偏利空",
+      "reason": "创业板 -4.3720%、科创50 -2.7849%，成长端承接了全球AI硬件降估值的主要抛压，且美股盘中未修复",
+      "takeaway": "我的判断：下一交易日开盘补跌幅度取决于美股收盘，若费半尾盘收窄，A股成长端有技术性反弹空间",
+      "horizon": "1—2个交易日",
+      "counterRisk": "若出现增量资金或稳市场表态，修复会提前",
+      "invalidation": "创业板指收复2600点且成交额放大",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:CN:CHINEXT",
+       "INDEX:CN:SSE",
+       "INDEX:CN:CSI300"
+      ]
+     },
+     {
+      "asset": "港股",
+      "effect": "偏利空",
+      "reason": "恒生科技 -5.0276%、恒指 -3.9091%、国企指数 -4.2473%，离岸高beta对美元与关税消息更敏感",
+      "takeaway": "我的判断：港股弹性大于A股，若美股尾盘收窄，港股反弹也更快，但方向仍由美股决定",
+      "horizon": "1—3个交易日",
+      "counterRisk": "南向资金本轮未采集，无法判断是否有承接",
+      "invalidation": "恒指重回23500点上方且恒生科技跌幅收窄至3%以内",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH",
+       "INDEX:HK:HSCEI"
+      ]
+     },
+     {
+      "asset": "美股",
+      "effect": "分化",
+      "reason": "纳指100 -3.1505% 对道指 -0.0936%、罗素2000 -0.0352%，同一天里权重科技与其余部分走了两个方向",
+      "takeaway": "我的判断：这不是全面风险规避，而是权重内部的仓位再平衡，指数跌幅掩盖了广度稳定",
+      "horizon": "12—24小时",
+      "counterRisk": "若VIX升破22，分化会收敛为普跌",
+      "invalidation": "道指与罗素2000同日跌超1%",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:US:NDX",
+       "INDEX:US:DOW",
+       "INDEX:US:RUSSELL2000",
+       "VOL:VIX"
+      ]
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性",
+      "reason": "81270.7 美元的实时快照较上一版小幅回升，但本轮无涨跌幅字段，且与纳斯达克同步性仍在",
+      "takeaway": "我的判断：BTC 目前更像高beta风险资产而非避险资产，方向跟随纳指而非黄金",
+      "horizon": "12—24小时",
+      "counterRisk": "若BTC在纳指下跌时独立走强，说明其避险属性在恢复",
+      "invalidation": "BTC 跌破78000美元同时纳指跌幅收窄",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "INDEX:US:NASDAQ"
+      ]
+     },
+     {
+      "asset": "黄金",
+      "effect": "偏利空",
+      "reason": "XAU 4023.90 美元、白银 54.695 美元，金银比约73.6；在利率下行环境中金价仍走低，说明是持仓端在减而不是货币端在变",
+      "takeaway": "我的判断：名义利率下行未能支撑金价，说明前期涨幅中的流动性溢价正在回吐",
+      "horizon": "1—2周",
+      "counterRisk": "若实际利率同步下行且金价止跌，则回吐结束",
+      "invalidation": "XAU 重回4100美元上方",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "METAL:XAUUSD",
+       "METAL:XAGUSD",
+       "RATE:US10Y"
+      ]
+     },
+     {
+      "asset": "原油",
+      "effect": "短线偏多",
+      "reason": "WTI 99.38 美元、+2.2954%；EIA 确认5—9月炼厂开工率均值超95%为1998年以来最高、炼能较2019年降4%，产品端紧张支撑原油需求",
+      "takeaway": "我的判断：这轮油价是加工能力与产品短缺驱动，不是需求强劲驱动，因此对下游是成本、对上游是利润",
+      "horizon": "1—2周",
+      "counterRisk": "开工率一旦见顶回落，产品溢价会先消失",
+      "invalidation": "WTI 跌破95美元且裂解价差同步收窄",
+      "confidence": "medium-high",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "MACRO:US:REFINERY-UTIL-2026",
+       "MACRO:US:REFINERY-CAPACITY-2026"
+      ]
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "partial",
+     "covered": "上证、深证成指、创业板指、科创50、沪深300、中证500 的10月22日收盘点位与涨跌幅",
+     "gap": "成交额、涨跌家数、两融余额、北向/南向资金本轮未采集，无法判断下跌的参与广度"
+    },
+    {
+     "market": "港股",
+     "status": "partial",
+     "covered": "恒生指数、国企指数、恒生科技指数10月22日收盘点位与涨跌幅",
+     "gap": "南向资金流向、成交额、沽空比例未采集，恒指成分贡献度未拆分"
+    },
+    {
+     "market": "美股",
+     "status": "partial",
+     "covered": "标普500、纳斯达克综指、纳指100、道指、罗素2000、VIX 及41只候选个股的盘中延迟快照（美东15:44—15:45）",
+     "gap": "为收盘前约15分钟的延迟报价而非收盘价；板块指数、成交量、资金流未采集"
+    },
+    {
+     "market": "BTC",
+     "status": "partial",
+     "covered": "BTC、ETH、SOL、HYPE 的实时快照水平值（约19:44:57Z—19:45:03Z）",
+     "gap": "无涨跌幅字段、无成交量与资金费率，无法量化日内变化；不构成完整加密市场覆盖"
+    },
+    {
+     "market": "黄金",
+     "status": "partial",
+     "covered": "XAU 4023.90 美元、XAG 54.695 美元的实时快照，及由此计算的约73.6金银比",
+     "gap": "无涨跌幅字段；实际利率、ETF持仓、央行购金数据本轮未取得"
+    },
+    {
+     "market": "原油",
+     "status": "partial",
+     "covered": "WTI 99.38 美元、+2.2954%（19:35:01Z 延迟报价）与 EIA 炼厂开工/炼能官方数据",
+     "gap": "布伦特 BZX26.NYM 本轮 HTTP 404 连续失败，无布伦特报价；库存、裂解价差、OPEC 产量本轮未采集"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "name": "A股",
+     "price": 3658.026,
+     "change": -2.0706,
+     "status": "收盘",
+     "asOf": "2026-10-22T07:00:24Z",
+     "view": "成长端单边杀估值，创业板 -4.3720% 对沪深300 -1.8394%",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:CSI300"
+     ]
+    },
+    {
+     "asset": "港股",
+     "name": "港股",
+     "price": 22934.68,
+     "change": -3.9091,
+     "status": "收盘",
+     "asOf": "2026-10-22T08:08:58Z",
+     "view": "恒生科技 -5.0276% 领跌，离岸对关税与美元更敏感",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI"
+     ]
+    },
+    {
+     "asset": "美股",
+     "name": "美股",
+     "price": 7645.85,
+     "change": -1.4351,
+     "status": "盘中（延迟）",
+     "asOf": "2026-10-22T19:44:58Z",
+     "view": "纳指100 -3.1505% 对道指 -0.0936%，跌幅高度集中于权重科技",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "name": "BTC",
+     "price": 81270.7,
+     "change": null,
+     "status": "快照",
+     "asOf": "2026-10-22T19:45:03Z",
+     "view": "81270.7 美元，无涨跌幅字段，与纳指同向而非与黄金同向",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "name": "黄金",
+     "price": 4023.899902,
+     "change": null,
+     "status": "快照",
+     "asOf": "2026-10-22T19:44:41Z",
+     "view": "4023.90 美元，利率下行仍未止跌，金银比约73.6",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    },
+    {
+     "asset": "原油",
+     "name": "原油",
+     "price": 99.38,
+     "change": 2.2954,
+     "status": "盘中（延迟）",
+     "asOf": "2026-10-22T19:35:01Z",
+     "view": "WTI 99.38 美元、+2.2954%，炼能约束支撑产品端",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:US:REFINERY-UTIL-2026"
+     ]
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "name": "A股",
+     "market": "A股",
+     "analysis": "A股10月22日已收盘：上证 3658.026 点、-2.0706%，深证成指 11357.319 点、-3.7621%，创业板指 2576.901 点、-4.3720%，科创50 1305.873 点、-2.7849%，沪深300 4036.2966 点、-1.8394%，中证500 6655.25 点、-2.7090%。跌幅从沪深300 的 -1.84% 单调放大到创业板的 -4.37%，落差 2.53 个百分点，说明抛压不是全市场估值同步下移，而是集中在高估值成长端。A股收盘后，美股盘中纳指100 继续走弱到 -3.1505%，成长端的定价没有得到隔夜修正。",
+     "mechanism": "传导链条是「海外算力资本开支的回报假设下修 → 中游器件份额与毛利假设下修 → 创业板与科创板权重股先被杀估值」。由于创业板权重集中在少数高 beta 品种，个别龙头的估值下修就足以拖累指数，而沪深300 里金融、公用事业与消费权重把跌幅压住。政策端同日给出的是中期供给：科技部就科技创新与产业创新深度融合意见答问，提出以企业主导的产学研融通体系、以关键核心技术突破提升产业链自主可控——这是季度级变量，解释不了当日 -2.07%。",
+     "risk": "最大的风险是把「扩产导致份额下降」外推成「需求见顶」。本轮没有任何订单取消或客户砍单的公开证据，跌的是估值假设而非已实现收入；若三季报显示出货量仍在增长、只是价格承压，杀估值会先于杀业绩结束。第二个风险是流动性：成交额与涨跌家数本轮未采集，无法排除是少数权重砸盘造成的指数假象。",
+     "invalidation": "若下一交易日创业板指收复 2600 点、且科创50 不再领跌，则「成长端份额下修」的定价被削弱；若创业板继续放量下跌且沪深300 同步转跌，则要从结构性调整为系统性风险。",
+     "horizon": "1—2个交易日的补跌与修复节奏；产业份额判断适用数周至一个季度。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "FLOW:CN:DISPERSION-2026-10-22"
+     ],
+     "sourceUrls": [
+      "https://www.gov.cn/zhengce/202610/content_7083959.htm"
+     ]
+    },
+    {
+     "asset": "港股",
+     "name": "港股",
+     "market": "港股",
+     "analysis": "港股10月22日收盘：恒生指数 22934.68 点、-3.9091%，国企指数 7689.19 点、-4.2473%，恒生科技 3793.93 点、-5.0276%。恒生科技对恒指的跌幅差 1.12 个百分点，比A股创业板对沪深300 的 2.53 个百分点小，但绝对跌幅更深——港股是全面下跌，A股是结构性下跌。欧股同日 STOXX50 -1.9414%，说明这不是亚太独有的情绪。",
+     "mechanism": "港股是离岸美元流动性市场，同时叠加关税消息：白宫 10 月 22 日以 232 条款启动风机及零部件进口谈判，虽然本公告未立即加征新关税，但明确风机部分组件已在钢铝铜 232 关税覆盖内，这直接抬高了中国风电设备与电力设备出口链在美项目的合规成本预期。离岸市场对这种「规则变化但幅度未定」的消息折价最快，因为它同时影响估值与订单能见度。",
+     "risk": "风险在于把政治表态当成已生效的关税。本公告的实际动作是「授权谈判、180 天内汇报」，不是加税；若把 -5.03% 解读为关税落地，会高估跌幅的持续性。第二个风险是南向资金本轮未采集，无法确认是否有内地资金承接，缺少这一项就不能断言「外资撤、南向接」或反向。",
+     "invalidation": "若恒生科技在下一交易日跌幅收窄到 3% 以内、且恒指重回 23500 点上方，则本轮下跌属于对消息的一次性折价；若 232 谈判在 180 天内实际转化为关税，则估值下修还需要再走一段。",
+     "horizon": "1—3个交易日；232 谈判的时间窗口是 180 天。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSCEI",
+      "INDEX:HK:HSTECH",
+      "FLOW:HK:DISPERSION-2026-10-22"
+     ],
+     "sourceUrls": [
+      "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-wind-turbines-and-their-parts-and-components-into-the-united-states/"
+     ]
+    },
+    {
+     "asset": "美股",
+     "name": "美股",
+     "market": "美股",
+     "analysis": "美股处于收盘前约 15 分钟的延迟快照（美东 15:44—15:45）：标普500 7645.85 点、-1.4351%，纳斯达克综指 25941.35 点、-2.8518%，纳指100 28882.96 点、-3.1505%，道指 52806.62 点、-0.0936%，罗素2000 2780.04 点、-0.0352%，VIX 19.36（+16.0671%）。指数跌幅与广度严重背离：两大中小盘/价值基准几乎平盘，跌幅全部来自权重科技。个股层面，AMD -8.9259%、英特尔 -8.6887%、Meta -7.8034%、Arm -7.6195%、ASML -7.0730%、美光 -6.9100%、亚马逊 -5.0768%，而 Adobe +6.3044%、黑石 +7.6846%、Blue Owl +5.3980%、Ares +5.2645%、凯雷 +4.7760%、苹果 +1.0931%。",
+     "mechanism": "这是典型的风格内部换仓：同一批资金从「卖产能」的硬件转向「收管理费与订阅费」的软件与另类资管。硬件端被两件事同时压：一是算力资本开支的回报周期被拉长，二是 232 条款显示关税工具箱还在扩张，全球产能布局的重置成本上升。软件与资管的现金流对关税与产能都不敏感，在利率下行时反而受益于估值分母改善，于是成为资金的临时避风港。VIX 只到 19.36 说明这不是恐慌，而是有序调仓。",
+     "risk": "风险是把盘中延迟报价当成收盘价。本轮 asOf 为 19:44:58Z—19:45:05Z，距收盘还有约 15 分钟，尾盘竞价可能改变个股排序；同时 AMD、英特尔这类单日 -8% 以上的波动，在没有公司原文核验的情况下，无法区分是业绩指引下修还是纯粹的仓位清算。SEC 原文本轮不可用（403），因此本条不构成公司基本面结论。",
+     "invalidation": "若收盘时费半跌幅收敛至纳指100 的 1.5 倍以内，则「硬件单独被杀」的判断减弱；若道指与罗素2000 同日跌超 1%、VIX 破 22，则分化收敛为系统性风险。",
+     "horizon": "12—24小时（含收盘与次日盘前）。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "VOL:VIX",
+      "EQUITY:US:AMD",
+      "EQUITY:US:ADBE",
+      "EQUITY:US:BX",
+      "EQUITY:US:META",
+      "RESEARCH:US:SEMI-VS-SOFTWARE-2026-10-22"
+     ],
+     "sourceUrls": []
+    },
+    {
+     "asset": "BTC",
+     "name": "BTC",
+     "market": "BTC",
+     "analysis": "BTC 实时快照 81270.7 美元（19:45:03Z），ETH 2379.74 美元、SOL 103.29 美元、HYPE 77.30 美元。本轮 packet 对这四项只给水平值、不给涨跌幅，因此不能量化日内变化，也不能与纳指的 -2.8518% 做严格同口径比较；只能相对本轮上一版快照（82429 附近的量级已不在本轮数据内）说方向，故本条不对涨跌幅下结论。相关个股给出了侧面证据：Coinbase -5.2349%、MicroStrategy -5.7617%，两者跌幅大于 BTC 本身可能的价格波动，说明杠杆与托管环节在被减配。",
+     "mechanism": "BTC 当前的定价锚仍是美元流动性溢价，而不是「数字黄金」。当 10 年期回落到 4.953%、美元指数 101.609（-0.168%）走平时，理论上对加密是顺风；但实际发生的是加密相关股票跌幅显著，说明资金在削减高 beta 敞口，而不是在买避险。矿工与持币公司的资产负债表对价格高度敏感，股价跌幅天然放大。",
+     "risk": "最大的风险是用股票跌幅反推币价跌幅。Coinbase 与 MicroStrategy 的下跌可能来自股权层面的融资与折价，也可能来自其对单一资产的敞口，两者不能等同。第二个风险是数据缺口：没有成交量、资金费率与 ETF 流向，任何「资金在撤」的说法都只是推断。",
+     "invalidation": "若 BTC 在纳指继续下跌的同一天独立走强并站上 85000 美元，则「高beta风险资产」的定位需要修正为「阶段性避险替代」；若 BTC 跌破 78000 美元而纳指跌幅收窄，则说明加密走的是自身周期。",
+     "horizon": "12—24小时观察方向，数周观察其与纳指的相关性是否稳定。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "EQUITY:US:COIN",
+      "EQUITY:US:MSTR"
+     ],
+     "sourceUrls": []
+    },
+    {
+     "asset": "黄金",
+     "name": "黄金",
+     "market": "黄金",
+     "analysis": "黄金实时快照 4023.90 美元、白银 54.695 美元（19:44:40Z—19:44:41Z），金银比约 73.6。本轮 packet 未给涨跌幅，故不量化日内变动；可以确认的是水平值：金价已在 4020—4040 美元区间，白银在 54.7 美元附近，金银比维持在 73 以上——这个比值意味着白银相对黄金仍处折价，工业属性没有被重新定价。关键观察是：10 年期从官定 5.13% 回落到 4.953%，名义利率明显下行，金价却没有跟着上行。",
+     "mechanism": "黄金对名义利率的敏感度取决于利率下行的原因。若下行来自通胀预期回落，实际利率未必下降，金价就得不到支撑；若下行来自增长担忧，金价应上涨。本轮金价走低而利率走低，最合理的解释是前期积累的流动性溢价与地缘溢价在回吐——这与股票端「卖出高 beta、买入收费型现金流」是同一件事的两面：黄金也是不生息资产，在风险偏好有序回落时同样被减配。",
+     "risk": "风险在于把「金价不涨」当成「黄金失去避险功能」。本轮没有实际利率、ETF 持仓与央行购金数据，无法判断是投资需求回落还是官方需求托底；也没有确认金银比变化是白银工业需求走弱还是黄金单独回吐。缺少这些，任何关于「货币属性弱化」的结论都超出证据。",
+     "invalidation": "若 XAU 重回 4100 美元上方、同时 10 年期仍在 4.95% 以下，则「流动性溢价回吐」的解释被推翻，应改为「实际利率下行开始主导」；若金价跌破 3950 美元且白银同步走弱，则回吐仍在继续。",
+     "horizon": "1—2周；实际利率传导的验证需要等到下一次通胀数据（BEA 10月29日）。",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "RATE:US10Y",
+      "MACRO:US:UST-10Y-2026-10-21"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "原油",
+     "name": "原油",
+     "market": "原油",
+     "analysis": "WTI 99.38 美元、+2.2954%（19:35:01Z 延迟报价），布伦特本轮仍为 HTTP 404，无可用报价，因此不给布伦特水平也不给价差。本轮真正的增量证据来自 EIA 10 月 22 日的官方分析：美国炼厂 2026 年 5—9 月开工率均值超过产能的 95%，为 1998 年以来同期最高（1991 年以来同期均值为 92%）；但总产量只创 2019 年以来最高，因为炼油产能自 2019 年下降 4%。EIA 明确指出，今年的高开工主要由全球馏分油供应紧张、以及国际市场对美国馏分油出口的高需求驱动。",
+     "mechanism": "这解释了一个反常现象：在需求并不强劲的年份，油价却能站上 99 美元。传导不在原油需求端，而在加工能力端——炼能四年下降 4%，要满足同样的产品需求就必须把剩余产能开到 95% 以上；一旦某处炼厂检修或中断，产品缺口无法被闲置产能补上，裂解价差就会放大，并反过来拉动原油采购。这与白宫同日把风机纳入 232 谈判指向同一个方向：政策与产能都在抬高能源系统的成本下限。",
+     "risk": "风险是把高开工率读成高需求。95% 的开工是供给约束的结果，不是消费旺盛的证据；一旦全球馏分油紧张缓解或炼厂进入季节性检修，开工率回落会先打掉产品溢价，再传导到原油。另一个风险是单点供应中断的不可预测性——它能在一夜之间把价格推高，也能在停火消息后同样快速回落。",
+     "invalidation": "若 WTI 跌破 95 美元、且 EIA 后续周报显示开工率回落至 92% 以下，则「加工能力约束」的定价结束；若油价上涨同时伴随馏分油裂解价差收窄，则上涨来自原油端而非产品端，机制判断需要改写。",
+     "horizon": "1—2周；炼能约束是年度级变量，季节性检修是月度级变量。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:US:REFINERY-UTIL-2026",
+      "MACRO:US:REFINERY-CAPACITY-2026"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/todayinenergy/detail.php?id=68344"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "id": "FW-DCF",
+     "framework": "现金流折现与利率传导",
+     "concept": "把价格拆成未来现金流与折现率两部分，看哪一部分在变。",
+     "applicability": "适用于本轮「利率明显下行但成长股下跌」的悖论。",
+     "observed": "10 年期 4.953%（较财政部 10/21 官定 5.13% 低约 17.7 个基点），纳指100 仍 -3.1505%，半导体跌幅达 -7% 至 -9%。",
+     "mechanism": "折现率下降本应抬升长久期资产估值；但若市场同时下调未来现金流（产能利用率、份额、残值），净效应可以为负。",
+     "conclusion": "本轮是分子端主导：分母改善被现金流假设下修完全抵消，并且抵消幅度在硬件端最大。",
+     "assumptions": "利率下行的原因不是深度衰退预期；企业资本开支仍由自身现金流支撑。",
+     "counterEvidence": "若利率下行源于衰退担忧，防御性板块也应下跌，但道指仅 -0.0936%、罗素2000 仅 -0.0352%，与衰退定价不符。",
+     "horizon": "12—24小时",
+     "invalidation": "10 年期跌破 4.90% 且纳指100 转涨，则分母重新主导。",
+     "confidence": "medium",
+     "missingData": "2 年期本轮为空（partial），无法计算 2s10s 的盘中变化，曲线形态只能用官定收盘。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "MACRO:US:UST-10Y-2026-10-21",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "id": "FW-EXPECT",
+     "framework": "预期差与事件研究",
+     "concept": "价格变动来自实际结果与事前预期的差，而不是结果本身的好坏。",
+     "applicability": "适用于判断 10 年期回落为何没有带来成长股反弹。",
+     "observed": "市场事前把「利率见顶回落」当成成长股修复的触发器；实际同一时段纳指100 -3.1505%、VIX 仅 19.36（+16.0671%）。",
+     "mechanism": "当利好被提前计入，兑现时反而成为卖出窗口；本轮更极端——利好兑现的同时出现了新的负面事件（232 条款扩围），两者叠加放大了硬件端的卖压。",
+     "conclusion": "「降息救成长」这条交易已经拥挤，本轮是拥挤交易的平仓，而不是新信息的单向冲击。",
+     "assumptions": "事前仓位确实偏多成长；本轮无持仓数据，属推断。",
+     "counterEvidence": "若纯属平仓，跌幅应在收盘前收敛；需看收盘与次日盘前是否延续。",
+     "horizon": "1—3个交易日",
+     "invalidation": "次日盘前纳指期货转涨且半导体领涨，则平仓结束。",
+     "confidence": "medium-low",
+     "missingData": "无仓位、资金流与期权持仓数据，无法直接验证拥挤度。",
+     "evidenceFactIds": [
+      "INDEX:US:NDX",
+      "VOL:VIX",
+      "EQUITY:US:AMD"
+     ],
+     "sourceUrls": []
+    },
+    {
+     "id": "FW-MICRO",
+     "framework": "市场微观结构与广度",
+     "concept": "看跌幅是集中在少数权重，还是扩散到多数标的。",
+     "applicability": "适用于区分「指数大跌」与「市场普跌」。",
+     "observed": "纳指100 -3.1505% 对道指 -0.0936%、罗素2000 -0.0352%；A股创业板 -4.3720% 对沪深300 -1.8394%；港股恒生科技 -5.0276% 对恒指 -3.9091%。",
+     "mechanism": "市值加权指数被少数高权重、高估值成分主导，当资金在风格内部换仓时，指数跌幅会远大于中位数个股的跌幅。",
+     "conclusion": "三个市场同日出现同向的「权重集中度效应」，说明这是全球性的风格换仓，不是某一地区的本地事件。",
+     "assumptions": "成分权重结构未在本轮发生突变。",
+     "counterEvidence": "港股是全面下跌（恒指 -3.91%），集中度效应弱于A股与美股。",
+     "horizon": "12—24小时",
+     "invalidation": "道指与罗素2000 同日跌超 1%，则广度恶化，集中度解释失效。",
+     "confidence": "medium-high",
+     "missingData": "A股与港股的成交额、涨跌家数未采集，无法给出精确的广度指标。",
+     "evidenceFactIds": [
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:CSI300",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSI",
+      "FLOW:CN:DISPERSION-2026-10-22",
+      "FLOW:HK:DISPERSION-2026-10-22"
+     ],
+     "sourceUrls": []
+    },
+    {
+     "id": "FW-SUPPLY",
+     "framework": "供需与加工能力约束",
+     "concept": "价格由边际供给能力决定，而不是由需求总量决定。",
+     "applicability": "适用于解释 99 美元的 WTI 与 95% 的炼厂开工率并存。",
+     "observed": "WTI 99.38 美元、+2.2954%；EIA：5—9 月开工率均值 >95%，1998 年以来最高；炼能较 2019 年下降 4%；总产量仅创 2019 年以来最高。",
+     "mechanism": "产能退出后，满足同样产品需求必须把剩余产能开到接近极限；缓冲消失后，任何单点中断都会被放大成价格尖峰，产品端先涨、原油端跟随。",
+     "conclusion": "本轮油价的核心是加工能力与产品短缺，不是需求强劲；因此它对上游是利润、对下游是成本。",
+     "assumptions": "全球馏分油紧张延续；无大规模新增炼能投产。",
+     "counterEvidence": "若开工率已在 9 月见顶并进入检修季，产品溢价会在数周内收窄。",
+     "horizon": "1—2周（季节性），数年（炼能）",
+     "invalidation": "WTI 跌破 95 美元且 EIA 周报开工率回落至 92% 以下。",
+     "confidence": "medium-high",
+     "missingData": "布伦特报价本轮 404，裂解价差与库存数据未采集。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:US:REFINERY-UTIL-2026",
+      "MACRO:US:REFINERY-CAPACITY-2026"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/todayinenergy/detail.php?id=68344"
+     ]
+    },
+    {
+     "id": "FW-POLICY",
+     "framework": "政策传导与成本分配",
+     "concept": "关税与产业政策改变的是成本由谁承担，而不是需求是否存在。",
+     "applicability": "适用于 232 条款把风机纳入谈判框架这件事。",
+     "observed": "白宫 2026-10-22 公告：认定风机及零部件进口威胁国家安全，指令商务部与 USTR 在 180 天内谈判；未即时加征新关税，但明确部分组件已在钢铝铜 232 关税覆盖内。",
+     "mechanism": "政策先建立「可加税」的法律架构，再通过谈判换取让步；在此过程中，项目的成本上限被抬高、投资决策被推迟，受影响的是资本开支节奏而非当期需求。",
+     "conclusion": "对风电与电力设备是中期成本与订单能见度问题，对钢铝铜是需求端的边际支撑；短期不构成对指数的直接冲击。",
+     "assumptions": "谈判在 180 天内不会立即转化为全面关税。",
+     "counterEvidence": "若谈判迅速破裂并直接加税，成本冲击会提前且幅度更大。",
+     "horizon": "180 天谈判窗口",
+     "invalidation": "白宫在 180 天内宣布实际加征关税或配额。",
+     "confidence": "medium",
+     "missingData": "公告未给出具体税率与覆盖清单，无法量化成本。",
+     "evidenceFactIds": [
+      "PROP:US:2026-10-22-WIND-232"
+     ],
+     "sourceUrls": [
+      "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-wind-turbines-and-their-parts-and-components-into-the-united-states/"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "五个框架里有四个（折现、预期差、微观结构、供需）指向同一结论——本轮是风格与分子端的重定价，分母端在让路；只有政策传导框架指向中期成本上移。综合判断为结构性换仓，而非系统性风险。",
+    "agreement": "折现框架解释「为何利率下行没救起成长」，微观结构框架用三个市场的权重集中度交叉验证，供需框架用炼能四年降4%的官方数据支撑油价，三者互相独立却指向同一方向：钱没走，换了位置。",
+    "disagreement": "政策传导框架认为 232 扩围会抬高能源与电力设备的成本下限，对油价与铜钢铝是中期利多；供需框架提醒开工率一旦见顶，短期溢价会先消失。两者在时间尺度上冲突，但不改变当日方向。",
+    "weighting": "更看重微观结构证据，因为它是本轮唯一可以用同一时点快照直接验证的（道指/罗素平盘对纳指 -3.15%，A股与港股同构）；政策传导框架依赖一份尚无税率的公告，权重下调；预期差框架缺仓位数据，只作辅助。",
+    "invalidation": "若道指与罗素2000 同日跌超 1%、VIX 升破 22，则结构性结论作废；若 10 年期跌破 4.90% 而纳指仍跌，则「分母已让到位」需改写为「分母失效」。"
+   },
+   "watch": [
+    {
+     "point": "美股收盘时费半与纳指100 的相对跌幅",
+     "detail": "若费半跌幅大于纳指100 两倍，抛压仍集中在硬件端；若收敛至1.5倍以内，轮动接近尾声。"
+    },
+    {
+     "point": "10 年期能否守住 4.95%",
+     "detail": "本轮 4.953% 是两日回落后的水平；若跌破 4.90%，需重新判断是估值顺风还是增长担忧。"
+    },
+    {
+     "point": "A股下一交易日创业板指能否收复 2600 点",
+     "detail": "2600 点是本轮失守的位置，收复且成交放大才说明杀估值结束；不能收复则补跌延续。"
+    },
+    {
+     "point": "232 风机谈判的实际进展",
+     "detail": "公告给的是 180 天窗口，观察是否出现具体税率、覆盖清单或双边协议；这是成本传导能否落地的关键。"
+    },
+    {
+     "point": "EIA 后续周报的炼厂开工率",
+     "detail": "若从 95% 以上回落至 92% 以下，产品端紧张缓解，油价支撑减弱；若维持高位，溢价延续。"
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "分母 / 分子",
+     "definition": "分母指折现率（用国债收益率近似），分子指未来现金流。本轮的分母在改善、分子在下修。"
+    },
+    {
+     "term": "delayed 报价",
+     "definition": "数据供应商延迟约15分钟的盘中价格，不等于收盘价。本轮美股与美股个股均为该类型。"
+    },
+    {
+     "term": "官方日度收益率曲线",
+     "definition": "美国财政部每日发布的国债平价收益率，非盘中实时值。本轮 10 年期官定收盘为 10/21 的 5.13%。"
+    },
+    {
+     "term": "232 条款",
+     "definition": "美国《1962年贸易扩展法》第232条，允许以国家安全为由调整进口，可加征关税或采取配额等措施。"
+    },
+    {
+     "term": "炼厂开工率",
+     "definition": "炼厂实际加工量占可加工能力的比例。EIA 本轮给出的 5—9 月均值为超 95%。"
+    },
+    {
+     "term": "金银比",
+     "definition": "金价除以银价。本轮约 73.6，高于 70 意味着白银相对黄金折价。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "title": "AI 硬件进入「产能可抵押性」定价",
+     "detail": "当产能被大幅扩张、残值可被抵押，硬件环节的估值锚从「供不应求」转为「折旧与二手价」，波动因此被放大；这一轮 AMD -8.9259% 与 Adobe +6.3044% 的 15.23 个百分点差距就是同一笔资金的两种定价方式。",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "RESEARCH:US:SEMI-VS-SOFTWARE-2026-10-22",
+      "EQUITY:US:AMD",
+      "EQUITY:US:ADBE"
+     ]
+    },
+    {
+     "title": "收费型现金流成为临时避风港",
+     "detail": "另类资管（黑石 +7.6846%、Blue Owl +5.3980%、Ares +5.2645%、凯雷 +4.7760%）在利率下行中同时享受估值与资金流入，与超大盘平台（Meta -7.8034%、亚马逊 -5.0768%）形成 15.49 个百分点的落差。",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "RESEARCH:US:ALTS-VS-HYPERSCALER-2026-10-22",
+      "EQUITY:US:BX",
+      "EQUITY:US:META"
+     ]
+    },
+    {
+     "title": "能源溢价从需求端搬到加工能力端",
+     "detail": "炼能较2019年降4%、开工率却创1998年以来最高，意味着缓冲消失；油价的支撑来自「无法更快加工」，不是「需求更强」。",
+     "confidence": "medium-high",
+     "evidenceFactIds": [
+      "MACRO:US:REFINERY-UTIL-2026",
+      "MACRO:US:REFINERY-CAPACITY-2026",
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "title": "「降息即成长股修复」的假设被削弱",
+     "detail": "本轮 10 年期较官定收盘低约 17.7 个基点，纳指100 仍 -3.1505%，说明利率与成长股估值的短期相关性让位于分子端定价。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "INDEX:US:NDX",
+      "MACRO:US:UST-10Y-DROP-2026-10-22"
+     ]
+    },
+    {
+     "title": "「油涨金平」升级为「油涨金跌」",
+     "detail": "WTI +2.2954% 的同时 XAU 回落至 4023.90 美元，说明供给溢价只在实物端定价，货币端在回吐。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "METAL:XAUUSD"
+     ]
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "若收盘费半跌幅收敛",
+     "effect": "硬件端杀估值告一段落，A股创业板与港股恒生科技次日高开概率上升。"
+    },
+    {
+     "title": "若 232 谈判出现具体税率",
+     "effect": "风电与电力设备出口链的成本假设将被重估，钢铝铜需求端获得边际支撑。"
+    },
+    {
+     "title": "若 EIA 开工率回落至 92% 以下",
+     "effect": "产品端溢价收窄，油价支撑减弱，炼厂利润向下游转移。"
+    }
+   ],
+   "changes": [
+    {
+     "title": "半导体跌幅在收盘前扩大",
+     "detail": "AMD -8.9259%、英特尔 -8.6887%、ASML -7.0730%，较本轮上一版快照（约 18:28Z）的跌幅进一步走深。",
+     "evidenceFactIds": [
+      "EQUITY:US:AMD",
+      "EQUITY:US:INTC",
+      "EQUITY:US:ASML"
+     ]
+    },
+    {
+     "title": "软件与另类资管涨幅同步扩大",
+     "detail": "Adobe +6.3044%、黑石 +7.6846%、Blue Owl +5.3980%，与硬件的差距拉到 15 个百分点以上。",
+     "evidenceFactIds": [
+      "EQUITY:US:ADBE",
+      "EQUITY:US:BX",
+      "EQUITY:US:OWL"
+     ]
+    },
+    {
+     "title": "两项官方证据落地",
+     "detail": "白宫 232 风机公告与 EIA 炼厂开工分析同日发布，分别改写清洁能源成本与原油供给的假设。",
+     "evidenceFactIds": [
+      "PROP:US:2026-10-22-WIND-232",
+      "MACRO:US:REFINERY-UTIL-2026"
+     ]
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "指数跌幅向权重科技集中",
+     "detail": "纳指100 -3.1505% 对道指 -0.0936%，VIX 仅 19.36；跌幅不是广度恶化而是权重集中。",
+     "evidenceFactIds": [
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "VOL:VIX"
+     ]
+    },
+    {
+     "title": "金价在利率下行中继续走低",
+     "detail": "XAU 4023.90 美元、白银 54.695 美元，金银比约 73.6；货币端在回吐，实物端由油价承接。",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    },
+    {
+     "title": "中国资产同步走弱",
+     "detail": "上证 -2.0706%、创业板 -4.3720%、恒生科技 -5.0276%，A股与港股同日出现成长端领跌。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:HK:HSTECH"
+     ]
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-10-22T07:00:24Z",
+     "title": "A股收盘",
+     "detail": "上证 3658.026（-2.0706%），沪深300 -1.8394%。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CSI300"
+     ]
+    },
+    {
+     "at": "2026-10-22T08:08:58Z",
+     "title": "港股收盘",
+     "detail": "恒指 22934.68（-3.9091%），恒生科技 3793.93（-5.0276%）。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "at": "2026-10-22T16:00:00Z",
+     "title": "欧股收盘",
+     "detail": "STOXX50 6087.01（-1.9414%）。",
+     "evidenceFactIds": [
+      "INDEX:EU:STOXX50"
+     ]
+    },
+    {
+     "at": "2026-10-22T19:45:00Z",
+     "title": "美股收盘前约15分钟",
+     "detail": "标普500 7645.85（-1.4351%）、纳指100 -3.1505%、道指 -0.0936%、VIX 19.36。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "VOL:VIX"
+     ]
+    }
+   ],
+   "sectionGaps": {
+    "research": {
+     "reason": "SEC 原文域对采集器返回 403（历史已知），本轮未纳入公司披露原文，因此 researchRecords 保持为空，未以媒体转述冒充公司研究。"
+    },
+    "newsroom": {
+     "reason": "本轮处于北京时间 03:45 前后的中文财经媒体真空期，nbd 与上证报当日版面均无可读新稿，未用旧闻补足；newsItems 仅收录本轮实际取得的三份官方材料。"
+    },
+    "watch": {
+     "reason": "已给出五项可核验观察条件，无空缺。"
+    },
+    "dataDefinitions": {
+     "reason": "已给出六条本轮实际使用的术语解释，无空缺。"
+    }
+   },
+   "worldEvents": [],
+   "metrics": []
+  },
+  "newsItems": [
+   {
+    "eventId": "NEWS-2026-10-22-WIND-232",
+    "id": "NEWS-2026-10-22-WIND-232",
+    "title": "美国以232条款启动风机及零部件进口谈判，未即时加征新关税",
+    "regions": [
+     "US",
+     "WORLD"
+    ],
+    "kind": "general",
+    "summary": "白宫 2026 年 10 月 22 日发布公告，称商务部长认定风机及其零部件、子部件的进口方式威胁美国国家安全，总统据此指令商务部与贸易代表办公室在 180 天内与贸易伙伴谈判协议；公告同时明确，部分风机组件由大量钢、铝、铜构成，已被 2018 年钢铝公告与 2025 年铜公告的 232 关税覆盖，本公告不修改这些既有税率。",
+    "plainImpact": "对普通消费者是间接的：风机与电网设备成本上升会推高美国可再生能源项目的电价假设。对国内风电与电力设备出口企业，是订单能见度与合规成本的问题，而不是当期利润的立即变化。对钢铝铜是需求端的边际支撑。",
+    "assessment": "我的判断：公告的关键不是税率，而是把「可再生设备」正式纳入 232 的安全框架，等于给后续加税留了法律接口；180 天的谈判窗口意味着短期不会落地，市场对风电链条的折价会是渐进的而不是一次性。",
+    "publishedAt": null,
+    "eventAt": null,
+    "sourceDateText": "October 22, 2026（白宫页面标注日期，未给具体时刻）",
+    "sourceUrls": [
+     "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-wind-turbines-and-their-parts-and-components-into-the-united-states/"
+    ],
+    "evidenceFactIds": [
+     "PROP:US:2026-10-22-WIND-232"
+    ]
+   },
+   {
+    "eventId": "NEWS-2026-10-22-EIA-REFINERY",
+    "id": "NEWS-2026-10-22-EIA-REFINERY",
+    "title": "EIA：美国炼厂5—9月开工率均值超95%，为1998年以来最高",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "summary": "美国能源信息署 10 月 22 日发布分析：2026 年 5—9 月美国炼厂开工率均值超过产能的 95%，为 1998 年以来同期最高（1991 年以来同期均值为 92%）。高开工由全球馏分油供应紧张与国际市场对美国馏分油出口的强劲需求驱动；由于炼油产能自 2019 年下降 4%，总产量仅创 2019 年以来最高。",
+    "plainImpact": "柴油、航空煤油等成品油的供应缓冲比往年薄，任何一处炼厂检修或中断都更容易推高成品油价；这对运输、农业与航空的成本是压力，对炼厂利润是支撑。",
+    "assessment": "我的判断：这解释了为什么在需求并不强劲的年份 WTI 仍能站在 99 美元附近——溢价在加工能力端而不是原油需求端，因此一旦进入检修季，产品溢价会先于原油价格回落。",
+    "publishedAt": null,
+    "eventAt": null,
+    "sourceDateText": "October 22, 2026（EIA Today in Energy，未给具体时刻）",
+    "sourceUrls": [
+     "https://www.eia.gov/todayinenergy/detail.php?id=68344"
+    ],
+    "evidenceFactIds": [
+     "MACRO:US:REFINERY-UTIL-2026",
+     "MACRO:US:REFINERY-CAPACITY-2026"
+    ]
+   },
+   {
+    "eventId": "NEWS-2026-10-21-CN-TECH-INTEGRATION",
+    "id": "NEWS-2026-10-21-CN-TECH-INTEGRATION",
+    "title": "科技部就科技创新与产业创新深度融合意见答记者问，明确六方面重点任务",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "summary": "新华社 10 月 21 日报道，科技部有关负责人就中办、国办印发的《关于推动科技创新和产业创新深度融合的意见》答记者问：意见共八部分，第二至第七部分为六方面重点任务，核心是构建企业主导、各主体协同的产学研融通创新体系，并提出以关键核心技术突破提升产业链自主可控水平、以原创性颠覆性科技创新培育新兴产业与未来产业、以先进技术改造提升传统产业。",
+    "plainImpact": "对产业是中期方向：企业被明确为创新主体，科技成果转化的路径与考核会随之调整；对资本市场是主题催化而非当期业绩，短期难以对冲全球硬件估值下修。",
+    "assessment": "我的判断：这是季度级变量，不能用来解释当日 A股 -2.07%；但它确认了「自主可控 + 企业主导」的政策方向不会因外部关税压力而转向，对半导体设备与材料的国产替代逻辑是慢变量支撑。",
+    "publishedAt": null,
+    "eventAt": null,
+    "sourceDateText": "2026-10-21（新华社电，未给具体时刻）",
+    "sourceUrls": [
+     "https://www.gov.cn/zhengce/202610/content_7083959.htm"
+    ],
+    "evidenceFactIds": [
+     "PROP:CN:2026-10-21-TECH-INDUSTRY-INTEGRATION"
+    ]
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮仅取得三份可核验的官方材料（白宫232公告、EIA炼厂分析、科技部答问），处于北京时间03:45前后中文财经媒体真空期，未用旧闻补足条数。",
+   "regions": {
+    "CN": "1条（科技部答问）",
+    "US": "2条（232风机公告、EIA炼厂）",
+    "WORLD": "0条独立事件，232公告同时标注WORLD影响"
+   },
+   "gaps": "中文财经媒体本轮无新稿；SEC 原文 403 未纳入；无欧洲、中东、拉美独立事件来源。"
+  },
+  "macroFacts": [
+   {
+    "id": "PROP:US:2026-10-22-WIND-232",
+    "label": "美国以232条款调整风机及零部件进口",
+    "value": null,
+    "unit": "text",
+    "asOf": null,
+    "sourceUrls": [
+     "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-wind-turbines-and-their-parts-and-components-into-the-united-states/"
+    ],
+    "note": "白宫2026-10-22公告：商务部长认定风机及零部件进口威胁国家安全，总统据此指令商务部与USTR在180天内与贸易伙伴谈判协议；本公告未立即加征新关税，但明确风机部分组件已在钢铝铜232关税覆盖范围内。"
+   },
+   {
+    "id": "PROP:CN:2026-10-21-TECH-INDUSTRY-INTEGRATION",
+    "label": "中办国办科技创新与产业创新深度融合意见配套答问",
+    "value": null,
+    "unit": "text",
+    "asOf": null,
+    "sourceUrls": [
+     "https://www.gov.cn/zhengce/202610/content_7083959.htm"
+    ],
+    "note": "科技部负责人2026-10-21答问：意见共八部分，第二至第七部分为六方面重点任务，核心是构建企业主导、各主体协同的产学研融通创新体系。"
+   },
+   {
+    "id": "MACRO:US:REFINERY-UTIL-2026",
+    "label": "美国炼厂2026年5—9月开工率均值",
+    "value": 95.0,
+    "unit": "percent",
+    "asOf": null,
+    "sourceUrls": [
+     "https://www.eia.gov/todayinenergy/detail.php?id=68344"
+    ],
+    "note": "EIA 2026-10-22：5—9月均值超过产能的95%，为1998年以来同期最高；1991年以来同期均值为92%。"
+   },
+   {
+    "id": "MACRO:US:REFINERY-CAPACITY-2026",
+    "label": "美国炼油产能较2019年变化",
+    "value": -4.0,
+    "unit": "percent",
+    "asOf": null,
+    "sourceUrls": [
+     "https://www.eia.gov/todayinenergy/detail.php?id=68344"
+    ],
+    "note": "EIA 2026-10-22：开工率创1998年以来最高，但总产量仅创2019年以来最高，因炼能自2019年下降4%。"
+   },
+   {
+    "id": "MACRO:US:UST-2Y-2026-10-21",
+    "label": "美国2年期国债收益率（财政部官定收盘）",
+    "value": 4.81,
+    "unit": "percent",
+    "asOf": "2026-10-21T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "财政部日度国债收益率曲线，10/21 收盘。"
+   },
+   {
+    "id": "MACRO:US:UST-10Y-2026-10-21",
+    "label": "美国10年期国债收益率（财政部官定收盘）",
+    "value": 5.13,
+    "unit": "percent",
+    "asOf": "2026-10-21T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "财政部日度国债收益率曲线，10/21 收盘。"
+   },
+   {
+    "id": "MACRO:US:UST-20Y-2026-10-21",
+    "label": "美国20年期国债收益率（财政部官定收盘）",
+    "value": 5.47,
+    "unit": "percent",
+    "asOf": "2026-10-21T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "财政部日度国债收益率曲线，10/21 收盘。"
+   },
+   {
+    "id": "MACRO:US:UST-30Y-2026-10-21",
+    "label": "美国30年期国债收益率（财政部官定收盘）",
+    "value": 5.42,
+    "unit": "percent",
+    "asOf": "2026-10-21T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "财政部日度国债收益率曲线，10/21 收盘。"
+   },
+   {
+    "id": "MACRO:US:UST-20Y-30Y-SPREAD-2026-10-21",
+    "label": "20年期减30年期利差（官定收盘）",
+    "value": 5.0,
+    "unit": "bp",
+    "asOf": "2026-10-21T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "10/21 官方曲线：20年 5.47 高于30年 5.42，长端仍倒挂5个基点；10/20 为 5.47 对 5.42，同为5个基点。"
+   },
+   {
+    "id": "MACRO:US:UST-10Y-DROP-2026-10-22",
+    "label": "10年期收益率相对10/21官定收盘的变动",
+    "value": 17.7,
+    "unit": "bp",
+    "asOf": "2026-10-22T18:59:53Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "本轮快照 10年期 4.953%，较财政部 10/21 收盘 5.13% 低约17.7个基点；两日累计自 10/20 的 5.12% 回落约16.7个基点。"
+   },
+   {
+    "id": "MACRO:US:FOMC-2026-10-27",
+    "label": "美联储FOMC会议（10月）",
+    "value": null,
+    "unit": "text",
+    "asOf": null,
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ],
+    "note": "美联储官网日历：10月27—28日会议，本次会议不带经济预测摘要；决议与新闻发布会按惯例在第二日14:00 ET（18:00Z）。"
+   },
+   {
+    "id": "MACRO:US:BEA-2026-10-29",
+    "label": "BEA 10月29日双发",
+    "value": null,
+    "unit": "text",
+    "asOf": null,
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ],
+    "note": "BEA日程：10月29日 8:30 ET 同时发布2026年三季度GDP初值与9月个人收入与支出。"
+   },
+   {
+    "id": "FLOW:CN:DISPERSION-2026-10-22",
+    "label": "A股成长与大盘跌幅差（创业板减沪深300）",
+    "value": 2.53,
+    "unit": "pct",
+    "asOf": "2026-10-22T08:29:16Z",
+    "sourceUrls": [],
+    "note": "由本轮报价计算：创业板指 -4.3720% 减 沪深300 -1.8394%，差 2.5326 个百分点。"
+   },
+   {
+    "id": "FLOW:HK:DISPERSION-2026-10-22",
+    "label": "港股科技与大盘跌幅差（恒生科技减恒指）",
+    "value": 1.12,
+    "unit": "pct",
+    "asOf": "2026-10-22T08:08:58Z",
+    "sourceUrls": [],
+    "note": "由本轮报价计算：恒生科技 -5.0276% 减 恒生指数 -3.9091%，差 1.1185 个百分点。"
+   },
+   {
+    "id": "RESEARCH:US:SEMI-VS-SOFTWARE-2026-10-22",
+    "label": "半导体与软件同一时点涨跌差",
+    "value": 15.23,
+    "unit": "pct",
+    "asOf": "2026-10-22T19:45:03Z",
+    "sourceUrls": [],
+    "note": "本轮同一快照：AMD -8.9259% 与 Adobe +6.3044%，差 15.2303 个百分点；同期英特尔 -8.6887%、Arm -7.6195%、ASML -7.0730%。"
+   },
+   {
+    "id": "RESEARCH:US:ALTS-VS-HYPERSCALER-2026-10-22",
+    "label": "另类资管与超大盘平台同一时点涨跌差",
+    "value": 15.49,
+    "unit": "pct",
+    "asOf": "2026-10-22T19:45:02Z",
+    "sourceUrls": [],
+    "note": "本轮同一快照：黑石 +7.6846% 与 Meta -7.8034%，差 15.4880 个百分点；同期 Ares +5.2645%、Blue Owl +5.3980%、Carlyle +4.7760%。"
+   }
+  ],
+  "macroEvents": [
+   {
+    "id": "MACRO:US:FOMC-2026-10-27",
+    "title": "美联储FOMC会议（10月27—28日）",
+    "at": "2026-10-28T18:00:00Z",
+    "region": "US",
+    "detail": "美联储官网日历确认 10 月 27—28 日会议，本次不带经济预测摘要；决议与新闻发布会按惯例在第二日 14:00 ET（18:00Z）。"
+   },
+   {
+    "id": "MACRO:US:BEA-2026-10-29",
+    "title": "美国三季度GDP初值与9月个人收入与支出",
+    "at": "2026-10-29T12:30:00Z",
+    "region": "US",
+    "detail": "BEA 日程页确认 10 月 29 日 8:30 ET 双发；这是本周唯一能同时校准增长与通胀的官方数据。"
+   }
+  ],
+  "events": [
+   {
+    "id": "EVT-FOMC-2026-10-27",
+    "title": "FOMC 决议（10月28日 18:00Z）",
+    "at": "2026-10-28T18:00:00Z",
+    "region": "US",
+    "detail": "已核验的美联储官方日历事件；不带经济预测摘要，市场焦点在声明措辞与发布会。"
+   },
+   {
+    "id": "EVT-BEA-2026-10-29",
+    "title": "BEA 三季度GDP初值 + 9月PCE（10月29日 12:30Z）",
+    "at": "2026-10-29T12:30:00Z",
+    "region": "US",
+    "detail": "已核验的 BEA 官方日程；两项同日发布，是判断「利率下行是估值顺风还是增长担忧」的关键数据。"
+   },
+   {
+    "id": "EVT-WIND-232-180D",
+    "title": "232 风机谈判 180 天期限",
+    "at": null,
+    "region": "US",
+    "detail": "白宫公告要求商务部与 USTR 在公告日起 180 天内至少提交一次进展更新；具体日期未在公告中给出，故 at 为 null。"
+   }
+  ],
+  "researchRecords": [],
+  "researchChecks": []
+ }
+}
