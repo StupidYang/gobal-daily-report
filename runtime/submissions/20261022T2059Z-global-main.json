@@ -1,0 +1,1012 @@
+{
+ "execution": {
+  "executionId": "20261022T2059Z-global-main",
+  "generation": 296
+ },
+ "editorial": {
+  "packetHash": "ecd946cb53743fb9d199378a767b77623b54f0f4a029e0a11a6d9df1825a9b0f",
+  "analyzedAt": "2026-10-22T21:01:26Z",
+  "report": {
+   "overview": "10月22日美股收盘给出了一个反直觉组合：美国国债整条曲线单日下行13—17bp（10年期4.96%、2年期4.65%），但纳指100仍跌2.90%、纳斯达克综合跌2.60%，道指微涨0.02%、罗素2000涨0.11%，VIX收19.03。贴现率明显改善，估值却没有普涨——跌的是久期最长、最依赖AI资本开支的硬件环节（AMD -8.10%、INTC -8.04%、ARM -7.28%、MU -6.26%、ASML -6.93%），涨的是当期现金流清晰的软件与另类资管（ADBE +6.07%、CRM +3.52%、NOW +2.53%、BX +8.38%、ARES +5.72%）。同一晚，WTI 99.14美元涨2.05%，黄金4026.40美元反而回落，金银比73.57持平。亚洲时段已先跌一轮：上证3658.026点跌2.07%、创业板2576.901点跌4.37%、恒指22934.68点跌3.91%、恒生科技跌5.03%。政策端同日出两条：白宫《降低美国人住房成本》行政令压低按揭保险、产权保险与直接贷款利率；中俄总理定期会晤联合公报把油气煤电合作与跨境通道安全制度化。",
+   "rolling24hSummary": "过去24小时的主线是‘分母让路、分子定价’。10月21日10年期美债还在5.13%，10月22日收在4.96%，2年期从4.81%降到4.65%，20年期从5.47%降到5.32%，30年期从5.42%降到5.29%——这是一次平移式下行，2年—10年利差只从32bp收窄到31bp，不是单纯的陡峭化或平坦化。按常理这应对成长股估值形成支撑，但实际只有道指与罗素2000收平，科技权重越高的指数跌幅越大。商品端分化：WTI连续第二日站上99美元，黄金没有跟上利率下行。政策端，白宫把住房成本作为切口，中俄把能源通道作为切口，两者都不是需求刺激。",
+   "methodology": "行情取本轮采集包（20:58:30Z 起采集，20:58:33Z 完成）：A股与港股为10月22日收盘（07:00Z / 08:08Z），美股为10月22日收盘的延迟报价（20:00Z，status=delayed），BTC/ETH/SOL/XAU/XAG为20:57—20:58Z 快照（无涨跌幅字段，status=snapshot），WTI为20:48Z 延迟报价，VIX为20:15Z，DXY为20:48Z，USDCNH为20:58Z。美国国债收益率采用财政部10月22日日度曲线（官方发布，2年4.65%、10年4.96%、20年5.32%、30年5.29%），与采集包的RATE:US10Y（4.953%、18:59Z、status=previous）相互印证但不混用；RATE:US2Y 本轮为空（status=partial），2年期一律引用财政部数值。六个资产分别独立分析，价格取本包真实值，不沿用上一版数值；上一版的价格、asOf 与 packetHash 不参与本轮正文。新闻只收录本轮实际取得并阅读的原文：白宫行政令与中俄联合公报；日历事件来自BEA日程与美联储FOMC日历，属于计划而非结果。",
+   "coreAnalysis": {
+    "mainTheme": "利率让出17bp，市场只肯为确定性的现金流付钱——分母改善被分子端的资本开支疑虑完全覆盖。",
+    "expectationGap": "一致预期是‘利率下行利好成长股’。实际是利率下行当晚成长股跌得最狠，VIX反而升到19.03，说明市场把利率下行读成增长/资本开支预期恶化的确认，而不是宽松礼物。",
+    "divergence": "同一天、同一条贴现率曲线，半导体设备与存储跌6%—8%，当期现金流软件涨2.5%—6%，另类资管涨3%—8%，道指与罗素2000收平。分化发生在资产内部，不在资产之间。",
+    "regime": "风险溢价重分配，不是流动性收缩。依据：VIX仅19.03、美元指数101.65回落0.13%、USDCNH 6.6718几乎不动、美国国债被大量买入。",
+    "priceIn": "10年期4.96%已计入比前一日更宽松的路径，2年期4.65%说明短端也在抢跑降息；但半导体价格里计入了资本开支增速下修，两者不能互相抵消。",
+    "bullCase": "若10月29日公布的Q3 GDP与9月PCE显示增长未失速、通胀继续回落，则‘利率下行=增长恶化’的等式被打破，被错杀的AI硬件会出现估值修复，指数级反弹由纳指100主导。",
+    "bullInvalidation": "若GDP或PCE任一强于预期导致10年期回到5.10%以上，修复逻辑失去分母支撑。",
+    "bearCase": "若信用利差开始走阔、VIX升破25，当前的‘风格差’会收敛为普跌：道指与罗素2000的持平只是尚未被传导，而不是安全垫。",
+    "bearInvalidation": "若VIX在20以下维持一周且高收益债利差不变，普跌情景不成立。"
+   },
+   "plainLanguage": {
+    "verdict": "利率在让路，但钱只流向现金流确定的地方，AI硬件还在被重新定价，这不是普跌。",
+    "bottomLine": "美债利率一夜降了16—17bp，科技硬件反而跌得更凶——市场买的不是便宜钱，是能马上赚钱的生意。",
+    "whyNow": "本轮最重要的三条证据：财政部10月22日曲线整条下行13—17bp；纳指100跌2.90%而道指与罗素2000收平，风格差2.92个百分点；WTI涨2.05%站上99美元而黄金反跌。",
+    "horizon": "未来3—10个交易日看风格能否收敛；1个季度看AI资本开支是否真的减速。",
+    "confidence": "medium",
+    "invalidation": "若10年期美债回到5.10%上方而科技股同时反弹，说明本轮下跌与利率无关，需改判为纯仓位事件。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "偏利空（已发生的收盘结果）",
+      "reason": "10月22日A股收跌，上证3658.026点跌2.07%、创业板2576.901点跌4.37%，成长端跌幅约为权重端两倍；这是亚洲时段对全球AI硬件估值下修的第一轮定价。",
+      "takeaway": "我的判断：A股的跌幅结构（创业板>上证）说明卖的是久期，不是流动性；美债利率当晚下行17bp对这种结构没有修复作用，真正要等的是AI硬件订单端的新证据。",
+      "horizon": "1—3个交易日",
+      "counterRisk": "若次日半导体设备与存储出现放量反包，说明这是拥挤度出清而非基本面重估。",
+      "invalidation": "若10年期美债继续下行而创业板继续跑输，则‘久期’解释成立；若创业板反超上证且成交放大，则改判为超跌反弹。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:CN:SSE",
+       "INDEX:CN:CHINEXT"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "港股",
+      "effect": "偏利空（已发生的收盘结果）",
+      "reason": "恒指22934.68点跌3.91%、恒生科技3793.93点跌5.03%、国企指数跌4.25%，离岸高beta资产跌幅大于A股。",
+      "takeaway": "我的判断：港股同时承受美元流动性与中国成长股估值两条线，10月22日是两条线同向；当晚美元指数回落0.13%只缓和了其中一条。",
+      "horizon": "1—3个交易日",
+      "counterRisk": "南向资金若转为净买入，离岸跌幅可能快速收敛。",
+      "invalidation": "若美元指数继续走弱而恒生科技不再创新低，说明分母端已接管定价。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH",
+       "FX:DXY"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "美股",
+      "effect": "分化",
+      "reason": "10月22日收盘：标普7663.43点跌1.21%、纳指100跌2.90%、道指52867.98点涨0.02%、罗素2000涨0.11%；同日AMD跌8.10%、INTC跌8.04%、ARM跌7.28%、MU跌6.26%，而ADBE涨6.07%、CRM涨3.52%、NOW涨2.53%、BX涨8.38%。",
+      "takeaway": "我的判断：这不是系统性风险，是一次‘久期排序’——同样是成长股，远期现金流越远、越依赖资本开支的越挨打，当期现金流和费用型收入反而受益于利率下行。",
+      "horizon": "3—10个交易日",
+      "counterRisk": "若VIX继续上冲且道指转跌，风格差会收敛为普跌。",
+      "invalidation": "若半导体在利率不再下行时率先反弹，说明这次是仓位而非模型问题。",
+      "confidence": "medium-high",
+      "evidenceFactIds": [
+       "INDEX:US:SP500",
+       "INDEX:US:NDX",
+       "INDEX:US:DOW",
+       "INDEX:US:RUSSELL2000",
+       "FLOW:US:STYLE-SPREAD-NDX-DOW-2026-10-22",
+       "FLOW:US:CASHFLOW-SOFTWARE-BREADTH-2026-10-22"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性",
+      "reason": "BTC 81171.7美元（20:58Z快照），较上一版报告时的81045美元基本持平，无涨跌幅字段；同期COIN跌4.51%、MSTR跌5.00%、DDOG跌5.62%。",
+      "takeaway": "我的判断：BTC本体没有跟着高beta代理股下跌，说明卖压集中在‘用杠杆持有加密资产的上市公司’，不是加密资产本身的流动性事件。",
+      "horizon": "1—2周",
+      "counterRisk": "若BTC跌破80000且代理股继续下跌，则转为流动性收缩。",
+      "invalidation": "BTC与COIN/MSTR的背离收敛（同跌）即改判。",
+      "confidence": "low-medium",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "EQUITY:US:COIN",
+       "EQUITY:US:MSTR"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "黄金",
+      "effect": "偏利空（短线）",
+      "reason": "XAU 4026.40美元（20:58Z快照），较上一版4037.60美元回落约0.28%；白银54.73美元，金银比73.57。名义利率下行17bp的当晚金价没有上涨。",
+      "takeaway": "我的判断：这轮利率下行更像‘通胀预期回落+避险买美债’，而不是实际利率下行；黄金没接到钱，说明买盘在国债而不是贵金属。",
+      "horizon": "1—2周",
+      "counterRisk": "若10年期跌破4.90%而金价站上4100，说明实际利率渠道重新主导。",
+      "invalidation": "实际利率（可用10年期与通胀预期之差近似）下行而金价不涨，是‘避险选债不选金’的直接证据。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "METAL:XAUUSD",
+       "METAL:XAGUSD",
+       "MACRO:METAL:GOLD-SILVER-RATIO-2026-10-22",
+       "MACRO:US:UST-10Y-2026-10-22"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "原油",
+      "effect": "偏多（短线）",
+      "reason": "WTI 99.14美元涨2.05%（20:48Z），连续第二个交易日站上99美元；EIA确认5—9月美国炼厂开工率均值超过95%，为1998年以来同期最高，而炼能自2019年下降约4%。",
+      "takeaway": "我的判断：这轮油价的定价权在‘加工能力’和‘通道安全’，不在需求爆发；中俄公报把俄罗斯流向东方的通道进一步制度化，中期是压住地缘溢价的因素，短期不改变炼能瓶颈。",
+      "horizon": "2—6周",
+      "counterRisk": "若炼厂检修季提前或成品油裂解价差快速收窄，加工溢价会消退。",
+      "invalidation": "裂解价差收窄而原油仍涨，说明驱动已切换到地缘而非加工能力。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "MACRO:US:EIA-REFINERY-UTIL",
+       "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21"
+      ],
+      "sourceUrls": [
+       "https://www.eia.gov/todayinenergy/detail.php?id=68344",
+       "https://www.gov.cn/yaowen/liebiao/202610/content_7083962.htm"
+      ]
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "covered",
+     "covered": "上证、深证成指、创业板、科创50、沪深300、中证500 共6项指数，10月22日收盘",
+     "gap": "成交额、涨跌家数、两融与北向/南向资金未采集"
+    },
+    {
+     "market": "港股",
+     "status": "covered",
+     "covered": "恒生指数、恒生科技、国企指数，10月22日收盘",
+     "gap": "港股成交额与南向资金未采集"
+    },
+    {
+     "market": "美股",
+     "status": "covered",
+     "covered": "标普500、纳斯达克综合、纳指100、道指、罗素2000 及 41 只个股收盘延迟报价（20:00Z）",
+     "gap": "缺盘后财报与公司指引原文（SEC 抓取 403）"
+    },
+    {
+     "market": "BTC",
+     "status": "partial",
+     "covered": "BTC/ETH/SOL/HYPE 快照价格（20:57—20:58Z）",
+     "gap": "无24小时涨跌幅、无资金流与ETF申赎数据"
+    },
+    {
+     "market": "黄金",
+     "status": "partial",
+     "covered": "XAU/XAG 快照价格与金银比",
+     "gap": "无涨跌幅字段，实际利率与通胀预期需外部数据"
+    },
+    {
+     "market": "原油",
+     "status": "partial",
+     "covered": "WTI 延迟报价（20:48Z）与EIA炼厂开工率分析",
+     "gap": "布伦特连续多轮 404，本周库存数值未取得"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "name": "A股主要指数",
+     "price": 3658.026,
+     "change": -2.07,
+     "status": "收盘",
+     "asOf": "2026-10-22T07:00:24Z",
+     "view": "上证跌2.07%、创业板跌4.37%，成长端跌幅是权重端2.1倍",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT"
+     ]
+    },
+    {
+     "asset": "港股",
+     "name": "恒生指数",
+     "price": 22934.68,
+     "change": -3.91,
+     "status": "收盘",
+     "asOf": "2026-10-22T08:08:58Z",
+     "view": "恒指跌3.91%、恒生科技跌5.03%，离岸高beta跌幅更大",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "asset": "美股",
+     "name": "标普500 / 纳指100",
+     "price": 7663.43,
+     "change": -1.21,
+     "status": "收盘（延迟）",
+     "asOf": "2026-10-22T20:31:48Z",
+     "view": "标普跌1.21%、纳指100跌2.90%，道指与罗素2000收平",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "name": "BTC/USD",
+     "price": 81171.7,
+     "change": null,
+     "status": "快照",
+     "asOf": "2026-10-22T20:58:31Z",
+     "view": "81171.7美元横盘，代理股 COIN -4.51%、MSTR -5.00% 明显下跌",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "EQUITY:US:COIN"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "name": "现货黄金",
+     "price": 4026.399902,
+     "change": null,
+     "status": "快照",
+     "asOf": "2026-10-22T20:58:11Z",
+     "view": "4026.40美元回落，利率下行未带来金价上涨，金银比73.57",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "MACRO:METAL:GOLD-SILVER-RATIO-2026-10-22"
+     ]
+    },
+    {
+     "asset": "原油",
+     "name": "WTI 原油",
+     "price": 99.14,
+     "change": 2.05,
+     "status": "延迟",
+     "asOf": "2026-10-22T20:48:30Z",
+     "view": "99.14美元涨2.05%，连续两日站上99美元，加工能力溢价",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:US:EIA-REFINERY-UTIL"
+     ]
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "name": "A股",
+     "market": "CN",
+     "analysis": "10月22日收盘上证3658.026点跌2.07%、深证成指11357.319点跌3.76%、创业板2576.901点跌4.37%、科创50跌2.78%、沪深300跌1.84%、中证500跌2.71%。跌幅从权重到成长单调放大，创业板跌幅是上证的2.1倍。这是本轮全球AI硬件估值下修在亚洲时段的第一站，且发生在美债利率仍处高位（10月21日10年期5.13%）的背景下。",
+     "mechanism": "传导链条是估值分母与产业预期双杀：分母端10年期美债在10月21日仍在5.13%，成长股贴现率没有改善；分子端则被‘算力资本开支增速见顶’的叙事压制，创业板权重中的光模块、PCB、锂电设备直接对标海外云厂商的资本开支节奏。当晚美债下行17bp对A股是隔夜利好，但不会改变10月22日已经实现的跌幅。",
+     "risk": "最大的风险是把一次估值出清误读为基本面拐点——若三季报显示订单仍在增长，跌幅会快速修复；反之若四季度指引下修，则当前只是开始。其次是两融与量化止损的顺周期放大。",
+     "invalidation": "若未来3个交易日创业板相对上证的超额跌幅收敛并伴随成交额回升，说明是拥挤度出清；若创业板继续跑输且成交萎缩，则确认盈利预期下修。",
+     "horizon": "1—3个交易日观察，1个季度验证",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "港股",
+     "name": "港股",
+     "market": "HK",
+     "analysis": "恒指22934.68点跌3.91%、恒生科技3793.93点跌5.03%、国企指数7689.19点跌4.25%，全部收在当日低位附近。港股跌幅大于A股，说明离岸市场同时叠加了美元流动性与中国成长股两条定价线。当晚美元指数101.65回落0.13%、USDCNH 6.6718微跌0.02%，只缓和了其中一条。",
+     "mechanism": "港股是美元流动性最敏感的离岸中国资产：分子看中国科技盈利，分母看美元利率与风险溢价，两头都不在自己手里。当全球资金从‘AI硬件’撤出时，港股因为缺少本土被动资金承接，跌幅会被放大；反之美元走弱时弹性也最大。",
+     "risk": "风险在于把汇率稳定当成资金回流——USDCNH几乎不动，说明这轮不是外资撤离中国资产，而是全球科技仓位同步减配。若误判为‘外资看空中国’，会在反弹时踏空。",
+     "invalidation": "若美元指数继续走弱、恒生科技止跌而A股仍跌，说明港股定价权回到分母端；若两者同跌且南向净卖出扩大，则确认是全球风险偏好收缩。",
+     "horizon": "1—3个交易日",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "FX:DXY",
+      "FX:USDCNH"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "美股",
+     "name": "美股",
+     "market": "US",
+     "analysis": "10月22日收盘：标普500 7663.43点跌1.21%、纳斯达克综合26008.86点跌2.60%、纳指100 28958.688点跌2.90%、道指52867.98点涨0.02%、罗素2000涨0.11%。同日10年期美债收益率4.96%、2年期4.65%，分别较前一日下行17bp与16bp，VIX收在19.03（+14.09%）。利率大幅下行、指数只有科技端下跌，是典型的‘久期排序’而非系统性风险。",
+     "mechanism": "贴现率下降对长久期资产本应是纯利好，但市场同时在下调AI硬件环节的资本开支预期：AMD -8.10%、INTC -8.04%、ARM -7.28%、MU -6.26%、ASML -6.93%、NVDA -4.40%，而现金流当期的软件与资管逆势上涨（ADBE +6.07%、CRM +3.52%、NOW +2.53%、BX +8.38%、ARES +5.72%）。同一条贴现率曲线，对不同久期与不同现金流确定性的资产给出相反答案。",
+     "risk": "风险是把风格差当成安全——VIX只到19，说明市场没有为尾部风险付费；若信用利差开始走阔，当前的分化会变成补跌。另一个风险是道指的上涨掩盖了科技权重集中度问题。",
+     "invalidation": "若10年期不再下行而半导体继续下跌，说明驱动已从利率切换到盈利；若VIX升破25且道指转跌，则风格差收敛为普跌。",
+     "horizon": "3—10个交易日",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "VOL:VIX",
+      "EQUITY:US:AMD",
+      "EQUITY:US:INTC",
+      "EQUITY:US:ARM",
+      "EQUITY:US:MU",
+      "EQUITY:US:ASML",
+      "EQUITY:US:NVDA",
+      "EQUITY:US:ADBE",
+      "EQUITY:US:CRM",
+      "EQUITY:US:NOW",
+      "EQUITY:US:BX",
+      "EQUITY:US:ARES",
+      "FLOW:US:STYLE-SPREAD-NDX-DOW-2026-10-22",
+      "FLOW:US:CASHFLOW-SOFTWARE-BREADTH-2026-10-22"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "name": "BTC",
+     "market": "CRYPTO",
+     "analysis": "BTC 81171.7美元（20:58:31Z快照），较早一版报告的81045美元基本持平，本包未提供BTC涨跌幅字段。同期加密相关股票明显下跌：COIN 169.09美元跌4.51%、MSTR 145.80美元跌5.00%、DDOG跌5.62%。BTC本体与代理股出现方向背离。",
+     "mechanism": "BTC当前更像‘美元流动性温度计’而不是高beta科技股：当地址与ETF层面的持有者结构稳定时，价格对股市风格切换钝化；而用杠杆持有BTC的上市公司（MSTR）与交易平台（COIN）承担了股权风险溢价，跌幅被放大。",
+     "risk": "数据缺口是真实风险：本包只有快照价格，没有24小时涨跌幅与资金流，无法判断这是横盘吸筹还是流动性真空。把快照当成趋势会过度解读。",
+     "invalidation": "若BTC跌破80000且COIN/MSTR同步加速下跌，则从‘钝化’改判为‘流动性收缩’；若BTC站上83000而代理股仍跌，则确认结构分化。",
+     "horizon": "1—2周",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "EQUITY:US:COIN",
+      "EQUITY:US:MSTR"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "name": "黄金",
+     "market": "METAL",
+     "analysis": "XAU 4026.40美元、XAG 54.73美元（20:58:11Z快照），金银比73.57。较上一版报告的4037.60美元与73.47基本持平略跌。值得注意的是，当晚10年期美债下行17bp、美元指数回落0.13%，黄金没有跟随上涨。",
+     "mechanism": "黄金定价的是实际利率与避险需求。名义利率下行若来自通胀预期回落，实际利率未必下降；若来自避险买盘，资金更可能先买国债。本轮两者都指向‘债优于金’。同时白银跌幅与黄金接近，金银比稳定，说明不是工业需求的独立冲击。",
+     "risk": "风险在于用名义利率代替实际利率。若通胀预期同步回落，名义利率下行对黄金是中性的；把17bp直接当成黄金的利好会误判。",
+     "invalidation": "若后续通胀预期（可用TIPS或盈亏平衡近似）上行而名义利率下行、金价仍不涨，则避险渠道失效的结论成立；若金价补涨至4100上方，说明本轮只是滞后。",
+     "horizon": "1—2周",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "MACRO:METAL:GOLD-SILVER-RATIO-2026-10-22",
+      "MACRO:US:UST-10Y-2026-10-22",
+      "FX:DXY"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "原油",
+     "name": "原油",
+     "market": "ENERGY",
+     "analysis": "WTI 99.14美元涨2.05%（20:48Z），连续第二日收在99美元上方。EIA在10月22日的分析中确认：2026年5—9月美国炼厂开工率均值超过95%，为1998年以来同期最高（1991年以来同期均值约92%），但美国炼油能力自2019年下降约4%，因此总产量只是2019年以来最高而非历史最高。",
+     "mechanism": "当前油价的核心不是需求超预期，而是加工与物流能力的稀缺：炼能收缩+全球馏分油紧张，使同样的原油多出加工溢价；同时中俄公报把俄罗斯油气东向通道制度化（跨境通道安全、能源合作委员会纪要、2027年能源商务论坛），中期削弱制裁对俄油流的边际约束。两者方向相反：前者托底，后者封顶。",
+     "risk": "风险是裂解价差：若成品油裂解快速收窄，炼厂会主动降开工，原油需求端立刻转弱。另一个风险是把地缘消息当成供给中断——公报没有给任何新增产量或运量数字。",
+     "invalidation": "若WTI站稳100美元而美国炼厂开工率跌破90%，说明驱动已转为地缘而非加工能力；若裂解价差收窄且油价回落至95下方，则加工溢价叙事结束。",
+     "horizon": "2—6周",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:US:EIA-REFINERY-UTIL",
+      "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/todayinenergy/detail.php?id=68344",
+      "https://www.gov.cn/yaowen/liebiao/202610/content_7083962.htm"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "id": "FW-DCF-DURATION",
+     "framework": "现金流折现与利率传导",
+     "concept": "利率是所有未来现金流的折现率，现金流越靠后，对利率变化越敏感。",
+     "applicability": "适用于本轮：同一天贴现率下行17bp，不同久期资产给出相反方向。",
+     "observed": "10年期4.96%（-17bp）、2年期4.65%（-16bp），同时NDX -2.90%、DOW +0.02%；半导体设备与存储跌幅6%—8%，当期现金流软件上涨2.5%—6%。",
+     "mechanism": "分母改善是全局的，分子预期是分层的。当分子端（AI资本开支增速）被下调时，久期最长的资产同时承受两重打击，折现率的下行不足以抵消。",
+     "conclusion": "折现率渠道本轮被分子端完全覆盖：利率下行没有带来估值普涨，只带来了风格内的相对排序。",
+     "assumptions": "贴现率下行由无风险利率驱动、信用利差不变；市场对分子端的下修是同质的。",
+     "counterEvidence": "若信用利差走阔，则分母改善会被风险溢价抵消，本框架解释力下降。",
+     "horizon": "3—10个交易日",
+     "invalidation": "若利率继续下行且半导体止跌，说明分子端已稳定，框架重新由分母主导。",
+     "confidence": "medium-high",
+     "missingData": "缺公司层面的在手订单与四季度指引原文（SEC 抓取 403）。",
+     "evidenceFactIds": [
+      "MACRO:US:UST-10Y-2026-10-22",
+      "MACRO:US:UST-2Y-2026-10-22",
+      "FLOW:US:STYLE-SPREAD-NDX-DOW-2026-10-22",
+      "FLOW:US:CASHFLOW-SOFTWARE-BREADTH-2026-10-22"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "id": "FW-EXPECTATION-GAP",
+     "framework": "预期差与事件研究",
+     "concept": "资产价格反映的是预期与现实的差，而不是现实本身的绝对水平。",
+     "applicability": "适用于本轮利率与股价的错位。",
+     "observed": "利率单日下行13—17bp，通常对应成长股上涨；实际是纳指100跌2.90%、VIX升至19.03。",
+     "mechanism": "利率下行本身可能是坏消息的函数（增长预期下修），若市场把下行解读为‘分母改善’则应上涨；实际下跌说明市场把它读成‘分子恶化’的确认。",
+     "conclusion": "本轮利率下行被解读为增长/资本开支预期的下修信号，而非宽松礼物，这是最大的预期差。",
+     "assumptions": "利率下行的驱动来自增长预期而非纯技术性买盘。",
+     "counterEvidence": "本轮无美联储公开沟通、无一线官方数据发布（议息前静默期），驱动无法从证据端确认，也可能是仓位调整引发的技术性买盘。",
+     "horizon": "1—2周",
+     "invalidation": "若后续公布的GDP（10月29日）与PCE强于预期而利率仍低，则‘增长下修’解释被推翻。",
+     "confidence": "low-medium",
+     "missingData": "缺当日资金流与期货持仓数据。",
+     "evidenceFactIds": [
+      "MACRO:US:UST-10Y-2026-10-22",
+      "MACRO:US:UST-DAY-MOVE-BP-2026-10-22",
+      "VOL:VIX",
+      "INDEX:US:NDX"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "https://www.bea.gov/news/schedule"
+     ]
+    },
+    {
+     "id": "FW-POLICY-TRANSMISSION",
+     "framework": "政策传导与成本分配",
+     "concept": "政策改变的是谁承担成本，而不只是总量水平。",
+     "applicability": "适用于白宫住房成本行政令。",
+     "observed": "行政令要求两房试点主动取消超额按揭保险、把产权保险接受试点全国化、下调USDA与VA直接贷款利率、成立预制房审批工作组。",
+     "mechanism": "政策直接削减交易环节的保险与评估费用，把成本从借款人转移给按揭保险商、产权服务商与评估机构；对成交量是正向，对相关服务商收入是负向。",
+     "conclusion": "这是‘降成本不降房价’的政策，短期改善月供与成交量，中期把利润从服务环节挤向交易环节。",
+     "assumptions": "FHFA与两房按指令落地，且安全稳健约束不阻断试点。",
+     "counterEvidence": "行政令大量使用‘如局长认定符合两房最佳利益’的前置条件，执行力度可能远低于文本。",
+     "horizon": "1—2个季度",
+     "invalidation": "若FHFA试点范围显著小于文本，或两房以安全稳健为由推迟，则传导链条断裂。",
+     "confidence": "medium",
+     "missingData": "缺FHFA与两房的执行细则与生效日期。",
+     "evidenceFactIds": [
+      "PROP:US:HOUSING-COST-EO-2026-10-22"
+     ],
+     "sourceUrls": [
+      "https://www.whitehouse.gov/presidential-actions/2026/10/decreasing-housing-costs-for-the-american-people/"
+     ]
+    },
+    {
+     "id": "FW-SUPPLY-CHAIN",
+     "framework": "供需、库存与风险溢价",
+     "concept": "价格由边际供需与风险溢价共同决定，瓶颈环节拿走超额利润。",
+     "applicability": "适用于原油与炼化。",
+     "observed": "WTI 99.14（+2.05%）；EIA确认5—9月炼厂开工率>95%为1998年以来最高，炼能自2019年降约4%。",
+     "mechanism": "炼能收缩使原油加工成为瓶颈，成品油裂解价差扩张，炼厂在高开工下仍能维持利润；原油需求并未爆发，溢价来自加工与物流能力。",
+     "conclusion": "油价当前的超额部分属于‘加工能力租金’，对炼能变化比对人流/出行数据更敏感。",
+     "assumptions": "馏分油库存持续低于五年均值，出口需求维持。",
+     "counterEvidence": "中俄能源通道制度化会削弱制裁对俄油流的约束，中期增加可加工原油的可得性。",
+     "horizon": "2—6周",
+     "invalidation": "裂解价差收窄且开工率下滑，说明加工租金消失。",
+     "confidence": "medium-high",
+     "missingData": "缺本周美国商业原油与馏分油库存数值（EIA WPSR 页面动态加载，未取得可解析数据）。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:US:EIA-REFINERY-UTIL",
+      "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/todayinenergy/detail.php?id=68344",
+      "https://www.gov.cn/yaowen/liebiao/202610/content_7083962.htm"
+     ]
+    },
+    {
+     "id": "FW-GEOPOLITICAL",
+     "framework": "地缘政治与制度性通道",
+     "concept": "制裁的效果取决于被制裁方能否找到替代的结算、保险与运输通道。",
+     "applicability": "适用于中俄能源公报对油价中期上限的影响。",
+     "observed": "公报明确支持油气煤电合作、保障跨境能源通道安全、强调能源市场不受单边强制措施影响，并附《中俄能源合作委员会第二十三次会议纪要》。",
+     "mechanism": "通道越制度化，制裁对边际供给的打击效力越弱，地缘溢价的上限被压低；但公报没有新增产量与运量，短期不改变现货紧张。",
+     "conclusion": "这是压制地缘溢价的结构性变量，方向与当前的加工溢价相反，构成了油价的多空对冲。",
+     "assumptions": "跨境通道的实际运量随制度安排增长，且保险与结算替代方案可行。",
+     "counterEvidence": "若二级关税与航运保险限制同步加码，通道的制度化可能被成本抵消。",
+     "horizon": "1—2个季度",
+     "invalidation": "若俄油东向出口量在公报后没有增长，则制度化只停留在文本。",
+     "confidence": "low-medium",
+     "missingData": "缺俄油东向出口的月度运量数据与管道排期。",
+     "evidenceFactIds": [
+      "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21"
+     ],
+     "sourceUrls": [
+      "https://www.gov.cn/yaowen/liebiao/202610/content_7083962.htm"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "综合判断：这是一次‘贴现率下降+风险溢价重分配’的组合，不是流动性危机，也不是全面牛市起点。",
+    "agreement": "折现率框架、预期差框架与供需框架在方向上一致：利率改善真实存在（财政部曲线可核验），但分子端的资本开支疑虑压过了分母改善；原油的加工能力租金同样由供给瓶颈解释，而非需求过热。",
+    "disagreement": "政策传导框架与地缘框架给出反向证据：住房行政令是压低成本的长期利好，中俄能源制度化是压低地缘溢价的中期因素，两者都削弱‘价格只会更高’的线性外推。",
+    "weighting": "更看重可核验的官方价格数据（财政部曲线、EIA开工率）而不是叙事：曲线的13—17bp下行与炼厂>95%的开工率都是硬数据，而‘AI资本开支见顶’目前只有价格证据、没有公司原文证据（SEC 403），因此对硬件端的下修只给中等置信度。",
+    "invalidation": "若10月29日的Q3 GDP与9月PCE显示增长未失速，则‘利率下行=增长恶化’的权重必须下调，风格差应快速收敛；若VIX升破25且信用利差走阔，则风险溢价框架失效，转为系统性风险。"
+   },
+   "watch": [
+    {
+     "point": "10年期美债能否守住4.90%—5.00%区间",
+     "detail": "本轮4.96%是两周低位。若继续下行而科技股不涨，‘利率下行=利空确认’的解读被强化；若回到5.10%上方而科技股反弹，则本轮下跌与利率无关。"
+    },
+    {
+     "point": "纳指100与道指的2.92个百分点风格差是否收敛",
+     "detail": "收敛有两条路：科技补跌（道指跟跌）或科技修复（半导体止跌）。前者是风险，后者是机会，区别在于VIX是否升破25。"
+    },
+    {
+     "point": "WTI 99美元与成品油裂解价差",
+     "detail": "若裂解价差收窄而油价仍涨，驱动切换到地缘；若油价回落至95下方且开工率下滑，加工租金叙事结束。"
+    },
+    {
+     "point": "黄金与实际利率的背离是否持续",
+     "detail": "名义利率下行17bp而金价回落，说明避险买了国债。若金价补涨至4100上方，实际利率渠道重新主导。"
+    },
+    {
+     "point": "FHFA对住房行政令的执行细则",
+     "detail": "文本大量使用‘如局长认定符合两房最佳利益’的前置条件，试点范围与生效日期决定政策是否真的传导到月供。"
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "日度国债收益率曲线（Daily Treasury Par Yield Curve）",
+     "definition": "美国财政部按交易日发布的固定期限国债收益率，取自当日美东时间约15:30的场外报价，用于统一口径比较不同期限，不是盘中实时价。"
+    },
+    {
+     "term": "status=delayed / previous / snapshot",
+     "definition": "采集包对每个报价给出的交易阶段标记：delayed表示延迟报价但仍属当日交易，previous表示该市场当日已收盘的上一交易时段，snapshot表示仅取得时点价格、无涨跌幅。"
+    },
+    {
+     "term": "久期（在本报告中）",
+     "definition": "指资产现金流在时间上的远近，而非债券的修正久期数值。现金流越靠后，对贴现率变化越敏感。"
+    },
+    {
+     "term": "风格差（NDX−DOW）",
+     "definition": "纳指100与道指当日涨跌幅之差，用于衡量同一交易日内成长与价值/权重的分化程度，单位百分点。"
+    },
+    {
+     "term": "金银比",
+     "definition": "现货黄金价格除以现货白银价格，用于观察贵金属内部的风险偏好与工业需求相对强弱。"
+    },
+    {
+     "term": "加工能力租金",
+     "definition": "在炼能受限时，原油加工环节获得的超额价差收益，表现为高开工率与高裂解价差并存。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "title": "分母改善不足以对冲分子下修",
+     "detail": "10年期下行17bp的同时纳指100跌2.90%，说明市场给AI硬件贴的风险溢价在扩张，而这个扩张不是利率能抵消的。",
+     "confidence": "medium-high",
+     "evidenceFactIds": [
+      "MACRO:US:UST-10Y-2026-10-22",
+      "FLOW:US:STYLE-SPREAD-NDX-DOW-2026-10-22"
+     ]
+    },
+    {
+     "title": "政策在做‘降成本’而不是‘造需求’",
+     "detail": "住房行政令压低按揭与交易成本，中俄公报固化能源通道，两者都不增加当期总需求，只改变成本分配与供给韧性。",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "PROP:US:HOUSING-COST-EO-2026-10-22",
+      "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21"
+     ]
+    },
+    {
+     "title": "油价的多空被两个相反的结构因素夹住",
+     "detail": "炼能收缩托底加工溢价，通道制度化压住地缘溢价上限，短期看裂解价差，中期看运量。",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "MACRO:US:EIA-REFINERY-UTIL",
+      "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21"
+     ]
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "title": "修正：不再把利率下行直接当作成长股利好",
+     "detail": "上一版仍以‘分母让路’作为主线之一，本轮数据显示利率下行当晚成长端跌幅最大，故把‘分母改善’从利好降级为背景条件。",
+     "evidenceFactIds": [
+      "MACRO:US:UST-10Y-2026-10-22",
+      "FLOW:US:STYLE-SPREAD-NDX-DOW-2026-10-22"
+     ]
+    },
+    {
+     "title": "补充：黄金的避险渠道本轮未生效",
+     "detail": "上一版记录金银比稳定，本轮新增‘名义利率下行而金价回落’的观察，判断资金选择国债而非贵金属。",
+     "evidenceFactIds": [
+      "MACRO:METAL:GOLD-SILVER-RATIO-2026-10-22",
+      "METAL:XAUUSD"
+     ]
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "若10月29日Q3 GDP与9月PCE同超预期",
+     "effect": "‘利率下行=增长恶化’的等式被打破，被错杀的AI硬件出现估值修复，风格差快速收敛。"
+    },
+    {
+     "title": "若VIX升破25且高收益债利差走阔",
+     "effect": "当前的分化转为普跌，道指与罗素2000的持平不再成立。"
+    },
+    {
+     "title": "若WTI站上100而裂解价差同时收窄",
+     "effect": "油价驱动从加工能力切换到地缘政治，原油与黄金的负相关可能反转。"
+    }
+   ],
+   "changes": [
+    {
+     "title": "美债整条曲线单日下行13—17bp",
+     "detail": "财政部10月22日曲线：2年4.65%（-16bp）、10年4.96%（-17bp）、20年5.32%（-15bp）、30年5.29%（-13bp）；2年—10年利差31bp，形态基本不变。",
+     "evidenceFactIds": [
+      "MACRO:US:UST-2Y-2026-10-22",
+      "MACRO:US:UST-10Y-2026-10-22",
+      "MACRO:US:UST-20Y-2026-10-22",
+      "MACRO:US:UST-30Y-2026-10-22",
+      "MACRO:US:UST-2Y-10Y-SPREAD-BP-2026-10-22"
+     ]
+    },
+    {
+     "title": "美股收盘确认‘风格差’而非普跌",
+     "detail": "标普-1.21%、纳指100-2.90%、道指+0.02%、罗素2000+0.11%；AMD -8.10%、INTC -8.04% 对 ADBE +6.07%、BX +8.38%。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "FLOW:US:STYLE-SPREAD-NDX-DOW-2026-10-22"
+     ]
+    },
+    {
+     "title": "白宫与中俄同日各出一条结构性政策",
+     "detail": "住房行政令压低按揭保险、产权保险与直接贷款利率；中俄公报把油气煤电合作与跨境通道安全制度化。两者都不改变当期需求。",
+     "evidenceFactIds": [
+      "PROP:US:HOUSING-COST-EO-2026-10-22",
+      "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21"
+     ]
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "利率：从5.13%到4.96%",
+     "detail": "10年期一日下行17bp，为近期最大单日降幅之一；2年期同步下行16bp，说明短端也在重定价，而非只有期限溢价收缩。",
+     "evidenceFactIds": [
+      "MACRO:US:UST-10Y-2026-10-22",
+      "MACRO:US:UST-2Y-2026-10-22",
+      "MACRO:US:UST-DAY-MOVE-BP-2026-10-22"
+     ]
+    },
+    {
+     "title": "美股：科技硬件继续被卖出，现金流资产被买入",
+     "detail": "半导体设备、存储与GPU链跌幅4%—8%，软件与另类资管涨2.5%—8.4%，道指与罗素2000收平。",
+     "evidenceFactIds": [
+      "EQUITY:US:AMD",
+      "EQUITY:US:MU",
+      "EQUITY:US:ADBE",
+      "EQUITY:US:BX",
+      "FLOW:US:CASHFLOW-SOFTWARE-BREADTH-2026-10-22"
+     ]
+    },
+    {
+     "title": "商品：油涨金跌，金银比持平",
+     "detail": "WTI 99.14（+2.05%）对 XAU 4026.40（回落）；金银比73.57与上一版73.47基本一致，说明不是白银独立冲击。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "METAL:XAUUSD",
+      "MACRO:METAL:GOLD-SILVER-RATIO-2026-10-22"
+     ]
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-10-22T07:00:24Z",
+     "title": "A股收盘：成长端先跌",
+     "detail": "上证3658.026（-2.07%）、创业板2576.901（-4.37%），亚洲时段先定价AI硬件估值下修。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT"
+     ]
+    },
+    {
+     "at": "2026-10-22T08:08:58Z",
+     "title": "港股收盘：离岸跌幅更大",
+     "detail": "恒指22934.68（-3.91%）、恒生科技3793.93（-5.03%），美元流动性与中国成长估值同向。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "at": "2026-10-22T20:30:00Z",
+     "title": "财政部曲线：整条下行",
+     "detail": "2年4.65%、10年4.96%、20年5.32%、30年5.29%，单日降幅13—17bp。",
+     "evidenceFactIds": [
+      "MACRO:US:UST-2Y-2026-10-22",
+      "MACRO:US:UST-10Y-2026-10-22",
+      "MACRO:US:UST-30Y-2026-10-22"
+     ]
+    },
+    {
+     "at": "2026-10-22T20:58:29Z",
+     "title": "美股收盘：指数分化，VIX 19.03",
+     "detail": "标普-1.21%、纳指100-2.90%、道指+0.02%；VIX 19.03（+14.09%），WTI 99.14（+2.05%）。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "VOL:VIX",
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "sectionGaps": {
+    "research": {
+     "reason": "本轮未取得可核验的公司披露原文：SEC EDGAR 对采集器 UA 返回 403，交易所与IR站点未在可用白名单内，故 researchRecords 与 researchChecks 保持为空，不以日历或宏观页面冒充公司研究。"
+    },
+    "newsroom": {
+     "reason": "采样时点为北京时间04:58，中文财经媒体当日稿件尚未更新（nbd 最新可读 id 止于00:49，上证报电子版10-23版面404），美国亦无一线官方数据发布（议息前静默期），因此本轮新增事件仅两条官方原文，未以旧闻或搜索摘要补足条数。"
+    },
+    "dataDefinitions": {
+     "reason": "已给出本轮实际用到的六个口径说明，未覆盖衍生品与期权隐含波动率口径，因本轮未取得相关数据。"
+    }
+   },
+   "worldEvents": [],
+   "metrics": []
+  },
+  "newsItems": [
+   {
+    "eventId": "NEWS-US-HOUSING-COST-EO-20261022",
+    "id": "NEWS-US-HOUSING-COST-EO-20261022",
+    "title": "白宫签署《降低美国人住房成本》行政令：按揭保险主动取消、产权保险全国化、预制房审批收口",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "summary": "10月22日白宫发布行政令，指令FHFA局长在符合安全稳健前提下推动房利美与房地美设立试点，对满足权益与还款记录条件的借款人主动取消按揭保险，并要求服务商主动告知、减少不必要的评估与文件成本；同时把两房的产权保险接受试点扩为全国性常态项目，考虑把再融资的贷款价值比上限从80%放宽、豁免部分评估与收入复核、压降贷款层面价格调整；要求农业部与退伍军人事务部下调其直接发放的单户住房贷款利率；并成立由HUD与FHFA共同主持的预制房创新工作组，180天内提交审批标准化建议。",
+    "plainImpact": "对准备买房或再融资的美国家庭，这是直接压低月供的政策：按揭保险提前取消、产权保险与评估费用减少、部分再融资免评估。对按揭保险商与产权保险服务商是收入端的负面变量，对房屋建筑商、预制房制造商与成交量敏感的中介是正面变量。政策落地依赖FHFA与两房的执行细则，短期不会改变房价，但会改变‘高利率下成交量冰封’的边际。",
+    "assessment": "这是分母端政策：用行政手段压低住房的融资与交易成本，而不是刺激需求。它与同日美债2年期下行16bp形成共振——一端是市场利率预期，一端是行政成本，两者都指向‘居住成本’这个政治敏感的物价分项。判断：对成交量偏正面、对按揭保险与产权保险商业模式偏负面，对整体通胀读数的影响要到2027年才可验证。",
+    "publishedAt": "2026-10-22T00:00:00Z",
+    "eventAt": "2026-10-22T00:00:00Z",
+    "sourceDateText": "October 22, 2026",
+    "sourceUrls": [
+     "https://www.whitehouse.gov/presidential-actions/2026/10/decreasing-housing-costs-for-the-american-people/"
+    ],
+    "evidenceFactIds": [
+     "PROP:US:HOUSING-COST-EO-2026-10-22"
+    ],
+    "updateType": "new"
+   },
+   {
+    "eventId": "NEWS-CN-RU-ENERGY-COMMUNIQUE-20261021",
+    "id": "NEWS-CN-RU-ENERGY-COMMUNIQUE-20261021",
+    "title": "中俄总理定期会晤联合公报：油气煤电合作、跨境能源通道安全、签署能源合作委员会纪要",
+    "regions": [
+     "CN",
+     "WORLD"
+    ],
+    "kind": "general",
+    "summary": "中国政府网10月22日发布中俄总理第三十一次定期会晤联合公报（李强10月20—21日访俄）。能源部分明确：支持两国企业深化石油、天然气、煤炭、电力合作，持续推进能源基础设施互联互通，共同保障跨境能源通道安全可靠运行；加强氢能、储能与碳捕集利用封存合作；高质量建设田湾核电站7、8号机组与徐大堡核电站3、4号机组，并探讨核燃料循环前端与新核电项目的一揽子合作；支持2027年举办第九届中俄能源商务论坛；双方强调能源市场应具备透明、竞争、非歧视条件，不受单边强制措施影响。公报附件列有《中俄能源合作委员会第二十三次会议纪要》。",
+    "plainImpact": "对普通消费者，这是中长期的能源来源与价格稳定安排，不是当期油价的方向。对市场，它意味着俄罗斯油气流向东方的制度性通道被进一步固化：结算、标准、保险与航运的替代方案越多，西方制裁对俄油边际供给的打击效力越弱，油价的‘地缘溢价上限’被压低；同时中国获得更长的陆上通道与核电技术合作清单。",
+    "assessment": "事实是合作框架与项目清单，不是新增产量。判断：这份公报对油价的短期影响接近于零，中期是‘供给韧性’的正向因素，属于压住地缘溢价的结构性变量，而不是推高油价的催化。真正的验证点是跨境管道与港口班次的实际运量，以及能源合作委员会纪要里的具体项目排期——公报没有给量。",
+    "publishedAt": "2026-10-22T00:00:00Z",
+    "eventAt": "2026-10-21T00:00:00Z",
+    "sourceDateText": "2026-10-22 发布（会晤 10月20—21日）",
+    "sourceUrls": [
+     "https://www.gov.cn/yaowen/liebiao/202610/content_7083962.htm"
+    ],
+    "evidenceFactIds": [
+     "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21"
+    ],
+    "updateType": "new"
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮只收录实际取得并阅读的两条官方原文：白宫住房成本行政令（US）与中俄总理定期会晤联合公报（CN/WORLD）。中文财经媒体在北京时间凌晨处于更新真空，美股收盘报道无可用一手来源，故不新增市场类新闻，改由本轮报价与财政部曲线直接支撑分析。",
+   "regions": [
+    "CN",
+    "US",
+    "WORLD"
+   ],
+   "gaps": "CN：缺少A股收盘后的中文解读与监管表态原文；US：缺少财报与公司指引原文（SEC 403）、缺少收盘后的一手报道；WORLD：除中俄公报外无其他可核验的一手国际事件。行情类来源只支持价格观察，不作为综合新闻。"
+  },
+  "macroFacts": [
+   {
+    "id": "MACRO:US:UST-2Y-2026-10-22",
+    "label": "美国2年期国债收益率（财政部日度曲线，10月22日）",
+    "value": 4.65,
+    "unit": "%",
+    "asOf": "2026-10-22T20:30:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "较10月21日4.81%下行16bp"
+   },
+   {
+    "id": "MACRO:US:UST-10Y-2026-10-22",
+    "label": "美国10年期国债收益率（财政部日度曲线，10月22日）",
+    "value": 4.96,
+    "unit": "%",
+    "asOf": "2026-10-22T20:30:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "较10月21日5.13%下行17bp，为近期单日最大降幅之一"
+   },
+   {
+    "id": "MACRO:US:UST-20Y-2026-10-22",
+    "label": "美国20年期国债收益率（财政部日度曲线，10月22日）",
+    "value": 5.32,
+    "unit": "%",
+    "asOf": "2026-10-22T20:30:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "较10月21日5.47%下行15bp"
+   },
+   {
+    "id": "MACRO:US:UST-30Y-2026-10-22",
+    "label": "美国30年期国债收益率（财政部日度曲线，10月22日）",
+    "value": 5.29,
+    "unit": "%",
+    "asOf": "2026-10-22T20:30:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "较10月21日5.42%下行13bp；仍低于20年期3bp，长端曲线局部倒挂未消除"
+   },
+   {
+    "id": "MACRO:US:UST-2Y-10Y-SPREAD-BP-2026-10-22",
+    "label": "2年—10年美债利差（10月22日）",
+    "value": 31,
+    "unit": "bp",
+    "asOf": "2026-10-22T20:30:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "4.96%减4.65%；10月21日为32bp，曲线形态基本不变，是平移式下行"
+   },
+   {
+    "id": "MACRO:US:UST-DAY-MOVE-BP-2026-10-22",
+    "label": "10年期美债单日变动（10月22日）",
+    "value": -17,
+    "unit": "bp",
+    "asOf": "2026-10-22T20:30:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "整条曲线2—30年同日下行13—17bp，非单一期限事件"
+   },
+   {
+    "id": "FLOW:US:STYLE-SPREAD-NDX-DOW-2026-10-22",
+    "label": "纳指100与道指当日涨跌幅之差（10月22日收盘）",
+    "value": 2.92,
+    "unit": "百分点",
+    "asOf": "2026-10-22T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "NDX -2.90%对DOW +0.02%，同一交易日、同一贴现率下的风格差"
+   },
+   {
+    "id": "FLOW:US:CASHFLOW-SOFTWARE-BREADTH-2026-10-22",
+    "label": "现金流型软件股上涨家数（ADBE/CRM/NOW，10月22日收盘）",
+    "value": 3,
+    "unit": "家",
+    "asOf": "2026-10-22T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "三只全部上涨（+6.07%/+3.52%/+2.53%），与半导体硬件方向相反"
+   },
+   {
+    "id": "MACRO:METAL:GOLD-SILVER-RATIO-2026-10-22",
+    "label": "金银比（XAU/XAG，10月22日20:58Z快照）",
+    "value": 73.57,
+    "unit": "倍",
+    "asOf": "2026-10-22T20:58:11Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "4026.40/54.73；上一版为73.47，基本持平"
+   },
+   {
+    "id": "PROP:US:HOUSING-COST-EO-2026-10-22",
+    "label": "白宫《降低美国人住房成本》行政令（2026年10月22日）",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-22T00:00:00Z",
+    "sourceUrls": [
+     "https://www.whitehouse.gov/presidential-actions/2026/10/decreasing-housing-costs-for-the-american-people/"
+    ],
+    "note": "要求FHFA推动两房设立主动取消超额按揭保险的试点、把产权保险接受试点扩为全国常态项目、下调USDA与VA直接贷款利率，并成立预制房创新工作组180天内提交建议"
+   },
+   {
+    "id": "PROP:CN:RU-ENERGY-COMMUNIQUE-2026-10-21",
+    "label": "中俄总理第三十一次定期会晤联合公报能源条款（2026年10月21日）",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-21T00:00:00Z",
+    "sourceUrls": [
+     "https://www.gov.cn/yaowen/liebiao/202610/content_7083962.htm"
+    ],
+    "note": "支持企业在石油、天然气、煤炭、电力领域深化合作并保障跨境能源通道；签署《中俄能源合作委员会第二十三次会议纪要》；强调能源市场不受单边强制措施影响"
+   },
+   {
+    "id": "RESEARCH:US:AI-HARDWARE-DURATION-2026-10-22",
+    "label": "AI硬件久期敏感度判断（本轮推断）",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-22T20:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "贴现率下行17bp当晚，远期现金流占比最高的半导体设备与存储跌幅最深，说明市场在给‘资本开支周期’而非‘贴现率’定价"
+   }
+  ],
+  "retainedMacroFactIds": [
+   "MACRO:US:10Y-CHANGE-FROM-1021",
+   "PROP:US:EO-14436-GRAHAM-WAIVER",
+   "MACRO:US:EIA-REFINERY-UTIL",
+   "PROP:CN:LONG-MARCH-90-2026-10-22",
+   "MACRO:US:BEA-GDP-ADVANCE-2026Q3",
+   "PROP:FED:FOMC-2026-10-27-28",
+   "FLOW:US:AI-SEMI-DECLINE-BREADTH",
+   "FLOW:US:ALT-MANAGER-BREADTH",
+   "MACRO:METAL:GOLD-SILVER-RATIO",
+   "RESEARCH:US:AI-CAPEX-COLLATERAL",
+   "FACT:US:GETY-2026-10-212201-DEBT-CALL",
+   "FACT:US:GETY-2026-10-21-EQUITY-CANCEL",
+   "FACT:US:ELMT-2026-10-16-BLUEMOON-UNITS",
+   "FACT:US:TMQ-2026-FIELD-HOLES",
+   "FACT:US:GPI-2026-10-19-HENNESSY-CONSIDERATION",
+   "FACT:US:GPI-2026-10-19-NOTES-SIZE",
+   "FACT:CN:SSE-ETF-2026-09-SCALE",
+   "FACT:CN:SSE-ETF-2026-09-MIDLONG-HOLD",
+   "FACT:CN:SSE-ETF-2026-09-COUNT",
+   "FACT:CN:BSE-2026-10-21-VALUE-ALLOCATION",
+   "FACT:CN:A-SHARE-2026-10-21-TURNOVER",
+   "FACT:CN:601168-2026-9M-REVENUE",
+   "FACT:CN:601168-2026-9M-NETPROFIT"
+  ],
+  "macroEvents": [
+   {
+    "id": "MACRO:US:FOMC-2026-10-27",
+    "title": "美联储FOMC会议（10月27—28日）",
+    "at": "2026-10-28T18:00:00Z",
+    "region": "US",
+    "detail": "美联储官网日历确认10月27—28日会议，本次不带经济预测摘要；决议与新闻发布会按惯例在第二日14:00 ET（18:00Z）。"
+   },
+   {
+    "id": "MACRO:US:BEA-GDP-ADVANCE-2026Q3",
+    "title": "美国Q3 GDP初值与9月个人收入支出",
+    "at": "2026-10-29T12:30:00Z",
+    "region": "US",
+    "detail": "BEA发布日程确认10月29日8:30 ET双发：Q3 GDP（初值）与9月Personal Income and Outlays，是验证‘利率下行是否源于增长恶化’的第一手数据。"
+   },
+   {
+    "id": "MACRO:US:BEA-TRADE-2026-11",
+    "title": "美国9月国际贸易（货物与服务）",
+    "at": "2026-11-04T13:30:00Z",
+    "region": "US",
+    "detail": "BEA日程确认11月4日8:30 ET发布，属窗口外但已核验的后续节点。"
+   }
+  ],
+  "events": [
+   {
+    "id": "EVT-FOMC-2026-10-28",
+    "title": "FOMC 决议（10月28日 18:00Z）",
+    "at": "2026-10-28T18:00:00Z",
+    "region": "US",
+    "detail": "官方日历已核验；本次无经济预测摘要，焦点在声明措辞与发布会。距本轮已超过24小时，列为已排程节点而非次日事件。"
+   },
+   {
+    "id": "EVT-BEA-GDP-2026-10-29",
+    "title": "Q3 GDP 初值 + 9月 PCE（10月29日 12:30Z）",
+    "at": "2026-10-29T12:30:00Z",
+    "region": "US",
+    "detail": "BEA日程已核验；这是本轮判断‘利率下行=增长恶化’的直接证伪点。"
+   }
+  ],
+  "researchRecords": [],
+  "researchChecks": []
+ }
+}
