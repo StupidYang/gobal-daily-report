@@ -2,8 +2,8 @@
 'use strict';
 /* Deterministic read projections; immutable reports/runs are never modified. */
 const fs=require('node:fs'),path=require('node:path'),P=require('../lib/pipeline.cjs'),Ret=require('../lib/retention.cjs'),Q=require('../assets/content-contract.js');
-function build(root){
- const config=P.read(path.join(root,'config/watchlist.json')),index=P.read(path.join(root,'data/history-index.json'),{reports:[]});
+function build(root,{historyIndex}={}){
+ const config=P.read(path.join(root,'config/watchlist.json')),index=historyIndex||P.read(path.join(root,'data/history-index.json'),{reports:[]});
  const latest=P.read(path.join(root,'data/latest.json')),latestCut=P.W.time(latest.reportMeta?.generatedAt||latest.updatedAt);
  const history=index.reports.filter(x=>/^history\/\d{4}-\d{2}-\d{2}\/\d{4}\.json$/.test(x.path)).map(x=>({path:x.path,report:P.read(path.join(root,x.path))})).filter(x=>x.report).sort((a,b)=>P.W.time(a.report.updatedAt)-P.W.time(b.report.updatedAt));
  const modules={};for(const role of ['quotes','asia-equities','us-equities']){
