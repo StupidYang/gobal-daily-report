@@ -1,14 +1,17 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.macroFacts[0].asOf: asOf不能在未来 [future-time]\neditorial.macroFacts[1].asOf: asOf不能在未来 [future-time]",
+  "issues": [
+    "editorial.macroFacts[0].asOf: asOf不能在未来 [future-time]",
+    "editorial.macroFacts[1].asOf: asOf不能在未来 [future-time]"
+  ],
   "execution": {
     "executionId": "20261026T1711Z-global-main",
     "generation": 329
   },
   "deadlineAt": "2026-10-26T17:31:41.230Z",
   "requestId": "20261026T1711Z-global-main",
-  "at": "2026-10-26T17:11:55.534Z",
+  "at": "2026-10-26T17:16:51.968Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +22,34 @@
       "status": "ready-for-analysis",
       "at": "2026-10-26T17:11:55.534Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-26T17:16:51.968Z",
+      "revision": 0
     }
   ],
   "packetHash": "c41deac16858ea0d8d2b1dc726dcf74f2fb618fca62e2c8bcdd9cf26bec3adc4",
-  "collectionDurationMs": 5225
+  "collectionDurationMs": 5225,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "57ef0b4d10a9e387de37e4bfd079193525cc443ccaeec976fe1c67169ed72c3b",
+  "validationIssues": [
+    {
+      "path": "editorial.macroFacts[0].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    },
+    {
+      "path": "editorial.macroFacts[1].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261026T1711Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
