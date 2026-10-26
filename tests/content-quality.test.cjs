@@ -41,7 +41,12 @@ test('real archive restore recovers source-backed rows without touching immutabl
 const index=P.read(path.join(root,'data/history-index.json'),{reports:[]});assert.ok(Array.isArray(index.reports)&&index.reports.length,'history index must list archived reports');
 const result=require('../scripts/build-reader-projections.cjs').build(root);const restored=result.reports.filter(x=>x?.coverage&&x.coverage.numeric>0);assert.ok(restored.length,'at least one archived report must restore source-backed quotes');
 const r=restored[0],entry=index.reports.find(x=>x.reportId===r.reportId);assert.ok(entry,'projected report must come from the archive index');const reportPath=path.join(root,entry.path),report=P.read(reportPath);assert.ok(report,'archived report must be readable');
-assert.equal(typeof r.coverage.required,'number');assert.ok(r.coverage.numeric>0&&r.coverage.numeric<=r.coverage.required);assert.equal(r.coverage.numeric+r.coverage.missing,r.coverage.required);assert.ok(Array.isArray(r.errors));assert.ok(Array.isArray(r.warnings));
+assert.equal(typeof r.coverage.required,'number');assert.ok(r.coverage.required>0);assert.ok(r.coverage.numeric>0&&r.coverage.numeric<=r.coverage.required);for(const k of ['missing','textOnly','fresh','stale','retained'])assert.ok(Number.isInteger(r.coverage[k])&&r.coverage[k]>=0,'coverage.'+k+' must be a non-negative integer');
+// numeric counts the fresh/stale/retained rows; textOnly and missing are the remaining buckets.
+// Together the six counts partition the configured universe, which holds for any archived report.
+assert.equal(r.coverage.fresh+r.coverage.stale+r.coverage.retained,r.coverage.numeric,'numeric must equal the fresh/stale/retained buckets');
+assert.equal(r.coverage.numeric+r.coverage.textOnly+r.coverage.missing,r.coverage.required,'coverage buckets must partition the required universe');
+assert.ok(Array.isArray(r.errors));assert.ok(Array.isArray(r.warnings));
 for(const[p,b]of before)assert.equal(fs.readFileSync(path.join(root,p),'utf8'),b);
 const view=P.read(path.join(root,'data/reader-projections',r.reportId+'.json'));assert.ok(view,'projection must be written for the restored report');assert.equal(view.reportId,r.reportId);assert.equal(view.reportHash,P.hash(report));assert.equal(P.hash(P.read(reportPath)),view.reportHash);
 const cutoff=P.W.time(view.cutoff);for(const m of Object.values(view.modules)){assert.ok(P.W.time(m.generatedAt)<=cutoff);for(const q of m.payload.items||[])if(q.retention)assert.ok(P.W.time(q.asOf)<=cutoff);}
