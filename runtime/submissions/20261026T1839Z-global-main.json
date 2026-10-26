@@ -1,0 +1,1385 @@
+{
+ "execution": {
+  "executionId": "20261026T1839Z-global-main",
+  "generation": 331
+ },
+ "editorial": {
+  "packetHash": "c70ee563fd4ce32b5f576809b539ab7a9152a28fba6cd7ae88934db912ca84dc",
+  "analyzedAt": "2026-10-26T18:45:32Z",
+  "report": {
+   "overview": "本轮最核心的变化是美股与A股在同一时间窗口里走了相反方向：美股盘中科技与半导体强反弹（标普500 7679.20 涨0.73%、纳指 26205.182 涨0.96%、费半涨3%），而A股当天收盘是典型的价值跑赢、成长杀跌（沪指 3697.52 涨0.19%、创业板指 2638.2307 跌1.71%、科创50 跌2.23%），风格价差接近2个百分点。港股居中，恒指涨0.51%而恒生科技跌0.36%。跨资产上，WTI 回落至101.76（跌1.46%）、美元指数101.923、10年期美债4.982%、BTC 在8万关口附近（80106.74）。结论：这是一次由海外AI叙事修复驱动的局部风险偏好回升，不是全球共振；A股的调整来自内部风格切换与政策预期落空，不会因为美股隔夜走强而自动修复。",
+   "rolling24hSummary": "过去24小时（北京时间10月26日午后至27日凌晨）可归为三段：第一段是A股与港股的收盘分化——沪指靠权重与三桶油收红，双创被算力硬件与半导体拖累，成交缩量至1.6万亿量级；第二段是A股盘后密集披露的三季报，PCB与算力链利润爆发（景旺电子单季归母净利同比增239.67%、协创数据增360.33%），但相关个股当日多为下跌，说明业绩已被提前定价；第三段是美股开盘后的科技反弹，半导体全线走强、特斯拉涨5.83%创7月以来新高，同时软件与加密相关个股走弱（Adobe 跌3.31%、Coinbase 跌2.86%、MicroStrategy 跌3.16%）。宏观侧，央行设立债市非银大额赎回互换便利、海南明确2030年禁售燃油车的时间表、上海给出卫星互联网2030年目标，均属结构性政策而非总量刺激。",
+   "methodology": "数据来自本轮 execution 20261026T1839Z-global-main 的采集包（generation 331，packetHash c70ee563…84dc）：31项必看报价由代码采集，A股与港股为10月26日收盘快照（asOf 均为当日07:00-08:29Z，状态 previous），美股为10月26日盘中延迟报价（asOf 18:24-18:39Z，状态 delayed），加密资产为同一时刻的 snapshot。文档证据为17份、全部 contentRetrieved=true、blocked=0。事实与推断严格分离：凡带数字的陈述均可在 canonicalFacts 或本包文档中查回；推断段落明确写“我的判断”。缺口如实标注：现货黄金采集失败（api.gold-api.com fetch failed）、布伦特原油 404、美债2年期仅有10月23日财政部日度值。本轮没有重新核验的旧数据不写入正文。",
+   "coreAnalysis": {
+    "mainTheme": "AI叙事在美股被重新定价，在A股被提前兑现：同一条产业链，两个市场处在周期的不同位置。",
+    "expectationGap": "市场原本预期五中全会开幕会给出“十五五”方向性增量信息，实际通稿聚焦全面从严治党与治理体系，A股成长板块因此在午后加速回落；相反，美股在连续两周因“AI资本开支不可持续”下跌后，借半导体强势与龙头个股事件完成一次估值修复。两个预期差方向相反，造就了隔夜的背离。",
+    "divergence": "分歧不在指数，而在结构：美股是硬件与算力强、软件与加密资产弱（费半+3% vs Adobe-3.31%、Coinbase-2.86%）；A股是权重与高股息强、双创弱（沪指+0.19% vs 创业板-1.71%）；港股同样是价值强于科技（恒指+0.51% vs 恒生科技-0.36%）。三地共同指向一件事——资金在削减“高估值成长”的暴露，只是美股用硬件业绩对冲了这部分削减。",
+    "regime": "当前处在“盈利验证期 + 政策真空期”的组合：三季报正在密集披露，业绩能验证的公司获得支撑（景旺、协创、国科微的利润增速都是三位数），但估值已充分反映；政策端在10月底议息与11月重要会议之前缺少增量。这种组合下指数难有趋势，结构轮动会非常快。",
+    "priceIn": "美股本轮反弹已把“AI需求仍在”的预期重新打回价格，费半3%的日内涨幅属于情绪修复而非盈利上修；A股则已把“算力硬件高增长”定价到极致——景旺电子业绩增239.67%当日仍跌7.92%、较年内高点回撤34.18%，协创数据业绩增360.33%而股价自6月高点回撤46.6%，这是典型的“好消息出尽”。",
+    "bullCase": "多头理由是：三季度财报证明AI资本开支正在转化为真实利润（PCB、服务器、存储三条线的增速互相印证），且美债10年期回落至4.982%、VIX降至18.34，金融条件边际转松；若10月28日议息释放偏鸽信号，估值端还有一次扩张空间。",
+    "bullInvalidation": "若10月28日FOMC声明偏鹰（或发布会强调通胀黏性），或本周大型科技股财报显示资本开支指引下修，则本轮反弹只是空头回补，费半3%的涨幅会在两周内被抹平。观察指标：10年期美债重回5.05%以上、VIX回到20以上。",
+    "bearCase": "空头理由是：这轮上涨的宽度不足——纳指涨0.96%但Adobe、Salesforce、ServiceNow、Coinbase、MicroStrategy 全部下跌，说明资金只是在算力硬件内部抱团；同时A股与港股的资金在撤离成长，全球成长股的定价锚并不一致。加上巴西资产崩塌提示新兴市场政治风险仍在，风险预算随时可能被收缩。",
+    "bearInvalidation": "若后续两个交易日上涨宽度扩散（软件与加密相关个股转涨、A股创业板止跌），则“抱团式反弹”的判断被推翻，应改判为全面的风险偏好修复。"
+   },
+   "plainLanguage": {
+    "verdict": "美股在修复AI叙事，A股在消化高估值，两边不是同一件事，别用一个市场的涨跌去解释另一个。",
+    "bottomLine": "隔夜美股科技反弹对A股是情绪支撑而非基本面支撑；A股真正的问题是高增长已被充分定价，业绩兑现反而成了卖点。",
+    "whyNow": "三季报进入最密集披露的两天，PCB、算力、存储三条线的利润增速都验证了需求，但同时股价已在前期把这些增长打完；叠加五中全会开幕通稿未给增量政策，成长股失去了继续拔估值的理由。",
+    "horizon": "未来12-24小时看的是10月28日议息的措辞与费半能否守住3%的涨幅；两到四周看的是本轮财报季的资本开支指引，这决定AI硬件是周期还是趋势。",
+    "confidence": "medium",
+    "invalidation": "若A股创业板指在成交回升的配合下连续两日跑赢沪深300，说明风格切换是短期错杀而非趋势，本判断需下调；若费半回吐全部涨幅且VIX升破20，则美股反弹的定性改为空头回补。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "分化",
+      "reason": "权重与高股息（石油、银行、地产）承接资金，双创被算力硬件与半导体拖累；三季报高增长个股出现“业绩兑现即卖出”。",
+      "takeaway": "我的判断：指数层面的风险不大，但成长股的估值消化还没结束，追赶业绩超预期个股的性价比在下降。",
+      "horizon": "3-10个交易日",
+      "counterRisk": "若10月28日海外转鸽、北向与ETF资金回流成长，风格会快速反转。",
+      "invalidation": "创业板指连续两日跑赢沪深300且成交放大。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:CN:CHINEXT",
+       "INDEX:CN:CSI300",
+       "RESEARCH:CN:KINGBROTHER-Q3-2026"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-10-26/4619197.html",
+       "https://www.nbd.com.cn/articles/2026-10-26/4619007.html"
+      ]
+     },
+     {
+      "asset": "港股",
+      "effect": "分化",
+      "reason": "恒指与国企指数靠金融、能源与高股息收涨，恒生科技受半导体与光通信拖累微跌，与A股是同一套风格逻辑。",
+      "takeaway": "我的判断：港股当前更像“高股息替代品”，在美债利率没有明显下行前，科技股缺乏独立行情。",
+      "horizon": "1-2周",
+      "counterRisk": "若美债10年期有效跌破4.9%，港股成长股弹性会大于A股。",
+      "invalidation": "恒生科技连续两日强于恒指且南向资金转为净买入科技。",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH",
+       "INDEX:HK:HSCEI"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-10-26/4619443.html"
+      ]
+     },
+     {
+      "asset": "美股",
+      "effect": "短线偏利好",
+      "reason": "半导体与AI硬件领涨、特斯拉创新高，VIX回落至18.34，金融条件边际转松；但软件与加密相关个股下跌，上涨宽度不足。",
+      "takeaway": "我的判断：这是估值修复而非盈利上修，参与价值在硬件，风险在宽度。",
+      "horizon": "2-5个交易日，10月28日议息为分水岭",
+      "counterRisk": "若财报季资本开支指引下修，硬件也会补跌。",
+      "invalidation": "费半回吐3%涨幅且VIX升破20。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:US:SP500",
+       "INDEX:US:NASDAQ",
+       "FLOW:US:SOX-2026-10-26",
+       "VOL:VIX"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-10-26/4619443.html",
+       "https://www.nbd.com.cn/articles/2026-10-26/4619400.html"
+      ]
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性",
+      "reason": "BTC 在80106.74附近，8万关口反复争夺；同一天Coinbase跌2.86%、MicroStrategy跌3.16%，说明股票端的加密暴露在被减仓，而币价本身没有跟跌。",
+      "takeaway": "我的判断：币价与美股科技的相关性这次没有生效，杠杆盘在去化但现货需求还在，方向不明。",
+      "horizon": "1-3个交易日",
+      "counterRisk": "若美股科技继续走强而币价不涨，说明资金在撤离高风险资产，随后补跌概率上升。",
+      "invalidation": "BTC有效跌破79000并伴随美股科技上涨。",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "CRYPTO:ETH:USD",
+       "EQUITY:US:COIN",
+       "EQUITY:US:MSTR"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+      ]
+     },
+     {
+      "asset": "黄金",
+      "effect": "证据不足",
+      "reason": "本轮现货黄金采集失败（api.gold-api.com fetch failed），无有效报价；仅有白银54.121与10年期美债4.982%可作旁证。",
+      "takeaway": "我的判断：在名义利率小幅回落、美元持平的组合下，黄金缺少方向性驱动，不宜用旧价推测本轮位置。",
+      "horizon": "待数据恢复后重估",
+      "counterRisk": "若实际利率快速下行（通胀预期上行快于名义利率），黄金会重新走强。",
+      "invalidation": "下一轮取得有效现货报价后再改判。",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "METAL:XAGUSD",
+       "RATE:US10Y",
+       "FX:DXY"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "原油",
+      "effect": "偏利空",
+      "reason": "WTI 回落至101.76（跌1.46%），地缘风险溢价在减弱；布伦特报价本轮404，仅有WTI可用。",
+      "takeaway": "我的判断：在需求端没有增量、供给端没有实质中断的情况下，油价对地缘消息的敏感度在下降，高位震荡偏弱。",
+      "horizon": "1-2周",
+      "counterRisk": "若出现实际供应中断（而非口头威胁），风险溢价会一次性重估。",
+      "invalidation": "WTI重回105上方并伴随库存大幅去化。",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "FX:DXY"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+      ]
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "complete",
+     "note": "6个指数全部取得10月26日收盘价（状态 previous），asOf 07:00-08:29Z；覆盖沪深300与中证500用于风格对照。",
+     "gaps": null
+    },
+    {
+     "market": "港股",
+     "status": "complete",
+     "note": "恒指、恒生科技、恒生国企三个指数均取得10月26日收盘价，asOf 08:08Z。",
+     "gaps": "港交所原文因使用条款限制不在采集范围，公司公告只能通过媒体转述，未做个股级核验。"
+    },
+    {
+     "market": "美股",
+     "status": "complete",
+     "note": "五大指数为10月26日盘中延迟报价（asOf 18:24-18:39Z，状态 delayed），另有41只个股基础报价。",
+     "gaps": "非收盘价，收盘后的变动不在本轮范围内。"
+    },
+    {
+     "market": "BTC",
+     "status": "partial",
+     "note": "BTC 80106.74、ETH 2320.92、SOL 100.79 为同一时刻快照（asOf 18:39Z）。",
+     "gaps": "加密资产无涨跌幅字段（changePct=null），不能给出24小时变化。"
+    },
+    {
+     "market": "黄金",
+     "status": "partial",
+     "note": "现货黄金 METAL:XAUUSD 本轮采集失败，仅有现货白银54.121。",
+     "gaps": "api.gold-api.com 返回 fetch failed，未取得现货金价；不使用旧值或期货值替代，本节不给金价点位。"
+    },
+    {
+     "market": "原油",
+     "status": "partial",
+     "note": "WTI 101.76（跌1.46%，asOf 18:29Z，延迟报价）。",
+     "gaps": "布伦特 BZX26.NYM 返回 HTTP 404，连续多轮缺失，本节以WTI为准。"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "asOf": "2026-10-26T08:29:58Z",
+     "status": "收盘",
+     "judgement": "价值强于成长，指数韧性来自权重",
+     "note": "沪指3697.52涨0.19%，深证成指11534.379跌1.19%，创业板指2638.2307跌1.71%，科创50跌2.23%，沪深300跌0.04%，中证500跌1.49%。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500"
+     ]
+    },
+    {
+     "asset": "港股",
+     "asOf": "2026-10-26T08:08:28Z",
+     "status": "收盘",
+     "judgement": "高股息与金融支撑，科技微跌",
+     "note": "恒指23211.81涨0.51%，恒生科技3857.53跌0.36%，恒生国企7802.09涨0.59%。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI"
+     ]
+    },
+    {
+     "asset": "美股",
+     "asOf": "2026-10-26T18:39:45Z",
+     "status": "盘中（延迟）",
+     "judgement": "硬件强、软件弱，宽度不足",
+     "note": "标普500 7679.20涨0.73%，纳指26205.182涨0.96%，纳指100 29336.275涨1.31%，道指52351.4涨0.26%，罗素2000 2791.4917涨0.56%，费半涨3%报11109.63。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "FLOW:US:SOX-2026-10-26"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "asOf": "2026-10-26T18:39:45Z",
+     "status": "快照",
+     "judgement": "8万关口反复，方向不明",
+     "note": "BTC 80106.74、ETH 2320.92、SOL 100.79，均为同一时刻快照，无涨跌幅。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "asOf": null,
+     "status": "数据缺失",
+     "judgement": "无法给出本轮点位",
+     "note": "现货黄金采集失败；白银54.121可作旁证，但不能替代金价。",
+     "evidenceFactIds": [
+      "METAL:XAGUSD",
+      "RATE:US10Y"
+     ]
+    },
+    {
+     "asset": "原油",
+     "asOf": "2026-10-26T18:29:45Z",
+     "status": "盘中（延迟）",
+     "judgement": "高位回落，风险溢价减弱",
+     "note": "WTI 101.76跌1.46%；布伦特404缺失。",
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "analysis": "10月26日是典型的“指数不跌、个股很痛”的交易日：沪指靠石油石化、银行、地产收涨0.19%，但深证成指跌1.19%、创业板指跌1.71%、科创50跌2.23%，中证500跌1.49%，风格价差接近2个百分点。盘后三季报进一步确认了基本面与股价的错位——景旺电子单季归母净利同比增239.67%，当日股价却跌7.92%；协创数据单季增360.33%，股价自6月高点回撤46.6%。这说明算力硬件的高增长已被完整定价，业绩兑现成了兑现筹码的理由。",
+     "mechanism": "资金在同一个产业链内部完成再分配：从“高估值、高预期”的算力硬件与半导体，切向“低估值、现金流确定”的能源与金融。触发因素是五中全会开幕通稿聚焦治理体系与全面从严治党，没有释放增量产业政策，原本押注政策催化的资金失去持仓理由；叠加缩量（成交1.6万亿量级），做多力量不足以同时支撑两个方向。",
+     "risk": "最大风险不是下跌，而是轮动的速度：当权重股成为避风港，一旦海外转鸽，资金会快速反向切回成长，两边都做的人容易两头挨打。其次是三季报后的业绩空窗期，缺少新的验证点，指数容易在窄区间内反复磨。",
+     "invalidation": "若创业板指在成交放大的配合下连续两日跑赢沪深300，说明资金重新定价成长，本轮的“价值占优”判断失效；若沪指跌破3600且成交继续萎缩，则连权重支撑也告一段落。",
+     "horizon": "3-10个交易日，下一个验证点是10月28日海外议息后的第一个A股交易日。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500",
+      "RESEARCH:CN:KINGBROTHER-Q3-2026",
+      "RESEARCH:CN:SHARETRONIC-Q3-2026",
+      "RESEARCH:CN:GOKE-Q3-2026"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619197.html",
+      "https://www.nbd.com.cn/articles/2026-10-26/4619007.html",
+      "https://www.nbd.com.cn/articles/2026-10-26/4619227.html"
+     ]
+    },
+    {
+     "asset": "港股",
+     "analysis": "港股的分化结构比A股更清晰：恒指涨0.51%、恒生国企涨0.59%，而恒生科技跌0.36%。金融、能源、地产、环保上涨，半导体与光通信链条下跌，与A股是同一套资金逻辑的两个市场表达。恒生科技3857.53的位置意味着它仍在区间下沿附近徘徊，缺少独立驱动。",
+     "mechanism": "港股定价锚是美元流动性加中国基本面。当前美元指数101.923基本持平、10年期美债4.982%小幅回落，流动性没有明显改善；基本面端等的是三季报与政策，但政策空窗。于是资金只能买“类债券”的高股息资产，用股息率对抗机会成本。",
+     "risk": "港股的风险在于流动性薄，风格切换时波动会被放大；另外巴西等新兴市场资产崩塌会通过新兴市场基金的赎回传导到港股，属于外部风险预算收缩的间接冲击。",
+     "invalidation": "若10年期美债有效跌破4.9%且南向资金转为净买入科技，恒生科技的弹性会大于恒指，本判断需要反转。",
+     "horizon": "1-2周，跟随美债利率与南向资金。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "RATE:US10Y",
+      "FX:DXY"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619443.html"
+     ]
+    },
+    {
+     "asset": "美股",
+     "analysis": "美股盘中是一次有力度的反弹：标普500 7679.20涨0.73%、纳指26205.182涨0.96%、纳指100涨1.31%，费城半导体指数涨3%报11109.63。个股层面，英特尔涨5.59%、ARM涨6.19%、美光涨4.05%、超威涨3.05%、博通涨2.93%、英伟达涨2.46%、台积电涨2.26%，特斯拉涨5.83%报393.93创7月16日以来新高。但同一时段Adobe跌3.31%、Salesforce跌1.39%、ServiceNow跌1.31%、Coinbase跌2.86%、MicroStrategy跌3.16%，上涨宽度明显不足。",
+     "mechanism": "这是一次叙事修复：前期市场担心“AI资本开支不可持续”导致半导体板块大幅回撤，当龙头个股出现事件性催化时，空头回补与趋势资金同时进场，硬件端弹性最大。软件与加密相关下跌，是因为它们的估值依赖久期，在10年期美债仍在4.98%的位置上缺乏吸引力。",
+     "risk": "风险在于把“空头回补”误读为“趋势反转”。这轮上涨没有成交宽度支撑，一旦10月28日议息措辞偏鹰，或本周大型科技股财报的资本开支指引低于预期，回吐会同样迅速。",
+     "invalidation": "费半回吐3%的全部涨幅且VIX升破20，说明反弹结束；若上涨宽度扩散（软件与加密相关转涨），则应改判为全面风险偏好修复。",
+     "horizon": "2-5个交易日，10月28日议息与本周财报是双分水岭。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "FLOW:US:SOX-2026-10-26",
+      "RESEARCH:US:TSLA-2026-10-26",
+      "VOL:VIX",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619443.html",
+      "https://www.nbd.com.cn/articles/2026-10-26/4619400.html"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "analysis": "BTC 报80106.74，ETH 2320.92、SOL 100.79，均为10月26日18:39Z的同一时刻快照，本轮没有涨跌幅字段，因此无法量化24小时变化。值得注意的是方向背离：币价守在8万关口上方，而股票端的加密暴露在被减仓——Coinbase跌2.86%、MicroStrategy跌3.16%。",
+     "mechanism": "加密资产当前有两条定价线：一条是现货与链上需求（决定8万关口能否守住），另一条是股票市场的风险预算（决定相关股票的贝塔）。这次两条线分开走，说明减仓来自股票投资者调整组合，而不是币圈内部去杠杆。",
+     "risk": "风险是“股跌币不跌”的持续性很低：若美股科技继续走强而币价不跟，说明资金在系统性撤离高风险资产，随后补跌概率上升；反之若币价独立走强，则是新的增量资金入场信号。",
+     "invalidation": "BTC有效跌破79000且同期美股科技上涨，则“现货需求仍在”的判断被推翻。",
+     "horizon": "1-3个交易日，短线看8万关口的争夺结果。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "EQUITY:US:COIN",
+      "EQUITY:US:MSTR"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "analysis": "本轮现货黄金 METAL:XAUUSD 采集失败（api.gold-api.com 返回 fetch failed），没有任何有效金价，因此这一节不能给出点位，也不能用上一版的价格冒充本轮。可用的旁证只有两个：现货白银54.121，10年期美债收益率4.982%（当日小幅回落0.12%），美元指数101.923基本持平。白银与黄金同属贵金属，但金银比与工业属性差异大，不能相互替代。",
+     "mechanism": "黄金的定价核心是实际利率与美元。名义10年期在4.98%附近小幅回落、美元持平的组合，对黄金是温和正面但不足以形成趋势；真正决定方向的是通胀预期相对名义利率的变化速度，本轮没有取得通胀预期（TIPS）数据。",
+     "risk": "最大的风险是把数据缺失当成“没有变化”。在金价缺失的情况下，任何关于“黄金突破/回落”的表述都是无源之谈，本节因此明确标 partial。其次是白银的工业属性会在风险偏好回升时跑赢黄金，用白银推断黄金方向容易出错。",
+     "invalidation": "下一轮取得有效现货或期货报价后重新判断；若届时金价与白银同向但幅度差异超过3%，说明驱动来自工业需求而非货币属性。",
+     "horizon": "数据恢复前不做方向判断。",
+     "evidenceFactIds": [
+      "METAL:XAGUSD",
+      "RATE:US10Y",
+      "FX:DXY"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "原油",
+     "analysis": "WTI 回落至101.76，跌1.46%（asOf 18:29Z，延迟报价）；布伦特 BZX26.NYM 本轮再次返回404，连续多轮缺失，因此油价结论只能以WTI为基准。在美股科技反弹、风险偏好回升的同一天，原油反而下跌，说明当前油价的定价重心是地缘风险溢价的消退，而不是需求预期。",
+     "mechanism": "油价里包含两部分：供需基本面与地缘溢价。近两周中东局势的消息面反复，价格对口头威胁的敏感度在递减（边际效用递减），一旦没有实质性供应中断，溢价就会慢慢漏掉。同时美元指数持稳在101.9附近，汇率端没有额外推力。",
+     "risk": "风险是不对称的：如果出现真正的供应中断（而非表态），风险溢价会一次性重估，做空波动率的仓位会受伤；反之若需求端数据走弱，油价的下行空间比现在看到的更大。",
+     "invalidation": "WTI重回105上方且伴随EIA库存大幅去化，说明供需重新收紧，看空判断失效。",
+     "horizon": "1-2周，10月28日EIA周度库存是最近的验证点。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "FX:DXY",
+      "MACRO:ENERGY:EIA-WPSR-2026-10"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619383.html",
+      "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "id": "fw-rate-duration",
+     "framework": "利率传导与久期定价",
+     "concept": "利率是所有长久期资产的折现率，利率越高，越依赖远期现金流的资产估值压力越大。",
+     "applicability": "适用于解释美股软件股与加密相关个股在同一天逆势下跌。",
+     "observed": "10年期美债4.982%（小幅回落但仍近5%），Adobe跌3.31%、Salesforce跌1.39%、Coinbase跌2.86%、MicroStrategy跌3.16%，而费半涨3%。",
+     "mechanism": "硬件端的现金流兑现更近、对折现率不敏感；软件与加密相关的估值久期长，在5%的无风险利率下折价明显。资金在同一市场内按久期做取舍。",
+     "conclusion": "本轮美股反弹是“短久期资产修复、长久期资产承压”的结构性行情，不是全面风险偏好回升。",
+     "assumptions": "无风险利率维持在当前区间、盈利预期不变。",
+     "counterEvidence": "若利率快速下行至4.7%以下，长久期资产应同步反弹，当前的分化会收敛。",
+     "horizon": "2-4周",
+     "invalidation": "10年期跌破4.8%而软件股仍跌，说明压制来自基本面而非利率。",
+     "confidence": "medium",
+     "missingData": "缺少TIPS实际利率与通胀预期数据。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "INDEX:US:NASDAQ",
+      "EQUITY:US:ADBE",
+      "EQUITY:US:COIN"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619443.html",
+      "https://www.nbd.com.cn/articles/2026-10-26/4619400.html"
+     ]
+    },
+    {
+     "id": "fw-expectation-gap",
+     "framework": "预期差与事件研究",
+     "concept": "价格反映的是预期，超预期的部分才产生超额收益；预期本身落空也会杀估值。",
+     "applicability": "适用于A股成长股在五中全会开幕当日的回落，以及三季报高增长个股的下跌。",
+     "observed": "五中全会10月26日上午开幕，通稿聚焦政治局工作报告与全面从严治党决定；同日创业板指跌1.71%、科创50跌2.23%；景旺电子净利增239.67%当日跌7.92%。",
+     "mechanism": "重大会议前，市场会提前交易政策预期；当通稿没有出现预期的产业增量表述，押注资金失去持仓理由而撤离。业绩端同理：高增长在披露前已被交易，披露后成为兑现窗口。",
+     "conclusion": "A股当前的核心矛盾是预期已被充分交易，边际信息难以推动估值继续扩张。",
+     "assumptions": "政策的产业增量表述是前期定价的一部分。",
+     "counterEvidence": "若后续会议公报出现具体的产业与财政安排，预期差会反向修复。",
+     "horizon": "1-2周",
+     "invalidation": "创业板指在无新增政策的情况下连续两日跑赢，说明回落是流动性因素而非预期差。",
+     "confidence": "medium",
+     "missingData": "缺少全市场一致预期与资金流数据，无法量化预期差幅度。",
+     "evidenceFactIds": [
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "RESEARCH:CN:KINGBROTHER-Q3-2026"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619197.html",
+      "https://www.gov.cn/yaowen/liebiao/202610/content_7084285.htm"
+     ]
+    },
+    {
+     "id": "fw-breadth",
+     "framework": "市场微观结构与广度",
+     "concept": "指数的涨跌由权重决定，但行情的健康程度要看上涨家数与板块扩散。",
+     "applicability": "适用于判断美股本轮反弹的可持续性。",
+     "observed": "纳指涨0.96%、费半涨3%，但Adobe、Salesforce、ServiceNow、Coinbase、MicroStrategy、苹果（342.81，跌1.41%）、谷歌（317.39，跌0.88%）、Meta（631.768，跌1.69%）均下跌。",
+     "mechanism": "当上涨集中在少数硬件标的，成交与增量资金有限，行情依赖空头回补；宽度不足的反弹在遇到负面信息时缺少承接。",
+     "conclusion": "本轮美股反弹的宽度不足，定性为空头回补与结构性抱团，而非全面风险偏好修复。",
+     "assumptions": "下跌个股的走弱反映资金主动减仓而非个别事件。",
+     "counterEvidence": "若次日软件与互联网龙头转涨，宽度改善，则反弹质量提升。",
+     "horizon": "2-5个交易日",
+     "invalidation": "连续两日上涨家数占比超过60%。",
+     "confidence": "medium",
+     "missingData": "缺少全市场涨跌家数与成交量宽度指标，仅有41只候选个股样本。",
+     "evidenceFactIds": [
+      "INDEX:US:NASDAQ",
+      "FLOW:US:SOX-2026-10-26",
+      "EQUITY:US:AAPL",
+      "EQUITY:US:META"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619400.html"
+     ]
+    },
+    {
+     "id": "fw-policy-transmission",
+     "framework": "政策传导与分配影响",
+     "concept": "政策先改变特定主体的成本与收益，再通过产业链与居民行为传导到宏观。",
+     "applicability": "适用于海南禁售燃油车时间表、事业单位登记管理条例、老旧小区改造三件事。",
+     "observed": "海南提出2027年新增汽车中新能源比例不低于70%、平稳推进2030年禁售燃油车；前三季度改造老旧小区1.6万个，309亿元国债支持更新电梯19.7万台。",
+     "mechanism": "前者改变本地购车选择集与充电需求，后者通过财政资金直接形成电梯、管网、施工订单；两者都不改变总量货币条件，属结构性分配。",
+     "conclusion": "本轮政策是结构性而非总量性，对指数的影响弱于对特定行业订单的影响。",
+     "assumptions": "财政资金按计划落地。",
+     "counterEvidence": "若后续出现总量型刺激（降准降息、大规模消费补贴），则结构性判断需升级。",
+     "horizon": "1-4个季度",
+     "invalidation": "出现总量型宽松或地产需求端实质性政策。",
+     "confidence": "medium-high",
+     "missingData": "缺少电梯与管网行业的订单与产能数据。",
+     "evidenceFactIds": [
+      "PROP:CN:HAINAN-NEV-2026-10-26",
+      "MACRO:CN:OLDCOMMUNITY-2026Q3",
+      "MACRO:CN:ELEVATOR-FUND-2026"
+     ],
+     "sourceUrls": [
+      "https://www.gov.cn/yaowen/liebiao/202610/content_7084303.htm",
+      "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+     ]
+    },
+    {
+     "id": "fw-em-risk",
+     "framework": "新兴市场政治风险与资产重定价",
+     "concept": "政治结果的意外会一次性重估一国的风险溢价，资产价格用跳空完成调整。",
+     "applicability": "适用于巴西大选后美股上市巴西资产的崩塌。",
+     "observed": "XP跌超52%、PagSeguro Digital跌超33%、伊塔乌联合银行跌超23%、巴西石油跌超17%。",
+     "mechanism": "跌幅集中在金融与国有资源类公司，说明定价的是政策连续性（利率、私有化、资源分配）而非全球需求；离岸ADR流动性更差，跌幅被放大。",
+     "conclusion": "这是单一国家的政治事件冲击，不具备全球传染性，但会通过新兴市场基金的赎回影响其他市场风险预算。",
+     "assumptions": "跌幅主体是政策预期而非公司基本面。",
+     "counterEvidence": "若后续新政府政策表态温和，估值会部分修复。",
+     "horizon": "1-3个月",
+     "invalidation": "巴西本地股指与汇率在两周内收复一半跌幅。",
+     "confidence": "medium",
+     "missingData": "缺少巴西本地股指与汇率的实时数据。",
+     "evidenceFactIds": [
+      "RESEARCH:WORLD:BRAZIL-ADR-2026-10-26"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "五个框架指向同一个结论：这是一次结构性的、宽度不足的风险偏好修复，叠加中国市场的预期差消化，不构成全球共振式的趋势行情。",
+    "agreement": "利率传导框架与市场宽度框架互相印证——硬件强、长久期弱、上涨集中在少数标的，三件事说的是同一件事：资金在提高风险资产的“久期门槛”。政策传导框架与预期差框架也一致——中国当前的政策是分配性的、非总量性的，因此成长股失去了继续拔估值的理由。",
+    "disagreement": "分歧在于美股这轮反弹的性质：利率框架认为只要利率不快速下行，修复就限于硬件；而新兴市场风险框架提示外部冲击（巴西）会压缩全球风险预算，两者时间尺度不同——前者看两周，后者看一个季度。因此在“是否参与”上结论一致（偏谨慎），在“何时退出”上不一致。",
+    "weighting": "我更看重宽度与利率这两个可连续观测的框架，因为它们有明确的每日数据（涨跌个股、10年期收益率、VIX），可以在下一轮直接用数值检验；政策传导的验证周期在季度级别，新兴市场风险对当前的直接影响有限，权重最低。",
+    "invalidation": "若未来两个交易日出现“宽度扩散 + 10年期跌破4.9%”的组合，则“结构性修复”的定性失效，应改判为全面风险偏好回升；若A股创业板在成交放大下连续两日跑赢沪深300，则“预期差消化”的判断失效。"
+   },
+   "watch": [
+    {
+     "point": "10月28日FOMC声明与发布会措辞",
+     "detail": "本次无经济预测摘要，声明与发布会的语气是唯一信息源；关注对通胀黏性与后续路径的表述，若偏鹰会直接压制长久期资产。"
+    },
+    {
+     "point": "费城半导体指数能否守住3%的日内涨幅",
+     "detail": "这是判断本轮美股反弹是空头回补还是趋势修复的最直接指标；回吐全部涨幅即为证伪。"
+    },
+    {
+     "point": "A股创业板指与沪深300的相对强弱",
+     "detail": "连续两日创业板跑赢且成交放大，说明风格切换是短期错杀；继续跑输则确认估值消化未结束。"
+    },
+    {
+     "point": "10月29日BEA三季度GDP初值与9月PCE",
+     "detail": "同日发布增长与通胀组合，是本周唯一能同时检验“增长韧性”和“通胀黏性”的数据。"
+    },
+    {
+     "point": "10月28日EIA周度石油库存",
+     "detail": "WTI回落至101.76后，库存去化幅度决定油价是高位震荡还是继续下探。"
+    },
+    {
+     "point": "现货黄金报价源恢复情况",
+     "detail": "本轮采集失败，下一轮需确认 api.gold-api.com 是否恢复；未恢复前黄金一节保持 partial。"
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "风格价差",
+     "definition": "同一交易日内，价值型指数（沪深300）与成长型指数（创业板指）涨跌幅的差值，用于衡量资金在两种风格之间的取舍强度。"
+    },
+    {
+     "term": "盘中延迟报价",
+     "definition": "交易时段内取得的、带有若干分钟延迟的报价，不是收盘价；本轮美股全部为该类型，asOf 为实际取得时刻。"
+    },
+    {
+     "term": "快照（snapshot）",
+     "definition": "加密资产在某一时刻的单点报价，本轮不含涨跌幅字段，因此不能据此计算24小时变化。"
+    },
+    {
+     "term": "retainedMacroFactIds",
+     "definition": "沿用上一版仍有效宏观事实时使用的ID清单；本轮未沿用任何旧事实，因此为空数组。"
+    },
+    {
+     "term": "partial",
+     "definition": "该市场或栏目只取得部分数据，已在 marketCoverage 写明具体缺失项，不用旧值或替代资产冒充。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "id": "thesis-cn-style",
+     "title": "A股风格切换是估值消化而非趋势反转",
+     "detail": "三季报证明AI硬件需求真实存在，但股价已提前定价；资金转向低估值高股息是估值层面的再平衡。",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:CSI300",
+      "RESEARCH:CN:KINGBROTHER-Q3-2026"
+     ]
+    },
+    {
+     "id": "thesis-us-breadth",
+     "title": "美股反弹宽度不足，定性为空头回补",
+     "detail": "费半涨3%的同时软件与加密相关全线下跌，说明资金在硬件内部抱团，缺少增量。",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "FLOW:US:SOX-2026-10-26",
+      "INDEX:US:NASDAQ",
+      "EQUITY:US:ADBE"
+     ]
+    },
+    {
+     "id": "thesis-oil-premium",
+     "title": "原油的地缘溢价在边际衰减",
+     "detail": "WTI回落1.46%，同期风险资产上涨，说明油价对口头威胁的敏感度下降。",
+     "confidence": "medium-low",
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "id": "rev-gold-partial",
+     "title": "黄金：由上轮有报价改为本轮无报价",
+     "detail": "本轮现货黄金采集失败，撤回任何关于金价位置的表述，改为 partial 并说明原因，不沿用旧值。",
+     "at": "2026-10-26T18:39:50Z"
+    },
+    {
+     "id": "rev-us-from-weak",
+     "title": "美股：从“连续两周调整”改为“盘中强反弹但宽度不足”",
+     "detail": "前期因AI资本开支担忧连续调整，本轮盘中硬件端强势反弹；但宽度不足，因此只上调到“结构性修复”，不改判为趋势反转。",
+     "at": "2026-10-26T18:39:50Z"
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "议息措辞偏鹰",
+     "effect": "10年期美债重回5.05%以上、VIX回到20以上，美股硬件反弹快速回吐，A股成长继续承压。"
+    },
+    {
+     "title": "财报季资本开支指引上修",
+     "effect": "AI硬件从“周期”变成“趋势”，A股与美股算力链同步获得估值扩张空间。"
+    },
+    {
+     "title": "油价出现实质供应中断",
+     "effect": "WTI一次性重估风险溢价，通胀预期上行，压制全球久期资产。"
+    }
+   ],
+   "changes": [
+    {
+     "title": "美股由弱转强，硬件端领涨",
+     "detail": "标普500涨0.73%、纳指涨0.96%、费半涨3%，与前期连续调整形成反转；英特尔涨5.59%、ARM涨6.19%、特斯拉涨5.83%。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "FLOW:US:SOX-2026-10-26",
+      "RESEARCH:US:TSLA-2026-10-26"
+     ]
+    },
+    {
+     "title": "A股风格价差扩大至近2个百分点",
+     "detail": "沪指涨0.19%而创业板指跌1.71%，权重与高股息承接资金，双创被算力硬件与半导体拖累。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT"
+     ]
+    },
+    {
+     "title": "现货黄金数据缺失",
+     "detail": "本轮 api.gold-api.com 采集失败，黄金栏目转为 partial，没有可引用的金价。",
+     "evidenceFactIds": [
+      "METAL:XAGUSD"
+     ]
+    },
+    {
+     "title": "巴西资产在美股崩塌",
+     "detail": "XP跌超52%、PagSeguro跌超33%、巴西石油跌超17%，政治事件冲击单一新兴市场。",
+     "evidenceFactIds": [
+      "RESEARCH:WORLD:BRAZIL-ADR-2026-10-26"
+     ]
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "美股硬件端强反弹",
+     "detail": "费半涨3%报11109.63，英伟达涨2.46%、美光涨4.05%、ARM涨6.19%、英特尔涨5.59%，与软件端（Adobe跌3.31%）形成鲜明分化。",
+     "evidenceFactIds": [
+      "FLOW:US:SOX-2026-10-26",
+      "EQUITY:US:NVDA",
+      "EQUITY:US:MU"
+     ]
+    },
+    {
+     "title": "A股三季报高增长但股价下跌",
+     "detail": "景旺电子单季归母净利增239.67%当日股价跌7.92%；协创数据单季增360.33%，股价自6月高点回撤46.6%。",
+     "evidenceFactIds": [
+      "RESEARCH:CN:KINGBROTHER-Q3-2026",
+      "RESEARCH:CN:SHARETRONIC-Q3-2026"
+     ]
+    },
+    {
+     "title": "央行设立债市非银大额赎回互换便利",
+     "detail": "10月26日宣布，用于维护债券市场稳定，属流动性保险工具而非总量宽松。",
+     "evidenceFactIds": [
+      "PROP:PBOC:BOND-REDEMPTION-SWAP-2026-10-26"
+     ]
+    },
+    {
+     "title": "海南明确2030年禁售燃油车",
+     "detail": "2027年新增汽车中新能源比例不低于70%，平稳推进2030年禁售燃油车。",
+     "evidenceFactIds": [
+      "PROP:CN:HAINAN-NEV-2026-10-26"
+     ]
+    },
+    {
+     "title": "美债par曲线停留在10月23日",
+     "detail": "2年4.69%、10年5.00%、30年5.33%，10月26日数据截至本轮采集尚未更新。",
+     "evidenceFactIds": [
+      "MACRO:US:TREASURY-PAR-2026-10-23"
+     ]
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-10-26T08:08:28Z",
+     "title": "港股收盘：价值强于科技",
+     "detail": "恒指23211.81涨0.51%，恒生科技3857.53跌0.36%。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "at": "2026-10-26T08:29:58Z",
+     "title": "A股收盘：风格价差近2个百分点",
+     "detail": "沪指3697.52涨0.19%，创业板指2638.2307跌1.71%，科创50跌2.23%。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50"
+     ]
+    },
+    {
+     "at": "2026-10-26T14:18:00Z",
+     "title": "协创数据三季报：单季净利增360.33%",
+     "detail": "三季度营收70.87亿元增109.27%，归母净利12.24亿元增360.33%。",
+     "evidenceFactIds": [
+      "RESEARCH:CN:SHARETRONIC-Q3-2026"
+     ]
+    },
+    {
+     "at": "2026-10-26T14:27:00Z",
+     "title": "景旺电子三季报：单季净利增239.67%，股价当日跌7.92%",
+     "detail": "三季度归母净利10.14亿元，环比增174%，但收盘跌7.92%、较年内高点回撤34.18%。",
+     "evidenceFactIds": [
+      "RESEARCH:CN:KINGBROTHER-Q3-2026"
+     ]
+    },
+    {
+     "at": "2026-10-26T15:04:00Z",
+     "title": "美股盘中：费半涨3%",
+     "detail": "道指涨0.52%、标普500涨1.01%、纳指涨1.33%，费城半导体指数涨3%报11109.63。",
+     "evidenceFactIds": [
+      "FLOW:US:SOX-2026-10-26",
+      "INDEX:US:SP500"
+     ]
+    },
+    {
+     "at": "2026-10-26T18:39:45Z",
+     "title": "本轮采集时点：美股延续强势、BTC守8万",
+     "detail": "标普500 7679.20涨0.73%、纳指26205.182涨0.96%、WTI 101.76跌1.46%、BTC 80106.74。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "ENERGY:WTI",
+      "CRYPTO:BTC:USD"
+     ]
+    }
+   ],
+   "worldEvents": [
+    {
+     "id": "we-brazil-election",
+     "title": "巴西大选结果引发资产重定价",
+     "detail": "在美上市巴西公司大幅下挫，XP跌超52%、巴西石油跌超17%，金融与能源板块跌幅最大。",
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+     ]
+    },
+    {
+     "id": "we-ai-math",
+     "title": "AI数学成果引发署名与评价体系争论",
+     "detail": "学者讨论OpenAI公布的722篇文章，焦点在生成过程披露与人类贡献标注。",
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-10-26/4618309.html"
+     ]
+    }
+   ],
+   "metrics": [
+    {
+     "name": "A股风格价差",
+     "value": -1.67,
+     "unit": "百分点",
+     "detail": "创业板指跌1.71%减沪深300跌0.04%，负值代表成长跑输价值。",
+     "asOf": "2026-10-26T08:29:58Z"
+    },
+    {
+     "name": "费城半导体指数日内涨幅",
+     "value": 3.0,
+     "unit": "%",
+     "detail": "报11109.63点。",
+     "asOf": "2026-10-26T15:04:00Z"
+    },
+    {
+     "name": "VIX",
+     "value": 18.34,
+     "unit": "点",
+     "detail": "较前值回落5.71%。",
+     "asOf": "2026-10-26T18:24:31Z"
+    }
+   ],
+   "sectionGaps": {
+    "gold": {
+     "reason": "现货黄金 METAL:XAUUSD 本轮采集失败（api.gold-api.com 返回 fetch failed），未取得任何有效金价，因此黄金一节只做机制与风险说明，不给点位，也不用旧值或期货值替代。"
+    },
+    "research": {
+     "reason": "本轮未取得SEC、交易所或公司IR的公告原文，仅有媒体对公司三季报的转述，因此 researchRecords 与 researchChecks 均为空数组，不伪造公司研究记录。"
+    },
+    "brent": {
+     "reason": "布伦特 BZX26.NYM 本轮返回 HTTP 404，连续多轮缺失，能源一节以WTI为唯一价格基准。"
+    },
+    "usaiipo": {
+     "reason": "本轮 apnews.com 返回403、reuters.com 连接超时，未取得美股AI新股事件的可引用原文，因此不将该事件的具体数值写入正文，仅在机制层面定性提示。"
+    }
+   }
+  },
+  "newsItems": [
+   {
+    "eventId": "ev-cn-service-unit-regulation",
+    "title": "《事业单位登记管理条例》公布，12月1日施行",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T09:03:00Z",
+    "summary": "李强签署国务院令公布《事业单位登记管理条例》，共6章34条，2026年12月1日起施行，明确事业单位坚持党的领导、强化公益性职责、规范登记管理。",
+    "plainImpact": "对普通人直接影响很小，但涉及全国事业单位的设立、变更、注销与监管口径，长期影响教育、医疗、科研等公共服务机构的治理方式。",
+    "assessment": "属制度性铺垫而非短期市场变量；与同日开幕的五中全会“全面从严治党”主题同向，说明本轮政策重心在治理体系而非增量刺激。",
+    "sourceUrls": [
+     "https://www.gov.cn/yaowen/liebiao/202610/content_7084285.htm"
+    ]
+   },
+   {
+    "eventId": "ev-cn-old-community-renovation",
+    "title": "前三季度1.6万个老旧小区完工改造，309亿元国债支持电梯更新",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T14:02:00Z",
+    "summary": "住建部数据显示前三季度完工改造城镇老旧小区1.6万个，改造老化管线7200多公里，增设停车位8.6万个；今年安排超长期特别国债309亿元更新住宅老旧电梯19.7万台、76亿元加装2.8万台。",
+    "plainImpact": "对住在老小区的居民是可见的居住改善与电梯加装补贴；对建材、电梯、管网施工是订单，但分散在数千个项目里，难在单季财报体现。",
+    "assessment": "这是“投资于物”与“投资于人”交汇的典型方向，量级不足以扭转地产链，但对电梯与管材是确定性增量。",
+    "sourceUrls": [
+     "https://www.gov.cn/yaowen/liebiao/202610/content_7084303.htm"
+    ]
+   },
+   {
+    "eventId": "ev-pboc-bond-redemption-swap",
+    "title": "央行设立债市非银大额赎回互换便利",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-26T09:05:00Z",
+    "summary": "中国人民银行10月26日宣布设立债市非银大额赎回互换便利，用于维护债券市场稳定、落实宏观审慎管理要求。",
+    "plainImpact": "对买银行理财、债基的居民意义在于降低“赎回—抛售—净值再跌”的负反馈概率；对非银机构是流动性后手，不是收益承诺。",
+    "assessment": "工具定位是流动性保险而非宽松加码，倾向压低债市尾部风险溢价，对股市的传导间接且偏中性。本轮仅取得媒体转述，未取得央行原文全文。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "eventId": "ev-hainan-nev-2030",
+    "title": "海南提出2027年新能源车占比不低于70%、平稳推进2030年禁售燃油车",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T14:25:00Z",
+    "summary": "海南省委省政府《关于建设生态环境友好型自由贸易港的意见》提出到2027年新增汽车中新能源汽车比例不低于70%，平稳推进2030年禁售燃油车。",
+    "plainImpact": "海南本地购车选择会更快向新能源倾斜，充电与售后网络是实际约束；对车企是区域性销量结构变化，不是全国性需求突变。",
+    "assessment": "“平稳推进”措辞留了弹性，短期更像预期管理；对新能源车企是边际正面，但海南体量小，不足以改变全行业景气判断。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "eventId": "ev-shanghai-satellite-2030",
+    "title": "上海提出2030年在轨卫星超3000颗、核心产业规模破800亿元",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T14:25:00Z",
+    "summary": "上海市经信委等六部门印发卫星互联网产业创新发展行动方案（2027-2030年），明确到2030年在轨卫星总数超3000颗、核心产业规模突破800亿元。",
+    "plainImpact": "对卫星制造、地面站、终端与发射服务是中期订单指引；对普通人意味着偏远地区通信与应急通信覆盖改善，时间尺度在3年以上。",
+    "assessment": "属地方产业规划，落地依赖发射节奏与频轨资源；对A股卫星互联网板块是情绪催化，但5年目标不能当年度业绩。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "eventId": "ev-brazil-assets-crash",
+    "title": "巴西大选结果落地后，在美上市巴西资产集体崩塌",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-26T14:25:00Z",
+    "summary": "巴西总统选举第二轮结果公布后，在美上市巴西公司大幅下挫：XP跌超52%、PagSeguro Digital跌超33%、伊塔乌联合银行跌超23%、巴西石油跌超17%。",
+    "plainImpact": "持有巴西或拉美QDII、新兴市场基金的投资者会直接看到净值回撤；对国内多数投资者是风险偏好层面的间接影响。",
+    "assessment": "这是政治事件冲击单一新兴市场资产的典型案例，跌幅集中在金融与能源，说明定价的是政策连续性与国有资源分配预期，而非全球需求。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "eventId": "ev-us-semis-surge",
+    "title": "美股盘中费城半导体指数涨3%，科技股全线回暖",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-26T15:04:00Z",
+    "summary": "美股盘中道指涨0.52%、标普500涨1.01%、纳指涨1.33%，费城半导体指数涨3%报11109.63点。",
+    "plainImpact": "半导体权重高的美股与QDII基金净值修复；对A股半导体是情绪外溢，但A股当日半导体反而是领跌方向，外溢未生效。",
+    "assessment": "这是对前期“AI资本开支不可持续”叙事的反向修正，属估值修复而非盈利上修；持续性取决于本周财报与周三议息。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619443.html"
+    ]
+   },
+   {
+    "eventId": "ev-us-tesla-high",
+    "title": "特斯拉盘中涨逾5.8%，创7月16日以来新高",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-26T14:48:00Z",
+    "summary": "特斯拉盘中涨幅由5.8%扩大至6.11%，为7月16日以来新高；同期英伟达涨2.53%、博通涨2.02%、美光涨1.83%。",
+    "plainImpact": "特斯拉产业链与新能源车主题基金受益；但同一时段Adobe跌3.31%、Salesforce跌1.39%，说明上涨集中在硬件与算力，不是全面风险偏好回升。",
+    "assessment": "个股驱动的结构性行情：特斯拉的涨幅与卖方上调目标价一类的动作相关，属事件交易，不宜外推为整个成长板块反转。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619400.html"
+    ]
+   },
+   {
+    "eventId": "ev-kingbrother-q3",
+    "title": "景旺电子三季度归母净利同比增239.67%",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-26T14:27:00Z",
+    "summary": "景旺电子三季报：三季度营收66.21亿元同比增66.06%、归母净利10.14亿元同比增239.67%、环比增174%；前三季度归母净利16.16亿元同比增70.42%，但当日股价跌7.92%，较年内高点回撤34.18%。",
+    "plainImpact": "业绩超预期与股价下跌同时出现，说明市场此前已把高增长打进价格；追高者在业绩落地后反而受损。",
+    "assessment": "PCB是AI算力最直接的数量型受益环节，这份财报证明订单在转化为利润；股价回撤反映的是估值透支，而非景气逆转。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619197.html"
+    ]
+   },
+   {
+    "eventId": "ev-sharetronic-q3",
+    "title": "协创数据三季度归母净利同比增360.33%",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-26T14:18:00Z",
+    "summary": "协创数据三季报：三季度营收70.87亿元同比增109.27%、归母净利12.24亿元同比增360.33%；前三季度归母净利30.62亿元同比增338.77%，加权平均ROE 52.41%。",
+    "plainImpact": "算力租赁与服务器再制造的收入确认速度快，但股价自6月高点回撤46.6%，说明市场对可持续性存疑。",
+    "assessment": "高增长来自算力需求爆发与存储涨价的双重周期，属强beta；一旦算力订单节奏放缓，利润率回落速度会同样快。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619007.html"
+    ]
+   },
+   {
+    "eventId": "ev-goke-q3",
+    "title": "国科微三季度扭亏，单季归母净利2.29亿元",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-26T14:45:00Z",
+    "summary": "国科微三季报：三季度营收9.98亿元同比增131.81%、归母净利2.29亿元（上年同期亏损1271.73万元）；前三季度营收23.76亿元增102.71%、归母净利4.25亿元同比扭亏，经营现金流净额7.64亿元增2252.19%。",
+    "plainImpact": "扭亏叠加现金流转正，是半导体设计环节库存与价格周期见底的常见信号，对持有芯片主题基金的投资者是正面验证。",
+    "assessment": "扭亏质量尚可（扣非2.23亿元、现金流大幅改善），但公司年内两度发布KGD调价函，说明成本端（存储颗粒）压力仍在，毛利率可持续性待观察。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619227.html"
+    ]
+   },
+   {
+    "eventId": "ev-xpeng-p7-warranty",
+    "title": "老款小鹏P7电源故障投诉，小鹏将相关质保延长至6年",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T15:42:00Z",
+    "summary": "多位老款P7车主反映电源“三合一”总成故障导致动力中断或无法充电；小鹏10月24日在官方社区公告将相关质保延长至6年、不限里程，但未解释故障原因与已付费维修的处理。",
+    "plainImpact": "对车主是维修成本的后置保障；对潜在买家是品牌信任折价，尤其影响二手残值预期。",
+    "assessment": "这是车企从“参数竞争”转向“存量质量与售后”竞争阶段的典型事件；单起投诉不改变销量趋势，但延保会形成售后准备金，属成本项。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619537.html"
+    ]
+   },
+   {
+    "eventId": "ev-ruralbank-merge",
+    "title": "阜阳7家村镇银行合并为1家，村镇银行整合提速",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T15:52:00Z",
+    "summary": "中银富登在阜阳的7家县域法人村镇银行获批合并为1家，采用先募股补资本、再法人合并的路径；6家已披露2025年数据的机构合计净利仅约580万元。",
+    "plainImpact": "县域储户的存款安全由更集中的法人承接，服务网点可能收缩；对小微与涉农贷款的可获得性需持续观察。",
+    "assessment": "合并解决的是“规模不经济”与治理成本，不解决县域信贷需求本身；这是中小金融机构改革化险的主线，节奏会持续数年。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4618143.html"
+    ]
+   },
+   {
+    "eventId": "ev-sichuan-loan-rate",
+    "title": "四川9月新发放企业贷款利率降至3.58%",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "publishedAt": "2026-10-26T15:26:00Z",
+    "summary": "央行四川省分行：9月末四川本外币存款余额15.52万亿元同比增6.7%、贷款余额13.93万亿元增8.8%；9月新发放企业贷款、普惠小微、个人住房贷款加权平均利率分别为3.58%、3.65%、3.01%，同比降21、12、13个基点。",
+    "plainImpact": "对当地企业是融资成本继续下行；对银行是净息差压力，存款定期化（住户存款增7.8%）进一步抬高负债成本。",
+    "assessment": "省级数据印证“量增价降”格局，对银行股是负面息差、正面资产质量的组合；房贷利率3.01%说明地产需求端仍在用价格换量。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4618187.html"
+    ]
+   },
+   {
+    "eventId": "ev-wahaha-chair-resign",
+    "title": "娃哈哈董事长许思敏辞职，接任人选未定",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T15:59:00Z",
+    "summary": "多方确认娃哈哈集团董事长、法定代表人许思敏已辞职，接任人选尚未敲定，工商信息尚未变更；记者拨打官网总机为空号、邮件被退回。",
+    "plainImpact": "对经销商与员工的直接影响是决策链条不确定；对消费者短期无感，但渠道政策可能变化。",
+    "assessment": "这是2025年10月宗馥莉辞任后的第二次权力交接，治理稳定性是这家非上市巨头的核心风险；与资本市场无直接关联，仅作公司治理观察。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4618789.html"
+    ]
+   },
+   {
+    "eventId": "ev-openai-math-debate",
+    "title": "OpenAI公布722篇文章引发数学界对AI署名与评价体系的争论",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T14:13:00Z",
+    "summary": "论坛上学者讨论OpenAI公布的722篇文章：认可AI整合人类既有思路、并行试错成本低的能力，同时质疑未完整披露生成过程、未标注人类贡献，以及现有评价体系对“提问者”激励不足。",
+    "plainImpact": "对科研人员是署名与经费分配规则的现实问题；对普通人，AI在可验证领域（数学、部分理论物理）的能力边界比宣传更清晰。",
+    "assessment": "这类争论会先影响学术评价与期刊政策，再影响AI公司的数据授权成本；“可验证奖励”是当前能力跃升的机制关键，也是它难以迁移到实验科学的原因。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4618309.html"
+    ]
+   },
+   {
+    "eventId": "ev-cn-wind-solar-capacity",
+    "title": "风电光伏累计装机达20.1亿千瓦",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "publishedAt": "2026-10-26T14:25:00Z",
+    "summary": "国家能源局：1-9月风电和太阳能发电新增装机约1.7亿千瓦，截至9月底累计装机20.1亿千瓦。",
+    "plainImpact": "装机继续放量意味着消纳、电价与储能配套压力同步上升，对电力运营商的利用小时数是压制项。",
+    "assessment": "装机量已不是稀缺指标，市场定价重心从“装机增速”转向“消纳能力与电价机制”；对光伏制造是量的支撑、价的压制。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮17份请求文档全部取回全文（blocked=0），新闻集中在10月26日22:00-24:00（北京时间）的美股盘中与A股盘后披露窗口。",
+   "regions": {
+    "CN": "政策2篇（国务院令、老旧小区改造）+A股盘后公司披露5篇+金融监管2篇+地方数据1篇",
+    "US": "美股盘中快讯2篇（费半、纳指）+晚参1篇，均为媒体盘中记录，非官方数据",
+    "WORLD": "巴西大选后资产重挫、OpenAI数学争议各1篇"
+   },
+   "gaps": [
+    "本轮未能取得美股AI新股事件的可引用原文：apnews.com 本轮返回403，reuters.com 连接超时，故不将该事件的具体数值写入正文，仅作机制层面的定性提示。",
+    "未取得SEC/交易所公司公告原文，researchRecords 本轮为空。",
+    "现货黄金报价源 api.gold-api.com 本轮 fetch failed，黄金一节标 partial。",
+    "布伦特原油报价 404，能源一节以WTI为准。"
+   ]
+  },
+  "macroFacts": [
+   {
+    "id": "MACRO:US:FOMC-2026-10",
+    "label": "FOMC 10月27-28日会议、无经济预测摘要",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-26T18:39:50Z",
+    "detail": "美联储官网2026年FOMC日历显示10月会议为27-28日，未标注SEP，属非季度预测会议；决议按惯例在会议第二天（10月28日）下午发布。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   },
+   {
+    "id": "MACRO:US:BEA-2026Q4",
+    "label": "BEA下一批关键发布日程",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-26T18:39:50Z",
+    "detail": "BEA日程页：10月29日08:30 ET公布2026年三季度GDP初值与9月个人收入与支出；11月4日贸易数据、11月25日GDP二次估计与10月PIO。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   },
+   {
+    "id": "MACRO:ENERGY:EIA-WPSR-2026-10",
+    "label": "EIA周度石油库存报告常规发布安排",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-26T18:39:50Z",
+    "detail": "EIA周度石油状况报告常规为每周三10:30 ET发布；日程页例外清单列10月9日、10月15日、11月6日、11月12日，未单列10月28日，按常规推定下一期为10月28日。",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ]
+   },
+   {
+    "id": "MACRO:US:TREASURY-PAR-2026-10-23",
+    "label": "美债 par 曲线（2年）",
+    "value": 4.69,
+    "unit": "%",
+    "asOf": "2026-10-23T20:00:00Z",
+    "detail": "财政部日度 par 收益率曲线最新更新日为2026年10月23日：2年4.69%、10年5.00%、20年5.37%、30年5.33%。10月26日数据截至本轮采集尚未出现在该页面。",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ]
+   },
+   {
+    "id": "PROP:CN:SERVICE-UNIT-REGULATION-2026-10-26",
+    "label": "《事业单位登记管理条例》公布",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-26T09:03:00Z",
+    "detail": "国务院总理李强签署国务院令公布《事业单位登记管理条例》，共6章34条，自2026年12月1日起施行，强化事业单位公益性职责与党的领导。",
+    "sourceUrls": [
+     "https://www.gov.cn/yaowen/liebiao/202610/content_7084285.htm"
+    ]
+   },
+   {
+    "id": "MACRO:CN:OLDCOMMUNITY-2026Q3",
+    "label": "前三季度完工改造城镇老旧小区数（万个）",
+    "value": 1.6,
+    "unit": "万个",
+    "asOf": "2026-10-26T14:02:00Z",
+    "detail": "住建部：前三季度全国累计完工改造城镇老旧小区1.6万个，改造老化管线7200多公里，适老化无障碍改造小区2800多个，增设停车位8.6万个。",
+    "sourceUrls": [
+     "https://www.gov.cn/yaowen/liebiao/202610/content_7084303.htm"
+    ]
+   },
+   {
+    "id": "MACRO:CN:ELEVATOR-FUND-2026",
+    "label": "住宅老旧电梯更新超长期特别国债资金（亿元）",
+    "value": 309,
+    "unit": "亿元",
+    "asOf": "2026-10-26T14:02:00Z",
+    "detail": "今年全国安排超长期特别国债资金309亿元支持更新住宅老旧电梯19.7万台，另安排76亿元支持加装电梯2.8万台。",
+    "sourceUrls": [
+     "https://www.gov.cn/yaowen/liebiao/202610/content_7084303.htm"
+    ]
+   },
+   {
+    "id": "PROP:PBOC:BOND-REDEMPTION-SWAP-2026-10-26",
+    "label": "央行设立债市非银大额赎回互换便利",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-26T09:05:00Z",
+    "detail": "中国人民银行10月26日宣布设立债市非银大额赎回互换便利，用于维护债券市场稳定、落实宏观审慎管理要求；本轮仅取得媒体转述，未取得央行原文全文。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "id": "PROP:CN:HAINAN-NEV-2026-10-26",
+    "label": "海南2027年新能源车比例与2030年禁售燃油车安排",
+    "value": 70,
+    "unit": "%",
+    "asOf": "2026-10-26T14:25:00Z",
+    "detail": "海南省委省政府《关于建设生态环境友好型自由贸易港的意见》提出，到2027年新增汽车中新能源汽车比例不低于70%，平稳推进2030年禁售燃油车。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "id": "PROP:CN:SHANGHAI-SATELLITE-2026-10-26",
+    "label": "上海卫星互联网2030年在轨卫星目标（颗）",
+    "value": 3000,
+    "unit": "颗",
+    "asOf": "2026-10-26T14:25:00Z",
+    "detail": "上海市经信委等六部门印发卫星互联网产业创新发展行动方案（2027-2030年），提出到2030年在轨卫星总数超3000颗、核心产业规模突破800亿元。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "id": "MACRO:CN:WIND-SOLAR-CAPACITY-2026-09",
+    "label": "风电光伏累计装机（亿千瓦）",
+    "value": 20.1,
+    "unit": "亿千瓦",
+    "asOf": "2026-10-26T14:25:00Z",
+    "detail": "国家能源局：1-9月风电和太阳能发电新增装机约1.7亿千瓦，截至2026年9月底累计装机达20.1亿千瓦。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:WORLD:BRAZIL-ADR-2026-10-26",
+    "label": "巴西大选后美股上市巴西公司跌幅（XP）",
+    "value": 52,
+    "unit": "%",
+    "asOf": "2026-10-26T14:25:00Z",
+    "detail": "巴西总统选举结果公布后，在美上市巴西公司集体重挫：XP跌超52%、PagSeguro Digital跌超33%、伊塔乌联合银行跌超23%、巴西石油跌超17%。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619383.html"
+    ]
+   },
+   {
+    "id": "FLOW:US:SOX-2026-10-26",
+    "label": "费城半导体指数盘中涨幅与点位",
+    "value": 3.0,
+    "unit": "%",
+    "asOf": "2026-10-26T15:04:00Z",
+    "detail": "美股盘中费城半导体指数涨3%，报11109.63点；同期道指涨0.52%、标普500涨1.01%、纳指涨1.33%。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619443.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:US:TSLA-2026-10-26",
+    "label": "特斯拉盘中涨幅与新高频次",
+    "value": 5.83,
+    "unit": "%",
+    "asOf": "2026-10-26T18:39:42Z",
+    "detail": "特斯拉盘中涨5.83%报393.93美元，为7月16日以来新高；媒体在同一时段记录其涨幅自5.8%扩大至6.11%。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619400.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:CN:KINGBROTHER-Q3-2026",
+    "label": "景旺电子第三季度归母净利同比（%）",
+    "value": 239.67,
+    "unit": "%",
+    "asOf": "2026-10-26T14:27:00Z",
+    "detail": "景旺电子三季报：三季度营收66.21亿元同比增66.06%、归母净利10.14亿元同比增239.67%、环比增174%；前三季度营收152.33亿元增37.45%、归母净利16.16亿元增70.42%。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619197.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:CN:SHARETRONIC-Q3-2026",
+    "label": "协创数据第三季度归母净利同比（%）",
+    "value": 360.33,
+    "unit": "%",
+    "asOf": "2026-10-26T14:18:00Z",
+    "detail": "协创数据三季报：三季度营收70.87亿元同比增109.27%、归母净利12.24亿元同比增360.33%；前三季度营收196.10亿元增135.39%、归母净利30.62亿元增338.77%。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619007.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:CN:GOKE-Q3-2026",
+    "label": "国科微第三季度归母净利（亿元）",
+    "value": 2.29,
+    "unit": "亿元",
+    "asOf": "2026-10-26T14:45:00Z",
+    "detail": "国科微三季报：三季度营收9.98亿元同比增131.81%、归母净利2.29亿元（上年同期亏损1271.73万元）；前三季度营收23.76亿元增102.71%、归母净利4.25亿元同比扭亏。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619227.html"
+    ]
+   },
+   {
+    "id": "PROP:CN:RURALBANK-MERGE-2026-10-26",
+    "label": "阜阳7家村镇银行合并为1家",
+    "value": 7,
+    "unit": "家",
+    "asOf": "2026-10-26T15:52:00Z",
+    "detail": "中银富登在阜阳的7家县域法人村镇银行获批合并为1家，采取先募股补资本、再法人合并的路径；已披露2025年数据的6家合计净利仅约580万元。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4618143.html"
+    ]
+   },
+   {
+    "id": "MACRO:CN:SICHUAN-LOAN-RATE-2026-09",
+    "label": "四川9月新发放企业贷款加权平均利率（%）",
+    "value": 3.58,
+    "unit": "%",
+    "asOf": "2026-10-26T15:26:00Z",
+    "detail": "央行四川省分行：9月四川新发放企业贷款、普惠小微贷款、个人住房贷款加权平均利率分别为3.58%、3.65%、3.01%，同比分别下降21、12、13个基点。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4618187.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:CN:XPENG-P7-WARRANTY-2026-10-26",
+    "label": "小鹏P7集成式电源质保延长期限（年）",
+    "value": 6,
+    "unit": "年",
+    "asOf": "2026-10-26T15:42:00Z",
+    "detail": "针对老款P7车主反映的电源“三合一”总成故障，小鹏10月24日在官方社区公告将相关质保延长至6年、不限里程且不受车主变更影响，但未回应故障原因与已付费维修处理。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4619537.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:CN:WAHAHA-CHAIR-2026-10-26",
+    "label": "娃哈哈董事长许思敏辞职",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-10-26T15:59:00Z",
+    "detail": "多方向记者确认娃哈哈集团董事长、法定代表人许思敏已辞职，接任人选尚未敲定，工商信息尚未变更；公司总机为空号、邮件被退回。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4618789.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:WORLD:OPENAI-MATH-2026-10-26",
+    "label": "OpenAI公布722篇文章引发的数学界争议",
+    "value": 722,
+    "unit": "篇",
+    "asOf": "2026-10-26T14:13:00Z",
+    "detail": "论坛上菲尔兹奖得主邓煜等学者讨论OpenAI公布的722篇文章：认可AI整合人类既有思路的能力，同时质疑未披露生成过程、未标注人类贡献，以及现有评价体系对提问者激励不足。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-10-26/4618309.html"
+    ]
+   }
+  ],
+  "macroEvents": [
+   {
+    "id": "me-fomc-2026-10",
+    "title": "FOMC 10月27-28日会议（无SEP）",
+    "at": "2026-10-28T18:00:00Z",
+    "detail": "决议声明按惯例于第二日下午2:00 ET发布，2:30新闻发布会；本次不含经济预测摘要。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   },
+   {
+    "id": "me-eia-wpsr-2026-10",
+    "title": "EIA周度石油状况报告",
+    "at": "2026-10-28T14:30:00Z",
+    "detail": "常规每周三10:30 ET发布；日程页仅列例外日期，本期按常规推定。",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ]
+   },
+   {
+    "id": "me-bea-2026-10-29",
+    "title": "美国三季度GDP初值与9月个人收入支出",
+    "at": "2026-10-29T12:30:00Z",
+    "detail": "BEA日程页确认同日08:30 ET发布。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   }
+  ],
+  "events": [
+   {
+    "eventId": "ev-fomc-2026-10-28",
+    "title": "FOMC 10月会议决议（无SEP）",
+    "at": "2026-10-28T18:00:00Z",
+    "detail": "美联储10月27-28日会议，按惯例于第二日下午2:00 ET发布声明、2:30举行新闻发布会；本次无经济预测摘要。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   },
+   {
+    "eventId": "ev-eia-wpsr-2026-10-28",
+    "title": "EIA周度石油库存报告",
+    "at": "2026-10-28T14:30:00Z",
+    "detail": "EIA周度石油状况报告常规每周三10:30 ET发布；日程页仅列出例外日期，10月28日按常规推定。",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ]
+   },
+   {
+    "eventId": "ev-bea-gdp-2026-10-29",
+    "title": "美国三季度GDP初值与9月个人收入支出",
+    "at": "2026-10-29T12:30:00Z",
+    "detail": "BEA日程页确认两项数据同日08:30 ET发布，是本周唯一的官方增长与通胀组合数据。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   },
+   {
+    "eventId": "ev-fomc-2026-10-27-start",
+    "title": "FOMC会议首日",
+    "at": "2026-10-27T14:00:00Z",
+    "detail": "10月27-28日会议首日，官网未公布具体开幕时刻，此处为观察起点，非官方公布时点。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   }
+  ],
+  "researchRecords": [],
+  "researchChecks": [],
+  "retainedMacroFactIds": []
+ }
+}
