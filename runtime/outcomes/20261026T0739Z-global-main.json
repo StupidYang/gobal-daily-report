@@ -1,14 +1,16 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.newsItems[5].regions: 必须是CN/US/WORLD组成的非空数组 [enum]",
+  "issues": [
+    "editorial.newsItems[5].regions: 必须是CN/US/WORLD组成的非空数组 [enum]"
+  ],
   "execution": {
     "executionId": "20261026T0739Z-global-main",
     "generation": 319
   },
   "deadlineAt": "2026-10-26T07:59:56.103Z",
   "requestId": "20261026T0739Z-global-main",
-  "at": "2026-10-26T07:40:12.248Z",
+  "at": "2026-10-26T07:43:43.460Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +21,29 @@
       "status": "ready-for-analysis",
       "at": "2026-10-26T07:40:12.248Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-10-26T07:43:43.460Z",
+      "revision": 0
     }
   ],
   "packetHash": "b34b8ac9140a926b1f36b9336704c1d16fafc040efd9853a4d89a24da412e1c4",
-  "collectionDurationMs": 8006
+  "collectionDurationMs": 8006,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "1bfb756c4bd01054914d005ec58f7e3fe2b68bff74cbeae68b93d93154fd4905",
+  "validationIssues": [
+    {
+      "path": "editorial.newsItems[5].regions",
+      "code": "enum",
+      "message": "必须是CN/US/WORLD组成的非空数组"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261026T0739Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
