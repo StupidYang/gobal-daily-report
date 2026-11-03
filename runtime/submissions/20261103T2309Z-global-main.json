@@ -1,0 +1,1315 @@
+{
+ "execution": {
+  "executionId": "20261103T2309Z-global-main",
+  "generation": 355
+ },
+ "editorial": {
+  "packetHash": "0904d0199698234ea1dc8266b9d44aa2b4579ffea72278a262f47753905a338b",
+  "analyzedAt": "2026-11-03T23:13:57Z",
+  "report": {
+   "overview": "本轮的核心矛盾很清楚：贴现率在往上走，盈利预期也在往上走，谁赢还没定。11月3日美股收盘标普500涨0.36%报7568.92、纳指涨0.83%报25372.01，道指反而跌0.38%，说明上涨集中在算力与平台；同日10年期美债收益率涨5.16个基点报4.964%、30年期报5.331%，CME给出的12月加息25个基点概率78.9%。AMD盘后一度涨超14%报555美元，把AI硬件的盈利预期又抬了一档。跨资产这边，现货黄金跌0.42%报3930.1美元、COMEX白银跌2.12%，WTI在96.71美元附近（延迟快照），阿曼以东北14海里一艘油轮被两枚不明弹体击中，给原油加了地缘尾部风险。A股与港股11月3日已收盘：上证3608.098（-0.82%）、科创50 1151.2826（-3.81%），恒指23525.97（+0.57%），A股是典型的杀估值、港股是防御性上涨。今天13:30 UTC的BEA 9月贸易数据与15:30 UTC的EIA周报，是验证‘加息不伤盈利’这套定价能否延续的两个关口。",
+   "rolling24hSummary": "过去24小时的顺序是：先是AMD三季度财报把数据中心营收推到同比+97%，盘后先涨约7%；随后美债收益率全线上行、10年期回到4.964%，CME把12月加息概率定在78.9%；美股全天走出结构分化——半导体与大型平台上涨、消费电子与软件下跌，道指收跌；黄金与白银在美元与实际利率上行中回落，白银跌幅显著大于黄金；北京时间凌晨公布的10月中国仓储指数49.8%，连续三个月收缩，但新订单50.9%连续两个月扩张；离岸人民币回吐232个基点至6.6704；地缘上，阿曼附近油轮被两枚不明弹体击中，以色列方面对美国年底结束每年约40亿美元安全援助表示担忧。整体看，24小时内没有出现方向性转折，变化在于‘利率更高、盈利更集中、商品更敏感’这三件事同时被强化。",
+   "methodology": "本轮数据分三层。第一层是代码采集的报价快照（generation 355，packetHash 0904d0199698234ea1dc8266b9d44aa2b4579ffea72278a262f47753905a338b），美股为11月3日收盘价、A股与港股为11月3日收盘价、加密资产为23:10 UTC 快照、WTI 为23:00 UTC 延迟快照，各标的的 asOf 逐项保留，不做插值、不倒填整点。第二层是17份本轮实际抓取并阅读的文档，含BEA、EIA、美联储三份官方日程页、财政部日度 par 曲线，以及13篇每经报道，所有 sourceUrls 只指向本轮成功取得的原文。第三层是派生判断，凡属推断均在正文标明‘我的判断’。口径上，盘中收益率（RATE:US10Y）与财政部 par 曲线（MACRO:US:UST-PAR-*）分开表述，不混用；盘后价与收盘价分开表述；黄金、白银本轮供应商接口抓取失败，改用媒体报道的纽约尾盘收盘价并注明；布伦特连续多轮404，本轮不写布伦特点位。",
+   "coreAnalysis": {
+    "mainTheme": "利率重新定价与AI盈利上修同时发生，风险资产靠业绩对抗贴现率，而不是靠流动性。",
+    "expectationGap": "市场共识已经包含12月加息（78.9%），真正的预期差不在加不加，而在‘加息到4.96%的10年期时，AI资本开支还能不能维持这个增速’。AMD盘后14%说明当下答案是能。",
+    "divergence": "三层分化：美股内部道指跌而纳指涨；A股内部科创50跌3.81%而沪深300仅跌0.20%，价差3.61个百分点；港股则是防御性上涨（恒指+0.57%），公募还在加医药、减半导体。",
+    "regime": "这是‘名义利率上行+盈利上修’的再通胀式风险偏好，不是宽松驱动的估值扩张。这个体制下，久期长的资产最脆弱，现金流确定的资产最抗跌。",
+    "priceIn": "加息已被定价，AMD超预期已被定价（盘后+14%）；尚未被定价的是两件事：一是自由现金流与资本开支的缺口，二是阿曼油轮事件是否演变为海峡航运的持续溢价。",
+    "bullCase": "若今日BEA贸易数据不弱、EIA确认原油去库，且10年期守住5.0%下方，则盈利主线可以延续到下周，半导体链继续领涨，A股算力链跟随修复。",
+    "bullInvalidation": "10年期上破5.0%且VIX回到24上方，同时纳指期货由涨转跌，则‘盈利扛住贴现率’的假设失效。",
+    "bearCase": "加息落地后点阵图上修，叠加阿曼事件推升油价回到100美元上方，形成‘成本上行+贴现上行’的双杀，高估值成长首当其冲。",
+    "bearInvalidation": "CME 12月加息概率回落至60%下方，或WTI回落至95美元下方且霍尔木兹通行恢复，则双杀逻辑不成立。"
+   },
+   "plainLanguage": {
+    "verdict": "利率在收紧、盈利在上修，风险资产靠业绩硬扛估值，别把结构性上涨当成宽松回归。",
+    "bottomLine": "钱没有变多，是赚钱的公司更少了。买指数不如看清结构：算力与现金流在涨，长久期成长在挨打。",
+    "whyNow": "AMD盘后14%、10年期回到4.964%、12月加息概率78.9%这三件事在同一晚发生，把‘盈利’与‘利率’的赛跑摆到了台面上。",
+    "horizon": "未来12—24小时看BEA贸易与EIA库存；未来2—4周看12月8—9日FOMC的点阵图。",
+    "confidence": "medium",
+    "invalidation": "若10年期回落至4.85%下方且加息概率降到60%以下，则‘利率压制估值’这条主线要下调权重。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "分化偏空（高估值端）",
+      "reason": "11月3日科创50跌3.81%、沪深300仅跌0.20%，价差3.61个百分点；同时10月仓储指数49.8%仍在收缩，内需数据不支持全面risk-on。",
+      "takeaway": "我的判断：今日开盘算力链有海外映射的修复动能，但如果没有成交量配合，更可能是高开低走，而不是风格切换。",
+      "horizon": "1—2个交易日",
+      "counterRisk": "离岸人民币回吐232个基点，外资流入条件边际转弱",
+      "invalidation": "科创50涨幅低于沪深300且全市场成交继续萎缩",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:CN:SSE",
+       "INDEX:CN:STAR50",
+       "INDEX:CN:CSI300",
+       "MACRO:CN:STORAGE-INDEX-2026-10"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-04/4637323.html"
+      ]
+     },
+     {
+      "asset": "港股",
+      "effect": "中性偏多（防御结构）",
+      "reason": "恒指涨0.57%、恒生科技涨0.74%，但公募三季度在减半导体、加医药，指数上涨的动力来自低波红利与医药，不是科技。",
+      "takeaway": "我的判断：港股会比A股稳，但弹性在医药与红利，不在硬件；追高科技硬件容易买在机构减仓的方向上。",
+      "horizon": "2—4周",
+      "counterRisk": "美国中期选举结果可能扰动风险偏好，港元流动性对美元利率敏感",
+      "invalidation": "恒生科技连续两日跑输恒指且南向转为净卖出",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH",
+       "RESEARCH:HK:FUND-POSITION-2026Q3"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-04/4637337.html"
+      ]
+     },
+     {
+      "asset": "美股",
+      "effect": "短线偏多（结构极致）",
+      "reason": "标普+0.36%、纳指+0.83%，但道指-0.38%、罗素2000仅+0.23%；AMD盘后+14%、超预期的是数据中心而非全线。",
+      "takeaway": "我的判断：指数还有上行动能，但宽度在收窄；只有半导体与平台在涨的市场，回撤时会非常快。",
+      "horizon": "1—3个交易日",
+      "counterRisk": "10年期4.964%已接近5.0%的心理关口，CME加息概率78.9%",
+      "invalidation": "纳指期货转跌且VIX升破24",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:US:SP500",
+       "INDEX:US:NASDAQ",
+       "INDEX:US:DOW",
+       "EQUITY:US:AMD",
+       "MACRO:US:AMD-AH-GAIN-2026-11-03",
+       "VOL:VIX"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-04/4637325.html",
+       "https://www.nbd.com.cn/articles/2026-11-04/4637336.html"
+      ]
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性",
+      "reason": "BTC 23:10 UTC 报77714.45美元，仍在78000下方；ETH 2287.28、SOL 93.24。加密没有独立催化，跟的是美股风险偏好。",
+      "takeaway": "我的判断：在利率上行、美元走强的组合里，BTC缺少独立上行动力；它是高beta的风险资产，不是避险资产。",
+      "horizon": "1—2周",
+      "counterRisk": "若加息落地后美元回落，BTC可能补涨；反向则是跌破76000触发杠杆清算",
+      "invalidation": "BTC站稳80000且ETH/BTC比值回升",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "CRYPTO:ETH:USD",
+       "CRYPTO:SOL:USD",
+       "FX:DXY"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-04/4637336.html"
+      ]
+     },
+     {
+      "asset": "黄金",
+      "effect": "短线偏空",
+      "reason": "现货黄金跌0.42%报3930.1美元、COMEX跌0.74%报3940.20美元，同期10年期美债收益率涨5.16个基点、美元指数101.892（+0.14%）。",
+      "takeaway": "我的判断：实际利率上行是压制项，但跌幅温和说明央行购金与地缘溢价还在托底，3920—3930是短期成本区。",
+      "horizon": "2—4周",
+      "counterRisk": "阿曼油轮事件若升级，避险买盘会立刻回来",
+      "invalidation": "金价跌破3900且美元指数站上102.5",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "MACRO:WORLD:GOLD-SPOT-CLOSE-2026-11-03",
+       "MACRO:WORLD:GOLD-COMEX-CLOSE-2026-11-03",
+       "RATE:US10Y",
+       "FX:DXY",
+       "MACRO:US:UST-10Y-CLOSE-2026-11-03"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-04/4637320.html",
+       "https://www.nbd.com.cn/articles/2026-11-04/4637318.html"
+      ]
+     },
+     {
+      "asset": "原油",
+      "effect": "偏多（地缘驱动）",
+      "reason": "WTI 96.71美元（23:00 UTC 延迟快照，+0.65%）；阿曼以东北14海里油轮被两枚弹体击中，事发地紧邻霍尔木兹出口。",
+      "takeaway": "我的判断：供需没变、风险溢价变了。只要海峡通行不正常，油价的下限就被抬高；但EIA若证实大幅累库，向上空间会被压缩。",
+      "horizon": "1—2周",
+      "counterRisk": "若美伊谈判取得实质进展、海峡重开，风险溢价会快速回吐",
+      "invalidation": "WTI跌破93美元且战争险保费回落",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "PROP:WORLD:OIL-TANKER-OMAN-2026-11-03"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-04/4637324.html"
+      ]
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "covered",
+     "asOf": "2026-11-03T07:00:25Z",
+     "note": "上证、深证、创业板、科创50、沪深300、中证500 六项收盘快照齐全，均为11月3日收盘。",
+     "gaps": "缺本轮全市场成交额、涨跌家数与两融余额一手数据，正文不写具体成交数字。"
+    },
+    {
+     "market": "港股",
+     "status": "partial",
+     "asOf": "2026-11-03T08:08:30Z",
+     "note": "恒指、恒生科技、恒生国企三项收盘快照齐全。",
+     "gaps": "港交所域名依其使用条款不再自动采集，缺南向资金与卖空比例一手数据；仅有公募仓位变动的媒体口径。"
+    },
+    {
+     "market": "美股",
+     "status": "covered",
+     "asOf": "2026-11-03T21:30:13Z",
+     "note": "标普500、纳指、纳指100、道指、罗素2000 与41只候选个股收盘快照齐全，VIX 20.83。",
+     "gaps": "缺分行业与分风格的全市场宽度统计，个股样本不代表全市场排名。"
+    },
+    {
+     "market": "BTC",
+     "status": "partial",
+     "asOf": "2026-11-03T23:10:25Z",
+     "note": "BTC、ETH、SOL、HYPE 快照齐全，均为23:10 UTC。",
+     "gaps": "无加密原生交易所资金费率、永续持仓与ETF净流入一手数据，快照无涨跌幅。"
+    },
+    {
+     "market": "黄金",
+     "status": "partial",
+     "asOf": "2026-11-03T22:19:11Z",
+     "note": "报价供应商接口本轮抓取失败，改用媒体报道的纽约尾盘现货价3930.1美元与COMEX收盘3940.20美元。",
+     "gaps": "METAL:XAUUSD / METAL:XAGUSD 本轮 fetch failed，无实时快照；缺TIPS实际利率与ETF持仓。"
+    },
+    {
+     "market": "原油",
+     "status": "partial",
+     "asOf": "2026-11-03T23:00:23Z",
+     "note": "WTI 96.71美元为23:00 UTC 延迟快照。",
+     "gaps": "ENERGY:BRENT 连续多轮 HTTP 404，本轮不写布伦特点位；缺月差、裂解价差与EIA官方库存（15:30 UTC 才发布）。"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "name": "A股",
+     "value": "上证3608.098",
+     "change": "-0.82%",
+     "asOf": "2026-11-03T07:00:25Z",
+     "status": "11月3日收盘",
+     "view": "杀估值不杀权重，等今日算力链能否接住",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300"
+     ]
+    },
+    {
+     "asset": "港股",
+     "name": "港股",
+     "value": "恒指23525.97",
+     "change": "+0.57%",
+     "asOf": "2026-11-03T08:08:30Z",
+     "status": "11月3日收盘",
+     "view": "防御性上涨，弹性在医药与红利",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "asset": "美股",
+     "name": "美股",
+     "value": "标普500 7568.92",
+     "change": "+0.36%",
+     "asOf": "2026-11-03T21:30:13Z",
+     "status": "11月3日收盘",
+     "view": "宽度收窄的结构性上涨，AMD盘后+14%",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "EQUITY:US:AMD"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "name": "BTC",
+     "value": "77714.45美元",
+     "change": "快照无涨跌",
+     "asOf": "2026-11-03T23:10:25Z",
+     "status": "23:10 UTC 快照",
+     "view": "缺独立催化，跟风险偏好",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "name": "黄金",
+     "value": "现货3930.1美元",
+     "change": "-0.42%",
+     "asOf": "2026-11-03T22:19:11Z",
+     "status": "纽约尾盘（媒体口径）",
+     "view": "实际利率上行压制，跌幅温和有托底",
+     "evidenceFactIds": [
+      "MACRO:WORLD:GOLD-SPOT-CLOSE-2026-11-03",
+      "RATE:US10Y"
+     ]
+    },
+    {
+     "asset": "原油",
+     "name": "原油",
+     "value": "WTI 96.71美元",
+     "change": "+0.65%",
+     "asOf": "2026-11-03T23:00:23Z",
+     "status": "延迟快照",
+     "view": "地缘抬高下限，EIA库存决定上限",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "PROP:WORLD:OIL-TANKER-OMAN-2026-11-03"
+     ]
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "name": "A股",
+     "market": "A股",
+     "title": "A股：3.61个百分点的风格价差，是资金在缩短久期",
+     "analysis": "11月3日收盘，上证3608.098（-0.82%）、深证10876.989（-1.21%）、创业板2391.6519（-2.73%）、科创50 1151.2826（-3.81%）、沪深300 4008.875（-0.20%）、中证500 6327.05（-1.45%）。科创50与沪深300的当日价差3.61个百分点，是极端分化：跌的是高估值成长，权重几乎没动。这不是资金离场，是同一批钱从长久期资产搬到了短久期资产。",
+     "mechanism": "分母端在收紧：10年期美债回到4.964%、12月加息概率78.9%，A股高估值板块的贴现率锚随之抬升；分子端则是分化的，10月仓储指数49.8%连续三个月收缩、业务量指数回落到50.0%，说明内需还在底部。海外算力超预期（AMD数据中心+97%、盘后+14%）只能救有订单的环节，救不了整体估值。FOF三季度把债券ETF做成核心底仓、黄金主题加仓、科创主题降温，这个仓位变化本身就是‘缩短久期’的注脚。",
+     "risk": "第一个风险是利好前置交易：昨日科创50已经跌3.81%，今日若借海外算力高开，很容易成为出货窗口。第二个风险是汇率，离岸人民币回吐232个基点至6.6704，外资流入的边际条件在转弱。",
+     "invalidation": "若今日科创50跑赢沪深300且成交放大，则昨日是错杀而非风格切换；若科创50继续跑输且成交萎缩，‘缩短久期’成立。",
+     "horizon": "1—2个交易日；中期看11月中旬信贷与社融",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500",
+      "MACRO:CN:STORAGE-INDEX-2026-10",
+      "MACRO:CN:STORAGE-NEWORDER-2026-10",
+      "FLOW:CN:FOF-ALLOC-2026Q3",
+      "MACRO:CN:CNH-CLOSE-2026-11-03"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637323.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637330.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637321.html"
+     ]
+    },
+    {
+     "asset": "港股",
+     "name": "港股",
+     "market": "港股",
+     "title": "港股：指数稳、结构换，钱在往医药与红利搬",
+     "analysis": "11月3日恒指23525.97（+0.57%）、恒生科技3867.73（+0.74%）、恒生国企7943.1（+0.47%）。三个指数同向上涨、幅度接近，看起来是普涨，但公募三季报给出的行业动作是加医药生物、减半导体等科技硬件，且相对基准仍低配。指数上涨的构成与资金流向并不同步。",
+     "mechanism": "港股是离岸美元市场，对美债利率最敏感，但本轮它没有跟跌，原因在于成分结构：金融、能源、电信等低波红利权重高，在利率上行时反而受益于‘现金流确定性溢价’。同时医药生物在创新药出海与BD首付款的叙事下获得增量资金。恒生科技涨0.74%更像是跟随A股与美股的beta，而不是南向主动加仓的结果。",
+     "risk": "风险在于两头不靠：若美债继续上行，红利股的股息率优势会被压缩；若风险偏好回升，资金又会从红利切回科技，而公募此时正在减科技，等于踏错节奏。另一个变量是美国中期选举结果对风险偏好的扰动。",
+     "invalidation": "若恒生科技连续两日跑赢恒指、且南向转为净买入科技，则‘防御性上涨’的判断需要修正。",
+     "horizon": "2—4周",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "RESEARCH:HK:FUND-POSITION-2026Q3",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637337.html"
+     ]
+    },
+    {
+     "asset": "美股",
+     "name": "美股",
+     "market": "美股",
+     "title": "美股：道指跌、纳指涨，一场只剩算力的牛市",
+     "analysis": "11月3日收盘，标普500 7568.92（+0.36%）、纳指25372.01（+0.83%）、纳指100 28180.264（+0.68%）、道指51786.72（-0.38%）、罗素2000 2812.447（+0.23%），VIX 20.83（-1.51%）。AMD常规时段收483.90（+3.65%），盘后一度涨超14%报555美元；甲骨文126.19（+5.85%）、博通332.13（+3.07%）、美光855.10（+2.58%）、台积电404.8（+1.55%）、阿斯麦1552.14（+1.70%）同步走强，而苹果331.9（-1.90%）、Adobe 246.14（-2.12%）、赛富时222.2（-1.76%）、特斯拉398.5（-1.32%）走弱。",
+     "mechanism": "这是一次纯粹的盈利驱动：AMD数据中心营收同比+97%把AI资本开支的能见度又往前推了一个季度，资金于是从‘应用与终端’搬到‘算力与基础设施’。道指收跌说明传统工业与消费没跟上，罗素2000仅涨0.23%说明小盘股也没参与。与此同时10年期收益率涨到4.964%，按常理该压估值，但市场选择相信分子端的确定性——这就是本轮最脆弱的假设。",
+     "risk": "宽度太窄。标普上涨靠少数标的，一旦AMD的现金流质疑（自由现金流同比-64%）被重新定价，指数回撤会很快。另一个风险是加息落地后的点阵图上修，那会同时打击估值与盈利预期。",
+     "invalidation": "若纳指期货由涨转跌、VIX升破24、且10年期站上5.0%，则盈利驱动叙事失效，转为贴现率主导。",
+     "horizon": "1—3个交易日；关键节点是12月8—9日FOMC",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "VOL:VIX",
+      "EQUITY:US:AMD",
+      "EQUITY:US:ORCL",
+      "EQUITY:US:AVGO",
+      "EQUITY:US:MU",
+      "EQUITY:US:TSM",
+      "EQUITY:US:ASML",
+      "EQUITY:US:AAPL",
+      "EQUITY:US:ADBE",
+      "EQUITY:US:TSLA",
+      "MACRO:US:AMD-AH-GAIN-2026-11-03",
+      "MACRO:US:FED-HIKE-ODDS-DEC-2026",
+      "MACRO:US:UST-10Y-CLOSE-2026-11-03"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637325.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637315.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637316.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637336.html"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "name": "BTC",
+     "market": "BTC",
+     "title": "BTC：78000攻而未破，缺的是自己的故事",
+     "analysis": "23:10 UTC 快照，BTC 77714.45美元，仍在78000下方；ETH 2287.28美元、SOL 93.24美元、HYPE 85.45美元。同一时段美元指数101.892（+0.14%）、10年期美债4.952%，风险资产的贴现环境在收紧。加密没有跟随AMD的兴奋，涨幅落后于纳指，说明这轮上涨不是它的主场。",
+     "mechanism": "BTC当前的定价锚有两个：一是美元实际利率，二是股市风险偏好。前者在往上、后者在收窄宽度，两个锚都不利。它没有受益于AI资本开支的叙事，也没有避险资金的流入（黄金同期还在跌），处在‘既不是成长也不是避险’的尴尬位置。在这种环境下，它更像高beta的风险资产，而不是数字黄金。",
+     "risk": "杠杆结构风险大于基本面风险。若跌破76000，容易触发永续合约的连锁清算；反过来，若加息落地后美元回落，补涨也会很急。加密的原生资金费率与ETF流向本轮没有一手数据，这是判断的最大盲区。",
+     "invalidation": "若BTC站稳80000且ETH/BTC比值同步回升，说明是内生资金而非股市beta；若跌破76000，则确认高beta属性。",
+     "horizon": "1—2周",
+     "confidence": "medium-low",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "CRYPTO:HYPE:USD",
+      "FX:DXY",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637336.html"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "name": "黄金",
+     "market": "黄金",
+     "title": "黄金：名义利率在涨，金价只跌了0.42%，这本身是信息",
+     "analysis": "纽约尾盘现货黄金跌0.42%报3930.1美元/盎司，COMEX黄金期货跌0.74%报3940.20美元；现货白银跌1.7%报49.78美元，COMEX白银期货跌2.12%报49.81美元。同期10年期美债收益率涨5.16个基点至4.964%、美元指数101.892（+0.14%）。按教科书，实际利率上行+美元走强，金价该跌得更多；实际只跌0.42%，说明有别的买盘在托。",
+     "mechanism": "压制项是实际利率：名义利率上行而通胀预期没有同步上修，实际利率抬升，持有无息资产的机会成本上升。托底项有两个：一是央行购金的结构性需求，二是地缘风险溢价——阿曼油轮被弹体击中就发生在同一晚。白银跌幅是黄金的三到五倍，说明这一轮下跌主要是工业属性与杠杆资金退潮，而不是避险需求消失，金银比因此走高。",
+     "risk": "若10年期站上5.0%且美元指数突破102.5，3920一线的支撑会被测试；若地缘事件升级，金价可能逆着利率再冲一次。两个方向都不小，这是本轮最难做单边的资产。",
+     "invalidation": "金价跌破3900美元且金银比继续走阔，确认实际利率主导；若金价重回3980上方而利率不降，确认避险主导。",
+     "horizon": "2—4周",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "MACRO:WORLD:GOLD-SPOT-CLOSE-2026-11-03",
+      "MACRO:WORLD:GOLD-COMEX-CLOSE-2026-11-03",
+      "MACRO:WORLD:SILVER-COMEX-CLOSE-2026-11-03",
+      "RATE:US10Y",
+      "FX:DXY",
+      "MACRO:US:UST-10Y-CLOSE-2026-11-03",
+      "PROP:WORLD:OIL-TANKER-OMAN-2026-11-03"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637320.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637318.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637324.html"
+     ]
+    },
+    {
+     "asset": "原油",
+     "name": "原油",
+     "market": "原油",
+     "title": "原油：96.71美元的定价里，装的是保费不是库存",
+     "analysis": "WTI 23:00 UTC 延迟快照报96.71美元（+0.65%）。同一晚，UKMTO通报11月3日19:00 GMT阿曼利马东北约14海里一艘油轮被两枚不明弹体击中，暂无伤亡与污染报告。事发位置在霍尔木兹海峡出口外侧，是全球原油海运最敏感的节点之一。",
+     "mechanism": "当前的油价里，供需是次要变量，风险溢价是主要变量。霍尔木兹通行未完全恢复常态，战争险保费与绕行成本抬高了下限；阿曼油轮事件进一步确认‘航运安全’仍是定价因子。这解释了为什么在美元走强、利率上行的环境下油价还能微涨——它交易的不是宏观需求，而是供应链的尾部风险。",
+     "risk": "风险是双向的。上行风险：事件升级、海峡再度受阻，油价可能快速冲向100美元上方；下行风险：美伊谈判若取得实质进展、海峡重开，风险溢价会在很短时间内回吐。EIA周报若证实大幅累库，也会压制向上空间。",
+     "invalidation": "WTI跌破93美元且战争险保费回落，说明溢价在消退；WTI站上100美元且保费继续上行，说明供给冲击成立。",
+     "horizon": "1—2周；15:30 UTC 的EIA周报是最近的一个验证点",
+     "confidence": "medium",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "PROP:WORLD:OIL-TANKER-OMAN-2026-11-03",
+      "FX:DXY"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637324.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637336.html"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "id": "FW-RATE-DCF",
+     "framework": "利率传导与现金流折现",
+     "concept": "贴现率上行会压低远期现金流的现值，久期越长的资产越敏感。",
+     "applicability": "适用于美股成长股、A股科创与创业板、黄金（实际利率）。",
+     "observed": "10年期美债涨5.16个基点报4.964%、30年期报5.331%，2s10s走阔至33.3bp；同日科创50跌3.81%而沪深300跌0.20%，纳斯达克仍涨0.83%。",
+     "mechanism": "长端上行同时抬高了股权风险溢价与无风险利率，理论上压制高PE资产；但盈利上修可以抵消分母端压力，所以出现‘利率涨、纳指也涨’的背离。",
+     "conclusion": "分母端的压力真实存在但被分子端暂时抵消；一旦盈利预期停止上修，压制会立刻显性化。",
+     "assumptions": "通胀预期未大幅上修、加息路径已被市场大部分定价。",
+     "counterEvidence": "纳指在利率上行中仍上涨，说明当前分子端权重高于分母端。",
+     "horizon": "2—6周",
+     "invalidation": "10年期站上5.0%且纳指转跌",
+     "confidence": "medium",
+     "missingData": "缺TIPS实际利率与通胀预期拆分",
+     "evidenceFactIds": [
+      "MACRO:US:UST-10Y-CLOSE-2026-11-03",
+      "MACRO:US:UST-2S10S-CLOSE-2026-11-03",
+      "RATE:US10Y",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:US:NASDAQ"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637316.html"
+     ]
+    },
+    {
+     "id": "FW-EVENT-GAP",
+     "framework": "预期差与事件研究",
+     "concept": "资产价格反应的是实际结果与预期之间的差，而不是结果本身的好坏。",
+     "applicability": "适用于AMD财报后的盘后定价、CME加息概率隐含的会议结果。",
+     "observed": "AMD常规时段收483.90（+3.65%），盘后一度涨超14%报555美元；CME显示12月加息25bp概率78.9%、维持不变21.1%。",
+     "mechanism": "AMD的收入与指引超预期幅度大于市场预估，盘后涨幅从初期的约7%扩大到14%，说明预期在被连续上修；加息则几乎没有预期差，79%已经是基准情形。",
+     "conclusion": "有预期差的地方（AI算力）波动大且方向明确；没有预期差的地方（12月加息）反而容易出现‘利空出尽’或‘利好落空’的反向波动。",
+     "assumptions": "盘后流动性薄、涨幅不代表次日开盘价。",
+     "counterEvidence": "股指期货仅高开0.2%—0.4%，说明个股预期差没有扩散成指数预期差。",
+     "horizon": "1—3个交易日",
+     "invalidation": "AMD次日开盘回吐盘后涨幅一半以上",
+     "confidence": "medium-high",
+     "missingData": "缺AMD财报电话会全文与卖方最新目标价分布",
+     "evidenceFactIds": [
+      "EQUITY:US:AMD",
+      "MACRO:US:AMD-AH-GAIN-2026-11-03",
+      "MACRO:US:FED-HIKE-ODDS-DEC-2026",
+      "MACRO:US:ES-FUT-2026-11-04"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637325.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637315.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637336.html"
+     ]
+    },
+    {
+     "id": "FW-SUPPLY-RISK",
+     "framework": "供需、库存与风险溢价",
+     "concept": "商品价格由现货紧张程度与未来供应中断的概率共同决定。",
+     "applicability": "适用于原油与贵金属。",
+     "observed": "WTI 96.71美元（+0.65%，延迟快照）；阿曼以东北14海里油轮被两枚弹体击中；现货黄金跌0.42%而白银跌1.7%。",
+     "mechanism": "原油的地缘溢价来自霍尔木兹通行风险，阿曼事件强化了这一溢价；黄金的回落来自实际利率，白银额外承受工业需求与杠杆退潮。",
+     "conclusion": "原油的下限被地缘抬高、上限待EIA库存确认；贵金属短期由利率主导，避险溢价只是缓冲。",
+     "assumptions": "海峡未完全封锁、EIA库存未出现超预期累库。",
+     "counterEvidence": "若EIA确认大幅累库，说明现货并不紧张，溢价缺乏基本面支撑。",
+     "horizon": "1—2周",
+     "invalidation": "WTI跌破93美元或站上100美元",
+     "confidence": "medium",
+     "missingData": "布伦特404无报价；缺月差、裂解价差与EIA官方库存",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "PROP:WORLD:OIL-TANKER-OMAN-2026-11-03",
+      "MACRO:WORLD:GOLD-SPOT-CLOSE-2026-11-03",
+      "MACRO:WORLD:SILVER-COMEX-CLOSE-2026-11-03"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637324.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637320.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637318.html"
+     ]
+    },
+    {
+     "id": "FW-MICRO-DURATION",
+     "framework": "市场微观结构与风格久期",
+     "concept": "同一市场内，资金会在高久期与低久期资产之间搬移，形成风格价差。",
+     "applicability": "适用于A股科创vs沪深300、港股科技vs红利。",
+     "observed": "11月3日科创50跌3.81%、沪深300跌0.20%，价差3.61个百分点；恒指涨0.57%而公募在减半导体、加医药。",
+     "mechanism": "在利率上行与内需偏弱的组合下，资金降低组合久期：卖高估值成长、买现金流确定的红利与医药。FOF把债券ETF做成核心底仓是同一逻辑的机构版。",
+     "conclusion": "风格价差不是情绪，是仓位结构的迁移；在利率见顶之前，这个迁移不会逆转。",
+     "assumptions": "无大规模增量资金入场改变结构。",
+     "counterEvidence": "若今日成交显著放大且科创50领涨，说明有增量资金反向操作。",
+     "horizon": "2—4周",
+     "invalidation": "科创50连续两日跑赢沪深300且成交放大",
+     "confidence": "medium",
+     "missingData": "缺本轮成交额、涨跌家数与两融余额",
+     "evidenceFactIds": [
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "FLOW:CN:FOF-ALLOC-2026Q3",
+      "RESEARCH:HK:FUND-POSITION-2026Q3"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637330.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637337.html"
+     ]
+    },
+    {
+     "id": "FW-POLICY-FLOW",
+     "framework": "政策传导与分配影响",
+     "concept": "政策与财政转移会改变特定行业与地区的现金流分配，而不只是总量。",
+     "applicability": "适用于美国对以援助、中国仓储与内需数据。",
+     "observed": "特朗普称每年约40亿美元对以安全援助将于年底结束，现行协议约38亿美元/年、有效期至2028年；10月中国仓储指数49.8%连续三个月收缩、新订单50.9%。",
+     "mechanism": "援助终止的表态会改变中东军备采购的现金流路径；仓储指数的新订单扩张而业务量回落，说明政策刺激还停留在预期层面，未转化为实物周转。",
+     "conclusion": "政策事件对市场的影响是结构性的、慢变量；短期价格更多由利率与盈利决定。",
+     "assumptions": "援助终止仍停留在表态阶段，未进入执行。",
+     "counterEvidence": "以方称尚不清楚具体时间表，说明政策落地存在不确定性。",
+     "horizon": "1—3个月",
+     "invalidation": "美以双方公布正式协议修订文本",
+     "confidence": "medium-low",
+     "missingData": "缺美国会与国务院的正式文件",
+     "evidenceFactIds": [
+      "PROP:US:ISRAEL-AID-END-2026",
+      "MACRO:CN:STORAGE-INDEX-2026-10",
+      "MACRO:CN:STORAGE-NEWORDER-2026-10",
+      "MACRO:CN:STORAGE-INVENTORY-2026-10"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4637326.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4637323.html"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "五个框架里，四个指向‘盈利暂时压过利率’，只有一个（利率传导）明确反对。综合判断是：短线偏多但脆弱，中期取决于利率是否见顶。",
+    "agreement": "预期差、供需风险溢价、风格久期三个框架一致认为当前是结构性行情：算力与地缘溢价在涨，长久期成长与贵金属在跌。",
+    "disagreement": "利率传导框架认为10年期4.964%已足以压制估值，与纳指上涨的事实冲突；这个冲突没有被解决，只是被AMD的盈利上修暂时掩盖。",
+    "weighting": "更看重利率传导与预期差两个框架，因为它们有可验证的时点（10年期5.0%、12月8—9日FOMC）；供需与政策框架的验证周期更长，权重下调。",
+    "invalidation": "若10年期站上5.0%而纳指仍创新高，则利率框架的权重需要下调；若AMD次日回吐盘后涨幅一半，则预期差框架的多头结论失效。"
+   },
+   "watch": [
+    {
+     "point": "10年期美债5.0%",
+     "detail": "当前4.964%，距5.0%仅3.6个基点。站上并站稳，则高估值资产的贴现压力从‘隐忧’变成‘主线’。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "MACRO:US:UST-10Y-CLOSE-2026-11-03"
+     ]
+    },
+    {
+     "point": "13:30 UTC BEA 9月贸易数据",
+     "detail": "官方日程确认。逆差大幅收窄会强化‘外需不弱’的叙事，利好美元与周期；大幅走阔则相反。",
+     "evidenceFactIds": [
+      "PROP:US:BEA-TRADE-2026-11-04"
+     ]
+    },
+    {
+     "point": "15:30 UTC EIA 周度库存",
+     "detail": "API前值显示大幅去库，若EIA确认，油价的地缘溢价才有基本面支撑；若转为累库，96美元上方的定价会松动。",
+     "evidenceFactIds": [
+      "PROP:US:EIA-WPS-2026-11-04",
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "point": "AMD次日开盘",
+     "detail": "盘后+14%报555美元。若开盘回吐一半以上，说明盘后是流动性推动的假突破，算力链的A股映射也会跟着退潮。",
+     "evidenceFactIds": [
+      "EQUITY:US:AMD",
+      "MACRO:US:AMD-AH-GAIN-2026-11-03"
+     ]
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "盘中收益率 vs 财政部 par 收益率",
+     "definition": "RATE:US10Y 为供应商盘中快照（4.952%），MACRO:US:UST-PAR-* 为财政部日度 par 曲线（10Y 4.95%）。两者口径不同，正文分开引用，不互相替代。"
+    },
+    {
+     "term": "盘后价 vs 收盘价",
+     "definition": "AMD收盘483.90美元为常规时段最后成交价；盘后555美元为延长时段报价，流动性更薄，不代表次日开盘价。"
+    },
+    {
+     "term": "2s10s 期限价差",
+     "definition": "10年期收益率减2年期收益率。本轮收盘口径为33.3bp（4.964%-4.631%），par 口径为34bp（4.95%-4.61%）。"
+    },
+    {
+     "term": "中国仓储指数",
+     "definition": "中国物流与采购联合会发布的月度景气指数，50%为荣枯线，高于50%表示扩张。10月为49.8%，连续三个月处于收缩区间。"
+    },
+    {
+     "term": "CME 加息概率",
+     "definition": "基于联邦基金利率期货价格反推的市场隐含概率，会随价格实时变化，不等于美联储的实际决策。"
+    }
+   ],
+   "analysisTheses": [],
+   "judgmentRevisions": [],
+   "changes": [
+    {
+     "title": "AMD盘后涨幅由约7%扩大到14%",
+     "detail": "上一时段财报公布后盘后涨约7%，本轮23:00 UTC前一度涨超14%报555美元，说明买盘在盘后继续加仓，而不是一次性冲高。"
+    },
+    {
+     "title": "美债长端再度上行，2s10s走阔",
+     "detail": "10年期由4.952%的盘中水平升至收盘4.964%（+5.16bp），30年期5.331%，2s10s由par口径的34bp、收盘口径33.3bp，曲线呈陡峭化。"
+    },
+    {
+     "title": "黄金白银由涨转跌",
+     "detail": "现货黄金跌0.42%报3930.1美元、COMEX白银跌2.12%，与上一时段的高位横盘相比方向明确向下。"
+    },
+    {
+     "title": "地缘出现新的航运安全事件",
+     "detail": "阿曼以东北14海里油轮被两枚不明弹体击中，事发地紧邻霍尔木兹出口，是本轮唯一新增的供给侧风险。"
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "利率：长端主导",
+     "detail": "10年期4.964%（+5.16bp）、30年期5.331%（+4.4bp）、2年期4.631%（+3.31bp），长端涨幅大于短端。"
+    },
+    {
+     "title": "盈利：算力继续上修",
+     "detail": "AMD盘后+14%；甲骨文+5.85%、博通+3.07%、美光+2.58%收盘走强，苹果-1.90%、Adobe-2.12%走弱。"
+    },
+    {
+     "title": "中国数据：仍在收缩区间",
+     "detail": "10月仓储指数49.8%（+0.1pp），业务量50.0%（-2.8pp），新订单50.9%连续两个月扩张。"
+    },
+    {
+     "title": "汇率：人民币回吐",
+     "detail": "离岸人民币跌232个基点至6.6704；美元指数101.892（+0.14%）。"
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-11-03T21:00:00Z",
+     "title": "美股收盘：结构分化",
+     "detail": "标普+0.36%、纳指+0.83%、道指-0.38%，VIX 20.83。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:DOW",
+      "VOL:VIX"
+     ]
+    },
+    {
+     "at": "2026-11-03T22:11:26Z",
+     "title": "美债收盘：全线上行",
+     "detail": "10年期4.964%（+5.16bp）、2年期4.631%（+3.31bp）、30年期5.331%。",
+     "evidenceFactIds": [
+      "MACRO:US:UST-10Y-CLOSE-2026-11-03",
+      "MACRO:US:UST-2Y-CLOSE-2026-11-03"
+     ]
+    },
+    {
+     "at": "2026-11-03T22:28:58Z",
+     "title": "阿曼油轮遇袭",
+     "detail": "19:00 GMT 阿曼利马东北14海里，油轮被两枚不明弹体击中。",
+     "evidenceFactIds": [
+      "PROP:WORLD:OIL-TANKER-OMAN-2026-11-03"
+     ]
+    },
+    {
+     "at": "2026-11-03T23:00:23Z",
+     "title": "WTI 延迟快照96.71美元",
+     "detail": "+0.65%，地缘事件后油价维持在高位区间。",
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "10年期站上5.0%",
+     "effect": "叙事从‘盈利驱动’切换为‘贴现率主导’，高估值成长承压。"
+    },
+    {
+     "title": "AMD次日开盘回吐一半盘后涨幅",
+     "effect": "算力链的A股映射退潮，创业板与科创50的相对弱势延续。"
+    },
+    {
+     "title": "霍尔木兹通行恢复",
+     "effect": "原油风险溢价快速回吐，WTI可能回到93美元下方。"
+    }
+   ],
+   "metrics": [],
+   "worldEvents": [],
+   "sectionGaps": {
+    "researchRecords": {
+     "reason": "本轮仅取得媒体快讯（AMD盘后涨幅、美债收盘、贵金属收盘等），未取得SEC/交易所/IR的原始披露文件，故 researchRecords 为空，不伪造公司研究记录。"
+    },
+    "goldAndBrent": {
+     "reason": "METAL:XAUUSD 与 METAL:XAGUSD 本轮 fetch failed，无实时快照；ENERGY:BRENT 连续多轮 HTTP 404。黄金改用媒体报道的纽约尾盘收盘价，布伦特本轮不写点位。"
+    }
+   }
+  },
+  "newsItems": [
+   {
+    "eventId": "AMD-AH-SURGE-2026-11-03",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "AMD美股盘后一度涨超14%报555美元，常规交易时段已涨3.65%",
+    "summary": "11月4日亚洲时段前，AMD盘后一度涨超14%、报555美元；其在11月3日常规交易时段收于483.90美元、涨3.65%。公司三季度财报已于当日盘后披露。",
+    "plainImpact": "盘后涨幅从财报公布初期的约7%扩大到14%，说明买盘在盘后继续加仓而不是一次性冲高。对A股光模块、PCB、服务器代工等算力链是情绪与订单的双重支撑。",
+    "assessment": "这是盈利预期上修，不是估值扩张——在10年期美债回到4.96%的环境里还能给出14%的盘后涨幅，说明市场把AI算力的确定性放在了贴现率之上。",
+    "publishedAt": "2026-11-03T22:30:02Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637325.html"
+    ]
+   },
+   {
+    "eventId": "UST-YIELDS-RISE-2026-11-03",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "美债收益率集体上行：10年期涨5.16个基点报4.964%，30年期报5.331%",
+    "summary": "11月3日美债收益率全线上涨：2年期涨3.31bp报4.631%，3年期涨4.56bp报4.702%，5年期涨5.5bp报4.762%，10年期涨5.16bp报4.964%，30年期涨4.4bp报5.331%。",
+    "plainImpact": "长端涨幅大于短端，2s10s走阔到33.3bp，说明这次上行不只是加息预期，还包含期限溢价的回升。对高估值成长股的贴现压力是实打实的。",
+    "assessment": "收益率上行与纳指上涨0.83%同时出现，是本轮最值得警惕的背离：股市在赌盈利，债市在赌紧缩，两者不可能长期同时正确。",
+    "publishedAt": "2026-11-03T22:11:26Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637316.html"
+    ]
+   },
+   {
+    "eventId": "FED-HIKE-ODDS-DEC-2026",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "CME：美联储12月加息25个基点概率78.9%，维持不变仅21.1%",
+    "summary": "CME“美联储观察”显示，12月维持利率不变概率21.1%、加息25个基点概率78.9%；至明年1月，维持不变概率15.3%、累计加息25bp概率63.0%、累计加息50bp概率21.8%。",
+    "plainImpact": "市场已经把12月加息当成基准情形。真正的风险不是加不加，而是点阵图是否暗示明年还有第二、第三次。",
+    "assessment": "79%的概率意味着加息本身几乎没有预期差，任何‘不加’的意外都会带来比‘加’更大的波动。",
+    "publishedAt": "2026-11-03T22:05:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637315.html"
+    ]
+   },
+   {
+    "eventId": "PRECIOUS-METALS-CLOSE-2026-11-03",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "market",
+    "title": "贵金属集体收跌：现货黄金跌0.42%报3930.1美元，COMEX白银跌2.12%",
+    "summary": "纽约尾盘现货黄金跌0.42%报3930.1美元/盎司，现货白银跌1.7%报49.78美元；COMEX黄金期货跌0.74%报3940.20美元，COMEX白银期货跌2.12%报49.81美元。",
+    "plainImpact": "白银跌幅是黄金的三到五倍，说明这次下跌是工业属性与杠杆资金退潮，不是单纯的避险需求消失。持有金银比多头的人本轮受伤更重。",
+    "assessment": "在实际利率上行、美元走强的组合下，黄金回落是标准反应；但跌幅温和说明央行购金与地缘溢价仍在托底。",
+    "publishedAt": "2026-11-03T22:19:11Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637320.html",
+     "https://www.nbd.com.cn/articles/2026-11-04/4637318.html"
+    ]
+   },
+   {
+    "eventId": "OIL-TANKER-HIT-OMAN-2026-11-03",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "title": "阿曼利马东北约14海里一艘油轮遭两枚不明弹体击中",
+    "summary": "英国海上贸易行动办公室（UKMTO）通报，11月3日19:00 GMT，阿曼利马东北约14海里处一艘油轮被两枚不明弹体击中，暂无人员伤亡与环境污染报告，相关部门正在调查，并提醒附近船只保持警惕。",
+    "plainImpact": "事发位置紧邻霍尔木兹海峡出口，是原油海运最敏感的咽喉。短期影响体现在战争险保费与绕行成本，若持续，会传导到成品油与化工原料价格。",
+    "assessment": "单船事件本身不改变供需平衡，但在布伦特已因海峡问题高位运行的背景下，这类事件会放大油价的向上尾部风险。",
+    "publishedAt": "2026-11-03T22:28:58Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637324.html"
+    ]
+   },
+   {
+    "eventId": "CN-STORAGE-INDEX-2026-10",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "10月中国仓储指数49.8%，连续三个月处于收缩区间",
+    "summary": "中国物流与采购联合会发布10月中国仓储指数49.8%，较上月回升0.1个百分点；业务量指数50.0%（-2.8pp）回落至荣枯线，期末库存指数49.0%连续5个月收缩，平均库存周转次数指数48.0%（-1.5pp），新订单指数50.9%连续两个月扩张，业务活动预期指数56.9%（+0.9pp）。",
+    "plainImpact": "指数还在荣枯线下方，但新订单和预期在改善，说明需求在底部企稳而非复苏。对仓储物流、大宗商品贸易环节是‘最坏时候过去、好转还没来’。",
+    "assessment": "业务量回落而新订单扩张，这个组合意味着订单在纸上、货还没动，验证要看11月电商促销能否把预期转成实际周转。",
+    "publishedAt": "2026-11-03T22:28:18Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637323.html"
+    ]
+   },
+   {
+    "eventId": "CNH-CLOSE-2026-11-03",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "离岸人民币兑美元跌232个基点报6.6704",
+    "summary": "当地时间11月3日，离岸人民币兑美元下跌232个基点，报6.6704。本轮packet显示离岸价23:10 UTC在6.669附近、日内仍为升值方向，在岸价6.660附近。",
+    "plainImpact": "这是前期快速升值后的回吐，方向上是给出口企业喘口气、给进口成本加点压力。对A股外资流入条件是边际收紧。",
+    "assessment": "单日232个基点在6.66—6.67的区间里属于正常波动，不构成趋势反转；真正要盯的是中间价与结汇行为的配合。",
+    "publishedAt": "2026-11-03T22:19:15Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637321.html"
+    ]
+   },
+   {
+    "eventId": "FOF-Q3-HOLDINGS-2026",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "FOF三季报持仓：债券ETF成核心底仓，黄金主题配置回升、科创主题降温",
+    "summary": "基金三季报披露完毕，FOF底层资产结构显著变化：债券ETF凭高流动性与透明度取代部分传统纯债基金成为核心底仓，重仓数量与市值均居前列；黄金主题产品重仓数量攀升，科创主题基金降温。",
+    "plainImpact": "专业买手在降波动、加防御。这类调仓不会带来暴涨，但会改变市场下跌时的承接结构——债与金有人接，成长股缺接盘。",
+    "assessment": "这是对‘利率上行+盈利分化’环境的理性反应，也解释了为什么A股高估值板块在利好中仍然杀估值。",
+    "publishedAt": "2026-11-03T22:48:19Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637330.html"
+    ]
+   },
+   {
+    "eventId": "HK-FUND-POSITION-2026Q3",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "公募基金三季度加仓港股医药、减仓半导体，整体仍低配",
+    "summary": "三季报显示，主动偏股型公募基金对港股仓位相对基准依旧低配；行业上集中加仓医药生物，对半导体等科技硬件减仓较多。机构认为美国中期选举结果或成为港股后市新变量，短期坚持防御为先、低波红利资产受看好。",
+    "plainImpact": "南向与公募的钱在从硬件转向医药与红利，港股内部风格会更分裂：指数可能稳，科技硬件弹性下降。",
+    "assessment": "这与A股昨日的风格分化是同一件事的两面：资金在降低组合久期，从‘高弹性成长’换成‘现金流+防御’。",
+    "publishedAt": "2026-11-03T23:02:06Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637337.html"
+    ]
+   },
+   {
+    "eventId": "US-EQUITY-FUTURES-2026-11-04",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "美股股指期货亚市早盘小幅高开，标普期货涨0.2%、纳指期货涨0.4%",
+    "summary": "11月4日亚市早盘，美股股指期货小幅高开：标普500指数期货涨0.2%，纳斯达克指数期货涨0.4%。",
+    "plainImpact": "高开幅度小于AMD盘后14%的涨幅，说明买盘集中在个股与半导体，没有外溢成全面风险偏好。",
+    "assessment": "期货涨幅与指数前一日涨幅接近，属于延续而非加速；若今晚BEA贸易数据不弱，才可能突破这个温和区间。",
+    "publishedAt": "2026-11-03T23:01:44Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637336.html"
+    ]
+   },
+   {
+    "eventId": "ISRAEL-US-AID-END-2026",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "title": "以方对美国将结束安全援助感到担忧，现行协议约38亿美元/年、有效期至2028年",
+    "summary": "以色列方面消息称，以官员与国防机构对特朗普称即将结束对以安全援助感到担忧；特朗普称美国每年约40亿美元援助将于今年年底结束，并称该想法由内塔尼亚胡提出。现行美以安全援助协议约38亿美元/年、有效期至2028年。",
+    "plainImpact": "这直接关系到中东军备采购与地区安全预期。若落实，以色列本土国防采购结构与相关美国军工订单都会重排。",
+    "assessment": "政治表态与协议文本之间还有距离——现行协议签到2028年，单方面提前终止的法律与执行路径都未公开，暂按‘表态’而非‘既成事实’处理。",
+    "publishedAt": "2026-11-03T22:32:04Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637326.html"
+    ]
+   },
+   {
+    "eventId": "ICJ-JUDGES-ELECTED-2026",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "title": "联合国大会与安理会选出5名国际法院法官，任期九年",
+    "summary": "11月3日联合国大会与安理会分别投票，选出5名国际法院法官，任期九年、自2027年2月6日起。英国、法国、约旦、新加坡候选人首轮当选，肯尼亚候选人菲比·奥科瓦经多轮投票连任。",
+    "plainImpact": "对市场没有直接价格影响，但国际法院的组成会影响未来跨国争端、主权豁免与制裁合法性案件的裁决倾向。",
+    "assessment": "属于制度性事件，短期可忽略，中期对跨境资产冻结与主权债务诉讼的判例环境有影响。",
+    "publishedAt": "2026-11-03T22:41:48Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637328.html"
+    ]
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮为北京时间04:00—07:10的媒体低产时段，实际新增可核验事件11条；已覆盖中国宏观数据、人民币、机构仓位，美国利率与加息预期、AMD盘后、股指期货，以及中东航运安全、美以援助、国际法院三项非纯金融事件。",
+   "regions": {
+    "CN": "仓储指数、离岸人民币、FOF与公募港股仓位共4条",
+    "US": "AMD盘后、美债收益率、CME加息概率、股指期货共4条",
+    "WORLD": "阿曼油轮遇袭、美以援助、国际法院法官共3条"
+   },
+   "gaps": "美国中期选举结果尚无本轮可引用的具体原文；中国官方政策发布在本时段无新增；欧洲与日本无新增可核验事件。"
+  },
+  "macroFacts": [
+   {
+    "id": "MACRO:CN:STORAGE-INDEX-2026-10",
+    "label": "10月中国仓储指数",
+    "value": 49.8,
+    "unit": "%",
+    "asOf": "2026-11-03T22:28:18Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637323.html"
+    ],
+    "kind": "macro",
+    "note": "较上月回升0.1个百分点，连续三个月处于收缩区间"
+   },
+   {
+    "id": "MACRO:CN:STORAGE-NEWORDER-2026-10",
+    "label": "10月仓储业新订单指数",
+    "value": 50.9,
+    "unit": "%",
+    "asOf": "2026-11-03T22:28:18Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637323.html"
+    ],
+    "kind": "macro",
+    "note": "连续两个月扩张，但向业务量转化不足"
+   },
+   {
+    "id": "MACRO:CN:STORAGE-INVENTORY-2026-10",
+    "label": "10月仓储业期末库存指数",
+    "value": 49.0,
+    "unit": "%",
+    "asOf": "2026-11-03T22:28:18Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637323.html"
+    ],
+    "kind": "macro",
+    "note": "与上月持平，连续5个月收缩；平均库存周转次数指数48.0%"
+   },
+   {
+    "id": "PROP:WORLD:OIL-TANKER-OMAN-2026-11-03",
+    "label": "阿曼以东北海域油轮被击中弹体数量",
+    "value": 2,
+    "unit": "枚",
+    "asOf": "2026-11-03T22:28:58Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637324.html"
+    ],
+    "kind": "policy",
+    "note": "UKMTO通报：11月3日19:00 GMT，阿曼利马东北约14海里；暂无伤亡与污染报告"
+   },
+   {
+    "id": "MACRO:US:FED-HIKE-ODDS-DEC-2026",
+    "label": "CME 美联储12月加息25个基点概率",
+    "value": 78.9,
+    "unit": "%",
+    "asOf": "2026-11-03T22:05:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637315.html"
+    ],
+    "kind": "macro",
+    "note": "维持不变概率21.1%；至明年1月累计加息25bp概率63.0%、50bp概率21.8%"
+   },
+   {
+    "id": "MACRO:US:UST-2Y-CLOSE-2026-11-03",
+    "label": "美国2年期国债收益率（11月3日收盘）",
+    "value": 4.631,
+    "unit": "%",
+    "asOf": "2026-11-03T22:11:26Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637316.html"
+    ],
+    "kind": "macro",
+    "note": "较前一交易日涨3.31个基点"
+   },
+   {
+    "id": "MACRO:US:UST-10Y-CLOSE-2026-11-03",
+    "label": "美国10年期国债收益率（11月3日收盘）",
+    "value": 4.964,
+    "unit": "%",
+    "asOf": "2026-11-03T22:11:26Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637316.html"
+    ],
+    "kind": "macro",
+    "note": "涨5.16个基点"
+   },
+   {
+    "id": "MACRO:US:UST-30Y-CLOSE-2026-11-03",
+    "label": "美国30年期国债收益率（11月3日收盘）",
+    "value": 5.331,
+    "unit": "%",
+    "asOf": "2026-11-03T22:11:26Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637316.html"
+    ],
+    "kind": "macro",
+    "note": "涨4.40个基点；5年期4.762%（+5.5bp）"
+   },
+   {
+    "id": "MACRO:US:UST-2S10S-CLOSE-2026-11-03",
+    "label": "美债2s10s价差（11月3日收盘）",
+    "value": 33.3,
+    "unit": "bp",
+    "asOf": "2026-11-03T22:11:26Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637316.html"
+    ],
+    "kind": "macro",
+    "note": "10Y 4.964 减 2Y 4.631"
+   },
+   {
+    "id": "MACRO:US:UST-PAR-2Y-2026-11-03",
+    "label": "美国2年期国债 par 收益率（11月3日）",
+    "value": 4.61,
+    "unit": "%",
+    "asOf": "2026-11-03T21:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=202611"
+    ],
+    "kind": "macro",
+    "note": "财政部日度 par 曲线，11月2日为4.59%"
+   },
+   {
+    "id": "MACRO:US:UST-PAR-10Y-2026-11-03",
+    "label": "美国10年期国债 par 收益率（11月3日）",
+    "value": 4.95,
+    "unit": "%",
+    "asOf": "2026-11-03T21:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=202611"
+    ],
+    "kind": "macro",
+    "note": "11月2日为4.91%"
+   },
+   {
+    "id": "MACRO:US:UST-PAR-30Y-2026-11-03",
+    "label": "美国30年期国债 par 收益率（11月3日）",
+    "value": 5.32,
+    "unit": "%",
+    "asOf": "2026-11-03T21:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=202611"
+    ],
+    "kind": "macro",
+    "note": "11月2日为5.28%"
+   },
+   {
+    "id": "MACRO:US:UST-PAR-2S10S-2026-11-03",
+    "label": "美国2s10s 期限价差（par，11月3日）",
+    "value": 34,
+    "unit": "bp",
+    "asOf": "2026-11-03T21:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=202611"
+    ],
+    "kind": "macro",
+    "note": "10Y 4.95 减 2Y 4.61，前一日+32bp"
+   },
+   {
+    "id": "MACRO:WORLD:GOLD-SPOT-CLOSE-2026-11-03",
+    "label": "现货黄金纽约尾盘价",
+    "value": 3930.1,
+    "unit": "USD/oz",
+    "asOf": "2026-11-03T22:19:11Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637320.html"
+    ],
+    "kind": "macro",
+    "note": "跌0.42%；现货白银49.78美元（-1.7%）"
+   },
+   {
+    "id": "MACRO:WORLD:GOLD-COMEX-CLOSE-2026-11-03",
+    "label": "COMEX黄金期货收盘",
+    "value": 3940.2,
+    "unit": "USD/oz",
+    "asOf": "2026-11-03T22:11:39Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637318.html"
+    ],
+    "kind": "macro",
+    "note": "跌0.74%"
+   },
+   {
+    "id": "MACRO:WORLD:SILVER-COMEX-CLOSE-2026-11-03",
+    "label": "COMEX白银期货收盘",
+    "value": 49.81,
+    "unit": "USD/oz",
+    "asOf": "2026-11-03T22:11:39Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637318.html"
+    ],
+    "kind": "macro",
+    "note": "跌2.12%，跌幅大于黄金"
+   },
+   {
+    "id": "MACRO:CN:CNH-CLOSE-2026-11-03",
+    "label": "离岸人民币纽约收盘",
+    "value": 6.6704,
+    "unit": "CNY/USD",
+    "asOf": "2026-11-03T22:19:15Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637321.html"
+    ],
+    "kind": "macro",
+    "note": "当地时间11月3日跌232个基点"
+   },
+   {
+    "id": "MACRO:US:AMD-AH-GAIN-2026-11-03",
+    "label": "AMD 11月3日盘后最大涨幅",
+    "value": 14,
+    "unit": "%",
+    "asOf": "2026-11-03T22:30:02Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637325.html"
+    ],
+    "kind": "research",
+    "note": "盘后一度报555美元；常规收盘483.90美元"
+   },
+   {
+    "id": "MACRO:US:ES-FUT-2026-11-04",
+    "label": "标普500指数期货11月4日亚市早盘涨幅",
+    "value": 0.2,
+    "unit": "%",
+    "asOf": "2026-11-03T23:01:44Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637336.html"
+    ],
+    "kind": "macro",
+    "note": "纳指期货同期涨0.4%"
+   },
+   {
+    "id": "PROP:US:ISRAEL-AID-END-2026",
+    "label": "美国每年对以色列安全援助规模",
+    "value": 40,
+    "unit": "USD bn",
+    "asOf": "2026-11-03T22:32:04Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637326.html"
+    ],
+    "kind": "policy",
+    "note": "特朗普称将于今年年底结束；现行协议约38亿美元/年、有效期至2028年"
+   },
+   {
+    "id": "MACRO:WORLD:ICJ-JUDGES-2026",
+    "label": "联合国大会与安理会新选出的国际法院法官人数",
+    "value": 5,
+    "unit": "名",
+    "asOf": "2026-11-03T22:41:48Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637328.html"
+    ],
+    "kind": "macro",
+    "note": "任期九年，自2027年2月6日起"
+   },
+   {
+    "id": "FLOW:CN:FOF-ALLOC-2026Q3",
+    "label": "FOF三季度底仓结构变化（定性）",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-03T22:48:19Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637330.html"
+    ],
+    "kind": "flow",
+    "note": "债券ETF取代部分纯债基金成核心底仓，黄金主题配置回升，科创主题降温"
+   },
+   {
+    "id": "RESEARCH:HK:FUND-POSITION-2026Q3",
+    "label": "主动偏股公募基金港股仓位调整（定性）",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-03T23:02:06Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4637337.html"
+    ],
+    "kind": "research",
+    "note": "三季度加仓医药生物、减仓半导体等科技硬件；相对基准仍低配"
+   },
+   {
+    "id": "PROP:US:BEA-TRADE-2026-11-04",
+    "label": "BEA 9月国际贸易数据发布时点",
+    "value": null,
+    "unit": "time",
+    "asOf": "2026-11-03T23:10:30Z",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ],
+    "kind": "calendar",
+    "note": "11月4日08:30 ET，即13:30 UTC"
+   },
+   {
+    "id": "PROP:US:EIA-WPS-2026-11-04",
+    "label": "EIA 周度石油状况报告发布时点",
+    "value": null,
+    "unit": "time",
+    "asOf": "2026-11-03T23:10:30Z",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ],
+    "kind": "calendar",
+    "note": "常规周三10:30 ET，即15:30 UTC"
+   },
+   {
+    "id": "PROP:US:FOMC-NEXT-2026-12-08",
+    "label": "美联储下一次议息会议日期",
+    "value": null,
+    "unit": "date",
+    "asOf": "2026-11-03T23:10:30Z",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ],
+    "kind": "calendar",
+    "note": "12月8—9日，含经济预测摘要（SEP）"
+   }
+  ],
+  "macroEvents": [
+   {
+    "id": "BEA-TRADE-2026-11-04",
+    "title": "BEA 发布9月国际贸易数据",
+    "at": "2026-11-04T13:30:00Z",
+    "region": "US",
+    "importance": "high",
+    "note": "官方日程为11月4日08:30 ET（13:30 UTC）；关注商品贸易逆差与对华分项。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   },
+   {
+    "id": "EIA-WPSR-2026-11-04",
+    "title": "EIA 发布周度石油状况报告",
+    "at": "2026-11-04T15:30:00Z",
+    "region": "US",
+    "importance": "high",
+    "note": "常规周三10:30 ET（15:30 UTC）；API 前值显示原油大幅去库，需以EIA官方口径确认。",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ]
+   },
+   {
+    "id": "FOMC-2026-12-08",
+    "title": "美联储12月议息会议（含SEP）",
+    "at": null,
+    "region": "US",
+    "importance": "high",
+    "note": "12月8—9日举行，具体声明时点未在本轮日程页给出，按惯例为第二日19:00 UTC，未写入精确时刻。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   }
+  ],
+  "events": [
+   {
+    "id": "EV-BEA-TRADE-2026-11-04",
+    "title": "13:30 UTC BEA 9月贸易帐",
+    "at": "2026-11-04T13:30:00Z",
+    "window": "未来12小时",
+    "why": "验证美国外需与逆差，直接影响美元与长端。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   },
+   {
+    "id": "EV-EIA-WPSR-2026-11-04",
+    "title": "15:30 UTC EIA 周度石油库存",
+    "at": "2026-11-04T15:30:00Z",
+    "window": "未来12小时",
+    "why": "API 大幅去库能否被官方数据确认，决定油价方向。",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ]
+   },
+   {
+    "id": "EV-FOMC-2026-12-08",
+    "title": "12月8—9日 FOMC（含SEP）",
+    "at": null,
+    "window": "未来5周",
+    "why": "CME 已给12月加息78.9%，看点转向点阵图。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   }
+  ],
+  "researchRecords": [],
+  "researchChecks": [],
+  "researchPendingQueue": [
+   {
+    "instrumentId": "EQUITY:US:AMD",
+    "reason": "本轮只有每经快讯的盘后涨幅与前期财报摘要，未取得AMD投资者关系页或SEC 8-K原文，需补一次原文核验。"
+   }
+  ]
+ }
+}
