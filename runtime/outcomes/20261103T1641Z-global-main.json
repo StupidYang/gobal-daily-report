@@ -1,14 +1,31 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.report.methodology: 必须是非空字符串 [required]\neditorial.report.coreAnalysis: 必须是对象 [type]\neditorial.report.plainLanguage: 必须是对象 [type]\neditorial.report.sectionGaps: 必须是对象 [type]\neditorial.report.frameworkAnalysis[0].concept: 必须提供非空concept（保留既有别名兼容） [required]\neditorial.report.frameworkAnalysis[0].observed: 必须提供非空observed（保留既有别名兼容） [required]\neditorial.report.frameworkAnalysis[0].conclusion: 框架缺少名称或结论：conclusion必须是非空字符串 [required]\neditorial.report.frameworkAnalysis[1].concept: 必须提供非空concept（保留既有别名兼容） [required]\neditorial.report.frameworkAnalysis[1].observed: 必须提供非空observed（保留既有别名兼容） [required]\neditorial.report.frameworkAnalysis[1].conclusion: 框架缺少名称或结论：conclusion必须是非空字符串 [required]\neditorial.report.frameworkAnalysis[2].concept: 必须提供非空concept（保留既有别名兼容） [required]\neditorial.report.frameworkAnalysis[2].observed: 必须提供非空observed（保留既有别名兼容） [required]\neditorial.report.frameworkAnalysis[2].conclusion: 框架缺少名称或结论：conclusion必须是非空字符串 [required]\neditorial.report.frameworkAnalysis[3].concept: 必须提供非空concept（保留既有别名兼容） [required]\neditorial.report.frameworkAnalysis[3].observed: 必须提供非空observed（保留既有别名兼容） [required]\neditorial.report.frameworkAnalysis[3].conclusion: 框架缺少名称或结论：conclusion必须是非空字符串 [required]",
+  "issues": [
+    "editorial.report.methodology: 必须是非空字符串 [required]",
+    "editorial.report.coreAnalysis: 必须是对象 [type]",
+    "editorial.report.plainLanguage: 必须是对象 [type]",
+    "editorial.report.sectionGaps: 必须是对象 [type]",
+    "editorial.report.frameworkAnalysis[0].concept: 必须提供非空concept（保留既有别名兼容） [required]",
+    "editorial.report.frameworkAnalysis[0].observed: 必须提供非空observed（保留既有别名兼容） [required]",
+    "editorial.report.frameworkAnalysis[0].conclusion: 框架缺少名称或结论：conclusion必须是非空字符串 [required]",
+    "editorial.report.frameworkAnalysis[1].concept: 必须提供非空concept（保留既有别名兼容） [required]",
+    "editorial.report.frameworkAnalysis[1].observed: 必须提供非空observed（保留既有别名兼容） [required]",
+    "editorial.report.frameworkAnalysis[1].conclusion: 框架缺少名称或结论：conclusion必须是非空字符串 [required]",
+    "editorial.report.frameworkAnalysis[2].concept: 必须提供非空concept（保留既有别名兼容） [required]",
+    "editorial.report.frameworkAnalysis[2].observed: 必须提供非空observed（保留既有别名兼容） [required]",
+    "editorial.report.frameworkAnalysis[2].conclusion: 框架缺少名称或结论：conclusion必须是非空字符串 [required]",
+    "editorial.report.frameworkAnalysis[3].concept: 必须提供非空concept（保留既有别名兼容） [required]",
+    "editorial.report.frameworkAnalysis[3].observed: 必须提供非空observed（保留既有别名兼容） [required]",
+    "editorial.report.frameworkAnalysis[3].conclusion: 框架缺少名称或结论：conclusion必须是非空字符串 [required]"
+  ],
   "execution": {
     "executionId": "20261103T1641Z-global-main",
     "generation": 348
   },
   "deadlineAt": "2026-11-03T17:00:37.750Z",
   "requestId": "20261103T1641Z-global-main",
-  "at": "2026-11-03T16:40:53.531Z",
+  "at": "2026-11-03T16:44:09.103Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +36,104 @@
       "status": "ready-for-analysis",
       "at": "2026-11-03T16:40:53.531Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-03T16:44:09.103Z",
+      "revision": 0
     }
   ],
   "packetHash": "a8579a43ac677346cad302922eccd82354ebd471ca45eb7d4b878b12e31b38db",
-  "collectionDurationMs": 6255
+  "collectionDurationMs": 6255,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "ec12b6eac154b8d11bdb4d1e90d3642526ccbc2a710b426ffa04b9d0b1322102",
+  "validationIssues": [
+    {
+      "path": "editorial.report.methodology",
+      "code": "required",
+      "message": "必须是非空字符串"
+    },
+    {
+      "path": "editorial.report.coreAnalysis",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.plainLanguage",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.sectionGaps",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[0].concept",
+      "code": "required",
+      "message": "必须提供非空concept（保留既有别名兼容）"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[0].observed",
+      "code": "required",
+      "message": "必须提供非空observed（保留既有别名兼容）"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[0].conclusion",
+      "code": "required",
+      "message": "框架缺少名称或结论：conclusion必须是非空字符串"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[1].concept",
+      "code": "required",
+      "message": "必须提供非空concept（保留既有别名兼容）"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[1].observed",
+      "code": "required",
+      "message": "必须提供非空observed（保留既有别名兼容）"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[1].conclusion",
+      "code": "required",
+      "message": "框架缺少名称或结论：conclusion必须是非空字符串"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[2].concept",
+      "code": "required",
+      "message": "必须提供非空concept（保留既有别名兼容）"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[2].observed",
+      "code": "required",
+      "message": "必须提供非空observed（保留既有别名兼容）"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[2].conclusion",
+      "code": "required",
+      "message": "框架缺少名称或结论：conclusion必须是非空字符串"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[3].concept",
+      "code": "required",
+      "message": "必须提供非空concept（保留既有别名兼容）"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[3].observed",
+      "code": "required",
+      "message": "必须提供非空observed（保留既有别名兼容）"
+    },
+    {
+      "path": "editorial.report.frameworkAnalysis[3].conclusion",
+      "code": "required",
+      "message": "框架缺少名称或结论：conclusion必须是非空字符串"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261103T1641Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
