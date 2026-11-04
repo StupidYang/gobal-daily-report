@@ -1,14 +1,19 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.macroFacts[2].asOf: asOf不能在未来 [future-time]\neditorial.macroFacts[3].asOf: asOf不能在未来 [future-time]\neditorial.macroFacts[4].asOf: asOf不能在未来 [future-time]\neditorial.macroFacts[13].asOf: asOf不能在未来 [future-time]",
+  "issues": [
+    "editorial.macroFacts[2].asOf: asOf不能在未来 [future-time]",
+    "editorial.macroFacts[3].asOf: asOf不能在未来 [future-time]",
+    "editorial.macroFacts[4].asOf: asOf不能在未来 [future-time]",
+    "editorial.macroFacts[13].asOf: asOf不能在未来 [future-time]"
+  ],
   "execution": {
     "executionId": "20261104T1636Z-global-main",
     "generation": 369
   },
   "deadlineAt": "2026-11-04T16:58:18.097Z",
   "requestId": "20261104T1636Z-global-main",
-  "at": "2026-11-04T16:38:33.001Z",
+  "at": "2026-11-04T16:42:27.945Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +24,44 @@
       "status": "ready-for-analysis",
       "at": "2026-11-04T16:38:33.001Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-04T16:42:27.945Z",
+      "revision": 0
     }
   ],
   "packetHash": "83337e545973954958a435a0f28d623f9913d73c6a6ef4865c5a4967228b0ffa",
-  "collectionDurationMs": 4355
+  "collectionDurationMs": 4355,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "4ea703b7bead094e903ef2e08f1e1a29cf822a3eac5310aacb2e1b03e74741d6",
+  "validationIssues": [
+    {
+      "path": "editorial.macroFacts[2].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    },
+    {
+      "path": "editorial.macroFacts[3].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    },
+    {
+      "path": "editorial.macroFacts[4].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    },
+    {
+      "path": "editorial.macroFacts[13].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261104T1636Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
