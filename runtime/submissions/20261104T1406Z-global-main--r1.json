@@ -1,0 +1,1778 @@
+{
+ "execution": {
+  "executionId": "20261104T1406Z-global-main",
+  "generation": 367
+ },
+ "editorial": {
+  "packetHash": "f269b1ed7248206f0fb44ff0dc6731b61698e4b0cb6bf77679b9da5a4afdf0e4",
+  "analyzedAt": "2026-11-04T14:11:48Z",
+  "report": {
+   "overview": "美国中期选举结果落地后的第二个交易时段，全球风险资产出现明显分层而不是齐涨：欧洲股市盘中涨2%，A股以2.04万亿元成交、超4600只个股上涨完成超跌修复，但美股盘前AI算力链集体走弱、纳指100期货抹去涨幅转跌，WTI一度跌3%至93.2美元，黄金站上4043美元。同日发布的美国9月贸易逆差收窄至1050亿美元、10月ADP新增8.6万人高于预期，宏观数据没有给出宽松理由，真正被重新定价的是政治结构，而不是增长。",
+   "rolling24hSummary": "过去24小时的变化集中在三处：一是美国政治结构，DDHQ测算民主党以53席夺回参议院、225席夺回众议院，得州、俄亥俄等数据中心重镇易主，AI基础设施的监管折价第一次被单独定价；二是利率与美元，10年期美债收益率回落至4.927%、美元指数跌0.51%至101.345，久期资产与贵金属同向受益；三是A股的量能与结构，成交额从1.70万亿元放大到2.04万亿元，半导体设备与创新药成为主攻方向，食品饮料、煤炭、银行等防御方向逆势下跌。原油是唯一与股票背离的大类资产，WTI 93.5美元、日内跌2.70%，供给端没有新增冲击，跌的是需求预期与地缘溢价。",
+   "methodology": "本轮为2026-11-04 UTC 14:06 执行的global-main小时报（第367代，packetHash f269b1ed7248206f0fb44ff0dc6731b61698e4b0cb6bf77679b9da5a4afdf0e4），采集耗时4.8秒，20份文档全部contentRetrieved。行情取本轮packet的71项观测：A股、港股为11月4日收盘快照，美股为11月3日收盘，欧洲为13:51Z盘中，加密与贵金属为14:06Z即时快照。指数涨跌幅以媒体收盘口径为准，供应商对沪深两市涨跌幅的基准存在偏差（上证给+1.32%、深证给+2.95%，实际为+2.16%与+4.22%），本轮只用点位、不用其百分比。美债10年期取供应商13:51Z的4.927%，两年期供应商无值（partial），改用财政部11月3日平价曲线4.61%，故2s10s以par口径计为34bp。布伦特供应商连续返回404，油价只用WTI与媒体口径，属已知缺口。事实ID全部使用业务前缀，未构造任何EQUITY冻结前缀的衍生事实。",
+   "coreAnalysis": {
+    "mainTheme": "政治结构重定价：分裂政府压低长端利率与监管不确定性溢价，但同时抬高AI基础设施与能源的地缘与政策折价。",
+    "expectationGap": "市场共识把民主党横扫读成全面risk-on，本轮盘前给出的答案是分层：受财政与折现率驱动的久期资产（创新药、黄金、欧洲股票）受益，受监管与资本开支驱动的AI算力链（CoreWeave -9.6%、Nebius -6.4%、甲骨文 -5%）反而被卖出。",
+    "divergence": "三组背离同时存在：欧洲股市+2%对美股期指转跌；亚马逊+3.62%、苹果+2.65%对英伟达-1.33%、台积电-1.26%；A股2.04万亿元放量长阳对WTI日内-2.70%。",
+    "regime": "加息周期中的政策空窗期，10月美联储按兵不动，市场对后续路径的定价仍在修复；财政扩张受限的预期先于实际立法落地，因此本轮是预期交易而非基本面交易。",
+    "priceIn": "已计入：民主党夺回两院的概率、AI监管风险的部分折价、A股超跌与宽基资金持续流入。未计入：预算与债务上限的实际摩擦、数据中心州级许可的具体收紧条款、9月贸易逆差收窄对四季度GDP的贡献度。",
+    "bullCase": "分裂政府压制长端利率、美元走弱、AI资本开支订单未被打断，A股与港股在增量资金推动下延续修复，黄金在央行买盘支撑下站稳4000美元上方。",
+    "bullInvalidation": "若10年期美债收益率重新站上5.0%、美元指数反弹回102上方，或纳指100期货在现货开盘后继续走弱并跌破前低，则修复叙事失效。",
+    "bearCase": "监管预期从州级许可扩散到联邦层面的算力与电力约束，AI资本开支的估值分母被同时抬高，叠加原油跌破90美元确认需求端走弱，风险资产回到9月的调整节奏。",
+    "bearInvalidation": "若EIA周报显示原油与成品油库存同步去化、WTI重新站上96美元，且费城半导体指数在现货开盘后转正，则需求走弱的判断被否证。"
+   },
+   "plainLanguage": {
+    "verdict": "这一小时的核心不是涨，而是谁在涨、谁被卖：钱从AI算力租赁和油气流向创新药、黄金、欧洲股票和A股宽基。",
+    "bottomLine": "民主党拿下两院，市场先交易两件事：财政扩张受限意味着长期国债供给压力下降，利率与美元走弱；同时数据中心密集州的易主意味着AI基建的审批与监管风险上升。前者利好久期长的资产，后者打击靠融资扩张的算力租赁公司。",
+    "whyNow": "因为这是选举结果落地后的第一个完整定价窗口，且同一天有9月贸易帐与10月ADP两个硬数据落地，可以区分政治交易与基本面交易。",
+    "horizon": "未来1至2个交易日看美股现货开盘后AI算力链能否止跌；未来2至4周看预算与债务上限议题的实际推进；未来1至3个月看数据中心州级许可与电价政策的具体文本。",
+    "confidence": "中等偏高：政治结果与盘前价格方向一致；但现货开盘尚未发生，分层能否延续需盘中确认。",
+    "invalidation": "纳指100期货在14:30Z现货开盘后转正且CoreWeave收复半数跌幅，说明监管折价只是盘前流动性噪音；或10年期美债收益率重回5.0%上方，说明利率红利已被透支。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "偏多，但结构分化",
+      "reason": "成交额放大至2.04万亿元、超4600只上涨，半导体设备与创新药领涨，宽基ETF 11月3日净流入801.9亿元提供承接。",
+      "takeaway": "跟随增量资金的方向，而不是跟随指数点位；防御方向逆势下跌说明这是高低切换而非全面牛市。",
+      "horizon": "1至4周",
+      "evidenceFactIds": [
+       "FLOW:CN:TURNOVER-2026-11-04",
+       "FLOW:CN:BREADTH-2026-11-04",
+       "FLOW:CN:WIDE-ETF-2026-11-03",
+       "INDEX:CN:SSE",
+       "INDEX:CN:STAR50"
+      ],
+      "risk": "若成交额回落至1.7万亿元下方，超跌修复会迅速转为存量博弈。",
+      "invalidation": "连续两个交易日成交额低于1.7万亿元且涨停家数收缩至50只以下。"
+     },
+     {
+      "asset": "港股",
+      "effect": "偏多，弹性大于A股",
+      "reason": "恒生生物科技指数盘中涨8.08%，港股对美元流动性更敏感，美元指数跌0.51%直接改善折现率。",
+      "takeaway": "港股是这轮利率交易的放大器，涨得快也意味着对通胀与联储表态更敏感。",
+      "horizon": "1至3周",
+      "evidenceFactIds": [
+       "FLOW:HK:BIOTECH-2026-11-04",
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH",
+       "FX:DXY"
+      ],
+      "risk": "南向资金若转为净卖出，港股的流动性溢价会先消失。",
+      "invalidation": "恒生科技指数连续两日跑输恒指且南向净卖出超过50亿港元。"
+     },
+     {
+      "asset": "美股",
+      "effect": "分化，指数中性、AI算力链偏空",
+      "reason": "11月3日标普涨0.36%、纳指涨0.83%，但11月4日盘前CoreWeave跌9.6%、甲骨文跌超5%、纳指100期货转跌，权重股内部方向相反。",
+      "takeaway": "不要用指数表达观点，这一轮的多空都在成分股层面。",
+      "horizon": "1至3个交易日",
+      "evidenceFactIds": [
+       "INDEX:US:SP500",
+       "INDEX:US:NDX",
+       "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04",
+       "VOL:VIX"
+      ],
+      "risk": "若VIX在现货开盘后重新升破22，盘前的分层会演变为全面去风险。",
+      "invalidation": "费城半导体指数在现货开盘后收涨且CoreWeave跌幅收窄至3%以内。"
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性偏多，但缺乏内部驱动",
+      "reason": "BTC报78256.27美元，24小时基本走平；Riot Platforms盘前一度跌超6%后大涨超20%，说明加密股票在交易自身的资产负债表事件而非币价。",
+      "takeaway": "BTC这一轮跟随的是美元与实际利率，而不是选举叙事；把它当成流动性资产而非政治资产。",
+      "horizon": "1至2周",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "CRYPTO:ETH:USD",
+       "FX:DXY",
+       "RATE:US10Y"
+      ],
+      "risk": "加密原生资金流数据缺失，无法判断上涨是否由杠杆推动。",
+      "invalidation": "美元指数反弹回102上方而BTC同步跌破76000美元。"
+     },
+     {
+      "asset": "黄金",
+      "effect": "偏多",
+      "reason": "现货金4043.60美元、现货银52.128美元，金银比77.6；三季度全球央行净购金321吨、同比增42%，官方买盘构成托底。",
+      "takeaway": "这轮金价由利率下行与央行买盘双驱动，而不是避险；因此它对地缘新闻的敏感度低于对实际利率的敏感度。",
+      "horizon": "1至3个月",
+      "evidenceFactIds": [
+       "METAL:XAUUSD",
+       "METAL:XAGUSD",
+       "MACRO:GOLD:CB-BUY-Q3-2026",
+       "RATE:US10Y",
+       "FX:DXY"
+      ],
+      "risk": "若10年期实际利率重新上行，金价在4000美元上方的估值缺乏支撑。",
+      "invalidation": "现货金连续两日收于3950美元下方且金银比升破82。"
+     },
+     {
+      "asset": "原油",
+      "effect": "偏空",
+      "reason": "WTI 93.5美元、日内跌2.70%，盘中一度跌3%至93.207美元；布伦特供应商404，无法交叉验证价差。",
+      "takeaway": "跌的是需求预期与地缘溢价，不是供给；以色列组阁僵局没有转化为供应中断。",
+      "horizon": "1至2周",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "PROP:IL:ELECTION-2026"
+      ],
+      "risk": "霍尔木兹通航若再度受阻，当前的空头结构会瞬间反转。",
+      "invalidation": "WTI重新站上96美元且EIA周报显示原油库存超预期去化。"
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "partial",
+     "detail": "六大指数、成交额、涨跌家数与行业涨幅齐全；缺两融余额、北向单日净买卖与全市场涨跌中位数。",
+     "asOf": "2026-11-04T07:00:00Z"
+    },
+    {
+     "market": "港股",
+     "status": "partial",
+     "detail": "恒指、恒科、国企指数收盘齐全；恒生生物科技涨幅来自媒体口径；南向资金本轮未取得，港交所域名按授权限制未采集。",
+     "asOf": "2026-11-04T08:08:34Z"
+    },
+    {
+     "market": "美股",
+     "status": "partial",
+     "detail": "11月3日现货收盘指数与41只个股候选齐全，11月4日仅有盘前与期指的快讯口径，无现货成交数据。",
+     "asOf": "2026-11-03T21:30:13Z"
+    },
+    {
+     "market": "BTC",
+     "status": "partial",
+     "detail": "BTC、ETH、SOL、HYPE、PEPE即时快照齐全，无涨跌幅基准、无资金费率、无ETF申赎与链上数据。",
+     "asOf": "2026-11-04T14:06:37Z"
+    },
+    {
+     "market": "黄金",
+     "status": "ok",
+     "detail": "现货金4043.60、现货银52.128同时取得，金银比可算；缺COMEX期货升水与CFTC持仓。",
+     "asOf": "2026-11-04T14:06:29Z"
+    },
+    {
+     "market": "原油",
+     "status": "partial",
+     "detail": "WTI 93.5美元取得；布伦特供应商连续返回404，无法计算价差与月差，裂解价差无数据。",
+     "asOf": "2026-11-04T13:56:38Z"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "snapshot": "上证3686.173、深证11335.687、创业板2544.73、科创50 1265.4717、沪深300 4101.335、中证500 6622.029；媒体口径涨2.16%、4.22%、6.40%、9.92%、2.31%、4.66%",
+     "status": "放量长阳",
+     "judgment": "超跌修复叠加宽基增量资金，结构上偏向半导体设备、创新药与有色",
+     "asOf": "2026-11-04T07:00:29Z",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:STAR50",
+      "FLOW:CN:TURNOVER-2026-11-04"
+     ]
+    },
+    {
+     "asset": "港股",
+     "snapshot": "恒指23919.5、恒生科技3936.02、国企指数8057.59",
+     "status": "同步上行",
+     "judgment": "美元走弱下的折现率交易，生物科技弹性最大",
+     "asOf": "2026-11-04T08:08:34Z",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "FLOW:HK:BIOTECH-2026-11-04"
+     ]
+    },
+    {
+     "asset": "美股",
+     "snapshot": "11月3日收盘：标普7568.92(+0.36%)、纳指25372.01(+0.83%)、纳指100 28180.264(+0.68%)、道指51786.72(-0.38%)、罗素2812.447(+0.23%)、VIX 18.14",
+     "status": "现货收盘偏强、盘前分化",
+     "judgment": "指数层面中性，AI算力租赁与存储是空头集中区",
+     "asOf": "2026-11-03T21:30:13Z",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "VOL:VIX"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "snapshot": "78256.27美元，ETH 2315.57、SOL 92.76、HYPE 84.19",
+     "status": "窄幅",
+     "judgment": "跟随美元与实际利率，无独立叙事",
+     "asOf": "2026-11-04T14:06:37Z",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "snapshot": "现货金4043.60、现货银52.128，金银比77.6",
+     "status": "高位修复",
+     "judgment": "央行买盘加利率下行双支撑，4000美元上方需要实际利率配合",
+     "asOf": "2026-11-04T14:06:29Z",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "MACRO:GOLD:CB-BUY-Q3-2026"
+     ]
+    },
+    {
+     "asset": "原油",
+     "snapshot": "WTI 93.5美元、日内-2.70%，盘中最低口径93.207",
+     "status": "走弱",
+     "judgment": "需求预期主导，供给端无新增中断",
+     "asOf": "2026-11-04T13:56:38Z",
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "analysis": "11月4日沪深两市以2.04万亿元成交、超4600只个股上涨收出放量长阳，上证涨2.16%至3686.173，创业板涨6.40%、科创50涨9.92%，风格上成长远强于价值。与之对照的是食品饮料、煤炭、石油石化、银行逆势回调，说明资金是在高低切换而不是全面加仓。触发链条清晰：民主党夺回两院的预期在午后落地，外部政治不确定性下降；11月3日主要宽基ETF单日净流入801.9亿元、9月28日以来累计4583亿元，为反弹提供承接；产业端AMD三季度数据中心收入同比增97%，费城半导体指数涨2.64%，映射到国内的半导体设备与通信。",
+     "mechanism": "机制是分母端与增量资金的双击：长端美债收益率回落压低成长股折现率，宽基ETF的被动买入提供无差别承接，两者叠加使高beta的科创方向弹性最大。风险在于这种组合对量能高度依赖——2.04万亿元是情绪修复的结果而非原因。",
+     "risk": "一是成交额若回落，高低切换会立刻变成存量博弈，涨停板结构会快速恶化；二是数据中心州选举结果带来的AI监管预期可能反向压制半导体叙事；三是三季报后到年报前的业绩真空期，估值扩张缺乏基本面验证。",
+     "invalidation": "若连续两个交易日成交额低于1.7万亿元、且科创50相对沪深300的超额收益转负，则本轮修复定性错误。",
+     "horizon": "短期1至2周看量能能否维持在1.8万亿元上方，中期1至3个月看半导体设备订单与创新药出海节点的兑现。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "FLOW:CN:TURNOVER-2026-11-04",
+      "FLOW:CN:BREADTH-2026-11-04",
+      "FLOW:CN:WIDE-ETF-2026-11-03"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4638626.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4638620.html"
+     ]
+    },
+    {
+     "asset": "港股",
+     "analysis": "恒指收23919.5、恒生科技3936.02、国企指数8057.59，生物科技是最锐利的方向：恒生生物科技指数盘中涨8.08%，科创创新药ETF跟踪指数涨7.05%，港股弹性明显大于A股同类。原因不在基本面突变，而在折现率——港股对美元流动性更敏感，美元指数跌0.51%至101.345、10年期美债收益率回落至4.927%，长久期资产的估值分母直接下移。政策端还有一层预期：民主党主张把关税决定权交还国会、恢复平价医疗法案保费补贴，对外需占比高的CXO与创新药构成风险溢价改善。",
+     "mechanism": "港股是美元流动性的高杠杆映射：同样的无风险利率下行，在港元联系汇率下会以更大幅度反映到成长股估值上，因此同一消息港股的涨幅通常是A股的1.2至1.5倍，回撤时也一样。",
+     "risk": "一是南向资金的持续性未在本轮取得验证，若转为净卖出，流动性溢价先消失；二是估值修复的持续性取决于后续通胀与联储表态，10月按兵不动不等于路径确定；三是总统否决权仍在，关税与医保的政策链只是预期层面松动。",
+     "invalidation": "若恒生科技连续两日跑输恒指、且美元指数反弹回102上方，则折现率交易结束。",
+     "horizon": "1至3周，围绕美元与美债收益率的每一次反弹都是压力测试。",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "FLOW:HK:BIOTECH-2026-11-04",
+      "FX:DXY",
+      "RATE:US10Y",
+      "RESEARCH:CN:SKB264-PDUFA-2027"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4638615.html"
+     ]
+    },
+    {
+     "asset": "美股",
+     "analysis": "11月3日现货收盘偏强：标普7568.92涨0.36%、纳指25372.01涨0.83%、纳指100 28180.264涨0.68%，道指跌0.38%、罗素2000涨0.23%，VIX回落至18.14。11月4日盘前则出现明确分层：亚马逊涨3.62%、苹果涨2.65%、微软涨2.59%，而英伟达跌1.33%、台积电跌1.26%，CoreWeave跌9.6%、Nebius跌6.4%、甲骨文跌超5%，纳指100期货抹去涨幅转跌。选举结果对两类公司的含义相反：财政扩张受限利多现金流稳定的权重股，数据中心密集州易主则抬升算力租赁的审批与监管成本。",
+     "mechanism": "机制是监管折价的重新定价：算力租赁公司的估值建立在持续融资扩张的假设上，州级许可与电价审批是这条链条最脆弱的环节；权重科技股的现金流对监管不敏感，反而受益于利率下行，于是指数被两股力量对冲成横盘。",
+     "risk": "一是盘前流动性薄，9.6%的跌幅可能在现货开盘后大幅收窄，方向未必延续；二是存储芯片股跌逾2%与前一日涨价叙事矛盾，说明景气交易开始出现分歧；三是若VIX重新升破22，分层会演变为全面去风险。",
+     "invalidation": "费城半导体指数在现货开盘后收涨、且CoreWeave跌幅收窄至3%以内，则监管折价的判断被否证。",
+     "horizon": "1至3个交易日验证盘前方向，1至3个月看州级许可与联邦电力政策文本。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "INDEX:US:RUSSELL2000",
+      "VOL:VIX",
+      "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4638604.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4638607.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4638654.html"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "analysis": "BTC报78256.27美元、ETH 2315.57、SOL 92.76、HYPE 84.19，24小时基本走平，没有跟随A股与欧洲股票的风险偏好上行。同期加密相关股票却在剧烈分化：Riot Platforms盘前一度跌超6%后大涨超20%，说明个股在交易自身的资产负债表与算力事件，而不是币价。BTC本轮的相关性对象是美元与实际利率——美元指数跌0.51%、10年期收益率回落至4.927%，但币价没有给出对应弹性，意味着边际买盘不足。",
+     "mechanism": "机制是流动性传导的时滞：美元走弱通常领先BTC 1至3个交易日，本轮处于传导的中间段；同时缺少现货ETF净申赎与资金费率数据，无法判断推动力来自杠杆还是现货。",
+     "risk": "一是无加密原生资金流与链上数据，任何关于持仓结构的判断都是低置信度；二是加密股票的高波动会放大情绪，但不构成币价的方向证据；三是若美元反弹，BTC缺乏独立的上涨理由。",
+     "invalidation": "若美元指数反弹回102上方而BTC仍能站上80000美元，说明存在独立的现货买盘，当前判断需上修。",
+     "horizon": "1至2周，跟随美元与实际利率的传导窗口。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "FX:DXY",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4638648.html"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "analysis": "现货金4043.60美元、现货银52.128美元，金银比77.6，白银相对黄金仍偏强。驱动来自两端：利率端，10年期美债收益率回落至4.927%、美元指数跌0.51%，实际利率与计价货币同时利多；实物端，世界黄金协会数据显示三季度全球央行及官方机构净购金321吨、同比增42%，创2024年四季度以来单季新高。国内夜盘同步反映，沪银涨超4%、沪金涨2.08%。上周五伦敦金一度跌破3900美元创7月以来新低后快速收复，3900至4000美元一带被市场当作支撑带。",
+     "mechanism": "机制是官方买盘提供价格下限、利率下行提供弹性：央行购金对价格不敏感，压缩了下跌空间；而投机盘根据实际利率调整仓位，决定了上行斜率。两者叠加时金价表现为低波动上行。",
+     "risk": "一是金价在4000美元上方已计入较多降息与弱美元预期，若通胀反弹迫使联储转鹰，回撤会很快；二是白银的工业属性使其在需求走弱时跌幅更大，金银比可能反向扩张；三是本轮未取得COMEX期货升水与CFTC持仓，无法验证投机仓位是否拥挤。",
+     "invalidation": "现货金连续两日收于3950美元下方、且金银比升破82，说明官方买盘不足以对冲投机撤离。",
+     "horizon": "1至3个月，围绕实际利率与央行购金节奏。",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "MACRO:GOLD:CB-BUY-Q3-2026",
+      "RATE:US10Y",
+      "FX:DXY"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4638619.html"
+     ]
+    },
+    {
+     "asset": "原油",
+     "analysis": "WTI报93.5美元、日内跌2.70%，盘中跌幅一度扩大至3%报93.207美元，是主要大类资产中唯一与股票方向相反的品种。供给侧本轮没有新增中断证据：以色列中央选举委员会公布结果，执政阵营53席、反对派48席、阿拉伯裔政党19席，均未达61席组阁门槛，组阁前景不确定，但并未转化为供应事件。需求侧则同时收到两份偏弱信号：美国9月贸易逆差收窄至1050亿美元、进口增速仅1.2%，以及10月ADP新增8.6万人虽高于预期但前值被下修至9万人。",
+     "mechanism": "机制是地缘溢价回吐叠加需求预期下修：选举与组阁的不确定性没有带来供应中断，前期计入的风险溢价被平掉；而进口与就业数据指向的全球需求斜率偏平，使曲线前端承压。",
+     "risk": "一是布伦特供应商连续返回404，无法用价差与月差验证是普跌还是WTI独弱；二是霍尔木兹通航风险并未消除，任何航运事件都会让当前空头结构瞬间反转；三是EIA周报在15:30Z发布，库存若超预期去化会直接打脸需求走弱的判断。",
+     "invalidation": "WTI重新站上96美元、且EIA周报显示原油与成品油库存同步去化，则需求端判断错误。",
+     "horizon": "1至2周，先看15:30Z的EIA周报，再看12月8至9日FOMC前的需求数据。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "PROP:IL:ELECTION-2026",
+      "MACRO:US:TRADE-DEFICIT-SEP2026",
+      "MACRO:US:ADP-OCT2026"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-04/4638660.html",
+      "https://www.nbd.com.cn/articles/2026-11-04/4638618.html",
+      "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "framework": "A 政治周期与市场结构",
+     "concept": "分裂政府的历史收益分布",
+     "observed": "DDHQ测算民主党以53席夺回参议院、225席夺回众议院，为二战后第四次同届两院同时易主；历史上15个分治样本中14次标普500一年后为正、平均涨15%。",
+     "conclusion": "历史统计支持中期偏多，但样本的驱动来自政策僵局压低波动，而非盈利加速，因此不能直接外推为本轮的方向判断。",
+     "applicability": "适用于12个月维度的仓位中枢，不适用于小时级别的方向交易。",
+     "mechanism": "立法僵局降低政策不确定性，风险溢价下行；同时财政扩张受限压低长端利率。",
+     "premise": "分治格局能够维持到下一次选举，且不出现债务上限等技术性违约事件。",
+     "counterEvidence": "2011年与2023年的债务上限对峙均发生在分治期，两次都伴随波动率跳升。",
+     "horizon": "6至12个月",
+     "invalidation": "若预算与债务上限谈判在年内破裂，历史统计的适用性失效。",
+     "evidenceFactIds": [
+      "PROP:US:ELECTION-SENATE-2026",
+      "PROP:US:ELECTION-RED-STATES-2026",
+      "RESEARCH:US:DIVIDED-GOV-HISTORY"
+     ]
+    },
+    {
+     "framework": "B 利率与久期",
+     "concept": "长端收益率下行对成长股估值的传导",
+     "observed": "10年期美债收益率13:51Z报4.927%、日内跌0.50%，美元指数101.345跌0.51%，同期恒生生物科技涨8.08%、A股创业板涨6.40%。",
+     "conclusion": "折现率下行是成长股反弹的必要条件，但本轮A股与港股的涨幅远超利率变动所能解释的幅度，说明增量资金与情绪修复贡献了主要部分。",
+     "applicability": "适用于久期长、现金流远的资产：创新药、CXO、软件、贵金属。",
+     "mechanism": "无风险利率下降直接压低DCF分母，对远期现金流资产弹性最大。",
+     "premise": "通胀预期不反弹，联储路径不重新转鹰。",
+     "counterEvidence": "财政部par曲线显示11月3日2s10s为+34bp、较前一日走陡2bp，长端本身并未持续下行，日内回落更多是盘前交易。",
+     "horizon": "2至6周",
+     "invalidation": "10年期收益率重回5.0%上方并站稳。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "FX:DXY",
+      "INDEX:CN:CHINEXT",
+      "FLOW:HK:BIOTECH-2026-11-04",
+      "MACRO:US:UST-2S10S-2026-11-03"
+     ]
+    },
+    {
+     "framework": "C 监管与技术资本开支",
+     "concept": "数据中心密集州易主对AI基础设施的折价",
+     "observed": "民主党在得州、俄亥俄等数据中心重镇取得突破；11月4日盘前CoreWeave跌9.6%、Nebius跌6.4%、甲骨文跌超5%，而亚马逊涨3.62%、微软涨2.59%。",
+     "conclusion": "市场把监管风险定价在靠外部融资扩张的算力租赁商身上，而不是自建算力的超大规模云厂商，这一区分是本轮最重要的结构信息。",
+     "applicability": "适用于AI基础设施链条的个股选择，不适用于指数层面。",
+     "mechanism": "州级许可、电价与用地审批是算力扩张的瓶颈，监管收紧首先抬升租赁商的边际成本与融资溢价。",
+     "premise": "州级政策确实落地，且不出现联邦层面的统一豁免。",
+     "counterEvidence": "同日存储芯片股跌逾2%，与前一日涨价叙事矛盾，说明下跌可能同时包含景气分歧而非纯监管因素。",
+     "horizon": "1至3个月",
+     "invalidation": "CoreWeave在现货开盘后收复半数跌幅且费城半导体指数转正。",
+     "evidenceFactIds": [
+      "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04",
+      "PROP:US:ELECTION-RED-STATES-2026"
+     ]
+    },
+    {
+     "framework": "D 资金流与市场宽度",
+     "concept": "被动资金对超跌修复的放大效应",
+     "observed": "11月3日主要宽基ETF单日净流入801.9亿元，处历史前三；9月28日以来累计净流入约4583亿元，相当于流通市值的0.52%；11月4日成交额2.04万亿元、超4600只个股上涨。",
+     "conclusion": "本轮A股反弹的斜率由被动资金决定，宽度指标（4600只上涨）确认了普涨，但防御板块逆势下跌说明这不是全面风险偏好回升。",
+     "applicability": "适用于指数与宽基产品，不适用于单一行业轮动。",
+     "mechanism": "宽基ETF申购直接买入成分股，形成无差别承接，压缩下跌空间并放大反弹斜率。",
+     "premise": "净流入持续，且不出现大规模的止盈赎回。",
+     "counterEvidence": "累计净流入已相当于流通市值0.52%，边际增量若放缓，承接力会迅速衰减。",
+     "horizon": "2至8周",
+     "invalidation": "连续三个交易日宽基ETF净流出。",
+     "evidenceFactIds": [
+      "FLOW:CN:WIDE-ETF-2026-11-03",
+      "FLOW:CN:TURNOVER-2026-11-04",
+      "FLOW:CN:BREADTH-2026-11-04"
+     ]
+    },
+    {
+     "framework": "E 大宗商品与需求",
+     "concept": "贸易与就业数据对原油需求的指引",
+     "observed": "美国9月贸易逆差收窄至1050亿美元、进口仅增1.2%；10月ADP新增8.6万人高于预期但前值降至9万；WTI同日跌2.70%至93.5美元。",
+     "conclusion": "进口增速偏低与就业增量温和共同指向需求斜率偏平，油价的下跌有基本面支撑，不只是地缘溢价回吐。",
+     "applicability": "适用于原油与铜等需求敏感型商品。",
+     "mechanism": "进口量与就业增量是终端需求的领先指标，走弱会先反映在成品油裂解与炼厂开工上。",
+     "premise": "贸易数据未受关税前置或一次性因素扭曲。",
+     "counterEvidence": "9月出口增1.9%高于进口，逆差收窄也可能来自外部需求韧性而非内需走弱。",
+     "horizon": "1至2个月",
+     "invalidation": "EIA周报显示原油与成品油库存同步去化。",
+     "evidenceFactIds": [
+      "MACRO:US:TRADE-DEFICIT-SEP2026",
+      "MACRO:US:TRADE-IMPORTS-SEP2026",
+      "MACRO:US:ADP-OCT2026",
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "framework": "F 贵金属与官方买盘",
+     "concept": "央行购金对价格下限的支撑",
+     "observed": "三季度全球央行及官方机构净购金321吨、同比增42%，创2024年四季度以来单季新高；现货金4043.60美元，上周五跌破3900美元后快速收复。",
+     "conclusion": "官方买盘把3900美元变成了事实上的支撑带，金价的下行风险被压缩，但上行仍取决于实际利率。",
+     "applicability": "适用于黄金的中期配置判断。",
+     "mechanism": "央行购金对价格不敏感且规模稳定，构成刚性需求，减少流通供给。",
+     "premise": "央行购金节奏不因金价高企而显著放缓。",
+     "counterEvidence": "金价已在4000美元上方，若央行放缓采购，支撑带会下移。",
+     "horizon": "3至12个月",
+     "invalidation": "连续两个季度央行净购金同比下降。",
+     "evidenceFactIds": [
+      "MACRO:GOLD:CB-BUY-Q3-2026",
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "六个框架共同指向一个非对称结论：分母端（利率、美元、监管折价）在改善或重新定价，分子端（需求、盈利）没有同步改善，因此这是一轮估值修复而非周期反转。",
+    "agreement": "A、B、D三个框架一致认为政治僵局与利率下行利多久期资产与宽基指数；E与F一致认为商品内部分化，贵金属有官方买盘托底而原油缺乏需求支撑。",
+    "disagreement": "C与B存在张力：利率下行利多所有成长股，但监管折价专门打击算力租赁商，导致同为成长股的美股AI链与A股半导体出现方向差。",
+    "weighting": "本轮给B与C更高权重，因为它们是当日价格分层的直接解释；A的历史统计只用于校准仓位中枢；E的证据链最短（只有贸易与ADP两项），权重最低。",
+    "invalidation": "若10年期收益率重回5.0%上方而黄金与创新药同步走弱，则B失效；若CoreWeave收复半数跌幅且费城半导体转正，则C失效；任一失效都需要重写本轮的分层叙事。"
+   },
+   "watch": [
+    {
+     "point": "美股现货开盘后AI算力链能否止跌",
+     "detail": "重点看CoreWeave能否把9.6%的盘前跌幅收窄至3%以内、甲骨文能否收复5%跌幅；若两者同时失败，监管折价的判断成立。",
+     "evidenceFactIds": [
+      "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04"
+     ]
+    },
+    {
+     "point": "10年期美债收益率是否守住4.90%",
+     "detail": "13:51Z为4.927%，若上行突破5.0%，久期资产的估值支撑失效；若跌破4.85%，港股与创新药还有第二波。",
+     "evidenceFactIds": [
+      "RATE:US10Y"
+     ]
+    },
+    {
+     "point": "15:30Z EIA周报的库存方向",
+     "detail": "原油与成品油库存若同步去化，WTI的空头结构需要修正；若原油累库而汽油去库，说明是炼厂开工问题而非需求崩塌。",
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "point": "A股成交额能否维持在1.8万亿元上方",
+     "detail": "11月4日2.04万亿元是情绪修复的结果，若次日缩量至1.7万亿元下方，高低切换会转为存量博弈。",
+     "evidenceFactIds": [
+      "FLOW:CN:TURNOVER-2026-11-04"
+     ]
+    },
+    {
+     "point": "美元指数101关口的得失",
+     "detail": "101.345是当前水平，若失守101，黄金与新兴市场股票还有空间；若反弹回102，本轮折现率交易结束。",
+     "evidenceFactIds": [
+      "FX:DXY"
+     ]
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "2s10s利差",
+     "definition": "10年期与2年期美国国债收益率之差，本轮用财政部11月3日平价曲线计算为34bp，因供应商两年期报价缺失（partial）而改用par口径。"
+    },
+    {
+     "term": "金银比",
+     "definition": "现货金价除以现货银价，本轮4043.60除以52.128等于77.6，用于判断贵金属内部的风险偏好。"
+    },
+    {
+     "term": "宽基ETF净流入",
+     "definition": "跟踪沪深300、上证50、中证500、中证A500、科创50等主要宽基指数的ETF当日申购减赎回的金额合计，本轮11月3日为801.9亿元。"
+    },
+    {
+     "term": "盘前",
+     "definition": "美股常规交易时段（14:30Z开盘）之前的电子盘报价，流动性显著薄于现货，价格方向未必延续。"
+    },
+    {
+     "term": "分裂政府",
+     "definition": "国会至少一院由总统所属政党以外的政党控制，本轮指民主党夺回参众两院、共和党保有白宫。"
+    },
+    {
+     "term": "监管折价",
+     "definition": "因审批、许可或政策不确定性而对资产估值施加的折让，本轮特指数据中心密集州易主对算力租赁商的估值影响。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "title": "分层而非普涨",
+     "detail": "政治事件对不同商业模式的含义相反，本轮的价格证据是欧洲股票涨2%、美股期指转跌、AI算力租赁跌9.6%同时发生。",
+     "evidenceFactIds": [
+      "INDEX:EU:STOXX50",
+      "RESEARCH:EU:EQUITY-2026-11-04",
+      "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04"
+     ]
+    },
+    {
+     "title": "A股修复由被动资金主导",
+     "detail": "801.9亿元的单日净流入与4583亿元的累计净流入解释了反弹斜率，而不是盈利预期上修。",
+     "evidenceFactIds": [
+      "FLOW:CN:WIDE-ETF-2026-11-03"
+     ]
+    },
+    {
+     "title": "原油跌的是需求不是供给",
+     "detail": "以色列组阁僵局未转化为供应事件，而贸易与就业数据指向需求斜率偏平，WTI跌2.70%有基本面解释。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "PROP:IL:ELECTION-2026",
+      "MACRO:US:TRADE-IMPORTS-SEP2026"
+     ]
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "title": "上修A股修复的持续性",
+     "detail": "上一版（12:54Z）把A股定性为超跌反弹且对量能存疑；本轮成交额由1.70万亿元放大至2.04万亿元、宽度扩至4600只，修复的可持续性上修一档，但仍不认定为趋势反转。",
+     "evidenceFactIds": [
+      "FLOW:CN:TURNOVER-2026-11-04",
+      "FLOW:CN:BREADTH-2026-11-04"
+     ]
+    },
+    {
+     "title": "下修美股AI链的短期判断",
+     "detail": "上一版认为AMD财报验证了算力景气；本轮盘前CoreWeave跌9.6%、Nebius跌6.4%、甲骨文跌超5%，把AI链从景气验证下修为监管折价重定价，景气与估值首次分离。",
+     "evidenceFactIds": [
+      "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04"
+     ]
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "若CoreWeave收盘跌幅超过5%",
+     "effect": "确认监管折价叙事，美股AI链的估值中枢下移，A股半导体设备的映射关系会减弱。",
+     "evidenceFactIds": [
+      "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04"
+     ]
+    },
+    {
+     "title": "若EIA库存超预期去化",
+     "effect": "原油空头需要回补，WTI可能快速回到96美元上方，通胀预期随之反弹，压制久期资产。",
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "title": "若10年期收益率跌破4.85%",
+     "effect": "港股与创新药打开第二波空间，金银比可能进一步下行。",
+     "evidenceFactIds": [
+      "RATE:US10Y"
+     ]
+    }
+   ],
+   "metrics": [
+    {
+     "name": "沪深两市成交额",
+     "value": "2.04万亿元",
+     "note": "较上日1.70万亿元放量约3343亿元"
+    },
+    {
+     "name": "美国9月贸易逆差",
+     "value": "1050亿美元",
+     "note": "较8月修正值收窄7亿美元，同比降12.2%"
+    },
+    {
+     "name": "10年期美债收益率",
+     "value": "4.927%",
+     "note": "13:51Z供应商口径，日内跌0.50%"
+    },
+    {
+     "name": "金银比",
+     "value": "77.6",
+     "note": "现货金4043.60除以现货银52.128"
+    }
+   ],
+   "worldEvents": [
+    {
+     "title": "美国中期选举结果落地",
+     "detail": "民主党以53席夺回参议院、225席夺回众议院，杰弗里斯预计成为首位非洲裔众议长，特朗普表示将倚重否决权。",
+     "evidenceFactIds": [
+      "PROP:US:ELECTION-SENATE-2026"
+     ]
+    },
+    {
+     "title": "以色列议会选举结果正式公布",
+     "detail": "执政阵营53席、反对派48席、阿拉伯裔政党19席，均未达61席门槛，组阁前景不确定。",
+     "evidenceFactIds": [
+      "PROP:IL:ELECTION-2026"
+     ]
+    }
+   ],
+   "changes": [
+    {
+     "title": "美债收益率转而下行",
+     "detail": "10年期由11月3日的4.95%（par）回落至13:51Z的4.927%，美元指数同步跌至101.345。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "FX:DXY"
+     ]
+    },
+    {
+     "title": "A股量能放大",
+     "detail": "成交额由1.70万亿元升至2.04万亿元，上涨家数超4600只。",
+     "evidenceFactIds": [
+      "FLOW:CN:TURNOVER-2026-11-04"
+     ]
+    },
+    {
+     "title": "原油跌幅扩大",
+     "detail": "WTI由96美元上方跌至93.5美元，日内跌2.70%，盘中一度跌3%。",
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "title": "AI算力链盘前转弱",
+     "detail": "CoreWeave跌9.6%、Nebius跌6.4%、甲骨文跌超5%，纳指100期货抹去涨幅。",
+     "evidenceFactIds": [
+      "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04"
+     ]
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "美国9月贸易逆差收窄至1050亿美元",
+     "detail": "出口3215亿美元增1.9%、进口4266亿美元增1.2%，商品逆差1359亿美元，服务顺差309亿美元；年初至今逆差同比降12.2%。",
+     "evidenceFactIds": [
+      "MACRO:US:TRADE-DEFICIT-SEP2026",
+      "MACRO:US:TRADE-EXPORTS-SEP2026",
+      "MACRO:US:TRADE-YTD-DEFICIT-2026"
+     ]
+    },
+    {
+     "title": "10月ADP新增8.6万人高于预期",
+     "detail": "预估6.7万人、前值下修至9万人；官方非农尚未发布，ADP仅为方向参考。",
+     "evidenceFactIds": [
+      "MACRO:US:ADP-OCT2026"
+     ]
+    },
+    {
+     "title": "欧洲股市涨2%",
+     "detail": "德国DAX涨2%至26383.37、法国CAC 40涨2%至8181.03，STOXX50报6267.56，与美股期指转跌形成方向差。",
+     "evidenceFactIds": [
+      "INDEX:EU:STOXX50",
+      "RESEARCH:EU:EQUITY-2026-11-04"
+     ]
+    },
+    {
+     "title": "天山股份被证监会立案",
+     "detail": "立案文书为证监立案字0362026005号，事由涉嫌信息披露违法违规；同日被新疆证监局责令改正，涉商誉减值与坏账计提不审慎；前三季净亏48亿元，年内跌34.40%。",
+     "evidenceFactIds": [
+      "RESEARCH:CN:TIANSHAN-CSRC-2026-11-04"
+     ]
+    },
+    {
+     "title": "私募净值继续下探",
+     "detail": "东方港湾宏远2期截至10月30日净值约0.63元，吴悦风管理产品0.55元、年内最大回撤超70%。",
+     "evidenceFactIds": [
+      "RESEARCH:CN:PRIVATE-FUND-NAV-2026-10-30"
+     ]
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-11-03T21:30:13Z",
+     "title": "美股11月3日收盘偏强",
+     "detail": "标普7568.92涨0.36%、纳指涨0.83%、VIX回落至18.14。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "VOL:VIX"
+     ]
+    },
+    {
+     "at": "2026-11-04T07:00:29Z",
+     "title": "A股放量长阳",
+     "detail": "上证3686.173、成交2.04万亿元、超4600只上涨。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "FLOW:CN:TURNOVER-2026-11-04"
+     ]
+    },
+    {
+     "at": "2026-11-04T13:15:00Z",
+     "title": "ADP与贸易数据落地",
+     "detail": "10月ADP新增8.6万人超预期；9月贸易逆差收窄至1050亿美元。",
+     "evidenceFactIds": [
+      "MACRO:US:ADP-OCT2026",
+      "MACRO:US:TRADE-DEFICIT-SEP2026"
+     ]
+    },
+    {
+     "at": "2026-11-04T13:51:31Z",
+     "title": "欧洲走强、美股期指转跌",
+     "detail": "STOXX50报6267.56涨2.00%，10年期美债收益率4.927%，同时纳指100期货抹去涨幅。",
+     "evidenceFactIds": [
+      "INDEX:EU:STOXX50",
+      "RATE:US10Y",
+      "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04"
+     ]
+    },
+    {
+     "at": "2026-11-04T14:06:29Z",
+     "title": "贵金属与原油分化",
+     "detail": "现货金4043.60、现货银52.128，WTI 93.5跌2.70%。",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "sectionGaps": {
+    "researchRecords": {
+     "reason": "本轮20份文档中无SEC、交易所或公司IR的正式披露原文，天山股份立案与杰瑞股份授标均为媒体转述公告，无法满足documentUrl与原文分析要求，故researchRecords留空并列入待办。"
+    },
+    "events": {
+     "reason": "已实际核验Fed、BEA、EIA三份官方日历；12月8日与12月10日两个BEA口径存在分歧，已按发布页标注并注明待临近确认。"
+    }
+   }
+  },
+  "newsItems": [
+   {
+    "eventId": "EV-US-ELECTION-2026-11-04",
+    "title": "民主党横扫参众两院，市场开始交易分裂政府",
+    "regions": [
+     "US",
+     "WORLD"
+    ],
+    "kind": "general",
+    "summary": "DDHQ测算民主党以53席夺回参议院、225席夺回众议院，二战后第四次同届两院同时易主；得州、俄亥俄、堪萨斯三个共和党传统席位被翻转。",
+    "plainImpact": "立法僵局压低长端利率与政策不确定性，但同时抬升AI基建与关税政策的审查风险。",
+    "assessment": "历史15个分治样本中14次标普一年后为正，但本轮盘前已出现分层，不能简单套用历史均值。",
+    "publishedAt": "2026-11-04T12:53:40Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638595.html"
+    ],
+    "evidenceFactIds": [
+     "PROP:US:ELECTION-SENATE-2026",
+     "PROP:US:ELECTION-RED-STATES-2026",
+     "RESEARCH:US:DIVIDED-GOV-HISTORY"
+    ]
+   },
+   {
+    "eventId": "EV-US-TRADE-SEP-2026-11-04",
+    "title": "美国9月贸易逆差收窄至1050亿美元",
+    "regions": [
+     "US"
+    ],
+    "kind": "general",
+    "summary": "BEA与普查局公布9月商品与服务逆差1050亿美元，较8月修正值1057亿美元减少7亿美元；出口3215亿美元增1.9%，进口4266亿美元增1.2%。",
+    "plainImpact": "逆差收窄对三季度GDP有正向贡献，但进口增速偏低也说明内需斜率偏平，对原油需求不利。",
+    "assessment": "年初至今逆差同比降12.2%，关税对进口量的压制仍在数据中体现。",
+    "publishedAt": "2026-11-04T13:30:00Z",
+    "sourceUrls": [
+     "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026"
+    ],
+    "evidenceFactIds": [
+     "MACRO:US:TRADE-DEFICIT-SEP2026",
+     "MACRO:US:TRADE-EXPORTS-SEP2026",
+     "MACRO:US:TRADE-IMPORTS-SEP2026",
+     "MACRO:US:TRADE-YTD-DEFICIT-2026"
+    ]
+   },
+   {
+    "eventId": "EV-US-ADP-OCT-2026-11-04",
+    "title": "美国10月ADP就业增加8.6万人，高于预期",
+    "regions": [
+     "US"
+    ],
+    "kind": "general",
+    "summary": "10月ADP就业人数增加8.6万人，预估6.7万人，前值由9万人下修。",
+    "plainImpact": "就业增量高于预期削弱了短期降息必要性，与当日美债收益率下行形成轻微矛盾。",
+    "assessment": "ADP为第三方口径，与官方非农常出现方向差，本轮仅作方向参考，不构成政策判断依据。",
+    "publishedAt": "2026-11-04T13:15:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638621.html"
+    ],
+    "evidenceFactIds": [
+     "MACRO:US:ADP-OCT2026"
+    ]
+   },
+   {
+    "eventId": "EV-AI-INFRA-PREMARKET-2026-11-04",
+    "title": "美股AI算力租赁商盘前集体走弱",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "summary": "CoreWeave盘前跌幅扩大至9.6%、Nebius跌6.4%、甲骨文跌超5%，纳指100期货抹去涨幅转跌；同期亚马逊涨3.62%、苹果涨2.65%、微软涨2.59%，英伟达跌1.33%、台积电跌1.26%。",
+    "plainImpact": "AI基础设施的监管折价被单独定价，权重科技股与算力租赁商首次出现方向背离。",
+    "assessment": "盘前流动性薄，9.6%的跌幅未必延续到现货；但方向与数据中心州易主的政治事实一致。",
+    "publishedAt": "2026-11-04T13:00:57Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638604.html",
+     "https://www.nbd.com.cn/articles/2026-11-04/4638607.html",
+     "https://www.nbd.com.cn/articles/2026-11-04/4638654.html"
+    ],
+    "evidenceFactIds": [
+     "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04"
+    ]
+   },
+   {
+    "eventId": "EV-CN-A-SHARE-REBOUND-2026-11-04",
+    "title": "A股放量长阳，成交额重回2万亿元",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "summary": "上证涨2.16%至3686.173、创业板涨6.40%、科创50涨9.92%，两市成交约2.04万亿元、超4600只个股上涨；电子涨9.74%、通信涨7.05%、有色涨5.34%，食品饮料、煤炭、石油石化、银行逆势下跌。",
+    "plainImpact": "超跌修复叠加宽基资金承接，成长风格显著占优。",
+    "assessment": "这是高低切换而非全面加仓，量能是持续性的关键变量。",
+    "publishedAt": "2026-11-04T13:19:42Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638626.html"
+    ],
+    "evidenceFactIds": [
+     "FLOW:CN:TURNOVER-2026-11-04",
+     "FLOW:CN:BREADTH-2026-11-04"
+    ]
+   },
+   {
+    "eventId": "EV-CN-WIDE-ETF-INFLOW-2026-11-04",
+    "title": "宽基ETF单日净流入801.9亿元，居历史前三",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "summary": "11月3日主要宽基ETF单日净流入801.9亿元，9月28日以来累计约4583亿元，相当于A股流通市值的0.52%。",
+    "plainImpact": "被动资金提供了无差别承接，是反弹斜率的主要来源。",
+    "assessment": "累计流入已达流通市值0.52%，边际增量放缓时承接力会迅速衰减。",
+    "publishedAt": "2026-11-04T13:16:56Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638620.html"
+    ],
+    "evidenceFactIds": [
+     "FLOW:CN:WIDE-ETF-2026-11-03"
+    ]
+   },
+   {
+    "eventId": "EV-HK-BIOTECH-2026-11-04",
+    "title": "港股创新药与CXO大涨，恒生生物科技盘中涨超8%",
+    "regions": [
+     "CN",
+     "WORLD"
+    ],
+    "kind": "market",
+    "summary": "恒生生物科技指数盘中涨8.08%、科创创新药ETF跟踪指数涨7.05%，领涨集中在海外权益落地的创新药与外需CDMO。SKB264子宫内膜癌美国BLA已获FDA优先审评，PDUFA目标日2027年6月15日。",
+    "plainImpact": "美债收益率回落与美元走弱直接压低长久期资产的折现率。",
+    "assessment": "估值修复的持续性取决于后续通胀与联储表态，总统否决权仍在意味着政策链只是预期松动。",
+    "publishedAt": "2026-11-04T13:14:07Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638615.html"
+    ],
+    "evidenceFactIds": [
+     "FLOW:HK:BIOTECH-2026-11-04",
+     "RESEARCH:CN:SKB264-PDUFA-2027"
+    ]
+   },
+   {
+    "eventId": "EV-GOLD-CB-BUY-2026-Q3",
+    "title": "三季度全球央行净购金321吨，同比增42%",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "market",
+    "summary": "世界黄金协会数据显示三季度全球央行及官方机构净购金321吨，创2024年四季度以来单季新高；伦敦金上周五一度跌破3900美元创7月以来新低后快速收复。",
+    "plainImpact": "官方买盘构成价格下限，压缩了黄金的下行空间。",
+    "assessment": "上行仍取决于实际利率，4000美元上方已计入较多弱美元预期。",
+    "publishedAt": "2026-11-04T13:15:54Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638619.html"
+    ],
+    "evidenceFactIds": [
+     "MACRO:GOLD:CB-BUY-Q3-2026"
+    ]
+   },
+   {
+    "eventId": "EV-OIL-WTI-FALL-2026-11-04",
+    "title": "WTI盘中跌幅扩大至3%，报93.207美元",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "market",
+    "summary": "WTI原油期货跌幅扩大至3%至93.207美元/桶，14:06Z快照报93.5美元、日内跌2.70%；布伦特供应商数据本轮缺失。",
+    "plainImpact": "油价下跌缓解通胀预期，但对能源股与产油国财政是负面。",
+    "assessment": "供给端无新增中断，跌的是需求预期与地缘溢价；EIA周报是最近的验证点。",
+    "publishedAt": "2026-11-04T14:00:15Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638660.html"
+    ],
+    "evidenceFactIds": [
+     "ENERGY:WTI"
+    ]
+   },
+   {
+    "eventId": "EV-IL-ELECTION-2026-11-04",
+    "title": "以色列议会选举结果公布，两大阵营均未过半",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "summary": "执政阵营获53席、反对派48席、阿拉伯裔政党19席，均未达61席组阁门槛，新政府组建前景不确定。",
+    "plainImpact": "中东政策连续性存疑，但本轮未转化为供应事件，油价未获地缘溢价支撑。",
+    "assessment": "组阁谈判期通常伴随政策空窗，对油价的传导要通过实际供应中断才成立。",
+    "publishedAt": "2026-11-04T13:14:54Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638618.html"
+    ],
+    "evidenceFactIds": [
+     "PROP:IL:ELECTION-2026"
+    ]
+   },
+   {
+    "eventId": "EV-CN-TIANSHAN-PROBE-2026-11-04",
+    "title": "天山股份遭证监会立案并被责令改正",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "summary": "公司收到证监立案字0362026005号立案告知书，事由涉嫌信息披露违法违规；同日被新疆证监局责令改正，涉2023至2025年商誉减值测试关键假设缺乏依据、子公司应收账款预期损失率测算不审慎；前三季度净亏48亿元，年内股价跌34.40%。",
+    "plainImpact": "水泥与建材板块的信披风险被重新定价，监管对减值计提的审慎性要求提高。",
+    "assessment": "立案针对公司而非个人，与近期多起实控人立案性质不同，但仍会压制板块估值。",
+    "publishedAt": "2026-11-04T13:59:58Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638640.html"
+    ],
+    "evidenceFactIds": [
+     "RESEARCH:CN:TIANSHAN-CSRC-2026-11-04"
+    ]
+   },
+   {
+    "eventId": "EV-CN-PRIVATE-FUND-2026-11-04",
+    "title": "多家知名私募产品净值跌破1元",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "summary": "东方港湾宏远2期截至10月30日净值约0.63元，嘉越投资基金经理吴悦风管理产品净值0.55元、年内最大回撤超70%。",
+    "plainImpact": "私募赎回压力可能放大成长股的波动，与当前反弹形成潜在对冲。",
+    "assessment": "净值数据滞后于市场，10月末的回撤主要反映9月至10月的调整而非本轮反弹。",
+    "publishedAt": "2026-11-04T13:17:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638624.html"
+    ],
+    "evidenceFactIds": [
+     "RESEARCH:CN:PRIVATE-FUND-NAV-2026-10-30"
+    ]
+   },
+   {
+    "eventId": "EV-EU-EQUITY-2026-11-04",
+    "title": "欧洲股市盘中涨2%，与美股期指转跌背离",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "market",
+    "summary": "德国DAX涨2%至26383.37、法国CAC 40涨2%至8181.03，STOXX50报6267.56涨2.00%；同期纳指100期货抹去涨幅转跌。",
+    "plainImpact": "欧洲受益于财政扩张受限预期下的利率下行与防务支出确定性，与美股AI链的监管折价形成对冲。",
+    "assessment": "同一政治事件在两个市场的定价方向相反，说明驱动来自板块结构而非整体风险偏好。",
+    "publishedAt": "2026-11-04T13:54:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638655.html"
+    ],
+    "evidenceFactIds": [
+     "INDEX:EU:STOXX50",
+     "RESEARCH:EU:EQUITY-2026-11-04"
+    ]
+   },
+   {
+    "eventId": "EV-US-CRYPTO-EQUITY-2026-11-04",
+    "title": "Riot Platforms盘前由跌超6%转为涨超20%",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "summary": "Riot Platforms美股盘前大幅走强、现涨超20%，此前一度跌超6%；BTC同期报78256.27美元、24小时基本走平。",
+    "plainImpact": "加密股票在交易自身资产负债表与算力事件，与币价脱钩。",
+    "assessment": "个股波动不能作为币价方向的证据，BTC仍跟随美元与实际利率。",
+    "publishedAt": "2026-11-04T13:44:54Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638648.html"
+    ],
+    "evidenceFactIds": [
+     "CRYPTO:BTC:USD"
+    ]
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮20份文档全部抓取成功，其中15篇为每经具体稿件、5份为官方机构页面（Fed日历、BEA日程、EIA日程、BEA 9月贸易帐、财政部曲线）。新闻覆盖以中文财经媒体转述为主，缺少英文通讯社与SEC/IR原文。",
+   "regions": [
+    "CN",
+    "US",
+    "WORLD"
+   ],
+   "gaps": [
+    "无英文通讯社一手报道，路透域名未纳入本轮计划",
+    "无SEC、交易所或公司IR原文，researchRecords留空",
+    "港交所域名按授权限制未采集，港股南向资金缺口",
+    "布伦特供应商连续404，油价只能单点参考WTI",
+    "两年期美债供应商无值，2s10s改用财政部par口径"
+   ]
+  },
+  "macroFacts": [
+   {
+    "id": "PROP:CN:PBOC-BUYOUT-REPO-2026-11-05",
+    "label": "央行11月5日买断式逆回购操作规模",
+    "value": 3000,
+    "unit": "亿元",
+    "asOf": "2026-11-04T11:58:28Z",
+    "note": "期限3个月（91天），以固定数量、利率招标、多重价位中标方式开展，目的为保持银行体系流动性充裕；数字来自每经对央行公告的转述"
+   },
+   {
+    "id": "MACRO:CN:PBOC-BUYOUT-TENOR-91D",
+    "label": "本次买断式逆回购期限",
+    "value": 91,
+    "unit": "天",
+    "asOf": "2026-11-04T11:58:28Z",
+    "note": "3个月期，属跨年资金投放；操作日为11月5日"
+   },
+   {
+    "id": "FLOW:CN:LAGGARD-2026-11-04",
+    "label": "A股11月4日逆势下跌方向",
+    "value": null,
+    "unit": "板块",
+    "asOf": "2026-11-04T07:00:00Z",
+    "note": "“羊”字辈方向集体走弱，与指数普涨形成结构反差，说明当日为题材与权重共振而非全面普涨"
+   },
+   {
+    "id": "RESEARCH:CN:SEMI-EQUIP-INDEX-2026-11-04",
+    "label": "中证半导体材料设备主题指数当日涨幅",
+    "value": 15.01,
+    "unit": "%",
+    "asOf": "2026-11-04T07:00:00Z",
+    "note": "半导体设备ETF国泰（159516）跟踪指数；指数PE 81.41，处近1年20%分位"
+   },
+   {
+    "id": "RESEARCH:CN:FUND-15PCT-COUNT-2026-11-04",
+    "label": "单日净值涨超15%的基金数量",
+    "value": 20,
+    "unit": "只以上",
+    "asOf": "2026-11-04T07:00:00Z",
+    "note": "公募端极端收益集中，与半导体设备、科创主题高度相关"
+   },
+   {
+    "id": "RESEARCH:CN:HAIGUANG-BUYBACK-2026-11-04",
+    "label": "海光信息回购方案金额下限",
+    "value": 5,
+    "unit": "亿元",
+    "asOf": "2026-11-04T12:44:34Z",
+    "note": "上限8亿元，价格上限318.52元/股，用于员工持股计划或股权激励；上市以来第三次回购，前两次累计472.53万股"
+   },
+   {
+    "id": "RESEARCH:CN:SANHUAN-BUYBACK-2026-11-04",
+    "label": "三环集团回购方案金额下限",
+    "value": 5,
+    "unit": "亿元",
+    "asOf": "2026-11-04T12:26:23Z",
+    "note": "上限10亿元；与海光信息同日披露，构成本周第二波科技股回购"
+   },
+   {
+    "id": "RESEARCH:CN:LEILI-CSRC-PROBE-2026-11-04",
+    "label": "江苏雷利实控人被立案事项",
+    "value": null,
+    "unit": "事项",
+    "asOf": "2026-11-04T12:29:02Z",
+    "note": "实控人、董事、总经理苏达因涉嫌信息披露、减持违法违规被证监会立案，仅针对个人；公司市值142.12亿元、年内股价跌超40%"
+   },
+   {
+    "id": "RESEARCH:CN:JIEREH-AWARD-2026-11-04",
+    "label": "杰瑞股份子公司收到授标函总金额",
+    "value": 26.967,
+    "unit": "亿美元",
+    "asOf": "2026-11-04T11:52:21Z",
+    "note": "约合人民币181.164亿元；业主为阿布扎比国家石油公司陆上公司（ADNOC Onshore），共三份项目授标函"
+   },
+   {
+    "id": "PROP:CN:NDRC-AI-EMPLOYMENT-2026-11-04",
+    "label": "发改委对AI就业替代的政策取向",
+    "value": null,
+    "unit": "政策表态",
+    "asOf": "2026-11-04T12:45:03Z",
+    "note": "创新和高技术发展司副司长王若蒙表示将强化监测预警，加强社保体系同就业结构、工作方式变革的衔接，做好兜底性、普惠性社会保障"
+   },
+   {
+    "id": "RESEARCH:CN:CF40-THRESHOLD-2026-11-04",
+    "label": "CF40张斌关于逆周期政策“阈值”的判断",
+    "value": null,
+    "unit": "研究观点",
+    "asOf": "2026-11-04T12:45:13Z",
+    "note": "财政支出增速须高于全社会平均支出增速；货币政策须让真实利率明显下降、最好降到中性利率以下，否则降息未必起逆周期作用；三季度供给强、出口强、内需偏弱"
+   },
+   {
+    "id": "RESEARCH:CN:BEIQINGSONG-PENALTY-2026-11-04",
+    "label": "倍轻松实控人等被罚没金额",
+    "value": 4047.31,
+    "unit": "万元",
+    "asOf": "2026-11-04T11:54:09Z",
+    "note": "没收违法所得1011.83万元、罚款3035.48万元；马学军被5年市场禁入并辞去全部职务，属操纵证券市场个案"
+   },
+   {
+    "id": "RESEARCH:US:EURUSD-2026-11-04",
+    "label": "欧元兑美元11月4日晚间报价",
+    "value": 1.127,
+    "unit": "美元",
+    "asOf": "2026-11-04T12:38:27Z",
+    "note": "日内涨0.7%，触及10月6日以来最高；与DXY回落同向，构成本轮跨资产定价的主轴"
+   },
+   {
+    "id": "MACRO:XAU:COMEX-BREAK-4060-2026-11-04",
+    "label": "纽约期金11月4日盘中价格",
+    "value": 4060,
+    "unit": "美元/盎司",
+    "asOf": "2026-11-04T12:38:32Z",
+    "note": "日内涨3.04%并突破4060；现货XAU同时段报4042.60，期货较现货保持升水"
+   },
+   {
+    "id": "MACRO:OIL:BRENT-FALL-2PCT-2026-11-04",
+    "label": "布伦特原油期货11月4日盘中价格",
+    "value": 101.479,
+    "unit": "美元/桶",
+    "asOf": "2026-11-04T12:28:39Z",
+    "note": "日内跌幅扩大至2%；与特朗普对伊朗表态及美元走弱同时出现，方向相反于贵金属"
+   },
+   {
+    "id": "PROP:US:TRUMP-IRAN-2026-11-04",
+    "label": "特朗普对伊朗行动的表态",
+    "value": null,
+    "unit": "表态",
+    "asOf": "2026-11-04T12:38:21Z",
+    "note": "称会视情决定是否升级对伊朗行动，“对伊朗不需要使用核武器”，未给出时间表或具体条件"
+   },
+   {
+    "id": "PROP:IRAN:SUPREME-LEADER-2026-11-04",
+    "label": "伊朗最高领袖对美选举结果的表态",
+    "value": null,
+    "unit": "声明",
+    "asOf": "2026-11-04T12:17:21Z",
+    "note": "称认为美国中期选举结果能改变美方敌意的人“大错特错”，对霸权敌人稍有屈服倾向会令其更肆无忌惮"
+   },
+   {
+    "id": "RESEARCH:US:TSLA-SPACEX-ELECTION-2026-11-04",
+    "label": "特斯拉与SpaceX盘前跌幅",
+    "value": -3.72,
+    "unit": "%（特斯拉）",
+    "asOf": "2026-11-04T11:26:47Z",
+    "note": "SpaceX跌4.5%；媒体称马斯克本届中期选举投入近4.5亿美元支持共和党候选人，民主党全面掌控国会将提高对其商业活动与政府合同的审查风险"
+   },
+   {
+    "id": "RESEARCH:US:CHATGPT-SEARCH-SHARE-2026-11-04",
+    "label": "ChatGPT搜索查询量占谷歌比例",
+    "value": 20,
+    "unit": "%",
+    "asOf": "2026-11-04T11:26:47Z",
+    "note": "周活跃用户升至12亿、两个月新增约2亿；每周生成约15亿张图片，语音模式周活2.5亿"
+   },
+   {
+    "id": "RESEARCH:US:AMD-PREMARKET-REVERSAL-2026-11-04",
+    "label": "AMD盘前由涨转跌时点涨幅",
+    "value": -1,
+    "unit": "%以下",
+    "asOf": "2026-11-04T12:26:38Z",
+    "note": "此前一度涨超7.5%；前一交易日收涨3.65%，财报后情绪在盘前被逆转，说明AI资本开支交易开始分化"
+   },
+   {
+    "id": "MACRO:US:UST-PAR-2Y-2026-11-03",
+    "label": "美国2年期国债par收益率（11月3日）",
+    "value": 4.61,
+    "unit": "%",
+    "asOf": "2026-11-03T21:00:00Z",
+    "note": "财政部日度平价曲线；11月4日行按常规21:00Z后才更新，本轮读取时仍为11月3日"
+   },
+   {
+    "id": "MACRO:US:UST-PAR-10Y-2026-11-03",
+    "label": "美国10年期国债par收益率（11月3日）",
+    "value": 4.95,
+    "unit": "%",
+    "asOf": "2026-11-03T21:00:00Z",
+    "note": "较11月2日4.91%上行4bp"
+   },
+   {
+    "id": "MACRO:US:UST-PAR-30Y-2026-11-03",
+    "label": "美国30年期国债par收益率（11月3日）",
+    "value": 5.32,
+    "unit": "%",
+    "asOf": "2026-11-03T21:00:00Z",
+    "note": "11月2日为5.28%；20年期5.35%高于30年期，长端倒挂仍在"
+   },
+   {
+    "id": "MACRO:US:UST-2S10S-2026-11-03",
+    "label": "美国2年10年利差（11月3日）",
+    "value": 34,
+    "unit": "bp",
+    "asOf": "2026-11-03T21:00:00Z",
+    "note": "较11月2日32bp走陡2bp，为熊陡：长端上行快于短端"
+   },
+   {
+    "id": "MACRO:US:UST-PAR-5Y-2026-11-03",
+    "label": "美国5年期国债par收益率（11月3日）",
+    "value": 4.74,
+    "unit": "%",
+    "asOf": "2026-11-03T21:00:00Z",
+    "note": "11月2日为4.70%；5年期为本轮曲线抬升的中段"
+   },
+   {
+    "id": "RESEARCH:CN:ROCKET-2026-11-03",
+    "label": "力箭二号遥二发射千帆卫星数量",
+    "value": 18,
+    "unit": "颗",
+    "asOf": "2026-11-03T01:27:14Z",
+    "note": "沿用上一版事实，未在本轮重新核验；原文：11月3日8时15分在东风商业航天创新试验区发射，将千帆极轨21组18颗卫星送入预定轨道；500公里太阳同步轨道运力8吨、200公里近地轨道12吨；首次应用多星星间分离机构，一次解锁甩出18星。"
+   },
+   {
+    "id": "RESEARCH:CN:SANXING-2026-11-03",
+    "label": "三星新材收到证监会立案告知书",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-03T10:01:53Z",
+    "note": "沿用上一版事实，未在本轮重新核验；原文：因涉嫌信息披露违法违规被立案（证监立案字01120260041号）；10月30日刚披露三季报、11月3日盘后即公告立案，前三季度亏损6217万元，收盘12.61元、市值29.52亿元，较1月29日年内高点17.86元回撤约29.4%。"
+   },
+   {
+    "id": "RESEARCH:CN:SHENNONG-2026-11-03",
+    "label": "神农集团实控人离婚分割股份",
+    "value": 14.88,
+    "unit": "%总股本",
+    "asOf": "2026-11-03T09:39:42Z",
+    "note": "沿用上一版事实，未在本轮重新核验；原文：何祖训将直接持股2.61亿股中的30%（7830.50万股）分割给罗婉瑜，按收盘31.7元计市值约24.82亿元；变动后何祖训直接持股降至34.72%，双方签一致行动协议，控制权不变；公司前三季度归母净利-9.71亿元、同比-310.42%。"
+   },
+   {
+    "id": "RESEARCH:CN:STAR-VOICE-2026-11-03",
+    "label": "科创板龙头密集发声与核心经营数据",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-03T09:19:10Z",
+    "note": "沿用上一版事实，未在本轮重新核验；原文：长鑫科技称四季度DRAM供应偏紧延续、毛利率保持稳定；寒武纪前三季度营收95.26亿元翻倍、归母净利37.15亿元(+131.49%)、研发投入12.25亿元(+45.35%)；中微公司前三季营收103.26亿元(+28.08%)、扣非净利16.23亿元(+83.01%)，董事长提议回购4—5亿元；源杰科技二期项目投资约12.51亿元。"
+   },
+   {
+    "id": "RESEARCH:CN:KUNLUN-2026-11-03",
+    "label": "百度否认昆仑芯上市推迟",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-03T08:10:48Z",
+    "note": "沿用上一版事实，未在本轮重新核验；原文：百度称相关市场传闻及报道不属实，昆仑芯处于保密申报阶段，按监管要求不能披露上市流程进展。"
+   },
+   {
+    "id": "MACRO:CN:STORAGE-STANDARD-2026-11-03",
+    "label": "新型储能国家标准及行业标准数量",
+    "value": 150,
+    "unit": "项",
+    "asOf": "2026-11-03T08:01:53Z",
+    "note": "沿用上一版事实，未在本轮重新核验；原文：已覆盖基础通用到退役处置全链条；我国新型储能装机规模占全球市场份额50%以上；6项标准推广至美国、阿根廷、吉尔吉斯斯坦项目，出具检测报告8500余份。"
+   },
+   {
+    "id": "RESEARCH:CN:DONGHAI-2026-11-03",
+    "label": "东方海洋10天6板后风险提示",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-03T11:26:08Z",
+    "note": "沿用上一版事实，未在本轮重新核验；原文：公司公告海洋板块与大健康板块均处亏损，仅加工业务盈利、不足以覆盖板块整体亏损，提示盈利修复不及预期风险。"
+   },
+   {
+    "id": "MACRO:WORLD:UKRAINE-TALKS-2026-11-03",
+    "label": "俄美乌三方会谈与欧洲参与诉求",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-03T11:24:29Z",
+    "note": "沿用上一版事实，未在本轮重新核验；原文：德国防长皮斯托里乌斯11月2日在柏林称对即将举行的俄美乌三方会谈前景持怀疑态度，主张欧洲必须参与乌克兰和平谈判；会谈尚未举行，属计划。"
+   },
+   {
+    "id": "PROP:CN:SHANYING-CHAIR-PROBE-2026-11-03",
+    "label": "山鹰国际实控人、董事长被证监会立案的案由",
+    "value": "涉嫌内幕交易和短线交易",
+    "unit": null,
+    "asOf": "2026-11-03T15:52:17Z",
+    "note": "11月3日盘后公告，吴明武当日收到《立案告知书》；公司称系针对个人、与日常经营无关。当日收1.17元、市值72.60亿元，年内前复权累计-30.77%。属事件型事实，无数值。"
+   },
+   {
+    "id": "PROP:CN:SHANYING-Q3-LOSS-2026Q3",
+    "label": "山鹰国际前三季度归母净利润",
+    "value": -11.43,
+    "unit": "亿元",
+    "asOf": "2026-11-03T15:52:17Z",
+    "note": "沿用上一版已发布事实；实控人、董事长吴明武11月3日因涉嫌内幕交易和短线交易被证监会立案。"
+   },
+   {
+    "id": "PROP:CN:GUOSHENG-PV-HALT-2026-11-03",
+    "label": "国晟科技三家光伏子公司临时停产起始日",
+    "value": "2026-09-08",
+    "unit": null,
+    "asOf": "2026-11-03T15:33:08Z",
+    "note": "公告称主要光伏子公司已无正在生产的订单，自9月8日起停产至今；若12月7日前未复产，股票存在被上交所实施其他风险警示的风险。控股股东国晟能源持股16.41%，质押99.63%、冻结90.28%。"
+   },
+   {
+    "id": "PROP:CN:GUOSHENG-Q3-REV-2026Q3",
+    "label": "国晟科技第三季度营业收入",
+    "value": -1807.24,
+    "unit": "万元",
+    "asOf": "2026-11-03T15:33:08Z",
+    "note": "同比减112.61%；三家光伏子公司自2026年9月8日停产，12月7日前未复产将触发其他风险警示。沿用上一版已发布事实。"
+   },
+   {
+    "id": "PROP:CN:NFRA-AI-GDP-CONTRIB-2026-11-03",
+    "label": "监管口径下AI对美国经济增长贡献率区间上限",
+    "value": 1,
+    "unit": "%",
+    "asOf": "2026-11-03T15:26:51Z",
+    "note": "金融监管总局副局长肖远企11月3日在香港国际金融领袖投资峰会称，目前AI对美国经济增长贡献率约0.5%—1%、对欧洲约0.1%—0.3%；认为AI泡沫长期可被消化，但资金过度集中科技与头部企业，对传统行业形成挤出。区间为演讲口径。"
+   },
+   {
+    "id": "PROP:CN:KESEN-WARNING-2026-11-03",
+    "label": "科森科技及责任人收到的行政监管措施决定书份数",
+    "value": 2,
+    "unit": "份",
+    "asOf": "2026-11-03T15:36:38Z",
+    "note": "江苏证监局〔2026〕135号（公司及徐金根、朱戴兵）与136号（徐金根、王冬梅、徐小艺、浙江启厚），均涉2023年12月28日未披露的《股份借款协议》；同日2800万股以7.83元/股转让、价款2.19亿元。"
+   },
+   {
+    "id": "PROP:CN:NAR-CLARIFY-2026-11-03",
+    "label": "纳尔股份澄清的处罚当事人任职主体",
+    "value": "上海菲莱测试技术有限公司",
+    "unit": null,
+    "asOf": "2026-11-03T14:01:01Z",
+    "note": "媒体称“纳尔股份薛银飞涉内幕交易被罚没216.94万元”，公司澄清薛银飞时任拟重组标的副总经理、非公司员工，且2026年1月14日已终止收购意向。前三季度营收17.91亿元(+21.99%)、归母6834.48万元(-52.55%)。"
+   },
+   {
+    "id": "PROP:US:BEA-TRADE-RELEASE-2026-11-04",
+    "label": "BEA 9月国际贸易数据发布日",
+    "value": "2026-11-04",
+    "unit": null,
+    "asOf": "2026-11-03T16:45:00Z",
+    "note": "BEA官方日程：11月4日发布U.S. International Trade in Goods and Services, September 2026（8:30 ET＝13:30Z）；11月25日GDP二次估算与10月个人收入支出。日历属计划，不是已发布结果。"
+   },
+   {
+    "id": "PROP:US:EIA-WPS-2026-11-04",
+    "label": "EIA 周度石油状况报告发布时点",
+    "value": null,
+    "unit": "time",
+    "asOf": "2026-11-03T23:10:30Z",
+    "note": "常规周三10:30 ET，即15:30 UTC"
+   },
+   {
+    "id": "PROP:CN:CSRC-STABILITY-2026-11-03",
+    "label": "证监会副主席李超在香港提出的五方面安排",
+    "value": 5,
+    "unit": "方面",
+    "asOf": "2026-11-03T05:30:01Z",
+    "note": "沿用上一版已发布事实，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:CN:MA-DEALS-2026Q3",
+    "label": "前三季度A股上市公司并购重组数量",
+    "value": 2000,
+    "unit": "起",
+    "asOf": "2026-11-03T05:30:01Z",
+    "note": "沿用上一版已发布事实，金额近1.5万亿元，本轮未重新核验。"
+   },
+   {
+    "id": "FLOW:CN:LIMITUP-2026-11-03",
+    "label": "11月3日全市场涨停个股数量",
+    "value": 52,
+    "unit": "只",
+    "asOf": "2026-11-03T07:00:00Z",
+    "note": "沿用上一版已发布事实，本轮未重新核验。"
+   },
+   {
+    "id": "FLOW:HK:SOUTHBOUND-2026-11-03",
+    "label": "11月3日南向资金净买入港股",
+    "value": 234,
+    "unit": "亿港元",
+    "asOf": "2026-11-04T02:06:27Z",
+    "note": "媒体口径为超234亿港元，主要流向港股ETF。"
+   },
+   {
+    "id": "RESEARCH:US:AAPL-2026Q4",
+    "label": "苹果2026财年第四季度营业收入",
+    "value": 1144.77,
+    "unit": "亿美元",
+    "asOf": "2026-11-03T00:01:21Z",
+    "note": "同比增11.7%；下季毛利率指引45%—46%。沿用上一版已发布事实，本轮未重新核验。"
+   },
+   {
+    "id": "RESEARCH:US:PLTR-2026Q3",
+    "label": "Palantir第三季度营业收入",
+    "value": 23.13,
+    "unit": "亿美元",
+    "asOf": "2026-11-03T10:13:07Z",
+    "note": "同比增96%。沿用上一版已发布事实，本轮未重新核验。"
+   },
+   {
+    "id": "RESEARCH:US:ORACLE-DEBT-2026-11-02",
+    "label": "甲骨文投资级债券发行规模",
+    "value": 100,
+    "unit": "亿美元",
+    "asOf": "2026-11-03T10:13:07Z",
+    "note": "沿用上一版已发布事实，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:CN:A-BREADTH-2026-11-03",
+    "label": "11月3日A股下跌个股数",
+    "value": 3309,
+    "unit": "只",
+    "asOf": "2026-11-03T09:52:32Z",
+    "note": "沿用上一版已发布事实（当日上涨2108只、中位数-0.65%、成交1.72万亿元），本轮未重新核验。"
+   },
+   {
+    "id": "PROP:CN:A-WIDE-ETF-100BN-2026-11-03",
+    "label": "11月3日单日成交额破百亿元的宽基ETF只数",
+    "value": 6,
+    "unit": "只",
+    "asOf": "2026-11-03T09:52:32Z",
+    "note": "沿用上一版已发布事实，媒体口径，本轮未重新核验。"
+   },
+   {
+    "id": "PROP:CN:A-BANK-DROP-2026-11-03",
+    "label": "11月3日银行板块指数盘中最大跌幅",
+    "value": 3.3,
+    "unit": "%",
+    "asOf": "2026-11-03T09:52:32Z",
+    "note": "沿用上一版已发布事实，本轮未重新核验。"
+   },
+   {
+    "id": "PROP:CN:TONGGAUNG-GRID-BAN-2026-11-03",
+    "label": "通光光缆被国网天津全品类暂停中标资格的年限",
+    "value": 2,
+    "unit": "年",
+    "asOf": "2026-11-03T11:35:59Z",
+    "note": "处理期2026年6月2日至2028年6月1日，事由为提供虚假资料；国家电网层面同类处理尚表述为“存在风险”。若国网处罚落地，未来两年营收合计减少约4.3亿元（含税）、占2025年营收7.48%；仅天津口径约900万元、0.16%。"
+   },
+   {
+    "id": "PROP:CN:DONGFANG-OCEAN-RALLY-2026-11-03",
+    "label": "东方海洋自10月21日起累计涨幅",
+    "value": 57.6,
+    "unit": "%",
+    "asOf": "2026-11-03T12:47:35Z",
+    "note": "11月3日再涨停、10天6板，年内+48.05%；公司公告称无控股股东、无实控人，海洋与大健康两大主业均亏损，前三季度归母-6793.11万元（亏损收窄35.55%）。属风险提示型事实。"
+   },
+   {
+    "id": "MACRO:US:TRADE-DEFICIT-SEP2026",
+    "label": "美国9月商品与服务贸易逆差",
+    "value": 105.0,
+    "unit": "十亿美元",
+    "asOf": "2026-11-04T13:30:00Z",
+    "sourceUrls": [
+     "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026"
+    ],
+    "note": "BEA与普查局11月4日8:30ET发布，较8月修正值1057亿美元收窄7亿美元。"
+   },
+   {
+    "id": "MACRO:US:TRADE-EXPORTS-SEP2026",
+    "label": "美国9月出口",
+    "value": 321.5,
+    "unit": "十亿美元",
+    "asOf": "2026-11-04T13:30:00Z",
+    "sourceUrls": [
+     "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026"
+    ],
+    "note": "环比增58亿美元、增幅1.9%。"
+   },
+   {
+    "id": "MACRO:US:TRADE-IMPORTS-SEP2026",
+    "label": "美国9月进口",
+    "value": 426.6,
+    "unit": "十亿美元",
+    "asOf": "2026-11-04T13:30:00Z",
+    "sourceUrls": [
+     "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026"
+    ],
+    "note": "环比增52亿美元、增幅1.2%；进口增速低于出口是本轮逆差收窄的直接来源。"
+   },
+   {
+    "id": "MACRO:US:TRADE-GOODS-DEFICIT-SEP2026",
+    "label": "美国9月商品贸易逆差",
+    "value": 135.9,
+    "unit": "十亿美元",
+    "asOf": "2026-11-04T13:30:00Z",
+    "sourceUrls": [
+     "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026"
+    ],
+    "note": "较8月收窄7亿美元；服务顺差309亿美元、小幅收窄不足1亿美元。"
+   },
+   {
+    "id": "MACRO:US:TRADE-YTD-DEFICIT-2026",
+    "label": "美国年初至9月贸易逆差同比变化",
+    "value": -92.4,
+    "unit": "十亿美元",
+    "asOf": "2026-11-04T13:30:00Z",
+    "sourceUrls": [
+     "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026"
+    ],
+    "note": "同比下降12.2%，为连续第二年收窄，关税对进口量的压制仍在数据中。"
+   },
+   {
+    "id": "MACRO:US:ADP-OCT2026",
+    "label": "美国10月ADP就业人数",
+    "value": 86,
+    "unit": "千人",
+    "asOf": "2026-11-04T13:15:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638621.html"
+    ],
+    "note": "预估67千人、前值90千人，超预期；ADP为第三方机构口径，非官方非农，仅作方向参考。"
+   },
+   {
+    "id": "PROP:US:ELECTION-SENATE-2026",
+    "label": "DDHQ测算民主党参议院席位数",
+    "value": 53,
+    "unit": "席",
+    "asOf": "2026-11-04T12:53:40Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638595.html"
+    ],
+    "note": "夺回参议院控制权；同时在众议院以225席夺回多数，二战后同届两院同时易主仅1946、1994、2006三次。"
+   },
+   {
+    "id": "PROP:US:ELECTION-RED-STATES-2026",
+    "label": "民主党翻转的共和党传统参议院席位所在州数",
+    "value": 3,
+    "unit": "州",
+    "asOf": "2026-11-04T12:53:40Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638595.html"
+    ],
+    "note": "南卡罗来纳、得克萨斯、堪萨斯；堪萨斯为94年来首名民主党参议员，得州与俄亥俄为数据中心重镇。"
+   },
+   {
+    "id": "RESEARCH:US:DIVIDED-GOV-HISTORY",
+    "label": "分裂政府情形下标普500一年后平均涨幅",
+    "value": 15,
+    "unit": "%",
+    "asOf": "2026-11-04T12:53:40Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638595.html"
+    ],
+    "note": "10次中期选举与5次总统大选形成分治的15个样本中14次一年收益为正，属历史统计而非本轮预测。"
+   },
+   {
+    "id": "FLOW:CN:TURNOVER-2026-11-04",
+    "label": "沪深两市11月4日成交额",
+    "value": 20400,
+    "unit": "亿元",
+    "asOf": "2026-11-04T07:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638626.html"
+    ],
+    "note": "上日约1.70万亿元，放量约3343亿元，量能重回2万亿元上方。"
+   },
+   {
+    "id": "FLOW:CN:BREADTH-2026-11-04",
+    "label": "A股11月4日上涨家数",
+    "value": 4600,
+    "unit": "只以上",
+    "asOf": "2026-11-04T07:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638626.html"
+    ],
+    "note": "北证50同步涨4.56%；电子涨9.74%、通信涨7.05%、有色涨5.34%、机械涨4.96%，食品饮料、煤炭、石油石化、银行逆势回调。"
+   },
+   {
+    "id": "FLOW:CN:WIDE-ETF-2026-11-03",
+    "label": "11月3日主要宽基ETF单日净流入",
+    "value": 801.9,
+    "unit": "亿元",
+    "asOf": "2026-11-04T13:16:56Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638620.html"
+    ],
+    "note": "流入强度处历史前三；9月28日以来累计净流入约4583亿元，相当于A股流通市值的0.52%。"
+   },
+   {
+    "id": "FLOW:HK:BIOTECH-2026-11-04",
+    "label": "恒生生物科技指数11月4日盘中涨幅",
+    "value": 8.08,
+    "unit": "%",
+    "asOf": "2026-11-04T13:14:07Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638615.html"
+    ],
+    "note": "科创创新药ETF跟踪指数涨7.05%；港股弹性大于A股，因对美元流动性更敏感。"
+   },
+   {
+    "id": "RESEARCH:CN:SKB264-PDUFA-2027",
+    "label": "SKB264子宫内膜癌美国BLA目标审批日",
+    "value": "2027-06-15",
+    "unit": null,
+    "asOf": "2026-11-04T13:14:07Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638615.html"
+    ],
+    "note": "默沙东已递交、FDA受理并授予优先审评；ESMO读出OS与PFS同时显著，单适应症峰值市场测算5亿至10亿美元。"
+   },
+   {
+    "id": "MACRO:GOLD:CB-BUY-Q3-2026",
+    "label": "三季度全球央行及官方机构净购金",
+    "value": 321,
+    "unit": "吨",
+    "asOf": "2026-11-04T13:15:54Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638619.html"
+    ],
+    "note": "同比增42%，创2024年四季度以来单季新高；伦敦金上周五一度跌破3900美元创7月以来新低后快速收复。"
+   },
+   {
+    "id": "RESEARCH:COPPER:TC-INVENTORY-2026-11",
+    "label": "铜精矿加工费与电解铜库存状态",
+    "value": -17.9,
+    "unit": "%（上期所库存周降幅）",
+    "asOf": "2026-11-04T13:15:54Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638619.html"
+    ],
+    "note": "铜精矿TC降至深度负值并续刷新低；国内电解铜社会库存近四年新低，上期所库存单周降17.9%，多家海外矿企下调全年产量指引。"
+   },
+   {
+    "id": "RESEARCH:CN:TIANSHAN-CSRC-2026-11-04",
+    "label": "天山股份被证监会立案的文书编号",
+    "value": "证监立案字0362026005号",
+    "unit": null,
+    "asOf": "2026-11-04T13:59:58Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638640.html"
+    ],
+    "note": "事由为涉嫌信息披露违法违规；同日收到新疆证监局责令改正，涉2023—2025年商誉减值测试关键假设缺乏依据、子公司应收账款预期损失率测算不审慎；前三季度净亏48亿元，年内股价跌34.40%。"
+   },
+   {
+    "id": "PROP:IL:ELECTION-2026",
+    "label": "以色列议会选举执政阵营与反对派席位数",
+    "value": 53,
+    "unit": "席（执政阵营）",
+    "asOf": "2026-11-04T13:14:54Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638618.html"
+    ],
+    "note": "反对派48席、阿拉伯裔政党19席，单独组阁门槛61席，两大阵营均未过半，新政府组建前景不确定。"
+   },
+   {
+    "id": "RESEARCH:CN:PRIVATE-FUND-NAV-2026-10-30",
+    "label": "东方港湾宏远2期单位净值",
+    "value": 0.63,
+    "unit": "元",
+    "asOf": "2026-11-04T13:17:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638624.html"
+    ],
+    "note": "截至10月30日；嘉越投资基金经理吴悦风产品净值0.55元、年内最大回撤超70%，多家知名管理人产品跌破1元。"
+   },
+   {
+    "id": "RESEARCH:US:AI-INFRA-PREMARKET-2026-11-04",
+    "label": "美股AI算力租赁商盘前跌幅",
+    "value": -9.6,
+    "unit": "%（CoreWeave）",
+    "asOf": "2026-11-04T13:00:57Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638604.html"
+    ],
+    "note": "Nebius同步跌6.4%，甲骨文跌超5%；同期亚马逊涨3.62%、苹果涨2.65%、微软涨2.59%，英伟达跌1.33%、台积电跌1.26%，AI基础设施与大盘权重出现方向背离。"
+   },
+   {
+    "id": "RESEARCH:EU:EQUITY-2026-11-04",
+    "label": "德国DAX指数11月4日涨幅",
+    "value": 2.0,
+    "unit": "%",
+    "asOf": "2026-11-04T13:54:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-04/4638655.html"
+    ],
+    "note": "报26383.37点；法国CAC 40同步涨2%至8181.03点，欧洲股市与美股期指盘中转跌形成方向差。"
+   }
+  ],
+  "macroEvents": [
+   {
+    "title": "EIA周度石油状况报告（截至10月30日当周）",
+    "at": "2026-11-04T15:30:00Z",
+    "detail": "常规周三10:30 ET发布，本轮核验时点距发布约1.4小时；是原油需求判断的最近验证点。",
+    "kind": "calendar",
+    "evidenceFactIds": [
+     "ENERGY:WTI"
+    ]
+   },
+   {
+    "title": "EIA周报顺延（截至11月6日当周）",
+    "at": "2026-11-12T17:00:00Z",
+    "detail": "因11月11日退伍军人节，该周报告顺延至11月12日周四12:00 ET（17:00Z）发布。",
+    "kind": "calendar"
+   },
+   {
+    "title": "FOMC议息会议（含经济预测摘要）",
+    "at": "2026-12-08T19:00:00Z",
+    "detail": "12月8至9日会议，带SEP；10月会议已按兵不动，本次是年内最后一个带预测的会议。",
+    "kind": "calendar",
+    "evidenceFactIds": [
+     "RATE:US10Y"
+    ]
+   }
+  ],
+  "events": [
+   {
+    "title": "EIA周度石油状况报告",
+    "at": "2026-11-04T15:30:00Z",
+    "detail": "截至10月30日当周库存与开工率，15:30Z发布；原油与成品油库存方向决定WTI空头结构的存续。",
+    "evidenceFactIds": [
+     "ENERGY:WTI"
+    ]
+   },
+   {
+    "title": "EIA周报（截至11月6日当周）顺延",
+    "at": "2026-11-12T17:00:00Z",
+    "detail": "退伍军人节当周顺延至11月12日周四12:00 ET发布。"
+   },
+   {
+    "title": "BEA 10月国际贸易数据",
+    "at": null,
+    "detail": "BEA发布页标注下一次为12月8日，日程页标注12月10日，两个口径存在分歧；具体时点待临近官方确认，不编造整点。"
+   },
+   {
+    "title": "FOMC 12月会议（含SEP）",
+    "at": "2026-12-08T19:00:00Z",
+    "detail": "12月8至9日，会议声明与预测摘要同期发布，是年内最后一次带SEP的会议。",
+    "evidenceFactIds": [
+     "RATE:US10Y"
+    ]
+   }
+  ],
+  "researchRecords": [],
+  "researchChecks": [],
+  "researchPendingQueue": [
+   {
+    "instrumentId": "EQUITY:CN:000877",
+    "reason": "天山股份11月4日盘后披露证监会立案告知书与新疆证监局责令改正决定，仅取得媒体转述，未取得深交所公告原文，待下一轮核验原文后形成研究记录。"
+   }
+  ]
+ }
+}
