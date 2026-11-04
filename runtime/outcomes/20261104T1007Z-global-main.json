@@ -1,14 +1,20 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.newsItems[6].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]\neditorial.newsItems[7].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]\neditorial.newsItems[12].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]\neditorial.newsItems[13].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]\neditorial.newsItems[15].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]",
+  "issues": [
+    "editorial.newsItems[6].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]",
+    "editorial.newsItems[7].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]",
+    "editorial.newsItems[12].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]",
+    "editorial.newsItems[13].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]",
+    "editorial.newsItems[15].kind: 新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类 [enum]"
+  ],
   "execution": {
     "executionId": "20261104T1007Z-global-main",
     "generation": 364
   },
   "deadlineAt": "2026-11-04T10:28:02.993Z",
   "requestId": "20261104T1007Z-global-main",
-  "at": "2026-11-04T10:08:28.093Z",
+  "at": "2026-11-04T10:12:59.137Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +25,49 @@
       "status": "ready-for-analysis",
       "at": "2026-11-04T10:08:28.093Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-04T10:12:59.137Z",
+      "revision": 0
     }
   ],
   "packetHash": "27c70d22133c9844fdea523fb748dd959bbfa436bb819c7dd8e47dccbabf6f7c",
-  "collectionDurationMs": 6705
+  "collectionDurationMs": 6705,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "259dbfe165d67a0e1741022580e8b834c15ebf929018c5141367143d73597261",
+  "validationIssues": [
+    {
+      "path": "editorial.newsItems[6].kind",
+      "code": "enum",
+      "message": "新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类"
+    },
+    {
+      "path": "editorial.newsItems[7].kind",
+      "code": "enum",
+      "message": "新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类"
+    },
+    {
+      "path": "editorial.newsItems[12].kind",
+      "code": "enum",
+      "message": "新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类"
+    },
+    {
+      "path": "editorial.newsItems[13].kind",
+      "code": "enum",
+      "message": "新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类"
+    },
+    {
+      "path": "editorial.newsItems[15].kind",
+      "code": "enum",
+      "message": "新闻kind仅允许general或market；采集文档的official/research/calendar不是新闻分类"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261104T1007Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
