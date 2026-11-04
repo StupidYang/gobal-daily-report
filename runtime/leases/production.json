@@ -4,16 +4,22 @@
   "executionId": "20261104T0851Z-global-main",
   "taskGroup": "global-main",
   "slot": "global-main:2026-11-04T08",
-  "phase": "analyzing",
+  "phase": "failed",
   "startedAt": "2026-11-04T08:52:05.828Z",
   "deadlineAt": "2026-11-04T09:12:05.828Z",
-  "updatedAt": "2026-11-04T08:52:20.301Z",
+  "updatedAt": "2026-11-04T09:00:47.299Z",
   "stages": [
     {
       "phase": "collecting",
       "startedAt": "2026-11-04T08:52:05.828Z",
       "finishedAt": "2026-11-04T08:52:20.301Z",
       "durationMs": 14473
+    },
+    {
+      "phase": "analyzing",
+      "startedAt": "2026-11-04T08:52:20.301Z",
+      "finishedAt": "2026-11-04T09:00:47.299Z",
+      "durationMs": 506998
     }
   ],
   "recentSlots": [
@@ -145,14 +151,17 @@
     },
     {
       "slot": "global-main:2026-11-04T08",
-      "status": "started",
+      "status": "failed",
       "at": "2026-11-04T08:52:05.828Z",
       "executionId": "20261104T0851Z-global-main"
     }
   ],
   "sourcePacketPath": "runtime/results/20261104T0851Z-global-main.json",
   "sourcePacketHash": "e962a77dd67399fae4e50cc21cb83e12cf9e7ab4520db155ed3f78e154517348",
-  "submissionAttempts": 1,
+  "submissionAttempts": 2,
   "validationReason": "editorial.report.deepDive: 必须是数组 [type]",
-  "lastValidationAt": "2026-11-04T08:58:01.347Z"
+  "lastValidationAt": "2026-11-04T08:58:01.347Z",
+  "reason": "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]",
+  "finishedAt": "2026-11-04T09:00:47.299Z",
+  "totalDurationMs": 521471
 }
