@@ -1,14 +1,16 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.report.deepDive[5].sourceUrls[1]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-04/https://www.eia.gov/petroleum/supply/weekly/schedule.php.html [source-not-retrieved]",
+  "issues": [
+    "editorial.report.deepDive[5].sourceUrls[1]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-04/https://www.eia.gov/petroleum/supply/weekly/schedule.php.html [source-not-retrieved]"
+  ],
   "execution": {
     "executionId": "20261104T0037Z-global-main",
     "generation": 356
   },
   "deadlineAt": "2026-11-04T00:57:06.197Z",
   "requestId": "20261104T0037Z-global-main",
-  "at": "2026-11-04T00:37:22.260Z",
+  "at": "2026-11-04T00:40:36.693Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +21,29 @@
       "status": "ready-for-analysis",
       "at": "2026-11-04T00:37:22.260Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-04T00:40:36.693Z",
+      "revision": 0
     }
   ],
   "packetHash": "ba322d4ade93421df475e06892d4db443fff41d3da3f743678311110ca5767bd",
-  "collectionDurationMs": 7871
+  "collectionDurationMs": 7871,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "6491752b539f25e0d60e3d7444a208d31697b01911e2af4a689428bd5dc5e755",
+  "validationIssues": [
+    {
+      "path": "editorial.report.deepDive[5].sourceUrls[1]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-04/https://www.eia.gov/petroleum/supply/weekly/schedule.php.html"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261104T0037Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
