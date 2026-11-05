@@ -1,0 +1,607 @@
+{
+ "execution": {
+  "executionId": "20261105T0154Z-asia-session",
+  "generation": 378
+ },
+ "editorial": {
+  "packetHash": "b6070328223a2583559b7b4d5af64fb4cfb3bfe554fad3ffc0b717401c303545",
+  "analyzedAt": "2026-11-05T02:05:00Z",
+  "report": {
+   "schemaVersion": 5,
+   "reportMeta": {
+    "contractVersion": "reader-r2"
+   },
+   "overview": "11月5日早盘（截至09:41 GMT+8）：A股隔夜受美股AI硬件重挫映射集体低开（上证-1.07%、创业板-2%），随后显著修复——上证3673.17(-0.35%)、深成11397.97(+0.55%)、创业板(+0.07%)、科创50(+0.40%)、沪深300(-0.10%)、中证500(+0.84%)，结构由前一日极致成长转向黄金/光伏/航空/有色/白酒走强、半导体/机器人/CPO承压。港股高开高走明显更强：恒指24488.34(+2.38%)、恒科4073.67(+3.50%)、国企(+2.04%)，科网与黄金股领涨。隔夜美股大盘反弹但AI硬件分化，VIX骤降20%至16.61；现货黄金站上4127美元/盎司，WTI(12月)跌1.06%至87.19。",
+   "rolling24hSummary": "过去24小时主线：11月4日A股极致成长收盘（科创50 +9.92%）→ 隔夜美股AI硬件链重挫（美光-7%、Arm-5.28%、ASML-3.6%）→ 11月5日A股低开修复、港股强势领涨 → 全球风险偏好回暖（VIX-20%）、贵金属大涨、原油走弱。央行11月5日开展3000亿元买断式逆回购投放流动性。",
+   "methodology": "本区域任务（asia-session）仅更新A股与港股真实交易状态并合成六资产报告；美股、BTC、黄金、原油沿用上一版2026-11-05-0854（analysisAsOf 2026-11-05T00:53:46Z），保留原asOf、未在本轮重新核验。A股/港股数字取自本轮采集包（provider-previous-close，delayed），asOf 2026-11-05T01:41Z（09:41 GMT+8）。本轮 generation=378；packetHash=b6070328223a2583559b7b4d5af64fb4cfb3bfe554fad3ffc0b717401c303545。事实ID仅引用采集包instrumentId，无自定义macroFacts。",
+   "coreAnalysis": {
+    "mainTheme": "全球风险偏好回暖下A股低开修复、港股强势领涨，但AI硬件外盘压制成长板块估值。",
+    "expectationGap": "预期为隔夜AI硬件杀跌引发A股深度低开，实际低开后快速修复，说明国内流动性与政策预期托底强于外盘映射。",
+    "divergence": "港股（+2.38%）显著强于A股（-0.35%），且A股内部深市/中小盘（中证500 +0.84%）强于主板权重。",
+    "regime": "风险偏好修复、结构分化的震荡修复市；成长高波动、红利/资源/光伏相对占优。",
+    "priceIn": "隔夜美股大盘反弹、VIX骤降、央行3000亿流动性投放、贵金属大涨已部分计入早盘定价。",
+    "bullCase": "流动性充裕+政策预期+港股风险偏好修复，A股成交若维持则指数韧性延续。",
+    "bullInvalidation": "创业板/科创50重新跌超2%且成交较前一日萎缩两成以上，则修复失效。",
+    "bearCase": "外盘半导体连续两日下跌，映射从情绪转为盈利下修，A股算力与高位成长回撤。",
+    "bearInvalidation": "若恒指守住24000且A股成交放大、中证500续强，则空头情景证伪。"
+   },
+   "plainLanguage": {
+    "verdict": "早盘A股低开修复、港股领涨，全球风偏回暖但AI硬件压制成长。",
+    "bottomLine": "A股由隔夜AI硬件杀跌引发的低开已大部分修复，结构转向红利/资源/光伏防守；港股受流动性与贵金属驱动明显强于A股；美股大盘反弹但AI硬件分化，黄金高位、原油走弱。",
+    "whyNow": "央行3000亿买断式逆回购投放流动性；隔夜美股AI硬件重挫映射A股算力；贵金属大涨；VIX骤降显示避险缓和。",
+    "horizon": "未来12-24小时（至A股/港股午盘）。",
+    "confidence": "medium",
+    "invalidation": "若创业板/科创50重新跌超2%且成交缩量，或恒指跌破24000，主线失效。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "短线偏中性分化",
+      "reason": "低开修复，主板微跌、深市中小盘翻红；外盘AI硬件压制成长。",
+      "takeaway": "我的判断：指数韧性靠流动性托底，结构重于方向。",
+      "horizon": "1-3交易日",
+      "counterRisk": "若成交缩量则修复不牢",
+      "invalidation": "创业板/科创50跌超2%且缩量",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:CN:SSE",
+       "INDEX:CN:SZSE",
+       "INDEX:CN:CSI500"
+      ],
+      "sourceIds": []
+     },
+     {
+      "asset": "港股",
+      "effect": "短线偏利好",
+      "reason": "恒指+2.38%、恒科+3.50%，科网与黄金股领涨，全球风偏回暖。",
+      "takeaway": "我的判断：港股弹性大于A股，受流动性与贵金属共振。",
+      "horizon": "1-3交易日",
+      "counterRisk": "美元反弹或南向放缓或回吐涨幅",
+      "invalidation": "恒指跌破24000",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH"
+      ],
+      "sourceIds": []
+     },
+     {
+      "asset": "美股",
+      "effect": "短线偏利好但分化",
+      "reason": "标普+1.58%、VIX-20%，但AI硬件（美光-7%、NVDA-3.17%）重挫。",
+      "takeaway": "我的判断：大盘风险偏好回暖，AI硬件链独立承压。",
+      "horizon": "未来数日",
+      "counterRisk": "AI硬件连续下跌外溢",
+      "invalidation": "VIX重新上行",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:US:SP500",
+       "VOL:VIX",
+       "EQUITY:US:MU"
+      ],
+      "sourceIds": []
+     },
+     {
+      "asset": "BTC",
+      "effect": "证据不足",
+      "reason": "BTC约80652美元（单一场所快照，无24h同源基准），缺乏独立催化。",
+      "takeaway": "我的判断：区间震荡观察，不据此下方向结论。",
+      "horizon": "未来24小时",
+      "counterRisk": "风险资产风偏转向",
+      "invalidation": "突破区间",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD"
+      ],
+      "sourceIds": []
+     },
+     {
+      "asset": "黄金",
+      "effect": "短线偏利好",
+      "reason": "现货黄金约4127美元/盎司，延续11-04大涨，避险与美元走弱（DXY-0.25%）支撑。",
+      "takeaway": "我的判断：高位震荡，注意供应商未逐项披露、非结算价。",
+      "horizon": "未来1-2周",
+      "counterRisk": "美元反弹或地缘缓和",
+      "invalidation": "实利率上行",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "METAL:XAUUSD",
+       "FX:DXY"
+      ],
+      "sourceIds": []
+     },
+     {
+      "asset": "原油",
+      "effect": "短线偏利空",
+      "reason": "WTI(12月)87.19跌1.06%，隔夜结算跌8.29%（特朗普关税/伊朗相关地缘缓和预期）。",
+      "takeaway": "我的判断：地缘溢价回吐，区分合约与结算口径。",
+      "horizon": "未来数日",
+      "counterRisk": "地缘再度紧张",
+      "invalidation": "中东冲突升级",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "FX:USDCNH"
+      ],
+      "sourceIds": []
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "trading",
+     "coverage": "早盘实盘（09:41 GMT+8），六大指数全覆盖",
+     "gap": "个股成交/板块量能未逐项核验"
+    },
+    {
+     "market": "港股",
+     "status": "trading",
+     "coverage": "早盘实盘（09:41 GMT+8），恒指/恒科/国企全覆盖",
+     "gap": "南向资金与个股成交未逐项核验"
+    },
+    {
+     "market": "美股",
+     "status": "closed-carried",
+     "coverage": "沿用上一版2026-11-05-0854（11-04收盘）",
+     "gap": "本轮未重新核验"
+    },
+    {
+     "market": "BTC",
+     "status": "carried",
+     "coverage": "沿用上一版快照",
+     "gap": "本轮未重新核验"
+    },
+    {
+     "market": "黄金",
+     "status": "carried",
+     "coverage": "沿用上一版快照",
+     "gap": "本轮未重新核验"
+    },
+    {
+     "market": "原油",
+     "status": "carried",
+     "coverage": "沿用上一版（WTI 12月）",
+     "gap": "本轮未重新核验"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "status": "open",
+     "value": 3673.17,
+     "changePct": -0.3527,
+     "asOf": "2026-11-05T01:41:30.000Z",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500"
+     ],
+     "sourceIds": []
+    },
+    {
+     "asset": "港股",
+     "status": "open",
+     "value": 24488.34,
+     "changePct": 2.3781,
+     "asOf": "2026-11-05T01:41:36.000Z",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI"
+     ],
+     "sourceIds": []
+    },
+    {
+     "asset": "美股",
+     "status": "closed",
+     "value": null,
+     "changePct": 1.5815,
+     "asOf": "2026-11-04T21:51:20.000Z",
+     "retention": {
+      "reportId": "2026-11-05-0854",
+      "analyzedAt": "2026-11-05T00:53:46Z",
+      "reason": "asia-session roll-forward; unchanged, not re-verified this round"
+     },
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "VOL:VIX",
+      "RATE:US10Y",
+      "FX:DXY"
+     ],
+     "sourceIds": []
+    },
+    {
+     "asset": "BTC",
+     "status": "open",
+     "value": 80652.2,
+     "changePct": null,
+     "asOf": "2026-11-05T01:56:40.084Z",
+     "retention": {
+      "reportId": "2026-11-05-0854",
+      "analyzedAt": "2026-11-05T00:53:46Z",
+      "reason": "asia-session roll-forward; unchanged, not re-verified this round"
+     },
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD"
+     ],
+     "sourceIds": []
+    },
+    {
+     "asset": "黄金",
+     "status": "open",
+     "value": 4127.6,
+     "changePct": null,
+     "asOf": "2026-11-05T01:56:30.000Z",
+     "retention": {
+      "reportId": "2026-11-05-0854",
+      "analyzedAt": "2026-11-05T00:53:46Z",
+      "reason": "asia-session roll-forward; unchanged, not re-verified this round"
+     },
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "FX:DXY"
+     ],
+     "sourceIds": []
+    },
+    {
+     "asset": "原油",
+     "status": "open",
+     "value": 87.19,
+     "changePct": -1.0554,
+     "asOf": "2026-11-05T01:46:38.000Z",
+     "retention": {
+      "reportId": "2026-11-05-0854",
+      "analyzedAt": "2026-11-05T00:53:46Z",
+      "reason": "asia-session roll-forward; unchanged, not re-verified this round"
+     },
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "FX:USDCNH"
+     ],
+     "sourceIds": []
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "title": "A股：低开修复与结构再平衡",
+     "analysis": "11月5日A股早盘低开后显著修复。开盘受隔夜美股AI硬件重挫（美光-7.00%、Arm-5.28%、ASML-3.60%）映射，四大指数集体低开（上证-1.07%、深成-1.05%、创业板-2.00%、科创-2.28%），但至09:41已修复：上证3673.17(-0.35%)、深成11397.97(+0.55%)、创业板2546.52(+0.07%)、科创50 1270.53(+0.40%)、沪深300 4097.32(-0.10%)、中证500 6677.65(+0.84%)。结构由前一交易日极致成长（科创50单日+9.92%）转向分化：黄金、光伏、航空、有色、白酒走强；元件、半导体、机器人、石油石化、CPO承压。",
+     "mechanism": "外盘AI硬件杀估值压缩A股算力相对估值，但国内政策与流动性（央行11月5日开展3000亿元买断式逆回购）提供托底，指数呈低开修复韧性。",
+     "risk": "一是前一日科创50近10%涨幅不可持续、风格极端集中；二是若外盘半导体连续下跌，映射从情绪转为盈利预期下修；三是成交若缩量则修复不牢。",
+     "invalidation": "若创业板/科创50跌幅重新扩大超2%且成交额较前一日萎缩两成以上，则低开修复判断失效、转防守。",
+     "horizon": "1至3个交易日",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500"
+     ]
+    },
+    {
+     "asset": "港股",
+     "title": "港股：风偏回暖下的强势领涨",
+     "analysis": "港股早盘高开高走，恒指24488.34(+2.38%)、恒科4073.67(+3.50%)、国企8221.69(+2.04%)。科网股普涨（阿里+2.58%、腾讯+3.04%、小米+4.31%、网易+3.01%），创新药延续强势（百济神州+2.76%、药明康德+2.93%），黄金股高开（紫金黄金国际+7%）；存储/光通信回调（中际旭创-7%）。相对A股，港股弹性更大，受流动性与全球风险偏好回暖（VIX-20%）及贵金属走强共振。",
+     "mechanism": "全球风险偏好回升（隔夜美股反弹、VIX骤降）+ 人民币资产估值修复 + 贵金属与科网盈利预期共振。",
+     "risk": "光通信/存储等高位板块回调风险；若美元指数反弹或南向资金放缓，涨幅可能回吐。",
+     "invalidation": "若恒指回落至24000点下方且科网龙头转跌，则风偏修复主线失效。",
+     "horizon": "1至3个交易日",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI"
+     ]
+    },
+    {
+     "asset": "美股",
+     "title": "美股：大盘反弹、AI硬件分化（沿用）",
+     "analysis": "隔夜美股呈现大盘反弹、AI硬件分化：标普500 +1.58%、纳指 +1.44%、道指 +3.03%、罗素2000 +1.58%；VIX骤降20.26%至16.61，避险情绪缓和。但AI硬件链重挫——美光-7.00%、Arm-5.28%、ASML-3.60%、英伟达-3.17%，与A股/港股算力板块形成外盘映射压力。10Y美债收益率4.894%(-1.17%)，美元指数101.316(-0.25%)。",
+     "mechanism": "鸽派/避险预期推动大盘风险资产反弹，但AI硬件链因估值与盈利指引承压独立走弱。",
+     "risk": "AI硬件连续下跌外溢至全球成长板块；利率若反弹则估值承压。",
+     "invalidation": "若VIX重新上行且纳指转跌，则风偏回暖判断失效。",
+     "horizon": "未来数日",
+     "retention": {
+      "reportId": "2026-11-05-0854",
+      "analyzedAt": "2026-11-05T00:53:46Z",
+      "reason": "asia-session roll-forward; unchanged, not re-verified this round"
+     },
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "VOL:VIX",
+      "RATE:US10Y",
+      "FX:DXY",
+      "EQUITY:US:MU",
+      "EQUITY:US:NVDA"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "title": "BTC：区间震荡观察（沿用）",
+     "analysis": "BTC最新成交约80652美元（Coinbase快照，单一场所USD现货，无24h同源基准），缺乏独立催化，维持区间震荡观察。前一日全球风险资产反弹未显著带动BTC方向选择。",
+     "mechanism": "单一场所现货最新成交，非全市场均价，不宜单独作为趋势结论。",
+     "risk": "风险资产风偏转向时BTC波动放大。",
+     "invalidation": "突破近期区间并伴随成交放大则观察结论失效。",
+     "horizon": "未来24小时",
+     "retention": {
+      "reportId": "2026-11-05-0854",
+      "analyzedAt": "2026-11-05T00:53:46Z",
+      "reason": "asia-session roll-forward; unchanged, not re-verified this round"
+     },
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "title": "黄金：高位震荡（沿用）",
+     "analysis": "现货黄金约4127.60美元/盎司（Gold API快照，非交易所结算价），延续11月4日大涨（+3.28%报4058.93）后的高位；避险与美元走弱（DXY -0.25%）共同支撑。注意供应商未逐项披露，作参考而非结算价。",
+     "mechanism": "避险需求 + 实际利率下行预期 + 美元走弱共振推升金价。",
+     "risk": "美元反弹或地缘缓和将压制金价。",
+     "invalidation": "若实利率上行且美元走强，高位支撑失效。",
+     "horizon": "未来1-2周",
+     "retention": {
+      "reportId": "2026-11-05-0854",
+      "analyzedAt": "2026-11-05T00:53:46Z",
+      "reason": "asia-session roll-forward; unchanged, not re-verified this round"
+     },
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "FX:DXY"
+     ]
+    },
+    {
+     "asset": "原油",
+     "title": "原油：地缘溢价回吐（沿用）",
+     "analysis": "WTI（2026年12月合约）87.19美元/桶，跌1.06%。隔夜WTI 12月期货结算跌8.29%（特朗普关税/伊朗相关地缘缓和预期），本轮报价跌幅收窄；需区分合约与结算口径，不混用。",
+     "mechanism": "地缘风险溢价回吐主导油价下行。",
+     "risk": "中东冲突再升级将快速回补溢价。",
+     "invalidation": "若中东冲突升级且库存走低，下行结论失效。",
+     "horizon": "未来数日",
+     "retention": {
+      "reportId": "2026-11-05-0854",
+      "analyzedAt": "2026-11-05T00:53:46Z",
+      "reason": "asia-session roll-forward; unchanged, not re-verified this round"
+     },
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "FX:USDCNH"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "framework": "预期差/事件研究",
+     "concept": "资产价格对预期与现实的偏差定价",
+     "observed": "隔夜AI硬件财报/指引下修，A股算力低开但指数快速修复",
+     "conclusion": "外盘映射偏短期情绪，国内流动性托底使指数韧性强于预期",
+     "applicability": "适用于成长/算力板块",
+     "mechanism": "估值锚下移但增量资金来自国内",
+     "assumptions": [
+      "国内流动性延续",
+      "外盘不连续崩"
+     ],
+     "counterEvidence": [
+      "科创50前一日+9.92%本身不可持续"
+     ],
+     "horizon": "1-3交易日",
+     "invalidation": "创业板/科创50跌超2%且缩量",
+     "confidence": "medium",
+     "missingData": [
+      "个股成交明细"
+     ],
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:STAR50"
+     ],
+     "sourceIds": []
+    },
+    {
+     "framework": "政策传导/分配影响",
+     "concept": "央行操作影响银行体系流动性与风险偏好",
+     "observed": "央行11月5日开展3000亿元买断式逆回购",
+     "conclusion": "流动性充裕预期利好红利/资源/大金融，托底指数",
+     "applicability": "A股/港股",
+     "mechanism": "流动性→估值→风险偏好",
+     "assumptions": [
+      "操作延续"
+     ],
+     "counterEvidence": [
+      "若资金空转则传导弱"
+     ],
+     "horizon": "1周",
+     "invalidation": "操作缩量或转向",
+     "confidence": "medium",
+     "missingData": [
+      "资金流向细分"
+     ],
+     "evidenceFactIds": [
+      "INDEX:CN:CSI300",
+      "INDEX:HK:HSI"
+     ],
+     "sourceIds": []
+    },
+    {
+     "framework": "风险溢价/避险",
+     "concept": "VIX与避险资产反映全局风险偏好",
+     "observed": "VIX-20%至16.61，黄金站上4127，DXY-0.25%",
+     "conclusion": "全球风偏回暖但分化，贵金属与权益受益、原油受地缘缓和压制",
+     "applicability": "跨资产",
+     "mechanism": "避险需求再分配",
+     "assumptions": [
+      "地缘不升级"
+     ],
+     "counterEvidence": [
+      "原油因地缘缓和下跌"
+     ],
+     "horizon": "未来1周",
+     "invalidation": "VIX重新上行",
+     "confidence": "medium",
+     "missingData": [
+      "持仓结构"
+     ],
+     "evidenceFactIds": [
+      "VOL:VIX",
+      "METAL:XAUUSD",
+      "FX:DXY",
+      "ENERGY:WTI"
+     ],
+     "sourceIds": []
+    },
+    {
+     "framework": "供需/商品",
+     "concept": "地缘与供需决定商品价格",
+     "observed": "WTI跌、黄金涨",
+     "conclusion": "油价受地缘溢价回吐主导，金价受避险/弱美元支撑",
+     "applicability": "黄金/原油",
+     "mechanism": "风险溢价与美元双因子",
+     "assumptions": [
+      "中东不升级"
+     ],
+     "counterEvidence": [
+      "若冲突升级油价反转"
+     ],
+     "horizon": "未来数日",
+     "invalidation": "中东冲突升级",
+     "confidence": "medium",
+     "missingData": [
+      "库存周报"
+     ],
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "METAL:XAUUSD"
+     ],
+     "sourceIds": []
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "风偏回暖+流动性托底主导短线，但AI硬件外盘压制成长、地缘缓和压油价，资产间分化。",
+    "agreement": "风险溢价框架与政策传导框架一致看多权益风偏与流动性受益板块。",
+    "disagreement": "商品框架显示原油因地缘缓和走弱，与权益风偏回暖不完全同向。",
+    "weighting": "更看重流动性与VIX信号（短线），AI硬件外盘映射作为成长板块的下修风险而非指数主线。",
+    "invalidation": "若VIX重新上行且创业板/科创50跌超2%缩量，则风偏回暖判断整体失效。"
+   },
+   "watch": [
+    {
+     "point": "创业板/科创50是否重新转弱",
+     "detail": "若跌超2%且成交缩量，低开修复失效，转防守。"
+    },
+    {
+     "point": "恒指能否守住24000",
+     "detail": "跌破则港股风偏修复主线失效。"
+    },
+    {
+     "point": "央行流动性操作延续性",
+     "detail": "3000亿买断式逆回购后是否续作，影响红利/大金融持续性。"
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "买断式逆回购",
+     "definition": "央行以债券为抵押融出资金、约定买回的交易，计入基础货币投放，影响银行体系流动性。"
+    },
+    {
+     "term": "provider-previous-close 延迟报价",
+     "definition": "行情供应商以前一交易日收盘为基准的延迟指数点位，不等于交易所正式收盘，不混用盘后价。"
+    },
+    {
+     "term": "snapshot 快照",
+     "definition": "单一交易场所最新成交价（如BTC/Coinbase），非全市场均价，无24h同源基准。"
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "A股由11-04收盘转为11-05早盘实盘",
+     "detail": "上一版（2026-11-05-0854）A股为11-04收盘状态（科创50 +9.92%极致成长）；本轮为11-05 09:41实盘，成长回吐、主板与中小盘分化修复。"
+    },
+    {
+     "title": "港股由纪录状态转为11-05早盘 +2.38%",
+     "detail": "恒指24488.34(+2.38%)、恒科+3.50%，明显强于A股。"
+    },
+    {
+     "title": "新增央行3000亿买断式逆回购",
+     "detail": "11月5日央行开展3000亿元买断式逆回购，流动性投放托底。"
+    },
+    {
+     "title": "隔夜美股AI硬件重挫映射A股算力",
+     "detail": "美光-7%、Arm-5.28%、ASML-3.60%，A股开盘承压后修复。"
+    }
+   ],
+   "changes": [
+    {
+     "title": "A股交易状态切换",
+     "detail": "由上一版纪录收盘状态切换为11-05早盘实盘。"
+    }
+   ],
+   "evolution24h": [
+    {
+     "title": "11-04 A股极致成长收盘",
+     "detail": "科创50 +9.92%、创业板 +6.40%，资金高度集中于科技成长。",
+     "at": "2026-11-04T07:00:00Z",
+     "evidenceFactIds": [
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CHINEXT"
+     ]
+    },
+    {
+     "title": "隔夜美股AI硬件重挫",
+     "detail": "美光-7.00%、Arm-5.28%、ASML-3.60%、英伟达-3.17%。",
+     "at": "2026-11-04T21:00:01Z",
+     "evidenceFactIds": [
+      "EQUITY:US:MU",
+      "EQUITY:US:NVDA"
+     ]
+    },
+    {
+     "title": "11-05 A股低开修复",
+     "detail": "四大指数低开（上证-1.07%、创业板-2%）后修复至上证-0.35%、深成+0.55%。",
+     "at": "2026-11-05T01:41:30.000Z",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE"
+     ]
+    },
+    {
+     "title": "港股高开高走",
+     "detail": "恒指+2.38%、恒科+3.50%，科网与黄金股领涨。",
+     "at": "2026-11-05T01:41:36.000Z",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    }
+   ],
+   "sectionGaps": {
+    "events": {
+     "reason": "本轮未检索到未来12-24小时可核验的官方日历事件（仅官方机构常规发布、无具体时点），按规留空并说明核验范围与空缺。"
+    }
+   }
+  },
+  "newsItems": [],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮请求3份官方文档，仅 sse.com.cn 首页抓取成功但未读全文，gov.cn/csrc 未取回；无合格新闻正文，新闻为空，缺口如实标注。",
+   "regions": {
+    "CN": "无已读新闻正文",
+    "US": "无",
+    "WORLD": "无"
+   },
+   "gaps": [
+    "官方文档未读全文，不计入新闻覆盖",
+    "无市场新闻原文"
+   ]
+  },
+  "macroFacts": [],
+  "macroEvents": [],
+  "events": [],
+  "researchRecords": [],
+  "researchChecks": []
+ }
+}
