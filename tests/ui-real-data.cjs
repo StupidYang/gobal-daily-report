@@ -6,7 +6,12 @@ const {readPublicBytes}=require('./public-byte-reader.cjs');
 const transportRetries=[];
 const base=process.env.GDR_TEST_URL||'http://127.0.0.1:8181/',out=process.env.GDR_UI_OUTPUT||'/tmp/gdr-ui-e2e';fs.mkdirSync(out,{recursive:true});
 const sum=b=>crypto.createHash('sha256').update(b).digest('hex'),abs=p=>new URL(p,base).href;
-async function read(request,p){if(process.env.GDR_OFFLINE_ROOT)return fs.readFileSync(path.join(process.env.GDR_OFFLINE_ROOT,p));return readPublicBytes(request,abs(p)+'?acceptance='+Date.now(),{onResult:r=>{if(r.attempts.length>1||r.status==='failed')transportRetries.push({...r,path:p});}});}
+// Pages/CDN may still be warming up right after a deployment even after build.json matches.
+// The reader default (25s) is too tight for the large latest.json/history payloads in that window
+// and produced "Public GET failed after 1 attempt(s): Public read budget exhausted" in run #415.
+// Give each URL a longer per-request budget; healthy responses still return immediately.
+const PUBLIC_READ_BUDGET_MS=60000;
+async function read(request,p){if(process.env.GDR_OFFLINE_ROOT)return fs.readFileSync(path.join(process.env.GDR_OFFLINE_ROOT,p));return readPublicBytes(request,abs(p)+'?acceptance='+Date.now(),{budgetMs:PUBLIC_READ_BUDGET_MS,onResult:r=>{if(r.attempts.length>1||r.status==='failed')transportRetries.push({...r,path:p});}});}
 async function visit(page){
  if(process.env.GDR_OFFLINE_ROOT){
   await require('./offline-crypto.cjs')(page);
