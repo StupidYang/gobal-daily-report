@@ -71,14 +71,20 @@ jobs:
           set -euo pipefail
           git config user.name 'gdr-publisher[bot]'
           git config user.email 'gdr-publisher@users.noreply.github.com'
+          # Static checks and the full unit suite are independent of the candidate payload.
+          # Run them once outside the retry loop so a push retry never re-spends ~74s.
+          git fetch origin main
+          git reset --hard origin/main
+          node scripts/gdr.cjs check-config
+          node scripts/check-runtime.cjs
+          for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
+          node --test tests/*.test.cjs 2>&1 | tee /tmp/gdr-publication/unit-tests.tap
           complete=0
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
-            node scripts/gdr.cjs check-config
-            node scripts/check-runtime.cjs
-            for f in assets/*.js lib/*.cjs scripts/*.cjs; do node --check "$f"; done
-            node --test tests/*.test.cjs 2>&1 | tee /tmp/gdr-publication/unit-tests.tap
+            # claim is the only step fenced by the 20-minute execution deadline. Take the lease
+            # before the expensive promote/staging/browser work rather than after the unit suite.
             node scripts/publication-lease.cjs claim
             node scripts/promote-candidates.cjs > /tmp/gdr-publication/receipts.json
             node scripts/check-published.cjs

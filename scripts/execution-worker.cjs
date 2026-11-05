@@ -108,7 +108,11 @@ function createWorker(options={}){
   const previous=await read('gdr-runtime','runtime/results/'+id+'.json');
   if(previous)return {status:'already-collected',requestId:id,deadlineAt:previous.deadlineAt};
   const req=await read('gdr-runtime','runtime/requests/'+id+'.json',ref);
-  if(req?.version!==1||req.requestId!==id||!safe(id))throw Error('Invalid request');
+  // Split the generic "Invalid request" into an actionable reason. The recurring failure was a
+  // model-written requestId that did not match the filename, which cost a whole execution.
+  if(req?.version!==1)throw Error('Invalid request version: expected 1, got '+String(req?.version)+' for '+id);
+  if(!safe(id))throw Error('Invalid request id (unsafe characters or length): '+id);
+  if(req.requestId!==id)throw Error('Request identity mismatch: filename uses '+id+' but requestId is '+String(req?.requestId)+'; they must be identical, including the -<taskGroup> suffix');
   await requireProduction(req.taskGroup);
   if(!Number.isFinite(Date.parse(req.requestedAt))||Math.abs(clock()-Date.parse(req.requestedAt))>15*60000)throw Error('Request was queued too long or has an invalid timestamp');
   const sourcePlan=sanitizeDocuments(req.documents||[]),docs=sourcePlan.accepted;
