@@ -1,14 +1,19 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.report.deepDive[3].sourceUrls[1]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html [source-not-retrieved]\neditorial.report.recentChanges[2].sourceUrls[1]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html [source-not-retrieved]\neditorial.newsItems[1].sourceUrls[1]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html [source-not-retrieved]\neditorial.macroFacts[13].asOf: asOf不能在未来 [future-time]",
+  "issues": [
+    "editorial.report.deepDive[3].sourceUrls[1]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html [source-not-retrieved]",
+    "editorial.report.recentChanges[2].sourceUrls[1]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html [source-not-retrieved]",
+    "editorial.newsItems[1].sourceUrls[1]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html [source-not-retrieved]",
+    "editorial.macroFacts[13].asOf: asOf不能在未来 [future-time]"
+  ],
   "execution": {
     "executionId": "20261106T1640Z-global-main",
     "generation": 394
   },
   "deadlineAt": "2026-11-06T16:55:58.111Z",
   "requestId": "20261106T1640Z-global-main",
-  "at": "2026-11-06T16:36:17.735Z",
+  "at": "2026-11-06T16:40:09.241Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +24,44 @@
       "status": "ready-for-analysis",
       "at": "2026-11-06T16:36:17.735Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-06T16:40:09.241Z",
+      "revision": 0
     }
   ],
   "packetHash": "a239e0595e43b4a888c03ff355f5b033fb68e57f38601f6bba88b1dcb43c9923",
-  "collectionDurationMs": 10956
+  "collectionDurationMs": 10956,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "73d8cbbca7cea85cd2a63121c88c293a80c69965ee37b0e750681c140c624de6",
+  "validationIssues": [
+    {
+      "path": "editorial.report.deepDive[3].sourceUrls[1]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html"
+    },
+    {
+      "path": "editorial.report.recentChanges[2].sourceUrls[1]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html"
+    },
+    {
+      "path": "editorial.newsItems[1].sourceUrls[1]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://www.nbd.com.cn/articles/2026-11-06/4641129.html"
+    },
+    {
+      "path": "editorial.macroFacts[13].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261106T1640Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
