@@ -1,0 +1,985 @@
+{
+  "execution": {
+    "executionId": "20261106T172457Z-us-session",
+    "generation": 395
+  },
+  "editorial": {
+    "packetHash": "5126aca70855eedcb11fb33fcc7b2e6baed35ac8b4503f4b9bcf225498db701b",
+    "analyzedAt": "2026-11-06T17:36:37Z",
+    "report": {
+      "overview": "纽约 2026-11-06 12:25 EST（周五，常规时段午间、距 16:00 ET 收盘约 3 小时 35 分）：前一交易日暴跌后的反弹在午间明显减速。标普500 7416.55（+0.85%）、纳指 24694.848（+1.56%）、纳指100 27114.238（+1.82%）仍上涨，道指 51558.75（+0.07%）由开盘跌1%转为微涨，罗素2000 2753.8848（+0.88%）改善。相比上一版（reportId 2026-11-06-2317，quotes asOf 2026-11-06T15:13:52Z），标普500 由 7427.63 回落至 7416.55、纳指由 24746.988 回落至 24694.848，涨幅分别从 +1.00%/+1.78% 收窄至 +0.85%/+1.56%；半导体龙头同步回吐（AMD +9.63%、英伟达 +3.63%、美光 +5.90%），而道指与罗素2000 相对改善，属“领涨降温、广度略修复”。VIX 24.24（-13.98%）仍显著高于20，10年期收益率 4.849%（+0.25%）较上一版 4.872% 回落。其余五个资产模块沿用已发布版本（2026-11-06-2317，原 analyzedAt 2026-11-06T15:17:03Z），本轮未重新核验。",
+      "rolling24hSummary": "过去24小时的主线是“暴跌—超跌反弹—午间降温”：11月5日道指跌3.44%、纳指跌5.52%、标普500跌4.35%、费城半导体指数跌12%（每经早参，本轮已取得并阅读）；11月6日开盘三大指数分叉，AI 硬件链集体反弹，费半盘中一度涨6.6%，随后涨幅回落至3.3%、存储板块冲高回落。本轮 12:25 EST 快照显示反弹仍在但动能减弱，指数涨幅较 10:13 EST 的上一版普遍收窄，VIX 日内仍下降约14%、但绝对水平 24.24 高于20，说明对冲需求回落而尾部保护仍贵。美元指数 102.177（+0.62%）与 WTI 90.25（-0.30%）变化有限，现货黄金 4059、BTC 75789.79 为无涨跌基准的快照，不冒充日内涨跌。官方证据方面，本轮取得财政部11月日度收益率曲线XML、美联储FOMC日历与新闻稿索引、EIA周报日历与BEA发布日历；BLS 官方就业报告与两篇证券时报稿件未取得可引用回执，故本轮不引用非农数值，也不把搜索摘要当作已读证据。",
+      "methodology": "本轮为 us-session 盘中节点，时刻取自真实时钟：UTC 2026-11-06T17:25Z 前后 → 纽约 12:25 EST（周五，EST=UTC-5，DST 已于 2026-11-01 结束），属常规交易时段 09:30–16:00 ET 的午间，不是盘前或盘后。行情取自本轮 generation=395 的采集包（packetHash=5126aca70855eedcb11fb33fcc7b2e6baed35ac8b4503f4b9bcf225498db701b，deadlineAt=2026-11-06T17:45:41.487Z），共 71 项报价、16 份成功取得正文回执的文档（另有2份证券时报文档因单请求超时未取得回执，已排除引用）。指数与个股涨跌幅以本轮报价的 provider-previous-close 口径为准；RATE:US2Y 为 2026-11-05 日度平价收益率 4.46%（无盘中时点，标 partial），ENERGY:BRENT 本轮 HTTP 404 缺失，METAL:XAUUSD/CRYPTO:BTC:USD 为无涨跌基准快照，均不补 0、不改时间。美股模块为本轮新证据；A股、港股、BTC、黄金、原油沿用 reportId 2026-11-06-2317 的已发布模块，保留原 asOf/analyzedAt 并标注沿用，未重新核验，不与本轮新报价混合成同一时点。成交量、成交额、涨跌家数与板块资金流本轮未取得，按 partial 记录缺口，不以其他数据替代。",
+      "coreAnalysis": {
+        "mainTheme": "超跌反弹在午间降温：指数仍红，但领涨的半导体链回吐近半涨幅，广度略有修复",
+        "expectationGap": "开盘时市场按“昨日暴跌已过度”定价（费半一度涨6.6%），午间费半涨幅回落至3.3%、存储股转跌，说明买盘持续性弱于开盘预期",
+        "divergence": "半导体/AI硬件与个别软件（NET +12.31%）强，CRM -3.18%、ADBE -2.13%、COIN -1.75% 弱；道指与罗素2000 相对改善而纳指涨幅收窄，属内部再平衡",
+        "regime": "高波动、事件驱动的结构性反弹；VIX 24.24 虽日内 -13.98% 但仍高于20，趋势未确认",
+        "priceIn": "价格已计入前一交易日 AI 链抛售的回补与部分财报/事件驱动（IREN、NET），尚未计入盈利预期下修或政策调查的实质落地",
+        "bullCase": "AI 硬件链盈利与资本开支叙事未被证伪，VIX 回落降低对冲成本，道指由跌转涨与罗素2000 改善显示抛压未扩散",
+        "bullInvalidation": "费半涨幅继续回吐至转跌，或 VIX 重回 26 上方，或 10Y 收益率重新上破 4.90% 且科技股同步转弱",
+        "bearCase": "反弹只是空头回补，广度未真正扩散，前一日 AI 基础设施的估值与监管担忧在后续时段重新主导",
+        "bearInvalidation": "道指与罗素2000 继续走强、半导体守住午间涨幅且 VIX 进一步下行，确认广度实质性改善"
+      },
+      "plainLanguage": {
+        "verdict": "美股午间仍是超跌反弹，但领涨的芯片链已回吐近半涨幅，指数红盘不等于广度确认",
+        "bottomLine": "指数还在涨、涨得比上午慢了；道指和小盘反而改善，说明资金在从极端集中的半导体往外挪。追高不如等尾盘确认。",
+        "whyNow": "本轮12:25 EST 报价较 10:13 EST 的上一版普遍收窄，费半从盘中 +6.6% 回落至 +3.3%、存储股转跌，VIX 仍高于20",
+        "horizon": "未来12–24小时，重点是11月6日 16:00 ET 收盘与下一交易日开盘",
+        "confidence": "medium",
+        "invalidation": "费半转跌、VIX 重回26上方，或10Y收益率重新上破4.90%且科技股同步走弱",
+        "evidenceFactIds": [
+          "INDEX:US:SP500",
+          "INDEX:US:NASDAQ",
+          "VOL:VIX",
+          "RATE:US10Y"
+        ],
+        "sourceIds": [],
+        "impacts": [
+          {
+            "asset": "美股",
+            "effect": "短线分化偏强但动能减弱",
+            "reason": "指数仍涨（标普500 +0.85%、纳指 +1.56%），但半导体回吐、软件内部分化，VIX 24.24 仍高",
+            "takeaway": "我的判断：不宜把午间红盘当作趋势反转，重点看尾盘能否守住涨幅",
+            "horizon": "未来12–24小时（含11月6日尾盘与下一交易日开盘）",
+            "counterRisk": "利率与政策调查风险、AI 资本开支预期再下修",
+            "invalidation": "VIX>26 或费半转跌且指数翻绿",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:US:SP500",
+              "INDEX:US:NASDAQ",
+              "INDEX:US:DOW",
+              "VOL:VIX",
+              "EQUITY:US:AMD",
+              "EQUITY:US:NVDA"
+            ],
+            "sourceIds": []
+          },
+          {
+            "asset": "A股",
+            "effect": "中性（沿用）",
+            "reason": "沿用上一版（2026-11-06-2317，原 asOf/analyzedAt 保留）；本轮未重新核验 A 股行情与资金面，仅阅读了一条国内政策报道",
+            "takeaway": "沿用：政策部署属中期变量，不作为本轮 A 股涨跌的因果解释",
+            "horizon": "沿用原判断周期，本轮不刷新",
+            "counterRisk": "政策落地节奏与外部环境",
+            "invalidation": "重新取得 A 股成交、资金流与行业数据后再评估",
+            "confidence": "low",
+            "evidenceFactIds": [],
+            "sourceIds": [],
+            "retention": {
+              "reportId": "2026-11-06-2317",
+              "analyzedAt": "2026-11-06T15:17:03Z",
+              "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+            }
+          },
+          {
+            "asset": "港股",
+            "effect": "中性（沿用）",
+            "reason": "沿用上一版（2026-11-06-2317），本轮港股为 11 月 6 日收盘快照，未重新核验成交与沽空",
+            "takeaway": "沿用：关注恒指/恒科结构，不刷新时点",
+            "horizon": "沿用原判断周期，本轮不刷新",
+            "counterRisk": "港交所数据访问限制造成的观测缺口",
+            "invalidation": "取得合规的港股成交与沽空数据后再评估",
+            "confidence": "low",
+            "evidenceFactIds": [],
+            "sourceIds": [],
+            "retention": {
+              "reportId": "2026-11-06-2317",
+              "analyzedAt": "2026-11-06T15:17:03Z",
+              "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+            }
+          },
+          {
+            "asset": "BTC",
+            "effect": "证据不足（沿用）",
+            "reason": "沿用上一版（2026-11-06-2317）；本轮 BTC 75789.79 为无涨跌基准的交易所快照，不能冒充日内涨跌",
+            "takeaway": "沿用：不据快照给出方向判断",
+            "horizon": "沿用原判断周期，本轮不刷新",
+            "counterRisk": "加密关联股 COIN -1.75% 走弱与快照口径差异",
+            "invalidation": "取得统一 24 小时基准的连续报价后再评估",
+            "confidence": "low",
+            "evidenceFactIds": [],
+            "sourceIds": [],
+            "retention": {
+              "reportId": "2026-11-06-2317",
+              "analyzedAt": "2026-11-06T15:17:03Z",
+              "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+            }
+          },
+          {
+            "asset": "黄金",
+            "effect": "中性（沿用）",
+            "reason": "沿用上一版（2026-11-06-2317）；本轮现货黄金 4059 为快照，缺涨跌幅基准，且不能把名义10Y变化直接当实际利率变化",
+            "takeaway": "沿用：关注实际利率与美元，不刷新时点",
+            "horizon": "沿用原判断周期，本轮不刷新",
+            "counterRisk": "美元指数 +0.62% 与避险情绪反复",
+            "invalidation": "取得实际利率与 ETF 持仓证据后再评估",
+            "confidence": "low",
+            "evidenceFactIds": [],
+            "sourceIds": [],
+            "retention": {
+              "reportId": "2026-11-06-2317",
+              "analyzedAt": "2026-11-06T15:17:03Z",
+              "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+            }
+          },
+          {
+            "asset": "原油",
+            "effect": "证据不足（沿用）",
+            "reason": "沿用上一版（2026-11-06-2317）；本轮 WTI 90.25（-0.30%），布伦特合约 404 缺失，缺月差与库存验证",
+            "takeaway": "沿用：不据单一合约推断供需",
+            "horizon": "沿用原判断周期，本轮不刷新",
+            "counterRisk": "海湾航运事件与 EIA 库存顺延带来的实货不确定性",
+            "invalidation": "取得布伦特报价与最新库存数据后再评估",
+            "confidence": "low",
+            "evidenceFactIds": [],
+            "sourceIds": [],
+            "retention": {
+              "reportId": "2026-11-06-2317",
+              "analyzedAt": "2026-11-06T15:17:03Z",
+              "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+            }
+          }
+        ]
+      },
+      "marketCoverage": [
+        {
+          "market": "美股",
+          "status": "updated",
+          "asOf": "2026-11-06T17:25:49.000Z",
+          "note": "本轮新证据：71项报价与16份成功取得的文档；更新点位、日内涨跌、领涨领跌与相比上一版的回吐",
+          "gaps": "成交量/成交额、涨跌家数、板块资金流未取得；RATE:US2Y 为日度值、ENERGY:BRENT 404"
+        },
+        {
+          "market": "A股",
+          "status": "carried",
+          "asOf": "2026-11-06T15:17:03Z",
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          },
+          "note": "沿用已发布模块，保留原 asOf/analyzedAt；本轮 us-session 未重新核验、不刷新数值",
+          "gaps": "本轮未取得该资产的新增可引用证据"
+        },
+        {
+          "market": "港股",
+          "status": "carried",
+          "asOf": "2026-11-06T15:17:03Z",
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          },
+          "note": "沿用已发布模块，保留原 asOf/analyzedAt；本轮 us-session 未重新核验、不刷新数值",
+          "gaps": "本轮未取得该资产的新增可引用证据"
+        },
+        {
+          "market": "BTC",
+          "status": "carried",
+          "asOf": "2026-11-06T15:17:03Z",
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          },
+          "note": "沿用已发布模块，保留原 asOf/analyzedAt；本轮 us-session 未重新核验、不刷新数值",
+          "gaps": "本轮未取得该资产的新增可引用证据"
+        },
+        {
+          "market": "黄金",
+          "status": "carried",
+          "asOf": "2026-11-06T15:17:03Z",
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          },
+          "note": "沿用已发布模块，保留原 asOf/analyzedAt；本轮 us-session 未重新核验、不刷新数值",
+          "gaps": "本轮未取得该资产的新增可引用证据"
+        },
+        {
+          "market": "原油",
+          "status": "carried",
+          "asOf": "2026-11-06T15:17:03Z",
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          },
+          "note": "沿用已发布模块，保留原 asOf/analyzedAt；本轮 us-session 未重新核验、不刷新数值",
+          "gaps": "本轮未取得该资产的新增可引用证据"
+        }
+      ],
+      "assets": [
+        {
+          "asset": "美股",
+          "name": "美股",
+          "asOf": "2026-11-06T17:25:49.000Z",
+          "status": "updated",
+          "judgment": "超跌反弹午间降温，领涨降温而广度略修复",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y"
+          ]
+        },
+        {
+          "asset": "A股",
+          "name": "A股",
+          "asOf": "2026-11-06T15:17:03Z",
+          "status": "carried",
+          "judgment": "沿用上一版判断，本轮未重新核验",
+          "evidenceFactIds": [],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        },
+        {
+          "asset": "港股",
+          "name": "港股",
+          "asOf": "2026-11-06T15:17:03Z",
+          "status": "carried",
+          "judgment": "沿用上一版判断，本轮未重新核验",
+          "evidenceFactIds": [],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        },
+        {
+          "asset": "BTC",
+          "name": "BTC",
+          "asOf": "2026-11-06T15:17:03Z",
+          "status": "carried",
+          "judgment": "沿用上一版判断，本轮未重新核验",
+          "evidenceFactIds": [],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        },
+        {
+          "asset": "黄金",
+          "name": "黄金",
+          "asOf": "2026-11-06T15:17:03Z",
+          "status": "carried",
+          "judgment": "沿用上一版判断，本轮未重新核验",
+          "evidenceFactIds": [],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        },
+        {
+          "asset": "原油",
+          "name": "原油",
+          "asOf": "2026-11-06T15:17:03Z",
+          "status": "carried",
+          "judgment": "沿用上一版判断，本轮未重新核验",
+          "evidenceFactIds": [],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        }
+      ],
+      "deepDive": [
+        {
+          "asset": "美股",
+          "name": "美股",
+          "market": "美股",
+          "title": "午间反弹降温：半导体回吐、道指转涨、波动率仍高",
+          "analysis": "纽约 12:25 EST 常规时段午间，标普500 7416.55（+0.85%）、纳指 24694.848（+1.56%）、纳指100 27114.238（+1.82%）上涨，道指 51558.75（+0.07%）微涨、罗素2000 2753.8848（+0.88%）。领涨集中在 AI 硬件与超跌链：AMD 443.325（+9.63%）、INTC +7.17%、MU +5.90%、TSM +5.88%、ASML +5.03%、TSLA +4.61%、NVDA +3.63%，另有 NET +12.31% 的个别软件极端涨幅。领跌为 CRM -3.18%、ADBE -2.13%、COIN -1.75%，另类资产管理分化（KKR -0.70%、BX +0.70%、APO -0.24%）。波动率 VIX 24.24（-13.98%）较前收大幅回落但绝对水平仍高于20；10Y 4.849%（+0.25%）、美元指数 102.177（+0.62%）。本轮未取得成交量、成交额、涨跌家数与板块资金流，故不对“量能”作数值判断，仅以价格与波动率的组合推断：波动率压缩降低了对冲成本，但板块回吐说明增量买盘不足以延续开盘强度。",
+          "mechanism": "前一交易日 AI 基础设施与半导体遭无差别抛售（费半 -12%），当日低开后的空头回补与抄底资金首先涌入跌幅最深的硬件链；随着利率与政策不确定性未被消除，追高资金在午间获利了结，资金向道指与小盘 marginally 扩散，形成领涨降温而广度略修复的结构。",
+          "risk": "反弹由少数高 beta 板块驱动，若半导体回吐扩散至指数权重，指数易快速翻绿；VIX 仍高于20意味着尾部保护昂贵；10Y 若重新上行将同时压制成长股估值与融资条件；政策调查消息尚无一手文件，存在 headline 风险。",
+          "invalidation": "费半由涨转跌、VIX 重回26上方、10Y 上破4.90% 且科技股同步转弱，或道指与罗素2000 由改善转为再度走弱——任一组合出现即需把“降温反弹”改判为“反弹结束”。",
+          "horizon": "未来12–24小时（11月6日尾盘至下一交易日开盘）",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "VOL:VIX",
+            "RATE:US10Y",
+            "FX:DXY",
+            "EQUITY:US:AMD",
+            "EQUITY:US:INTC",
+            "EQUITY:US:MU",
+            "EQUITY:US:TSM",
+            "EQUITY:US:ASML",
+            "EQUITY:US:TSLA",
+            "EQUITY:US:NVDA",
+            "EQUITY:US:NET",
+            "EQUITY:US:CRM",
+            "EQUITY:US:ADBE",
+            "EQUITY:US:COIN",
+            "EQUITY:US:KKR",
+            "EQUITY:US:BX",
+            "EQUITY:US:APO"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4641108.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641126.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641094.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641123.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4640203.html"
+          ]
+        },
+        {
+          "asset": "A股",
+          "name": "A股",
+          "market": "A股",
+          "title": "沿用上一版（未在本轮重新核验）",
+          "analysis": "沿用上一版 A 股判断与本轮新增的国内政策背景：国务院常务会议提出加快重大项目与“六张网”建设、完善资本市场稳市机制。本轮未重新核验 A 股行情、成交额、行业资金流与涨跌家数，不引入本轮新数值。",
+          "mechanism": "沿用上一版的传导链条与原分析时点（2026-11-06T15:17:03Z）；本轮 us-session 不改动、不重新估计参数，也不把本轮美股或宏观报价外推到该资产。",
+          "risk": "沿用上一版风险清单；额外风险是沿用信息随时间推移而陈旧，本轮无新增可引用证据来确认或推翻原判断。",
+          "invalidation": "当本轮之后取得该资产的合规行情、成交、资金流或原文披露时，才重新评估；在此之前不以本轮美股变化反推该资产。",
+          "horizon": "沿用原判断周期，本轮不刷新",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE"
+          ],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        },
+        {
+          "asset": "港股",
+          "name": "港股",
+          "market": "港股",
+          "title": "沿用上一版（未在本轮重新核验）",
+          "analysis": "沿用上一版港股判断：本轮港股行情为 11 月 6 日收盘快照，未重新核验恒指/恒科的成交、沽空比例与行业资金流；港交所网站的自动化访问限制仍构成数据缺口。",
+          "mechanism": "沿用上一版的传导链条与原分析时点（2026-11-06T15:17:03Z）；本轮 us-session 不改动、不重新估计参数，也不把本轮美股或宏观报价外推到该资产。",
+          "risk": "沿用上一版风险清单；额外风险是沿用信息随时间推移而陈旧，本轮无新增可引用证据来确认或推翻原判断。",
+          "invalidation": "当本轮之后取得该资产的合规行情、成交、资金流或原文披露时，才重新评估；在此之前不以本轮美股变化反推该资产。",
+          "horizon": "沿用原判断周期，本轮不刷新",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI"
+          ],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        },
+        {
+          "asset": "BTC",
+          "name": "BTC",
+          "market": "BTC",
+          "title": "沿用上一版（未在本轮重新核验）",
+          "analysis": "沿用上一版加密资产判断：本轮加密报价为交易所连续快照、无 24 小时涨跌基准，不能以快照冒充日内涨跌；本轮未重新核验链上、ETF 资金流与清算数据。",
+          "mechanism": "沿用上一版的传导链条与原分析时点（2026-11-06T15:17:03Z）；本轮 us-session 不改动、不重新估计参数，也不把本轮美股或宏观报价外推到该资产。",
+          "risk": "沿用上一版风险清单；额外风险是沿用信息随时间推移而陈旧，本轮无新增可引用证据来确认或推翻原判断。",
+          "invalidation": "当本轮之后取得该资产的合规行情、成交、资金流或原文披露时，才重新评估；在此之前不以本轮美股变化反推该资产。",
+          "horizon": "沿用原判断周期，本轮不刷新",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        },
+        {
+          "asset": "黄金",
+          "name": "黄金",
+          "market": "黄金",
+          "title": "沿用上一版（未在本轮重新核验）",
+          "analysis": "沿用上一版黄金判断：本轮现货黄金为快照价、缺涨跌幅基准，未把名义利率变化直接当作实际利率变化；未重新核验 ETF 持仓与央行购金数据。",
+          "mechanism": "沿用上一版的传导链条与原分析时点（2026-11-06T15:17:03Z）；本轮 us-session 不改动、不重新估计参数，也不把本轮美股或宏观报价外推到该资产。",
+          "risk": "沿用上一版风险清单；额外风险是沿用信息随时间推移而陈旧，本轮无新增可引用证据来确认或推翻原判断。",
+          "invalidation": "当本轮之后取得该资产的合规行情、成交、资金流或原文披露时，才重新评估；在此之前不以本轮美股变化反推该资产。",
+          "horizon": "沿用原判断周期，本轮不刷新",
+          "evidenceFactIds": [
+            "METAL:XAUUSD"
+          ],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        },
+        {
+          "asset": "原油",
+          "name": "原油",
+          "market": "原油",
+          "title": "沿用上一版（未在本轮重新核验）",
+          "analysis": "沿用上一版原油供需框架：本轮布伦特合约持续 404 缺失，缺月差与裂解价差；EIA 周度库存受退伍军人节影响顺延，本轮未重新核验实货紧张度。",
+          "mechanism": "沿用上一版的传导链条与原分析时点（2026-11-06T15:17:03Z）；本轮 us-session 不改动、不重新估计参数，也不把本轮美股或宏观报价外推到该资产。",
+          "risk": "沿用上一版风险清单；额外风险是沿用信息随时间推移而陈旧，本轮无新增可引用证据来确认或推翻原判断。",
+          "invalidation": "当本轮之后取得该资产的合规行情、成交、资金流或原文披露时，才重新评估；在此之前不以本轮美股变化反推该资产。",
+          "horizon": "沿用原判断周期，本轮不刷新",
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ],
+          "retention": {
+            "reportId": "2026-11-06-2317",
+            "analyzedAt": "2026-11-06T15:17:03Z",
+            "reason": "沿用已发布版本（reportId 2026-11-06-2317，analysisAsOf 2026-11-06T15:17:03Z，quotes dataAsOf 2026-11-06T15:13:56Z）；本轮 us-session 仅更新美股模块，其余资产未重新核验，保留原 asOf/analyzedAt。"
+          }
+        }
+      ],
+      "frameworkAnalysis": [
+        {
+          "id": "fa-mean-reversion",
+          "framework": "预期差/事件研究",
+          "concept": "极端单日跌幅后的次日反弹常包含空头回补，不等于基本面重估",
+          "applicability": "高",
+          "observed": "11月5日纳指 -5.52%、费半 -12%；11月6日费半盘中 +6.6% 后回落至 +3.3%，本轮指数涨幅较上一版收窄",
+          "mechanism": "前一日无差别抛售造成价格与短期情绪错位，回补资金优先买入跌幅最深的高 beta 标的，随后在缺乏新增基本面信息时兑现",
+          "conclusion": "当日更接近跌深反弹，午间回吐已削弱“趋势反转”解释；若尾盘守住且广度继续改善才需要上修判断",
+          "assumptions": "没有新的盈利下修或政策冲击",
+          "counterEvidence": "IREN 财报后大涨、NET 创一年多最大涨幅，说明个股层面仍有正向新信息",
+          "horizon": "未来12–24小时",
+          "invalidation": "费半转跌、指数翻绿",
+          "confidence": "medium",
+          "missingData": "成交量与空头回补规模",
+          "evidenceFactIds": [
+            "INDEX:US:NASDAQ",
+            "INDEX:US:SP500",
+            "EQUITY:US:AMD",
+            "EQUITY:US:NVDA"
+          ],
+          "sourceIds": [],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4640203.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641126.html"
+          ]
+        },
+        {
+          "id": "fa-breadth",
+          "framework": "市场微观结构/广度",
+          "concept": "指数上涨若只由少数板块推动，持续性弱于广度扩散的上涨",
+          "applicability": "高",
+          "observed": "道指 +0.07% 由开盘跌1%转微涨、罗素2000 +0.88% 较上一版 +0.22% 改善，而纳指涨幅由 +1.78% 收窄至 +1.56%；CRM/ADBE 仍跌",
+          "mechanism": "资金从极端集中的半导体向蓝筹与小盘边际扩散，但软件与加密关联股未跟涨，扩散并不完整",
+          "conclusion": "广度“略修复但未确认”，这是本轮相比上一版最重要的结构性变化",
+          "assumptions": "风格未再度切换回单一 AI 链",
+          "counterEvidence": "半导体仍是最强板块，个股涨幅极端（NET +12.31%）",
+          "horizon": "未来12–24小时",
+          "invalidation": "道指与罗素2000 重新转跌且半导体同步回吐",
+          "confidence": "medium-high",
+          "missingData": "涨跌家数、成交额与板块资金流（本轮未取得）",
+          "evidenceFactIds": [
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "INDEX:US:NASDAQ",
+            "EQUITY:US:CRM",
+            "EQUITY:US:ADBE"
+          ],
+          "sourceIds": [],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4641094.html"
+          ]
+        },
+        {
+          "id": "fa-volatility",
+          "framework": "风险溢价/波动率",
+          "concept": "VIX 水平与变化分别反映对冲成本和情绪边际，二者不可混用",
+          "applicability": "中",
+          "observed": "VIX 24.24（-13.98%），上一版为 24.14（-14.34%）；10Y 4.849%（+0.25%），上一版 4.872%（+0.72%）",
+          "mechanism": "波动率日内大幅回落降低保护成本、支撑风险资产估值；但绝对水平仍高于20，说明尾部风险定价未消退，长端利率小幅回落则减轻了贴现率压力",
+          "conclusion": "波动率与利率同时边际转松，是午间指数仍能维持红盘的重要条件，而非上涨的充分理由",
+          "assumptions": "无突发政策或地缘冲击",
+          "counterEvidence": "存储板块冲高回落、个别权重仍跌",
+          "horizon": "未来12–24小时",
+          "invalidation": "VIX 重回26上方或10Y 上破4.90%",
+          "confidence": "medium",
+          "missingData": "VIX 期限结构与期权偏度",
+          "evidenceFactIds": [
+            "VOL:VIX",
+            "RATE:US10Y",
+            "RATE:US2Y"
+          ],
+          "sourceIds": [],
+          "sourceUrls": [
+            "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
+          ]
+        }
+      ],
+      "frameworkSynthesis": {
+        "verdict": "三框架一致指向“降温中的结构性反弹”，广度框架权重最高，反转证据不足",
+        "agreement": "预期差框架与波动率框架都解释当日红盘但不支持趋势反转；广度框架进一步指出领涨降温与边际扩散并存",
+        "disagreement": "个股财报与极端涨幅（IREN、NET）支持基本面仍有局部亮点，与“纯空头回补”解释存在张力；软件龙头下跌也不支持全面 risk-on",
+        "weighting": "以本轮报价的广度变化与费半回吐这一直接证据权重最高，波动率为条件变量，个股事件仅作解释性旁证，不做定量打分",
+        "invalidation": "费半转跌、VIX>26、10Y 上破4.90% 且科技转弱，或道指/罗素2000 与半导体同步走强并伴随量能确认"
+      },
+      "recentChanges": [
+        {
+          "title": "指数涨幅较上一版普遍收窄",
+          "detail": "上一版（2026-11-06-2317，asOf 2026-11-06T15:13:52Z）标普500 7427.63（+1.00%）、纳指 24746.988（+1.78%）、纳指100 27174.93（+2.05%）；本轮 12:25 EST 分别为 7416.55（+0.85%）、24694.848（+1.56%）、27114.238（+1.82%）。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX"
+          ]
+        },
+        {
+          "title": "半导体龙头回吐，领涨强度下降",
+          "detail": "AMD 由 +10.93% 降至 +9.63%、英伟达由 +5.66% 降至 +3.63%、美光由 +7.16% 降至 +5.90%；每经报道费半盘中一度 +6.6%、随后回落至 +3.3%，存储板块冲高回落、西部数据率先转跌。",
+          "evidenceFactIds": [
+            "EQUITY:US:AMD",
+            "EQUITY:US:NVDA",
+            "EQUITY:US:MU"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4641108.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641126.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641123.html"
+          ]
+        },
+        {
+          "title": "道指由跌转微涨、小盘改善，广度略修复",
+          "detail": "上一版道指 -0.02%、罗素2000 +0.22%；本轮道指 +0.07%、罗素2000 +0.88%。开盘时道指一度跌1%，午间已回到平盘上方。",
+          "evidenceFactIds": [
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4641094.html"
+          ]
+        },
+        {
+          "title": "利率上行压力缓解、波动率回落趋缓",
+          "detail": "10Y 由 4.872%（+0.72%）降至 4.849%（+0.25%）；VIX 由 24.14（-14.34%）变为 24.24（-13.98%），日内降幅略收窄、绝对水平微升。",
+          "evidenceFactIds": [
+            "RATE:US10Y",
+            "VOL:VIX"
+          ],
+          "sourceUrls": [
+            "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
+          ]
+        }
+      ],
+      "changes": [
+        {
+          "title": "指数涨幅较上一版普遍收窄",
+          "detail": "上一版（2026-11-06-2317，asOf 2026-11-06T15:13:52Z）标普500 7427.63（+1.00%）、纳指 24746.988（+1.78%）、纳指100 27174.93（+2.05%）；本轮 12:25 EST 分别为 7416.55（+0.85%）、24694.848（+1.56%）、27114.238（+1.82%）。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX"
+          ],
+          "sourceUrls": []
+        },
+        {
+          "title": "半导体龙头回吐，领涨强度下降",
+          "detail": "AMD 由 +10.93% 降至 +9.63%、英伟达由 +5.66% 降至 +3.63%、美光由 +7.16% 降至 +5.90%；每经报道费半盘中一度 +6.6%、随后回落至 +3.3%，存储板块冲高回落、西部数据率先转跌。",
+          "evidenceFactIds": [
+            "EQUITY:US:AMD",
+            "EQUITY:US:NVDA",
+            "EQUITY:US:MU"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4641108.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641126.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641123.html"
+          ]
+        },
+        {
+          "title": "道指由跌转微涨、小盘改善，广度略修复",
+          "detail": "上一版道指 -0.02%、罗素2000 +0.22%；本轮道指 +0.07%、罗素2000 +0.88%。开盘时道指一度跌1%，午间已回到平盘上方。",
+          "evidenceFactIds": [
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4641094.html"
+          ]
+        },
+        {
+          "title": "利率上行压力缓解、波动率回落趋缓",
+          "detail": "10Y 由 4.872%（+0.72%）降至 4.849%（+0.25%）；VIX 由 24.14（-14.34%）变为 24.24（-13.98%），日内降幅略收窄、绝对水平微升。",
+          "evidenceFactIds": [
+            "RATE:US10Y",
+            "VOL:VIX"
+          ],
+          "sourceUrls": [
+            "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
+          ]
+        }
+      ],
+      "evolution24h": [
+        {
+          "at": "2026-11-06T07:10:29+08:00",
+          "title": "11月5日暴跌经每经早参记录",
+          "detail": "道指 -3.44%、纳指 -5.52%、标普500 -4.35%、费半 -12%，为次日反弹提供基数。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4640203.html"
+          ]
+        },
+        {
+          "at": "2026-11-06T15:13:52Z",
+          "title": "上一版快照（10:13 EST）",
+          "detail": "标普500 7427.63（+1.00%）、纳指 24746.988（+1.78%）、VIX 24.14，半导体领涨、道指微跌。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "at": "2026-11-06T23:31:52+08:00",
+          "title": "费半涨幅回落（10:31 EST）",
+          "detail": "费半由盘中 +6.6% 回落至 +3.3%，存储板块冲高回落，反弹动能减弱。",
+          "evidenceFactIds": [
+            "EQUITY:US:AMD",
+            "EQUITY:US:MU"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4641126.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641123.html"
+          ]
+        },
+        {
+          "at": "2026-11-06T17:25:49.000Z",
+          "title": "本轮午间快照（12:25 EST）",
+          "detail": "标普500 7416.55（+0.85%）、纳指 24694.848（+1.56%）、道指 +0.07%、VIX 24.24（-13.98%）。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:DOW",
+            "VOL:VIX"
+          ]
+        }
+      ],
+      "watch": [
+        {
+          "point": "费城半导体指数能否守住午间涨幅",
+          "detail": "盘中已从 +6.6% 回落至 +3.3%，若转跌则本轮“降温反弹”需改判为反弹结束；本轮报价 AMD +9.63%、NVDA +3.63% 可作为代理观察。"
+        },
+        {
+          "point": "VIX 26 一线",
+          "detail": "当前 24.24（-13.98%），若重回26上方，波动率框架的支撑条件失效。"
+        },
+        {
+          "point": "10年期收益率 4.90%",
+          "detail": "当前 4.849%（+0.25%），较上一版 4.872% 回落；重新上破且科技股转弱将构成改判条件。"
+        },
+        {
+          "point": "道指与罗素2000 的广度确认",
+          "detail": "当前道指 +0.07%、罗素2000 +0.88%，若二者继续改善且半导体不崩，广度修复的可信度上升。"
+        }
+      ],
+      "dataDefinitions": [
+        {
+          "term": "午间（常规时段）",
+          "definition": "纽约时间 09:30–16:00 ET 常规交易时段内、开盘后约2–4小时的阶段；本轮为 2026-11-06 12:25 EST（周五，EST=UTC-5），不是盘前或盘后。"
+        },
+        {
+          "term": "provider-previous-close",
+          "definition": "本轮报价涨跌幅均由供应商前收盘价计算，跨报价时点比较使用同一口径；不以生成时刻冒充行情时点。"
+        },
+        {
+          "term": "沿用(carried)",
+          "definition": "非美股模块沿用已发布 reportId 2026-11-06-2317 的版本，保留原 asOf/analyzedAt（2026-11-06T15:17:03Z），本轮未重新核验、不刷新数值。"
+        },
+        {
+          "term": "partial",
+          "definition": "RATE:US2Y 仅有 2026-11-05 日度平价收益率 4.46%（无盘中时点）、ENERGY:BRENT 本轮 HTTP 404、成交量与板块资金流未取得；缺口如实保留，不补0、不换时间。"
+        }
+      ],
+      "analysisTheses": [
+        {
+          "title": "半导体主导的反弹已进入降温阶段",
+          "detail": "费半从 +6.6% 回落至 +3.3%、存储股转跌、龙头涨幅较上一版收窄，是本轮最一致的证据。",
+          "evidenceFactIds": [
+            "EQUITY:US:AMD",
+            "EQUITY:US:NVDA",
+            "EQUITY:US:MU"
+          ],
+          "sourceUrls": [
+            "https://www.nbd.com.cn/articles/2026-11-06/4641126.html",
+            "https://www.nbd.com.cn/articles/2026-11-06/4641123.html"
+          ]
+        },
+        {
+          "title": "广度边际改善但尚未确认",
+          "detail": "道指由跌转微涨、罗素2000 改善，而软件与加密关联股仍跌，扩散不完整。",
+          "evidenceFactIds": [
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "EQUITY:US:CRM",
+            "EQUITY:US:COIN"
+          ]
+        }
+      ],
+      "judgmentRevisions": [
+        {
+          "title": "由“半导体单边领涨”下修为“领涨降温、广度略修复”",
+          "detail": "相比上一版（2026-11-06-2317），指数与龙头涨幅同步收窄，但道指与小盘改善；不再把当日简单描述为窄基单边行情。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "EQUITY:US:AMD"
+          ]
+        }
+      ],
+      "narrativeTriggers": [
+        {
+          "title": "前一交易日 AI 链无差别抛售",
+          "effect": "为次日超跌反弹提供基数，也抬升了 VIX 的绝对水平"
+        },
+        {
+          "title": "费半盘中冲高回落与存储股转跌",
+          "effect": "把叙事从“反转”拉回“降温反弹”，并触发对尾盘守涨的观察"
+        },
+        {
+          "title": "10Y 与 VIX 边际转松",
+          "effect": "为午间指数维持红盘提供条件，但不构成充分理由"
+        }
+      ],
+      "worldEvents": [],
+      "metrics": [],
+      "sectionGaps": {
+        "events": {
+          "reason": "本轮核验了财政部11月日度收益率曲线、美联储FOMC日历（下次会议12月8–9日，含经济预测摘要）与新闻稿索引、EIA周报日历（受退伍军人节影响顺延）、BEA发布日历；这些均为官方日历/索引，未提供未来12–24小时内可核验的一级宏观发布时点，故 events 为空，不以推测时间填充。"
+        },
+        "researchRecords": {
+          "reason": "本轮16份成功取得的文档中无 SEC/交易所/IR 公司披露原文；IREN 与 Cloudflare 仅为媒体转述的财报/股价快讯，不构成已通读的公司原文研究，故 researchRecords 为空并如实记缺口。"
+        },
+        "researchChecks": {
+          "reason": "未取得任何本轮成功抓取的公司披露原文，不能写 no-new-material，故 researchChecks 为空。"
+        },
+        "volume": {
+          "reason": "本轮 packet 未包含美股成交量、成交额、涨跌家数与板块资金流，无法量化量能；已在正文明确“不对量能作数值判断”，不以价格变化代替成交证据。"
+        },
+        "macroData": {
+          "reason": "BLS 官方就业报告域名本轮未纳入可引用回执，两篇证券时报稿件因单请求超时未取得回执；因此本轮不引用10月非农、失业率与12月加息概率等数值，也不把搜索结果摘要当作已读证据。"
+        },
+        "us2y": {
+          "reason": "RATE:US2Y 仅有 2026-11-05 日度平价收益率 4.46%，无盘中时点，标 partial，不伪造盘中时刻。"
+        },
+        "brent": {
+          "reason": "ENERGY:BRENT（BZX26.NYM）本轮 HTTP 404 缺失，缺月差与裂解价差，沿用原油模块并保留缺口。"
+        },
+        "hkdata": {
+          "reason": "港交所网站程序化访问受使用条款限制，本轮未取得港股成交额、沽空比例与行业资金流。"
+        }
+      }
+    },
+    "newsItems": [
+      {
+        "eventId": "US-SOX-REBOUND-1106",
+        "title": "美股AI硬件股集体反弹，费城半导体指数涨6.5%",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-11-06T22:49:28+08:00",
+        "sourceDateText": "2026-11-06 22:49:28（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经AI快讯：11月6日美股AI硬件产业链全线反弹，费城半导体指数涨6.5%；AMD 涨12.56%、闪迪涨12.77%、Coherent 涨12.18%、美光科技涨9.78%、台积电涨7.55%、英伟达涨6.72%，三倍做多半导体ETF SOXL 涨19.76%。",
+        "plainImpact": "前一交易日被大幅抛售的芯片与存储链出现集体回补，持有相关指数基金或科技股的投资者当日净值得到部分修复，但涨幅高度集中在单一产业链。",
+        "assessment": "我的判断：这是超跌反弹而非趋势反转；开盘一小时的极端涨幅包含空头回补成分，需以后续时段能否守住涨幅来验证。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641108.html"
+        ]
+      },
+      {
+        "eventId": "US-SOX-FADE-1106",
+        "title": "费城半导体指数涨幅回落至3.3%，盘中一度上涨6.6%",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-11-06T23:31:52+08:00",
+        "sourceDateText": "2026-11-06 23:31:52（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经AI快讯：11月6日，费城半导体指数涨幅回落至3.3%，盘中一度上涨6.6%。",
+        "plainImpact": "早盘买入芯片股的追高资金在盘中已出现浮亏，说明反弹动能并未持续增强。",
+        "assessment": "我的判断：这是本轮最重要的盘中变化证据——领涨板块自身回吐近一半涨幅，指数层面的“反弹”比标题数字弱得多。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641126.html"
+        ]
+      },
+      {
+        "eventId": "US-OPEN-MIXED-1106",
+        "title": "美股三大股指开盘涨跌不一，芯片股反弹",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-11-06T22:32:07+08:00",
+        "sourceDateText": "2026-11-06 22:32:07（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经AI快讯：11月6日美股开盘，道指跌1%、标普500指数涨0.28%、纳指涨1.2%；费城半导体指数涨5.4%，英伟达涨5%、AMD 涨8%、台积电涨7%。",
+        "plainImpact": "开盘时蓝筹与科技明显分叉，普通指数基金持有人的当日体验取决于科技权重占比。",
+        "assessment": "我的判断：开盘的分叉构成当日“窄基反弹”的起点，后续道指由跌转微涨、半导体由强转弱，正是结构再平衡的表现。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641094.html"
+        ]
+      },
+      {
+        "eventId": "US-STORAGE-FADE-1106",
+        "title": "美股存储板块冲高回落，西部数据率先转跌",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-11-06T23:18:47+08:00",
+        "sourceDateText": "2026-11-06 23:18:47（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经AI快讯：11月6日美股存储板块冲高回落，西部数据率先转跌，此前一度涨5%，其他存储股也明显回落。",
+        "plainImpact": "反弹内部已出现分化，前一交易日跌幅最深的存储链并未形成稳定买盘。",
+        "assessment": "我的判断：存储链率先转跌是反弹脆弱性的领先信号，若扩散至逻辑芯片，半导体主导的指数支撑会被削弱。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641123.html"
+        ]
+      },
+      {
+        "eventId": "US-PROBE-TECH-1106",
+        "title": "民主党被曝准备对苹果、Meta和马斯克旗下公司展开调查",
+        "regions": [
+          "US"
+        ],
+        "kind": "general",
+        "publishedAt": "2026-11-06T23:56:43+08:00",
+        "sourceDateText": "2026-11-06 23:56:43（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每日经济新闻报道：中期选举后，民主党被曝准备对苹果、Meta 和马斯克旗下公司展开调查。原文为标题式快讯，未给出调查范围、时间表与正式文件。",
+        "plainImpact": "若调查落地，相关平台的合规成本与政策不确定性会上升；目前尚无正式程序，短期更偏向风险溢价而非已实现的盈利影响。",
+        "assessment": "我的判断：这是单一媒体标题级信息、缺一手文件，仅作为政策风险背景，不能据此推断具体公司基本面变化或估值影响。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641120.html"
+        ]
+      },
+      {
+        "eventId": "US-TSLA-REBOUND-1106",
+        "title": "特斯拉涨幅扩大至5%，上一交易日大幅收跌11%",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-11-06T23:18:35+08:00",
+        "sourceDateText": "2026-11-06 23:18:35（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经AI快讯：11月6日，特斯拉涨幅扩大至5%，上一交易日大幅收跌11%。本轮报价 TSLA 359.545（+4.61%）。",
+        "plainImpact": "高波动权重股的双向大幅摆动会放大指数型产品的日内波动，追涨杀跌的成本明显上升。",
+        "assessment": "我的判断：单日反弹幅度仍小于前一日跌幅，属于高 beta 修复，不足以确认趋势变化。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641122.html"
+        ]
+      },
+      {
+        "eventId": "US-IREN-EARNINGS-1106",
+        "title": "美股云计算服务商IREN绩后大涨超17%",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-11-06T22:43:50+08:00",
+        "sourceDateText": "2026-11-06 22:43:50（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经AI快讯：美股云计算服务商 IREN 绩后大涨超17%，2027财年第一季度 AI 云收入环比增长182%。",
+        "plainImpact": "AI 算力租赁需求在个股财报层面得到验证，为前一日 AI 基础设施抛售提供了反向的公司层面证据。",
+        "assessment": "我的判断：这是媒体转述的财报要点，未取得公司 IR/SEC 原文全文，不能当作已完成的公司原文研究；仅作事件线索。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641105.html"
+        ]
+      },
+      {
+        "eventId": "US-NET-SURGE-1106",
+        "title": "Cloudflare股价飙升17%，创2025年4月以来最大涨幅",
+        "regions": [
+          "US"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-11-06T22:35:20+08:00",
+        "sourceDateText": "2026-11-06 22:35:20（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经AI快讯：11月6日 Cloudflare 股价飙升17%，创下自2025年4月以来最大涨幅。本轮报价 NET 274.62（+12.31%）。",
+        "plainImpact": "软件/网络安全板块出现个别极端涨幅，说明资金并未只集中在半导体，但广度仍不足以称为全面 risk-on。",
+        "assessment": "我的判断：个股级别的极端波动不代表板块整体重估，需与同期 CRM、ADBE 的下跌一并看待。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641097.html"
+        ]
+      },
+      {
+        "eventId": "US-PREV-SELLOFF-1105",
+        "title": "每经早参：11月5日美股全线大跌，纳指跌超5%、费半跌12%",
+        "regions": [
+          "US",
+          "WORLD"
+        ],
+        "kind": "market",
+        "publishedAt": "2026-11-06T07:10:29+08:00",
+        "sourceDateText": "2026-11-06 07:10:29（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经早参：11月5日道指跌3.44%、纳指跌5.52%、标普500跌4.35%（2025年4月以来最大单日跌幅），纳斯达克100跌6.4%，费城半导体指数跌12%；英伟达跌超9%、特斯拉跌超10%，闪迪跌超22%。",
+        "plainImpact": "前一交易日的巨额回撤是本轮反弹的基数效应来源，指数基金的持有人即便经历当日反弹，周内仍可能是净回撤。",
+        "assessment": "我的判断：以“跌深反弹”解释当日涨幅比“基本面反转”更贴合证据；这也是判断反弹持续性的关键参照。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4640203.html"
+        ]
+      },
+      {
+        "eventId": "CN-STATE-COUNCIL-1106",
+        "title": "国务院常务会议：加快重大项目和“六张网”建设，完善资本市场稳市机制",
+        "regions": [
+          "CN"
+        ],
+        "kind": "general",
+        "publishedAt": "2026-11-07T00:14:12+08:00",
+        "sourceDateText": "2026-11-07 00:14:12（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每日经济新闻报道：11月6日国务院常务会议提出加快重大项目和“六张网”建设实施进度，支持企业扩大设备更新、无形资产等投资；同时提出完善资本市场稳市机制、增强股市内在稳定性，持续化解地方政府债务与中小金融机构风险。",
+        "plainImpact": "基建与设备更新相关产业链可能获得项目与资金节奏支持；资本市场的表述属于政策方向，不等于当日资金面已经改变。",
+        "assessment": "我的判断：这是政策部署而非已落地数据，对 A 股的意义在于中期预期，不宜直接当作本轮 A 股行情的因果解释；本轮 A 股模块仍为沿用、未重新核验。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641118.html"
+        ]
+      },
+      {
+        "eventId": "WORLD-TANKER-GULF-1106",
+        "title": "一艘希腊油轮在波斯湾遇袭致一名船员死亡",
+        "regions": [
+          "WORLD"
+        ],
+        "kind": "general",
+        "publishedAt": "2026-11-06T23:52:16+08:00",
+        "sourceDateText": "2026-11-06 23:52:16（北京时间）",
+        "dateUncertainty": "页面标注发布时间明确",
+        "summary": "每经AI快讯援引央视新闻：希腊方面6日消息，一艘由希腊公司运营的油轮5日在波斯湾遇袭后发生爆炸，造成一名船员死亡。",
+        "plainImpact": "海湾航运安全事件可能推高油运保险与风险溢价，但原文未给出装卸中断、产能损失或油价传导的已证实数据。",
+        "assessment": "我的判断：原文只证实人员伤亡与爆炸，未证实供应中断，不能据此推断油价或能源股的方向；仅列作地缘风险观察，不补造市场影响证据。",
+        "sourceUrls": [
+          "https://www.nbd.com.cn/articles/2026-11-06/4641130.html"
+        ]
+      }
+    ],
+    "newsCoverage": {
+      "status": "partial",
+      "note": "本轮以16份成功取得并实际阅读的文档构成证据：11条新闻（US 9、CN 1、WORLD 1，含3条 general）、5份官方日历/索引；美股行情与板块变化另由71项本轮报价支撑。",
+      "regions": {
+        "CN": "国务院常务会议政策部署1条（general）",
+        "US": "半导体反弹/回落、开盘分叉、存储回落、政策调查、个股事件与前一交易日暴跌共8条",
+        "WORLD": "波斯湾油轮遇袭1条（general）"
+      },
+      "gaps": "两篇证券时报稿件（含10月非农与加息押注的具体数值）在采集阶段单请求超时、未取得可引用回执，已全部排除；BLS 官方就业报告无可引用回执；无英文通讯社一手报道；无公司 SEC/IR 披露原文；美股成交量与板块资金流缺失。新闻总量低于18条，按缺口如实披露，不凑数。"
+    },
+    "macroFacts": [],
+    "macroEvents": [],
+    "events": [],
+    "researchRecords": [],
+    "researchChecks": []
+  }
+}
