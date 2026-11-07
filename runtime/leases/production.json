@@ -4,16 +4,22 @@
   "executionId": "20261107T0355Z-global-main",
   "taskGroup": "global-main",
   "slot": "global-main:2026-11-07T03",
-  "phase": "analyzing",
+  "phase": "failed",
   "startedAt": "2026-11-07T03:55:49.536Z",
   "deadlineAt": "2026-11-07T04:15:49.536Z",
-  "updatedAt": "2026-11-07T03:56:02.923Z",
+  "updatedAt": "2026-11-07T04:01:33.136Z",
   "stages": [
     {
       "phase": "collecting",
       "startedAt": "2026-11-07T03:55:49.536Z",
       "finishedAt": "2026-11-07T03:56:02.923Z",
       "durationMs": 13387
+    },
+    {
+      "phase": "analyzing",
+      "startedAt": "2026-11-07T03:56:02.923Z",
+      "finishedAt": "2026-11-07T04:01:33.136Z",
+      "durationMs": 330213
     }
   ],
   "recentSlots": [
@@ -289,14 +295,17 @@
     },
     {
       "slot": "global-main:2026-11-07T03",
-      "status": "started",
+      "status": "failed",
       "at": "2026-11-07T03:55:49.536Z",
       "executionId": "20261107T0355Z-global-main"
     }
   ],
   "sourcePacketPath": "runtime/results/20261107T0355Z-global-main.json",
   "sourcePacketHash": "21ec5bd444b1df2c87317d6ea5becd9724b005c16599f3b6924582cf3de752dd",
-  "submissionAttempts": 1,
+  "submissionAttempts": 2,
   "validationReason": "editorial.macroFacts[300].asOf: asOf不能在未来 [future-time]\neditorial.researchPendingQueue[0].instrumentId: 必须是非空字符串 [required]\neditorial.researchPendingQueue[1].instrumentId: 必须是非空字符串 [required]\neditorial.report.evolution24h[0].title: 必须提供条目标题（或已有兼容别名） [required]\neditorial.report.evolution24h[0].detail: 必须提供条目正文（或已有兼容别名） [required]\neditorial.report.evolution24h[1].title: 必须提供条目标题（或已有兼容别名） [required]\neditorial.report.evolution24h[1].detail: 必须提供条目正文（或已有兼容别名） [required]\neditorial.report.evolution24h[2].title: 必须提供条目标题（或已有兼容别名） [required]\neditorial.report.evolution24h[2].detail: 必须提供条目正文（或已有兼容别名） [required]\neditorial.report.evolution24h[3].title: 必须提供条目标题（或已有兼容别名） [required]\neditorial.report.evolution24h[3].detail: 必须提供条目正文（或已有兼容别名） [required]\neditorial.report.narrativeTriggers[0].effect: 必须提供触发影响 [required]\neditorial.report.narrativeTriggers[1].effect: 必须提供触发影响 [required]\neditorial.report.narrativeTriggers[2].effect: 必须提供触发影响 [required]",
-  "lastValidationAt": "2026-11-07T04:00:12.300Z"
+  "lastValidationAt": "2026-11-07T04:00:12.300Z",
+  "reason": "editorial.researchPendingQueue[1].instrumentId: 公司研究必须使用真实EQUITY:US/CN/HK证券身份；宏观活动不是公司 [company-identity]",
+  "finishedAt": "2026-11-07T04:01:33.136Z",
+  "totalDurationMs": 343600
 }
