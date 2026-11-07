@@ -1,0 +1,1463 @@
+{
+ "execution": {
+  "executionId": "20261107T1336Z-global-main",
+  "generation": 412
+ },
+ "editorial": {
+  "packetHash": "68ff4f7a13499df5dd4fe5f819aa40a9fc1cd86933f5e97c11922777a823157d",
+  "report": {
+   "overview": "本轮（北京时间11月7日21时40分前后）全球股市处于周末休市，全部股指与美股个股quote均为11月6日最后有效快照，唯一在动的是加密与贵金属快照。真正的新增量不在指数，而在三条彼此矛盾的证据：一是A股本周跌价却迎来1918.18亿元股票型与跨境ETF净流入、宽基单周+2035亿元，沪深300ETF单只吸金超300亿元；二是黄金被曝自1月29日近5600美元的峰值最大回撤超30%、10月单月跌6.8%，而中国央行10月末仍增持到7830万盎司、连续24个月买入；三是伯克希尔三季度营业利润127.1亿美元同比降5.8%、现金储备冲到3774亿美元新高，同时Anthropic的IPO潜在估值从2万亿美元被压到1.2—1.3万亿美元。结论是：价格在跌、被动资金在接、最保守的长期资本在囤现金，三者同时成立意味着这是一个“估值消化期”而不是“趋势反转期”。",
+   "rolling24hSummary": "过去24小时（11月6日21:40至11月7日13:40 UTC）没有一级宏观数据发布，属周末静默窗口。价格层面：A股11月6日收跌（沪指3649.177点-1.10%、创业板2465.232点-3.96%），港股同步回落（恒指24481.86点-1.27%、恒生科技4078.23点-1.83%），美股分化（纳指24579.424点+1.09%、纳指100 26989.992点+1.35%，道指51285.73点-0.46%），半导体单日暴力反弹（AMD+11.04%、INTC+7.71%、TSM+6.33%）。信息层面：ETF周度资金清单、伯克希尔三季报两项指标、10月外储与黄金储备、商务部对美制裁表态、九州云箭IPO辅导备案、Anthropic估值下修、神舟二十四号将首载外籍航天员、保定桥体脱落事故、松赞林景区收费争议回应集中在今晚披露。时点提醒：贵金属与加密的asOf是13:36Z前后的实时快照，股指asOf停留在11月6日，两者不可当作同一时点比较。",
+   "methodology": "数据来源：31项必看报价与41只美股候选由本轮采集器于2026-11-07T13:36:51Z—13:36:58Z取得，其中ENERGY:BRENT返回HTTP 404（供应商长期缺口）、RATE:US2Y为空（partial），其余指数、个股、汇率、原油、加密、贵金属均取到数值。本轮packetHash为68ff4f7a13499df5dd4fe5f819aa40a9fc1cd86933f5e97c11922777a823157d，generation 412。文档11份全部contentRetrieved=true、blockedDocuments为空：财政部日度par收益率XML、美联储FOMC日历、BEA发布日程及其机器可读日程、EIA周度石油库存日程，以及每日经济新闻7篇（金价回撤、ETF周度资金、伯克希尔两项、晚参、商业航天IPO、松赞林回应）。分析口径：股票类只使用11月6日最后有效快照并保留原asOf，不把周末快照当盘中；加密与现货金银使用13:36Z实时快照并单独标注；布伦特因供应商404本轮不给定价；美国2年期收益率改用财政部par曲线11月6日行（4.51%），不伪造盘中时刻。推断与事实分离：凡标注“我的判断”的段落为推断，未经独立数据验证；RATE:US2Y缺失使实际利率只能定性讨论，不计算TIPS实际利率。",
+   "coreAnalysis": {
+    "mainTheme": "被动资金逆势承接与最保守资本囤现金同时出现，构成典型的估值消化期而非趋势反转期：A股宽基ETF单周净流入2035亿元、沪深300吸金688亿元，而伯克希尔现金储备创3774亿美元新高、Anthropic估值被砍至多40%，两类“聪明钱”在做方向相反的动作，说明市场分歧点在估值而非流动性。",
+    "expectationGap": "市场共识原本是“AI资本开支扩张+央行购金托底”双支撑；本轮证据给出的预期差是黄金自峰值回撤已超30%、10月单月-6.8%，说明央行买盘能托住成交却托不住价格，而AI一侧的预期差来自Anthropic估值从2万亿被压到1.2—1.3万亿，即一级市场开始给二级市场的AI溢价打折。",
+    "divergence": "最大的背离是“跌价+申购”：A股本周沪指+1.39%、深成指+3.16%的周涨幅与11月6日单日-1.10%/-2.57%并存，同时ETF净流入1918.18亿元；另一处背离是美股半导体（AMD+11.04%、INTC+7.71%）与软件（CRM-3.94%、ADBE-2.90%）同日反向，资金在AI内部从应用端撤向算力端。",
+    "regime": "当前处于“高名义利率+高分位估值+央行托底”的三元组合：10年期美债4.86%、2s10s仅+35bp的熊平曲线，VIX 25.64虽单日-9.01%仍属偏高区间，意味着风险偏好修复是脉冲式的，不是体制切换。",
+    "priceIn": "价格已计入的部分：A股11月6日的单日大跌计入了半导体与券商的资金撤出（半导体设备ETF国泰-16.61亿元、证券ETF国泰-16.31亿元）；未计入的部分：央行连续24个月购金与金价-30%回撤之间的矛盾，以及伯克希尔创纪录持币对美股估值上限的暗示。",
+    "bullCase": "多头情景：宽基ETF申购延续（本周2035亿元）叠加下周5只新ETF（1只稀有金属上市、4只新材料/软件/金融科技/电网发行）带来增量产品供给，A股在3649点附近形成筹码出清后的止跌；美股算力链（AMD、TSM、MU、ASML）延续反弹，纳指100站稳26989点。",
+    "bullInvalidation": "多头被证伪的条件：下周宽基ETF由净流入转为净赎回，或两市周成交额从9.3万亿元明显萎缩；美股方面若VIX重回28上方且纳指100失守26000点，则半导体反弹只是超跌修复。",
+    "bearCase": "空头情景：金价-30%回撤触发杠杆与ETF去化未完成，贵金属继续拖累风险偏好；美股AI应用端（CRM、ADBE）盈利预期下修扩散至算力端；伯克希尔持币3774亿美元说明连最耐心的资本也找不到价格合适的资产。",
+    "bearInvalidation": "空头被证伪的条件：11月央行购金数据转负或金饰消费环比回落（当前三季度66吨、环比+30%，10月零售订单环比+26%）；或伯克希尔在下一季度开始净买入，说明估值已回到可接受区间。"
+   },
+   "plainLanguage": {
+    "verdict": "这是“价格在跌、被动资金在接、最保守资本囤现金”的估值消化期，不是趋势反转，六类资产短线分化大于方向。",
+    "bottomLine": "别把单周1918亿元ETF申购当见底信号：它承接的是筹码，不是盈利预期；真正要盯的是央行购金是否延续、伯克希尔是否开始花钱。",
+    "whyNow": "三组证据今晚同时落地：A股本周ETF净流入1918.18亿元（宽基2035亿元）、金价自1月近5600美元峰值回撤超30%但央行连续24个月增持至7830万盎司、伯克希尔现金3774亿美元创新高且营业利润同比-5.8%。",
+    "horizon": "短线（12—24小时至下周一开盘）看情绪修复与ETF申购是否延续；中线（数周）看央行购金与AI资本开支预期；成本与社会传导需数月。",
+    "confidence": "medium",
+    "invalidation": "若下周宽基ETF转为净赎回、或11月央行购金数据转负、或伯克希尔下季开始净买入，本判断需推翻。",
+    "evidenceFactIds": [
+     "FLOW:CN:ETF-WEEKLY-2026-11-06",
+     "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+     "MACRO:CN:GOLD-RESERVE-2026-10",
+     "MACRO:US:BERKSHIRE-Q3-CASH",
+     "RESEARCH:US:ANTHROPIC-IPO-VALUATION-2026-11"
+    ],
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "分化偏中性",
+      "reason": "11月6日指数普跌（沪指3649.177点-1.10%、创业板2465.232点-3.96%）与本周1918.18亿元ETF净流入并存，宽基承接2035亿元、行业主题净流出30.6亿元。",
+      "takeaway": "我的判断：这是筹码出清而非盈利改善，3649点附近有被动买盘托底，但反弹需要中观催化，不宜把ETF申购当趋势信号。",
+      "horizon": "1—2周",
+      "counterRisk": "若申购集中在少数沪深300产品，一旦申购停止，托底立刻消失。",
+      "invalidation": "下周宽基ETF转净赎回或周成交额从9.3万亿元显著萎缩。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "FLOW:CN:ETF-WEEKLY-2026-11-06",
+       "FLOW:CN:ETF-SEMI-2026-11-06",
+       "INDEX:CN:SSE",
+       "INDEX:CN:CHINEXT"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+      ]
+     },
+     {
+      "asset": "港股",
+      "effect": "偏利空（跟随）",
+      "reason": "恒指24481.86点-1.27%、恒生科技4078.23点-1.83%，与A股风险偏好同步回落；本轮无港股独立资金数据。",
+      "takeaway": "我的判断：港股当前是A股情绪与美元流动性的双重函数，10年期美债4.86%的高位压制估值，短线难有独立行情。",
+      "horizon": "3—5个交易日",
+      "counterRisk": "若周一恒生科技跌幅明显小于创业板，说明外溢解释过强，港股有自身支撑。",
+      "invalidation": "恒生科技相对创业板走强且南向资金恢复净买入。",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH",
+       "INDEX:HK:HSCEI",
+       "MACRO:US:CURVE-2S10S-2026-11-06"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "美股",
+      "effect": "分化偏利好（算力端）",
+      "reason": "11月6日纳指24579.424点+1.09%、纳指100 26989.992点+1.35%，AMD+11.04%、INTC+7.71%、TSM+6.33%、MU+5.12%，但CRM-3.94%、ADBE-2.90%。",
+      "takeaway": "我的判断：资金在AI内部从应用端撤向算力端，这是结构性再定价；伯克希尔持币3774亿美元说明整体估值仍缺安全边际，追高算力需设紧止损。",
+      "horizon": "1—2周",
+      "counterRisk": "半导体单日5—11%的涨幅带逼空性质，VIX 25.64仍偏高，回撤可能同样剧烈。",
+      "invalidation": "VIX重回28上方且纳指100失守26000点。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:US:NASDAQ",
+       "INDEX:US:NDX",
+       "EQUITY:US:AMD",
+       "EQUITY:US:TSM",
+       "EQUITY:US:CRM",
+       "VOL:VIX",
+       "MACRO:US:BERKSHIRE-Q3-CASH"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-07/4641415.html",
+       "https://www.nbd.com.cn/articles/2026-11-07/4641402.html"
+      ]
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性（证据不足）",
+      "reason": "BTC 75816.58美元（13:36:55Z快照），较上一轮小幅回落；ETH 2240.01美元、SOL 89.84美元，无ETF流量与资金费率数据。",
+      "takeaway": "我的判断：缺资金流证据时，BTC的小幅波动不足以定性；它与纳指同向但弹性更大，若算力链反弹延续，加密更可能跟随而非领涨。",
+      "horizon": "1—3日",
+      "counterRisk": "美元指数102.279横盘、10年期4.86%高位，对长久期风险资产不利。",
+      "invalidation": "BTC在美股半导体反弹日仍无法收复77,000美元一带。",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "CRYPTO:ETH:USD",
+       "FX:DXY",
+       "RATE:US10Y"
+      ],
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     },
+     {
+      "asset": "黄金",
+      "effect": "分化（官方买、民间也买，但价格弱）",
+      "reason": "XAU 4072.10美元/盎司（13:36:37Z），自1月29日近5600美元峰值最大回撤超30%、10月单月-6.8%；同期央行10月末增持至7830万盎司、连续24个月。",
+      "takeaway": "我的判断：价格由边际交易者决定，央行与金饰买盘只能减缓跌势；-30%回撤已破坏单边叙事，抄底应等民间买盘衰竭后的第二落点。",
+      "horizon": "数周",
+      "counterRisk": "金饰消费三季度66吨、环比+30%，10月零售订单环比+26%，民间买盘可能在下跌中提前透支。",
+      "invalidation": "11月央行购金转负或金饰消费环比回落。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "METAL:XAUUSD",
+       "METAL:XAGUSD",
+       "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+       "MACRO:CN:GOLD-RESERVE-2026-10",
+       "MACRO:CN:GOLD-JEWELRY-Q3-2026"
+      ],
+      "sourceUrls": [
+       "https://www.nbd.com.cn/articles/2026-11-07/4641416.html",
+       "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+      ]
+     },
+     {
+      "asset": "原油",
+      "effect": "中性（数据缺口）",
+      "reason": "WTI 90.83美元/桶（11月6日21:59:58Z，+0.34%），布伦特供应商404无定价，无月差、裂解与库存数据。",
+      "takeaway": "我的判断：周末无现货定价，90.83只是周五最后有效快照；地缘溢价仍在但本轮无新增可核验进展，等11月12日EIA库存再定性。",
+      "horizon": "3—5日",
+      "counterRisk": "单一WTI价格无法反映供需，若库存大幅累积而价格不跌，说明地缘溢价主导。",
+      "invalidation": "11月12日EIA库存大幅累积且WTI跌破88美元。",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "MACRO:US:CURVE-2S10S-2026-11-06"
+      ],
+      "sourceUrls": [
+       "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+      ]
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "status": "partial",
+     "note": "指数与31项必看报价齐备，ETF周度资金清单已取得逐只明细。",
+     "gaps": "无个股层面资金流、无两融与北向逐日数据；行业排名仅有ETF份额口径，不代表全市场行业涨跌。"
+    },
+    {
+     "market": "港股",
+     "status": "partial",
+     "note": "恒指、恒生科技、国企指数三项报价齐备。",
+     "gaps": "港交所域名按用途条款不再自动采集，缺南向资金、个股与新股明细，港股判断以指数与外部流动性为主。"
+    },
+    {
+     "market": "美股",
+     "status": "ok",
+     "note": "11月6日收盘指数、VIX、41只候选个股报价齐备，伯克希尔三季报两项指标已取得。",
+     "gaps": "无盘后与期货报价；伯克希尔10-Q尚未在SEC检索到，财务细节仅两项媒体口径指标。"
+    },
+    {
+     "market": "BTC",
+     "status": "partial",
+     "note": "Coinbase实时快照齐备（BTC/ETH/SOL/HYPE/PEPE）。",
+     "gaps": "无ETF申赎、资金费率与链上数据；Farside此前返回403已被站点拒绝，本轮不再请求。"
+    },
+    {
+     "market": "黄金",
+     "status": "ok",
+     "note": "现货金银实时快照、央行储备、金饰与零售需求四项证据齐备。",
+     "gaps": "无TIPS实际利率、无ETF持仓逐日变化，实际利率只能定性讨论。"
+    },
+    {
+     "market": "原油",
+     "status": "partial",
+     "note": "WTI 11月合约取得数值。",
+     "gaps": "ENERGY:BRENT供应商HTTP 404长期缺口；无月差、裂解价差与周度库存，EIA库存顺延至11月12日。"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "asOf": "2026-11-06T08:29:58Z",
+     "status": "previous",
+     "stance": "分化偏中性",
+     "summary": "沪指3649.177点-1.10%、深成指11175.78点-2.57%、创业板2465.232点-3.96%，但本周ETF净流入1918.18亿元。",
+     "factIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "FLOW:CN:ETF-WEEKLY-2026-11-06"
+     ]
+    },
+    {
+     "asset": "港股",
+     "asOf": "2026-11-06T08:09:10Z",
+     "status": "previous",
+     "stance": "偏利空（跟随）",
+     "summary": "恒指24481.86点-1.27%、恒生科技4078.23点-1.83%，跟随A股风险偏好回落。",
+     "factIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI"
+     ]
+    },
+    {
+     "asset": "美股",
+     "asOf": "2026-11-06T22:15:59Z",
+     "status": "previous",
+     "stance": "分化偏利好（算力端）",
+     "summary": "纳指24579.424点+1.09%、纳指100 26989.992点+1.35%，AMD+11.04%、INTC+7.71%，软件走弱。",
+     "factIds": [
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "EQUITY:US:AMD",
+      "EQUITY:US:INTC"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "asOf": "2026-11-07T13:36:55Z",
+     "status": "snapshot",
+     "stance": "中性（证据不足）",
+     "summary": "BTC 75816.58美元、ETH 2240.01美元，无资金流数据。",
+     "factIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "asOf": "2026-11-07T13:36:37Z",
+     "status": "snapshot",
+     "stance": "分化",
+     "summary": "XAU 4072.10美元/盎司、XAG 52.071美元，金银比约78.2，自峰值回撤超30%。",
+     "factIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "MACRO:GOLD:PEAK-DRAWDOWN-2026"
+     ]
+    },
+    {
+     "asset": "原油",
+     "asOf": "2026-11-06T21:59:58Z",
+     "status": "previous",
+     "stance": "中性（数据缺口）",
+     "summary": "WTI 90.83美元/桶+0.34%，布伦特404无定价。",
+     "factIds": [
+      "ENERGY:WTI"
+     ]
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "title": "跌价配申购：被动资金在接筹码，不接预期",
+     "analysis": "11月6日A股普跌，沪指3649.177点-1.10%、深成指11175.78点-2.57%、创业板2465.232点-3.96%、科创50 1253.196点-2.60%，沪深300 4054.277点-1.44%、中证500 6597.3506点-2.13%，小盘与成长跌幅更大。但同一周（截至11月6日收盘）沪深两市股票型与跨境型ETF合计净流入1918.18亿元，其中宽基指数ETF净流入2035亿元、行业主题ETF净流出30.6亿元、跨境ETF净流出28.97亿元，沪深300单周净流入688亿元，规模最大的10只宽基ETF合计净流入1600.23亿元、沪深300ETF华泰柏瑞单只超300亿元。本周两市成交9.3万亿元（沪市4.36万亿、深市4.94万亿），沪指全周仍涨1.39%、深成指涨3.16%。行业主题内部是清晰的换仓：科创半导体ETF华夏净流入86.66亿元、3只跟踪科创板半导体材料设备主题的ETF合计115.39亿元、机器人ETF易方达17.27亿元；同时半导体设备ETF国泰净流出16.61亿元、证券ETF国泰-16.31亿元、通信ETF国泰-14.65亿元。下周还有1只稀有金属ETF上市、4只ETF发行（新材料、软件、金融科技、电网）。",
+     "mechanism": "ETF一级申购是被动、按指数权重的买盘，与股价涨跌无关，因此在指数下跌时会形成机械承接；但它的规模取决于渠道销售与配置需求，而不是企业盈利。宽基吸金、行业主题失血同时出现，说明增量资金在做“降波动”的配置选择，而不是在做行业判断。",
+     "risk": "一是承接的集中度风险：688亿元集中在沪深300、1600亿元集中在10只产品，申购一旦停止托底立即消失；二是“跌价+申购”容易被误读为见底，但本周指数全周仍上涨、单日大跌更像高位换手；三是行业主题净流出30.6亿元说明结构性资金仍在撤。",
+     "invalidation": "下周宽基ETF转为净赎回，或两市周成交额从9.3万亿元明显萎缩，则“被动承接”逻辑不成立；反之若科创半导体材料设备ETF继续放量并带动指数收复11月6日跌幅，则承接有效。",
+     "horizon": "1—2周（跨下周一开盘与下周ETF发行窗口）",
+     "factIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:SZSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500",
+      "FLOW:CN:ETF-WEEKLY-2026-11-06",
+      "FLOW:CN:ETF-SEMI-2026-11-06",
+      "FLOW:CN:ETF-OUT-2026-11-06",
+      "FLOW:CN:ETF-TURNOVER-2026-11-06",
+      "FLOW:CN:ETF-NEXTWEEK-2026-11-09"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+     ]
+    },
+    {
+     "asset": "港股",
+     "title": "跟随式下跌，缺独立定价证据",
+     "analysis": "港股11月6日同步回落：恒指24481.86点-1.27%、恒生科技4078.23点-1.83%、国企指数8274.1点-1.13%，跌幅小于创业板（-3.96%）与深成指（-2.57%），说明港股对A股成长股的beta低于A股内部小盘成长。本轮没有取得港股独立的资金、个股与新披露证据：港交所域名因用途条款不再自动采集，南向资金逐日数据缺失，因此只能做指数层与外部流动性层的判断。外部条件上，美元指数102.279基本走平（-0.02%），美元兑离岸人民币6.6717，10年期美债4.86%，对港元资产估值构成持续压制。",
+     "mechanism": "港股由三股力量定价：南向资金（内地风险偏好）、外资（美元流动性与中国配置比例）、本地利率（跟随美元）。本轮能观察到的只有第一股与第三股的间接证据——A股情绪回落、美债高位，因此方向判断只能是“跟随”。",
+     "risk": "把港股的下跌完全归因于A股外溢属于推断，缺少南向与外资流向数据的支撑；若周一港股跌幅显著小于A股成长板块，说明存在本地支撑（估值或个股因素），当前解释需下调权重。",
+     "invalidation": "恒生科技相对创业板指走强，或南向资金恢复显著净买入，则“跟随式下跌”框架失效。",
+     "horizon": "3—5个交易日",
+     "factIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "FX:DXY",
+      "FX:USDCNH",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "美股",
+     "title": "算力与应用分道，最保守的资本在囤现金",
+     "analysis": "11月6日美股是典型的内部分化：道指51285.73点-0.46%，标普7376.86点+0.31%，纳指24579.424点+1.09%，纳指100 26989.992点+1.35%，罗素2000 2754.105点+0.89%，VIX 25.64点-9.01%。半导体与硬件暴力反弹：AMD 449.04美元+11.04%、INTC 56.28美元+7.71%、TSM 375.44美元+6.33%、MU 690美元+5.12%、ASML 1424.75美元+5.02%、ARM 174.62美元+4.74%、NVDA 186.64美元+2.78%；而企业软件走弱：CRM 213.65美元-3.94%、ADBE 239.30美元-2.90%、MSFT 530.61美元-0.99%、AAPL 342.37美元-0.52%。同一天，伯克希尔公布三季度营业利润127.1亿美元、同比下降5.8%，9月末现金储备升至3774亿美元再创新高，其B类股收570.89美元-0.25%。另据央视财经口径，部分潜在投资者准备给Anthropic 1.2万亿至1.3万亿美元的IPO估值，较此前2万亿美元预期下降至多40%。",
+     "mechanism": "算力端上涨对应的是订单与产能的可验证性（设备、代工、存储），应用端下跌对应的是AI变现节奏的不确定；一级市场把Anthropic估值下修40%，等于给二级市场的AI溢价重新定价。伯克希尔现金创纪录则是估值纪律的直接表达：在4.86%的10年期收益率下，现金本身有可观的机会成本回报。",
+     "risk": "单日5—11%的半导体涨幅带明显逼空特征，VIX虽回落9.01%但绝对水平25.64仍高；若把这轮反弹当成新趋势起点，回撤风险很大。伯克希尔营业利润下滑5.8%也提示实体经营端并非全线景气。",
+     "invalidation": "VIX重回28上方且纳指100失守26000点，则本轮反弹定性为超跌修复；若下一季度伯克希尔开始净买入，则估值纪律信号反转。",
+     "horizon": "1—2周，下一个硬节点是11月25日BEA的GDP二次估算与个人收入支出",
+     "factIds": [
+      "INDEX:US:DOW",
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:RUSSELL2000",
+      "VOL:VIX",
+      "EQUITY:US:AMD",
+      "EQUITY:US:INTC",
+      "EQUITY:US:TSM",
+      "EQUITY:US:MU",
+      "EQUITY:US:ASML",
+      "EQUITY:US:ARM",
+      "EQUITY:US:NVDA",
+      "EQUITY:US:CRM",
+      "EQUITY:US:ADBE",
+      "EQUITY:US:MSFT",
+      "EQUITY:US:AAPL",
+      "EQUITY:US:BRK.B",
+      "MACRO:US:BERKSHIRE-Q3-OPPROFIT",
+      "MACRO:US:BERKSHIRE-Q3-CASH",
+      "RESEARCH:US:ANTHROPIC-IPO-VALUATION-2026-11",
+      "MACRO:US:CURVE-2S10S-2026-11-06"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641402.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641415.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html",
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "title": "无资金流证据下的横盘，跟随属性强于独立行情",
+     "analysis": "BTC 13:36:55Z快照75816.58美元，较上一轮同时段（约75907美元）小幅回落约90美元；ETH 2240.01美元、SOL 89.84美元、HYPE 77.84美元、PEPE 4.96e-06美元。Coinbase口径的快照不带涨跌幅，因此本轮只能给出水平值与相对上一轮的比较，不能宣称日内涨跌。结构性数据全部缺失：ETF申赎（Farside此前返回403，站点明确拒绝自动抓取，本轮按规则不再请求）、永续资金费率、未平仓合约、链上转账均未取得。可得的外部条件是美元指数102.279走平、10年期美债4.86%、VIX 25.64，对高beta资产属中性偏紧。",
+     "mechanism": "BTC在当前阶段与纳指同向、弹性放大，其边际定价来自美元流动性与风险偏好，而非现金流折现（对BTC套用DCF没有意义）。在没有ETF流量与资金费率的情况下，任何“资金流入/流出”的结论都缺乏证据。",
+     "risk": "证据不足本身就是最大风险：小幅波动既可能是换手也可能是趋势起点，本轮无法区分；若把价格横盘当作“稳定”，可能在方向选择时被动。",
+     "invalidation": "若BTC在美股半导体强反弹的同一窗口仍无法收复77,000美元一带，则说明加密内部资金偏弱；反之站上78,500美元并伴随成交量放大，则跟随属性转为领涨属性。",
+     "horizon": "1—3日",
+     "factIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "CRYPTO:HYPE:USD",
+      "CRYPTO:PEPE:USD",
+      "FX:DXY",
+      "RATE:US10Y",
+      "VOL:VIX"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "title": "峰值回撤超30%，但央行与金饰两股买盘仍在",
+     "analysis": "现货金13:36:37Z报4072.10美元/盎司、现货银52.071美元/盎司，金银比约78.2。本轮最硬的新证据来自第一财经（每经转载）：2026年1月29日伦敦现货黄金盘中逼近5600美元/盎司创下新高，此后一路震荡下行，10月单月下跌6.8%，自峰值最大回撤超30%。与此同时官方买盘没有停：外汇局11月7日数据显示10月末黄金储备7830万盎司、为连续第24个月增持，外汇储备34051.78亿美元。民间端出现“反向接力”：金价上行时变现需求集中释放，下行时买入需求升温，《中国市场黄金需求趋势报告》显示三季度金饰消费量季节性环比回升30%至66吨；转转数据显示10月金价急跌6.8%时零售订单环比增长26%，创年内单月新高。",
+     "mechanism": "黄金的边际定价看实际利率与美元，但存量需求有两类价格敏感度完全不同的买家：央行按储备多元化目标买入，对价格不敏感；金饰与零售买家对价格高度敏感，跌得越急买得越多。这解释了一个看似矛盾的现象——价格能跌30%，同时官方储备还在增。",
+     "risk": "一是-30%的回撤已经破坏“只涨不跌”的叙事，杠杆与ETF持仓的去化未必结束；二是民间买盘有透支风险，10月订单+26%可能提前消耗了后续需求；三是实际利率无法精确计算（无TIPS数据，US2Y本轮为空），只能定性判断。",
+     "invalidation": "11月央行购金数据转负，或金饰消费环比回落，则“两股买盘托底”判断失效；反之若12月储备继续增持且金价站稳4200美元，则回撤定性为中期调整而非趋势反转。",
+     "horizon": "数周（下一个观察点是11月末的11月储备数据）",
+     "factIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+      "MACRO:CN:GOLD-RESERVE-2026-10",
+      "MACRO:CN:GOLD-JEWELRY-Q3-2026",
+      "MACRO:CN:GOLD-RETAIL-2026-10",
+      "MACRO:CN:FX-RESERVES-2026-10",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641416.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html",
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "原油",
+     "title": "周末只有周五的收盘价，官方库存要等到11月12日",
+     "analysis": "WTI 11月合约（CL=F）11月6日21:59:58Z报90.83美元/桶、+0.34%，是当前唯一可用的原油定价。ENERGY:BRENT本轮再次返回HTTP 404（供应商长期缺口），因此本报告不提供布伦特定价，也不做WTI-Brent价差推断。衍生数据全缺：无月差（近远月价差）、无裂解价差、无周度库存与产量。日历层面已核实：EIA周度石油库存报告因退伍军人节，截至11月6日当周的数据顺延至11月12日（周四）12:00美东时间发布。地缘方面，本轮未取得新的可核验进展（此前油轮触雷、导弹射程等均为单方口径媒体转述），因此不把地缘溢价写成价格驱动的事实。",
+     "mechanism": "原油价格由现货供需、库存周期与风险溢价三部分构成。缺少库存与月差时，单点绝对价格无法区分“紧平衡”与“地缘溢价”，因此只能给出区间观察而非方向判断。周末无现货交易，90.83只是周五最后有效快照。",
+     "risk": "用单一WTI价格解释供需是最常见的错误；此外本轮的+0.34%与上一版同一asOf下曾出现过的90.34存在供应商回填口径差异，本轮采用packet值90.83并在正文标注时点，不与历史值混用。",
+     "invalidation": "11月12日EIA库存若大幅累积而WTI不跌，说明地缘溢价主导；若库存下降且价格跌破88美元，则需求端走弱。",
+     "horizon": "3—5日（下一个硬节点为11月12日EIA库存）",
+     "factIds": [
+      "ENERGY:WTI",
+      "MACRO:US:CURVE-2S10S-2026-11-06"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "id": "FW-1",
+     "framework": "利率传导与贴现率框架",
+     "concept": "长期收益率是所有长久期资产的分母，曲线形状比单点水平更能说明资金在赌什么。",
+     "applicability": "适用于美股估值、港股估值与黄金持有成本；对A股适用性较弱（受国内政策与资金面主导）。",
+     "observed": "财政部par曲线11月6日：2年期4.51%、10年期4.86%、30年期5.26%，2s10s仅+35bp、10s30s+40bp、5s30s+62bp、3M10Y+67bp；当日3年期上行6bp、2年期上行5bp、10年期仅上行2bp。10年期美债报价4.859（-0.45%）。",
+     "mechanism": "短端上行更快形成熊平，意味着市场在给“政策利率更久更高”定价，而非给增长定价；这对高倍数成长股的贴现压力大于对价值股。",
+     "conclusion": "熊平+VIX 25.64的组合不支持“风险偏好系统性回升”，只支持脉冲式反弹；因此把11月6日纳指的+1.09%定性为结构性反弹而非趋势起点。",
+     "assumptions": "短端由政策预期主导、长端由增长与通胀预期主导；收益率上行未被盈利上修抵消。",
+     "counterEvidence": "同日VIX大跌9.01%、罗素2000上涨0.89%，说明小盘股并未被高利率压垮，与“贴现率主导”存在张力。",
+     "horizon": "1—4周",
+     "invalidation": "若2s10s在两周内走阔至+60bp以上且10年期回落至4.7%下方，则熊平判断失效。",
+     "confidence": "medium",
+     "missingData": "AGENT：RATE:US2Y本轮为空（partial），2年期使用财政部par口径而非盘中报价；无TIPS实际利率。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "MACRO:US:CURVE-2S10S-2026-11-06",
+      "MACRO:US:CURVE-DAY-CHG-2026-11-06",
+      "VOL:VIX"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "id": "FW-2",
+     "framework": "资金流与市场微观结构",
+     "concept": "ETF一级申购是机械买盘，看它是谁在买、买了多集中，比看总金额更有信息量。",
+     "applicability": "适用于A股宽基与行业主题ETF；对个股与港股不适用（缺逐日资金数据）。",
+     "observed": "本周股票型与跨境ETF净流入1918.18亿元，宽基+2035亿元、行业主题-30.6亿元、跨境-28.97亿元、沪深300+688亿元；10只宽基ETF合计+1600.23亿元。行业主题内部：3只科创板半导体材料设备ETF+115.39亿元、科创半导体ETF华夏+86.66亿元、机器人ETF易方达+17.27亿元；半导体设备ETF国泰-16.61亿元、证券ETF国泰-16.31亿元、通信ETF国泰-14.65亿元。30只ETF周成交额超100亿元。",
+     "mechanism": "宽基申购对应配置盘降波动需求，行业主题流出对应交易盘撤出；两者同时发生时，指数有托底但结构在恶化。",
+     "conclusion": "资金面是“托底不托举”：3649点附近有被动买盘承接，但行业主题失血30.6亿元说明结构性风险偏好仍在下降。",
+     "assumptions": "ETF申购数据能代表增量资金；申购行为与后续持有意愿一致。",
+     "counterEvidence": "本周沪指全周仍+1.39%、深成指+3.16%，说明申购与价格上涨可以同向，托底可能只是滞后确认。",
+     "horizon": "1—2周",
+     "invalidation": "下周宽基ETF转为净赎回，或周成交额自9.3万亿元明显萎缩。",
+     "confidence": "medium-high",
+     "missingData": "无两融、无北向逐日、无个股层面资金流；行业排名仅ETF份额口径。",
+     "evidenceFactIds": [
+      "FLOW:CN:ETF-WEEKLY-2026-11-06",
+      "FLOW:CN:ETF-SEMI-2026-11-06",
+      "FLOW:CN:ETF-OUT-2026-11-06",
+      "FLOW:CN:ETF-TURNOVER-2026-11-06",
+      "FLOW:CN:ETF-NEXTWEEK-2026-11-09"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+     ]
+    },
+    {
+     "id": "FW-3",
+     "framework": "预期差与事件研究",
+     "concept": "价格动的不是事实本身，而是事实与预期之间的距离。",
+     "applicability": "适用于Anthropic估值下修、伯克希尔持币、九州云箭IPO辅导三件事。",
+     "observed": "Anthropic的IPO潜在估值从2万亿美元被压到1.2—1.3万亿美元，降幅至多40%；伯克希尔Q3营业利润127.1亿美元同比-5.8%、现金3774亿美元创新高；九州云箭11月6日完成上海证监局辅导备案、估值100亿元、13轮累计融资13.6亿元，而蓝箭航天、中科宇航、微纳星空三家审核状态为“中止”（财务资料过有效期）。",
+     "mechanism": "一级市场估值下修会经由“可比公司倍数”传导到二级市场同类资产；伯克希尔持币则是对“可投资标的稀缺”的直接表达。",
+     "conclusion": "AI溢价正在被重新定价而不是被否定：算力端（可验证订单）仍被买，应用端与一级市场估值被砍。",
+     "assumptions": "一级估值下修会部分传导至二级；伯克希尔现金水平可作为估值纪律的温度计。",
+     "counterEvidence": "同一天AMD+11.04%、TSM+6.33%，说明二级市场并未接受“AI整体降估值”，只是换了标的。",
+     "horizon": "2—4周",
+     "invalidation": "若Anthropic最终定价回到1.8万亿美元以上，则“AI溢价下修”判断失效。",
+     "confidence": "medium",
+     "missingData": "Anthropic为非上市公司，估值来自媒体转述的潜在投资者意向，非正式定价文件。",
+     "evidenceFactIds": [
+      "RESEARCH:US:ANTHROPIC-IPO-VALUATION-2026-11",
+      "MACRO:US:BERKSHIRE-Q3-CASH",
+      "MACRO:US:BERKSHIRE-Q3-OPPROFIT",
+      "PROP:CN:IPO-GUIDE-JZRQ-2026-11-06",
+      "RESEARCH:CN:COMMERCIAL-SPACE-IPO-2026-11"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641402.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641415.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641399.html"
+     ]
+    },
+    {
+     "id": "FW-4",
+     "framework": "供需、库存与风险溢价",
+     "concept": "商品看库存与月差，黄金看实际利率与官方储备需求，两者都不能用单点价格代替。",
+     "applicability": "适用于黄金与原油；黄金侧有官方储备与终端需求数据，原油侧库存与月差全缺。",
+     "observed": "黄金自1月29日近5600美元峰值最大回撤超30%、10月单月-6.8%，同时10月末官方储备7830万盎司、连续24个月增持，三季度金饰消费66吨环比+30%、10月零售订单环比+26%；原油WTI 90.83美元/桶，无库存、无月差，EIA库存顺延至11月12日。",
+     "mechanism": "黄金的官方买盘对价格不敏感、终端买盘对价格高度敏感，二者叠加使下跌有承接但缺少向上动能；原油在缺库存数据时，价格更多反映风险溢价而非供需。",
+     "conclusion": "黄金是“有承接的下跌”，不是“见底”；原油是“无法定性的价格”，本轮不给方向。",
+     "assumptions": "央行购金具有连续性；终端需求与价格负相关。",
+     "counterEvidence": "若10月零售订单+26%属于提前透支，后续需求真空会让承接消失，金价可能加速下行。",
+     "horizon": "数周（黄金）/3—5日（原油）",
+     "invalidation": "11月央行购金转负或金饰消费环比回落；原油看11月12日库存。",
+     "confidence": "medium",
+     "missingData": "无TIPS实际利率、无黄金ETF持仓逐日、无原油月差与裂解价差、无周度库存。",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+      "MACRO:CN:GOLD-RESERVE-2026-10",
+      "MACRO:CN:GOLD-JEWELRY-Q3-2026",
+      "MACRO:CN:GOLD-RETAIL-2026-10",
+      "ENERGY:WTI"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641416.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html",
+      "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+     ]
+    },
+    {
+     "id": "FW-5",
+     "framework": "政策传导与分配影响",
+     "concept": "政策先改变谁的成本与准入，再改变谁的价格；把政策直接等同于涨跌是过度简化。",
+     "applicability": "适用于商务部对美制裁表态、商业航天IPO通道、欧盟DSA初裁三件事。",
+     "observed": "商务部11月7日就美制裁中国企业答问，称美方以涉第三方为由采取单边制裁违反国际法与国际关系基本准则、中方坚决反对；上交所自2025年底发布商业火箭企业适用科创板第五套标准指引后，商业航天形成IPO梯队（蓝箭航天、中科宇航已受理但中止补充财务资料，九州云箭进入辅导）；欧委会11月6日初裁认定TikTok个性化推荐或违反DSA，TikTok否认。",
+     "mechanism": "制度通道决定融资节奏（IPO梯队），监管裁定决定合规成本（DSA），制裁与反制决定供应链与市场准入；三者对价格的影响都经由“成本/准入”而非直接情绪。",
+     "conclusion": "政策层的边际变化集中在“融资通道打开”与“合规成本上升”两个方向，对A股是结构性利好（商业航天），对平台经济是成本项。",
+     "assumptions": "IPO通道打开会带来估值锚；合规成本会体现在利润率而非收入。",
+     "counterEvidence": "三家已受理企业审核中止说明通道打开不等于发行顺畅，财务资料有效性本身是硬约束。",
+     "horizon": "1—3个月",
+     "invalidation": "若商业航天企业IPO重启后破发，则“通道即估值”判断失效。",
+     "confidence": "medium",
+     "missingData": "无制裁清单细节与企业受影响金额，无DSA罚款上限的正式决定（仅初裁）。",
+     "evidenceFactIds": [
+      "PROP:CN:MOFCOM-SANCTIONS-2026-11-07",
+      "PROP:CN:IPO-GUIDE-JZRQ-2026-11-06",
+      "RESEARCH:CN:COMMERCIAL-SPACE-IPO-2026-11",
+      "RESEARCH:WORLD:TIKTOK-DSA-2026-11-06"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641399.html"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "五个框架没有给出统一的看多或看空结论，但一致指向同一件事：流动性不缺、估值不缺争议、缺的是可验证的盈利兑现，因此判断为估值消化期。",
+    "agreement": "资金流框架（FW-2）与预期差框架（FW-3）在“托底但不托举”上一致：宽基ETF单周2035亿元承接筹码，而Anthropic估值被砍40%、伯克希尔持币3774亿美元说明定价者对估值仍不放心；供需框架（FW-4）在黄金上给出同向结论——官方买盘托住成交但托不住价格。",
+    "disagreement": "利率框架（FW-1）偏空（熊平、VIX绝对水平仍高），而市场当日的实际表现偏多（纳指+1.09%、罗素+0.89%、VIX-9.01%）；政策框架（FW-5）偏结构性利多，但与短期价格无直接对应关系。",
+    "weighting": "更看重FW-2与FW-3，因为它们的证据是本轮新取得、可逐项核对的具体数值（2035亿元、688亿元、3774亿美元、1.2—1.3万亿美元）；FW-1虽有官方曲线支撑，但2年期报价缺失使曲线形状只能靠par口径近似；FW-5的传导周期在1—3个月，对12—24小时判断权重最低。",
+    "invalidation": "若下周宽基ETF转为净赎回、或11月央行购金转负、或纳指100在VIX回落至22以下的同时站稳27500点，则“估值消化期”这一定性需要改为“趋势重启”。"
+   },
+   "watch": [
+    {
+     "point": "下周一A股宽基ETF申赎方向",
+     "detail": "本周宽基净流入2035亿元是本轮托底的核心证据；若周一转为净赎回，3649点的被动承接逻辑立即失效。"
+    },
+    {
+     "point": "两市日成交额能否守住1.5万亿元量级",
+     "detail": "本周成交9.3万亿元（沪4.36万亿、深4.94万亿），日均约1.86万亿元；若快速萎缩，说明申购只是脉冲。"
+    },
+    {
+     "point": "VIX能否回落至22以下且纳指100站稳26989点",
+     "detail": "VIX 25.64仍属偏高，只有波动率系统性回落，半导体反弹才能从逼空转为趋势。"
+    },
+    {
+     "point": "11月末公布的11月黄金储备",
+     "detail": "已连续24个月增持至7830万盎司；若11月转负，黄金“官方托底”叙事破裂。"
+    },
+    {
+     "point": "11月12日EIA周度库存（12:00美东）",
+     "detail": "因退伍军人节顺延，这是原油下一个可验证数据；库存大幅累积而价格不跌说明地缘溢价主导。"
+    },
+    {
+     "point": "11月25日BEA GDP二次估算与个人收入支出",
+     "detail": "FOMC 12月8—9日会议（含经济预测摘要）前的关键增长数据，决定熊平曲线能否延续。"
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "ETF净流入",
+     "definition": "股票型与跨境型ETF在一级市场的份额申赎对应金额，按本周累计计算；与二级市场成交额不同，不等于增量资金全部入场。"
+    },
+    {
+     "term": "2s10s利差",
+     "definition": "10年期与2年期美国国债收益率之差，本轮使用财政部日度par收益率：4.86%-4.51%=+35bp；利差收窄称平坦化，短端上行更快称熊平。"
+    },
+    {
+     "term": "最大回撤",
+     "definition": "区间内从历史高点到随后最低点的跌幅；本轮黄金指自2026年1月29日盘中近5600美元峰值起算的跌幅，媒体口径为“超30%”。"
+    },
+    {
+     "term": "金银比",
+     "definition": "每盎司金价除以银价，本轮4072.10/52.071≈78.2；比值上升表示白银相对弱于黄金。"
+    },
+    {
+     "term": "IPO辅导备案",
+     "definition": "拟上市企业在当地证监局办理辅导登记、由保荐机构开展规范辅导的程序，是申报受理前的环节，不等于通过审核或发行。"
+    },
+    {
+     "term": "contentRetrieved",
+     "definition": "采集器对该URL取得HTTP 200并保存哈希与取得时间的状态；只证明取得原文，不证明已读完或内容准确。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "id": "TH-1",
+     "thesis": "A股当前是筹码出清而非盈利改善，宽基ETF申购提供托底但不提供方向。",
+     "basis": "本周宽基+2035亿元与11月6日创业板-3.96%同时成立。",
+     "confidence": "medium",
+     "invalidation": "宽基转净赎回或成交额显著萎缩。"
+    },
+    {
+     "id": "TH-2",
+     "thesis": "AI内部正在从应用端向算力端再定价，一级市场估值下修是这一过程的先行指标。",
+     "basis": "AMD+11.04%、TSM+6.33%对CRM-3.94%、ADBE-2.90%；Anthropic估值被压至多40%。",
+     "confidence": "medium",
+     "invalidation": "应用端财报超预期或Anthropic定价回到1.8万亿美元上方。"
+    },
+    {
+     "id": "TH-3",
+     "thesis": "黄金进入“有承接的下跌”，官方与终端买盘减缓跌势但不改变价格由边际交易者决定的性质。",
+     "basis": "峰值回撤超30%与连续24个月增持、金饰环比+30%同时成立。",
+     "confidence": "medium",
+     "invalidation": "11月购金转负或金饰消费环比回落。"
+    },
+    {
+     "id": "TH-4",
+     "thesis": "原油在缺库存与月差时无法定性，任何方向判断都是过度推断。",
+     "basis": "BRENT 404、无月差裂解、EIA库存顺延至11月12日。",
+     "confidence": "high",
+     "invalidation": "11月12日库存数据落地后可重新定性。"
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "id": "JR-1",
+     "subject": "黄金判断",
+     "previous": "此前几轮把央行连续增持与ETF买盘视为金价的支撑主线，倾向“高位震荡”。",
+     "current": "修正为“有承接的下跌”：峰值回撤已超30%、10月单月-6.8%，官方买盘只能减缓而不能逆转。",
+     "reason": "本轮取得1月29日近5600美元峰值与-30%回撤的明确口径，是此前几轮未有的量化证据。",
+     "evidenceFactIds": [
+      "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+      "MACRO:CN:GOLD-RESERVE-2026-10"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641416.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+     ]
+    },
+    {
+     "id": "JR-2",
+     "subject": "美股AI板块判断",
+     "previous": "此前把AI板块视为同向整体，用纳指单一指标代表。",
+     "current": "修正为内部分化：算力端受益、应用端承压，需分别设定证伪条件。",
+     "reason": "11月6日AMD+11.04%与CRM-3.94%同日反向，且Anthropic估值下修指向应用端。",
+     "evidenceFactIds": [
+      "EQUITY:US:AMD",
+      "EQUITY:US:CRM",
+      "RESEARCH:US:ANTHROPIC-IPO-VALUATION-2026-11"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+     ]
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "宽基ETF转为净赎回",
+     "effect": "A股“被动托底”叙事立即失效，沪指3649点支撑需重新评估。"
+    },
+    {
+     "title": "11月央行黄金储备转负",
+     "effect": "黄金官方买盘叙事破裂，回撤可能加速；需下调黄金所有多头情景权重。"
+    },
+    {
+     "title": "11月12日EIA库存大幅累积",
+     "effect": "若价格不跌，说明WTI 90.83中的地缘溢价占主导；若价格跌破88美元，则需求端走弱成立。"
+    }
+   ],
+   "changes": [
+    {
+     "title": "A股：跌价与申购同现",
+     "detail": "11月6日沪指-1.10%、创业板-3.96%，但本周ETF净流入1918.18亿元、宽基+2035亿元、沪深300+688亿元。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "FLOW:CN:ETF-WEEKLY-2026-11-06"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+     ]
+    },
+    {
+     "title": "黄金：回撤口径首次量化",
+     "detail": "1月29日盘中近5600美元创高，此后10月单月-6.8%、自峰值最大回撤超30%；现货现报4072.10美元。",
+     "evidenceFactIds": [
+      "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+      "METAL:XAUUSD"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641416.html"
+     ]
+    },
+    {
+     "title": "美股：算力与应用反向",
+     "detail": "AMD+11.04%、INTC+7.71%、TSM+6.33%对CRM-3.94%、ADBE-2.90%，纳指+1.09%、道指-0.46%。",
+     "evidenceFactIds": [
+      "EQUITY:US:AMD",
+      "EQUITY:US:CRM",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:DOW"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641402.html"
+     ]
+    },
+    {
+     "title": "机构行为：伯克希尔现金创纪录",
+     "detail": "Q3营业利润127.1亿美元同比-5.8%，9月末现金3774亿美元再创新高。",
+     "evidenceFactIds": [
+      "MACRO:US:BERKSHIRE-Q3-OPPROFIT",
+      "MACRO:US:BERKSHIRE-Q3-CASH"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641402.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641415.html"
+     ]
+    },
+    {
+     "title": "一级市场：Anthropic估值下修",
+     "detail": "潜在投资者给出1.2—1.3万亿美元IPO估值，较此前2万亿美元预期下降至多40%。",
+     "evidenceFactIds": [
+      "RESEARCH:US:ANTHROPIC-IPO-VALUATION-2026-11"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+     ]
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "A股：跌价与申购同现",
+     "detail": "11月6日沪指-1.10%、创业板-3.96%，但本周ETF净流入1918.18亿元、宽基+2035亿元、沪深300+688亿元。",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "FLOW:CN:ETF-WEEKLY-2026-11-06"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+     ]
+    },
+    {
+     "title": "黄金：回撤口径首次量化",
+     "detail": "1月29日盘中近5600美元创高，此后10月单月-6.8%、自峰值最大回撤超30%；现货现报4072.10美元。",
+     "evidenceFactIds": [
+      "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+      "METAL:XAUUSD"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641416.html"
+     ]
+    },
+    {
+     "title": "美股：算力与应用反向",
+     "detail": "AMD+11.04%、INTC+7.71%、TSM+6.33%对CRM-3.94%、ADBE-2.90%，纳指+1.09%、道指-0.46%。",
+     "evidenceFactIds": [
+      "EQUITY:US:AMD",
+      "EQUITY:US:CRM",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:DOW"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641402.html"
+     ]
+    },
+    {
+     "title": "机构行为：伯克希尔现金创纪录",
+     "detail": "Q3营业利润127.1亿美元同比-5.8%，9月末现金3774亿美元再创新高。",
+     "evidenceFactIds": [
+      "MACRO:US:BERKSHIRE-Q3-OPPROFIT",
+      "MACRO:US:BERKSHIRE-Q3-CASH"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641402.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641415.html"
+     ]
+    },
+    {
+     "title": "一级市场：Anthropic估值下修",
+     "detail": "潜在投资者给出1.2—1.3万亿美元IPO估值，较此前2万亿美元预期下降至多40%。",
+     "evidenceFactIds": [
+      "RESEARCH:US:ANTHROPIC-IPO-VALUATION-2026-11"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+     ]
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-11-06T21:59:58Z",
+     "title": "美股收盘与WTI最后有效定价",
+     "detail": "纳指24579.424点+1.09%、纳指100+1.35%、道指-0.46%，VIX 25.64（-9.01%）；WTI 90.83美元/桶（+0.34%）。",
+     "evidenceFactIds": [
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "VOL:VIX",
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "at": "2026-11-07T13:08:15Z",
+     "title": "ETF周度资金清单披露",
+     "detail": "本周股票型与跨境ETF净流入1918.18亿元，宽基+2035亿元、行业主题-30.6亿元，3只科创板半导体材料设备ETF合计+115.39亿元。",
+     "evidenceFactIds": [
+      "FLOW:CN:ETF-WEEKLY-2026-11-06",
+      "FLOW:CN:ETF-SEMI-2026-11-06"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+     ]
+    },
+    {
+     "at": "2026-11-07T13:33:51Z",
+     "title": "黄金回撤口径与央行持金同日落地",
+     "detail": "金价自1月29日近5600美元峰值回撤超30%，同时10月末黄金储备7830万盎司、连续24个月增持。",
+     "evidenceFactIds": [
+      "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+      "MACRO:CN:GOLD-RESERVE-2026-10"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-07/4641416.html",
+      "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+     ]
+    },
+    {
+     "at": "2026-11-07T13:36:37Z",
+     "title": "现货金银周末快照",
+     "detail": "XAU 4072.10美元/盎司、XAG 52.071美元/盎司，金银比约78.2；加密同步快照BTC 75816.58美元。",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "CRYPTO:BTC:USD"
+     ]
+    }
+   ],
+   "sectionGaps": {
+    "events": {
+     "reason": "已核验美联储FOMC日历（2026年会期至12月8—9日含经济预测摘要）、BEA发布日程及其机器可读日程（11月6日后最近为11月18日、11月20日、11月25日）、EIA周度石油库存日程（截至11月6日当周顺延至11月12日12:00美东）。自2026-11-07T13:40Z起未来12—24小时为周末，无一级官方发布，故本轮事件雷达为空。"
+    },
+    "researchRecords": {
+     "reason": "本轮无取得公司披露原文：伯克希尔三季报以媒体口径两项指标呈现，SEC EDGAR检索未发现当日10-Q/8-K；九州云箭为辅导备案媒体转述（来源为证监会公示系统的报道），巨潮与交易所原文不在可用白名单内。故 researchRecords 保持空数组。"
+    },
+    "macroEvents": {
+     "reason": "无本轮新取得的宏观事件原文，仅有已发布结果（外储、黄金储备、伯克希尔Q3）；已发布结果写入macroFacts，不重复列为事件。"
+    }
+   }
+  },
+  "macroFacts": [
+   {
+    "id": "MACRO:CN:FX-RESERVES-2026-10",
+    "label": "10月末外汇储备",
+    "value": 34051.78,
+    "unit": "亿美元",
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   },
+   {
+    "id": "MACRO:CN:GOLD-RESERVE-2026-10",
+    "label": "10月末黄金储备（连续第24个月增持）",
+    "value": 7830,
+    "unit": "万盎司",
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   },
+   {
+    "id": "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+    "label": "金价自1月29日峰值最大回撤（10月单月-6.8%）",
+    "value": 30.0,
+    "unit": "%",
+    "asOf": "2026-11-07T13:33:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641416.html"
+    ],
+    "note": "1月29日伦敦现货盘中逼近5600美元/盎司创高，此后震荡下行"
+   },
+   {
+    "id": "MACRO:CN:GOLD-JEWELRY-Q3-2026",
+    "label": "三季度金饰消费量（环比+30%）",
+    "value": 66,
+    "unit": "吨",
+    "asOf": "2026-11-07T13:33:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641416.html"
+    ]
+   },
+   {
+    "id": "MACRO:CN:GOLD-RETAIL-2026-10",
+    "label": "10月黄金零售订单环比（转转口径）",
+    "value": 26.0,
+    "unit": "%",
+    "asOf": "2026-11-07T13:33:51Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641416.html"
+    ]
+   },
+   {
+    "id": "MACRO:US:BERKSHIRE-Q3-OPPROFIT",
+    "label": "伯克希尔Q3营业利润（同比-5.8%）",
+    "value": 127.1,
+    "unit": "亿美元",
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641402.html"
+    ]
+   },
+   {
+    "id": "MACRO:US:BERKSHIRE-Q3-CASH",
+    "label": "伯克希尔9月末现金储备（创新高）",
+    "value": 3774,
+    "unit": "亿美元",
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641415.html"
+    ]
+   },
+   {
+    "id": "MACRO:US:CURVE-2S10S-2026-11-06",
+    "label": "2s10s 利差（2Y 4.51%、10Y 4.86%）",
+    "value": 35,
+    "unit": "bp",
+    "asOf": "2026-11-06T00:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "同日10s30s +40bp、5s30s +62bp、3M10Y +67bp"
+   },
+   {
+    "id": "MACRO:US:CURVE-DAY-CHG-2026-11-06",
+    "label": "当日3Y收益率上行幅度（曲线近端整体上行）",
+    "value": 6,
+    "unit": "bp",
+    "asOf": "2026-11-06T00:00:00Z",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "note": "2Y+5、3Y+6、5Y+5、10Y+2、30Y+1bp，属熊平"
+   },
+   {
+    "id": "FLOW:CN:ETF-WEEKLY-2026-11-06",
+    "label": "本周股票型+跨境ETF净流入",
+    "value": 1918.18,
+    "unit": "亿元",
+    "asOf": "2026-11-06T07:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+    ],
+    "note": "宽基+2035亿、行业主题-30.6亿、跨境-28.97亿、沪深300 +688亿"
+   },
+   {
+    "id": "FLOW:CN:ETF-SEMI-2026-11-06",
+    "label": "3只科创板半导体材料设备ETF合计净流入",
+    "value": 115.39,
+    "unit": "亿元",
+    "asOf": "2026-11-06T07:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+    ],
+    "note": "科创半导体ETF华夏+86.66亿、机器人ETF易方达+17.27亿"
+   },
+   {
+    "id": "FLOW:CN:ETF-OUT-2026-11-06",
+    "label": "半导体设备ETF国泰本周净流出（证券ETF国泰-16.31亿、通信ETF国泰-14.65亿）",
+    "value": -16.61,
+    "unit": "亿元",
+    "asOf": "2026-11-06T07:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+    ]
+   },
+   {
+    "id": "FLOW:CN:ETF-TURNOVER-2026-11-06",
+    "label": "周成交额超100亿元的股票型与跨境ETF数量",
+    "value": 30,
+    "unit": "只",
+    "asOf": "2026-11-06T07:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+    ],
+    "note": "中韩半导体ETF华泰柏瑞周成交超千亿、科创50ETF华夏超900亿"
+   },
+   {
+    "id": "FLOW:CN:ETF-NEXTWEEK-2026-11-09",
+    "label": "下周披露上市/发行的ETF数量（1只上市+4只发行）",
+    "value": 5,
+    "unit": "只",
+    "asOf": "2026-11-07T13:08:15Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+    ],
+    "note": "上市标的为稀有金属；发行标的为新材料、软件、金融科技、电网"
+   },
+   {
+    "id": "PROP:CN:MOFCOM-SANCTIONS-2026-11-07",
+    "label": "商务部就美制裁中国企业答记者问：坚决反对单边制裁",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   },
+   {
+    "id": "PROP:CN:IPO-GUIDE-JZRQ-2026-11-06",
+    "label": "九州云箭最新估值（11月6日上海证监局辅导备案）",
+    "value": 100,
+    "unit": "亿元",
+    "asOf": "2026-11-06T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641399.html"
+    ],
+    "note": "国泰海通辅导；成立2017-10-10；13轮融资13.6亿元"
+   },
+   {
+    "id": "RESEARCH:CN:COMMERCIAL-SPACE-IPO-2026-11",
+    "label": "中科宇航科创板IPO拟募资额（蓝箭航天估值200—220亿元）",
+    "value": 41.8,
+    "unit": "亿元",
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641399.html"
+    ],
+    "note": "蓝箭航天、中科宇航、微纳星空审核状态为中止，原因为财务资料过有效期"
+   },
+   {
+    "id": "RESEARCH:US:ANTHROPIC-IPO-VALUATION-2026-11",
+    "label": "Anthropic IPO潜在估值上限（较此前2万亿预期下降至多40%）",
+    "value": 1.3,
+    "unit": "万亿美元",
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:US:TSLA-CYBERTRUCK-2026-11-06",
+    "label": "马斯克称明年年中前后缩减得州Cybertruck产量转向Cybercab",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-06T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   },
+   {
+    "id": "MACRO:CN:AD-REVENUE-2026Q1Q3",
+    "label": "前三季度广告业头部企事业单位收入（同比+8.5%）",
+    "value": 16008.3,
+    "unit": "亿元",
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   },
+   {
+    "id": "MACRO:CN:SHENZHOU-24-PAKISTAN-2026-11",
+    "label": "神舟二十四号将搭载1名巴基斯坦航天员（首次中外联合飞行）",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   },
+   {
+    "id": "PROP:CN:BAODING-BRIDGE-2026-11-07",
+    "label": "保定桥体脱落事故受伤人数（3名施工人员+1名货车司机，2人重伤）",
+    "value": 4,
+    "unit": "人",
+    "asOf": "2026-11-07T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   },
+   {
+    "id": "RESEARCH:WORLD:TIKTOK-DSA-2026-11-06",
+    "label": "欧委会初裁认定TikTok个性化推荐或违反DSA，TikTok否认",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-06T00:00:00Z",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ]
+   }
+  ],
+  "macroEvents": [],
+  "events": [],
+  "retainedMacroFactIds": [],
+  "researchRecords": [],
+  "researchChecks": [
+   {
+    "instrumentId": "EQUITY:US:BRK.B",
+    "checkedAt": "2026-11-07T13:42:18Z",
+    "status": "source-unavailable",
+    "note": "本轮已查SEC EDGAR伯克希尔申报索引，最新为11月3日Form 4，未检索到三季度10-Q或8-K原文；三季报仅两项指标可用且来自媒体口径，故不做公司原文研究记录。"
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮滚动24小时窗口内新增6个可核验事件簇（A股ETF资金、黄金回撤与央行持金、伯克希尔三季报、Anthropic估值、商务部对美制裁表态、商业航天IPO辅导），另有TikTok DSA初裁、神舟二十四号、保定事故、松赞林回应4条非市场事件；市场类与非市场类大致各半。",
+   "regions": [
+    "CN",
+    "US",
+    "WORLD"
+   ],
+   "gaps": "单一媒体来源（每日经济新闻7篇+官方4份），无第二家独立媒体交叉核验；港股与加密无新闻来源；普通天气、气温与台风路径按选题边界未纳入。"
+  },
+  "newsItems": [
+   {
+    "eventId": "EVT-CN-ETF-FLOW-2026-11-07",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "本周股票型与跨境ETF净流入1918.18亿元，宽基吸金2035亿元",
+    "summary": "Wind口径显示，本周沪深两市股票型与跨境型ETF合计净流入1918.18亿元，宽基指数ETF净流入2035亿元、行业主题净流出30.6亿元、跨境净流出28.97亿元；沪深300单周净流入688亿元，10只大型宽基ETF合计1600.23亿元。行业主题中3只科创板半导体材料设备ETF合计净流入115.39亿元，半导体设备ETF国泰、证券ETF国泰、通信ETF国泰分别净流出16.61亿、16.31亿、14.65亿元。",
+    "plainImpact": "对持有宽基的普通投资者，这意味着下跌时有人接盘、波动被摊平；但行业主题失血说明追热点的资金在退，短期别把指数托底当成个股普涨。",
+    "assessment": "我的判断：这是配置盘降波动、交易盘撤出的组合，托底有效但不构成上涨理由；真正的信号是下周宽基是否延续申购。",
+    "publishedAt": "2026-11-07T13:08:15Z",
+    "sourceDateText": "2026-11-07 21:08",
+    "updateType": "new",
+    "affectedGroups": [
+     "A股ETF持有人",
+     "宽基指数基金",
+     "半导体主题基金"
+    ],
+    "marketImpact": "宽基ETF申购在指数下跌时提供机械买盘，压低短期下行斜率；行业主题净流出则压制主题股弹性。",
+    "counterRisk": "申购集中于少数沪深300产品，一旦停止托底消失。",
+    "nextWatch": "下周一宽基ETF申赎方向与两市成交额。",
+    "horizon": "1—2周",
+    "confidence": "medium",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641413.html"
+    ],
+    "evidenceFactIds": [
+     "FLOW:CN:ETF-WEEKLY-2026-11-06",
+     "FLOW:CN:ETF-SEMI-2026-11-06"
+    ]
+   },
+   {
+    "eventId": "EVT-WORLD-GOLD-DRAWDOWN-2026-11-07",
+    "regions": [
+     "WORLD",
+     "CN"
+    ],
+    "kind": "market",
+    "title": "金价自1月峰值回撤超30%，10月单月下跌6.8%",
+    "summary": "2026年1月29日伦敦现货黄金盘中逼近5600美元/盎司创下新高，此后震荡下行，10月单月下跌6.8%，自峰值最大回撤超30%。终端出现“反向接力”：金价下行时买入需求升温，三季度金饰消费量环比回升30%至66吨，转转数据显示10月零售订单环比增长26%。",
+    "plainImpact": "对普通家庭，金饰与金条在跌价时更“划算”，但30%的回撤说明它不是只涨不跌的资产；对投资者，抄底需要看官方买盘是否延续，而不是看跌得多。",
+    "assessment": "我的判断：这是有承接的下跌——官方与终端买盘减缓跌势，但价格仍由边际交易者决定，趋势反转尚未成立。",
+    "publishedAt": "2026-11-07T13:33:51Z",
+    "sourceDateText": "2026-11-07 21:33",
+    "updateType": "new",
+    "affectedGroups": [
+     "黄金ETF持有人",
+     "金饰消费者",
+     "央行储备管理者"
+    ],
+    "marketImpact": "贵金属走弱会降低风险资产的“避险替代”吸引力，但也降低通胀对冲需求，方向取决于实际利率。",
+    "counterRisk": "10月零售订单+26%可能提前透支后续需求。",
+    "nextWatch": "11月末公布的11月官方黄金储备。",
+    "horizon": "数周",
+    "confidence": "medium",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641416.html"
+    ],
+    "evidenceFactIds": [
+     "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+     "MACRO:CN:GOLD-JEWELRY-Q3-2026",
+     "MACRO:CN:GOLD-RETAIL-2026-10"
+    ]
+   },
+   {
+    "eventId": "EVT-CN-GOLD-RESERVE-2026-11-07",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "10月末外汇储备34051.78亿美元，黄金储备7830万盎司连续24个月增持",
+    "summary": "国家外汇管理局11月7日数据显示，10月末外汇储备报34051.78亿美元；黄金储备报7830万盎司，为连续第24个月增持。",
+    "plainImpact": "外储规模稳定意味着汇率干预能力充足；央行持续买金是对冲美元资产集中度的长期动作，与短期金价涨跌并不同步。",
+    "assessment": "我的判断：央行购金是价格不敏感的结构性买盘，能在下跌中提供承接，但不能据此推断金价见底。",
+    "publishedAt": "2026-11-07T00:00:00Z",
+    "sourceDateText": "2026-11-07",
+    "updateType": "new",
+    "affectedGroups": [
+     "人民币资产持有者",
+     "黄金市场"
+    ],
+    "marketImpact": "官方购金为黄金提供中长期需求底座，对短期价格弹性影响有限。",
+    "counterRisk": "若11月购金转负，则该底座假设失效。",
+    "nextWatch": "11月末的11月储备数据。",
+    "horizon": "数月",
+    "confidence": "high",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ],
+    "evidenceFactIds": [
+     "MACRO:CN:FX-RESERVES-2026-10",
+     "MACRO:CN:GOLD-RESERVE-2026-10"
+    ]
+   },
+   {
+    "eventId": "EVT-US-BERKSHIRE-Q3-2026-11-07",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "伯克希尔三季度营业利润127.1亿美元同比降5.8%，现金储备3774亿美元创新高",
+    "summary": "伯克希尔哈撒韦三季度营业利润127.1亿美元、同比下降5.8%；截至9月底现金储备较上季增加，达到3774亿美元，再创新高。",
+    "plainImpact": "最保守的长期资本选择囤现金而不是买入，说明在4.86%的十年期收益率下，等待本身有回报；对普通投资者是估值纪律的提醒。",
+    "assessment": "我的判断：现金创纪录是估值温度计而非看空宣言——它说明可接受价格的资产稀缺，而不是系统性风险即将爆发。",
+    "publishedAt": "2026-11-07T00:00:00Z",
+    "sourceDateText": "2026-11-07",
+    "updateType": "new",
+    "affectedGroups": [
+     "美股投资者",
+     "价值型基金"
+    ],
+    "marketImpact": "对高估值成长股构成心理压制；对现金类与短债需求形成支撑。",
+    "counterRisk": "营业利润下滑5.8%部分来自保险业务周期，不宜直接外推至全市场盈利。",
+    "nextWatch": "下一季度伯克希尔是否开始净买入。",
+    "horizon": "1—2个季度",
+    "confidence": "medium-high",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641402.html",
+     "https://www.nbd.com.cn/articles/2026-11-07/4641415.html"
+    ],
+    "evidenceFactIds": [
+     "MACRO:US:BERKSHIRE-Q3-OPPROFIT",
+     "MACRO:US:BERKSHIRE-Q3-CASH"
+    ]
+   },
+   {
+    "eventId": "EVT-US-ANTHROPIC-VALUATION-2026-11-07",
+    "regions": [
+     "US"
+    ],
+    "kind": "market",
+    "title": "Anthropic IPO潜在估值降至1.2万亿至1.3万亿美元",
+    "summary": "据央视财经，近期大量美国科技股遭抛售、AI投资回报受审视，部分潜在投资者准备给予Anthropic 1.2万亿至1.3万亿美元的IPO估值，较此前预期的2万亿美元下降至多40%。",
+    "plainImpact": "一级市场给AI公司的定价在退潮，这会逐步传导到二级市场同类公司的估值倍数；对持有AI主题基金的投资者，波动来源从“故事”转向“倍数”。",
+    "assessment": "我的判断：这是AI溢价被重新定价而非被否定——算力端仍被买（同日AMD+11.04%），被砍的是应用端与一级估值。",
+    "publishedAt": "2026-11-07T00:00:00Z",
+    "sourceDateText": "2026-11-07",
+    "updateType": "new",
+    "affectedGroups": [
+     "AI主题基金持有人",
+     "一级市场投资者"
+    ],
+    "marketImpact": "压低AI应用类公司的可比估值，利好现金流可见的算力与设备环节。",
+    "counterRisk": "消息为潜在投资者意向，非正式定价；最终估值可能上修。",
+    "nextWatch": "Anthropic正式定价文件与美股AI应用板块财报。",
+    "horizon": "2—4周",
+    "confidence": "medium",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ],
+    "evidenceFactIds": [
+     "RESEARCH:US:ANTHROPIC-IPO-VALUATION-2026-11"
+    ]
+   },
+   {
+    "eventId": "EVT-CN-COMMERCIAL-SPACE-IPO-2026-11-07",
+    "regions": [
+     "CN"
+    ],
+    "kind": "market",
+    "title": "九州云箭启动A股上市辅导，商业航天IPO梯队扩容",
+    "summary": "11月6日证监会IPO辅导公示系统显示，九州云箭空间科技股份有限公司已在上海证监局办理辅导备案，辅导机构为国泰海通证券。公司专注液氧甲烷火箭发动机，成立于2017年10月10日，已完成13轮融资、累计13.6亿元，最新估值100亿元。同期蓝箭航天、中科宇航、微纳星空审核状态为“中止”，原因为财务资料过有效期；中科宇航拟募资41.8亿元。",
+    "plainImpact": "商业航天从“讲故事”进入“排队上市”，对一级市场投资人是退出通道，对二级市场投资人是新增供给与估值锚。",
+    "assessment": "我的判断：通道打开不等于发行顺畅，三家已受理企业因财务资料过期中止，说明节奏受制于审计而非政策。",
+    "publishedAt": "2026-11-07T00:00:00Z",
+    "sourceDateText": "2026-11-07",
+    "updateType": "new",
+    "affectedGroups": [
+     "商业航天产业链",
+     "科创板投资者",
+     "一级市场基金"
+    ],
+    "marketImpact": "为商业航天提供估值锚，短期提振主题情绪；中期增加科创板供给。",
+    "counterRisk": "辅导备案到发行通常需数月，主题行情可能先于业绩。",
+    "nextWatch": "蓝箭航天补交财务资料后的审核进展。",
+    "horizon": "1—3个月",
+    "confidence": "medium",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641399.html"
+    ],
+    "evidenceFactIds": [
+     "PROP:CN:IPO-GUIDE-JZRQ-2026-11-06",
+     "RESEARCH:CN:COMMERCIAL-SPACE-IPO-2026-11"
+    ]
+   },
+   {
+    "eventId": "EVT-CN-MOFCOM-SANCTIONS-2026-11-07",
+    "regions": [
+     "CN",
+     "US"
+    ],
+    "kind": "general",
+    "title": "商务部就美制裁中国企业答记者问：坚决反对单边制裁",
+    "summary": "商务部新闻发言人11月7日就美制裁中国企业答记者问表示，美方以涉及第三方为由对中国企业采取单边制裁，违反国际法和国际关系基本准则，中方对此坚决反对。",
+    "plainImpact": "对被制裁或关联企业，直接影响是跨境结算、供应链与技术获取成本上升；对普通人，短期影响主要体现在相关商品价格与就业，而非汇率。",
+    "assessment": "我的判断：这是表态层面的反制预告，尚未给出具体反制清单，因此对市场价格的影响应视为待观察而非已发生。",
+    "publishedAt": "2026-11-07T00:00:00Z",
+    "sourceDateText": "2026-11-07",
+    "updateType": "developing",
+    "affectedGroups": [
+     "涉外供应链企业",
+     "跨境贸易从业者"
+    ],
+    "marketImpact": "暂无直接市场影响证据；若后续出台反制清单，需重新评估相关行业成本。",
+    "counterRisk": "表态与实际措施之间常有较长间隔，不宜提前定价。",
+    "nextWatch": "中方是否公布具体反制清单与生效时间。",
+    "horizon": "数周",
+    "confidence": "medium",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ],
+    "evidenceFactIds": [
+     "PROP:CN:MOFCOM-SANCTIONS-2026-11-07"
+    ]
+   },
+   {
+    "eventId": "EVT-WORLD-TIKTOK-DSA-2026-11-06",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "title": "欧盟委员会初裁认定TikTok个性化推荐或违反DSA，TikTok否认",
+    "summary": "11月6日欧盟委员会公布初步调查结论，判定TikTok的个性化推荐机制或违反《数字服务法》；TikTok否认相关指控，称委员会所作陈述存在根本性失实。",
+    "plainImpact": "若最终认定成立，平台可能被要求修改推荐算法并面临罚款，用户侧的推荐内容与广告体验会变化。",
+    "assessment": "我的判断：初裁到终裁通常需数月，短期是合规成本预期而非现金流冲击；对广告投放方的直接影响有限。",
+    "publishedAt": "2026-11-06T00:00:00Z",
+    "sourceDateText": "2026-11-06",
+    "updateType": "new",
+    "affectedGroups": [
+     "平台经济从业者",
+     "数字广告投放方",
+     "欧盟用户"
+    ],
+    "marketImpact": "暂无直接市场影响证据；若终裁附带高额罚款，将影响平台在欧洲的利润率。",
+    "counterRisk": "TikTok已公开抗辩，结论可能被修改或撤销。",
+    "nextWatch": "欧委会终裁时间与可能的罚款上限。",
+    "horizon": "数月",
+    "confidence": "medium",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ],
+    "evidenceFactIds": [
+     "RESEARCH:WORLD:TIKTOK-DSA-2026-11-06"
+    ]
+   },
+   {
+    "eventId": "EVT-CN-SHENZHOU-24-2026-11-07",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "title": "神舟二十四号将首次搭载外籍航天员，巴基斯坦载荷专家参加",
+    "summary": "中国载人航天工程办公室11月7日消息，神舟二十四号载人飞行任务将有1名巴基斯坦航天员以载荷专家身份参加，这是中国载人航天工程历史上首次中外航天员联合飞行，中国空间站将迎来首位外籍航天员。",
+    "plainImpact": "对普通人是航天合作的标志性事件；对产业意味着空间站国际合作与载荷实验需求的增量。",
+    "assessment": "我的判断：这是长期能力信号，对短期市场价格无直接传导，不应被包装成板块利好。",
+    "publishedAt": "2026-11-07T00:00:00Z",
+    "sourceDateText": "2026-11-07",
+    "updateType": "new",
+    "affectedGroups": [
+     "航天产业链",
+     "科研机构"
+    ],
+    "marketImpact": "暂无直接市场影响证据。",
+    "counterRisk": "任务时间表尚未公布，不宜据此推算订单。",
+    "nextWatch": "神舟二十四号发射窗口与载荷清单。",
+    "horizon": "数月",
+    "confidence": "high",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ],
+    "evidenceFactIds": [
+     "MACRO:CN:SHENZHOU-24-PAKISTAN-2026-11"
+    ]
+   },
+   {
+    "eventId": "EVT-CN-BAODING-BRIDGE-2026-11-07",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "title": "河北保定通报桥体脱落事故：3名施工人员与1名货车司机受伤",
+    "summary": "11月7日保定通报桥体脱落事故，经初步核实造成3名施工人员、1名过往货车司机受伤，其中2名施工人员伤势较重，所有伤者已第一时间送医救治。",
+    "plainImpact": "对当地是施工安全与交通管制问题；对行业是基建施工安全监管可能收紧的信号。",
+    "assessment": "我的判断：事件本身影响局部，需观察是否引发区域性施工安全排查，那才会产生工期与成本影响。",
+    "publishedAt": "2026-11-07T00:00:00Z",
+    "sourceDateText": "2026-11-07",
+    "updateType": "developing",
+    "affectedGroups": [
+     "当地居民",
+     "施工企业"
+    ],
+    "marketImpact": "暂无直接市场影响证据。",
+    "counterRisk": "事故原因尚在调查，责任归属未定。",
+    "nextWatch": "事故调查结论与是否启动区域安全检查。",
+    "horizon": "数日",
+    "confidence": "medium",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641414.html"
+    ],
+    "evidenceFactIds": [
+     "PROP:CN:BAODING-BRIDGE-2026-11-07"
+    ]
+   },
+   {
+    "eventId": "EVT-CN-SONGZANLIN-2026-11-07",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "title": "香格里拉松赞林景区回应“路过被收费”争议并致歉",
+    "summary": "针对网传“驾车路过松赞林景区被收费”，景区运营方11月7日发布情况说明称涉事路段不属于公共过境交通主要通道、从未在该路段向过往车辆收费，因车位有限安排人员引导，承认管理服务与告知解释不足并致歉，将增设规范公示牌。",
+    "plainImpact": "对游客是知情权与服务体验问题；对景区是舆情与合规压力，旺季客流可能短期受影响。",
+    "assessment": "我的判断：属服务与信息公开问题，不是定价违规认定；对旅游板块的整体影响可忽略。",
+    "publishedAt": "2026-11-07T00:00:00Z",
+    "sourceDateText": "2026-11-07",
+    "updateType": "corrected",
+    "affectedGroups": [
+     "游客",
+     "景区运营方"
+    ],
+    "marketImpact": "暂无直接市场影响证据。",
+    "counterRisk": "网传视频细节与景区说明仍有出入，需以监管部门调查为准。",
+    "nextWatch": "当地文旅部门是否介入核查。",
+    "horizon": "数日",
+    "confidence": "medium",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-07/4641398.html"
+    ]
+   }
+  ],
+  "analyzedAt": "2026-11-07T13:42:25Z"
+ }
+}
