@@ -1,0 +1,960 @@
+{
+ "execution": {
+  "executionId": "20261107T1614Z-global-main",
+  "generation": 414
+ },
+ "editorial": {
+  "packetHash": "1ff812d250567eb6dffcc04843967b03a4a24d0af536f7b24e164452cc6599a8",
+  "analyzedAt": "2026-11-07T16:18:54Z",
+  "report": {
+   "overview": "周末全球主要股票市场休市。11月6日收盘留下的是一个高度分化的画面：A股与港股成长端大幅领跌（创业板指-3.96%、科创50-2.60%、恒生科技-1.83%），美股却是道指-0.46%与纳指+1.09%并存、半导体链暴涨而软件链下跌。跨资产端，BTC在薄盘中回落至75677.54美元，黄金白银报价与上一版完全一致（源静止），原油暗盘在周末突破90与97美元但缺少库存数据验证。",
+   "rolling24hSummary": "过去24小时（北京时间11月7日午后至11月8日凌晨）没有一级宏观数据发布，市场主线由三条构成：一是A股与港股成长股的估值挤压延续到收盘；二是美股内部AI硬件与软件的极端换仓；三是休市期间原油暗盘的向上试探与加密资产的薄盘回落。政策与公共事件层面，中国可再生能源报告给出煤电占比首次低于50%的结构数据；欧洲出现加那利群岛移民激增与克拉科夫枪击两起公共事件，均无直接市场定价证据。",
+   "methodology": "本轮由 global-main 任务在 2026-11-07T16:14:53Z 创建唯一请求，采集 10 份文档（10/10 取得正文）与 70 项报价观测，generation=414，packetHash=1ff812d250567eb6dffcc04843967b03a4a24d0af536f7b24e164452cc6599a8。所有价格与数值均取自本轮 packet，未沿用上一版正文数值。休市市场保留最后有效快照与原 asOf；WTI 出现同一时点的供应商回填冲突（90.83 对已发表 90.34），按规则保留已发表观测并标注待核。宏观事件日历来自美联储、BEA、EIA 官方页面；未来 12—24 小时无一级发布，事件雷达为空并已写明核验范围。研究记录为空，因为本轮未取得任何公司公告原文。",
+   "coreAnalysis": {
+    "mainTheme": "贴现率高位与AI叙事重分配同时作用，成长股在A股港股被杀估值，在美股则被拆成硬件与软件两端。",
+    "expectationGap": "市场原本把AI当成整体主题，本轮把它拆开定价：算力与存储的确定性被上调，按订阅计价的软件被下调，这是最大的预期差。",
+    "divergence": "同一宏观环境下，创业板指-3.96%与纳指+1.09%方向相反，AMD+11.04%与CRM-3.94%方向相反，说明共同因子解释力有限。",
+    "regime": "处于“长端利率高位+风险偏好结构性分化”的组合，不是全面risk-on也不是全面risk-off。",
+    "priceIn": "A股港股的成长折价已部分反映利率与叙事压力；美股半导体的乐观预期尚未被财报二次验证。",
+    "bullCase": "若长端回落、软件端止跌，成长股可迎来估值修复，分化收敛为普涨。",
+    "bullInvalidation": "若长端不回落而创业板指继续放量下跌，则修复逻辑不成立。",
+    "bearCase": "若半导体领涨股回吐且VIX升破30，指数层面的缓冲消失，分化转为普跌。",
+    "bearInvalidation": "若VIX维持25附近且半导体守住涨幅，普跌情景不成立。"
+   },
+   "plainLanguage": {
+    "verdict": "休市日没有新数据，市场在消化一件事：钱在AI内部换仓，成长股在利率高位下继续承压。",
+    "bottomLine": "A股港股成长端压力未解，美股靠半导体撑住指数，原油暗盘偏强但缺乏库存验证，黄金高位横盘。",
+    "whyNow": "11月6日收盘的极端分化是本轮最重要证据：跌幅按久期排序（创业板-3.96%、沪深300-1.44%），美股按产业链排序（AMD+11.04%、CRM-3.94%）。",
+    "horizon": "短期判断适用未来12—24小时至3个交易日；煤电占比与可再生能源结构属于数季度到数年的传导。",
+    "confidence": "medium-low",
+    "invalidation": "若创业板指3个交易日内收复11月6日跌幅一半且成交放大，或VIX升破30同时半导体转跌，则本轮判断需要改判。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "短线偏空（承压延续）",
+      "reason": "11月6日主要指数集体收跌，创业板指-3.96%、科创50-2.60%，跌幅显著大于沪深300的-1.44%，说明杀跌集中在高估值成长与科技。周末无新增国内政策或数据对冲，情绪修复缺少触发点。",
+      "takeaway": "我的判断：这是估值端的挤压而非盈利端崩塌，周初更可能是低开后的分化，而不是全面反弹。",
+      "horizon": "未来1—3个交易日",
+      "counterRisk": "若周初出现稳增长或资本市场增量政策，成长股可能快速修复，把这次下跌变成一次换手。",
+      "invalidation": "若创业板指在3个交易日内收复11月6日跌幅的一半以上，且成交同步放大，则“估值挤压延续”判断失效。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:CN:CHINEXT",
+       "INDEX:CN:STAR50",
+       "INDEX:CN:CSI300"
+      ]
+     },
+     {
+      "asset": "港股",
+      "effect": "短线偏空",
+      "reason": "恒指-1.27%、恒生科技-1.83%、国企指数-1.13%，科技端跌幅大于综合指数，与A股成长股同步；港股对美元流动性与外资风险偏好更敏感，DXY 102.279 仍处偏强位置。",
+      "takeaway": "我的判断：港股这一轮是“跟着A股杀估值 + 跟着美元收流动性”的双重压制，弹性小于A股但恢复也更慢。",
+      "horizon": "未来1—2周",
+      "counterRisk": "若美元回落、南向资金重新放量，港股科技可能先于A股企稳。",
+      "invalidation": "若恒生科技连续两日跑赢恒指且美元指数跌破102，则“双重压制”判断需要下调权重。",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "INDEX:HK:HSI",
+       "INDEX:HK:HSTECH",
+       "FX:DXY"
+      ]
+     },
+     {
+      "asset": "美股",
+      "effect": "分化（硬件强、软件弱）",
+      "reason": "11月6日道指-0.46%但纳指+1.09%、纳指100+1.35%；费城半导体链条大涨（AMD+11.04%、INTC+7.71%、TSM+6.33%、MU+5.12%），而软件与SaaS下跌（CRM-3.94%、ADBE-2.90%）。VIX回落9.01%至25.64，仍属偏高。",
+      "takeaway": "我的判断：资金在做“AI硬件 vs AI应用”的内部换仓，而不是整体降风险；指数上涨掩盖了结构性的剧烈分化。",
+      "horizon": "未来1—2周",
+      "counterRisk": "若半导体涨势无法扩散到其他板块，指数层面的韧性会在广度恶化后补跌。",
+      "invalidation": "若VIX重新升破30且半导体同步转跌，则“内部换仓”判断失效，改为整体降风险。",
+      "confidence": "medium",
+      "evidenceFactIds": [
+       "INDEX:US:NASDAQ",
+       "INDEX:US:DOW",
+       "VOL:VIX",
+       "EQUITY:US:AMD",
+       "EQUITY:US:CRM"
+      ]
+     },
+     {
+      "asset": "BTC",
+      "effect": "中性偏弱",
+      "reason": "16:15Z 快照 75677.54 美元，较上一版 75857.31 回落约180美元（-0.24%）；ETH 2234.35、SOL 89.49、HYPE 77.23 同步小幅走低。周末现货流动性薄，无法取得ETF申赎与资金费率数据。",
+      "takeaway": "我的判断：这是低流动性下的阴跌，不是趋势破位；缺少资金流证据时，任何“机构在吸筹/在出货”的说法都不成立。",
+      "horizon": "未来12—24小时",
+      "counterRisk": "若周一美股风险偏好延续、半导体继续走强，BTC可能被动跟涨，空头判断落空。",
+      "invalidation": "若BTC在24小时内站回76500美元上方并伴随成交量放大，则“低流动性阴跌”判断失效。",
+      "confidence": "low",
+      "evidenceFactIds": [
+       "CRYPTO:BTC:USD",
+       "CRYPTO:ETH:USD",
+       "CRYPTO:SOL:USD"
+      ]
+     },
+     {
+      "asset": "黄金",
+      "effect": "中性（高位盘整）",
+      "reason": "XAU 4072.10 美元/盎司、XAG 52.071，金银比约78.2；名义10Y 4.86%、30Y 5.26% 仍在高位，而本轮没有取得TIPS实际收益率，无法直接判定实际利率方向。",
+      "takeaway": "我的判断：金价在高位横盘、白银同步，说明推动力已从“避险脉冲”转为“持有成本与配置需求”的拉锯；用名义利率单独解释黄金会出错。",
+      "horizon": "未来1—2周",
+      "counterRisk": "若实际利率（TIPS）明显下行而金价不涨，说明配置需求已经透支，回调风险上升。",
+      "invalidation": "若金价跌破3950美元且白银跌破50美元同步发生，则“高位盘整”改为“趋势转弱”。",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "METAL:XAUUSD",
+       "METAL:XAGUSD",
+       "MACRO:US:PAR-10Y-2026-11-06",
+       "MACRO:US:PAR-REAL-GAP-2026-11-06"
+      ]
+     },
+     {
+      "asset": "原油",
+      "effect": "短线偏多（方向偏多、幅度不可信）",
+      "reason": "事实库保留的WTI为90.34美元（11月6日收盘口径），本轮供应商回填90.83属同一时点冲突未采纳；周末暗盘媒体记录纽约原油破90、布伦特破97，日内分别涨超0.1%和0.4%。EIA周度库存因退伍军人节顺延至11月12日12:00 ET。",
+      "takeaway": "我的判断：供应端事件驱动的溢价还在，但库存数据空窗期让多头缺少验证，暗盘冲高更像情绪而不是供需确认。",
+      "horizon": "未来3—5个交易日",
+      "counterRisk": "若11月12日库存大幅累库，地缘溢价会快速回吐。",
+      "invalidation": "若WTI回落至88美元下方且暗盘溢价消失，则“偏多”判断失效。",
+      "confidence": "medium-low",
+      "evidenceFactIds": [
+       "ENERGY:WTI",
+       "FLOW:ENERGY:WTI-DARK-2026-11-07",
+       "FLOW:ENERGY:BRENT-DARK-2026-11-07"
+      ]
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "coverage": "上证、深证、创业板、科创50、沪深300、中证500 六项指数收盘",
+     "status": "partial",
+     "gaps": "无成交额、涨跌家数、北向资金与行业涨跌分布；周末休市无新增交易数据。"
+    },
+    {
+     "market": "港股",
+     "coverage": "恒生指数、恒生科技、国企指数收盘",
+     "status": "partial",
+     "gaps": "港交所域名按授权边界不采集；无南向资金、无沽空比例、无新股与回购数据。"
+    },
+    {
+     "market": "美股",
+     "coverage": "道指、标普500、纳指、纳指100、罗素2000、VIX 及 41 只候选个股",
+     "status": "partial",
+     "gaps": "无盘后成交、无板块ETF资金流、无财报原文；候选池为样本，不代表全市场行业排名。"
+    },
+    {
+     "market": "BTC",
+     "coverage": "Coinbase 现货快照（BTC/ETH/SOL/HYPE/PEPE）与 COIN、MSTR 映射股",
+     "status": "partial",
+     "gaps": "无24小时同源基准、无ETF申赎、无资金费率与持仓；ETF流量供应商已拒绝自动抓取，不再请求。"
+    },
+    {
+     "market": "黄金",
+     "coverage": "XAU/XAG 现货快照、金银比、财政部名义收益率曲线",
+     "status": "partial",
+     "gaps": "无TIPS实际收益率、无ETF持仓、无央行购金最新数据；供应商周末报价静止。"
+    },
+    {
+     "market": "原油",
+     "coverage": "WTI 期货（事实库保留收盘口径）、周末暗盘媒体记录、EIA 发布日程",
+     "status": "partial",
+     "gaps": "布伦特合约供应商404、无周度库存、无月差与裂解价差、无持仓与航运运价数据。"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "asOf": "2026-11-06T08:29:58.000Z",
+     "status": "closed",
+     "view": "成长端杀估值，指数跌幅被权重掩盖",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT"
+     ]
+    },
+    {
+     "asset": "港股",
+     "asOf": "2026-11-06T08:09:10.000Z",
+     "status": "closed",
+     "view": "科技跑输，美元偏强叠加内地情绪",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH"
+     ]
+    },
+    {
+     "asset": "美股",
+     "asOf": "2026-11-06T22:15:59.000Z",
+     "status": "closed",
+     "view": "指数温和、内部剧烈换仓",
+     "evidenceFactIds": [
+      "INDEX:US:NASDAQ",
+      "INDEX:US:DOW",
+      "VOL:VIX"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "asOf": "2026-11-07T16:15:18.991Z",
+     "status": "snapshot",
+     "view": "薄盘阴跌，资金面证据缺失",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "asOf": "2026-11-07T16:15:07.000Z",
+     "status": "snapshot",
+     "view": "高位横盘，供应商报价静止",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    },
+    {
+     "asset": "原油",
+     "asOf": "2026-11-06T21:59:58.000Z",
+     "status": "previous",
+     "view": "事实库保留90.34，暗盘偏强待核",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "FLOW:ENERGY:WTI-DARK-2026-11-07"
+     ]
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "title": "成长股领跌，指数跌幅被权重掩盖",
+     "analysis": "11月6日A股普跌且结构极端：创业板指-3.96%、科创50-2.60%、深证成指-2.57%，均远大于沪深300的-1.44%和中证500的-2.13%；上证指数-1.10%收3649.177点。跌幅随市值下沉而放大，说明抛压集中在高估值成长与科技主题，而不是全市场系统性去杠杆。周末休市，本轮没有新的国内政策、数据或公司公告可以解释或对冲这次下跌。",
+     "mechanism": "机制上是贴现率与风险偏好同时施压：长端美债10Y 4.86%、30Y 5.26%维持高位，压缩高久期资产估值；同时海外AI硬件强、应用弱的极端分化向国内科技板块传导，形成“叙事受损+估值偏高”的双重挤压。权重股（银行、能源）跌幅小，把指数跌幅拉回到1%附近。",
+     "risk": "一是分化继续向权重扩散，那就不是结构调整而是全面调整；二是成交若持续萎缩，反弹会缺少承接；三是创业板指已连续弱于沪深300，若再出现放量长阴，赎回压力会自我强化。",
+     "invalidation": "若3个交易日内创业板指收复11月6日跌幅一半以上并伴随成交放大，则“估值挤压”解释失效，应改判为一次性情绪冲击。",
+     "horizon": "未来1—3个交易日，中期看四季度盈利验证",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:STAR50",
+      "INDEX:CN:CSI300"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+     ]
+    },
+    {
+     "asset": "港股",
+     "title": "科技端再度跑输，美元仍是紧箍",
+     "analysis": "11月6日恒生指数-1.27%收24481.86点，恒生科技-1.83%收4078.23点，国企指数-1.13%收8274.10点。科技跌幅大于综合与国企指数，与A股成长股同步，说明这是跨市场的成长股折价，不是港股独有的流动性事件。美元指数102.279、美元兑离岸人民币6.6717，外部流动性条件没有转松。",
+     "mechanism": "港股定价同时受两端牵引：一端是内地成长股风险偏好（决定科技股权重股），另一端是美元流动性（决定外资边际买盘与港元利率）。本轮两端同向不利，因此跌幅在科技端被放大；国企指数以能源、金融为主，跌幅自然更小。",
+     "risk": "外资在港股科技上的仓位若已偏低，继续下跌空间有限，但也意味着反弹缺少增量买盘；此外美元若因避险再度走强，港股会先于A股承压。",
+     "invalidation": "若恒生科技连续两个交易日跑赢恒指且美元指数跌破102，则“双重压制”框架需要降权，改为内地情绪主导。",
+     "horizon": "未来1—2周",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "FX:DXY",
+      "FX:USDCNH"
+     ],
+     "sourceUrls": [
+      "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+     ]
+    },
+    {
+     "asset": "美股",
+     "title": "指数温和、内部剧烈：AI硬件被买、SaaS被卖",
+     "analysis": "11月6日美股收盘分化：道指51285.73点-0.46%，标普500 7376.86点+0.31%，纳指24579.424点+1.09%，纳指100 26989.992点+1.35%，罗素2000 2754.1055点+0.89%。半导体链集体大涨：AMD 449.04美元+11.04%、INTC 56.28美元+7.71%、TSM 375.44美元+6.33%、MU 690美元+5.12%、ASML 1424.75美元+5.02%、ARM 174.62美元+4.74%、NVDA 186.64美元+2.78%；软件端反向：CRM 213.65美元-3.94%、ADBE 239.30美元-2.90%、MSFT 530.61美元-0.99%。VIX 25.64、-9.01%。",
+     "mechanism": "机制是资本开支叙事在产业链内部重新分配：算力与存储的确定性溢价上升，按席位/订阅计价的软件则被担心被AI自身侵蚀。指数层面看似平静，实际是权重股内部的对冲；VIX回落说明尾部恐慌下降，但25.64的绝对水平仍隐含较高波动预期。",
+     "risk": "分化越极端，指数对半导体单一板块的依赖越高；一旦AMD、MU这类领涨股回吐，指数缓冲会很薄。另外软件端连续下跌若扩散到云与广告，会把“结构分化”变成“盈利下修”。",
+     "invalidation": "若VIX升破30且半导体同步转跌，则“内部换仓”解释失效，应改判为整体降风险；反之若软件端止跌、半导体继续走强，则分化还会延续。",
+     "horizon": "未来1—2周，重点看下一轮财报指引",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "VOL:VIX",
+      "EQUITY:US:AMD",
+      "EQUITY:US:MU",
+      "EQUITY:US:CRM"
+     ],
+     "sourceUrls": [
+      "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "title": "周末低流动性阴跌，资金面证据缺失",
+     "analysis": "16:15Z 快照BTC 75677.54美元，较上一版14:56Z的75857.31回落179.77美元（-0.24%）；ETH 2234.35（上一版2243.34）、SOL 89.49（89.86）、HYPE 77.23（77.74）、PEPE 4.87e-06。所有加密报价均为单一交易场所现货最新成交快照，没有24小时同源基准，因此不能计算真正的日内涨跌幅。美股映射端11月6日COIN 134.76美元-1.51%、MSTR 128.93美元-0.29%，偏弱。",
+     "mechanism": "周末现货盘薄，做市报价区间变宽，少量成交即可推动价格，所以这种幅度的波动主要是流动性折价而非信息驱动。缺少ETF申赎与永续资金费率数据，无法判断是杠杆去化还是现货换手。",
+     "risk": "把薄盘波动当成趋势，是最常见的误判；反过来，若周一美股科技继续走强，BTC可能被动补涨，让当前的偏弱读数立刻失效。",
+     "invalidation": "若24小时内BTC站回76500美元上方且成交量明显放大，则“低流动性阴跌”判断失效；若跌破74500美元，则要重新评估为趋势性走弱。",
+     "horizon": "未来12—24小时，中期看ETF资金流恢复披露",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "CRYPTO:HYPE:USD",
+      "EQUITY:US:COIN",
+      "EQUITY:US:MSTR"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-08/4641442.html"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "title": "高位横盘，金银比与名义利率给出矛盾信号",
+     "analysis": "16:15Z XAU 4072.100098美元/盎司、XAG 52.070999美元/盎司，金银比约78.2。两个报价与上一版（14:56Z）在小数点后六位完全一致，说明周末供应商上游未刷新，属于源静止而非价格走平。利率端：财政部11月6日平价曲线2Y 4.51%、10Y 4.86%、30Y 5.26%，2s10s +35bp、10s30s +40bp。本轮未取得TIPS实际收益率。",
+     "mechanism": "黄金的核心定价变量是实际利率与配置需求。名义10Y停在4.86%高位，若通胀预期同步回落则实际利率上行、对金价不利；但白银同处高位、金银比78.2并未极端化，说明这轮买盘不只是避险，也有工业与配置成分。缺TIPS数据时，只能给出方向性判断，不能给出弹性测算。",
+     "risk": "最大风险是用名义利率代替实际利率得出错误结论；其次是供应商报价静止被误读为“横盘确认”。若实际利率上行而金价不跌，说明配置盘在硬扛，一旦配置盘转向，回撤会比预期深。",
+     "invalidation": "若金价跌破3950美元且白银同步跌破50美元，则“高位盘整”改判为“趋势转弱”；若金价上破4150美元且金银比压缩至75以下，则上行突破成立。",
+     "horizon": "未来1—2周，中期看央行购金与ETF持仓",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "MACRO:US:PAR-2Y-2026-11-06",
+      "MACRO:US:PAR-10Y-2026-11-06",
+      "MACRO:US:PAR-30Y-2026-11-06",
+      "MACRO:US:PAR-REAL-GAP-2026-11-06"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+     ]
+    },
+    {
+     "asset": "原油",
+     "title": "暗盘溢价与库存空窗并存",
+     "analysis": "事实库保留的WTI为90.34美元/桶（asOf 2026-11-06T21:59:58Z，收盘口径）；本轮供应商在同一时点回填90.83美元，属同点数值冲突，代码按规则保留已发表观测，新值不当作新行情。周末暗盘媒体记录：纽约原油突破90美元、日内涨超0.1%；布伦特突破97美元、日内涨超0.4%，均为非交易所时段报价。布伦特期货供应商本轮仍404，事实库中的103.58美元是2026-09-30旧观测，不可与97直接比较。EIA周度石油状况报告因退伍军人节顺延，截至11月6日当周改在11月12日12:00 ET发布。",
+     "mechanism": "当前油价由两条腿支撑：一是供应端事件溢价，二是库存低位的现实。但周度库存数据空窗让第二条腿无法被验证，多头只能靠场外报价与情绪定价；这也是暗盘能突破整数关口却缺乏成交支撑的原因。",
+     "risk": "库存一旦大幅累库，地缘溢价会快速回吐；反过来，若霍尔木兹相关航运再度中断，暗盘的97会被现货市场追认。真正的风险是把暗盘当结算价做仓位管理，滑点会很大。",
+     "invalidation": "若WTI回落至88美元下方且暗盘溢价消失，则“偏多”判断失效；若11月12日库存超预期下降且WTI站稳92美元，则上行确认。",
+     "horizon": "未来3—5个交易日，关键节点11月12日EIA库存",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "FLOW:ENERGY:WTI-DARK-2026-11-07",
+      "FLOW:ENERGY:BRENT-DARK-2026-11-07"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-08/4641442.html",
+      "https://www.nbd.com.cn/articles/2026-11-08/4641443.html",
+      "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "framework": "利率传导／现金流折现",
+     "concept": "贴现率上行会压低未来现金流占比高的资产估值，成长股对利率最敏感。",
+     "applicability": "适用于A股成长、港股科技与美股长久期软件；对原油、BTC的适用性弱，不强行套用。",
+     "observed": "10Y 4.86%、30Y 5.26%、2s10s +35bp、10s30s +40bp，长端维持高位；同期创业板指-3.96%、科创50-2.60%，跌幅大于沪深300的-1.44%。",
+     "mechanism": "长端高位→贴现率抬升→高久期资产估值压缩，权重与价值板块相对抗跌。",
+     "conclusion": "本轮成长股跌幅排序与久期排序一致，支持“贴现率挤压”解释；但这只是必要条件，不能证明全部跌幅都来自利率。",
+     "assumptions": "贴现率变化是边际定价主导因素；盈利预期未同步大幅下修。",
+     "counterEvidence": "若同期盈利预期也大幅下修，则跌幅不能全部归因利率；本轮无盈利预测数据可核验。",
+     "horizon": "未来1—2周",
+     "invalidation": "若长端回落而成长股继续下跌，则该框架解释力不足。",
+     "confidence": "medium",
+     "missingData": "缺少盈利预测修正与分析员评级变动数据。",
+     "evidenceFactIds": [
+      "MACRO:US:PAR-10Y-2026-11-06",
+      "MACRO:US:PAR-30Y-2026-11-06",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:CSI300"
+     ]
+    },
+    {
+     "framework": "预期差／事件研究",
+     "concept": "价格反应的是相对预期的偏离，而不是事件本身的绝对好坏。",
+     "applicability": "适用于美股半导体财报后的个股剧烈分化。",
+     "observed": "AMD+11.04%、INTC+7.71%、TSM+6.33%、MU+5.12%，同时CRM-3.94%、ADBE-2.90%，方向完全相反。",
+     "mechanism": "同一宏观环境下个股反向，说明定价来自公司层面的预期差与指引，而不是行业共同的贴现率。",
+     "conclusion": "半导体上涨与软件下跌是两组独立的预期差事件，不能用“科技股一起涨/跌”概括。",
+     "assumptions": "个股大幅波动主要由公司特定信息驱动。",
+     "counterEvidence": "若两组波动都发生在同一板块轮动资金流中，则共同因子权重更高。",
+     "horizon": "未来1—2周",
+     "invalidation": "若后续半导体与软件重新同向，则预期差解释需要让位于共同因子。",
+     "confidence": "medium-high",
+     "missingData": "未取得各公司财报原文与指引细节。",
+     "evidenceFactIds": [
+      "EQUITY:US:AMD",
+      "EQUITY:US:MU",
+      "EQUITY:US:CRM",
+      "EQUITY:US:ADBE"
+     ]
+    },
+    {
+     "framework": "供需／库存与风险溢价",
+     "concept": "商品价格由现货供需、库存水平与风险溢价共同决定，金融属性只是放大器。",
+     "applicability": "适用于原油；对黄金只适用于配置需求部分。",
+     "observed": "WTI事实库90.34美元，周末暗盘破90、布伦特暗盘破97；EIA周度库存顺延至11月12日。",
+     "mechanism": "库存数据空窗期，价格更多由风险溢价与场外情绪定价，波动率被放大但方向缺少验证。",
+     "conclusion": "当前油价里风险溢价的权重高于库存现实，因此方向可信、幅度不可信。",
+     "assumptions": "供应端事件仍在持续，库存未出现大幅累库。",
+     "counterEvidence": "若暗盘冲高只是薄盘噪声，周一开盘回吐，则风险溢价判断被削弱。",
+     "horizon": "未来3—5个交易日",
+     "invalidation": "11月12日库存大幅累库则风险溢价判断失效。",
+     "confidence": "medium-low",
+     "missingData": "无周度库存、无月差与裂解价差、无持仓数据。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "FLOW:ENERGY:WTI-DARK-2026-11-07",
+      "FLOW:ENERGY:BRENT-DARK-2026-11-07"
+     ]
+    },
+    {
+     "framework": "市场微观结构／流动性折价",
+     "concept": "交易时段与深度决定报价可信度，薄盘价格不能等同于清算价。",
+     "applicability": "适用于周末BTC与原油暗盘报价，以及供应商报价静止的情形。",
+     "observed": "BTC 75677.54（-0.24%对上一版）；XAU/XAG与上一版小数点后六位完全一致；原油暗盘为周末非交易所时段。",
+     "mechanism": "休市与薄盘→做市报价区间变宽→少量成交放大价格变动；供应商未刷新则表现为完全静止。",
+     "conclusion": "本轮跨资产的“变化”里，有一部分是流动性现象而非信息；休市轮次必须先分清源静止、薄盘与真实成交。",
+     "assumptions": "周末现货深度显著低于工作日常规时段。",
+     "counterEvidence": "若周一开盘价格延续暗盘方向，则薄盘报价反而具备指示性。",
+     "horizon": "未来12—24小时",
+     "invalidation": "周一开盘与暗盘方向相反且幅度显著，则薄盘噪声判断成立。",
+     "confidence": "medium",
+     "missingData": "无订单簿深度、无成交量、无ETF资金流。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "METAL:XAUUSD",
+      "FLOW:ENERGY:WTI-DARK-2026-11-07"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "四个框架共同指向“结构性分化而非全面转向”：利率传导解释成长股跌幅排序，预期差解释美股内部反向，供需框架说明原油方向可信但幅度不可信，微观结构框架提醒休市读数含流动性噪声。",
+    "agreement": "利率传导、预期差与微观结构三者一致同意一件事：本轮跨资产的价格变化不能用一个共同因子概括，久期、公司特定信息与交易时段深度各自解释了一部分。",
+    "disagreement": "分歧在原油：供需框架认为暗盘冲高反映了真实的风险溢价，微观结构框架认为薄盘报价缺乏成交支撑、更可能是噪声。两者对方向判断相同，对可信度判断相反。",
+    "weighting": "更看重利率传导与预期差，因为二者有横截面排序证据（跌幅按久期排、涨跌按产业链排）；原油暗盘只有媒体单向记录、无库存与月差验证，因此下调其权重，仅作方向参考。",
+    "invalidation": "若长端明显回落而成长股继续下跌，利率传导权重下调；若11月12日库存大幅累库，原油风险溢价判断失效；若周一开盘与暗盘方向相反，微观结构框架的噪声解释将被验证。"
+   },
+   "watch": [
+    {
+     "point": "创业板指与沪深300的相对强弱",
+     "detail": "若创业板指连续两日跑输且成交放大，说明估值挤压在深化；若收复11月6日跌幅一半，则判断改判。"
+    },
+    {
+     "point": "VIX 与半导体同步性",
+     "detail": "VIX 现25.64。若升破30且AMD、MU同步转跌，说明从内部换仓变为整体降风险。"
+    },
+    {
+     "point": "11月12日 EIA 周度库存",
+     "detail": "因退伍军人节顺延至11月12日12:00 ET。累库则地缘溢价回吐，去库则暗盘方向被追认。"
+    },
+    {
+     "point": "黄金与实际利率",
+     "detail": "本轮无TIPS数据。取得实际收益率后，才能判断金价横盘是持有成本支撑还是配置需求透支。"
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "平价收益率曲线（Par Yield Curve）",
+     "definition": "美国财政部按当日二级市场收盘价推算的固定期限国债到期收益率，只有业务日期，没有盘中时刻。"
+    },
+    {
+     "term": "暗盘报价",
+     "definition": "休市期间场外或非交易所时段的报价，流动性薄、无统一清算，不能等同于期货结算价。"
+    },
+    {
+     "term": "源静止",
+     "definition": "供应商上游未刷新，导致不同时点抓取到完全相同的数值；它表示数据未更新，不代表价格真的走平。"
+    },
+    {
+     "term": "同点冲突",
+     "definition": "同一 asOf 时点出现两个不同数值。系统保留已发表的完整观测，新值单独标注待核，不当作新行情。"
+    },
+    {
+     "term": "金银比",
+     "definition": "黄金价格除以白银价格，用来观察避险需求与工业需求的相对强弱。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "id": "THESIS-DURATION-SQUEEZE",
+     "thesis": "成长股跌幅按久期排序，是贴现率挤压而非盈利崩塌。",
+     "status": "active",
+     "invalidation": "创业板指3个交易日收复半数跌幅。"
+    },
+    {
+     "id": "THESIS-AI-SPLIT",
+     "thesis": "AI主题正在被拆分为硬件确定性与软件被替代风险两端。",
+     "status": "active",
+     "invalidation": "半导体与软件重新同向波动。"
+    },
+    {
+     "id": "THESIS-OIL-PREMIUM-UNVERIFIED",
+     "thesis": "原油暗盘溢价方向偏多但幅度不可信，需库存验证。",
+     "status": "active",
+     "invalidation": "11月12日大幅累库。"
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "title": "WTI 数值口径",
+     "detail": "本轮供应商在同一 asOf 回填 90.83，与已发表 90.34 冲突；正文引用事实库保留值，并把暗盘 90/97 单列为待核观察，不替换收盘口径。"
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "长端利率回落",
+     "effect": "若10Y明显下行，成长股估值压力缓解，A股港股成长端先修复。"
+    },
+    {
+     "title": "半导体领涨股回吐",
+     "effect": "若AMD、MU转跌且VIX上行，美股指数缓冲消失，分化转普跌。"
+    },
+    {
+     "title": "EIA库存意外累库",
+     "effect": "原油地缘溢价快速回吐，暗盘涨幅被抹平。"
+    }
+   ],
+   "changes": [
+    {
+     "title": "加密资产薄盘回落",
+     "detail": "BTC 由上一版75857.31降至75677.54（-179.77美元，-0.24%），ETH 2243.34→2234.35，SOL 89.86→89.49。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD"
+     ]
+    },
+    {
+     "title": "贵金属报价静止",
+     "detail": "XAU 4072.100098、XAG 52.070999 与上一版小数点后六位完全一致，属源静止，不是价格走平。",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    },
+    {
+     "title": "原油暗盘向上试探",
+     "detail": "周末暗盘纽约原油破90、布伦特破97，均非交易所结算价；事实库WTI仍保留90.34。",
+     "evidenceFactIds": [
+      "FLOW:ENERGY:WTI-DARK-2026-11-07",
+      "FLOW:ENERGY:BRENT-DARK-2026-11-07"
+     ]
+    }
+   ],
+   "recentChanges": [
+    {
+     "title": "股票市场休市，收盘数据未变",
+     "detail": "A股、港股、美股全部沿用11月6日收盘快照，asOf未刷新，因此本轮不宣称任何新的股票价格变化。"
+    },
+    {
+     "title": "新增中国能源结构数据",
+     "detail": "报告显示2026年上半年煤电发电量占比降至49.7%，首次低于50%；全球可再生能源发电占比33.8%首超煤电。",
+     "evidenceFactIds": [
+      "MACRO:CN:COAL-POWER-SHARE-2026H1",
+      "MACRO:WORLD:RE-POWER-SHARE-2025"
+     ]
+    },
+    {
+     "title": "新增两起欧洲公共事件",
+     "detail": "加那利群岛七天内近5000人抵达、克拉科夫枪击致5人死亡，均无直接市场定价证据。",
+     "evidenceFactIds": [
+      "MACRO:EU:CANARY-ARRIVALS-7D",
+      "MACRO:PL:KRAKOW-SHOOTING-DEAD"
+     ]
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-11-06T21:59:58.000Z",
+     "title": "美股收盘与WTI定盘",
+     "detail": "美股分化收盘，纳指+1.09%对道指-0.46%；WTI 90.34美元。",
+     "evidenceFactIds": [
+      "INDEX:US:NASDAQ",
+      "INDEX:US:DOW",
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "at": "2026-11-07T14:56:06.000Z",
+     "title": "上一版快照",
+     "detail": "BTC 75857.31、XAU 4072.100098、XAG 52.070999。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD"
+     ]
+    },
+    {
+     "at": "2026-11-07T16:15:18.000Z",
+     "title": "本轮快照",
+     "detail": "BTC 75677.54（-0.24%），ETH 2234.35，贵金属报价与上一版完全一致。",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "METAL:XAUUSD"
+     ]
+    },
+    {
+     "at": "2026-11-07T23:58:21.000Z",
+     "title": "周末暗盘原油走高",
+     "detail": "纽约原油暗盘破90、布伦特暗盘破97，均为场外报价。",
+     "evidenceFactIds": [
+      "FLOW:ENERGY:WTI-DARK-2026-11-07",
+      "FLOW:ENERGY:BRENT-DARK-2026-11-07"
+     ]
+    }
+   ],
+   "sectionGaps": {
+    "events": {
+     "reason": "已逐份核验美联储 FOMC 日历（下一次2026年12月8—9日，含经济预测摘要）、BEA 发布日程（下一次11月18日，11月20日、11月25日 GDP二次估计与10月个人收入支出）、EIA 周度石油状况报告日程（截至11月6日当周顺延至11月12日12:00 ET）。未来12—24小时（至2026-11-08T16:20Z）无一级官方发布，故事件雷达为空，不用无关条目填充。"
+    },
+    "watch": {
+     "reason": "观察条件均基于本轮实际取得的报价与官方日程，未加入无法核验的传闻性触发点。"
+    },
+    "dataDefinitions": {
+     "reason": "仅解释本轮正文实际使用的口径，未扩展未使用的术语。"
+    },
+    "research": {
+     "reason": "本轮未取得任何公司公告、财报或交易所披露原文，researchRecords 与 researchChecks 保持为空，不以媒体转述冒充公司原文研究。"
+    },
+    "funding": {
+     "reason": "无ETF申赎、无资金费率、无持仓与成交额数据；加密ETF流量供应商已明确拒绝自动抓取，按授权边界不再请求。"
+    }
+   }
+  },
+  "newsItems": [
+   {
+    "eventId": "EU-CANARY-MIGRANT-SURGE-2026-11-07",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "title": "七天内近五千名非法移民抵达西班牙加那利群岛",
+    "summary": "西班牙加那利自治区统计，过去七天近5000名非法移民乘木船和小型船只抵达，多数在耶罗岛登陆；过去24小时各港口接纳超过1100名获救人员，当地民防与救援部门称接待安置能力已逼近极限。",
+    "plainImpact": "短期是西班牙的地方财政与安置压力；若持续，会强化欧盟内部关于边境与难民分摊的争论，对跨境旅行与申根区政策预期有间接影响，对一般投资组合没有直接价格传导。",
+    "assessment": "我的判断：这是结构性移民压力的一次峰值读数，不是一次性突发事件。它更可能影响欧洲政治议程与地方财政，而不是本周资产价格；把它当成欧元或欧股的交易理由是过度解读。",
+    "publishedAt": "2026-11-07T22:59:01+08:00",
+    "sourceDateText": "2026-11-07 22:59（每经，转央视新闻）",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641437.html"
+    ]
+   },
+   {
+    "eventId": "PL-KRAKOW-SHOOTING-2026-11-07",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "general",
+    "title": "波兰克拉科夫中央集市广场枪击已致5人死亡",
+    "summary": "当地时间11月7日，克拉科夫中央集市广场发生枪击，已造成5人死亡、多人受伤。目击者称子弹疑从一辆行驶中的汽车射出，警方已封锁广场及周边街道并疏散人群，未提供更多细节。",
+    "plainImpact": "短期是当地公共安全与旅游信心冲击；对区域资产没有可验证的定价影响。后续看警方是否定性为针对性事件或有组织行动。",
+    "assessment": "我的判断：目前信息只够确认事件与伤亡规模，动机、袭击者身份都未披露。在没有官方定性前，不应把它写进欧洲风险溢价叙事。",
+    "publishedAt": "2026-11-07T23:39:04+08:00",
+    "sourceDateText": "2026-11-07 23:39（每经，转央视新闻）",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641440.html"
+    ]
+   },
+   {
+    "eventId": "CN-RE-GLOBAL-DOMINANCE-2026-11-07",
+    "regions": [
+     "CN"
+    ],
+    "kind": "general",
+    "title": "《全球能源转型报告（2026）》：中国可再生能源体系规模与增速全球第一",
+    "summary": "中国企业改革与发展研究会11月7日发布报告：2025年末全球可再生能源装机5149GW、同比增15.5%，发电量占比33.8%首次超过煤电33.0%；中国2026年上半年煤电发电量占比降至49.7%，2026年能源投资预计9400亿美元居全球第一，供应全球70%风电设备与80%光伏组件。2025年全球能源相关碳排放384亿吨、同比增0.4%，中国降0.5%、美国增2.4%。",
+    "plainImpact": "中期看是电力设备与新能源制造链的订单能见度，以及煤电定位从主力转向调节带来的电价与辅助服务规则变化；短期对A股相关板块只是叙事加固，不构成新的盈利上修。",
+    "assessment": "我的判断：这份报告的价值在结构数据（煤电占比首次低于50%、装机与发电占比双超煤电），而不是“全球主导”的表述。需要提醒的是投资额是2026年预计值、供给占比未标年份，属行业机构口径，不能当作官方统计直接外推利润。",
+    "publishedAt": "2026-11-07T23:11:58+08:00",
+    "sourceDateText": "2026-11-07 23:11（每经，转央视新闻）",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ]
+   },
+   {
+    "eventId": "ENERGY-DARK-SESSION-CRUDE-BID-2026-11-07",
+    "regions": [
+     "WORLD"
+    ],
+    "kind": "market",
+    "title": "周末暗盘原油走高：纽约原油破90美元、布伦特破97美元",
+    "summary": "11月7日，纽约原油暗盘突破90美元、日内涨超0.1%；布伦特原油暗盘突破97美元、日内涨超0.4%。两笔均为周末非交易所时段的媒体记录报价，不是结算价。",
+    "plainImpact": "短期说明休市期间场外仍有买盘承接，周一开盘存在向上跳空的风险；但暗盘流动性薄，报价容易被少量成交放大，不能当成趋势确认。",
+    "assessment": "我的判断：这是“休市不平静”的信号而非新定价。真正可用的锚仍是上周五WTI期货收盘口径（事实库保留90.34美元），暗盘90与97只能说明方向偏多、幅度不可信。",
+    "publishedAt": "2026-11-07T23:58:21+08:00",
+    "sourceDateText": "2026-11-07 23:58（每经AI快讯）",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641442.html",
+     "https://www.nbd.com.cn/articles/2026-11-08/4641443.html"
+    ]
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "北京时间11月8日凌晨为周末低新闻量时段。本轮实际取得10份文档正文（10/10），其中可用于新闻的为4条独立事件：中国1条、全球3条；欧洲两起公共事件与一条中国能源结构报告构成非纯金融部分。另有1份文档正文为“内容为转载”的空壳，未作为证据使用。",
+   "regions": [
+    "CN",
+    "WORLD"
+   ],
+   "gaps": "美国当日无可用新事件原文（AP 等站点拒绝自动抓取，未继续请求）；中国当日凌晨无新增政策发布；未达到18—30条滚动目标，如实记为部分覆盖，不用旧闻或天气填充。"
+  },
+  "macroFacts": [
+   {
+    "id": "MACRO:US:PAR-2Y-2026-11-06",
+    "label": "美国2年期国债平价收益率",
+    "value": 4.51,
+    "unit": "%",
+    "asOf": "2026-11-06T00:00:00Z",
+    "note": "财政部每日平价收益率曲线，仅有业务日期 2026-11-06（周末不出新行），不伪造盘中时刻。",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:US:PAR-10Y-2026-11-06",
+    "label": "美国10年期国债平价收益率",
+    "value": 4.86,
+    "unit": "%",
+    "asOf": "2026-11-06T00:00:00Z",
+    "note": "与上一版同一业务日期同值，11-07 无新行。",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:US:PAR-30Y-2026-11-06",
+    "label": "美国30年期国债平价收益率",
+    "value": 5.26,
+    "unit": "%",
+    "asOf": "2026-11-06T00:00:00Z",
+    "note": "长端仍高于5%，曲线维持陡峭形态。",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:US:PAR-2S10S-2026-11-06",
+    "label": "2s10s 期限价差",
+    "value": 35,
+    "unit": "bp",
+    "asOf": "2026-11-06T00:00:00Z",
+    "note": "2Y 4.51% 与 10Y 4.86% 之差，按两个平价收益率直接相减。",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:US:PAR-10S30S-2026-11-06",
+    "label": "10s30s 期限价差",
+    "value": 40,
+    "unit": "bp",
+    "asOf": "2026-11-06T00:00:00Z",
+    "note": "10Y 4.86% 与 30Y 5.26% 之差。",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:US:PAR-REAL-GAP-2026-11-06",
+    "label": "名义10Y与无TIPS缺口的说明事实",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-06T00:00:00Z",
+    "note": "本轮未取得 TIPS 实际收益率来源，无法计算实际利率；本事实仅记录该缺口，不用名义利率代替实际利率。",
+    "sourceUrls": [
+     "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "FLOW:WORLD:RE-CAPACITY-2025",
+    "label": "2025年末全球可再生能源装机",
+    "value": 5149,
+    "unit": "GW",
+    "asOf": "2026-11-07T23:11:58+08:00",
+    "note": "《全球能源转型报告（2026）》披露，同比增长15.5%，为截至2025年末存量。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:WORLD:RE-POWER-SHARE-2025",
+    "label": "可再生能源发电量占比",
+    "value": 33.8,
+    "unit": "%",
+    "asOf": "2026-11-07T23:11:58+08:00",
+    "note": "报告称百年来首次超过煤电的33.0%。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:CN:COAL-POWER-SHARE-2026H1",
+    "label": "中国煤电发电量占比",
+    "value": 49.7,
+    "unit": "%",
+    "asOf": "2026-11-07T23:11:58+08:00",
+    "note": "2026年上半年首次低于50%，属报告引述，不是统计局原始月报。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:CN:ENERGY-INVEST-2026E",
+    "label": "2026年中国能源投资总额（预计）",
+    "value": 9400,
+    "unit": "亿美元",
+    "asOf": "2026-11-07T23:11:58+08:00",
+    "note": "报告给出的2026年预计值，是预测而非已实现统计。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:CN:WIND-EQUIP-SHARE",
+    "label": "中国风电设备全球供给占比",
+    "value": 70,
+    "unit": "%",
+    "asOf": "2026-11-07T23:11:58+08:00",
+    "note": "报告口径，未给出统计年份细分。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:CN:PV-MODULE-SHARE",
+    "label": "中国光伏组件全球供给占比",
+    "value": 80,
+    "unit": "%",
+    "asOf": "2026-11-07T23:11:58+08:00",
+    "note": "报告口径；同报告称推动全球风电、光伏成本分别下降超60%和80%。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:WORLD:CO2-2025",
+    "label": "2025年全球能源相关二氧化碳排放",
+    "value": 384,
+    "unit": "亿吨",
+    "asOf": "2026-11-07T23:11:58+08:00",
+    "note": "同比+0.4%，报告称为2021年以来最低增幅。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:US:CO2-GROWTH-2025",
+    "label": "2025年美国碳排放同比",
+    "value": 2.4,
+    "unit": "%",
+    "asOf": "2026-11-07T23:11:58+08:00",
+    "note": "报告称美国为全球碳排放增长最大来源；中国同期下降0.5%。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641439.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:EU:CANARY-ARRIVALS-24H",
+    "label": "加那利群岛24小时获救人数",
+    "value": 1100,
+    "unit": "人",
+    "asOf": "2026-11-07T22:59:01+08:00",
+    "note": "当地统计为“超过1100人”，七天内近5000人抵达；数值为下限口径。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641437.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:EU:CANARY-ARRIVALS-7D",
+    "label": "加那利群岛七日抵达人数",
+    "value": 5000,
+    "unit": "人",
+    "asOf": "2026-11-07T22:59:01+08:00",
+    "note": "原文为“近五千名”，属约数，不是精确统计。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641437.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "FLOW:ENERGY:WTI-DARK-2026-11-07",
+    "label": "纽约原油暗盘（周末非交易所时段）",
+    "value": 90.0,
+    "unit": "美元/桶",
+    "asOf": "2026-11-07T23:58:21+08:00",
+    "note": "媒体记录的暗盘报价“突破90美元、日内涨超0.1%”，非交易所结算价，不能与WTI期货收盘混用。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641442.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "FLOW:ENERGY:BRENT-DARK-2026-11-07",
+    "label": "布伦特原油暗盘（周末非交易所时段）",
+    "value": 97.0,
+    "unit": "美元/桶",
+    "asOf": "2026-11-07T23:58:28+08:00",
+    "note": "媒体记录“突破97美元、日内涨超0.4%”；供应商布伦特合约本轮仍404，事实库保留的103.58为2026-09-30旧观测，二者不可比。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641443.html"
+    ],
+    "kind": "macro"
+   },
+   {
+    "id": "MACRO:PL:KRAKOW-SHOOTING-DEAD",
+    "label": "克拉科夫中央集市广场枪击死亡人数",
+    "value": 5,
+    "unit": "人",
+    "asOf": "2026-11-07T23:39:04+08:00",
+    "note": "总台记者口径，警方未公布更多细节；属公共安全事件，未发现直接市场传导证据。",
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-08/4641440.html"
+    ],
+    "kind": "macro"
+   }
+  ],
+  "macroEvents": [
+   {
+    "id": "CAL-BEA-2026-11-25",
+    "title": "BEA：三季度GDP二次估计与10月个人收入支出",
+    "at": "2026-11-25T13:30:00Z",
+    "kind": "calendar",
+    "detail": "BEA 发布日程列明 11月25日发布 GDP（Second Estimate）与 Corporate Profits、Personal Income and Outlays（October 2026），通常为13:30Z。属未来计划，不是结果。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   },
+   {
+    "id": "CAL-FOMC-2026-12-08",
+    "title": "美联储FOMC会议（12月8—9日，含经济预测摘要）",
+    "at": "2026-12-08T18:00:00Z",
+    "kind": "calendar",
+    "detail": "美联储官方日历列 12月8—9日，并标注与 Summary of Economic Projections 相关联。具体决议时点以官方为准，此处仅记录会议日期区间。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   },
+   {
+    "id": "CAL-EIA-WPS-2026-11-12",
+    "title": "EIA周度石油状况报告（截至11月6日当周，顺延）",
+    "at": "2026-11-12T17:00:00Z",
+    "kind": "calendar",
+    "detail": "EIA 日程表逐字为 November 6, 2026 → November 12, 2026, Thursday, 12:00 p.m.，因退伍军人节顺延；12:00 ET 对应17:00Z。",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ]
+   }
+  ],
+  "events": [],
+  "researchRecords": [],
+  "researchChecks": [],
+  "researchPendingQueue": []
+ }
+}
