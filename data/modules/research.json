@@ -1,14 +1,14 @@
 {
   "moduleVersion": 1,
   "module": "research",
-  "runId": "20261108T0502Z-global-main-research",
-  "generatedAt": "2026-11-08T13:08:13.658+08:00",
+  "runId": "20261108T0637Z-global-main-research",
+  "generatedAt": "2026-11-08T14:40:52.499+08:00",
   "dataAsOf": null,
   "status": "partial",
   "dataMode": "production",
   "validationOnly": false,
   "execution": {
-    "batchId": "20261108T0502Z-global-main",
+    "batchId": "20261108T0637Z-global-main",
     "mode": "scheduled-batch",
     "role": "research"
   },
@@ -3648,11 +3648,11 @@
   "sources": [
     {
       "id": "src-fe3255ea546db4b012c0272c",
-      "name": "美联储 FOMC 会议日程",
-      "short": "FED-FOMC-CALENDAR",
+      "name": "FOMC Meeting Calendar",
+      "short": "FOMC-CALENDAR-2026-2027",
       "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-      "sourceHash": "2aecee1589f1c297ae8782e0ac36f1913a66baea9900cc1993d8aa4b1d89a219",
-      "retrievedAt": "2026-11-08T05:02:52.159Z",
+      "sourceHash": "609387b8354ace396b200e400b670514ea56721587ca4bdc1925721ba6eaa809",
+      "retrievedAt": "2026-11-08T06:37:45.480Z",
       "evidenceKind": "calendar"
     },
     {
@@ -3660,44 +3660,53 @@
       "name": "INDEX:CN:SSE",
       "short": "INDEX:CN:SSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:52.197Z",
-      "checkedAt": "2026-11-08T05:02:52.197Z",
-      "sourceHash": "faf8f367a23190938681aaa2bb6582c6995654f21beb05404e31ce35fe1c0150"
+      "retrievedAt": "2026-11-08T06:37:45.494Z",
+      "checkedAt": "2026-11-08T06:37:45.494Z",
+      "sourceHash": "afe7bd50930a1c918b02f58f38f81c3222560af68ad2305bd67939e4fcbbba63"
+    },
+    {
+      "id": "src-79c4a943c45bb34e464abc77",
+      "name": "Daily Treasury Par Yield Curve Rates 2026",
+      "short": "TREAS-PAR-YIELD-2026",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
+      "sourceHash": "a2c61c27a95c6a45ceac850ce9e5ed00903bed1b9ac43732c027c15d94e657da",
+      "retrievedAt": "2026-11-08T06:37:45.740Z",
+      "evidenceKind": "macro"
     },
     {
       "id": "src-56f8b6cf9289eb812069329d",
       "name": "INDEX:CN:SZSE",
       "short": "INDEX:CN:SZSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:52.356Z",
-      "checkedAt": "2026-11-08T05:02:52.356Z",
-      "sourceHash": "126781faa9f4312303a262540b30279b80a2d0d20d5c60b0cf8191667dbcec7d"
+      "retrievedAt": "2026-11-08T06:37:45.791Z",
+      "checkedAt": "2026-11-08T06:37:45.791Z",
+      "sourceHash": "e05cbeb30bcb4d749c9137f12bf450cfb2b0a3d51eefcda597c7a395b466ef34"
     },
     {
       "id": "src-43a3f5dcc80ebd4231e735b1",
       "name": "EQUITY:US:AAPL",
       "short": "EQUITY:US:AAPL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:52.396Z",
-      "checkedAt": "2026-11-08T05:02:52.396Z",
-      "sourceHash": "1d466c96c6f424895d084d005412821ca0436419ef9f4d723f616a2582180f77"
+      "retrievedAt": "2026-11-08T06:37:45.795Z",
+      "checkedAt": "2026-11-08T06:37:45.795Z",
+      "sourceHash": "71372a5089b67f1042debb42fbe95cc4555060b4c4238906caf2b61f670c8bcb"
     },
     {
       "id": "src-aaabb3face464c1123b1140e",
-      "name": "EIA 周度石油供应报告发布日程",
+      "name": "EIA Weekly Petroleum Status Report Schedule",
       "short": "EIA-WPSR-SCHEDULE",
       "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
       "sourceHash": "fc541adcac23e9856c45ae35c3b15b71b301eec3dc51494eb5649280fdc498f6",
-      "retrievedAt": "2026-11-08T05:02:52.606Z",
+      "retrievedAt": "2026-11-08T06:37:45.836Z",
       "evidenceKind": "calendar"
     },
     {
       "id": "src-8740577e8c7803f27f0171ca",
-      "name": "美联储 H.15 选定利率（最新发布）",
-      "short": "FED-H15-2026-11-06",
+      "name": "Federal Reserve H.15 Selected Interest Rates",
+      "short": "FED-H15-20261106",
       "url": "https://www.federalreserve.gov/releases/h15/",
-      "sourceHash": "6fe71cd87e0bbaa631988563ec88bdba4ea56cf41a0399abdc2a47dda888858f",
-      "retrievedAt": "2026-11-08T05:02:52.675Z",
+      "sourceHash": "54b4c6295cc8c965cb1ae03a2d0b057c48396f1cb7a3ba74fbe1b5102dca33f7",
+      "retrievedAt": "2026-11-08T06:37:45.847Z",
       "evidenceKind": "macro"
     },
     {
@@ -3705,44 +3714,35 @@
       "name": "EQUITY:US:MSFT",
       "short": "EQUITY:US:MSFT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:52.775Z",
-      "checkedAt": "2026-11-08T05:02:52.775Z",
-      "sourceHash": "a49e58ac4900de7355b904a961b77f68de7339c5e6966ec6105bef1ac8acca0b"
-    },
-    {
-      "id": "src-aaf0bf4872c3360bab9f60f4",
-      "name": "美国财政部每日期限结构收益率曲线 2026",
-      "short": "TREAS-DAILY-PAR-2026",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
-      "sourceHash": "a2c61c27a95c6a45ceac850ce9e5ed00903bed1b9ac43732c027c15d94e657da",
-      "retrievedAt": "2026-11-08T05:02:52.816Z",
-      "evidenceKind": "macro"
+      "retrievedAt": "2026-11-08T06:37:45.894Z",
+      "checkedAt": "2026-11-08T06:37:45.894Z",
+      "sourceHash": "d2e986022bbb73f638349dc7a57bb04ee09ca7f1915cdbf1b4e48ca854a916b3"
     },
     {
       "id": "src-d710626606bba04bd08ad849",
       "name": "INDEX:CN:CHINEXT",
       "short": "INDEX:CN:CHINEXT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:52.899Z",
-      "checkedAt": "2026-11-08T05:02:52.899Z",
-      "sourceHash": "3b261df1af7875b01b6415a46bedbb9c3dd6ad26bc507e8836cc258e95f5d23f"
+      "retrievedAt": "2026-11-08T06:37:45.901Z",
+      "checkedAt": "2026-11-08T06:37:45.901Z",
+      "sourceHash": "6eadd57f2d09688d4cc79a1dd74b5d6cd45092e57b2a7274d7d81363a93597f9"
     },
     {
-      "id": "src-b7ebc7b3bd3ac61a6b1a86fd",
-      "name": "特朗普下令美国司法部调查民主党人威胁弹劾行为",
-      "short": "NBD-2026-11-08-4641520",
-      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641520.html",
-      "sourceHash": "d1bd5a5df6e002c96f051ad9e4434b05474fd2b6e771e58f1f628e8c0b53b145",
-      "retrievedAt": "2026-11-08T05:02:53.276Z",
+      "id": "src-bd796e7d317c8f15deedf1f5",
+      "name": "沙特联军称摧毁胡塞射向利雅得导弹",
+      "short": "NBD-SAUDI-INTERCEPT-20261108",
+      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641549.html",
+      "sourceHash": "60a9cf950aea88de544038f610b05e4dfa135a4ef6988260432302e06d8a0e4d",
+      "retrievedAt": "2026-11-08T06:37:48.816Z",
       "evidenceKind": "news"
     },
     {
       "id": "src-3733485261271238648c9111",
-      "name": "美联储 H.4.1 准备金余额与资产负债表",
-      "short": "FED-H41-2026-11-05",
+      "name": "Federal Reserve H.4.1 Factors Affecting Reserve Balances",
+      "short": "FED-H41-CURRENT",
       "url": "https://www.federalreserve.gov/releases/h41/current/",
-      "sourceHash": "c5c2990ffc6c221fd6ac2011947480086107710bdcf70acb09759ec6c63bbcd3",
-      "retrievedAt": "2026-11-08T05:02:53.395Z",
+      "sourceHash": "d35c8d7d937c1cb5d510e7fd1735b6107b03e159d1fd87125d2c42222ab4a729",
+      "retrievedAt": "2026-11-08T06:37:48.880Z",
       "evidenceKind": "macro"
     },
     {
@@ -3750,648 +3750,612 @@
       "name": "EQUITY:US:NVDA",
       "short": "EQUITY:US:NVDA",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:53.463Z",
-      "checkedAt": "2026-11-08T05:02:53.463Z",
-      "sourceHash": "cffca4990d8b34f4afd323cd9dca64ba735262982b85a2b56106739c5a916a08"
+      "retrievedAt": "2026-11-08T06:37:48.937Z",
+      "checkedAt": "2026-11-08T06:37:48.937Z",
+      "sourceHash": "ce04679569e2fd39c5a025ba8b4426e300d7005710605b6cba72fa42cf67dd0f"
     },
     {
       "id": "src-9940126ea964d09e7fafaaff",
       "name": "INDEX:CN:STAR50",
       "short": "INDEX:CN:STAR50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:53.601Z",
-      "checkedAt": "2026-11-08T05:02:53.601Z",
-      "sourceHash": "4a537f6a86e9bfd86c0176ce5db5941f2e073a3c0a9a7dc548b6a529d1ab22bc"
-    },
-    {
-      "id": "src-bddc38e8ae546829627e6c05",
-      "name": "中国磷复肥工业协会倡议维护行业平稳有序发展",
-      "short": "NBD-2026-11-08-4641521",
-      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641521.html",
-      "sourceHash": "6f0e62c6ea642d2211767f1aa45fc70bd3ecb8c7f0059ddf23ad4b55da6aa5ed",
-      "retrievedAt": "2026-11-08T05:02:53.903Z",
-      "evidenceKind": "news"
-    },
-    {
-      "id": "src-bd4bfa680e56023a0261bb00",
-      "name": "美联储 H.8 商业银行资产与负债",
-      "short": "FED-H8-2026-11-06",
-      "url": "https://www.federalreserve.gov/releases/h8/current/",
-      "sourceHash": "05511bc622c5886f8738f858252ee1e3f27510aad934464f20ffc1d3a093a7dd",
-      "retrievedAt": "2026-11-08T05:02:54.050Z",
-      "evidenceKind": "macro"
-    },
-    {
-      "id": "src-7bee296159bd85b173c401d2",
-      "name": "湖北能源控股股东拟增持不超8亿元 定增认购股份已浮亏",
-      "short": "NBD-2026-11-08-4641519",
-      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641519.html",
-      "sourceHash": "45e6b513162d8a417e760e8208e178ee83f8d2f3c7f3c8bf4a6f9cb5cdb26418",
-      "retrievedAt": "2026-11-08T05:02:54.137Z",
-      "evidenceKind": "news"
+      "retrievedAt": "2026-11-08T06:37:48.992Z",
+      "checkedAt": "2026-11-08T06:37:48.992Z",
+      "sourceHash": "d100c01e7fba76fcd984529fbca8ba48ccbc1d9849e4b130e6ce11b0ec368981"
     },
     {
       "id": "src-184a3aed61d874af1cc937af",
       "name": "EQUITY:US:GOOGL",
       "short": "EQUITY:US:GOOGL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.152Z",
-      "checkedAt": "2026-11-08T05:02:54.152Z",
-      "sourceHash": "eb019e1c3e716b681dd8c0c4f11ed40eb203cb49977a1892955116407ad989d6"
+      "retrievedAt": "2026-11-08T06:37:49.092Z",
+      "checkedAt": "2026-11-08T06:37:49.092Z",
+      "sourceHash": "ca396191b12820a8a7e7e22de605ea16429626557fd685c37240e9dc95660705"
     },
     {
       "id": "src-c7ebed6429fdab05af3d4e37",
       "name": "INDEX:CN:CSI300",
       "short": "INDEX:CN:CSI300",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.217Z",
-      "checkedAt": "2026-11-08T05:02:54.217Z",
-      "sourceHash": "50d2dd6443aa0b3beeee6a1054d5ca332f4624a2499ba456a83469899c987a2a"
+      "retrievedAt": "2026-11-08T06:37:49.146Z",
+      "checkedAt": "2026-11-08T06:37:49.146Z",
+      "sourceHash": "5a42641a52ae15393efc7bfe0190ed2f6555cd59e4dfb05817f0b05d4585c64e"
     },
     {
       "id": "src-04b8bdcf2a7320327379db05",
       "name": "EQUITY:US:AMZN",
       "short": "EQUITY:US:AMZN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.326Z",
-      "checkedAt": "2026-11-08T05:02:54.326Z",
-      "sourceHash": "0eddca588128bfc5baeb9224d434ed7cd8b8c17e8fea1cb7518a025b1c426064"
+      "retrievedAt": "2026-11-08T06:37:49.267Z",
+      "checkedAt": "2026-11-08T06:37:49.267Z",
+      "sourceHash": "077668060f39da6c1a87343b8385d7744888038bac97c1838d7cc067a8d84fed"
     },
     {
       "id": "src-eaadd6d97d93eb6207a16fc2",
       "name": "INDEX:CN:CSI500",
       "short": "INDEX:CN:CSI500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.422Z",
-      "checkedAt": "2026-11-08T05:02:54.422Z",
-      "sourceHash": "62a13675164be2482b2cc19722ce1ddfeeae3b0556588f1fbfe8d34034d8e613"
+      "retrievedAt": "2026-11-08T06:37:49.322Z",
+      "checkedAt": "2026-11-08T06:37:49.322Z",
+      "sourceHash": "d18cded230eb68a75892592c7522f824a942467f8bd5c317a1f6e207b4982074"
+    },
+    {
+      "id": "src-2dd4a1afc76ff18fdcaf1249",
+      "name": "沙特首都利雅得传出剧烈爆炸声",
+      "short": "NBD-RIYADH-BLASTS-20261108",
+      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641545.html",
+      "sourceHash": "73f8c703e273b9d2efc2e2d9b05b4942f1f69c0df776a8d515afcae772b904f5",
+      "retrievedAt": "2026-11-08T06:37:50.817Z",
+      "evidenceKind": "news"
     },
     {
       "id": "src-78e6f09e34616fdc208b1d39",
       "name": "EQUITY:US:META",
       "short": "EQUITY:US:META",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.545Z",
-      "checkedAt": "2026-11-08T05:02:54.545Z",
-      "sourceHash": "f846ff43e4279f9cd04955042d5bd7998a0a76be80a7f16caa446745b50f9315"
+      "retrievedAt": "2026-11-08T06:37:50.872Z",
+      "checkedAt": "2026-11-08T06:37:50.872Z",
+      "sourceHash": "ebf1e5f7aeec05f9c92243f2fe32908e26d851c19c558c209be86d392c4de569"
     },
     {
       "id": "src-34bca50b53334f82f208d557",
       "name": "INDEX:HK:HSI",
       "short": "INDEX:HK:HSI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.629Z",
-      "checkedAt": "2026-11-08T05:02:54.629Z",
-      "sourceHash": "b7cf3b968dde783fc10f576508dbb1bba301e7029dc30b952610bf6e9be30c13"
+      "retrievedAt": "2026-11-08T06:37:50.904Z",
+      "checkedAt": "2026-11-08T06:37:50.904Z",
+      "sourceHash": "5d2b421bcd137151a8bdccf3e83e3a7c32f0fabef34f90b26feb5846feda1471"
     },
     {
       "id": "src-6296613e58b80d5a2541b2bc",
       "name": "EQUITY:US:TSLA",
       "short": "EQUITY:US:TSLA",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.714Z",
-      "checkedAt": "2026-11-08T05:02:54.714Z",
-      "sourceHash": "d701a9f1c3c7a4e2d1c93999905ff3e893b84b1519510497a47f73356fc206c5"
-    },
-    {
-      "id": "src-a3849cf4e5073cf48cdbecae",
-      "name": "西渝高铁北碚天府嘉陵江特大桥顺利合龙",
-      "short": "NBD-2026-11-08-4641541",
-      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641541.html",
-      "sourceHash": "913540a929ebcc429041c4ecee61e367e23c4da23e77b5e0f2e773a038a2ecae",
-      "retrievedAt": "2026-11-08T05:02:54.734Z",
-      "evidenceKind": "news"
+      "retrievedAt": "2026-11-08T06:37:50.969Z",
+      "checkedAt": "2026-11-08T06:37:50.969Z",
+      "sourceHash": "4cee47ff9e6584a25e2ea8b47483124571ce650382cd6f99627c25571f8c1a8e"
     },
     {
       "id": "src-977e21a36fbe85aa82e451f4",
       "name": "INDEX:HK:HSTECH",
       "short": "INDEX:HK:HSTECH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.801Z",
-      "checkedAt": "2026-11-08T05:02:54.801Z",
-      "sourceHash": "f4b27fc01567a546081036adba461e881a32d016291dbd4e5212154da0cc7a20"
+      "retrievedAt": "2026-11-08T06:37:51.032Z",
+      "checkedAt": "2026-11-08T06:37:51.032Z",
+      "sourceHash": "b533de09246b7981e9dccbb91fced11f4c09a30f68935f9e95dbf8133907d874"
     },
     {
       "id": "src-2330b34d03dae5a96933f1cd",
       "name": "EQUITY:US:AVGO",
       "short": "EQUITY:US:AVGO",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.825Z",
-      "checkedAt": "2026-11-08T05:02:54.825Z",
-      "sourceHash": "b94ecd260efa3d064493006c45ffcd6e28bf856091f85ac293fd935ea5b3184d"
+      "retrievedAt": "2026-11-08T06:37:51.092Z",
+      "checkedAt": "2026-11-08T06:37:51.092Z",
+      "sourceHash": "8b01b77c4f2408cde390d9608e6efdbe32cafae946beadbea8e5b4c661ad616e"
     },
     {
       "id": "src-c0124b191492ac42ab36d935",
       "name": "INDEX:HK:HSCEI",
       "short": "INDEX:HK:HSCEI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.891Z",
-      "checkedAt": "2026-11-08T05:02:54.891Z",
-      "sourceHash": "68652e58ff956c9bf3fe1705f1e4148f7cdfcb9af93413b08723c4ab7e0fc90f"
+      "retrievedAt": "2026-11-08T06:37:51.157Z",
+      "checkedAt": "2026-11-08T06:37:51.157Z",
+      "sourceHash": "cd122068f1ea49dd29393ab1eefda1bb9ce833e01d79ffff3497507f1223baca"
     },
     {
       "id": "src-6c0e86c9d9d00b20a083c934",
       "name": "EQUITY:US:AMD",
       "short": "EQUITY:US:AMD",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.924Z",
-      "checkedAt": "2026-11-08T05:02:54.924Z",
-      "sourceHash": "e5783b7c97059295adce958ff4e1654fd02bd415ad42b95037ca0615db076380"
+      "retrievedAt": "2026-11-08T06:37:51.229Z",
+      "checkedAt": "2026-11-08T06:37:51.229Z",
+      "sourceHash": "c07efcb148c8e235dcd6599fafb9702e2426913ab84b2faacae1091c15538cb0"
     },
     {
       "id": "src-d72e220f5f535c1245072385",
       "name": "INDEX:US:SP500",
       "short": "INDEX:US:SP500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:54.983Z",
-      "checkedAt": "2026-11-08T05:02:54.983Z",
-      "sourceHash": "24cd9df894be8933df0a6720b938984d07362f2685b35e4155621e1401dd9d10"
+      "retrievedAt": "2026-11-08T06:37:51.286Z",
+      "checkedAt": "2026-11-08T06:37:51.286Z",
+      "sourceHash": "97dab2219ef7759e6486b75d782d02f3bd9b7ff66c5f7e40973255b3eec10441"
     },
     {
       "id": "src-a5c669eb8928b350011058da",
       "name": "EQUITY:US:INTC",
       "short": "EQUITY:US:INTC",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.043Z",
-      "checkedAt": "2026-11-08T05:02:55.043Z",
-      "sourceHash": "9378071ae0911ad2f55b8a5e1ae0333240be293e7308bdd7f9256d9db5e01077"
-    },
-    {
-      "id": "src-36c0a6f7fc56c7315c743b06",
-      "name": "以军称以北部出现敌方飞行器为识别错误误报",
-      "short": "NBD-2026-11-08-4641539",
-      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641539.html",
-      "sourceHash": "2dd77e177e1ea3869539399a01615a3ca5d60a58abbc0fa5014d7fc2a7c12c80",
-      "retrievedAt": "2026-11-08T05:02:55.089Z",
-      "evidenceKind": "news"
+      "retrievedAt": "2026-11-08T06:37:51.348Z",
+      "checkedAt": "2026-11-08T06:37:51.348Z",
+      "sourceHash": "b1d3fa6944755081d095283a5dd7acaa134f486a74e71ef39e3090f10eb79962"
     },
     {
       "id": "src-4a57b5e12b1c7830f0336dc8",
       "name": "INDEX:US:NASDAQ",
       "short": "INDEX:US:NASDAQ",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.111Z",
-      "checkedAt": "2026-11-08T05:02:55.111Z",
-      "sourceHash": "bfba6ceb5aa70ef70f3b40b08d931e3946be30a04dc9049109f28515b01e8f74"
+      "retrievedAt": "2026-11-08T06:37:51.404Z",
+      "checkedAt": "2026-11-08T06:37:51.404Z",
+      "sourceHash": "6d2f36c65e64d2da7086f129744dbd122c83b6ba61551b6ffbe987ab20151229"
     },
     {
       "id": "src-772408f27845565f1128d60a",
       "name": "EQUITY:US:MU",
       "short": "EQUITY:US:MU",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.145Z",
-      "checkedAt": "2026-11-08T05:02:55.145Z",
-      "sourceHash": "9c780b771ba95465c23206da6a2d31341d12db46c90d4765cae4cb46a03653ee"
-    },
-    {
-      "id": "src-2c82f404902c9e27e70a5709",
-      "name": "EQUITY:US:ARM",
-      "short": "EQUITY:US:ARM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.193Z",
-      "checkedAt": "2026-11-08T05:02:55.193Z",
-      "sourceHash": "1384fff37f47f8dc0785fa4d6efa03001eef06e234e74926a05527b3dcbc707c"
+      "retrievedAt": "2026-11-08T06:37:51.463Z",
+      "checkedAt": "2026-11-08T06:37:51.463Z",
+      "sourceHash": "b41a711cebb7f74c00c87705e62796f381e9e030d21a5aa89ed8382ce06a8080"
     },
     {
       "id": "src-e0bb5fd1bca46282849a8b5f",
       "name": "INDEX:US:NDX",
       "short": "INDEX:US:NDX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.284Z",
-      "checkedAt": "2026-11-08T05:02:55.284Z",
-      "sourceHash": "68dd07a93d0c6b89dd79529432272f21bd065124c4759d955c93cb41eaa4e8fe"
+      "retrievedAt": "2026-11-08T06:37:51.518Z",
+      "checkedAt": "2026-11-08T06:37:51.518Z",
+      "sourceHash": "da700465dd7c3a0c106aae2b9fa17b218ee2e6eb11796ce39ab1db5c50a186da"
     },
     {
-      "id": "src-4c2724acd20f3bf712e1b9a9",
-      "name": "INDEX:US:DOW",
-      "short": "INDEX:US:DOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.316Z",
-      "checkedAt": "2026-11-08T05:02:55.316Z",
-      "sourceHash": "b32ea11a63ec1ba54cb44f5ad4a23ba98aac5e28f3bea2a8a584080d9a8e803f"
+      "id": "src-2c82f404902c9e27e70a5709",
+      "name": "EQUITY:US:ARM",
+      "short": "EQUITY:US:ARM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:51.596Z",
+      "checkedAt": "2026-11-08T06:37:51.596Z",
+      "sourceHash": "ce387b6745238ff309a18ce2df69ded674026026ba72b63ce10cb984934573ea"
     },
     {
       "id": "src-a1855a700abc50828e0dbe10",
       "name": "EQUITY:US:TSM",
       "short": "EQUITY:US:TSM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.394Z",
-      "checkedAt": "2026-11-08T05:02:55.394Z",
-      "sourceHash": "99597a115127e51e2e8be22e06652217fac4e59fbfe1d30e82c4b3937703d799"
+      "retrievedAt": "2026-11-08T06:37:51.697Z",
+      "checkedAt": "2026-11-08T06:37:51.697Z",
+      "sourceHash": "c8dad14a74946605cfa3125e9b5cabb9e5a6527075aaba61e1affded333683a3"
+    },
+    {
+      "id": "src-4c2724acd20f3bf712e1b9a9",
+      "name": "INDEX:US:DOW",
+      "short": "INDEX:US:DOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:51.731Z",
+      "checkedAt": "2026-11-08T06:37:51.731Z",
+      "sourceHash": "305fe69726caf3e9dd42f08999432f3e0b9161bd403a7eeed82fdfff50d8e569"
     },
     {
       "id": "src-3f3171fa7d078be4fc2861fa",
       "name": "INDEX:US:RUSSELL2000",
       "short": "INDEX:US:RUSSELL2000",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.401Z",
-      "checkedAt": "2026-11-08T05:02:55.401Z",
-      "sourceHash": "866a335e120d34856584ab425ec4128f8cb703f894355a497ce46a261e9570cd"
+      "retrievedAt": "2026-11-08T06:37:51.749Z",
+      "checkedAt": "2026-11-08T06:37:51.749Z",
+      "sourceHash": "57e6fd46e3b23faa76579cd50b2fd72ae142500e10bebcc5737f9686270adba4"
     },
     {
       "id": "src-8793bfe1c682ddb7a690b48f",
       "name": "EQUITY:US:ASML",
       "short": "EQUITY:US:ASML",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.474Z",
-      "checkedAt": "2026-11-08T05:02:55.474Z",
-      "sourceHash": "9df06dc7464f3ef8a7c8abbf8ddf021de4747219e6686fd42f6908b7a259d9e1"
+      "retrievedAt": "2026-11-08T06:37:51.787Z",
+      "checkedAt": "2026-11-08T06:37:51.787Z",
+      "sourceHash": "cc27c09087224af5e30c153036d1be252b3fa2b48b1dc2187ef60d98627acfa2"
     },
     {
       "id": "src-db321b256a90919f12e35781",
       "name": "INDEX:JP:NIKKEI225",
       "short": "INDEX:JP:NIKKEI225",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.483Z",
-      "checkedAt": "2026-11-08T05:02:55.483Z",
-      "sourceHash": "fb0dab52bfc6c02fb0ab8fa056fa2762640ac8d86e4b04da88bd3917acb781c7"
-    },
-    {
-      "id": "src-38299ba2f9df25e3bf2df111",
-      "name": "EQUITY:US:ORCL",
-      "short": "EQUITY:US:ORCL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.494Z",
-      "checkedAt": "2026-11-08T05:02:55.494Z",
-      "sourceHash": "7cccb7f4ea78bf09c454ab593a258c3b06b918c218f279fa034f26d21a478422"
+      "retrievedAt": "2026-11-08T06:37:51.801Z",
+      "checkedAt": "2026-11-08T06:37:51.801Z",
+      "sourceHash": "2e312708302aff37489d85accbc85db7bfa677ee688e200733d16836fa8e69a8"
     },
     {
       "id": "src-440d8c358ccf2eb5de026ded",
       "name": "INDEX:EU:STOXX50",
       "short": "INDEX:EU:STOXX50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.564Z",
-      "checkedAt": "2026-11-08T05:02:55.564Z",
-      "sourceHash": "56f12801d250f02da2e5a6c63569ffaafc620380fbcc440c138ec55ee1f03d94"
+      "retrievedAt": "2026-11-08T06:37:51.841Z",
+      "checkedAt": "2026-11-08T06:37:51.841Z",
+      "sourceHash": "801b4af8f649e01b483e79b65d756be179e33cf6d480b049b7ef9bb62ec00881"
+    },
+    {
+      "id": "src-38299ba2f9df25e3bf2df111",
+      "name": "EQUITY:US:ORCL",
+      "short": "EQUITY:US:ORCL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:51.847Z",
+      "checkedAt": "2026-11-08T06:37:51.847Z",
+      "sourceHash": "dd10e5b30bef83b45e273a7461dae9b4e5fb34c06eb50bfa93e30a4d281b4c21"
     },
     {
       "id": "src-a9fc80df8ffb235e6cd0d757",
       "name": "EQUITY:US:CRM",
       "short": "EQUITY:US:CRM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.574Z",
-      "checkedAt": "2026-11-08T05:02:55.574Z",
-      "sourceHash": "1ff97968522b66260534cf7995b6aed12f37c8384e95b825cc315f594145d4d7"
+      "retrievedAt": "2026-11-08T06:37:51.856Z",
+      "checkedAt": "2026-11-08T06:37:51.856Z",
+      "sourceHash": "86386819392fce8b1791edf5df6b8505b7ad667d1a96e9e935b073af824e4a46"
     },
     {
       "id": "src-d0f06544a61c10ea97899aa0",
       "name": "CRYPTO:BTC:USD",
       "short": "CRYPTO:BTC:USD",
       "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
-      "retrievedAt": "2026-11-08T05:02:55.609Z",
-      "checkedAt": "2026-11-08T05:02:55.609Z",
-      "sourceHash": "b641dfb4c131fd45cf643a121ebe5d9e5e91e0742a7d6919e3497467efefd3e4"
+      "retrievedAt": "2026-11-08T06:37:51.899Z",
+      "checkedAt": "2026-11-08T06:37:51.899Z",
+      "sourceHash": "1499ffb18fd05aec35c24f1de3a46358cc2ba238d749dd6b3247a1f373c4cac9"
     },
     {
       "id": "src-61b7dcccf93560ea56eb3187",
       "name": "CRYPTO:ETH:USD",
       "short": "CRYPTO:ETH:USD",
       "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
-      "retrievedAt": "2026-11-08T05:02:55.652Z",
-      "checkedAt": "2026-11-08T05:02:55.652Z",
-      "sourceHash": "eec354921eefbd54c267cc81bae2fd6685e335cf74aee886f4cc2fdf817c1a7e"
+      "retrievedAt": "2026-11-08T06:37:51.901Z",
+      "checkedAt": "2026-11-08T06:37:51.901Z",
+      "sourceHash": "c03a87993fbb338673ad2fa3b8f04ee333c31a4cbfa5888385bfbd558b3d223e"
     },
     {
       "id": "src-5022e6cea2b9157cf6b11a77",
       "name": "EQUITY:US:ADBE",
       "short": "EQUITY:US:ADBE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.662Z",
-      "checkedAt": "2026-11-08T05:02:55.662Z",
-      "sourceHash": "e000990fb1537637deb0e6aae2ed3b0b31eb23f7822888c81fdccc4f7cc382d3"
+      "retrievedAt": "2026-11-08T06:37:51.903Z",
+      "checkedAt": "2026-11-08T06:37:51.903Z",
+      "sourceHash": "3eb318a934adabe9a7342e11dbdfd99dc8f38ca1236b64821457ea816aa70c3c"
     },
     {
       "id": "src-ff3513c8c5dcb5dca0085f61",
       "name": "CRYPTO:SOL:USD",
       "short": "CRYPTO:SOL:USD",
       "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
-      "retrievedAt": "2026-11-08T05:02:55.694Z",
-      "checkedAt": "2026-11-08T05:02:55.694Z",
-      "sourceHash": "28d0c1b77144b8432017acb76e9380c09fb11f9a24b8c742a9281eed20416acb"
-    },
-    {
-      "id": "src-620ca0f9ff9da68ab66b8b1c",
-      "name": "EQUITY:US:NOW",
-      "short": "EQUITY:US:NOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.707Z",
-      "checkedAt": "2026-11-08T05:02:55.707Z",
-      "sourceHash": "974d7ee33e2ffcc48472d1bcd3f281d6f168241efe028adedd90bbd0080a8152"
+      "retrievedAt": "2026-11-08T06:37:51.919Z",
+      "checkedAt": "2026-11-08T06:37:51.919Z",
+      "sourceHash": "d870caf82636abca1cf653cdbee6f47e46dc5df1106602bef5d12976db79da57"
     },
     {
       "id": "src-e73683bca4f7778e43d2f1e8",
       "name": "CRYPTO:PEPE:USD",
       "short": "CRYPTO:PEPE:USD",
       "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
-      "retrievedAt": "2026-11-08T05:02:55.765Z",
-      "checkedAt": "2026-11-08T05:02:55.765Z",
-      "sourceHash": "c25e96ebea5458a0d96be941c0cba657b16931a5497bb18c502913876e971e2d"
+      "retrievedAt": "2026-11-08T06:37:51.940Z",
+      "checkedAt": "2026-11-08T06:37:51.940Z",
+      "sourceHash": "749b58feed3b0ffff489bb2f3794cdfb0ebde8412385f098876c020241f709b7"
+    },
+    {
+      "id": "src-620ca0f9ff9da68ab66b8b1c",
+      "name": "EQUITY:US:NOW",
+      "short": "EQUITY:US:NOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:51.960Z",
+      "checkedAt": "2026-11-08T06:37:51.960Z",
+      "sourceHash": "677b869734abfc97b73cae1d9567645aba67587cc256a8676fd70576fc510a66"
     },
     {
       "id": "src-a9cf54901e28ec9b25fe355d",
       "name": "EQUITY:US:PLTR",
       "short": "EQUITY:US:PLTR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.783Z",
-      "checkedAt": "2026-11-08T05:02:55.783Z",
-      "sourceHash": "322be65c7c7ae99a93be3f8cf29c739b939cb162933b66f13cb1297392fb4a08"
+      "retrievedAt": "2026-11-08T06:37:51.964Z",
+      "checkedAt": "2026-11-08T06:37:51.964Z",
+      "sourceHash": "5ae9ee840793bb51614712dd74bd0899a9a3f5aa6b8fcf021e12fb7c0aa4b239"
     },
     {
       "id": "src-219ba892243f0871c11511b2",
       "name": "CRYPTO:HYPE:USD",
       "short": "CRYPTO:HYPE:USD",
       "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
-      "retrievedAt": "2026-11-08T05:02:55.809Z",
-      "checkedAt": "2026-11-08T05:02:55.809Z",
-      "sourceHash": "9a4fb36a5dead0edebe9b0f719065ccd67b470a59be7218e044ff48e52e87f0f"
-    },
-    {
-      "id": "src-c3ce3ea19c5e3ff913bc8e44",
-      "name": "EQUITY:US:NET",
-      "short": "EQUITY:US:NET",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.875Z",
-      "checkedAt": "2026-11-08T05:02:55.875Z",
-      "sourceHash": "0ef569c7b275ad9f64a1206cfcb15c3f6d63d6b258c9945c25c5e0e3eaa952ef"
-    },
-    {
-      "id": "src-dee9c47e788eb3b5e9957de0",
-      "name": "FX:DXY",
-      "short": "FX:DXY",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.887Z",
-      "checkedAt": "2026-11-08T05:02:55.887Z",
-      "sourceHash": "ebed2dcef6c33b44a938bae9edfc57ce38f25d48c8598e461b7d58a55b4d6d49"
+      "retrievedAt": "2026-11-08T06:37:51.974Z",
+      "checkedAt": "2026-11-08T06:37:51.974Z",
+      "sourceHash": "96ce77340f0cc2b7963d1b511bb8445adbe5a9d00ae6367fd0252098b6de4b32"
     },
     {
       "id": "src-15f5b79b32cba97e05e23d60",
       "name": "EQUITY:US:SNOW",
       "short": "EQUITY:US:SNOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.893Z",
-      "checkedAt": "2026-11-08T05:02:55.893Z",
-      "sourceHash": "c8ced241c959bb8a1a54c4addf0ae4987008c935766ea8fceae9116b5d8b0535"
+      "retrievedAt": "2026-11-08T06:37:51.994Z",
+      "checkedAt": "2026-11-08T06:37:51.994Z",
+      "sourceHash": "92f32466b3b83beeedb4695a1b6ad53d7192582fafc59adf993147a08faa63f2"
+    },
+    {
+      "id": "src-c3ce3ea19c5e3ff913bc8e44",
+      "name": "EQUITY:US:NET",
+      "short": "EQUITY:US:NET",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:52.021Z",
+      "checkedAt": "2026-11-08T06:37:52.021Z",
+      "sourceHash": "57300ee7bec0d119d22e290a2058ad2337f0e061492f1a8cac816322ea7a03cb"
+    },
+    {
+      "id": "src-dee9c47e788eb3b5e9957de0",
+      "name": "FX:DXY",
+      "short": "FX:DXY",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:52.025Z",
+      "checkedAt": "2026-11-08T06:37:52.025Z",
+      "sourceHash": "ebed2dcef6c33b44a938bae9edfc57ce38f25d48c8598e461b7d58a55b4d6d49"
     },
     {
       "id": "src-ff2cf19ea64f05b5a5a53285",
       "name": "EQUITY:US:CRWD",
       "short": "EQUITY:US:CRWD",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.958Z",
-      "checkedAt": "2026-11-08T05:02:55.958Z",
-      "sourceHash": "4a59ec753812113006c39b1c13035587766a85934af14de5ffc69bc5d6e91d89"
-    },
-    {
-      "id": "src-b9c9b43f7a4ebde198fdf0e4",
-      "name": "EQUITY:US:DDOG",
-      "short": "EQUITY:US:DDOG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:55.991Z",
-      "checkedAt": "2026-11-08T05:02:55.991Z",
-      "sourceHash": "e0c5679b2242dc12692bc15a5361c6316a95a453bcbaeb138c405f3603343fdc"
+      "retrievedAt": "2026-11-08T06:37:52.047Z",
+      "checkedAt": "2026-11-08T06:37:52.047Z",
+      "sourceHash": "5339862d862394ba4ec88709b834d8430d8a95222868030ad91ea72fcd1eff10"
     },
     {
       "id": "src-8d5d7352d4aa06cef2c4c9c8",
       "name": "FX:USDCNY",
       "short": "FX:USDCNY",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.029Z",
-      "checkedAt": "2026-11-08T05:02:56.029Z",
-      "sourceHash": "f65223332223f61e8b31c575cf71c7c92e2553e8603448eaf56229b967160239"
+      "retrievedAt": "2026-11-08T06:37:52.080Z",
+      "checkedAt": "2026-11-08T06:37:52.080Z",
+      "sourceHash": "991d575c95395f987185fb386fcd0670d93ac25cc588dbd3a698429e014bf061"
+    },
+    {
+      "id": "src-b9c9b43f7a4ebde198fdf0e4",
+      "name": "EQUITY:US:DDOG",
+      "short": "EQUITY:US:DDOG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:52.095Z",
+      "checkedAt": "2026-11-08T06:37:52.095Z",
+      "sourceHash": "1131f6abfa588da3736794cf4644f23cf4fcb315473106c0e9bdc8af91d08e59"
     },
     {
       "id": "src-3d44a550fc9b64a2d1f171c2",
       "name": "FX:USDCNH",
       "short": "FX:USDCNH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.074Z",
-      "checkedAt": "2026-11-08T05:02:56.074Z",
-      "sourceHash": "6104a91c43330203ec363912c4a53a62d3f7932ee656658a4b058d09a1a2c7e0"
+      "retrievedAt": "2026-11-08T06:37:52.131Z",
+      "checkedAt": "2026-11-08T06:37:52.131Z",
+      "sourceHash": "bf8568f0d5af39efafc527d23ba90ec33f35be3a92beef7b6f049a897dc88eef"
     },
     {
       "id": "src-326f0b6e68e52c485af15110",
       "name": "EQUITY:US:COIN",
       "short": "EQUITY:US:COIN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.150Z",
-      "checkedAt": "2026-11-08T05:02:56.150Z",
-      "sourceHash": "2e96113035dd82945f8bf7b41e77b990fd5dd59589ea7f07b6ee39f663847f0f"
+      "retrievedAt": "2026-11-08T06:37:52.144Z",
+      "checkedAt": "2026-11-08T06:37:52.144Z",
+      "sourceHash": "2533cb6cf47dedbc4ea0bc56a8d253867329d9ed45ca7dddd4325dc4c8ef33ad"
     },
     {
       "id": "src-65479f4ce02fa594db0ce3a7",
       "name": "EQUITY:US:MSTR",
       "short": "EQUITY:US:MSTR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.226Z",
-      "checkedAt": "2026-11-08T05:02:56.226Z",
-      "sourceHash": "81a2b41b11ada39a8855f02d791987539c18906ca55657076e93f93407021e2e"
-    },
-    {
-      "id": "src-395e439b7112bf85673a6beb",
-      "name": "METAL:XAUUSD",
-      "short": "METAL:XAUUSD",
-      "url": "https://api.gold-api.com/price/XAU",
-      "retrievedAt": "2026-11-08T05:02:56.269Z",
-      "checkedAt": "2026-11-08T05:02:56.269Z",
-      "sourceHash": "24c7516c1dce78c5c05c95ca5aa24f970bb7bb9cd2e5e764c6d7db0cf8caf198"
-    },
-    {
-      "id": "src-8ada3bfad620c0aaad97dfef",
-      "name": "METAL:XAGUSD",
-      "short": "METAL:XAGUSD",
-      "url": "https://api.gold-api.com/price/XAG",
-      "retrievedAt": "2026-11-08T05:02:56.285Z",
-      "checkedAt": "2026-11-08T05:02:56.285Z",
-      "sourceHash": "c1c9e8f1bcca5fbc6142bbe7b60eaba898fcaa078bee4a0364c4d2386ab8b2ad"
-    },
-    {
-      "id": "src-d9a47ba66192b3c04bc8f3f6",
-      "name": "ENERGY:WTI",
-      "short": "ENERGY:WTI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.384Z",
-      "checkedAt": "2026-11-08T05:02:56.384Z",
-      "sourceHash": "77449cf36544428e323616f979fdb82bab35c13805cc1bd9f15312171dbce407"
+      "retrievedAt": "2026-11-08T06:37:52.188Z",
+      "checkedAt": "2026-11-08T06:37:52.188Z",
+      "sourceHash": "06af09ce72e719649bd04694d2169947e0c8cdc03baba714adfd6ce73b1e77dd"
     },
     {
       "id": "src-f870632d144ef25b5d81e0d5",
       "name": "EQUITY:US:BRK.B",
       "short": "EQUITY:US:BRK.B",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BRK-B?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.413Z",
-      "checkedAt": "2026-11-08T05:02:56.413Z",
-      "sourceHash": "ab3f687c60fa36321f4476a55543d5692b8427bc7ad9588251b28c3789a20156"
+      "retrievedAt": "2026-11-08T06:37:52.243Z",
+      "checkedAt": "2026-11-08T06:37:52.243Z",
+      "sourceHash": "21cfc3e9d2f3f5d78304c019f482812f1fe6472e9b982d18ff1de4146e81eb07"
+    },
+    {
+      "id": "src-d9a47ba66192b3c04bc8f3f6",
+      "name": "ENERGY:WTI",
+      "short": "ENERGY:WTI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:52.295Z",
+      "checkedAt": "2026-11-08T06:37:52.295Z",
+      "sourceHash": "e9417430534c51f5de3376944df65755a4fe410f284b599157b32b3294ec1836"
     },
     {
       "id": "src-b4c33f217cb4617da7b6dc01",
       "name": "EQUITY:US:BLK",
       "short": "EQUITY:US:BLK",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.511Z",
-      "checkedAt": "2026-11-08T05:02:56.511Z",
-      "sourceHash": "b889330e57159ebca6d7fdaee16f4ba4f810e584273723ab43b98d99927b4025"
+      "retrievedAt": "2026-11-08T06:37:52.356Z",
+      "checkedAt": "2026-11-08T06:37:52.356Z",
+      "sourceHash": "cfc0034221d2f00b95ea9cc3e28d00349252f3ad5be8d86e8106100b6c3d68f2"
+    },
+    {
+      "id": "src-8ada3bfad620c0aaad97dfef",
+      "name": "METAL:XAGUSD",
+      "short": "METAL:XAGUSD",
+      "url": "https://api.gold-api.com/price/XAG",
+      "retrievedAt": "2026-11-08T06:37:52.413Z",
+      "checkedAt": "2026-11-08T06:37:52.413Z",
+      "sourceHash": "d34efea051433684b629b5b0ed930819d0e612be1610f28faa3bf13b641eaaa2"
+    },
+    {
+      "id": "src-395e439b7112bf85673a6beb",
+      "name": "METAL:XAUUSD",
+      "short": "METAL:XAUUSD",
+      "url": "https://api.gold-api.com/price/XAU",
+      "retrievedAt": "2026-11-08T06:37:52.416Z",
+      "checkedAt": "2026-11-08T06:37:52.416Z",
+      "sourceHash": "710f7a1fad76a3f5472e12d8ea97057a7849067a114188ce5cabbc51562f611e"
     },
     {
       "id": "src-9df907448534d3354922f821",
       "name": "EQUITY:US:BX",
       "short": "EQUITY:US:BX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.581Z",
-      "checkedAt": "2026-11-08T05:02:56.581Z",
-      "sourceHash": "015067e4b34c48bf3d6679fa3338bdb5bb0dc32aefb2337b0e82cc558022f38f"
+      "retrievedAt": "2026-11-08T06:37:52.456Z",
+      "checkedAt": "2026-11-08T06:37:52.456Z",
+      "sourceHash": "7f72aee5ed8257f7161742351cc37ead3605afbb2ad51e6e529e77a0bc8877c4"
     },
     {
       "id": "src-7169e336e7f73bbd1e2d1f54",
       "name": "EQUITY:US:KKR",
       "short": "EQUITY:US:KKR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.622Z",
-      "checkedAt": "2026-11-08T05:02:56.622Z",
-      "sourceHash": "718fb1c89689155f521a42e1697a1d43a547ffcb859229e905be59eff265d8a0"
+      "retrievedAt": "2026-11-08T06:37:52.469Z",
+      "checkedAt": "2026-11-08T06:37:52.469Z",
+      "sourceHash": "c5ae2d9b3da11167ed7a46c06da541066c29e55e2970a3fa9a15634e85e38b35"
     },
     {
       "id": "src-483e50fe4cc003e84c411bec",
       "name": "RATE:US10Y",
       "short": "RATE:US10Y",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.698Z",
-      "checkedAt": "2026-11-08T05:02:56.698Z",
-      "sourceHash": "e50e1226b7a3a3ce297801cfab9ea0abf53b813d5cf7fb29799f5cd4786625da"
+      "retrievedAt": "2026-11-08T06:37:52.514Z",
+      "checkedAt": "2026-11-08T06:37:52.514Z",
+      "sourceHash": "9cb6288d1571e25772ecec76fbc378657be15426edaf0679604f331763d2ca1a"
     },
     {
       "id": "src-9641ed6e3e9256c44410b13f",
       "name": "EQUITY:US:APO",
       "short": "EQUITY:US:APO",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.723Z",
-      "checkedAt": "2026-11-08T05:02:56.723Z",
-      "sourceHash": "93d6aca57825d57795031fde592e94827cd4fc39adf4c80f60d820b4b795868b"
+      "retrievedAt": "2026-11-08T06:37:52.523Z",
+      "checkedAt": "2026-11-08T06:37:52.523Z",
+      "sourceHash": "e849ed123aa5fef4ff297edf447c41b4a7c0e9b9d3634d040fa598f2a3aa3508"
     },
     {
       "id": "src-f8ad213db7dcf4e934830d3f",
       "name": "RATE:US2Y",
       "short": "RATE:US2Y",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
-      "retrievedAt": "2026-11-08T05:02:56.823Z",
-      "checkedAt": "2026-11-08T05:02:56.823Z",
-      "sourceHash": "a7f1e33d97317dbcdf577ec8236c81c736ec0a3db4b4da89ce839c25e38b99b4"
+      "retrievedAt": "2026-11-08T06:37:52.554Z",
+      "checkedAt": "2026-11-08T06:37:52.554Z",
+      "sourceHash": "b505798e97ce007beccfcb8c6f92109f5071fc894af569638be372acbae9e3c3"
     },
     {
       "id": "src-a7554f3c5fd773eea8743645",
       "name": "VOL:VIX",
       "short": "VOL:VIX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.942Z",
-      "checkedAt": "2026-11-08T05:02:56.942Z",
-      "sourceHash": "d160e91b0935956cf200830f137fb1c8124c8d6adf4c58425b565ec406af3ebb"
+      "retrievedAt": "2026-11-08T06:37:52.570Z",
+      "checkedAt": "2026-11-08T06:37:52.570Z",
+      "sourceHash": "8f6c012e2792666ab03f116478e48e9299986a54ca2aa043240865d1255c942a"
     },
     {
       "id": "src-177a579934a7c61da3eda551",
       "name": "EQUITY:US:ARES",
       "short": "EQUITY:US:ARES",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:56.948Z",
-      "checkedAt": "2026-11-08T05:02:56.948Z",
-      "sourceHash": "056802f9853023123cef73e731fc784d3b40b4affdcb7dd8aec25bcc86fed705"
+      "retrievedAt": "2026-11-08T06:37:52.613Z",
+      "checkedAt": "2026-11-08T06:37:52.613Z",
+      "sourceHash": "7f7bec61a27aa17b9613e69e561cd24b0ec7d2046f5214c599540b833785cb83"
     },
     {
       "id": "src-3f9155e9bb026d51e16a0b29",
       "name": "EQUITY:US:OWL",
       "short": "EQUITY:US:OWL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.026Z",
-      "checkedAt": "2026-11-08T05:02:57.026Z",
-      "sourceHash": "ec6f685127d1ec1d50b85eebde4b6abd91d5aa97e913b7ffad5a0490e657d941"
+      "retrievedAt": "2026-11-08T06:37:52.616Z",
+      "checkedAt": "2026-11-08T06:37:52.616Z",
+      "sourceHash": "573ddd10996a903d3e438f0d5c1d206da1589de29c73d41919ed04093f6676ab"
     },
     {
       "id": "src-cea9af858dc05581bdc0e5e5",
       "name": "EQUITY:US:BN",
       "short": "EQUITY:US:BN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.032Z",
-      "checkedAt": "2026-11-08T05:02:57.032Z",
-      "sourceHash": "7dabfa365a6c320e869581a1a831979b03ca88f6d48b4bc5fdc60f2e2abaef88"
+      "retrievedAt": "2026-11-08T06:37:52.628Z",
+      "checkedAt": "2026-11-08T06:37:52.628Z",
+      "sourceHash": "8eb58c61b2c6932559ed19946985f9afe649dd368d17a3f734700938ce35e09a"
     },
     {
       "id": "src-eb442cf33996fa78a3fa09c9",
       "name": "EQUITY:US:BAM",
       "short": "EQUITY:US:BAM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.051Z",
-      "checkedAt": "2026-11-08T05:02:57.051Z",
-      "sourceHash": "43eea3b1db10c00a8fa23d40048faa03f4a1183194eec1def29b6d9acec1bde7"
-    },
-    {
-      "id": "src-921d9df8692f2f48f9e01166",
-      "name": "EQUITY:US:CG",
-      "short": "EQUITY:US:CG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.108Z",
-      "checkedAt": "2026-11-08T05:02:57.108Z",
-      "sourceHash": "bc1ef74ece6f61157d0fe5749a121d16e99d35d3a0164c53b93f408a9bdafc03"
+      "retrievedAt": "2026-11-08T06:37:52.666Z",
+      "checkedAt": "2026-11-08T06:37:52.666Z",
+      "sourceHash": "b78af77d7b968124e2d911d91eeac6c640b331098ad43f853ef92a8fd68a52e9"
     },
     {
       "id": "src-6facdc12d1f68f042abf8250",
       "name": "EQUITY:US:TROW",
       "short": "EQUITY:US:TROW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.134Z",
-      "checkedAt": "2026-11-08T05:02:57.134Z",
-      "sourceHash": "dc405036e01affc92ac756af3866a34b5a072688834c590370547edb0ffea041"
+      "retrievedAt": "2026-11-08T06:37:52.689Z",
+      "checkedAt": "2026-11-08T06:37:52.689Z",
+      "sourceHash": "1d0e1ec64a3eafe529b481499feb81e376e026079cfd10b90fd817a18c992196"
+    },
+    {
+      "id": "src-921d9df8692f2f48f9e01166",
+      "name": "EQUITY:US:CG",
+      "short": "EQUITY:US:CG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
+      "retrievedAt": "2026-11-08T06:37:52.703Z",
+      "checkedAt": "2026-11-08T06:37:52.703Z",
+      "sourceHash": "04c9b6abf74fa431ce7f8e108e6ab6a50524a2e0f72d347c4a6fd38a5949b2c2"
     },
     {
       "id": "src-237d29e211c4e002af0208a6",
       "name": "EQUITY:US:BEN",
       "short": "EQUITY:US:BEN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.171Z",
-      "checkedAt": "2026-11-08T05:02:57.171Z",
-      "sourceHash": "185a366c2b8ce6fe56befa04f42b7e607af9d6cff92d7209e1460eb74e067550"
+      "retrievedAt": "2026-11-08T06:37:52.719Z",
+      "checkedAt": "2026-11-08T06:37:52.719Z",
+      "sourceHash": "88830f011c608864bcc5d2b6aa5821c8fbf6d5ad2a37cc12107bce6cbe6066ea"
     },
     {
       "id": "src-b9801499a70677bb015b218e",
       "name": "EQUITY:US:SCHW",
       "short": "EQUITY:US:SCHW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.209Z",
-      "checkedAt": "2026-11-08T05:02:57.209Z",
-      "sourceHash": "ecc25fff411fc4c8d92a12f3d7ec925a86a32c12c6817013f19e5a3961be7cf9"
+      "retrievedAt": "2026-11-08T06:37:52.747Z",
+      "checkedAt": "2026-11-08T06:37:52.747Z",
+      "sourceHash": "e0ff5384543a56577d159e6f3ac2a3ce7d57e6e6881b6b07ba8589222765b67b"
     },
     {
       "id": "src-65538695782361cfffb29020",
       "name": "EQUITY:US:IBKR",
       "short": "EQUITY:US:IBKR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.261Z",
-      "checkedAt": "2026-11-08T05:02:57.261Z",
-      "sourceHash": "7a43f445c617227e71670329c6e1e88202a1300a85f946739c04c44784c474ab"
+      "retrievedAt": "2026-11-08T06:37:52.766Z",
+      "checkedAt": "2026-11-08T06:37:52.766Z",
+      "sourceHash": "eac785f63f1ead345a9d68f63bcebee4685a33a06508db8ea869fd50bf624648"
     },
     {
       "id": "src-563aa0dacd1aa03dcee1ad85",
       "name": "EQUITY:US:GS",
       "short": "EQUITY:US:GS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.289Z",
-      "checkedAt": "2026-11-08T05:02:57.289Z",
-      "sourceHash": "c3fa91193580c9edb56cc0064ba6a674e9fc6da58cef5e479c3c29ccba9b0902"
+      "retrievedAt": "2026-11-08T06:37:52.773Z",
+      "checkedAt": "2026-11-08T06:37:52.773Z",
+      "sourceHash": "1e233f13a8227e34fe3b46fc6c3402b52d2a494541625b2521aaa195f373a326"
     },
     {
       "id": "src-81b168263e538041e104ad36",
       "name": "EQUITY:US:MS",
       "short": "EQUITY:US:MS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T05:02:57.342Z",
-      "checkedAt": "2026-11-08T05:02:57.342Z",
-      "sourceHash": "bf7b5e9ae4ae64d06cd790234c2492a157faf2f57c3ea230e865798fc10d300d"
+      "retrievedAt": "2026-11-08T06:37:52.806Z",
+      "checkedAt": "2026-11-08T06:37:52.806Z",
+      "sourceHash": "cdbe248ceddb9ca8b3cbc7466fabd6f269e0c9b01782c58e37e09e93fd0d6b4d"
     },
     {
-      "id": "src-fda59a068e32fbf26f207e79",
-      "name": "国家统计局 2026 年主要统计信息发布日程表",
-      "short": "NBS-RELEASE-SCHEDULE-2026",
-      "url": "https://www.stats.gov.cn/sj/fbrc/bnxxfb/",
-      "sourceHash": "dc4e07081e16d3c81cf7ee4e68dc42043faf14b57109b4b731fd393a4a2e5646",
-      "retrievedAt": "2026-11-08T05:02:57.566Z",
-      "evidenceKind": "calendar"
+      "id": "src-6332b9500c487b25a50deffa",
+      "name": "每经品牌100指数周涨5%，近八成成分股实现反弹",
+      "short": "NBD-BRAND100-WEEKLY-20261108",
+      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641449.html",
+      "sourceHash": "ba5ae4026e23fe793a14a18c7e219540ae6a9162efcc09c0baef48503a2699f5",
+      "retrievedAt": "2026-11-08T06:37:53.049Z",
+      "evidenceKind": "news"
     },
     {
       "name": "INDEX:CN:SSE",
@@ -4577,10 +4541,10 @@
       "name": "ENERGY:WTI",
       "short": "ENERGY:WTI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
-      "retrievedAt": "2026-11-08T03:48:21.492Z",
-      "checkedAt": "2026-11-08T03:48:21.492Z",
-      "sourceHash": "4fc36669746a894fa1007c98100695adeed32a15dd74b0de632db8b48a6870bb",
-      "id": "retained-c3593c31ed58730a46b101d8"
+      "retrievedAt": "2026-11-08T05:02:56.384Z",
+      "checkedAt": "2026-11-08T05:02:56.384Z",
+      "sourceHash": "77449cf36544428e323616f979fdb82bab35c13805cc1bd9f15312171dbce407",
+      "id": "retained-d8a97ac27b4430e7406d75e2"
     },
     {
       "name": "ENERGY:WTI",
@@ -4644,42 +4608,6 @@
       "id": "retained-4c2ba3eb91fb667f10d4333f"
     },
     {
-      "name": "蜂拥进场抄底！超1900亿资金本周扫货清单出炉",
-      "short": "NBD-4641314",
-      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641314.html",
-      "sourceHash": "d9d9d8177f188793dd0135c9b4b06125d11531d64ff1dfa13a25f1dfe4ebe1d1",
-      "retrievedAt": "2026-11-07T05:10:41.902Z",
-      "evidenceKind": "market",
-      "id": "news-retained-07dee7f98e0d69b9c93dae0e"
-    },
-    {
-      "name": "港股One Week：跌了三个月，下周7只新股上市",
-      "short": "NBD-4641318",
-      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641318.html",
-      "sourceHash": "da3f3cc02a8a6847f1125a551c890ef66a4ae82ddf505a897e134188d2f8be92",
-      "retrievedAt": "2026-11-07T05:10:43.992Z",
-      "evidenceKind": "market",
-      "id": "news-retained-3d90a106f67dcac4dc0a2cfb"
-    },
-    {
-      "name": "10月A股回购图谱：多家行业龙头领衔实施大额回购，仅三成多的公司10月股价表现跑赢大盘",
-      "short": "NBD-4641292",
-      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641292.html",
-      "sourceHash": "28ed2450816c01a891a081a001e0bf99c429cf15e5320dc6e85b097bc78644a2",
-      "retrievedAt": "2026-11-07T06:50:11.431Z",
-      "evidenceKind": "news",
-      "id": "news-retained-0199b7dc7d745800eb2b8efb"
-    },
-    {
-      "name": "中国短剧霸榜全球！百强榜拿下82席，下载收入包揽前三",
-      "short": "NBD-4641316",
-      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641316.html",
-      "sourceHash": "caf021f4f5b3b9625ac35cc9ca20d9975d8131ad79da057bc26bf349ce26538b",
-      "retrievedAt": "2026-11-07T06:50:11.483Z",
-      "evidenceKind": "news",
-      "id": "news-retained-c234202827cb4064f561c883"
-    },
-    {
       "name": "商务部：2025年中华老字号营业收入规模突破2万亿元",
       "short": "NBD-4641329",
       "url": "https://www.nbd.com.cn/articles/2026-11-07/4641329.html",
@@ -4687,15 +4615,6 @@
       "retrievedAt": "2026-11-07T06:50:13.154Z",
       "evidenceKind": "news",
       "id": "news-retained-89d885d54d54ba000cc37f92"
-    },
-    {
-      "name": "Meta首席战略官离职",
-      "short": "NBD-4641313",
-      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641313.html",
-      "sourceHash": "85fdb740e93f0c41f5a89b98b1d49135f5b8b9a8707f2210f1cc1f44418ddda7",
-      "retrievedAt": "2026-11-07T06:50:10.866Z",
-      "evidenceKind": "news",
-      "id": "news-retained-5535e766069d6aca8371faa8"
     },
     {
       "name": "央行、ETF资金跑步入场！黄金持续迎来加仓",
@@ -5139,58 +5058,49 @@
       "id": "news-retained-209c95f2bbdf41889397186c"
     },
     {
-      "name": "联讯仪器前三季度净利润暴增近20倍，股价较高点腰斩后，实控人提议回购护盘",
-      "short": "NBD-4640536",
-      "url": "https://www.nbd.com.cn/articles/4640536.html",
-      "sourceHash": "39070f629f3b26b7773a311e8bc6e51f0aaf25247e33776403d0310059182a50",
-      "retrievedAt": "2026-11-06T09:49:30.705Z",
-      "evidenceKind": "market",
-      "id": "news-retained-2a4230c63174228896458e2d"
+      "name": "特朗普下令美国司法部调查民主党人威胁弹劾行为",
+      "short": "NBD-2026-11-08-4641520",
+      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641520.html",
+      "sourceHash": "d1bd5a5df6e002c96f051ad9e4434b05474fd2b6e771e58f1f628e8c0b53b145",
+      "retrievedAt": "2026-11-08T05:02:53.276Z",
+      "evidenceKind": "news",
+      "id": "news-retained-608033ee7d35397a1c32ce2d"
     },
     {
-      "name": "国家能源局：“十五五”时期我国用电需求预计年均增量达到约6000亿度",
-      "short": "NBD-4640450-NEA-POWER",
-      "url": "https://www.nbd.com.cn/articles/4640450.html",
-      "sourceHash": "dc1672b7406fd1fe6ee76c5879f0dd59a65c5f15d7f1dfe2dd1c2d2da4118838",
-      "retrievedAt": "2026-11-06T15:13:54.230Z",
+      "name": "中国磷复肥工业协会倡议维护行业平稳有序发展",
+      "short": "NBD-2026-11-08-4641521",
+      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641521.html",
+      "sourceHash": "6f0e62c6ea642d2211767f1aa45fc70bd3ecb8c7f0059ddf23ad4b55da6aa5ed",
+      "retrievedAt": "2026-11-08T05:02:53.903Z",
       "evidenceKind": "news",
-      "id": "news-retained-e61e211aeabc01f5eb427b36"
+      "id": "news-retained-26a79d368671fcc5ebccd8be"
     },
     {
-      "name": "六部门：加快推进具身智能、大语言模型、脑机接口、外骨骼等前沿技术在养老领域应用",
-      "short": "NBD-4640560",
-      "url": "https://www.nbd.com.cn/articles/4640560.html",
-      "sourceHash": "f82a05272624ea0229fb8cd234d5783e398b380a6f2e7537ba1a86b55ac468a0",
-      "retrievedAt": "2026-11-06T09:49:32.045Z",
+      "name": "湖北能源控股股东拟增持不超8亿元 定增认购股份已浮亏",
+      "short": "NBD-2026-11-08-4641519",
+      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641519.html",
+      "sourceHash": "45e6b513162d8a417e760e8208e178ee83f8d2f3c7f3c8bf4a6f9cb5cdb26418",
+      "retrievedAt": "2026-11-08T05:02:54.137Z",
       "evidenceKind": "news",
-      "id": "news-retained-b8387d8965b4b65db076a3ad"
+      "id": "news-retained-5a345e57b80d6112fcf0d421"
     },
     {
-      "name": "暂停数据中心审批 美股最糟糕交易日之一背后 得州新州长说了什么",
-      "short": "NBD-4640593",
-      "url": "https://www.nbd.com.cn/articles/4640593.html",
-      "sourceHash": "233db655acfca3438098f46356d7eb5278c5d26224fb38a05b39e7a77e1be2c7",
-      "retrievedAt": "2026-11-06T12:23:19.747Z",
+      "name": "以军称以北部出现敌方飞行器为识别错误误报",
+      "short": "NBD-2026-11-08-4641539",
+      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641539.html",
+      "sourceHash": "2dd77e177e1ea3869539399a01615a3ca5d60a58abbc0fa5014d7fc2a7c12c80",
+      "retrievedAt": "2026-11-08T05:02:55.089Z",
       "evidenceKind": "news",
-      "id": "news-retained-fdf34eae5c6541b9be695b22"
+      "id": "news-retained-8059fa18bdf285d7baf18412"
     },
     {
-      "name": "百亿量化私募产品及员工违规被罚",
-      "short": "NBD-4640610",
-      "url": "https://www.nbd.com.cn/articles/4640610.html",
-      "sourceHash": "e8cb837d76235fed944f618e261517d50dcfbb32ca13ef1ac8336d902a74c4a0",
-      "retrievedAt": "2026-11-06T12:23:21.563Z",
+      "name": "西渝高铁北碚天府嘉陵江特大桥顺利合龙",
+      "short": "NBD-2026-11-08-4641541",
+      "url": "https://www.nbd.com.cn/articles/2026-11-08/4641541.html",
+      "sourceHash": "913540a929ebcc429041c4ecee61e367e23c4da23e77b5e0f2e773a038a2ecae",
+      "retrievedAt": "2026-11-08T05:02:54.734Z",
       "evidenceKind": "news",
-      "id": "news-retained-fb8e3f0d646e8abeac9849e4"
-    },
-    {
-      "name": "六部门：加快推进具身智能、大语言模型、脑机接口、外骨骼等前沿技术在养老领域应用",
-      "short": "NBD-4640560-ELDER-TECH",
-      "url": "https://www.nbd.com.cn/articles/4640560.html",
-      "sourceHash": "b837c4808f3d1b29629571b7df1577367c4f9b62812914dc59e4d4c3c80155df",
-      "retrievedAt": "2026-11-06T15:13:54.081Z",
-      "evidenceKind": "news",
-      "id": "news-retained-a830e31ed7c0100569c2db69"
+      "id": "news-retained-fa895f30257edac677abb113"
     },
     {
       "name": "百亿量化私募，产品及员工违规被罚",
@@ -6154,6 +6064,51 @@
       "retrievedAt": "2026-11-08T03:48:19.256Z",
       "evidenceKind": "macro",
       "id": "news-retained-958b3ce77399b1a11cb7d98b"
+    },
+    {
+      "name": "蜂拥进场抄底！超1900亿资金本周扫货清单出炉",
+      "short": "NBD-4641314",
+      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641314.html",
+      "sourceHash": "d9d9d8177f188793dd0135c9b4b06125d11531d64ff1dfa13a25f1dfe4ebe1d1",
+      "retrievedAt": "2026-11-07T05:10:41.902Z",
+      "evidenceKind": "market",
+      "id": "news-retained-07dee7f98e0d69b9c93dae0e"
+    },
+    {
+      "name": "港股One Week：跌了三个月，下周7只新股上市",
+      "short": "NBD-4641318",
+      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641318.html",
+      "sourceHash": "da3f3cc02a8a6847f1125a551c890ef66a4ae82ddf505a897e134188d2f8be92",
+      "retrievedAt": "2026-11-07T05:10:43.992Z",
+      "evidenceKind": "market",
+      "id": "news-retained-3d90a106f67dcac4dc0a2cfb"
+    },
+    {
+      "name": "10月A股回购图谱：多家行业龙头领衔实施大额回购，仅三成多的公司10月股价表现跑赢大盘",
+      "short": "NBD-4641292",
+      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641292.html",
+      "sourceHash": "28ed2450816c01a891a081a001e0bf99c429cf15e5320dc6e85b097bc78644a2",
+      "retrievedAt": "2026-11-07T06:50:11.431Z",
+      "evidenceKind": "news",
+      "id": "news-retained-0199b7dc7d745800eb2b8efb"
+    },
+    {
+      "name": "中国短剧霸榜全球！百强榜拿下82席，下载收入包揽前三",
+      "short": "NBD-4641316",
+      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641316.html",
+      "sourceHash": "caf021f4f5b3b9625ac35cc9ca20d9975d8131ad79da057bc26bf349ce26538b",
+      "retrievedAt": "2026-11-07T06:50:11.483Z",
+      "evidenceKind": "news",
+      "id": "news-retained-c234202827cb4064f561c883"
+    },
+    {
+      "name": "Meta首席战略官离职",
+      "short": "NBD-4641313",
+      "url": "https://www.nbd.com.cn/articles/2026-11-07/4641313.html",
+      "sourceHash": "85fdb740e93f0c41f5a89b98b1d49135f5b8b9a8707f2210f1cc1f44418ddda7",
+      "retrievedAt": "2026-11-07T06:50:10.866Z",
+      "evidenceKind": "news",
+      "id": "news-retained-5535e766069d6aca8371faa8"
     },
     {
       "id": "amd-q2",
@@ -7568,5 +7523,5 @@
       "evidenceKind": "market"
     }
   ],
-  "_inputHash": "cf7ad072b57d955aa026243c488016691c9c1cc6531b0bce748e1be82d87163e"
+  "_inputHash": "8c02fa00f6538875476cfdd683d5ed19bfdbcdac05d061ba02c84ec7463209cf"
 }
