@@ -1,6 +1,6 @@
 {
-  "status": "submitted-not-published",
-  "error": null,
+  "status": "deployment-failed",
+  "error": "仓库报告已提交，但本次公网部署或页面验收失败",
   "issues": [],
   "execution": {
     "executionId": "20261108T2157Z-global-main",
@@ -10,7 +10,7 @@
   },
   "deadlineAt": "2026-11-08T22:18:16.112Z",
   "requestId": "20261108T2157Z-global-main",
-  "at": "2026-11-08T22:02:38.325Z",
+  "at": "2026-11-08T22:11:09.271Z",
   "history": [
     {
       "status": "collecting",
@@ -31,6 +31,11 @@
       "status": "submitted-not-published",
       "at": "2026-11-08T22:02:38.325Z",
       "revision": 1
+    },
+    {
+      "status": "deployment-failed",
+      "at": "2026-11-08T22:11:09.271Z",
+      "workflowRunId": 42528196126
     }
   ],
   "packetHash": "e2bf0d92ee569ec399adb70d236cbf614c00be520a644b237017159f097899a3",
@@ -42,10 +47,21 @@
   "validationStage": null,
   "terminal": false,
   "revisionPath": "runtime/submissions/20261108T2157Z-global-main--r1.json",
-  "published": false,
-  "repositoryPublished": false,
+  "published": true,
+  "repositoryPublished": true,
   "deployed": false,
   "batchId": "20261108T2157Z-global-main",
   "reportId": "2026-11-09-0602",
-  "preparedModules": 7
+  "preparedModules": 7,
+  "workflowRunId": 42528196126,
+  "deploymentWorkflowRunId": 42528196126,
+  "deployment": {
+    "status": "failed",
+    "workflowRunId": 42528196126,
+    "buildId": null,
+    "checkedAt": null,
+    "jobStatus": "failure"
+  },
+  "executionStartedAt": "2026-11-08T21:58:16.112Z",
+  "executionFinishedAt": "2026-11-08T22:11:09.271Z"
 }
