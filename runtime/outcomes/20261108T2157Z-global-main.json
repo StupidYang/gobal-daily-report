@@ -1,14 +1,19 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.newsItems[0].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]\neditorial.newsItems[1].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]",
+  "issues": [
+    "editorial.newsItems[0].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]",
+    "editorial.newsItems[1].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]"
+  ],
   "execution": {
     "executionId": "20261108T2157Z-global-main",
-    "generation": 437
+    "generation": 437,
+    "packetHash": "e2bf0d92ee569ec399adb70d236cbf614c00be520a644b237017159f097899a3",
+    "deadlineAt": "2026-11-08T22:18:16.112Z"
   },
   "deadlineAt": "2026-11-08T22:18:16.112Z",
   "requestId": "20261108T2157Z-global-main",
-  "at": "2026-11-08T21:58:29.329Z",
+  "at": "2026-11-08T22:01:53.926Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +24,34 @@
       "status": "ready-for-analysis",
       "at": "2026-11-08T21:58:29.329Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-08T22:01:53.926Z",
+      "revision": 0
     }
   ],
   "packetHash": "e2bf0d92ee569ec399adb70d236cbf614c00be520a644b237017159f097899a3",
-  "collectionDurationMs": 5265
+  "collectionDurationMs": 5265,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "bb8848ce17293056a473f53bf950eafe5becc560dbfac6a58dfdb50cdf90bb54",
+  "validationIssues": [
+    {
+      "path": "editorial.newsItems[0].sourceUrls",
+      "code": "required",
+      "message": "必须提供本轮实际取得的具体sourceUrls"
+    },
+    {
+      "path": "editorial.newsItems[1].sourceUrls",
+      "code": "required",
+      "message": "必须提供本轮实际取得的具体sourceUrls"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261108T2157Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
