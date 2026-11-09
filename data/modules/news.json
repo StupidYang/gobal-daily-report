@@ -1,22 +1,22 @@
 {
   "moduleVersion": 1,
   "module": "news",
-  "runId": "20261109T1915Z-global-main-news",
-  "generatedAt": "2026-11-10T03:19:56.371+08:00",
+  "runId": "20261109T201844Z-us-session-news",
+  "generatedAt": "2026-11-10T04:27:02.565+08:00",
   "dataAsOf": null,
   "status": "partial",
   "dataMode": "production",
   "validationOnly": false,
   "execution": {
-    "batchId": "20261109T1915Z-global-main",
+    "batchId": "20261109T201844Z-us-session",
     "mode": "scheduled-batch",
     "role": "news"
   },
   "payload": {
     "newsroom": {
       "scopeExclusions": [],
-      "windowStart": "2026-11-08T19:19:56.371Z",
-      "windowEnd": "2026-11-09T19:19:56.371Z",
+      "windowStart": "2026-11-08T20:27:02.565Z",
+      "windowEnd": "2026-11-09T20:27:02.565Z",
       "items": [
         {
           "eventId": "NBD-USD-IRAN-TALKS-2026-11-09",
@@ -1461,11 +1461,16 @@
           "assessment": "我的判断：这是本轮最容易被忽略的一条。股指大涨当日通胀预期停在3.9%，说明风险资产上涨来自仓位与产业叙事，不是宏观约束解除。",
           "counterRisk": "单月调查读数波动大，1年期预期对油价敏感，油价若继续回落可能下修。",
           "sourceIds": [
-            "src-6a3422a63d49e0955676b674"
+            "news-retained-84cac237b80734fc52fc903e"
           ],
           "evidenceFactIds": [
             "MACRO:US:NYFED-1Y-INFL-EXP-2026-10"
-          ]
+          ],
+          "retention": {
+            "runId": "20261109T1915Z-global-main-news",
+            "generatedAt": "2026-11-10T03:19:56.371+08:00",
+            "reason": "仍在24小时窗口内，沿用原文、分析及来源时点"
+          }
         },
         {
           "eventId": "EV-US-SOX-REBOUND-20261109",
@@ -1481,12 +1486,17 @@
           "assessment": "我的判断：这是『换仓不换仓底』的第二次确认。若SOX再上行而英伟达不跟，说明定价已从『谁最赚钱』切换到『谁的治理与叙事风险最小』。",
           "counterRisk": "SOX单日6%级别反弹本身是高波动特征，11月5日暴跌低点是脆弱基准，用『较暴跌收盘反弹10%』衡量修复程度会高估健康度。",
           "sourceIds": [
-            "src-f81ef9d0acbac5ae2a8ac28b"
+            "news-retained-57e979654ccdc1d1b5ee908e"
           ],
           "evidenceFactIds": [
             "FLOW:US:SOX-REBOUND-2026-11-09",
             "FLOW:US:SOX-REBOUND-PCT-2026-11-09"
-          ]
+          ],
+          "retention": {
+            "runId": "20261109T1915Z-global-main-news",
+            "generatedAt": "2026-11-10T03:19:56.371+08:00",
+            "reason": "仍在24小时窗口内，沿用原文、分析及来源时点"
+          }
         },
         {
           "eventId": "EV-CN-QDII-NVDA-20261110",
@@ -1502,10 +1512,111 @@
           "assessment": "我的判断：QDII的集中度让英伟达治理风险具备了向A股、港股传导的通道——不是基本面传导，是同一批资金的跨市场风险预算收缩。",
           "counterRisk": "季报持仓有滞后，四季度是否减仓未知；『超60只』是产品数量而非市值占比，不能据此推算抛压规模。",
           "sourceIds": [
-            "src-85ad8aa262564eb9dc9ab88c"
+            "news-retained-9930f00696079ec8a20bf308"
           ],
           "evidenceFactIds": [
             "FLOW:US:QDII-NVDA-HEAVY-COUNT-2026Q3"
+          ],
+          "retention": {
+            "runId": "20261109T1915Z-global-main-news",
+            "generatedAt": "2026-11-10T03:19:56.371+08:00",
+            "reason": "仍在24小时窗口内，沿用原文、分析及来源时点"
+          }
+        },
+        {
+          "eventId": "US-2026-1109-2019-CLOSE-RUN",
+          "title": "美股尾盘涨幅再扩大，标普500 涨 2.62%、纳指100 涨 3.67%",
+          "regions": [
+            "US"
+          ],
+          "kind": "market",
+          "publishedAt": null,
+          "eventAt": "2026-11-09T20:19:10.000Z",
+          "sourceDateText": "本轮采集包观测时刻 2026-11-09T20:19:10.000Z",
+          "dateUncertainty": "观测时刻明确，不是新闻发布时间",
+          "summary": "本轮延时报价（asOf 2026-11-09T20:19:10.000Z）：标普500 7570.13（+2.62%）、纳指综合 25321.68（+3.02%）、纳指100 27980.61（+3.67%）、道指 52498.45（+2.36%）、罗素2000 2847.65（+3.40%）；VIX 19.81（-22.74%）。相比上一版 2026-11-10-0319 五大指数涨幅全部走阔。",
+          "plainImpact": "对持有美股宽基的投资者，指数层面比一小时前更强；但涨得最多的仍是二线芯片，持有传统软件或事件标的的体验与指数不同。",
+          "assessment": "我的判断：这是尾盘风险偏好继续修复，不是放量普涨确认；缺少成交量与广度数据，收盘前仍可能回吐。",
+          "sourceIds": [
+            "src-ccf154d91618a129c9312308",
+            "src-6dfbb5f3fd8a2ed804ada97f",
+            "src-8740577e8c7803f27f0171ca"
+          ],
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NDX",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:DOW",
+            "INDEX:US:RUSSELL2000",
+            "EQUITY:US:NVDA",
+            "VOL:VIX"
+          ]
+        },
+        {
+          "eventId": "US-2026-1109-2351-SPX-2PCT",
+          "title": "标普500 指数涨幅扩大至 2.0%，报 7524.15 点",
+          "regions": [
+            "US"
+          ],
+          "kind": "market",
+          "publishedAt": "2026-11-09T15:51:58Z",
+          "eventAt": "2026-11-09T15:51:58Z",
+          "sourceDateText": "每日经济新闻 2026-11-09 23:51:58（北京时间）",
+          "dateUncertainty": "原文发布时间明确",
+          "summary": "每经 AI 快讯：11 月 9 日标普500 指数涨幅扩大，现涨 2.0%，最新报 7524.15 点；道琼斯指数涨 1.65%，纳斯达克综合指数涨 2.5%。这是本轮尾盘之前更早时点的盘中进展。",
+          "plainImpact": "提供了当日涨幅逐级抬升的时间线：早段 2.0% 到尾盘 2.62%，说明上涨不是一次性跳升。",
+          "assessment": "我的判断：该快讯只能支持「涨幅逐步扩大」的过程描述，不能用它的数值替代本轮 20:19Z 的报价。",
+          "sourceIds": [
+            "src-ccf154d91618a129c9312308"
+          ],
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:DOW"
+          ]
+        },
+        {
+          "eventId": "US-2026-1109-2304-AMD-REBOUND",
+          "title": "AMD 连续两个交易日大幅反弹，当日上涨 8.8%",
+          "regions": [
+            "US"
+          ],
+          "kind": "market",
+          "publishedAt": "2026-11-09T15:04:26Z",
+          "eventAt": "2026-11-09T15:04:26Z",
+          "sourceDateText": "每日经济新闻 2026-11-09 23:04:26（北京时间）",
+          "dateUncertainty": "原文发布时间明确",
+          "summary": "每经 AI 快讯：AMD 连续两个交易日大幅反弹，当日上涨 8.8%，上一交易日上涨 11%，累计涨幅接近 20%，成为半导体板块中首只完全收复 11 月 5 日暴跌 17% 失地的股票。",
+          "plainImpact": "解释了为什么本轮半导体二线仍能领涨：超跌修复已经在早段启动，尾盘是延续而非新故事。",
+          "assessment": "我的判断：这与本轮 AMD +14.14% 方向一致，但快讯的 8.8% 是更早时点，不能当作最新涨幅。",
+          "sourceIds": [
+            "src-6dfbb5f3fd8a2ed804ada97f"
+          ],
+          "evidenceFactIds": [
+            "EQUITY:US:AMD",
+            "INDEX:US:NDX"
+          ]
+        },
+        {
+          "eventId": "US-2026-1110-0005-NYFED-INFL",
+          "title": "美国 10 月纽约联储 1 年通胀预期为 3.9%",
+          "regions": [
+            "US"
+          ],
+          "kind": "market",
+          "publishedAt": "2026-11-09T16:05:39Z",
+          "eventAt": "2026-11-09T16:05:39Z",
+          "sourceDateText": "每日经济新闻 2026-11-10 00:05:39（北京时间）",
+          "dateUncertainty": "原文发布时间明确",
+          "summary": "每经 AI 快讯：美国 10 月纽约联储 1 年通胀预期为 3.9%，预期 3.78%，前值 3.90%。属于已发布的调查数据，不是本轮盘中报价。",
+          "plainImpact": "通胀预期略高于预期但持平前值，为次日 CPI 提供了背景，短期内不改变利率框架。",
+          "assessment": "我的判断：单条调查数据不足以改判利率路径；真正的触发点是 11-10 08:30 ET 的 BLS CPI 官方发布。",
+          "sourceIds": [
+            "src-6a3422a63d49e0955676b674",
+            "src-0dcea3fbd21af0001c0fcc43"
+          ],
+          "evidenceFactIds": [
+            "RATE:US10Y"
           ]
         }
       ],
@@ -4927,51 +5038,52 @@
           "assessment": "我的判断：把它当治理折价而非基本面事件。可检验的证据是：若后续出现董事会或审计层面的正式动作，折价会扩大；若只有媒体讨论，数日内会被财报叙事覆盖。",
           "counterRisk": "个人事件与公司经营无直接法律关系，历史上同类事件对股价的影响通常在数个交易日内衰减。",
           "sourceIds": [
-            "src-85ad8aa262564eb9dc9ab88c"
+            "news-retained-9930f00696079ec8a20bf308"
           ],
           "evidenceFactIds": [
             "RESEARCH:US:NVDA-GOVERNANCE-2026-11-08"
           ],
-          "legacyReason": "新提交材料缺有效来源时间或不在本轮24小时窗口；保留背景，不计入当前新闻覆盖",
+          "legacyReason": "不在本轮24小时窗口",
           "missingFields": [],
           "retention": {
             "runId": null,
             "generatedAt": null,
             "reason": "未重写来源时间，未作为本轮新鲜新闻"
-          }
+          },
+          "id": "EV-US-NVDA-GOVERNANCE-20261108"
         }
       ],
       "coverage": {
         "status": "partial",
-        "note": "本轮请求14份文档，实际取得9份正文：3份每经稿件（纽约联储通胀预期、费半反弹、QDII英伟达持仓）与6份官方页（财政部par、联储H.15、FOMC日历、EIA周报日程、BEA日程、统计局最新发布）。5份每经文档抓取失败，未进入引用。全球其他地区（WORLD）本轮无独立取得正文的事件，覆盖不完整。",
+        "note": "本轮 15 份请求文档 10 份成功取得并阅读，5 篇每经快讯抓取失败；新登记 4 条新闻（含 1 条本轮报价观测与 3 条带原始发布时间的已读快讯），未用旧轮来源、请求计划、失败 URL 或搜索摘要凑数。官方日历与利率材料不作为新闻类型。",
         "regions": {
-          "CN": "1条（QDII重仓英伟达，含美股治理事件的中文报道视角）",
-          "US": "2条（纽约联储通胀预期、费城半导体反弹）+1条治理事件",
-          "WORLD": "0条，本轮未取得可核验原文"
+          "CN": "本轮未取得可核验的中国内地独立新事件，相关资产按沿用处理",
+          "US": "4 条均为美国市场/宏观数据，已标注原始发布时间或观测时点",
+          "WORLD": "本轮无独立可核验的全球其他地区事件"
         },
         "gaps": [
-          "WORLD区域无新增可核验事件，未用搜索摘要或首页凑数",
-          "每经5份文档抓取失败，含标普涨幅、金龙指数、批发库存、A50期货、688798停牌重组",
-          "财政局与劳工部日历本轮未纳入请求，节假日前瞻依赖FOMC/EIA/BEA官方页"
+          "未达到 18–30 条滚动窗口目标，且 WORLD 区域缺位",
+          "5 篇每经快讯抓取失败，不能进入引用",
+          "本轮无 general 类综合时事，全部为 market 类，不以天气预报或重复新闻填充"
         ],
-        "scope": "本轮请求14份文档，实际取得9份正文：3份每经稿件（纽约联储通胀预期、费半反弹、QDII英伟达持仓）与6份官方页（财政部par、联储H.15、FOMC日历、EIA周报日程、BEA日程、统计局最新发布）。5份每经文档抓取失败，未进入引用。全球其他地区（WORLD）本轮无独立取得正文的事件，覆盖不完整。",
+        "scope": "本轮 15 份请求文档 10 份成功取得并阅读，5 篇每经快讯抓取失败；新登记 4 条新闻（含 1 条本轮报价观测与 3 条带原始发布时间的已读快讯），未用旧轮来源、请求计划、失败 URL 或搜索摘要凑数。官方日历与利率材料不作为新闻类型。",
         "targetMin": 18,
-        "verified": 3,
-        "retained": 62,
-        "active": 65,
-        "legacy": 121,
+        "verified": 4,
+        "retained": 65,
+        "active": 69,
+        "legacy": 120,
         "general": 19,
-        "market": 46,
-        "externalVerified": 64,
+        "market": 50,
+        "externalVerified": 68,
         "marketDataOnly": 1,
         "regionCounts": {
           "CN": 37,
-          "US": 24,
+          "US": 28,
           "WORLD": 9
         },
         "externalRegionCounts": {
           "CN": 36,
-          "US": 24,
+          "US": 28,
           "WORLD": 9
         },
         "externalGeneral": 19,
@@ -4984,120 +5096,129 @@
   },
   "sources": [
     {
-      "id": "src-fe3255ea546db4b012c0272c",
-      "name": "FOMC Meeting Calendar",
-      "short": "FOMC-CAL",
-      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-      "sourceHash": "c32abc834d37c2668817398095373ac4ed4ce585be40490f13df91f913a64602",
-      "retrievedAt": "2026-11-09T19:15:33.740Z",
-      "evidenceKind": "calendar"
-    },
-    {
       "id": "src-4f174cda8a9a92d7a9da2bdd",
       "name": "INDEX:CN:SSE",
       "short": "INDEX:CN:SSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:33.821Z",
-      "checkedAt": "2026-11-09T19:15:33.821Z",
-      "sourceHash": "a0b930fae66ea8e18aa1ed3b3e28f1d91e57147dda1d0695234519d3c6cec1c0"
-    },
-    {
-      "id": "src-56f8b6cf9289eb812069329d",
-      "name": "INDEX:CN:SZSE",
-      "short": "INDEX:CN:SZSE",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:33.971Z",
-      "checkedAt": "2026-11-09T19:15:33.971Z",
-      "sourceHash": "bcb5217e58ae2826be7cfcba0e6df65c0cba9f05b0660d2af29910e04bab84da"
+      "retrievedAt": "2026-11-09T20:19:07.264Z",
+      "checkedAt": "2026-11-09T20:19:07.264Z",
+      "sourceHash": "5f3da6984e0f2681a93c379888e877e2a222437311a91670c6593a63f9818172"
     },
     {
       "id": "src-43a3f5dcc80ebd4231e735b1",
       "name": "EQUITY:US:AAPL",
       "short": "EQUITY:US:AAPL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:34.949Z",
-      "checkedAt": "2026-11-09T19:15:34.949Z",
-      "sourceHash": "b516824b1e1f217a5c83fae530c7d038e5209fb98db4208f671327ffe3f970a3"
+      "retrievedAt": "2026-11-09T20:19:07.335Z",
+      "checkedAt": "2026-11-09T20:19:07.335Z",
+      "sourceHash": "9d4267a2145724e1e5ecaf05cc1abe2d66b949b32e92aba6bb564ef31fdfdb2d"
     },
     {
-      "id": "src-aaabb3face464c1123b1140e",
-      "name": "EIA Weekly Petroleum Status Report Schedule",
-      "short": "EIA-WPSR-SCHED",
-      "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
-      "sourceHash": "fc541adcac23e9856c45ae35c3b15b71b301eec3dc51494eb5649280fdc498f6",
-      "retrievedAt": "2026-11-09T19:15:35.132Z",
+      "id": "src-67b767aac259adf10f9cb865",
+      "name": "NVIDIA Corporation SEC submissions index",
+      "short": "SEC-NVDA-SUBMISSIONS",
+      "url": "https://data.sec.gov/submissions/CIK0001045810.json",
+      "sourceHash": "db787ea656392c0442099ee6498a978e5b0bfba2c14e47a68dda393ddaff0375",
+      "retrievedAt": "2026-11-09T20:19:08.128Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-56f8b6cf9289eb812069329d",
+      "name": "INDEX:CN:SZSE",
+      "short": "INDEX:CN:SZSE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:08.244Z",
+      "checkedAt": "2026-11-09T20:19:08.244Z",
+      "sourceHash": "805c3f09cddca0503be34275ad779236997c3b74475b46717f3fcbc165f0d0d1"
+    },
+    {
+      "id": "src-fe3255ea546db4b012c0272c",
+      "name": "FOMC Meeting Calendar",
+      "short": "FOMC-CAL-2026",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "sourceHash": "3a40861b34d229dfb731b4c11b6b258900173c0b10415344e3fa83aade8723a8",
+      "retrievedAt": "2026-11-09T20:19:08.321Z",
       "evidenceKind": "calendar"
     },
     {
-      "id": "src-6a3422a63d49e0955676b674",
-      "name": "美国10月纽约联储1年通胀预期为3.9%",
-      "short": "NBD-4643064",
-      "url": "https://www.nbd.com.cn/articles/2026-11-10/4643064.html",
-      "sourceHash": "90b83ea2832bbe67530e074adc0802640d5b178ff916e1bf09f2c1e5b1fa3e3e",
-      "retrievedAt": "2026-11-09T19:15:36.032Z",
-      "evidenceKind": "macro"
+      "id": "src-ccf154d91618a129c9312308",
+      "name": "标普500指数涨幅扩大至2.0%",
+      "short": "NBD-4643056",
+      "url": "https://www.nbd.com.cn/articles/2026-11-09/4643056.html",
+      "sourceHash": "886c4cb70f35bc6a5dd7599b84888a2e3e208659e1d911a8a4888a135cd95ddb",
+      "retrievedAt": "2026-11-09T20:19:09.144Z",
+      "evidenceKind": "market"
     },
     {
       "id": "src-d842e972a4aec4350bb2cdef",
       "name": "EQUITY:US:MSFT",
       "short": "EQUITY:US:MSFT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:36.141Z",
-      "checkedAt": "2026-11-09T19:15:36.141Z",
-      "sourceHash": "8c8eada367bf19080a7deea809d784057224f8106a4bbff5480a3b49837c073a"
+      "retrievedAt": "2026-11-09T20:19:09.461Z",
+      "checkedAt": "2026-11-09T20:19:09.461Z",
+      "sourceHash": "dea3161814a618e28abda04a98f4f750937720cccca315f8eb645328fb1aebc2"
     },
     {
       "id": "src-d710626606bba04bd08ad849",
       "name": "INDEX:CN:CHINEXT",
       "short": "INDEX:CN:CHINEXT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:36.246Z",
-      "checkedAt": "2026-11-09T19:15:36.246Z",
-      "sourceHash": "7f4ea3990142f4ac4e6f75da7d01c6d52d050b3b65114ec08b67c9a97cdbee3b"
+      "retrievedAt": "2026-11-09T20:19:09.511Z",
+      "checkedAt": "2026-11-09T20:19:09.511Z",
+      "sourceHash": "b97f39a938ed906de0004fd3916153e8547238ae6d4744444a70450830681b23"
     },
     {
-      "id": "src-fd4e4b2ac67cbbe5507866a6",
-      "name": "BEA News Release Schedule",
-      "short": "BEA-SCHED",
-      "url": "https://www.bea.gov/news/schedule",
-      "sourceHash": "d64cf06309d01f9893da4f421903da04ffcfacaa9182af7ed2e944b5f0fd8014",
-      "retrievedAt": "2026-11-09T19:15:36.392Z",
+      "id": "src-aaabb3face464c1123b1140e",
+      "name": "Weekly Petroleum Status Report Schedule",
+      "short": "EIA-WPSR-SCHED",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+      "sourceHash": "d6aa188dfbe334247acce70e3730e484f5e62e9d397e6164b2b32da1b30847da",
+      "retrievedAt": "2026-11-09T20:19:09.691Z",
       "evidenceKind": "calendar"
+    },
+    {
+      "id": "src-aaf0bf4872c3360bab9f60f4",
+      "name": "Daily Treasury Par Yield Curve Rates 2026",
+      "short": "TREAS-PAR-2026",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
+      "sourceHash": "a2c61c27a95c6a45ceac850ce9e5ed00903bed1b9ac43732c027c15d94e657da",
+      "retrievedAt": "2026-11-09T20:19:09.818Z",
+      "evidenceKind": "macro"
     },
     {
       "id": "src-34668c6d731a57ed1c1023dc",
       "name": "EQUITY:US:NVDA",
       "short": "EQUITY:US:NVDA",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:36.494Z",
-      "checkedAt": "2026-11-09T19:15:36.494Z",
-      "sourceHash": "dc84ea6fa52210c73053acea957679d613f6b810cd624fff0922d2473f3a0454"
+      "retrievedAt": "2026-11-09T20:19:09.872Z",
+      "checkedAt": "2026-11-09T20:19:09.872Z",
+      "sourceHash": "70f0f6f4888c47953d067e66a6b546365ab9b789c6415cf6f1d1132ef8f7c66a"
     },
     {
       "id": "src-9940126ea964d09e7fafaaff",
       "name": "INDEX:CN:STAR50",
       "short": "INDEX:CN:STAR50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:36.600Z",
-      "checkedAt": "2026-11-09T19:15:36.600Z",
-      "sourceHash": "043acd2595b8ec27e12c9aad449327e32b7e56b90424147ecd696d25417b5237"
+      "retrievedAt": "2026-11-09T20:19:09.926Z",
+      "checkedAt": "2026-11-09T20:19:09.926Z",
+      "sourceHash": "b6a7a54cdda77d3fec21c1af663b037164038d88fce5772c069ceac21144e48a"
     },
     {
-      "id": "src-aaf0bf4872c3360bab9f60f4",
-      "name": "Daily Treasury Par Yield Curve Rates 2026",
-      "short": "TREAS-PAR",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
-      "sourceHash": "a2c61c27a95c6a45ceac850ce9e5ed00903bed1b9ac43732c027c15d94e657da",
-      "retrievedAt": "2026-11-09T19:15:36.724Z",
-      "evidenceKind": "macro"
+      "id": "src-fd4e4b2ac67cbbe5507866a6",
+      "name": "BEA Release Schedule",
+      "short": "BEA-SCHED-2026",
+      "url": "https://www.bea.gov/news/schedule",
+      "sourceHash": "a73a2c33f50af12ce9a69b7f69fff59836d4b498b7234551d3a3b1d45dc9d936",
+      "retrievedAt": "2026-11-09T20:19:10.013Z",
+      "evidenceKind": "calendar"
     },
     {
       "id": "src-8740577e8c7803f27f0171ca",
       "name": "H.15 Selected Interest Rates",
       "short": "FED-H15",
       "url": "https://www.federalreserve.gov/releases/h15/",
-      "sourceHash": "ed4ed6b3a410c7c4be78fc20359ee15b456a374ade9536f59f0c68c3640bd243",
-      "retrievedAt": "2026-11-09T19:15:36.890Z",
+      "sourceHash": "339e6896970a4ab9e9968fc7061dc97ca0aa2eb26b005d754efa06de8ff4b0dd",
+      "retrievedAt": "2026-11-09T20:19:10.055Z",
       "evidenceKind": "macro"
     },
     {
@@ -5105,594 +5226,612 @@
       "name": "EQUITY:US:GOOGL",
       "short": "EQUITY:US:GOOGL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:37.024Z",
-      "checkedAt": "2026-11-09T19:15:37.024Z",
-      "sourceHash": "4c28f1e542233d5f633dae90f1cefe2da2bbf9d3d8f6c0925b4da1e869b5f41e"
+      "retrievedAt": "2026-11-09T20:19:10.118Z",
+      "checkedAt": "2026-11-09T20:19:10.118Z",
+      "sourceHash": "487abda886b65b3be260833fabbdb8c13f4654daecef792dc0bbb18ded22f7e8"
     },
     {
       "id": "src-c7ebed6429fdab05af3d4e37",
       "name": "INDEX:CN:CSI300",
       "short": "INDEX:CN:CSI300",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:37.171Z",
-      "checkedAt": "2026-11-09T19:15:37.171Z",
-      "sourceHash": "b555585b61d90e2c137fcb9cb9a7292bf3a164dc67cf7733c550a27d511bcbab"
+      "retrievedAt": "2026-11-09T20:19:10.170Z",
+      "checkedAt": "2026-11-09T20:19:10.170Z",
+      "sourceHash": "e1ad7e03cf962ee99a06de55b7e1786829f870bba596b328ce227744e98d0da0"
+    },
+    {
+      "id": "src-0dcea3fbd21af0001c0fcc43",
+      "name": "Schedule of Releases for the Consumer Price Index",
+      "short": "BLS-CPI-SCHED",
+      "url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+      "sourceHash": "cece37b1f964eed1cd51215764a55fb26e310da31b441ab9c65758989c9afc17",
+      "retrievedAt": "2026-11-09T20:19:10.203Z",
+      "evidenceKind": "calendar"
+    },
+    {
+      "id": "src-6a3422a63d49e0955676b674",
+      "name": "美国10月纽约联储1年通胀预期为3.9%",
+      "short": "NBD-4643064",
+      "url": "https://www.nbd.com.cn/articles/2026-11-10/4643064.html",
+      "sourceHash": "b1c860a628c6cc56e64869fd1c173ca0bb207cb0538fd6cd8c371030a9d69c89",
+      "retrievedAt": "2026-11-09T20:19:11.469Z",
+      "evidenceKind": "macro"
     },
     {
       "id": "src-04b8bdcf2a7320327379db05",
       "name": "EQUITY:US:AMZN",
       "short": "EQUITY:US:AMZN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:37.752Z",
-      "checkedAt": "2026-11-09T19:15:37.752Z",
-      "sourceHash": "b4a97691007b4c88e6d5ee441ce9f03ae0ef154c74269666ba08cee0666bd72f"
-    },
-    {
-      "id": "src-eaadd6d97d93eb6207a16fc2",
-      "name": "INDEX:CN:CSI500",
-      "short": "INDEX:CN:CSI500",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:37.960Z",
-      "checkedAt": "2026-11-09T19:15:37.960Z",
-      "sourceHash": "3d18e2815f7f110466f1853c991bb91c81440a465574f5da9ba73f54fe4ac7d8"
-    },
-    {
-      "id": "src-f81ef9d0acbac5ae2a8ac28b",
-      "name": "美股半导体板块强势反弹",
-      "short": "NBD-4643058",
-      "url": "https://www.nbd.com.cn/articles/2026-11-09/4643058.html",
-      "sourceHash": "10f24f77e3bb6163080cda1fd7ac8578716b591da4ff992a285e9078a7e48e68",
-      "retrievedAt": "2026-11-09T19:15:38.093Z",
-      "evidenceKind": "market"
+      "retrievedAt": "2026-11-09T20:19:11.529Z",
+      "checkedAt": "2026-11-09T20:19:11.529Z",
+      "sourceHash": "9f1809519fc3a538874bd02428d8e0771144ef6381aac9b5c6b5e94cef5c0826"
     },
     {
       "id": "src-78e6f09e34616fdc208b1d39",
       "name": "EQUITY:US:META",
       "short": "EQUITY:US:META",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:38.217Z",
-      "checkedAt": "2026-11-09T19:15:38.217Z",
-      "sourceHash": "4a99f0da5d3e90b3edc7c34b498393951421f38f245d85cddc8d15d873f89a23"
+      "retrievedAt": "2026-11-09T20:19:11.571Z",
+      "checkedAt": "2026-11-09T20:19:11.571Z",
+      "sourceHash": "a0a69973ab850794fcc00bc269fd3771e2efc9b06bd28668dd7e863a1415dc98"
+    },
+    {
+      "id": "src-eaadd6d97d93eb6207a16fc2",
+      "name": "INDEX:CN:CSI500",
+      "short": "INDEX:CN:CSI500",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:11.583Z",
+      "checkedAt": "2026-11-09T20:19:11.583Z",
+      "sourceHash": "a591c6f529c07955df7986fada524c1079d64b7184cbc7b341c0a3b76503ad45"
     },
     {
       "id": "src-34bca50b53334f82f208d557",
       "name": "INDEX:HK:HSI",
       "short": "INDEX:HK:HSI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:38.343Z",
-      "checkedAt": "2026-11-09T19:15:38.343Z",
-      "sourceHash": "342bf1325ef778dc216c8748dd4548662edbf1076f7e0ca28bdcb9e684d2782c"
+      "retrievedAt": "2026-11-09T20:19:11.623Z",
+      "checkedAt": "2026-11-09T20:19:11.623Z",
+      "sourceHash": "f2ff2b6ec298dcc1f6649c3da95ebf34f84dff19e6ced5d8ba9f0458d1a8a232"
     },
     {
       "id": "src-6296613e58b80d5a2541b2bc",
       "name": "EQUITY:US:TSLA",
       "short": "EQUITY:US:TSLA",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:38.496Z",
-      "checkedAt": "2026-11-09T19:15:38.496Z",
-      "sourceHash": "81e5cf4481af175907ed7971a80eeee016857c0458012598b1997b25ab90183d"
+      "retrievedAt": "2026-11-09T20:19:11.663Z",
+      "checkedAt": "2026-11-09T20:19:11.663Z",
+      "sourceHash": "d10e0aa2b94ab25f6a3ff13f5a8727c315556841f6fa6d904fd2ab3e35699b8b"
     },
     {
       "id": "src-977e21a36fbe85aa82e451f4",
       "name": "INDEX:HK:HSTECH",
       "short": "INDEX:HK:HSTECH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:38.636Z",
-      "checkedAt": "2026-11-09T19:15:38.636Z",
-      "sourceHash": "521c402e378c6f29783bd33d0e1f3979082a8aacdaaf06cd0e8dcf86a5e5660e"
-    },
-    {
-      "id": "src-2330b34d03dae5a96933f1cd",
-      "name": "EQUITY:US:AVGO",
-      "short": "EQUITY:US:AVGO",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:38.818Z",
-      "checkedAt": "2026-11-09T19:15:38.818Z",
-      "sourceHash": "bb96998e94542baf12e9077738f4f05b5689c20b4e91c735c7dcd2dc69a904ce"
-    },
-    {
-      "id": "src-6c0e86c9d9d00b20a083c934",
-      "name": "EQUITY:US:AMD",
-      "short": "EQUITY:US:AMD",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:38.942Z",
-      "checkedAt": "2026-11-09T19:15:38.942Z",
-      "sourceHash": "f96eb1fab6301b7f0fea04a949234ea3c1a3b9595abb05567bac23c2a739f606"
+      "retrievedAt": "2026-11-09T20:19:11.701Z",
+      "checkedAt": "2026-11-09T20:19:11.701Z",
+      "sourceHash": "bae49a7c1b24f1a7cf9319513da91d7f23ea7179c060023247795592864c17b5"
     },
     {
       "id": "src-c0124b191492ac42ab36d935",
       "name": "INDEX:HK:HSCEI",
       "short": "INDEX:HK:HSCEI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.004Z",
-      "checkedAt": "2026-11-09T19:15:39.004Z",
-      "sourceHash": "fb1fce6bb00e93f0620281e887d02be4c552c71c8a8ce1066965974e9a2b73e8"
+      "retrievedAt": "2026-11-09T20:19:11.762Z",
+      "checkedAt": "2026-11-09T20:19:11.762Z",
+      "sourceHash": "c5d52d8784d2c4a6636a4129351b013274ae14171b4fe2c76c040676fed5f1f8"
     },
     {
-      "id": "src-30a5f797cbbeee33e77e1c26",
-      "name": "国家统计局最新发布",
-      "short": "NBS-FB",
-      "url": "https://www.stats.gov.cn/sj/zxfb/",
-      "sourceHash": "145788165fcbebe0546914ac4d91dcc637c722966d1d03bbbd531f9676675655",
-      "retrievedAt": "2026-11-09T19:15:39.056Z",
-      "evidenceKind": "calendar"
+      "id": "src-2330b34d03dae5a96933f1cd",
+      "name": "EQUITY:US:AVGO",
+      "short": "EQUITY:US:AVGO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:11.789Z",
+      "checkedAt": "2026-11-09T20:19:11.789Z",
+      "sourceHash": "d8114df25ba3ca2c1d189b7675a76ee9c632e2ef9c0f7a07c16dca042755a8d4"
     },
     {
       "id": "src-d72e220f5f535c1245072385",
       "name": "INDEX:US:SP500",
       "short": "INDEX:US:SP500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.106Z",
-      "checkedAt": "2026-11-09T19:15:39.106Z",
-      "sourceHash": "1f7aa55bb1797cff6f2fc68032ecc6d3ab1b6b07a2858174c7f74244e224e53d"
+      "retrievedAt": "2026-11-09T20:19:11.815Z",
+      "checkedAt": "2026-11-09T20:19:11.815Z",
+      "sourceHash": "be9b2645598de6c95b19411a6f53103d6cbb773068bd426ba01637a3f45e554c"
+    },
+    {
+      "id": "src-6c0e86c9d9d00b20a083c934",
+      "name": "EQUITY:US:AMD",
+      "short": "EQUITY:US:AMD",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:11.850Z",
+      "checkedAt": "2026-11-09T20:19:11.850Z",
+      "sourceHash": "cd96ba52c56479e839c9ed5b4ad7bc9fc7ca93e26351015493659874f789e56d"
     },
     {
       "id": "src-a5c669eb8928b350011058da",
       "name": "EQUITY:US:INTC",
       "short": "EQUITY:US:INTC",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.128Z",
-      "checkedAt": "2026-11-09T19:15:39.128Z",
-      "sourceHash": "93f17ba7e5cc7386cda64def1fb4d3b704c2fb88d6918352dfcc98b17b30bb78"
-    },
-    {
-      "id": "src-772408f27845565f1128d60a",
-      "name": "EQUITY:US:MU",
-      "short": "EQUITY:US:MU",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.237Z",
-      "checkedAt": "2026-11-09T19:15:39.237Z",
-      "sourceHash": "b6f949a46421aefc94efb85f963fa0cdfccf3bf4320efa6b54e731cfe06cc852"
-    },
-    {
-      "id": "src-e0bb5fd1bca46282849a8b5f",
-      "name": "INDEX:US:NDX",
-      "short": "INDEX:US:NDX",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.329Z",
-      "checkedAt": "2026-11-09T19:15:39.329Z",
-      "sourceHash": "ec21318dc27ff971a7c082ec061f52a78558c512cc4cc88230d46222c4d2ac81"
+      "retrievedAt": "2026-11-09T20:19:11.866Z",
+      "checkedAt": "2026-11-09T20:19:11.866Z",
+      "sourceHash": "55b763f36da35ab25533e98fa882ada6cf4737f67744b90d48dad5815063e8f3"
     },
     {
       "id": "src-4a57b5e12b1c7830f0336dc8",
       "name": "INDEX:US:NASDAQ",
       "short": "INDEX:US:NASDAQ",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.375Z",
-      "checkedAt": "2026-11-09T19:15:39.375Z",
-      "sourceHash": "8480b815b91f2ee4a68930b5ccf7902933c50e7bac187e8c5eeb2c7732bb3107"
+      "retrievedAt": "2026-11-09T20:19:11.911Z",
+      "checkedAt": "2026-11-09T20:19:11.911Z",
+      "sourceHash": "971bae55b0d1ae3bebfb317c219564129a01e08181ff81b15a2b8941163b51e2"
+    },
+    {
+      "id": "src-772408f27845565f1128d60a",
+      "name": "EQUITY:US:MU",
+      "short": "EQUITY:US:MU",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:11.960Z",
+      "checkedAt": "2026-11-09T20:19:11.960Z",
+      "sourceHash": "5eee5b2a2481693a7d0016a80f6a08aa8e6c44ee5bf8884fe58b77f4d0fd61d1"
+    },
+    {
+      "id": "src-e0bb5fd1bca46282849a8b5f",
+      "name": "INDEX:US:NDX",
+      "short": "INDEX:US:NDX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:11.985Z",
+      "checkedAt": "2026-11-09T20:19:11.985Z",
+      "sourceHash": "b2e69878d3d1a0a5983584af39165a5624cc6073ff185c321a945a3ffe956b1b"
     },
     {
       "id": "src-2c82f404902c9e27e70a5709",
       "name": "EQUITY:US:ARM",
       "short": "EQUITY:US:ARM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.531Z",
-      "checkedAt": "2026-11-09T19:15:39.531Z",
-      "sourceHash": "5116f03a1894c0fbc7e040d2391cbbc8db6059d7fa863515385130a8f1859b10"
+      "retrievedAt": "2026-11-09T20:19:12.013Z",
+      "checkedAt": "2026-11-09T20:19:12.013Z",
+      "sourceHash": "788ef34b8559d213c3ed338a7dfc587dadbce47b99320b10e2986fc6334aba6a"
     },
     {
       "id": "src-4c2724acd20f3bf712e1b9a9",
       "name": "INDEX:US:DOW",
       "short": "INDEX:US:DOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.570Z",
-      "checkedAt": "2026-11-09T19:15:39.570Z",
-      "sourceHash": "65dbde6b074375fb403479516c19766b6b5008d5316016149012f7f66bec7b63"
+      "retrievedAt": "2026-11-09T20:19:12.083Z",
+      "checkedAt": "2026-11-09T20:19:12.083Z",
+      "sourceHash": "9ebd7d3eeec625e4d5219d463a379dbabc7f6d3948c84ca79b38429796f9d510"
     },
     {
       "id": "src-a1855a700abc50828e0dbe10",
       "name": "EQUITY:US:TSM",
       "short": "EQUITY:US:TSM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.590Z",
-      "checkedAt": "2026-11-09T19:15:39.590Z",
-      "sourceHash": "798acfc0df4bb7641f6cd600c002719eed1894c62a27d9587d8f6f78df848730"
-    },
-    {
-      "id": "src-8793bfe1c682ddb7a690b48f",
-      "name": "EQUITY:US:ASML",
-      "short": "EQUITY:US:ASML",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.684Z",
-      "checkedAt": "2026-11-09T19:15:39.684Z",
-      "sourceHash": "c84bdc6a8a939c1679da3e3161856772addb6d0f7d5eafa5bb77d2211cd04819"
+      "retrievedAt": "2026-11-09T20:19:12.095Z",
+      "checkedAt": "2026-11-09T20:19:12.095Z",
+      "sourceHash": "7917234485f9dfcc2d800a901fc90b7784e4dea5d6089168e8bdd5a654f344e8"
     },
     {
       "id": "src-3f3171fa7d078be4fc2861fa",
       "name": "INDEX:US:RUSSELL2000",
       "short": "INDEX:US:RUSSELL2000",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.705Z",
-      "checkedAt": "2026-11-09T19:15:39.705Z",
-      "sourceHash": "90b3e14c4aafe221735d67a74ca2efc433a123b91ada5b79b460890e491c313a"
+      "retrievedAt": "2026-11-09T20:19:12.138Z",
+      "checkedAt": "2026-11-09T20:19:12.138Z",
+      "sourceHash": "a6fdb76f144f13846e927db3688dea023c4a65b75e3e796f331091485e92a8a5"
+    },
+    {
+      "id": "src-8793bfe1c682ddb7a690b48f",
+      "name": "EQUITY:US:ASML",
+      "short": "EQUITY:US:ASML",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:12.152Z",
+      "checkedAt": "2026-11-09T20:19:12.152Z",
+      "sourceHash": "1233476f5ced80beb7f039c24acf2d42fe973c92b786f275886b75cb41c0e6e8"
     },
     {
       "id": "src-db321b256a90919f12e35781",
       "name": "INDEX:JP:NIKKEI225",
       "short": "INDEX:JP:NIKKEI225",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.712Z",
-      "checkedAt": "2026-11-09T19:15:39.712Z",
-      "sourceHash": "22093717f5e7441df53cd5f735f60a8b3d5680a1e2d7eaeba2a99c258788498e"
-    },
-    {
-      "id": "src-38299ba2f9df25e3bf2df111",
-      "name": "EQUITY:US:ORCL",
-      "short": "EQUITY:US:ORCL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.788Z",
-      "checkedAt": "2026-11-09T19:15:39.788Z",
-      "sourceHash": "47b5c5ee096a39648e7870ffb75d311908c38dfda01d3ad40c313b10b4af9bc6"
-    },
-    {
-      "id": "src-d0f06544a61c10ea97899aa0",
-      "name": "CRYPTO:BTC:USD",
-      "short": "CRYPTO:BTC:USD",
-      "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
-      "retrievedAt": "2026-11-09T19:15:39.818Z",
-      "checkedAt": "2026-11-09T19:15:39.818Z",
-      "sourceHash": "aaaa40a6d5de1defd549b705a7cb96ad0ae47f91763d5dbcabf7240205d10ba4"
-    },
-    {
-      "id": "src-a9fc80df8ffb235e6cd0d757",
-      "name": "EQUITY:US:CRM",
-      "short": "EQUITY:US:CRM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.833Z",
-      "checkedAt": "2026-11-09T19:15:39.833Z",
-      "sourceHash": "e3786a2cb5ef3ebf561d8afa32998e0129bbd40b27922d15522ef57ee4adcc69"
-    },
-    {
-      "id": "src-61b7dcccf93560ea56eb3187",
-      "name": "CRYPTO:ETH:USD",
-      "short": "CRYPTO:ETH:USD",
-      "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
-      "retrievedAt": "2026-11-09T19:15:39.844Z",
-      "checkedAt": "2026-11-09T19:15:39.844Z",
-      "sourceHash": "8ff1e256b0c3234ffc20415642bf1bb3d554d8af2e354b569a640ae762277c36"
+      "retrievedAt": "2026-11-09T20:19:12.189Z",
+      "checkedAt": "2026-11-09T20:19:12.189Z",
+      "sourceHash": "6924e51642e77de1c9450e8ac99ea0ae844c7ae442237cbad92e746ab1943949"
     },
     {
       "id": "src-440d8c358ccf2eb5de026ded",
       "name": "INDEX:EU:STOXX50",
       "short": "INDEX:EU:STOXX50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.870Z",
-      "checkedAt": "2026-11-09T19:15:39.870Z",
-      "sourceHash": "dffd85c6d0e49a4d8356545058d5c4f45b7280ac9572365140b09e7c7bf47752"
+      "retrievedAt": "2026-11-09T20:19:12.203Z",
+      "checkedAt": "2026-11-09T20:19:12.203Z",
+      "sourceHash": "82c1a416fe729f766c1cea3f4fd158b481f65e7b695f8dffdc4d8bb9720ffaa9"
     },
     {
-      "id": "src-ff3513c8c5dcb5dca0085f61",
-      "name": "CRYPTO:SOL:USD",
-      "short": "CRYPTO:SOL:USD",
-      "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
-      "retrievedAt": "2026-11-09T19:15:39.883Z",
-      "checkedAt": "2026-11-09T19:15:39.883Z",
-      "sourceHash": "a998a0b465d2b27123f7e2ce736ca079bbdfe7616ddea5fa8573c8eac1b580b9"
+      "id": "src-a9fc80df8ffb235e6cd0d757",
+      "name": "EQUITY:US:CRM",
+      "short": "EQUITY:US:CRM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:12.246Z",
+      "checkedAt": "2026-11-09T20:19:12.246Z",
+      "sourceHash": "2103d0a2f2a6eaa5b0ade684269b578dd13f76f37dd8f774d8c042c5913502ff"
     },
     {
-      "id": "src-620ca0f9ff9da68ab66b8b1c",
-      "name": "EQUITY:US:NOW",
-      "short": "EQUITY:US:NOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:39.968Z",
-      "checkedAt": "2026-11-09T19:15:39.968Z",
-      "sourceHash": "101f29e0816f2ba2585420359eeea99925153212043ab2ae06af574e8f7c4a63"
+      "id": "src-38299ba2f9df25e3bf2df111",
+      "name": "EQUITY:US:ORCL",
+      "short": "EQUITY:US:ORCL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:12.252Z",
+      "checkedAt": "2026-11-09T20:19:12.252Z",
+      "sourceHash": "b6033ff135ca54c3205a9a17814185e2b4b89014ad1804b60f064dbdabd8f3ec"
     },
     {
-      "id": "src-e73683bca4f7778e43d2f1e8",
-      "name": "CRYPTO:PEPE:USD",
-      "short": "CRYPTO:PEPE:USD",
-      "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
-      "retrievedAt": "2026-11-09T19:15:39.982Z",
-      "checkedAt": "2026-11-09T19:15:39.982Z",
-      "sourceHash": "47490114b67d6e425b206f8a5cc29c1819189721cd63f1044060e982f23cbbe7"
+      "id": "src-61b7dcccf93560ea56eb3187",
+      "name": "CRYPTO:ETH:USD",
+      "short": "CRYPTO:ETH:USD",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
+      "retrievedAt": "2026-11-09T20:19:12.293Z",
+      "checkedAt": "2026-11-09T20:19:12.293Z",
+      "sourceHash": "79fcf39bb5c902c9771a8f82112d7af245c7823a1145ae0082fdaed25af1234d"
+    },
+    {
+      "id": "src-d0f06544a61c10ea97899aa0",
+      "name": "CRYPTO:BTC:USD",
+      "short": "CRYPTO:BTC:USD",
+      "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
+      "retrievedAt": "2026-11-09T20:19:12.312Z",
+      "checkedAt": "2026-11-09T20:19:12.312Z",
+      "sourceHash": "0bb5e4181edfbb9f7a50200dd3e521032d1204c0014f837e402cc3ecd49f4a57"
     },
     {
       "id": "src-5022e6cea2b9157cf6b11a77",
       "name": "EQUITY:US:ADBE",
       "short": "EQUITY:US:ADBE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.011Z",
-      "checkedAt": "2026-11-09T19:15:40.011Z",
-      "sourceHash": "6ece24685e0f9b02c11ebf445336ef7dc6a6c94ca9d1508b772fbb6f2c8beb57"
+      "retrievedAt": "2026-11-09T20:19:12.315Z",
+      "checkedAt": "2026-11-09T20:19:12.315Z",
+      "sourceHash": "ba6f0f79071a270d8a609eb36ffbb2313d16ee1ffc089fcdeb078b1459262235"
     },
     {
-      "id": "src-a9cf54901e28ec9b25fe355d",
-      "name": "EQUITY:US:PLTR",
-      "short": "EQUITY:US:PLTR",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.015Z",
-      "checkedAt": "2026-11-09T19:15:40.015Z",
-      "sourceHash": "4f847e10c2f0cc7c2f2fdfd3a2671bf17ee7acdba66cf1018745bad4288aa1ab"
+      "id": "src-ff3513c8c5dcb5dca0085f61",
+      "name": "CRYPTO:SOL:USD",
+      "short": "CRYPTO:SOL:USD",
+      "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
+      "retrievedAt": "2026-11-09T20:19:12.334Z",
+      "checkedAt": "2026-11-09T20:19:12.334Z",
+      "sourceHash": "8b7eec507430f890f7c4485d1fc7b976136c53935a88b6455ca9d771cfee7bfe"
+    },
+    {
+      "id": "src-620ca0f9ff9da68ab66b8b1c",
+      "name": "EQUITY:US:NOW",
+      "short": "EQUITY:US:NOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:12.354Z",
+      "checkedAt": "2026-11-09T20:19:12.354Z",
+      "sourceHash": "15fc5d9e04b6735a79b3ac83cf018970f7608e86b0e74f8c8ec726c7117d0f82"
+    },
+    {
+      "id": "src-e73683bca4f7778e43d2f1e8",
+      "name": "CRYPTO:PEPE:USD",
+      "short": "CRYPTO:PEPE:USD",
+      "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
+      "retrievedAt": "2026-11-09T20:19:12.355Z",
+      "checkedAt": "2026-11-09T20:19:12.355Z",
+      "sourceHash": "074c0065d654fe984a4fa8912d92c4cb9724cf9e5a86dbf7cfa02596cc19b56d"
     },
     {
       "id": "src-219ba892243f0871c11511b2",
       "name": "CRYPTO:HYPE:USD",
       "short": "CRYPTO:HYPE:USD",
       "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
-      "retrievedAt": "2026-11-09T19:15:40.023Z",
-      "checkedAt": "2026-11-09T19:15:40.023Z",
-      "sourceHash": "237bcf75202728519c622365bf2988d34053de39e1ea2754fc36ec3429ff7e2a"
+      "retrievedAt": "2026-11-09T20:19:12.369Z",
+      "checkedAt": "2026-11-09T20:19:12.369Z",
+      "sourceHash": "580473dd38fe3533c192c60ce7729e414e2915346e5a090638e9c997aa06cbae"
     },
     {
-      "id": "src-85ad8aa262564eb9dc9ab88c",
-      "name": "但斌三季度刚加仓英伟达，还有超60只QDII重仓",
-      "short": "NBD-4643075",
-      "url": "https://www.nbd.com.cn/articles/2026-11-10/4643075.html",
-      "sourceHash": "1b8f251d1e1110da16f62efb81a181fa575ee9125bda4b498222f557f2949923",
-      "retrievedAt": "2026-11-09T19:15:40.024Z",
-      "evidenceKind": "market"
-    },
-    {
-      "id": "src-c3ce3ea19c5e3ff913bc8e44",
-      "name": "EQUITY:US:NET",
-      "short": "EQUITY:US:NET",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.157Z",
-      "checkedAt": "2026-11-09T19:15:40.157Z",
-      "sourceHash": "2a2eb61c9c7a74360539c36f43cc58a909f039de383c622ae6039e224bc4c39d"
+      "id": "src-a9cf54901e28ec9b25fe355d",
+      "name": "EQUITY:US:PLTR",
+      "short": "EQUITY:US:PLTR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:12.397Z",
+      "checkedAt": "2026-11-09T20:19:12.397Z",
+      "sourceHash": "8453a5b4cf66775fdfba3fbcd9247f4bacdb7d3662381d1ec62ece7d09378938"
     },
     {
       "id": "src-15f5b79b32cba97e05e23d60",
       "name": "EQUITY:US:SNOW",
       "short": "EQUITY:US:SNOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.160Z",
-      "checkedAt": "2026-11-09T19:15:40.160Z",
-      "sourceHash": "912f6340f072e552e6bd31842ebeefc5ff3a6a231f34c7731ca3a88529804d41"
+      "retrievedAt": "2026-11-09T20:19:12.445Z",
+      "checkedAt": "2026-11-09T20:19:12.445Z",
+      "sourceHash": "4f55b45d4fb97305d451cede55dab3fa528feae1c56e28bd4a2afae0faa1a5b5"
     },
     {
       "id": "src-dee9c47e788eb3b5e9957de0",
       "name": "FX:DXY",
       "short": "FX:DXY",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.162Z",
-      "checkedAt": "2026-11-09T19:15:40.162Z",
-      "sourceHash": "cd5e94f11bf5a079271f2f0eade35056c3ef912fc31c9ce4f88033aa4a2ebf85"
+      "retrievedAt": "2026-11-09T20:19:12.451Z",
+      "checkedAt": "2026-11-09T20:19:12.451Z",
+      "sourceHash": "971e406118809853d1ee4d4034f5e87f38e21c087393ccccef1d7b979d2731bd"
     },
     {
-      "id": "src-ff2cf19ea64f05b5a5a53285",
-      "name": "EQUITY:US:CRWD",
-      "short": "EQUITY:US:CRWD",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.228Z",
-      "checkedAt": "2026-11-09T19:15:40.228Z",
-      "sourceHash": "78f3dcd9e4bb906b5174652d23970514aafa8e3f2c02433b79e73d1fcb1e2bdd"
-    },
-    {
-      "id": "src-8d5d7352d4aa06cef2c4c9c8",
-      "name": "FX:USDCNY",
-      "short": "FX:USDCNY",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.269Z",
-      "checkedAt": "2026-11-09T19:15:40.269Z",
-      "sourceHash": "e262d5f74b545e2d1a0e42f95ef0b01859986cd8ecb71911da539b441630c097"
+      "id": "src-c3ce3ea19c5e3ff913bc8e44",
+      "name": "EQUITY:US:NET",
+      "short": "EQUITY:US:NET",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:12.462Z",
+      "checkedAt": "2026-11-09T20:19:12.462Z",
+      "sourceHash": "15449065032e2721bdfdf7dd33c71bd8d5a6ab86301c774c78b1566977bcb61b"
     },
     {
       "id": "src-b9c9b43f7a4ebde198fdf0e4",
       "name": "EQUITY:US:DDOG",
       "short": "EQUITY:US:DDOG",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.281Z",
-      "checkedAt": "2026-11-09T19:15:40.281Z",
-      "sourceHash": "636850a6e1b213fce346033c324fe25d85974d09b087ea8b33b337d5b3f865be"
+      "retrievedAt": "2026-11-09T20:19:12.511Z",
+      "checkedAt": "2026-11-09T20:19:12.511Z",
+      "sourceHash": "75aca9958d032064856ae33f5f28d12040aa0aed76b8ce8f84fea13b12d58c6d"
     },
     {
-      "id": "src-3d44a550fc9b64a2d1f171c2",
-      "name": "FX:USDCNH",
-      "short": "FX:USDCNH",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.342Z",
-      "checkedAt": "2026-11-09T19:15:40.342Z",
-      "sourceHash": "e8ef4588ed60299dc57e2aeaf37612c4f8629c927a3fa644a1b8f6739514506c"
+      "id": "src-ff2cf19ea64f05b5a5a53285",
+      "name": "EQUITY:US:CRWD",
+      "short": "EQUITY:US:CRWD",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:12.533Z",
+      "checkedAt": "2026-11-09T20:19:12.533Z",
+      "sourceHash": "c59a37ca1181e0557d173ae062871b23ed0706f4b561e86410612f1311a22b44"
+    },
+    {
+      "id": "src-8d5d7352d4aa06cef2c4c9c8",
+      "name": "FX:USDCNY",
+      "short": "FX:USDCNY",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:12.544Z",
+      "checkedAt": "2026-11-09T20:19:12.544Z",
+      "sourceHash": "c64ded8e752280f5e0bd27982366dbf5741270ef7c5992496732f404dc37cfd0"
     },
     {
       "id": "src-326f0b6e68e52c485af15110",
       "name": "EQUITY:US:COIN",
       "short": "EQUITY:US:COIN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.347Z",
-      "checkedAt": "2026-11-09T19:15:40.347Z",
-      "sourceHash": "81747b63e20ecec3627d064d0412bbec3a5a6257253be773637d7a6ef05b6a89"
+      "retrievedAt": "2026-11-09T20:19:12.638Z",
+      "checkedAt": "2026-11-09T20:19:12.638Z",
+      "sourceHash": "8d9820a32921e7d5a588e685f593071edd1067c5121053b11ea4c03fab31391c"
     },
     {
       "id": "src-65479f4ce02fa594db0ce3a7",
       "name": "EQUITY:US:MSTR",
       "short": "EQUITY:US:MSTR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.379Z",
-      "checkedAt": "2026-11-09T19:15:40.379Z",
-      "sourceHash": "06267f3cea46f222491d37518ae841544e9127dc482790fbcf1c6eb9e7b7b0c9"
+      "retrievedAt": "2026-11-09T20:19:12.727Z",
+      "checkedAt": "2026-11-09T20:19:12.727Z",
+      "sourceHash": "b84c51e3a3c9c7c5dda95780c0ae1c7d3ec5754de8217d80a979344c75a41c32"
+    },
+    {
+      "id": "src-395e439b7112bf85673a6beb",
+      "name": "METAL:XAUUSD",
+      "short": "METAL:XAUUSD",
+      "url": "https://api.gold-api.com/price/XAU",
+      "retrievedAt": "2026-11-09T20:19:12.918Z",
+      "checkedAt": "2026-11-09T20:19:12.918Z",
+      "sourceHash": "e274e7f8c624db41ecabdb68f1e4b4e89c9156140f2afdd8f48b30259e3b521e"
     },
     {
       "id": "src-f870632d144ef25b5d81e0d5",
       "name": "EQUITY:US:BRK.B",
       "short": "EQUITY:US:BRK.B",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BRK-B?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.467Z",
-      "checkedAt": "2026-11-09T19:15:40.467Z",
-      "sourceHash": "9006f5c1cf6e97bca7efa361a633f80d1f9803ce2b7e66ea1afa666483893e13"
+      "retrievedAt": "2026-11-09T20:19:12.970Z",
+      "checkedAt": "2026-11-09T20:19:12.970Z",
+      "sourceHash": "1f883e332bf5e9d23f9bc66c42ef89049b08acc84279a58ef6b1f6e2dcc56a5c"
     },
     {
       "id": "src-d9a47ba66192b3c04bc8f3f6",
       "name": "ENERGY:WTI",
       "short": "ENERGY:WTI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.491Z",
-      "checkedAt": "2026-11-09T19:15:40.491Z",
-      "sourceHash": "57496f553a9736de2ac7da5ea9c38462912ab6f13a62b951349cf797cde6c79f"
+      "retrievedAt": "2026-11-09T20:19:13.010Z",
+      "checkedAt": "2026-11-09T20:19:13.010Z",
+      "sourceHash": "5fb262f89a16c0f7abb5b79fd0eb49583cdd2db41f5494164d6e48799a50900d"
+    },
+    {
+      "id": "src-8ada3bfad620c0aaad97dfef",
+      "name": "METAL:XAGUSD",
+      "short": "METAL:XAGUSD",
+      "url": "https://api.gold-api.com/price/XAG",
+      "retrievedAt": "2026-11-09T20:19:13.031Z",
+      "checkedAt": "2026-11-09T20:19:13.031Z",
+      "sourceHash": "3d6975f01e1774d99c77e38d3eea8a2cae70b8359f555726f83ae4e20e56aa07"
     },
     {
       "id": "src-b4c33f217cb4617da7b6dc01",
       "name": "EQUITY:US:BLK",
       "short": "EQUITY:US:BLK",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.527Z",
-      "checkedAt": "2026-11-09T19:15:40.527Z",
-      "sourceHash": "87bec46955d58e667f5b0264dcc5675c613c9069d786e3532589b78f79ed92ca"
+      "retrievedAt": "2026-11-09T20:19:13.063Z",
+      "checkedAt": "2026-11-09T20:19:13.063Z",
+      "sourceHash": "968169ed98f27778b9decd0e725f1f943c693e559a4edd1828f3a935d999dc9f"
     },
     {
       "id": "src-9df907448534d3354922f821",
       "name": "EQUITY:US:BX",
       "short": "EQUITY:US:BX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.585Z",
-      "checkedAt": "2026-11-09T19:15:40.585Z",
-      "sourceHash": "6bb8d5afdba6f8c062ffe653575d3d7d08246363f0536947a09d19eb7f0ada12"
-    },
-    {
-      "id": "src-7169e336e7f73bbd1e2d1f54",
-      "name": "EQUITY:US:KKR",
-      "short": "EQUITY:US:KKR",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.604Z",
-      "checkedAt": "2026-11-09T19:15:40.604Z",
-      "sourceHash": "da2ac2f019d78493a6ea8aa742242565d33347d5fefb303b55ee5b45174bc79f"
-    },
-    {
-      "id": "src-483e50fe4cc003e84c411bec",
-      "name": "RATE:US10Y",
-      "short": "RATE:US10Y",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.667Z",
-      "checkedAt": "2026-11-09T19:15:40.667Z",
-      "sourceHash": "866c4b6741ba4d3c310b4d16636ead6c7981b8c390b124a9f6491e46596c93c7"
-    },
-    {
-      "id": "src-9641ed6e3e9256c44410b13f",
-      "name": "EQUITY:US:APO",
-      "short": "EQUITY:US:APO",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.709Z",
-      "checkedAt": "2026-11-09T19:15:40.709Z",
-      "sourceHash": "89edf3651564d952cb6fa1f831e9e90670b69e93e39ae762a09d16867788e7fd"
-    },
-    {
-      "id": "src-a7554f3c5fd773eea8743645",
-      "name": "VOL:VIX",
-      "short": "VOL:VIX",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.715Z",
-      "checkedAt": "2026-11-09T19:15:40.715Z",
-      "sourceHash": "1c00ee954c9b736df36620db4eb0de32c01d56f16fd2c58423dd07aeb0b04a85"
+      "retrievedAt": "2026-11-09T20:19:13.132Z",
+      "checkedAt": "2026-11-09T20:19:13.132Z",
+      "sourceHash": "425e85378445091d5bdeca02fb966ec7f18a0ea0573b148abb0a6526edd1a3bb"
     },
     {
       "id": "src-f8ad213db7dcf4e934830d3f",
       "name": "RATE:US2Y",
       "short": "RATE:US2Y",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
-      "retrievedAt": "2026-11-09T19:15:40.726Z",
-      "checkedAt": "2026-11-09T19:15:40.726Z",
+      "retrievedAt": "2026-11-09T20:19:13.202Z",
+      "checkedAt": "2026-11-09T20:19:13.202Z",
       "sourceHash": "0c33615f27a56dad482aac0e4a96ad6e9487785704a82777fb54a737ec926362"
+    },
+    {
+      "id": "src-7169e336e7f73bbd1e2d1f54",
+      "name": "EQUITY:US:KKR",
+      "short": "EQUITY:US:KKR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:13.212Z",
+      "checkedAt": "2026-11-09T20:19:13.212Z",
+      "sourceHash": "9d44686b14c1cdfa2742eb633c9d2019d17fcc477ad1ffef787ddc0d730f197f"
+    },
+    {
+      "id": "src-9641ed6e3e9256c44410b13f",
+      "name": "EQUITY:US:APO",
+      "short": "EQUITY:US:APO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:13.261Z",
+      "checkedAt": "2026-11-09T20:19:13.261Z",
+      "sourceHash": "8b9f60be33e7e74acbd73624697ea93d569020b7a4cd5a827388c063d0238d21"
+    },
+    {
+      "id": "src-483e50fe4cc003e84c411bec",
+      "name": "RATE:US10Y",
+      "short": "RATE:US10Y",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:13.263Z",
+      "checkedAt": "2026-11-09T20:19:13.263Z",
+      "sourceHash": "cb4bd69d75972aa4b7eb79bc28da9828dbb2c5e2ff88a3d8031d19c2d73bdb28"
     },
     {
       "id": "src-177a579934a7c61da3eda551",
       "name": "EQUITY:US:ARES",
       "short": "EQUITY:US:ARES",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.796Z",
-      "checkedAt": "2026-11-09T19:15:40.796Z",
-      "sourceHash": "2e771866a9ec8a44a603270971bfd3a3686b9a3b3c1f44926143e9dbb98ec7b7"
+      "retrievedAt": "2026-11-09T20:19:13.321Z",
+      "checkedAt": "2026-11-09T20:19:13.321Z",
+      "sourceHash": "df22ce3384e748ff8ed2107b968f2cbb267df744210de21f33ad766857cb4906"
     },
     {
-      "id": "src-cea9af858dc05581bdc0e5e5",
-      "name": "EQUITY:US:BN",
-      "short": "EQUITY:US:BN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.821Z",
-      "checkedAt": "2026-11-09T19:15:40.821Z",
-      "sourceHash": "581ee8cb69914d1a698c7dee181e1ac275954946c7a55e828865034ba32fb135"
+      "id": "src-a7554f3c5fd773eea8743645",
+      "name": "VOL:VIX",
+      "short": "VOL:VIX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:13.350Z",
+      "checkedAt": "2026-11-09T20:19:13.350Z",
+      "sourceHash": "50f0a929b7f8ee59b087767213ecded65bc573923b7e0a0d7d510e402e5b657b"
     },
     {
       "id": "src-3f9155e9bb026d51e16a0b29",
       "name": "EQUITY:US:OWL",
       "short": "EQUITY:US:OWL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.823Z",
-      "checkedAt": "2026-11-09T19:15:40.823Z",
-      "sourceHash": "042f89b663105b8124debecaf281f96dd99c2f72281b9d472c7177811d497a71"
+      "retrievedAt": "2026-11-09T20:19:13.410Z",
+      "checkedAt": "2026-11-09T20:19:13.410Z",
+      "sourceHash": "8d7ffad9317d5b908918cb10762e755539efc4290f7a43b253dc6828d693d237"
+    },
+    {
+      "id": "src-cea9af858dc05581bdc0e5e5",
+      "name": "EQUITY:US:BN",
+      "short": "EQUITY:US:BN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:13.418Z",
+      "checkedAt": "2026-11-09T20:19:13.418Z",
+      "sourceHash": "3bc204e2f6f9995b23da19c609b12c3e36626945b0f31e31756d63a43f513bf6"
+    },
+    {
+      "id": "src-6dfbb5f3fd8a2ed804ada97f",
+      "name": "AMD连续两个交易日大幅反弹，当日上涨8.8%",
+      "short": "NBD-4643029",
+      "url": "https://www.nbd.com.cn/articles/2026-11-09/4643029.html",
+      "sourceHash": "9098de3da689b5edff1feaaa67c499eb1c2a1bb62328c384f6b7b7ba0069853e",
+      "retrievedAt": "2026-11-09T20:19:13.465Z",
+      "evidenceKind": "market"
     },
     {
       "id": "src-eb442cf33996fa78a3fa09c9",
       "name": "EQUITY:US:BAM",
       "short": "EQUITY:US:BAM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.847Z",
-      "checkedAt": "2026-11-09T19:15:40.847Z",
-      "sourceHash": "a8f424734b7cd89a56e8b7a3ed98039733683b712c727f162590aebc64469154"
-    },
-    {
-      "id": "src-921d9df8692f2f48f9e01166",
-      "name": "EQUITY:US:CG",
-      "short": "EQUITY:US:CG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.924Z",
-      "checkedAt": "2026-11-09T19:15:40.924Z",
-      "sourceHash": "7eadca78b14099c5a4542b78fab10ef0d841e92028c7116746d555e4b12a7339"
-    },
-    {
-      "id": "src-237d29e211c4e002af0208a6",
-      "name": "EQUITY:US:BEN",
-      "short": "EQUITY:US:BEN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:40.939Z",
-      "checkedAt": "2026-11-09T19:15:40.939Z",
-      "sourceHash": "cc1db50b2aa917ae0409fd7b37f0bd0b82d549dbb3bfbbcf0007acc3d9956d0d"
+      "retrievedAt": "2026-11-09T20:19:13.473Z",
+      "checkedAt": "2026-11-09T20:19:13.473Z",
+      "sourceHash": "7a26565221ce3732345c8bfb82c0a3ad44b724fbcb44baeb83bd96e12ead4f06"
     },
     {
       "id": "src-6facdc12d1f68f042abf8250",
       "name": "EQUITY:US:TROW",
       "short": "EQUITY:US:TROW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:41.014Z",
-      "checkedAt": "2026-11-09T19:15:41.014Z",
-      "sourceHash": "a42a7d08958b0836277d91db5eb5ab602e9cee4f9d35c24b54d30c8c1d0c8e18"
+      "retrievedAt": "2026-11-09T20:19:13.524Z",
+      "checkedAt": "2026-11-09T20:19:13.524Z",
+      "sourceHash": "9cc466e2287f58697598c1ac33f347d97c560d03a62a2a48f2053ca906c60dd6"
     },
     {
-      "id": "src-65538695782361cfffb29020",
-      "name": "EQUITY:US:IBKR",
-      "short": "EQUITY:US:IBKR",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:41.039Z",
-      "checkedAt": "2026-11-09T19:15:41.039Z",
-      "sourceHash": "e01d4a9ccc3139d2269e3b3f0d3b978a01c74dfd5715d541108cd0c82071d893"
+      "id": "src-237d29e211c4e002af0208a6",
+      "name": "EQUITY:US:BEN",
+      "short": "EQUITY:US:BEN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:13.557Z",
+      "checkedAt": "2026-11-09T20:19:13.557Z",
+      "sourceHash": "e86b2d5ffe2aa5c1e638db97bd4f7953fa10038f25ea2acf7141fad4455c7b95"
     },
     {
       "id": "src-b9801499a70677bb015b218e",
       "name": "EQUITY:US:SCHW",
       "short": "EQUITY:US:SCHW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:41.044Z",
-      "checkedAt": "2026-11-09T19:15:41.044Z",
-      "sourceHash": "c78a4a8f7988877f250d981d35ef567ebfa8050a6a587f3b9b6025638bd7174b"
+      "retrievedAt": "2026-11-09T20:19:13.582Z",
+      "checkedAt": "2026-11-09T20:19:13.582Z",
+      "sourceHash": "3a199e59f482998d977f9f1f1f2b206d276f557c0762b457d8097ac3a75d1eb0"
+    },
+    {
+      "id": "src-65538695782361cfffb29020",
+      "name": "EQUITY:US:IBKR",
+      "short": "EQUITY:US:IBKR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:13.610Z",
+      "checkedAt": "2026-11-09T20:19:13.610Z",
+      "sourceHash": "216b3da8f0074567afc3a3be54372476b1646697a40a663e6b9576405493414f"
     },
     {
       "id": "src-563aa0dacd1aa03dcee1ad85",
       "name": "EQUITY:US:GS",
       "short": "EQUITY:US:GS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:41.071Z",
-      "checkedAt": "2026-11-09T19:15:41.071Z",
-      "sourceHash": "844915cccdb4a5ff41743097b48ab04fd48587f9a0c6ee7cd8cef66bfe1c8a45"
+      "retrievedAt": "2026-11-09T20:19:13.641Z",
+      "checkedAt": "2026-11-09T20:19:13.641Z",
+      "sourceHash": "17dbbcfc62e79196601253e585a7eafa2ac12b4ca8ac9ff2358b66778888d053"
     },
     {
       "id": "src-81b168263e538041e104ad36",
       "name": "EQUITY:US:MS",
       "short": "EQUITY:US:MS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T19:15:41.194Z",
-      "checkedAt": "2026-11-09T19:15:41.194Z",
-      "sourceHash": "cb77956ae44d0c29611941634fe62af8c4d64c39fb3a6b70ac0673cc45d7e7b7"
+      "retrievedAt": "2026-11-09T20:19:13.673Z",
+      "checkedAt": "2026-11-09T20:19:13.673Z",
+      "sourceHash": "68c1e0f185f5b4e4e4ce923b41e44d85d0e9d7fac68865b862dcc874f4fc7cf9"
+    },
+    {
+      "id": "src-921d9df8692f2f48f9e01166",
+      "name": "EQUITY:US:CG",
+      "short": "EQUITY:US:CG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:13.738Z",
+      "checkedAt": "2026-11-09T20:19:13.738Z",
+      "sourceHash": "815a504e6af6f5dd1a187702f2b9b77b5444ae4219f31097b0dc408385891b9b"
+    },
+    {
+      "id": "src-3d44a550fc9b64a2d1f171c2",
+      "name": "FX:USDCNH",
+      "short": "FX:USDCNH",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T20:19:18.056Z",
+      "checkedAt": "2026-11-09T20:19:18.056Z",
+      "sourceHash": "14e8bb4eec6496cac755d357e729c37ad85e51438838367580841feaeb9d0cc7"
     },
     {
       "name": "INDEX:CN:SSE",
       "short": "INDEX:CN:SSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T18:34:55.504Z",
-      "checkedAt": "2026-11-09T18:34:55.504Z",
-      "sourceHash": "bae16c0df58753be8bbe5f023d8f3e4633d997f4685fda5caceb529570ebe621",
-      "id": "retained-8bf704a82397ba3f5473ad12"
+      "retrievedAt": "2026-11-09T19:15:33.821Z",
+      "checkedAt": "2026-11-09T19:15:33.821Z",
+      "sourceHash": "a0b930fae66ea8e18aa1ed3b3e28f1d91e57147dda1d0695234519d3c6cec1c0",
+      "id": "retained-3a25eebce804771ee5553422"
     },
     {
       "name": "INDEX:CN:SSE",
@@ -5725,10 +5864,10 @@
       "name": "INDEX:CN:STAR50",
       "short": "INDEX:CN:STAR50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T18:34:57.989Z",
-      "checkedAt": "2026-11-09T18:34:57.989Z",
-      "sourceHash": "dee542d57673199bc3c344a0d9ed2f43dc0689529aa0db2a37ae0edb89b394b0",
-      "id": "retained-382158462a6fc6965cd6ecf7"
+      "retrievedAt": "2026-11-09T19:15:36.600Z",
+      "checkedAt": "2026-11-09T19:15:36.600Z",
+      "sourceHash": "043acd2595b8ec27e12c9aad449327e32b7e56b90424147ecd696d25417b5237",
+      "id": "retained-36edfaa2ad44ae7e4514b15e"
     },
     {
       "name": "INDEX:CN:STAR50",
@@ -5743,10 +5882,10 @@
       "name": "INDEX:CN:CSI300",
       "short": "INDEX:CN:CSI300",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T18:34:58.361Z",
-      "checkedAt": "2026-11-09T18:34:58.361Z",
-      "sourceHash": "a8a570b3feac9bdd6fc36e00ade8237ddcc876e0e8ed3a2fb1df52af4fa08aaf",
-      "id": "retained-2c764185125b1cd12e5a57db"
+      "retrievedAt": "2026-11-09T19:15:37.171Z",
+      "checkedAt": "2026-11-09T19:15:37.171Z",
+      "sourceHash": "b555585b61d90e2c137fcb9cb9a7292bf3a164dc67cf7733c550a27d511bcbab",
+      "id": "retained-77adea505e6ab6fdcb007d0b"
     },
     {
       "name": "INDEX:CN:CSI300",
@@ -5761,10 +5900,10 @@
       "name": "INDEX:CN:CSI500",
       "short": "INDEX:CN:CSI500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-09T18:34:58.512Z",
-      "checkedAt": "2026-11-09T18:34:58.512Z",
-      "sourceHash": "ccf6eb182cc2bde42c122ffca5195a6b98c8ab4f12d95435f0838fc86f86ac2b",
-      "id": "retained-4d49d7879f0ac28b2ec86c0a"
+      "retrievedAt": "2026-11-09T19:15:37.960Z",
+      "checkedAt": "2026-11-09T19:15:37.960Z",
+      "sourceHash": "3d18e2815f7f110466f1853c991bb91c81440a465574f5da9ba73f54fe4ac7d8",
+      "id": "retained-f2c9da727c29448df28faa68"
     },
     {
       "name": "INDEX:CN:CSI500",
@@ -5821,24 +5960,6 @@
       "id": "retained-e0612e082204cf076f71619c"
     },
     {
-      "name": "METAL:XAUUSD",
-      "short": "METAL:XAUUSD",
-      "url": "https://api.gold-api.com/price/XAU",
-      "retrievedAt": "2026-11-09T18:35:00.765Z",
-      "checkedAt": "2026-11-09T18:35:00.765Z",
-      "sourceHash": "8dc40ef482e219d2d05ef2c0b900377c8d077d14175c8c4c5d1dc80d12b87070",
-      "id": "retained-4dfae30836fc209f8de46250"
-    },
-    {
-      "name": "METAL:XAGUSD",
-      "short": "METAL:XAGUSD",
-      "url": "https://api.gold-api.com/price/XAG",
-      "retrievedAt": "2026-11-09T18:35:00.803Z",
-      "checkedAt": "2026-11-09T18:35:00.803Z",
-      "sourceHash": "85b1cc27329fc6160dd19343d5a5f7dc64e3396417293534d2a77e55e110619b",
-      "id": "retained-d82e222dc1c2e3d4769a5cab"
-    },
-    {
       "name": "ENERGY:BRENT",
       "short": "ENERGY:BRENT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BZX26.NYM?range=1d&interval=1m",
@@ -5846,6 +5967,33 @@
       "checkedAt": "2026-10-01T13:10:27.524Z",
       "sourceHash": "5b1234998e8baeec2861299206321fb9c369ca19786679d19fc32e616f34785e",
       "id": "retained-0155859ba9a9a6df7072db5f"
+    },
+    {
+      "id": "src-f81ef9d0acbac5ae2a8ac28b",
+      "name": "美股半导体板块强势反弹",
+      "short": "NBD-4643058",
+      "url": "https://www.nbd.com.cn/articles/2026-11-09/4643058.html",
+      "sourceHash": "10f24f77e3bb6163080cda1fd7ac8578716b591da4ff992a285e9078a7e48e68",
+      "retrievedAt": "2026-11-09T19:15:38.093Z",
+      "evidenceKind": "market"
+    },
+    {
+      "id": "src-30a5f797cbbeee33e77e1c26",
+      "name": "国家统计局最新发布",
+      "short": "NBS-FB",
+      "url": "https://www.stats.gov.cn/sj/zxfb/",
+      "sourceHash": "145788165fcbebe0546914ac4d91dcc637c722966d1d03bbbd531f9676675655",
+      "retrievedAt": "2026-11-09T19:15:39.056Z",
+      "evidenceKind": "calendar"
+    },
+    {
+      "id": "src-85ad8aa262564eb9dc9ab88c",
+      "name": "但斌三季度刚加仓英伟达，还有超60只QDII重仓",
+      "short": "NBD-4643075",
+      "url": "https://www.nbd.com.cn/articles/2026-11-10/4643075.html",
+      "sourceHash": "1b8f251d1e1110da16f62efb81a181fa575ee9125bda4b498222f557f2949923",
+      "retrievedAt": "2026-11-09T19:15:40.024Z",
+      "evidenceKind": "market"
     },
     {
       "name": "新浪转载/每日经济新闻 · A股午间个股样本",
@@ -5871,6 +6019,60 @@
       "url": "https://stcn.com/article/detail/4194756.html",
       "verifiedAt": "2026-09-22T16:44:35+08:00",
       "id": "retained-4c2ba3eb91fb667f10d4333f"
+    },
+    {
+      "name": "INDEX:CN:SSE",
+      "short": "INDEX:CN:SSE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T18:34:55.504Z",
+      "checkedAt": "2026-11-09T18:34:55.504Z",
+      "sourceHash": "bae16c0df58753be8bbe5f023d8f3e4633d997f4685fda5caceb529570ebe621",
+      "id": "retained-8bf704a82397ba3f5473ad12"
+    },
+    {
+      "name": "INDEX:CN:STAR50",
+      "short": "INDEX:CN:STAR50",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T18:34:57.989Z",
+      "checkedAt": "2026-11-09T18:34:57.989Z",
+      "sourceHash": "dee542d57673199bc3c344a0d9ed2f43dc0689529aa0db2a37ae0edb89b394b0",
+      "id": "retained-382158462a6fc6965cd6ecf7"
+    },
+    {
+      "name": "INDEX:CN:CSI300",
+      "short": "INDEX:CN:CSI300",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T18:34:58.361Z",
+      "checkedAt": "2026-11-09T18:34:58.361Z",
+      "sourceHash": "a8a570b3feac9bdd6fc36e00ade8237ddcc876e0e8ed3a2fb1df52af4fa08aaf",
+      "id": "retained-2c764185125b1cd12e5a57db"
+    },
+    {
+      "name": "INDEX:CN:CSI500",
+      "short": "INDEX:CN:CSI500",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
+      "retrievedAt": "2026-11-09T18:34:58.512Z",
+      "checkedAt": "2026-11-09T18:34:58.512Z",
+      "sourceHash": "ccf6eb182cc2bde42c122ffca5195a6b98c8ab4f12d95435f0838fc86f86ac2b",
+      "id": "retained-4d49d7879f0ac28b2ec86c0a"
+    },
+    {
+      "name": "METAL:XAUUSD",
+      "short": "METAL:XAUUSD",
+      "url": "https://api.gold-api.com/price/XAU",
+      "retrievedAt": "2026-11-09T18:35:00.765Z",
+      "checkedAt": "2026-11-09T18:35:00.765Z",
+      "sourceHash": "8dc40ef482e219d2d05ef2c0b900377c8d077d14175c8c4c5d1dc80d12b87070",
+      "id": "retained-4dfae30836fc209f8de46250"
+    },
+    {
+      "name": "METAL:XAGUSD",
+      "short": "METAL:XAGUSD",
+      "url": "https://api.gold-api.com/price/XAG",
+      "retrievedAt": "2026-11-09T18:35:00.803Z",
+      "checkedAt": "2026-11-09T18:35:00.803Z",
+      "sourceHash": "85b1cc27329fc6160dd19343d5a5f7dc64e3396417293534d2a77e55e110619b",
+      "id": "retained-d82e222dc1c2e3d4769a5cab"
     },
     {
       "name": "特朗普称若美伊谈判取得进展 再次发动打击可能性极低",
@@ -7329,7 +7531,1437 @@
       "retrievedAt": "2026-11-08T20:40:24.632Z",
       "evidenceKind": "news",
       "id": "news-retained-366db9a2ffbedd6867930a59"
+    },
+    {
+      "id": "amd-q2",
+      "name": "AMD Q2 2026 financial results",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+      "verifiedAt": "2026-09-22T13:18:57+08:00"
+    },
+    {
+      "id": "msft-q4",
+      "name": "Microsoft FY2026 Q4 earnings release",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+      "verifiedAt": "2026-09-22T13:18:57+08:00"
+    },
+    {
+      "id": "meta-q2",
+      "name": "Meta Q2 2026 results",
+      "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/",
+      "verifiedAt": "2026-09-22T13:18:57+08:00"
+    },
+    {
+      "id": "alibaba-ai",
+      "name": "Reuters Alibaba AI roadmap and chip Sep 22",
+      "url": "https://www.reuters.com/business/retail-consumer/alibaba-plans-ai-model-with-5-trillion-10-trillion-parameters-unveils-new-chip-2026-09-22/",
+      "verifiedAt": "2026-09-22T13:18:57+08:00"
+    },
+    {
+      "id": "nvda-q2fy27-sec-release",
+      "name": "NVIDIA Q2 FY2027 earnings release (SEC exhibit)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+      "verifiedAt": "2026-09-22T15:54:02+08:00"
+    },
+    {
+      "id": "nvda-q2fy27-sec-10q",
+      "name": "NVIDIA Q2 FY2027 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+      "verifiedAt": "2026-09-22T15:54:02+08:00"
+    },
+    {
+      "id": "googl-q2-2026-sec-release",
+      "name": "Alphabet Q2 2026 earnings release (SEC exhibit)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+      "verifiedAt": "2026-09-22T15:54:02+08:00"
+    },
+    {
+      "id": "googl-q2-2026-sec-10q",
+      "name": "Alphabet Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+      "verifiedAt": "2026-09-22T15:54:02+08:00"
+    },
+    {
+      "id": "amzn-q2-2026-ir",
+      "name": "Amazon Q2 2026 earnings release",
+      "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx?mode=light",
+      "verifiedAt": "2026-09-22T15:54:02+08:00"
+    },
+    {
+      "id": "brk-chair-20260918-reuters",
+      "name": "Reuters Berkshire chairman transition Sep 18",
+      "url": "https://www.reuters.com/business/retail-consumer/berkshire-hathaway-names-warren-buffett-chairman-emeritus-2026-09-18/",
+      "verifiedAt": "2026-09-22T15:54:02+08:00"
+    },
+    {
+      "id": "blk-q2-2026-sec-release",
+      "name": "BlackRock Q2 2026 earnings release (SEC exhibit)",
+      "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526304013/blk-ex99_1.htm",
+      "verifiedAt": "2026-09-22T15:54:02+08:00"
+    },
+    {
+      "id": "blk-q2-2026-sec-10q",
+      "name": "BlackRock Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526337177/blk-20260630.htm",
+      "verifiedAt": "2026-09-22T15:54:02+08:00"
+    },
+    {
+      "id": "aapl-q3-2026-apple",
+      "name": "Apple FY2026 Q3 results",
+      "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "aapl-q3-2026-sec10q",
+      "name": "Apple FY2026 Q3 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "avgo-q3-2026-ir",
+      "name": "Broadcom FY2026 Q3 results",
+      "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "avgo-q3-2026-sec10q",
+      "name": "Broadcom FY2026 Q3 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/avgo-20260802.htm",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "tsla-q2-2026-ir",
+      "name": "Tesla Q2 2026 financial results notice",
+      "url": "https://ir.tesla.com/press-release/tesla-releases-second-quarter-2026-financial-results",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "tsla-q2-2026-sec10q",
+      "name": "Tesla Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "tsla-q2-2026-consensus",
+      "name": "Tesla company-compiled Q2 2026 sell-side consensus",
+      "url": "https://ir.tesla.com/press-release/earnings-consensus-second-quarter-2026",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "bx-q2-2026-report",
+      "name": "Blackstone Q2 2026 earnings report",
+      "url": "https://www.blackstone.com/blackstone2q26earningspressrelease/",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "bx-q2-2026-sec10q",
+      "name": "Blackstone Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526340208/d158269d10q.htm",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "kkr-q2-2026-report",
+      "name": "KKR Q2 2026 earnings release",
+      "url": "https://ir.kkr.com/media/document/15a25fa9-8226-4da1-9ff3-027b9803d436/assets/KKR_Q226_Earnings_Release.pdf?disposition=inline",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "kkr-q2-2026-sec10q",
+      "name": "KKR Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1404912/000140491226000027/kkr-20260630.htm",
+      "verifiedAt": "2026-09-22T16:39:06+08:00"
+    },
+    {
+      "id": "reuters-meta-muse-global",
+      "url": "https://www.reuters.com/business/wall-street-expects-metas-ai-agent-shape-into-new-revenue-engine-2026-09-22/",
+      "verifiedAt": "2026-09-22T22:36:35+08:00"
+    },
+    {
+      "name": "tsla_q3_2026_exhibit",
+      "short": "tsla_q3_2026_exhibit",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/exhibit991111111.htm",
+      "sourceHash": "05fa124a2d8bf17137eb8df3f969741ebe7e40c2d9762d2fa7afc1f8453a198d",
+      "retrievedAt": "2026-10-03T16:36:36.463Z",
+      "evidenceKind": "research",
+      "id": "research-retained-c2b664e65f56c4d4ef755f42"
+    },
+    {
+      "id": "src-1fcc706c14d082b1cc9a1abf",
+      "name": "tsla_sec_index",
+      "short": "tsla_sec_index",
+      "url": "https://data.sec.gov/submissions/CIK0001318605.json",
+      "sourceHash": "33fd857195d8a298b043a969159239409967e063399da37ac4a76ab32c89583a",
+      "retrievedAt": "2026-10-03T16:36:35.945Z",
+      "evidenceKind": "research"
+    },
+    {
+      "name": "AMD official complete SEC submission 0000002488-26-000182; analyzed 8-K amd-20260926.htm",
+      "short": "amd-complete-submission",
+      "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000182/0000002488-26-000182.txt",
+      "sourceHash": "0e17490fa436b69d6efb6e106acfcee693897fb9b6043da1cff600a9fbdc6c96",
+      "retrievedAt": "2026-10-03T22:00:42.670Z",
+      "evidenceKind": "research",
+      "id": "research-retained-46ba97a0f8d331faa67ecb8c"
+    },
+    {
+      "name": "ORCL official complete SEC submission 0001193125-26-387905; analyzed EX-99.1 orcl-ex99_1.htm",
+      "short": "orcl-complete-submission",
+      "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526387905/0001193125-26-387905.txt",
+      "sourceHash": "1171f24722b632862d56ee026123b5f167bde9860df8723f0667e53596c81355",
+      "retrievedAt": "2026-10-03T22:00:42.801Z",
+      "evidenceKind": "research",
+      "id": "research-retained-1e30d59115e0bb2620a56290"
+    },
+    {
+      "name": "JPMorgan Chase Third-Quarter 2026 Earnings Release Exhibit 99.1",
+      "short": "jpm-3q26-sec-ex991",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065582/a3q26erfexhibit991narrative.htm",
+      "sourceHash": "75af2a1e2e6373a9f775ba7900593733b62797b50963f77eb087477ed7e5a07d",
+      "retrievedAt": "2026-10-13T16:09:07.624Z",
+      "evidenceKind": "research",
+      "id": "research-retained-1825ef1198646a720e9ddb57"
+    },
+    {
+      "name": "Goldman Sachs third-quarter 2026 earnings results",
+      "short": "gs-3q26-earnings-exhibit",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000529/a3q26gsearningsresults.htm",
+      "sourceHash": "e90b98d54a09b7835e3f6d65651cb954e182fde48cc2158e56a161dd7dc3d2bb",
+      "retrievedAt": "2026-10-13T17:08:02.420Z",
+      "evidenceKind": "research",
+      "id": "research-retained-a5d6914a9f99557e51645561"
+    },
+    {
+      "name": "Citigroup 3Q 2026 Earnings Press Release",
+      "short": "citi-3q26-earnings-exhibit",
+      "url": "https://www.sec.gov/Archives/edgar/data/831001/000110465926115323/c-ex99d1.htm",
+      "sourceHash": "764818d6c050ab760dc296ea0438dd71a7158d5b5fe6648749a4b74edf54dbec",
+      "retrievedAt": "2026-10-13T18:02:53.108Z",
+      "evidenceKind": "research",
+      "id": "research-retained-4c3c14ee22e2bb70ef4e207c"
+    },
+    {
+      "id": "src-871b040624c6db5d7cb73f99",
+      "name": "Johnson & Johnson Q3 2026 Earnings Press Release",
+      "short": "jnj-3q26-earnings-exhibit",
+      "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000189/a2026q3exhibit991.htm",
+      "sourceHash": "e8bd122f165668b8cb25a4f975500f739df36e25a11649624120a02be47e3eb2",
+      "retrievedAt": "2026-10-13T19:09:22.848Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-91e79fd6a289e2db7a965378",
+      "name": "UnitedHealth Group Q3 2026 Earnings Release",
+      "short": "unh-3q26-earnings-exhibit",
+      "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000255/earningsrelease3q26unh.htm",
+      "sourceHash": "d20620b598e0e6b21930ae1ff364ea2974fc6b8d3d66608e3865575df274f80d",
+      "retrievedAt": "2026-10-13T20:10:59.196Z",
+      "evidenceKind": "research"
+    },
+    {
+      "name": "Wells Fargo Form 8-K reporting third-quarter 2026 results",
+      "short": "wfc-sec-8k-20261013",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc-20261013.htm",
+      "sourceHash": "775c3a2ffd9cf32467173345e809f57c0d1d58c148603f49adeba27e15c764b4",
+      "retrievedAt": "2026-10-13T23:03:33.479Z",
+      "evidenceKind": "official",
+      "id": "research-retained-16da9cd181a8bae91065f064"
+    },
+    {
+      "name": "Wells Fargo Form 8-K dated October 13 2026",
+      "short": "wfc-8k-20261013",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc-20261013.htm",
+      "sourceHash": "be8e7fe08d70a6696e08147f5813d59cfc90aae7127791881349d29bdb1ffd22",
+      "retrievedAt": "2026-10-14T00:05:35.217Z",
+      "evidenceKind": "official",
+      "id": "research-retained-305ec371ebb701b90af1985c"
+    },
+    {
+      "name": "Wells Fargo Q3 2026 earnings release Exhibit 99.1",
+      "short": "wfc-ex991-20261013",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc3qer10-13x26ex991xrelea.htm",
+      "sourceHash": "fa309e03ecf136e1d3a8409a2608ed61b4c760dca98de8c819a642c2ac73633b",
+      "retrievedAt": "2026-10-14T00:05:35.128Z",
+      "evidenceKind": "official",
+      "id": "research-retained-07c8b64f2a04c2231e62f081"
+    },
+    {
+      "id": "src-3e8796a7866dd48302571d92",
+      "name": "JPMorgan Chase Form 8-K dated October 13 2026",
+      "short": "sec-jpm-8k-20261013",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065582/jpm-20261013.htm",
+      "sourceHash": "fb1af4e40a43810afa1a84db3f2886876eaf67bc3ead28d3fecce923a27458bd",
+      "retrievedAt": "2026-10-14T01:10:42.035Z",
+      "evidenceKind": "official"
+    },
+    {
+      "name": "JPMorgan Chase third-quarter 2026 earnings release",
+      "short": "sec-jpm-ex991-20261013",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065582/a3q26erfexhibit991narrative.htm",
+      "sourceHash": "db744cdba8e9fcde4d0b42e712c69316460709f28216e4bb5a900098f2bee990",
+      "retrievedAt": "2026-10-14T01:10:42.221Z",
+      "evidenceKind": "official",
+      "id": "research-retained-618aec2b1174544c8bf5be01"
+    },
+    {
+      "name": "Bank of America 3Q26 earnings release",
+      "short": "bac-3q26-earnings",
+      "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000481/bac09302026ex991.htm",
+      "sourceHash": "af96b99593989991febcfcb7148b9671547fde5d900bb8f4fc5a9410de231496",
+      "retrievedAt": "2026-10-14T15:08:46.311Z",
+      "evidenceKind": "research",
+      "id": "research-retained-f84fa110de5e0ca823816f3c"
+    },
+    {
+      "name": "Morgan Stanley third-quarter 2026 earnings release",
+      "short": "ms-3q26-earnings",
+      "url": "https://www.sec.gov/Archives/edgar/data/895421/000089542126000288/a3q26msearningsrelease.htm",
+      "sourceHash": "7b041b9a84ed5b125296c250ca9d479e205766f1b20166e7f7cde069b2204e51",
+      "retrievedAt": "2026-10-14T15:08:46.396Z",
+      "evidenceKind": "research",
+      "id": "research-retained-acb4a1c5b0ee113480783cb0"
+    },
+    {
+      "name": "Morgan Stanley Third Quarter 2026 Earnings Results",
+      "short": "morgan-stanley-q3-2026-sec",
+      "url": "https://www.sec.gov/Archives/edgar/data/895421/000089542126000288/a3q26msearningsrelease.htm",
+      "sourceHash": "aa2133c0a16aa3d112ffabdd695ff14110573f8b47e2b2932533c5957901b729",
+      "retrievedAt": "2026-10-14T21:10:17.697Z",
+      "evidenceKind": "research",
+      "id": "research-retained-16989c8615d0bf4a321004b6"
+    },
+    {
+      "id": "src-891e14ce87c4c313e86f8540",
+      "name": "Bank of America Third Quarter 2026 Press Release",
+      "short": "bofa-q3-2026-sec",
+      "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000481/bac09302026ex991.htm",
+      "sourceHash": "1d44a3965e30661101e4fd059455b331858a62cbf5e69aa3c79aa98b9e14cb60",
+      "retrievedAt": "2026-10-14T21:10:17.706Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-d3ba784f4b557d1a210e30ca",
+      "name": "BlackRock Q3 2026 Form 8-K Filing Detail",
+      "short": "blk-q3-2026-filing-index",
+      "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526420979/0001193125-26-420979-index.htm",
+      "sourceHash": "89cd5a714bc276af91433a0ffebb0c476178c99a8c3c9e6af3e7576ce4d818c0",
+      "retrievedAt": "2026-10-15T05:06:24.384Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-a8c68c43387bc3969fdd1c0d",
+      "name": "BlackRock Q3 2026 Form 8-K",
+      "short": "blk-q3-2026-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526420979/blk-20261014.htm",
+      "sourceHash": "09e9d3c0941b63a0107d7a33640796be34136ebfc9ddea05ec1b617f59c75309",
+      "retrievedAt": "2026-10-15T05:06:24.446Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-382ef51e378d343e82f53343",
+      "name": "BlackRock Q3 2026 Earnings Supplement",
+      "short": "blk-q3-2026-ex992",
+      "url": "https://www.sec.gov/Archives/edgar/data/2012383/000119312526420979/blk-ex99_2.htm",
+      "sourceHash": "8dd266f64a6f0307be19452d0d35657321a83e1b9ab286c6ed3b6f843a3b3cfd",
+      "retrievedAt": "2026-10-15T05:06:24.653Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-4f00915a179f9acb22c3a6dd",
+      "name": "Morgan Stanley Third Quarter 2026 Earnings Results — Exhibit 99.1",
+      "short": "ms-3q26-earnings-ex991",
+      "url": "https://www.sec.gov/Archives/edgar/data/895421/000089542126000288/a3q26msearningsrelease.htm",
+      "sourceHash": "d00855ea856e367b2aaf1b38b5f648c22bb9623e85acb2895754aa47c0c042d0",
+      "retrievedAt": "2026-10-15T06:10:35.288Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-915643aa7b17b3c66f908f1e",
+      "name": "Goldman Sachs Form 8-K dated October 13, 2026",
+      "short": "gs-3q26-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000529/gs-20261013.htm",
+      "sourceHash": "002016423ec5b9b62318ddc80a6364a70e6393e837529febfa2ff77160244739",
+      "retrievedAt": "2026-10-15T07:09:16.837Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-64f009b2648e5571acda43a7",
+      "name": "Goldman Sachs Third Quarter 2026 Earnings Results",
+      "short": "gs-3q26-earnings-ex991",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000529/a3q26gsearningsresults.htm",
+      "sourceHash": "5a839747d2f953fbc4e3a6163b91a9729567e0388f3cf18c704b1700c7dc5f37",
+      "retrievedAt": "2026-10-15T07:09:16.993Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-f032197f6b79e28861ba4db1",
+      "name": "Travelers October 16 2026 Form 8-K",
+      "short": "travelers-q3-2026-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/86312/000008631226000180/trv-20261016.htm",
+      "sourceHash": "7851f641a594ec4ae49eb01c85d9c07059bb33d6075b6b753b14c76768ddb97c",
+      "retrievedAt": "2026-10-16T20:06:14.102Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-177a6972da3e30f5da0aa83d",
+      "name": "Travelers Reports Third Quarter 2026 Results",
+      "short": "travelers-q3-2026-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/86312/000008631226000180/a991pressrelease93026.htm",
+      "sourceHash": "11c4827dd9ae7e7a34f6e30da375ebd8f43dde8a313468860e8234e1fb4322f0",
+      "retrievedAt": "2026-10-16T20:06:14.278Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-f2d53887ffee2c89d69accff",
+      "name": "Alcoa Corporation Reports Third Quarter 2026 Results",
+      "short": "alcoa-q3-2026-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/1675149/000119312526422891/aa-ex99_1.htm",
+      "sourceHash": "0e15bca1da6a7ceefc659148fcbddfb867313dbe6f649846090fbb19a93a30cb",
+      "retrievedAt": "2026-10-16T21:07:11.463Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-61c8d3e14d198569e4c03db5",
+      "name": "Varonis Form 8-K — Proofpoint merger agreement",
+      "short": "sec-varonis-proofpoint-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/1361113/000121390026109901/0001213900-26-109901-index.htm",
+      "sourceHash": "04501d856b6bac4159c7071656d2cb63028bb54e45e64d0b1838d2005f30db71",
+      "retrievedAt": "2026-10-17T00:05:44.522Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-d5b1c1018cbdc5b1c00e36e7",
+      "name": "Proofpoint to Acquire Varonis in a $6.3 Billion Transaction",
+      "short": "sec-varonis-proofpoint-ex991",
+      "url": "https://www.sec.gov/Archives/edgar/data/1361113/000121390026109901/ea030861001ex99-1.htm",
+      "sourceHash": "40b74f66e7b1b289dd30d454d06b762604e99a65d08231402e452bef4c04d3b1",
+      "retrievedAt": "2026-10-17T00:05:44.493Z",
+      "evidenceKind": "research"
+    },
+    {
+      "name": "Strategy Inc. DEFA14A definitive additional materials (2026 Special Meeting)",
+      "short": "SEC-MSTR-DEFA14A-20261020",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526425732/mstr-20261020.htm",
+      "sourceHash": "d18a8d7565c7a1b49fdbb220f469b312695309844f8496e6f87afe50b3d358c6",
+      "retrievedAt": "2026-10-20T16:40:20.623Z",
+      "evidenceKind": "research",
+      "id": "research-retained-099908dce1851c0cd1b4976d"
+    },
+    {
+      "id": "src-039a6c1f9ebd943e6c2e4921",
+      "name": "Netflix, Inc. Form 8-K filed 2026-10-20",
+      "short": "sec-nflx-8k-20261020",
+      "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000290/nflx-20261020.htm",
+      "sourceHash": "bad07b0a9e68f02d74a3c52a59287a57c8f2e895c6e842543e70907a66363181",
+      "retrievedAt": "2026-10-20T20:15:36.812Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-ed0d862f8570d945134dc4f7",
+      "name": "Netflix Q3 2026 Shareholder Letter (Exhibit 99.1)",
+      "short": "sec-nflx-ex991-q326",
+      "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000290/ex991_q326.htm",
+      "sourceHash": "8716da86fb11e18caa5505543452829bb0fbab5672844f0f68603c2667c32147",
+      "retrievedAt": "2026-10-20T20:15:37.024Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-9f7d84467b98957b8cb6bed4",
+      "name": "Supermicro Provides First Quarter of Fiscal Year 2027 Preliminary Business Update",
+      "short": "SEC-SMCI-Q1FY27-2026-10-20",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375365/000137536526000025/smcifirstquarterfy2027busi.htm",
+      "sourceHash": "c46f619cc733d52368d68c62b3a4fdcc2bc59edd1a35e9f0c1eb32a1f845c4ef",
+      "retrievedAt": "2026-10-20T21:26:09.991Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-2329dcd7e35184e0efc21322",
+      "name": "CBRE Expands Critical Infrastructure Capabilities in Europe and Asia Pacific with Onnec Acquisition",
+      "short": "SEC-CBRE-ONNEC-2026-10-20",
+      "url": "https://www.sec.gov/Archives/edgar/data/1138118/000119312526426827/cbre-ex99_1.htm",
+      "sourceHash": "b9f96f04a61c3714dd1ca5b2a28f192f7f89d178af404713b9989f94a2c169ee",
+      "retrievedAt": "2026-10-20T21:26:10.292Z",
+      "evidenceKind": "research"
+    },
+    {
+      "name": "Alaska Air Group reports third quarter 2026 results",
+      "short": "SEC-ALK-Q3-2026-2026-10-20",
+      "url": "https://www.sec.gov/Archives/edgar/data/766421/000076642126000046/ex99110202026earningsrelea.htm",
+      "sourceHash": "2f559dd6c6869afc564aecacc5081742e0f2795ce775e3a08ac9468328c739fd",
+      "retrievedAt": "2026-10-20T21:26:10.845Z",
+      "evidenceKind": "research",
+      "id": "research-retained-9f368a68e2489fecd54294c1"
+    },
+    {
+      "name": "Chubb Reports Third Quarter 2026 Results",
+      "short": "SEC-CHUBB-Q3-2026-2026-10-20",
+      "url": "https://www.sec.gov/Archives/edgar/data/896159/000119312526426866/d160822dex991.htm",
+      "sourceHash": "5be498a67a6710509f0a86ef958df6cab3ac43f6bee9332701cc9a493db57fd5",
+      "retrievedAt": "2026-10-20T22:38:30.840Z",
+      "evidenceKind": "research",
+      "id": "research-retained-d171b79570997705a8430a56"
+    },
+    {
+      "id": "src-7fb0ec5678c849814cc89593",
+      "name": "宁德时代回应“投资者对明年行业需求担忧”：2027年行业需求依旧可期 没有市场预期的那么悲观",
+      "short": "NBD-4610788-CATL-2027-DEMAND",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4610788.html",
+      "sourceHash": "bee6adecc313b92b57740ba07cacde49686f145afd536fedf58f571b6cbfc0cf",
+      "retrievedAt": "2026-10-21T03:12:21.228Z",
+      "evidenceKind": "news"
+    },
+    {
+      "id": "src-c57ae9068e954343fbf23946",
+      "name": "宁德时代盘中跌超10% 股价自历史高点回落超50%",
+      "short": "NBD-4610762-CATL-HALVED",
+      "url": "https://www.nbd.com.cn/articles/2026-10-21/4610762.html",
+      "sourceHash": "de67812fed04770ad649b319f1e5a9417cefe5eb73837b714f3001077ae6e5fe",
+      "retrievedAt": "2026-10-21T03:12:21.118Z",
+      "evidenceKind": "news"
+    },
+    {
+      "id": "src-f5c8cb90e545eed9c59a1d0c",
+      "name": "澜起科技股份有限公司2026年第三季度业绩预增的自愿性披露公告",
+      "short": "CNSTOCK-LANQI-Q3-20261021",
+      "url": "https://paper.cnstock.com/html/2026-10/21/content_2279199.htm",
+      "sourceHash": "f64d0314168733003e3d47f7c4041b661119248859213570416a5cb0342f631c",
+      "retrievedAt": "2026-10-21T10:32:47.052Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-79d49f9504d06835c942fb85",
+      "name": "Abbott Reports Third-Quarter 2026 Results and Reaffirms Full-Year EPS Guidance",
+      "short": "SEC-ABT-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1800/000162828026066601/abt-2026q3xexhibitx991.htm",
+      "sourceHash": "4c9cb29fdae566b0d11470d1a0d2712252a5a7984fd49deeae408dfdc85861d0",
+      "retrievedAt": "2026-10-21T11:47:11.598Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-0a031a8fe0319e54eb3481b9",
+      "name": "Thermo Fisher Scientific Reports Third Quarter 2026 Results",
+      "short": "SEC-TMO-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/97745/000009774526000173/q32026earnings8kex99_1.htm",
+      "sourceHash": "ccfc762cc97ca9cd85ec778bf05159323ef9dae4245a7e67c9a22b98eeb16750",
+      "retrievedAt": "2026-10-21T11:47:11.767Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-89a94865f860ae8200351165",
+      "name": "AT&T Delivers Strong Third-Quarter 2026 Results",
+      "short": "SEC-T-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000370/t-3q2026exhibit991.htm",
+      "sourceHash": "3a404d4040e386947c6613bdaf273715d0da9daf979a64c129f47d0bdb639519",
+      "retrievedAt": "2026-10-21T11:47:12.324Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-0cf5c085420adbdf8114e390",
+      "name": "Philip Morris International Reports 2026 Third-Quarter Results",
+      "short": "SEC-PM-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1413329/000162828026066596/earningsreleasepm-ex991xq3.htm",
+      "sourceHash": "1f647312c4ae776de41b9a27bcf62f48f8da10fd2d6e7ba7a2025e75dd7abe9d",
+      "retrievedAt": "2026-10-21T11:47:12.769Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-0aaef95349301a76c71c3051",
+      "name": "Elevance Health Reports Third Quarter 2026 Results; Raises Full-Year Guidance",
+      "short": "SEC-ELV-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1156039/000115603926000068/a3q2026elvearningsrelease.htm",
+      "sourceHash": "0c5737f4bdc11a1f793364d7e4f88dcd08db907f805d87b8c233a73fbba568b5",
+      "retrievedAt": "2026-10-21T11:47:12.861Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-5afdecf2b7058f4793549c9e",
+      "name": "CME Group Inc. Reports Highest Q3 Revenue on Record for Q3 2026",
+      "short": "SEC-CME-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1156375/000115637526000065/exhibit9919302026.htm",
+      "sourceHash": "64615c2ba17ba2ee9f18b71ab894dff85ab0953a941b3c90479bdd99d238c9fe",
+      "retrievedAt": "2026-10-21T11:47:13.056Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-1b61b55b27b3cd6bac7cfd8b",
+      "name": "Alaska Air Group third quarter 2026 earnings release (Exhibit 99.1)",
+      "short": "SEC-ALK-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/766421/000076642126000046/ex99110202026earningsrelea.htm",
+      "sourceHash": "41ec1690a75e40176da9df13749bc9b2cc738f88d20c981e9c75d91ee3c7c58b",
+      "retrievedAt": "2026-10-21T13:01:02.234Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-790d920675568a21f29aa0e4",
+      "name": "Chubb Limited third quarter 2026 earnings release (Exhibit 99.1)",
+      "short": "SEC-CB-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/896159/000119312526426866/d160822dex991.htm",
+      "sourceHash": "5f4dde3ea163535b7844504cfd44173cbd2386d1da91a62fa5264f550dc9b4e9",
+      "retrievedAt": "2026-10-21T13:01:03.826Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-d43a98b8bd4676942dd688f1",
+      "name": "Northern Trust third quarter 2026 earnings release (Exhibit 99.1)",
+      "short": "SEC-NTRS-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/73124/000007312426000063/q32026earningsreleaseex991.htm",
+      "sourceHash": "fbdaac9346e02753330dabf537cb4e8083341b301d8aa23060e20bf87872f116",
+      "retrievedAt": "2026-10-21T13:01:04.008Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-a38f66f10790964f0e9207db",
+      "name": "Moodys third quarter 2026 earnings release",
+      "short": "SEC-MCO-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026066594/a3q26earningsrelease.htm",
+      "sourceHash": "490c11968c57ebf28512af24fc654450848ac04ecc6fe151db715e50e5b8916f",
+      "retrievedAt": "2026-10-21T13:01:04.556Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-6eda8593250d9fb98cb93034",
+      "name": "Cencora fiscal 2026 fourth quarter and full year results (Exhibit 99.1)",
+      "short": "SEC-COR-8K-2026Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1140859/000110465926117576/tm2627778d1_ex99-1.htm",
+      "sourceHash": "1b63ebdfeabba178465c847161c36e27cbeb77e716d85e9f42363bd5a4b3424f",
+      "retrievedAt": "2026-10-21T13:01:04.976Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-d7392e25f4e06d07ee2ab487",
+      "name": "Lithia Motors third quarter 2026 earnings release (Exhibit 99)",
+      "short": "SEC-LAD-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1023128/000102312826000057/a2026q3exx99earningsrelease.htm",
+      "sourceHash": "b510d3204d326ceba74d759546b7179160621fb10a30ad7fe8d4191a9a706d18",
+      "retrievedAt": "2026-10-21T15:41:57.682Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-1cc94f99b4f290a29aa16545",
+      "name": "Winnebago Industries fiscal 2026 fourth quarter earnings release (Exhibit 99.1)",
+      "short": "SEC-WGO-8K-2026Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/107687/000162828026066605/exh9912026q4earningsrelease.htm",
+      "sourceHash": "1653408dcc16efb840a269d2f2871f32c083b5fb262adcbbf269616a77089c1d",
+      "retrievedAt": "2026-10-21T15:41:57.925Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-20372444f46b616c63d28643",
+      "name": "Westinghouse Air Brake Technologies third quarter 2026 press release",
+      "short": "SEC-WAB-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/943452/000094345226000017/a3q26pressreleaseword.htm",
+      "sourceHash": "9bcd85836808e98e37d21b1fd6a03a0519e7008c2d20eff559387fa46d147c79",
+      "retrievedAt": "2026-10-21T15:41:58.227Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-7b7a532ceba49564be1ed199",
+      "name": "Equity LifeStyle Properties third quarter 2026 earnings release (Exhibit 99.1)",
+      "short": "SEC-ELS-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/895417/000162828026066614/elsex9913q26.htm",
+      "sourceHash": "1c9b5cf9eacb06543e40f29779502654dbb6ec30aed82eea8a86011f5902b9bd",
+      "retrievedAt": "2026-10-21T15:41:59.285Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-f879b9da3a66353653dfbbde",
+      "name": "Getty Images Holdings, Inc. Form 8-K (Item 1.03 Bankruptcy or Receivership)",
+      "short": "SEC-GETY-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/1898496/000121390026111193/ea0309225-8k_getty.htm",
+      "sourceHash": "1bea7584cfae9ecb1641f0eca242e8631a42853435f325c6ef1e7264335b6648",
+      "retrievedAt": "2026-10-21T18:34:07.202Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-713ef8103a870dc4f26265a3",
+      "name": "Group 1 Automotive, Inc. Form 8-K (Item 2.01 Completion of Acquisition)",
+      "short": "SEC-GPI-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/1031203/000103120326000139/gpi-20261019.htm",
+      "sourceHash": "3098ab914fcff90eee62b2e59350118ef7a6e6031d68492a921a2006225e1b03",
+      "retrievedAt": "2026-10-21T18:34:07.194Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-bec857784d6af74e9f56bd62",
+      "name": "Elmet Group Co. Form 8-K (Item 1.01 Material Definitive Agreement)",
+      "short": "SEC-ELMT-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/2101698/000121390026111199/ea0309114-8k_elmet.htm",
+      "sourceHash": "6d3c79202dbb8187b92c3a418c7f8b9dc5b2d9e4b721199a71f850e01a03b51e",
+      "retrievedAt": "2026-10-21T18:34:07.357Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-a370fdabf6ad2a54a35d7761",
+      "name": "西部矿业股份有限公司2026年第三季度报告",
+      "short": "CN-WESTMINING-Q3-20261022",
+      "url": "https://paper.cnstock.com/html/2026-10/22/content_2279545.htm",
+      "sourceHash": "cf7539ada0296080aa0dc9b06ce12d6403dec8f86880031919611344e14e1b48",
+      "retrievedAt": "2026-10-21T18:34:07.069Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-8314139851b76c3c837664e0",
+      "name": "Heartland Express, Inc. Form 8-K (Item 2.02 Results of Operations)",
+      "short": "US-HTLC-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923326000045/htld-20261020.htm",
+      "sourceHash": "f11b1f746f26f475a950bcbf5a052e81672e2ff777fa363d09b3748dfbb1df36",
+      "retrievedAt": "2026-10-21T19:55:16.928Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-08859fbd1f52e3cd258a0263",
+      "name": "Heartland Express, Inc. Q3 2026 Earnings Release (Exhibit 99.1)",
+      "short": "US-HTLC-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923326000045/htld2026q3earningsrelease.htm",
+      "sourceHash": "0426c173612e9e15b4b61b485c0ce28ff0804f4271419a1274d10455a3fedb72",
+      "retrievedAt": "2026-10-21T19:55:17.003Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-da5126832d49bff5072b9635",
+      "name": "Pinnacle Financial Partners, Inc. Form 8-K (Item 2.02 / 7.01)",
+      "short": "US-PNFP-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/2082866/000208286626000087/pnfp-20261021.htm",
+      "sourceHash": "b3600a2fb3225020f373db8dd163b03ec3ab9c0e95abc67984d27adaf7574297",
+      "retrievedAt": "2026-10-21T19:55:17.217Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-46af986192bcabba368a671b",
+      "name": "Pinnacle Financial Partners Q3 2026 Earnings Release (Exhibit 99.1)",
+      "short": "US-PNFP-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/2082866/000208286626000087/pnfp_09302026xex991xfiling.htm",
+      "sourceHash": "be6c59ad6ab7e2424e0abd677a8f4dacc5a26ec0c8babedbfca0c58d51945176",
+      "retrievedAt": "2026-10-21T19:55:17.511Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-fc38107b9691eabebdd42e3f",
+      "name": "烟台杰瑞石油服务集团股份有限公司2026年第三季度报告",
+      "short": "CN-JEREH-Q3-20261022",
+      "url": "https://paper.cnstock.com/html/2026-10/22/content_2279847.htm",
+      "sourceHash": "359f3074df2fb8d50ab11033d9634f8946f345df2b0404ec913b8e52da167251",
+      "retrievedAt": "2026-10-21T19:55:17.175Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-987597a13f5dd7be70eadf35",
+      "name": "Tesla, Inc. Form 8-K (Item 2.02 Results of Operations and Financial Condition), filed 2026-10-21",
+      "short": "US-TSLA-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm",
+      "sourceHash": "69d6adad529c43a5e54a3f9f322b978f7b5b869db9105686e8b960433c3e7388",
+      "retrievedAt": "2026-10-21T21:08:26.624Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-5a51c104b8f7c598fb97a358",
+      "name": "Tesla, Inc. Q3 2026 Update (Exhibit 99.1)",
+      "short": "US-TSLA-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm",
+      "sourceHash": "48367cb96c773d6695ad6f75c65ed42672514785c44cc8ddfbeebf74cc08333a",
+      "retrievedAt": "2026-10-21T21:08:26.711Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-2536bd93be216eb85f032e11",
+      "name": "Oceaneering International, Inc. Form 8-K (Item 2.02 Results of Operations), filed 2026-10-21",
+      "short": "US-OII-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/73756/000007375626000152/oii-20261021.htm",
+      "sourceHash": "b86a1a10127103f8f6c225b7eefccc688d04969b8856c62849c6fbe90e260086",
+      "retrievedAt": "2026-10-21T21:08:27.212Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-ae566f727861ce57c7885b02",
+      "name": "Oceaneering International Q3 2026 Earnings Release (Exhibit 99.1)",
+      "short": "US-OII-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/73756/000007375626000152/exhibit_991x8kx3qx2026.htm",
+      "sourceHash": "95a9a876deae58cdbbdd3f4f7307b0a9dbe016dfcb45dcfa1e6a357eb2778930",
+      "retrievedAt": "2026-10-21T21:08:27.392Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-e1fc44eb516f0239c8a5156e",
+      "name": "Kaiser Aluminum Corporation Form 8-K (Item 2.02 Results of Operations), filed 2026-10-21",
+      "short": "US-KALU-8K-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/811596/000119312526427927/kalu-20261021.htm",
+      "sourceHash": "65df1a0ab23eb9211744af87524fac4623d3f0eb0792f56562477b31d0d9d8d9",
+      "retrievedAt": "2026-10-21T21:08:27.578Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-ef4163aff59aa2e7c87646e3",
+      "name": "Kaiser Aluminum Corporation Q3 2026 Earnings Release (Exhibit 99.1)",
+      "short": "US-KALU-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/811596/000119312526427927/kalu-ex99_1.htm",
+      "sourceHash": "0e3f8514654b2029ef81c7aca0ebdbe769e6b963e195550b57dc28d0db70d543",
+      "retrievedAt": "2026-10-21T21:08:27.710Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-2a713daa5e0ad1f9a69bd40c",
+      "name": "IBM 2026年第三季度业绩公告（8-K 附件99.1）",
+      "short": "SEC-IBM-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021xex991.htm",
+      "sourceHash": "944c97158428f05bcbd1a01febf60f40bb1a2b1c9b913e781fde0334cdbfd702",
+      "retrievedAt": "2026-10-21T22:19:17.398Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-dd6ec0ca655a08fb671027f2",
+      "name": "IBM第三季度营收171亿美元 同比增长4.7%",
+      "short": "NBD-IBM-Q3-20261021",
+      "url": "https://www.nbd.com.cn/articles/4611922.html",
+      "sourceHash": "e30194e7f1f9db7eead541d339db452a19c08f9d5008b4bd1683314f32290073",
+      "retrievedAt": "2026-10-21T22:19:18.937Z",
+      "evidenceKind": "news"
+    },
+    {
+      "id": "src-db4866a450c7ad6815910e0a",
+      "name": "Liberty Energy 2026年第三季度业绩公告（8-K 附件）",
+      "short": "SEC-LBRT-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1694028/000169402826000055/q32026-earningsrelease.htm",
+      "sourceHash": "e99db79cbf29c7971e64fb6506892eac012ce103ad3a8002ec57e87e8103bea5",
+      "retrievedAt": "2026-10-21T22:19:18.270Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-5e463904740bb78fd65b618c",
+      "name": "United Rentals 2026年第三季度业绩公告（8-K 附件99.1）",
+      "short": "SEC-URI-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067701/000106770126000036/uri-9302026xex991.htm",
+      "sourceHash": "ab5160c6d4dcba820d0c13b5b6993fce4486f3e755e4175da14245fcad096c3a",
+      "retrievedAt": "2026-10-21T22:19:18.627Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-d357c2f88126c7f168180a2f",
+      "name": "Crown Castle 2026年第三季度业绩公告（8-K 附件）",
+      "short": "SEC-CCI-EX991-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000085/q32026earningsrelease.htm",
+      "sourceHash": "5794061d7cccbbaa5330139ca64640f2b3668e23ce3c993c40d427bdb21e144a",
+      "retrievedAt": "2026-10-21T22:19:19.145Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-fbc3bc0234b82362e75f90bc",
+      "name": "Sonoco 2026年第三季度业绩公告（8-K 附件99）",
+      "short": "SEC-SON-EX99-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000047/ex99q32026earningsrelease.htm",
+      "sourceHash": "ad343445e487a29fe770f9ca479a03451956e9f5a38782cc24a71d66016b5299",
+      "retrievedAt": "2026-10-21T22:19:19.481Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-9188116c20398a4c5064fd20",
+      "name": "CACI International FY2027 Q1 results (Form 8-K Exhibit 99.1)",
+      "short": "SEC-CACI-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/16058/000162828026066740/fy27-q1caci20261021ex991.htm",
+      "sourceHash": "56c0dd7f2a79a03e2b15ec800b0e20f18f892f873e84755dbbc8efde14b27aaf",
+      "retrievedAt": "2026-10-22T00:45:55.543Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-759cf12dbc29aef55f19052b",
+      "name": "Reliance, Inc. Third Quarter 2026 Financial Results (Form 8-K Exhibit 99.1)",
+      "short": "SEC-RELIANCE-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/861884/000117184326006744/exh_991.htm",
+      "sourceHash": "f5e70b7e667044dfa1b601ed69f15e2ddd264f4df20dc96a08c366ca5b6e1342",
+      "retrievedAt": "2026-10-22T00:45:56.555Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-c8626dc4a7858997fead2934",
+      "name": "Stewart Information Services Third Quarter 2026 Results (Form 8-K Exhibit 99.1)",
+      "short": "SEC-STC-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/94344/000110465926117852/tm2628060d1_ex99-1.htm",
+      "sourceHash": "7c115cba5e734483b203ac127b5861fdba0aca25056df8b0a308f78a702d1fe9",
+      "retrievedAt": "2026-10-22T00:45:57.040Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-f1d17a09660c6ee0785a0115",
+      "name": "Element Solutions Inc Third Quarter 2026 Results (Form 8-K Exhibit 99.1)",
+      "short": "SEC-ESI-8K-20261021",
+      "url": "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000069/aearningsreleaseex99120269.htm",
+      "sourceHash": "a32b7551bcdb623d4043f8ef141d5ab06fc0ad9ff240ef5dc1886421de5bfa58",
+      "retrievedAt": "2026-10-22T00:45:57.326Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-3d5574e4c37408dec8e63228",
+      "name": "京沪高铁披露派息方案，半年度利润高比例回馈｜红利早参",
+      "short": "NBD-JH-HSR-DIVIDEND-20261022",
+      "url": "https://www.nbd.com.cn/articles/2026-10-22/4612090.html",
+      "sourceHash": "ea443fdf804bc69caddc32a8cf0c02ee2c9fc784b4357bbcaa488ee793c49253",
+      "retrievedAt": "2026-10-22T01:59:54.468Z",
+      "evidenceKind": "news"
+    },
+    {
+      "id": "src-f2a64b8a2d02af1f24a7fea7",
+      "name": "Station Casinos LLC Announces Closing of $500 Million Incremental Term B Loan (Red Rock Resorts 8-K Ex-99.1)",
+      "short": "SEC-RRR-2026-10-21",
+      "url": "https://www.sec.gov/Archives/edgar/data/1653653/000119312526427970/d77825dex991.htm",
+      "sourceHash": "778e40ee12d6d56480994ed9a1216a018b29ca00616f339518bfecb3f3663100",
+      "retrievedAt": "2026-10-22T04:28:01.178Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-93ca84bae40ab09ee203ea70",
+      "name": "Mid Penn Bancorp, Inc. Reports Third Quarter Earnings (8-K Ex-99.1)",
+      "short": "SEC-MPB-2026Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/879635/000087963526000058/mpb-20260930xexx991.htm",
+      "sourceHash": "eb321904095e5630f7d821310994142d5ebfc04e87fe27fe6ab29017cfe5a2a1",
+      "retrievedAt": "2026-10-22T04:28:01.400Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-d6212c4cca551c793c64d23d",
+      "name": "TTM Technologies Reports Third Quarter 2026 Results",
+      "short": "SEC-TTMI-Q3-2026-EX991",
+      "url": "https://www.sec.gov/Archives/edgar/data/1116942/000119312526428263/d282109dex991.htm",
+      "sourceHash": "e8c899ac8c4bb5e63596b45b2c8d31d00f527b620a406fa877e12939e40ddc21",
+      "retrievedAt": "2026-10-22T10:13:55.415Z",
+      "evidenceKind": "research"
+    },
+    {
+      "name": "SEC EDGAR 最新 8-K 申报列表（2026-10-22）",
+      "short": "SEC-8K-FEED-20261022",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&dateb=&owner=include&count=100&output=atom",
+      "sourceHash": "ba276789839e3be0b37d1812fb841d14919b25b55bb8812ff85da6ee45ad77f7",
+      "retrievedAt": "2026-10-22T10:13:55.015Z",
+      "evidenceKind": "research",
+      "id": "research-retained-d0f5d950f90a1fe221675286"
+    },
+    {
+      "id": "src-6443ab08fb5372019216a99b",
+      "name": "Honeywell Technologies Reports Third Quarter Results, Raises Full-Year 2026 Outlook",
+      "short": "SEC-HON-Q3-2026-EX99",
+      "url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000141/exhibit99-q32026earningsre.htm",
+      "sourceHash": "ed152fe4c469968aa7630897635afda71db4a723edc33b593c2669fc0b1d78ee",
+      "retrievedAt": "2026-10-22T10:13:55.849Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-718de75c71a775a845b13ceb",
+      "name": "Allegion Reports Q3-2026 Financial Results; Raising Full-Year 2026 Outlook",
+      "short": "SEC-ALLE-Q3-2026-EX991",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579241/000157924126000032/exhibit991-pressreleasedat.htm",
+      "sourceHash": "75ff041308ad87f0dc7af2d00e6f001ea1019276244c696d5df649813daee65b",
+      "retrievedAt": "2026-10-22T10:13:55.887Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-0ad4ec3b902a55d7671405dd",
+      "name": "P&G announces fiscal year 2027 first quarter results (EX-99.1)",
+      "short": "SEC-PG-EX991-Q1FY27-20261022",
+      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000250/fy2627q1jas8-kexhibit991.htm",
+      "sourceHash": "abfd4093daf0e5d90f11fb1ab59bc49c0668723bfef4edda086b13db1f2e0f6a",
+      "retrievedAt": "2026-10-22T11:37:05.639Z",
+      "evidenceKind": "research"
+    },
+    {
+      "name": "SEC EDGAR latest 8-K filings (current)",
+      "short": "SEC-8K-CURRENT-20261022",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&dateb=&owner=include&count=100&output=atom",
+      "sourceHash": "0d8add94901b97dfbad89ee7b021eb221a751419fd63366fe4efb0731326041f",
+      "retrievedAt": "2026-10-22T11:37:04.969Z",
+      "evidenceKind": "research",
+      "id": "research-retained-0537c4c7386bc8436d991bfe"
+    },
+    {
+      "id": "src-ea881adcadec670e44fc62cc",
+      "name": "American Airlines third quarter 2026 results (EX-99.1)",
+      "short": "SEC-AAL-EX991-Q3-2026-20261022",
+      "url": "https://www.sec.gov/Archives/edgar/data/4515/000000620126000064/a8kerexhibit991q3-26.htm",
+      "sourceHash": "e6a70364d0c59cece36d8bf66b9dd4802c6e7a9108abb3e97c95ad1394173cf6",
+      "retrievedAt": "2026-10-22T11:37:05.726Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-09fe135893ac8807507ad297",
+      "name": "Lattice Semiconductor appoints John McCool and Raejeanne Skillern to Board of Directors (EX-99.1)",
+      "short": "SEC-LSCC-EX991-20261022",
+      "url": "https://www.sec.gov/Archives/edgar/data/855658/000143774926033171/ex_1028812.htm",
+      "sourceHash": "adfa66613e039f82a016bfb73ed504e5f28e229f678d82d9836935d1ee56bec6",
+      "retrievedAt": "2026-10-22T11:37:05.856Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-cc41cc3017b2d43e0ac19728",
+      "name": "Valero Energy reports third quarter 2026 results (EX-99.01)",
+      "short": "SEC-VLO-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026066795/a9302026exh9901earningsrel.htm",
+      "sourceHash": "c97f10c98d37a00ab928ec49d3376e2130fff4629d836d9b26f50f296fb41175",
+      "retrievedAt": "2026-10-22T13:01:25.587Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-bac43a6b7b3dcc784048013f",
+      "name": "Union Pacific reports third quarter 2026 results (EX-99.1)",
+      "short": "SEC-UNP-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/100885/000010088526000319/a2026-10x228xkex991earning.htm",
+      "sourceHash": "4413e365f7cca3591c4e067f9da25bc1815cdde6829db5279a081c1a237c0a20",
+      "retrievedAt": "2026-10-22T13:01:25.898Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-068dd1258de95e50e4256249",
+      "name": "Norfolk Southern reports third quarter 2026 results (EX-99.1)",
+      "short": "SEC-NSC-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/702165/000119312526428384/nsc-ex99_1.htm",
+      "sourceHash": "948bfeb9b4c61a41c3d06a4792a3db1f2788d04ad99dfa6514efd64c6e6664b9",
+      "retrievedAt": "2026-10-22T13:01:25.537Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-aac3d704246f462180affcfc",
+      "name": "Comcast reports 3rd quarter 2026 results (EX-99.1)",
+      "short": "SEC-CMCSA-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1166691/000162828026066783/ex991-9302026.htm",
+      "sourceHash": "ef398ea0cb1eec166fa1d1c7859406d82f5b8c3eef1b9b7b287756573c3f5a65",
+      "retrievedAt": "2026-10-22T13:01:26.983Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-f15d4976246edc7df9476939",
+      "name": "PulteGroup reports third quarter 2026 financial results (EX-99.1)",
+      "short": "SEC-PHM-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/822416/000082241626000041/ex991earningspr9302026.htm",
+      "sourceHash": "b219a4a54d862a89f88b4b9be96e876855c6b5ab1989eea94a09c1482423c115",
+      "retrievedAt": "2026-10-22T13:01:26.410Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-9da5c48f170f12f1a0038e20",
+      "name": "Pool Corporation reports third quarter 2026 results; confirms annual earnings guidance (EX-99.1)",
+      "short": "SEC-POOL-EX991-Q3-2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/945841/000119312526428428/pool-ex99_1.htm",
+      "sourceHash": "a1ffbebdd84348db80bb21c1d9b436b77a05e8b859f802e6e02b44cf13b74280",
+      "retrievedAt": "2026-10-22T14:28:52.876Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-7ac74ce703754a12400571d0",
+      "name": "Old Dominion Freight Line announces $0.29 per share quarterly cash dividend (EX-99.1)",
+      "short": "SEC-ODFL-EX991-DIVIDEND-20261022",
+      "url": "https://www.sec.gov/Archives/edgar/data/878927/000087892726000029/odfl-ex99_1.htm",
+      "sourceHash": "511c0ef787f5dcee454b7ca1ec5f969ba076256582c55b5273f840e95a8f2747",
+      "retrievedAt": "2026-10-22T14:28:53.134Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-91bdab619e8f37da2f6228a2",
+      "name": "aapl_sec_index",
+      "short": "aapl_sec_index",
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+      "sourceHash": "2159349dae17cc9148a2f2a9d2eab12c84f59c2135b62e78d56ac9b00ca86b1e",
+      "retrievedAt": "2026-10-03T16:36:34.835Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-ef055d13b1b76eeab2f59bd0",
+      "name": "msft_sec_index",
+      "short": "msft_sec_index",
+      "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+      "sourceHash": "551ff75d16e89942b05b48835f3548be1276d59159bf86f009468b99542a94b9",
+      "retrievedAt": "2026-10-03T16:36:35.549Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-1e4f6e7b190740f2d009628e",
+      "name": "blk_sec_index",
+      "short": "blk_sec_index",
+      "url": "https://data.sec.gov/submissions/CIK0002012383.json",
+      "sourceHash": "bcd671d4416db58b7023c285859ebac3aa155a9c1a26154767e1d1ead653a00b",
+      "retrievedAt": "2026-10-03T16:36:36.315Z",
+      "evidenceKind": "research"
+    },
+    {
+      "name": "Broadcom Inc. SEC recent submissions index",
+      "short": "cik0001730168-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001730168.json",
+      "sourceHash": "b3bb8094e6809c7b3c7d2d7f419363b213bfa5071b40adb2bc2534317637f061",
+      "retrievedAt": "2026-10-03T20:00:33.761Z",
+      "evidenceKind": "research",
+      "id": "research-retained-f794e4a1476c152478173fcf"
+    },
+    {
+      "name": "ADVANCED MICRO DEVICES INC SEC recent submissions index",
+      "short": "cik0000002488-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0000002488.json",
+      "sourceHash": "3edab34f7292b7d2991a223715b136c6f5cf0efffe413854bf5398adc5fc121a",
+      "retrievedAt": "2026-10-03T20:00:33.888Z",
+      "evidenceKind": "research",
+      "id": "research-retained-8f87db1453b3f308dc01e4e9"
+    },
+    {
+      "name": "ORACLE CORP SEC recent submissions index",
+      "short": "cik0001341439-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001341439.json",
+      "sourceHash": "bed0ec89b0d273799517d3e332b3a4ba3612168f0e4e9b963759b507f857adec",
+      "retrievedAt": "2026-10-03T20:00:34.561Z",
+      "evidenceKind": "research",
+      "id": "research-retained-127d14a4b5779f61bc175c29"
+    },
+    {
+      "name": "ARM HOLDINGS PLC /UK SEC recent submissions index",
+      "short": "cik0001973239-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001973239.json",
+      "sourceHash": "3594b191f8f5bd6b2780aa7e1dca2a4d4e619d639ef8c482bd691f0e1b8eefe7",
+      "retrievedAt": "2026-10-03T20:00:34.875Z",
+      "evidenceKind": "research",
+      "id": "research-retained-aa75944472dd49aeb75ed7b4"
+    },
+    {
+      "name": "KKR & Co. Inc. SEC recent submissions index",
+      "short": "cik0001404912-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001404912.json",
+      "sourceHash": "e1dadc209b31bdcd1852a3ce4316b12a224bde132648f2743094b053f60355ab",
+      "retrievedAt": "2026-10-03T20:00:35.567Z",
+      "evidenceKind": "research",
+      "id": "research-retained-c88ea8252069b475b5da06a7"
+    },
+    {
+      "name": "Broadcom Inc. SEC recent submissions index",
+      "short": "cik0001730168-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001730168.json",
+      "sourceHash": "b3bb8094e6809c7b3c7d2d7f419363b213bfa5071b40adb2bc2534317637f061",
+      "retrievedAt": "2026-10-03T21:00:48.949Z",
+      "evidenceKind": "research",
+      "id": "research-retained-5b932eb56471cd330f304dc6"
+    },
+    {
+      "name": "ADVANCED MICRO DEVICES INC SEC recent submissions index",
+      "short": "cik0000002488-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0000002488.json",
+      "sourceHash": "9789d97cfb1b41fb58cc5fcebd13cfced084409dc3bbcfb6ca1382304f092493",
+      "retrievedAt": "2026-10-03T21:00:49.032Z",
+      "evidenceKind": "research",
+      "id": "research-retained-3362f7511348e557444fe470"
+    },
+    {
+      "name": "ORACLE CORP SEC recent submissions index",
+      "short": "cik0001341439-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001341439.json",
+      "sourceHash": "bed0ec89b0d273799517d3e332b3a4ba3612168f0e4e9b963759b507f857adec",
+      "retrievedAt": "2026-10-03T21:00:49.366Z",
+      "evidenceKind": "research",
+      "id": "research-retained-0d4c61ef1dc7396a4f0267f5"
+    },
+    {
+      "name": "KKR & Co. Inc. SEC recent submissions index",
+      "short": "cik0001404912-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001404912.json",
+      "sourceHash": "e1dadc209b31bdcd1852a3ce4316b12a224bde132648f2743094b053f60355ab",
+      "retrievedAt": "2026-10-03T21:00:50.547Z",
+      "evidenceKind": "research",
+      "id": "research-retained-7863b594e768d7657a2fd1f5"
+    },
+    {
+      "name": "ARM HOLDINGS PLC /UK SEC recent submissions index",
+      "short": "cik0001973239-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001973239.json",
+      "sourceHash": "3594b191f8f5bd6b2780aa7e1dca2a4d4e619d639ef8c482bd691f0e1b8eefe7",
+      "retrievedAt": "2026-10-03T21:00:50.294Z",
+      "evidenceKind": "research",
+      "id": "research-retained-4468ddbbe0685a0f500c39d4"
+    },
+    {
+      "name": "Broadcom Inc. SEC recent submissions index",
+      "short": "cik0001730168-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001730168.json",
+      "sourceHash": "b3bb8094e6809c7b3c7d2d7f419363b213bfa5071b40adb2bc2534317637f061",
+      "retrievedAt": "2026-10-03T22:00:39.545Z",
+      "evidenceKind": "research",
+      "id": "research-retained-c5909e1301aeb7f2b6af9896"
+    },
+    {
+      "name": "KKR & Co. Inc. SEC recent submissions index",
+      "short": "cik0001404912-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001404912.json",
+      "sourceHash": "e1dadc209b31bdcd1852a3ce4316b12a224bde132648f2743094b053f60355ab",
+      "retrievedAt": "2026-10-03T22:00:40.920Z",
+      "evidenceKind": "research",
+      "id": "research-retained-be21ac20d598beae140eb4aa"
+    },
+    {
+      "name": "ARM HOLDINGS PLC /UK SEC recent submissions index",
+      "short": "cik0001973239-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001973239.json",
+      "sourceHash": "3594b191f8f5bd6b2780aa7e1dca2a4d4e619d639ef8c482bd691f0e1b8eefe7",
+      "retrievedAt": "2026-10-03T22:00:40.265Z",
+      "evidenceKind": "research",
+      "id": "research-retained-d4ff07c505b62c63e2c39a36"
+    },
+    {
+      "name": "ADVANCED MICRO DEVICES INC SEC recent submissions index",
+      "short": "cik0000002488-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0000002488.json",
+      "sourceHash": "9789d97cfb1b41fb58cc5fcebd13cfced084409dc3bbcfb6ca1382304f092493",
+      "retrievedAt": "2026-10-03T22:00:39.592Z",
+      "evidenceKind": "research",
+      "id": "research-retained-4a6c6fcc24cec413fd8c0f9a"
+    },
+    {
+      "name": "ORACLE CORP SEC recent submissions index",
+      "short": "cik0001341439-submissions",
+      "url": "https://data.sec.gov/submissions/CIK0001341439.json",
+      "sourceHash": "bed0ec89b0d273799517d3e332b3a4ba3612168f0e4e9b963759b507f857adec",
+      "retrievedAt": "2026-10-03T22:00:39.946Z",
+      "evidenceKind": "research",
+      "id": "research-retained-384883a0dc9e040c8f55d165"
+    },
+    {
+      "id": "src-84d7c211aeafa37bb17eb94b",
+      "name": "PepsiCo October 8 8-K earnings filing source index",
+      "short": "sec-pep-8k-20261008",
+      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000050/0000077476-26-000050-index.htm",
+      "sourceHash": "9915ebfed3fe6130392ad804a9f5d176f84380ab4ef0b9bd42832e0d1b98ec88",
+      "retrievedAt": "2026-10-09T01:04:06.047Z",
+      "evidenceKind": "research"
+    },
+    {
+      "name": "Wells Fargo Form 8-K filed October 13 2026",
+      "short": "wfc-2026-10-13-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc-20261013.htm",
+      "sourceHash": "8cdf3dd17cc9eb81d353d9602d7e43a250bf7aefad2dd51bb7828148a35b6d6c",
+      "retrievedAt": "2026-10-14T02:05:06.776Z",
+      "evidenceKind": "research",
+      "id": "research-retained-0b0d5a18d946a8a0ae8c8fe3"
+    },
+    {
+      "id": "src-dba80f0e3df291a5c295260a",
+      "name": "JPMorgan Chase Third Quarter 2026 Earnings Release",
+      "short": "jpm-3q26-earnings-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065582/a3q26erfexhibit991narrative.htm",
+      "sourceHash": "7aeb9da7d3a3cc452a0c236e650139099f361b97c7a5a88abfdc5cc0068a1251",
+      "retrievedAt": "2026-10-14T03:05:34.734Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-b80e7912533f61c8bc58b0b1",
+      "name": "Goldman Sachs Third Quarter 2026 Form 8-K Filing Documents",
+      "short": "gs-3q26-filing-index",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000529/0000886982-26-000529-index.htm",
+      "sourceHash": "c7abf3b53b96d4a1eec0c7cf2ff269af3121409279b5e09eba673fbd9a65237e",
+      "retrievedAt": "2026-10-14T03:05:34.781Z",
+      "evidenceKind": "official"
+    },
+    {
+      "id": "src-dbadd645a3aa2b98b56bb057",
+      "name": "Wells Fargo Third Quarter 2026 Earnings Release",
+      "short": "wfc-3q26-earnings-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc3qer10-13x26ex991xrelea.htm",
+      "sourceHash": "4f6b5a05c8022afa74275ec14a96bb6964f1d9c46b7a28d8b9c70cf98718be1f",
+      "retrievedAt": "2026-10-14T03:05:34.854Z",
+      "evidenceKind": "official"
+    },
+    {
+      "name": "JPMorgan Chase third-quarter 2026 earnings presentation",
+      "short": "jpm-q3-2026-presentation",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065616/a3q26_earningsxpresentat.htm",
+      "sourceHash": "7cc5c275b6e3155b55794627f5063a51c6cb196f22ee8db0788f650b561c4fa2",
+      "retrievedAt": "2026-10-14T04:06:38.183Z",
+      "evidenceKind": "research",
+      "id": "research-retained-55543bac05360872b4215763"
+    },
+    {
+      "name": "Goldman Sachs third-quarter 2026 earnings release",
+      "short": "gs-q3-2026-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000529/a3q26gsearningsresultspr.htm",
+      "sourceHash": "edeabf8fef209c9bbf519dc61a137c1c1be284c157174882f09baa919c37d618",
+      "retrievedAt": "2026-10-14T04:06:38.281Z",
+      "evidenceKind": "research",
+      "id": "research-retained-64455485f617fc09c81c8db3"
+    },
+    {
+      "name": "Wells Fargo third-quarter 2026 Form 8-K",
+      "short": "wfc-q3-2026-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc-20261013.htm",
+      "sourceHash": "5b3577eeb5edb658871da6387459df30b6750c79855d17869ec2c7a141e40d77",
+      "retrievedAt": "2026-10-14T04:06:38.335Z",
+      "evidenceKind": "research",
+      "id": "research-retained-0b851d46a8565f2e8eab1e0f"
+    },
+    {
+      "name": "Citigroup third-quarter 2026 earnings release",
+      "short": "citi-q3-2026-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/831001/000110465926115323/c-ex99d1.htm",
+      "sourceHash": "8d23b85bf7285560e137fb6f50359fd118fad6d524676f5d96da195f986eb47c",
+      "retrievedAt": "2026-10-14T04:06:38.413Z",
+      "evidenceKind": "research",
+      "id": "research-retained-5fd3e9c6d22d6e5f4258ca5d"
+    },
+    {
+      "name": "JPMorgan Chase third-quarter 2026 earnings presentation",
+      "short": "jpm-q3-2026-presentation",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065616/a3q26_earningsxpresentat.htm",
+      "sourceHash": "cfaf57c0c9721a618e2725230c78af4bb969da186862d1f329fd1d4a2fe76885",
+      "retrievedAt": "2026-10-14T05:06:48.149Z",
+      "evidenceKind": "research",
+      "id": "research-retained-2f572a797195a8033d4b6317"
+    },
+    {
+      "name": "Goldman Sachs third-quarter 2026 earnings release",
+      "short": "gs-q3-2026-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000529/a3q26gsearningsresultspr.htm",
+      "sourceHash": "b5372c6b8d3e0dfeca8b4aa9dd9d970d7a827c1c72b241759c61ccc1a335ae8d",
+      "retrievedAt": "2026-10-14T05:06:48.261Z",
+      "evidenceKind": "research",
+      "id": "research-retained-647032a0676ecfdec8122984"
+    },
+    {
+      "name": "Wells Fargo third-quarter 2026 Form 8-K",
+      "short": "wfc-q3-2026-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc-20261013.htm",
+      "sourceHash": "a8b4a5e507c4c585351a8e273e5ca9e2e24762ff667f94097645b1fbc1ba3875",
+      "retrievedAt": "2026-10-14T05:06:48.285Z",
+      "evidenceKind": "research",
+      "id": "research-retained-46a60e84a8478e46e021e828"
+    },
+    {
+      "name": "Citigroup third-quarter 2026 earnings release",
+      "short": "citi-q3-2026-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/831001/000110465926115323/c-ex99d1.htm",
+      "sourceHash": "a7429529849be9fd3d63e98746aff9eb9562caa0f969dd3041e41e6466af799e",
+      "retrievedAt": "2026-10-14T05:06:48.611Z",
+      "evidenceKind": "research",
+      "id": "research-retained-781e2dbbf24d2fc9d0c7a0b6"
+    },
+    {
+      "name": "JPMorgan 3Q26 earnings presentation",
+      "short": "jpm-q3-2026-presentation",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065616/a3q26_earningsxpresentat.htm",
+      "sourceHash": "e47db1e7797c5dd111ff3a08417de5414858063a9449a8eabeef29241913743d",
+      "retrievedAt": "2026-10-14T06:08:11.779Z",
+      "evidenceKind": "research",
+      "id": "research-retained-0ca4c5055ade0397e5b66804"
+    },
+    {
+      "name": "Goldman Sachs 3Q26 earnings results",
+      "short": "gs-q3-2026-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000529/a3q26gsearningsresultspr.htm",
+      "sourceHash": "4cc220f826d4a8d8e1b5e73a3ad86fb7d620162589fb3657af1234b70e5cfb82",
+      "retrievedAt": "2026-10-14T06:08:11.825Z",
+      "evidenceKind": "research",
+      "id": "research-retained-4775acc4a37097b6f5e79972"
+    },
+    {
+      "name": "Wells Fargo 3Q26 Form 8-K",
+      "short": "wfc-q3-2026-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc-20261013.htm",
+      "sourceHash": "77423e73a1ce2a977b5aa9a42a2c02e73c1d06146a5ca57591412475447ea076",
+      "retrievedAt": "2026-10-14T06:08:11.981Z",
+      "evidenceKind": "research",
+      "id": "research-retained-f498fedc40e58ee67bc855e6"
+    },
+    {
+      "name": "Citigroup 3Q26 earnings release",
+      "short": "citi-q3-2026-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/831001/000110465926115323/c-ex99d1.htm",
+      "sourceHash": "eabc227f2577457c64e75612bd9117113a5580e1091c13991858e3b65d6b7082",
+      "retrievedAt": "2026-10-14T06:08:12.165Z",
+      "evidenceKind": "research",
+      "id": "research-retained-397f546c2a5c323cfd5c6616"
+    },
+    {
+      "id": "src-cf6d7991e1d08a6c0d808dc0",
+      "name": "JPMorgan Chase 3Q26 Earnings Presentation",
+      "short": "jpm-3q26-presentation",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065616/a3q26_earningsxpresentat.htm",
+      "sourceHash": "b10bfa0597fe64b1397732bce6f78dad23f435869e06f2a112b6095efbb3631e",
+      "retrievedAt": "2026-10-14T08:10:55.509Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-98fc2829c016df109cfdfc28",
+      "name": "Goldman Sachs 3Q26 Earnings Results",
+      "short": "gs-3q26-results",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000529/a3q26gsearningsresultspr.htm",
+      "sourceHash": "467424c9dc05704abcc3413bb4267f6078b9ffa4b7c3f88954827e10ba2292eb",
+      "retrievedAt": "2026-10-14T08:10:55.601Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-a2d59d6f34f1708b349a6bd2",
+      "name": "Wells Fargo October 13 2026 Form 8-K",
+      "short": "wfc-20261013-8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000318/wfc-20261013.htm",
+      "sourceHash": "164f33b57cda37e41e56434ec1e6511d6c6e8c65055ccd3b1db89f80e1d909cd",
+      "retrievedAt": "2026-10-14T08:10:55.650Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-775c5cd5db832ed96337e6ca",
+      "name": "Citigroup 3Q26 Earnings Release",
+      "short": "citi-3q26-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/831001/000110465926115323/c-ex99d1.htm",
+      "sourceHash": "df6de8c67059be60922a9e1970bbfcdaf36bfe9d6150fc1716758378019e92c4",
+      "retrievedAt": "2026-10-14T08:10:55.789Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-aed09c68babb5d0bad019097",
+      "name": "CoreWeave September 2026 Financing 8-K",
+      "short": "coreweave-debt-8k-2026-09-22",
+      "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000432/0001769628-26-000432-index.htm",
+      "sourceHash": "23c55eaba4b27eef0ab9fad39b3aa99b60a695e30c38bc4151ad6325455bde69",
+      "retrievedAt": "2026-10-16T20:06:14.427Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-a0f2303a904eb335f164c605",
+      "name": "龙头利好！“牛散”章建平重仓股，签下五年长单",
+      "short": "NBD-YUNNAN-GE-4637216",
+      "url": "https://www.nbd.com.cn/articles/2026-11-03/4637216.html",
+      "sourceHash": "cff9409f430859af918a798082456c23a67106762d29f6f5667b8d89722c0917",
+      "retrievedAt": "2026-11-03T20:36:05.394Z",
+      "evidenceKind": "market"
+    },
+    {
+      "id": "src-0c5c616e182764498f2f835e",
+      "name": "无在制订单！国晟科技三家光伏子公司全面停产，昔日“十倍牛股”迎来复产关键节点",
+      "short": "NBD-GUOSHENG-HALT-4637176",
+      "url": "https://www.nbd.com.cn/articles/2026-11-03/4637176.html",
+      "sourceHash": "11d2f8fe1b2d8787be9413ee790a74373c73f326bb71fa14c34c5e04147260cd",
+      "retrievedAt": "2026-11-03T20:36:06.325Z",
+      "evidenceKind": "market"
+    },
+    {
+      "id": "src-ee2fec25e814dfda5cc96602",
+      "name": "机构调研，协创数据称DDR报价上调30%已落地，看好至少三年涨价周期",
+      "short": "NBD-DDR-PRICE-4637116",
+      "url": "https://www.nbd.com.cn/articles/2026-11-03/4637116.html",
+      "sourceHash": "75714f5c67826c153a66b91c2e02a139401504ae82f5f0431960fe06a0506eb6",
+      "retrievedAt": "2026-11-03T20:36:06.721Z",
+      "evidenceKind": "market"
+    },
+    {
+      "name": "美国10月纽约联储1年通胀预期为3.9%",
+      "short": "NBD-4643064",
+      "url": "https://www.nbd.com.cn/articles/2026-11-10/4643064.html",
+      "sourceHash": "90b83ea2832bbe67530e074adc0802640d5b178ff916e1bf09f2c1e5b1fa3e3e",
+      "retrievedAt": "2026-11-09T19:15:36.032Z",
+      "evidenceKind": "macro",
+      "id": "news-retained-84cac237b80734fc52fc903e"
+    },
+    {
+      "name": "美股半导体板块强势反弹",
+      "short": "NBD-4643058",
+      "url": "https://www.nbd.com.cn/articles/2026-11-09/4643058.html",
+      "sourceHash": "10f24f77e3bb6163080cda1fd7ac8578716b591da4ff992a285e9078a7e48e68",
+      "retrievedAt": "2026-11-09T19:15:38.093Z",
+      "evidenceKind": "market",
+      "id": "news-retained-57e979654ccdc1d1b5ee908e"
+    },
+    {
+      "name": "但斌三季度刚加仓英伟达，还有超60只QDII重仓",
+      "short": "NBD-4643075",
+      "url": "https://www.nbd.com.cn/articles/2026-11-10/4643075.html",
+      "sourceHash": "1b8f251d1e1110da16f62efb81a181fa575ee9125bda4b498222f557f2949923",
+      "retrievedAt": "2026-11-09T19:15:40.024Z",
+      "evidenceKind": "market",
+      "id": "news-retained-9930f00696079ec8a20bf308"
     }
   ],
-  "_inputHash": "d12c2ef9785db1fb76ccb623b98ab40530896789d64b5e2d577ac3e9b9a122e5"
+  "_inputHash": "be2cb7ebf03ec5ec2ad4b9d6fdea756805f008aaa26121c4850e2218c306b3d1"
 }
