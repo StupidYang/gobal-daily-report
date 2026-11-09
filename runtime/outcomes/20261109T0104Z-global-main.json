@@ -1,14 +1,18 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.macroFacts[120].rawValue: 必须为有限数字或null，文字缺口不能冒充观测数值 [numeric-type]\neditorial.macroFacts[121].rawValue: 必须为有限数字或null，文字缺口不能冒充观测数值 [numeric-type]\neditorial.macroFacts[122].rawValue: 必须为有限数字或null，文字缺口不能冒充观测数值 [numeric-type]",
+  "issues": [
+    "editorial.macroFacts[120].rawValue: 必须为有限数字或null，文字缺口不能冒充观测数值 [numeric-type]",
+    "editorial.macroFacts[121].rawValue: 必须为有限数字或null，文字缺口不能冒充观测数值 [numeric-type]",
+    "editorial.macroFacts[122].rawValue: 必须为有限数字或null，文字缺口不能冒充观测数值 [numeric-type]"
+  ],
   "execution": {
     "executionId": "20261109T0104Z-global-main",
     "generation": 439
   },
   "deadlineAt": "2026-11-09T01:24:45.766Z",
   "requestId": "20261109T0104Z-global-main",
-  "at": "2026-11-09T01:05:00.911Z",
+  "at": "2026-11-09T01:09:05.718Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +23,39 @@
       "status": "ready-for-analysis",
       "at": "2026-11-09T01:05:00.911Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-09T01:09:05.718Z",
+      "revision": 0
     }
   ],
   "packetHash": "aaa3583b27a1ed9fba9007026f97776c98969fa9f0acc1d1a5e698ee6fbd9105",
-  "collectionDurationMs": 7063
+  "collectionDurationMs": 7063,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "7b1a649461fb7c341a5c414b68a3995ba1fbb3eff70915c6e5be2fa591973559",
+  "validationIssues": [
+    {
+      "path": "editorial.macroFacts[120].rawValue",
+      "code": "numeric-type",
+      "message": "必须为有限数字或null，文字缺口不能冒充观测数值"
+    },
+    {
+      "path": "editorial.macroFacts[121].rawValue",
+      "code": "numeric-type",
+      "message": "必须为有限数字或null，文字缺口不能冒充观测数值"
+    },
+    {
+      "path": "editorial.macroFacts[122].rawValue",
+      "code": "numeric-type",
+      "message": "必须为有限数字或null，文字缺口不能冒充观测数值"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261109T0104Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
