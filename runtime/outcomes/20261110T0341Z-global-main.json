@@ -1,14 +1,18 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.analyzedAt: 时间不能位于未来 [future-time]\neditorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]\neditorial.macroEvents[1].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=type=daily_treasury_yield_curve [source-not-retrieved]",
+  "issues": [
+    "editorial.analyzedAt: 时间不能位于未来 [future-time]",
+    "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]",
+    "editorial.macroEvents[1].sourceUrls[0]: Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=type=daily_treasury_yield_curve [source-not-retrieved]"
+  ],
   "execution": {
     "executionId": "20261110T0341Z-global-main",
     "generation": 466
   },
   "deadlineAt": "2026-11-10T04:01:48.545Z",
   "requestId": "20261110T0341Z-global-main",
-  "at": "2026-11-10T03:42:00.775Z",
+  "at": "2026-11-10T03:47:26.366Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +23,39 @@
       "status": "ready-for-analysis",
       "at": "2026-11-10T03:42:00.775Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-10T03:47:26.366Z",
+      "revision": 0
     }
   ],
   "packetHash": "241b03bf06148dc34a95deea19d3a9eae1346dcc0b6b94bf0a3a17372ffb2695",
-  "collectionDurationMs": 4769
+  "collectionDurationMs": 4769,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "a84270a5e341bf15fafbf0fc5e134a120e9192d9511a707ac0d624aabea977d7",
+  "validationIssues": [
+    {
+      "path": "editorial.analyzedAt",
+      "code": "future-time",
+      "message": "时间不能位于未来"
+    },
+    {
+      "path": "editorial.analyzedAt",
+      "code": "analysis-time",
+      "message": "分析结束时点必须在实际采集开始之后且不晚于当前时间"
+    },
+    {
+      "path": "editorial.macroEvents[1].sourceUrls[0]",
+      "code": "source-not-retrieved",
+      "message": "Editorial references a document not retrieved in this execution（未找到成功解析且回执匹配的证据）: https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=type=daily_treasury_yield_curve"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261110T0341Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
