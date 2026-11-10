@@ -1,0 +1,558 @@
+{
+  "execution": {
+    "executionId": "20261110T0546Z-asia-session",
+    "generation": 468
+  },
+  "editorial": {
+    "packetHash": "e3e72f7737a99358a1c8811cbbe495019ed2942993431a2ae867eaf6257a2eef",
+    "analyzedAt": "2026-11-10T05:58:25Z",
+    "report": {
+      "overview": "2026-11-10 周二 A股与港股午后连续交易时段同步运行。A股主要指数普涨，成长与科技弹性居前：创业板指 +1.75%、科创50 +1.80%，上证综指 +0.62%、沪深300 +0.32%、中证500 +1.38%，权重指数也从近持平转为小幅跟涨，呈现由成长向更宽基扩散的特征。港股方面恒生指数 +0.31%、恒生科技 +1.30%、国企指数 -0.02%，科技弹性强于主板、国企指数回到基本持平。其余四个资产（美股、BTC、黄金、原油）沿用上一已发布版本 2026-11-10-1307，原观测时点保留、本轮未重新核验。",
+      "rolling24hSummary": "过去24小时全球风险资产延续修复：美股上一交易日（11-09）主要指数大涨（标普500 +2.35%、纳指 +2.74%、纳指100 +3.40%），半导体与AI链领涨（AMD +13.26%、博通 +8.78%），但英伟达 -4.27% 逆势。A股与港股在11-10盘中延续反弹，A股成长强于权重、港股科技强于主板，与美股科技叙事同源。黄金约4124美元/盎司、BTC约74838美元、WTI原油约86美元/桶（布伦特因数据源404缺失）。人民币离岸价稳于6.6677附近，美元指数约101.66，波动率VIX回落至19.92。",
+      "methodology": "区域交易节点（asia-session）生产：generation=468，packetHash=e3e72f7737a99358a1c8811cbbe495019ed2942993431a2ae867eaf6257a2eef。先读 automation/control.json 准入（productionPaused=false、lease-v1、content-r3、editorial-v1，asia-session 在 enabledTaskGroups 且不在 pausedTaskGroups）。租约 phase=analyzing、deadlineAt=2026-11-10T06:07:45Z，当前小时（asia-session:2026-11-10T05）锁空闲、无同小时成功、无 global-main 发布撞车。请求3份官方文档（上交所/深交所/证监会），代码采集31项必看报价（A股/港股为13:32 GMT+8实时盘中 delayed；美股/黄金/BTC/原油为上一交易日快照）。本轮无自定义宏观事实，所有事实引用均取自 packet 真实 instrumentId；A股与港股为本轮新证据，美股/BTC/黄金/原油以 retention 沿用 2026-11-10-1307 并标注原 asOf。新闻因官方源抓取不足（仅上交所列表抓取成功且未通读全文、深交所与证监会 fetch failed）置空，缺口如实标注。",
+      "coreAnalysis": {
+        "mainTheme": "A股与港股午后同步交易中延续反弹，成长与科技弹性居前、权重指数从近持平转为小幅跟涨，呈现扩散而非单一主线。",
+        "expectationGap": "此前担忧的「政策资金只买成长、不抬权重」在本轮出现边际变化：沪深300由上一版近持平（约+0.07%）转为+0.32%，说明增量资金承接范围略有拓宽，但未演变为全面权重行情。",
+        "divergence": "A股内部科创50(+1.80%)/创业板(+1.75%)显著强于沪深300(+0.32%)；港股恒生科技(+1.30%)强于恒指(+0.31%)/国企(-0.02%)。两地科技叙事同源但港股缺少本地增量资金、指数弹性弱一档。",
+        "regime": "区间内风险偏好温和修复，但未脱离「政策托底+结构分化」的震荡格局；VIX回落至19.92、美元指数横盘于101.66，外部约束不紧。",
+        "priceIn": "市场已部分计入互换便利第三批落地与回购融资增持（上一版已反映），本轮行情更多是对盘中资金方向的再确认，而非新催化。",
+        "bullCase": "若午后成交放量且权重指数跟进，A股有望从结构性反弹走向更宽基修复；港股科技在美股AI链强势背景下仍有跟随空间。",
+        "bullInvalidation": "若沪深300转跌或港股科技冲高回落、恒指重回平盘下方，说明反弹仅为盘中技术性修复、增量资金未持续。",
+        "bearCase": "若美元指数与美债收益率上行、或美股上一交易日大涨后出现获利回吐，A股/港股午后可能收窄涨幅甚至翻绿。",
+        "bearInvalidation": "若美股保持强势、离岸人民币稳定、且A股成交额持续放大，则回吐风险下降，震荡偏强延续。"
+      },
+      "plainLanguage": {
+        "verdict": "A股港股午后同步反弹，成长科技领涨、权重小幅跟涨，整体偏温和修复。",
+        "bottomLine": "盘中资金仍偏好成长与科技，但权重已开始跟上，行情从单一主线向更宽基扩散；不过仍属震荡修复，未确认趋势反转。",
+        "whyNow": "本轮13:32 GMT+8实时盘中读数显示A股六大指数全红、港股科技强于主板；对比上一版（2026-11-10-1307）权重从近持平转正，是本轮最值得注意的边陌变化。",
+        "horizon": "未来一个交易时段至1-2个交易日。",
+        "confidence": "medium",
+        "invalidation": "沪深300转跌或恒指跌破平盘、且伴随成交缩量，则反弹证伪。",
+        "impacts": [
+          {
+            "asset": "A股",
+            "effect": "短线偏利好",
+            "reason": "六大指数午盘全红，创业板+1.75%/科创50+1.80%领涨，沪深300由近持平转正至+0.32%，呈现扩散。",
+            "takeaway": "我的判断：结构性反弹延续，但权重跟涨幅度有限，仍非全面行情。",
+            "horizon": "1个交易日",
+            "counterRisk": "若增量资金未能持续、成交缩量，涨幅可能回吐。",
+            "invalidation": "沪深300转跌且成交背离则反弹证伪。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:CN:SSE",
+              "INDEX:CN:CHINEXT",
+              "INDEX:CN:STAR50",
+              "INDEX:CN:CSI300"
+            ],
+            "sourceIds": []
+          },
+          {
+            "asset": "港股",
+            "effect": "分化偏利好",
+            "reason": "恒指+0.31%、恒生科技+1.30%强于主板，国企指数-0.02%基本持平；科技弹性强但缺本地增量资金承接。",
+            "takeaway": "我的判断：港股跟随A股与美股科技叙事，弹性弱一档，国企指数仍承压。",
+            "horizon": "1个交易日",
+            "counterRisk": "若美股科技回吐，港股科技弹性将首当其冲。",
+            "invalidation": "恒生科技回落至平盘下方则短线偏利好失效。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:HK:HSI",
+              "INDEX:HK:HSTECH",
+              "INDEX:HK:HSCEI"
+            ],
+            "sourceIds": []
+          },
+          {
+            "asset": "美股",
+            "effect": "证据不足（沿用）",
+            "reason": "上一交易日（11-09）标普500 +2.35%、纳指 +2.74%，半导体强（AMD+13.26%、博通+8.78%）但英伟达 -4.27%；本轮未重新核验。",
+            "takeaway": "我的判断：美股强势为A股/港股科技提供外部支撑，但单日大涨后存在获利回吐风险。",
+            "horizon": "沿用11-09收盘",
+            "counterRisk": "单日大涨后的获利盘可能压制次日表现。",
+            "invalidation": "本区域任务未重新核验，以原发布版本为准。",
+            "confidence": "medium",
+            "evidenceFactIds": [
+              "INDEX:US:SP500",
+              "INDEX:US:NASDAQ"
+            ],
+            "sourceIds": []
+          },
+          {
+            "asset": "BTC",
+            "effect": "证据不足（沿用）",
+            "reason": "本轮快照约74838美元，上一版沿用，未重新核验；缺乏本轮新增催化。",
+            "takeaway": "我的判断：BTC维持高位震荡，与风险偏好同向，但无独立驱动。",
+            "horizon": "沿用",
+            "counterRisk": "若美元与美债收益率上行，加密资产承压。",
+            "invalidation": "本区域任务未重新核验，以原发布版本为准。",
+            "confidence": "low",
+            "evidenceFactIds": [
+              "CRYPTO:BTC:USD"
+            ],
+            "sourceIds": []
+          },
+          {
+            "asset": "黄金",
+            "effect": "证据不足（沿用）",
+            "reason": "本轮快照约4124美元/盎司，沿用上一版，未重新核验；实际利率与美元走势仍是核心。",
+            "takeaway": "我的判断：黄金高位横盘，避险与降息预期支撑，但上行空间受实际利率约束。",
+            "horizon": "沿用",
+            "counterRisk": "实际利率上行将压制金价。",
+            "invalidation": "本区域任务未重新核验，以原发布版本为准。",
+            "confidence": "low",
+            "evidenceFactIds": [
+              "METAL:XAUUSD"
+            ],
+            "sourceIds": []
+          },
+          {
+            "asset": "原油",
+            "effect": "证据不足（部分缺口）",
+            "reason": "WTI约86美元/桶（-0.98%），布伦特因数据源404缺失；本轮沿用WTI并标注缺口，未重新核验。",
+            "takeaway": "我的判断：原油偏弱震荡，布伦特缺失限制完整判断。",
+            "horizon": "沿用",
+            "counterRisk": "中东地缘或供应中断可能推升油价。",
+            "invalidation": "布伦特数据恢复且显著上行将改变偏弱判断。",
+            "confidence": "low",
+            "evidenceFactIds": [
+              "ENERGY:WTI"
+            ],
+            "sourceIds": []
+          }
+        ]
+      },
+      "marketCoverage": [
+        {
+          "market": "A股",
+          "status": "intraday-delayed",
+          "coverage": "13:32 GMT+8 实时盘中六指数（上证/深成/创业板/科创50/沪深300/中证500）",
+          "gap": "无个股与板块成交明细，仅指数级报价"
+        },
+        {
+          "market": "港股",
+          "status": "intraday-delayed",
+          "coverage": "13:32 GMT+8 实时盘中恒指/恒生科技/国企指数",
+          "gap": "无港股个股与行业成交明细"
+        },
+        {
+          "market": "美股",
+          "status": "retained",
+          "coverage": "沿用 2026-11-10-1307（11-09收盘）",
+          "gap": "本轮未重新核验"
+        },
+        {
+          "market": "BTC",
+          "status": "retained",
+          "coverage": "沿用 2026-11-10-1307 快照",
+          "gap": "本轮未重新核验"
+        },
+        {
+          "market": "黄金",
+          "status": "retained",
+          "coverage": "沿用 2026-11-10-1307 快照",
+          "gap": "本轮未重新核验"
+        },
+        {
+          "market": "原油",
+          "status": "partial",
+          "coverage": "WTI 可用（-0.98%）",
+          "gap": "布伦特数据源404缺失，无法完整刻画原油曲线"
+        }
+      ],
+      "assets": [
+        {
+          "asset": "A股",
+          "name": "A股",
+          "market": "CN",
+          "asOf": "2026-11-10T05:32:45Z",
+          "status": "intraday-delayed",
+          "assessment": "六大指数全红，成长科技领涨、权重小幅跟涨，结构性扩散。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CSI500"
+          ]
+        },
+        {
+          "asset": "港股",
+          "name": "港股",
+          "market": "HK",
+          "asOf": "2026-11-10T05:32:45Z",
+          "status": "intraday-delayed",
+          "assessment": "恒指微涨、恒生科技较强、国企指数持平，科技强于主板。",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ]
+        },
+        {
+          "asset": "美股",
+          "name": "美股",
+          "market": "US",
+          "asOf": "2026-11-09T21:00:01Z",
+          "status": "previous-close-retained",
+          "assessment": "上一交易日大涨，半导体与AI链领涨，英伟达逆势。",
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX"
+          ]
+        },
+        {
+          "asset": "BTC",
+          "name": "BTC",
+          "market": "CRYPTO",
+          "asOf": "2026-11-10T05:47:51Z",
+          "status": "snapshot-retained",
+          "assessment": "约74838美元高位震荡，本轮未重新核验。",
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD"
+          ]
+        },
+        {
+          "asset": "黄金",
+          "name": "黄金",
+          "market": "METAL",
+          "asOf": "2026-11-10T05:47:31Z",
+          "status": "snapshot-retained",
+          "assessment": "约4124美元/盎司，高位横盘，本轮未重新核验。",
+          "evidenceFactIds": [
+            "METAL:XAUUSD"
+          ]
+        },
+        {
+          "asset": "原油",
+          "name": "原油",
+          "market": "ENERGY",
+          "asOf": "2026-11-10T05:37:45Z",
+          "status": "partial",
+          "assessment": "WTI约86美元/桶偏弱；布伦特404缺失。",
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ]
+        }
+      ],
+      "deepDive": [
+        {
+          "asset": "A股",
+          "title": "A股午后反弹，成长领涨、权重跟进",
+          "analysis": "本轮13:32 GMT+8实时盘中，A股六大指数全红：上证综指+0.62%、深成指+0.85%、创业板指+1.75%、科创50+1.80%、沪深300+0.32%、中证500+1.38%。结构上前一轮（上一版2026-11-10-1307）权重指数近持平（沪深300约+0.07%），本轮权重转正、幅度虽小但方向变化值得注意——增量资金承接范围从纯成长向更宽基略有拓宽。整体仍属政策托底背景下的结构性反弹，而非全面权重行情。",
+          "mechanism": "政策资金（互换便利第三批与回购融资增持）从额度分配进入持仓阶段，叠加午后风险偏好修复，推动成长与科技持续领涨；权重指数在低基数上跟涨。",
+          "risk": "若增量资金未能持续、成交缩量，涨幅可能回吐；单一成长主线若退潮，指数缺乏接棒板块。",
+          "invalidation": "沪深300转跌且成交背离，则扩散逻辑证伪，回归成长单极。",
+          "horizon": "1个交易日",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:CN:SZSE",
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CSI500"
+          ],
+          "sourceIds": []
+        },
+        {
+          "asset": "港股",
+          "title": "港股科技强于主板，国企指数持平",
+          "analysis": "本轮13:32 GMT+8盘中，恒生指数+0.31%、恒生科技+1.30%、国企指数-0.02%。与A股同源的科技叙事在两地被买入，但港股缺少本地增量资金承接，指数弹性弱一档；国企指数基本回到持平。对比上一版（恒指+0.15%、恒科+0.70%、国企-0.13%），本轮科技弹性增强、国企指数由负转正至基本持平。",
+          "mechanism": "美股AI链强势（纳指+2.74%）外溢至港股科技；离岸人民币稳定（CNH约6.6677）不构成汇率压制。",
+          "risk": "若美股科技出现获利回吐，港股科技弹性将首当其冲；国企指数权重金融/能源缺乏催化。",
+          "invalidation": "恒生科技回落至平盘下方，则短线偏利好失效。",
+          "horizon": "1个交易日",
+          "evidenceFactIds": [
+            "INDEX:HK:HSI",
+            "INDEX:HK:HSTECH",
+            "INDEX:HK:HSCEI"
+          ],
+          "sourceIds": []
+        },
+        {
+          "asset": "美股",
+          "title": "沿用上一已发布版本（11-09收盘）",
+          "analysis": "美股模块沿用 2026-11-10-1307（观测时点11-09收盘）：标普500 +2.35%、纳斯达克 +2.74%、纳指100 +3.40%、道指 +2.15%、罗素2000 +3.15%。半导体与AI链领涨（AMD +13.26%、博通 +8.78%、英伟达 -4.27%逆势），特斯拉 +5.54%、Meta +5.12%。本轮为区域交易节点，不对美股重新核验，原asOf与判断保留。",
+          "mechanism": "美股强势为A股/港股科技提供外部风险偏好支撑；但单日大涨后存在获利回吐风险。",
+          "risk": "单日大幅上涨后的获利盘可能压制次日表现；英伟达逆势提示AI链内部分化。",
+          "invalidation": "本区域任务未重新核验，沿用原发布版本。",
+          "horizon": "沿用11-09收盘",
+          "retention": {
+            "reportId": "2026-11-10-1307",
+            "analyzedAt": "2026-11-10T05:06:25Z",
+            "reason": "区域任务沿用 global-main 已发布美股模块，原 asOf 保留，本轮未重新核验"
+          },
+          "evidenceFactIds": [
+            "INDEX:US:SP500",
+            "INDEX:US:NASDAQ",
+            "INDEX:US:NDX",
+            "EQUITY:US:NVDA",
+            "EQUITY:US:AMD"
+          ],
+          "sourceIds": []
+        },
+        {
+          "asset": "BTC",
+          "title": "沿用上一已发布版本（快照）",
+          "analysis": "BTC模块沿用 2026-11-10-1307（快照约74838美元），本轮未重新核验。高位震荡，与全球风险偏好同向但无独立驱动。",
+          "mechanism": "风险偏好修复支撑加密资产，但缺乏本轮新增催化。",
+          "risk": "若美元指数与美债收益率上行，加密资产承压。",
+          "invalidation": "本区域任务未重新核验，沿用原发布版本。",
+          "horizon": "沿用",
+          "retention": {
+            "reportId": "2026-11-10-1307",
+            "analyzedAt": "2026-11-10T05:06:25Z",
+            "reason": "区域任务沿用 global-main 已发布BTC模块，原 asOf 保留，本轮未重新核验"
+          },
+          "evidenceFactIds": [
+            "CRYPTO:BTC:USD",
+            "CRYPTO:ETH:USD"
+          ],
+          "sourceIds": []
+        },
+        {
+          "asset": "黄金",
+          "title": "沿用上一已发布版本（快照）",
+          "analysis": "黄金模块沿用 2026-11-10-1307（快照约4124美元/盎司），本轮未重新核验。高位横盘，避险与降息预期提供支撑，但上行受实际利率约束。",
+          "mechanism": "实际利率与美元走势为核心驱动；地缘避险提供阶段性支撑。",
+          "risk": "实际利率上行将压制金价；美元走强削弱计价支撑。",
+          "invalidation": "本区域任务未重新核验，沿用原发布版本。",
+          "horizon": "沿用",
+          "retention": {
+            "reportId": "2026-11-10-1307",
+            "analyzedAt": "2026-11-10T05:06:25Z",
+            "reason": "区域任务沿用 global-main 已发布黄金模块，原 asOf 保留，本轮未重新核验"
+          },
+          "evidenceFactIds": [
+            "METAL:XAUUSD",
+            "METAL:XAGUSD"
+          ],
+          "sourceIds": []
+        },
+        {
+          "asset": "原油",
+          "title": "WTI偏弱，布伦特缺失（部分缺口）",
+          "analysis": "原油模块沿用 2026-11-10-1307 的WTI读数（约86美元/桶，-0.98%），本轮未重新核验；布伦特因数据源（BZX26.NYM）返回HTTP 404缺失，无法完整刻画原油曲线，故标 partial。",
+          "mechanism": "原油偏弱震荡，供需与地缘因素交织；布伦特缺失限制完整判断。",
+          "risk": "中东地缘或供应中断可能推升油价；需求预期走弱则压制。",
+          "invalidation": "布伦特数据恢复且显著上行将改变偏弱判断。",
+          "horizon": "沿用",
+          "retention": {
+            "reportId": "2026-11-10-1307",
+            "analyzedAt": "2026-11-10T05:06:25Z",
+            "reason": "区域任务沿用 global-main 已发布原油模块（WTI），布伦特数据源404缺口如实标注"
+          },
+          "evidenceFactIds": [
+            "ENERGY:WTI"
+          ],
+          "sourceIds": []
+        }
+      ],
+      "frameworkAnalysis": [
+        {
+          "id": "fw-expectation-gap",
+          "framework": "预期差与事件研究",
+          "concept": "价格对预期差的反映大于对绝对好坏的反映；已计入的利好边际效力递减。",
+          "applicability": "高",
+          "observed": "A股权重（沪深300）由上一版近持平转为+0.32%，但幅度有限，说明市场对政策资金托底已有较高预期，增量主要仍在成长。",
+          "mechanism": "互换便利第三批与回购融资增持进入持仓阶段，市场对其已从「预期」转为「确认」，故弹性集中在仍未被充分定价的成长方向。",
+          "conclusion": "反弹延续但受预期透支约束，权重跟涨是边际确认而非新趋势。",
+          "assumptions": [
+            "政策资金持续买入的节奏不变"
+          ],
+          "counterEvidence": [
+            "若权重加速上行则预期差框架失效"
+          ],
+          "horizon": "1-2个交易日",
+          "invalidation": "沪深300单日显著跑赢创业板，则结构扩散超预期。",
+          "confidence": "medium",
+          "missingData": [
+            "个股与板块资金流明细"
+          ],
+          "evidenceFactIds": [
+            "INDEX:CN:CSI300",
+            "INDEX:CN:CHINEXT"
+          ],
+          "sourceIds": []
+        },
+        {
+          "id": "fw-policy-transmission",
+          "framework": "政策传导与资金分配",
+          "concept": "政策工具的传导路径与资金分配结构决定板块受益顺序。",
+          "applicability": "中高",
+          "observed": "增量资金先去成长与主题、再小幅外溢至权重，与上一版「只买成长」的格局相比出现细微拓宽。",
+          "mechanism": "质押融资链条拓宽（协议回购出资人扩围）直接利好券商资管与固收业务，间接改善市场流动性预期。",
+          "conclusion": "政策托底仍在，但传导仍偏结构性，尚未演变为全面流动性行情。",
+          "assumptions": [
+            "监管与做市安排延续"
+          ],
+          "counterEvidence": [
+            "若监管收紧或资金撤离"
+          ],
+          "horizon": "1周",
+          "invalidation": "权重指数全面放量上行则传导超预期。",
+          "confidence": "medium",
+          "missingData": [
+            "逐笔资金流与行业成交分布"
+          ],
+          "evidenceFactIds": [
+            "INDEX:CN:STAR50",
+            "INDEX:CN:CSI300"
+          ],
+          "sourceIds": []
+        },
+        {
+          "id": "fw-risk-appetite",
+          "framework": "风险偏好与波动率",
+          "concept": "VIX等波动率指标与股指风险偏好同向；波动率回落通常伴随权益修复。",
+          "applicability": "中",
+          "observed": "VIX回落至19.92、美元指数横盘101.66，外部约束不紧；美股上一交易日大涨外溢至A股/港股科技。",
+          "mechanism": "全球风险偏好修复降低权益风险溢价，支撑成长与科技估值。",
+          "conclusion": "外部波动率环境对A股/港股反弹友好，但单日美股大涨后的回吐风险需警惕。",
+          "assumptions": [
+            "美股波动率维持低位"
+          ],
+          "counterEvidence": [
+            "VIX再度跳升或美债收益率上行"
+          ],
+          "horizon": "1个交易日",
+          "invalidation": "VIX快速回升则风险偏好框架反转。",
+          "confidence": "medium",
+          "missingData": [
+            "A股隐含波动率"
+          ],
+          "evidenceFactIds": [
+            "VOL:VIX",
+            "INDEX:US:NDX"
+          ],
+          "sourceIds": []
+        }
+      ],
+      "frameworkSynthesis": {
+        "verdict": "A股/港股午后反弹是政策托底与全球风险偏好修复的共振，结构性扩散但非全面反转。",
+        "agreement": "三个框架一致指向：增量资金仍偏成长、外部波动率友好、反弹受预期透支约束。",
+        "disagreement": "政策传导框架提示权重可能进一步跟进，而预期差框架认为权重跟涨幅度有限、易被预期透支；两者对「扩散能否延续」存在分歧。",
+        "weighting": "更看重预期差与波动率框架（实时盘中可读），政策传导框架作为中期背景而非短线驱动。",
+        "invalidation": "若沪深300显著放量跑赢创业板、或VIX快速回升，则当前偏温和修复的判断需修正。"
+      },
+      "recentChanges": [
+        {
+          "title": "A股权重由近持平转正",
+          "detail": "沪深300由上一版约+0.07%转为本轮+0.32%，权重开始小幅跟涨，扩散信号出现。"
+        },
+        {
+          "title": "港股科技弹性增强",
+          "detail": "恒生科技由上一版+0.70%升至本轮+1.30%，国企指数由-0.13%回到-0.02%基本持平。"
+        }
+      ],
+      "changes": [
+        {
+          "title": "A股六大指数全红",
+          "detail": "上证+0.62%、深成+0.85%、创业板+1.75%、科创50+1.80%、沪深300+0.32%、中证500+1.38%（13:32 GMT+8盘中）。"
+        },
+        {
+          "title": "港股分化收窄",
+          "detail": "恒指+0.31%、恒科+1.30%、国企-0.02%，科技仍强于主板但国企回到持平。"
+        }
+      ],
+      "evolution24h": [
+        {
+          "title": "上一版已发布读数（2026-11-10-1307）",
+          "at": "2026-11-10T05:06:25Z",
+          "detail": "A股创业板+1.49%/科创50+1.05%/沪深300+0.07%；港股恒指+0.15%/恒科+0.70%/国企-0.13%。",
+          "evidenceFactIds": [
+            "INDEX:CN:SSE",
+            "INDEX:HK:HSI"
+          ],
+          "sourceUrls": []
+        },
+        {
+          "title": "本轮13:32盘中读数",
+          "at": "2026-11-10T05:32:45Z",
+          "detail": "A股创业板+1.75%/科创50+1.80%/沪深300+0.32%；港股恒指+0.31%/恒科+1.30%/国企-0.02%，成长与科技继续领涨、权重小幅扩散。",
+          "evidenceFactIds": [
+            "INDEX:CN:CHINEXT",
+            "INDEX:CN:CSI300",
+            "INDEX:HK:HSTECH"
+          ],
+          "sourceUrls": []
+        }
+      ],
+      "watch": [
+        {
+          "point": "沪深300能否持续放量跟涨",
+          "detail": "决定反弹是「成长单极」还是「更宽基扩散」，影响后续配置判断。"
+        },
+        {
+          "point": "港股科技是否守住涨幅",
+          "detail": "恒生科技若回落至平盘下方，短线偏利好失效，并拖累A股科技情绪。"
+        },
+        {
+          "point": "布伦特数据源恢复",
+          "detail": "BZX26.NYM 404 导致原油曲线不完整，恢复后可补全原油判断。"
+        }
+      ],
+      "dataDefinitions": [
+        {
+          "term": "连续竞价",
+          "definition": "A股与港股集中交易的连续撮合时段：A股为09:30–11:30、13:00–15:00；港股为09:30–12:00、13:00–16:00。"
+        },
+        {
+          "term": "delayed 行情",
+          "definition": "交易所盘中数据经供应商延迟转发，非逐笔实时；本轮回合 A股/港股 asOf=13:32 GMT+8，标注 delayed。"
+        },
+        {
+          "term": "retention（沿用）",
+          "definition": "区域交易节点对美股/BTC/黄金/原油等非本节点重点资产，引用上一已发布版本原 asOf 与判断，本轮不重新核验。"
+        }
+      ],
+      "narrativeTriggers": [
+        {
+          "title": "权重指数跟涨",
+          "effect": "若沪深300持续放量，叙事将从「政策只买成长」转向「更宽基修复」，提升指数层面信心。"
+        },
+        {
+          "title": "布伦特数据缺口",
+          "effect": "原油曲线不完整，若中东地缘升温将无法及时通过布伦特确认，需关注WTI单点信号的局限性。"
+        }
+      ],
+      "worldEvents": [],
+      "analysisTheses": [],
+      "judgmentRevisions": [],
+      "metrics": [],
+      "sectionGaps": {
+        "news": {
+          "reason": "本轮请求3份官方文档，仅上交所公告列表抓取成功且未实际通读全文，深交所与证监会 fetch failed；无符合 reader-r2 可核验、已读全文的新闻来源，newsItems 置空、缺口如实标注。"
+        },
+        "events": {
+          "reason": "区域交易节点任务，未来12-24小时事件雷达沿用已发布版本，本轮未重新抓取官方日历；无新增确定性事件，events 置空。"
+        },
+        "macroEvents": {
+          "reason": "宏观事件雷达非本区域节点重点，沿用已发布版本，本轮未重新核验。"
+        }
+      }
+    },
+    "newsItems": [],
+    "newsCoverage": {
+      "status": "market-data-only",
+      "note": "本轮官方源抓取不足（上交所列表未通读、深交所/证监会 fetch failed），无合格新闻条目；仅行情数据可用。",
+      "regions": {
+        "CN": "仅行情",
+        "US": "沿用",
+        "WORLD": "无"
+      },
+      "gaps": [
+        "上交所公告列表未实际通读全文",
+        "深交所抓取失败",
+        "证监会抓取失败"
+      ]
+    },
+    "macroFacts": [],
+    "retainedMacroFactIds": [],
+    "macroEvents": [],
+    "events": [],
+    "researchRecords": [],
+    "researchChecks": []
+  }
+}
