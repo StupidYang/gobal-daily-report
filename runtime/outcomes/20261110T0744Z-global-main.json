@@ -1,14 +1,16 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]",
+  "issues": [
+    "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]"
+  ],
   "execution": {
     "executionId": "20261110T0744Z-global-main",
     "generation": 471
   },
   "deadlineAt": "2026-11-10T08:04:54.837Z",
   "requestId": "20261110T0744Z-global-main",
-  "at": "2026-11-10T07:45:06.053Z",
+  "at": "2026-11-10T07:51:23.193Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +21,29 @@
       "status": "ready-for-analysis",
       "at": "2026-11-10T07:45:06.053Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-10T07:51:23.193Z",
+      "revision": 0
     }
   ],
   "packetHash": "9238e1efc9215655f69bd1a04390c8856e347c499faee75cd5b7a87d75b1015b",
-  "collectionDurationMs": 3754
+  "collectionDurationMs": 3754,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "7a694c0f1ed68c33cfdf594b991adc9edf87e9a01786cf8d5535342b2dc19cb4",
+  "validationIssues": [
+    {
+      "path": "editorial.analyzedAt",
+      "code": "analysis-time",
+      "message": "分析结束时点必须在实际采集开始之后且不晚于当前时间"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261110T0744Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
