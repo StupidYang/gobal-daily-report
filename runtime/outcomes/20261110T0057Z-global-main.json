@@ -1,14 +1,18 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.macroFacts[0].asOf: asOf不能在未来 [future-time]\neditorial.macroFacts[13].asOf: asOf不能在未来 [future-time]\neditorial.macroFacts[14].asOf: asOf不能在未来 [future-time]",
+  "issues": [
+    "editorial.macroFacts[0].asOf: asOf不能在未来 [future-time]",
+    "editorial.macroFacts[13].asOf: asOf不能在未来 [future-time]",
+    "editorial.macroFacts[14].asOf: asOf不能在未来 [future-time]"
+  ],
   "execution": {
     "executionId": "20261110T0057Z-global-main",
     "generation": 463
   },
   "deadlineAt": "2026-11-10T01:16:59.842Z",
   "requestId": "20261110T0057Z-global-main",
-  "at": "2026-11-10T00:57:16.392Z",
+  "at": "2026-11-10T01:01:00.228Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +23,39 @@
       "status": "ready-for-analysis",
       "at": "2026-11-10T00:57:16.392Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-10T01:01:00.228Z",
+      "revision": 0
     }
   ],
   "packetHash": "3e138891c48b63ae082cfc25c51c7a2a301b69b01718945e5afb7b9e8a616d98",
-  "collectionDurationMs": 8355
+  "collectionDurationMs": 8355,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "a89cec6d4938a32bfc8d47b179f61ea1703f0836333c8575d2c81331c081e7b5",
+  "validationIssues": [
+    {
+      "path": "editorial.macroFacts[0].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    },
+    {
+      "path": "editorial.macroFacts[13].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    },
+    {
+      "path": "editorial.macroFacts[14].asOf",
+      "code": "future-time",
+      "message": "asOf不能在未来"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261110T0057Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
