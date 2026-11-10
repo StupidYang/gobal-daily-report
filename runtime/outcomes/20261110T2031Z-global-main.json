@@ -1,14 +1,27 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.newsItems[0].eventId: 必须提供稳定eventId（历史别名id亦可） [required]\neditorial.newsItems[0].plainImpact: 必须是非空字符串 [required]\neditorial.newsItems[0].assessment: 必须是非空字符串 [required]\neditorial.newsItems[1].eventId: 必须提供稳定eventId（历史别名id亦可） [required]\neditorial.newsItems[1].plainImpact: 必须是非空字符串 [required]\neditorial.newsItems[1].assessment: 必须是非空字符串 [required]\neditorial.report.sectionGaps.aShareLiquidity: 必须是对象 [type]\neditorial.report.sectionGaps.hkConnect: 必须是对象 [type]\neditorial.report.sectionGaps.brentAndCracks: 必须是对象 [type]\neditorial.report.sectionGaps.cryptoFlows: 必须是对象 [type]\neditorial.report.sectionGaps.companyResearch: 必须是对象 [type]\neditorial.report.sectionGaps.newsBreadth: 必须是对象 [type]",
+  "issues": [
+    "editorial.newsItems[0].eventId: 必须提供稳定eventId（历史别名id亦可） [required]",
+    "editorial.newsItems[0].plainImpact: 必须是非空字符串 [required]",
+    "editorial.newsItems[0].assessment: 必须是非空字符串 [required]",
+    "editorial.newsItems[1].eventId: 必须提供稳定eventId（历史别名id亦可） [required]",
+    "editorial.newsItems[1].plainImpact: 必须是非空字符串 [required]",
+    "editorial.newsItems[1].assessment: 必须是非空字符串 [required]",
+    "editorial.report.sectionGaps.aShareLiquidity: 必须是对象 [type]",
+    "editorial.report.sectionGaps.hkConnect: 必须是对象 [type]",
+    "editorial.report.sectionGaps.brentAndCracks: 必须是对象 [type]",
+    "editorial.report.sectionGaps.cryptoFlows: 必须是对象 [type]",
+    "editorial.report.sectionGaps.companyResearch: 必须是对象 [type]",
+    "editorial.report.sectionGaps.newsBreadth: 必须是对象 [type]"
+  ],
   "execution": {
     "executionId": "20261110T2031Z-global-main",
     "generation": 484
   },
   "deadlineAt": "2026-11-10T20:52:16.642Z",
   "requestId": "20261110T2031Z-global-main",
-  "at": "2026-11-10T20:32:28.745Z",
+  "at": "2026-11-10T20:34:52.732Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +32,84 @@
       "status": "ready-for-analysis",
       "at": "2026-11-10T20:32:28.745Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-10T20:34:52.732Z",
+      "revision": 0
     }
   ],
   "packetHash": "625379a8e88c73e84e72147cd01cc526ca2f2bc752406967d1851f689b34b7d4",
-  "collectionDurationMs": 4334
+  "collectionDurationMs": 4334,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "83384b8dc3049759a7a0834a5452c6001cb67350edbb3e005abacb2da72be2fe",
+  "validationIssues": [
+    {
+      "path": "editorial.newsItems[0].eventId",
+      "code": "required",
+      "message": "必须提供稳定eventId（历史别名id亦可）"
+    },
+    {
+      "path": "editorial.newsItems[0].plainImpact",
+      "code": "required",
+      "message": "必须是非空字符串"
+    },
+    {
+      "path": "editorial.newsItems[0].assessment",
+      "code": "required",
+      "message": "必须是非空字符串"
+    },
+    {
+      "path": "editorial.newsItems[1].eventId",
+      "code": "required",
+      "message": "必须提供稳定eventId（历史别名id亦可）"
+    },
+    {
+      "path": "editorial.newsItems[1].plainImpact",
+      "code": "required",
+      "message": "必须是非空字符串"
+    },
+    {
+      "path": "editorial.newsItems[1].assessment",
+      "code": "required",
+      "message": "必须是非空字符串"
+    },
+    {
+      "path": "editorial.report.sectionGaps.aShareLiquidity",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.sectionGaps.hkConnect",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.sectionGaps.brentAndCracks",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.sectionGaps.cryptoFlows",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.sectionGaps.companyResearch",
+      "code": "type",
+      "message": "必须是对象"
+    },
+    {
+      "path": "editorial.report.sectionGaps.newsBreadth",
+      "code": "type",
+      "message": "必须是对象"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261110T2031Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
