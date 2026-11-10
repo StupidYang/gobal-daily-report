@@ -1,0 +1,1908 @@
+{
+ "execution": {
+  "executionId": "20261110T2031Z-global-main",
+  "generation": 484
+ },
+ "editorial": {
+  "packetHash": "625379a8e88c73e84e72147cd01cc526ca2f2bc752406967d1851f689b34b7d4",
+  "analyzedAt": "2026-11-10T20:34:37Z",
+  "report": {
+   "overview": "美股 11-10 常规盘中：CPI 冲击已被消化，指数回到平盘附近，但龙头与二线的分叉仍在扩大，波动率反而下行。真实时钟 UTC 2026-11-10T20:32Z，纽约 15:32 EST（周二，EST=UTC-5），距16:00 ET 收盘约28分钟，属常规盘中末段。本轮冻结采集包 asOf 20:32:2xZ：标普500 7515.29（-0.46%）、纳指综合 25036.51（-0.86%）、纳指100 27698.85（-0.75%）、道指 52201.27（-0.36%）、罗素2000 2817.19（-0.83%，asOf 20:17Z）、VIX 19.96（+0.20%，asOf 20:17Z）、10年期美债 4.98%、美元指数 102.25（+0.59%）。与上一版 2026-11-11-0417（asOf 20:09Z）相比，标普从7506.72回升到7515.29、纳指从24983.8回升到25036.51，跌幅收窄约0.2个百分点；VIX 从19.91回落到19.96。真正的边际变化不在指数，而在个股：NVDA 168.34（-5.78%）继续单边杀，而 AVGO 332.52（+4.08%）、TSM 396.26（+1.97%）、AMD 516.26（+1.51%）、NET 305.78（+4.10%）逆势。跨资产同步：现货金 4036.70、现货银 51.73（金银比 78.0）、WTI 86.40（-0.52%）、BTC 73531.07。官方侧：财政部 par 仍止于11/09（10Y 4.88、2Y 4.56，2s10s +32bp），H.15 发布11-09、表列止11/06；BLS 明确11-11退伍军人节无发布、11-13 08:30 ET 发10月PPI；EIA 周报顺延至11-12 12:00 ET；FOMC 12-08/09 含SEP。本轮无成交量、成交额与涨跌家数，量能结论一律 partial。",
+   "rolling24hSummary": "过去24小时的主导变量只有一个：10-10 13:30Z 的10月CPI把「不降息」交易改写成「可能加息」。整体环比+0.4%（预期0.3%）、核心+0.3%（预期0.2%，连续第三个月），住房+0.3%贡献三成以上、能源+0.7%；因2025年10月拨款中断缺基期，本轮不发布同比。读数后前端重定价最快：媒体口径2年期上行约14bp、10年期约8bp、30年期约5bp，曲线呈熊平；本轮 packet 的10年期盘中读数4.983%与11/09 par的4.88%之间约10bp的差距即由此产生。权益端的反应是「先杀估值、再分层」：早盘标普一度跌0.9%触及日内低点，末段收复至-0.46%，但修复由半导体二线（AVGO/TSM/AMD）与金融资管（GS/MS/BLK）承担，权重AI龙头NVDA反而越走越低（-5.78%，市值约4.07万亿美元）。这不是风险偏好修复，而是同一主题内部的仓位再分配。商品与贵金属同步走弱：现货金跌至4036.7、现货银51.73，金银比78.1，说明实际利率上行压过了避险需求；WTI 86.40 小幅回落，未跟随通胀恐慌走高。加密资产缺乏资金费率与ETF流数据，只能按价格序列描述。",
+   "methodology": "本轮为 global-main 常规盘中末段节点。真实时钟 UTC 2026-11-10T20:32Z，换算纽约 2026-11-10 15:32 EST（周二；EST=UTC-5），落在 NYSE/Nasdaq 常规时段 09:30–16:00 ET 内、收盘前约28分钟，精确归类为常规盘中末段，不是盘前、午间、盘后或半日市收盘后。执行采用 execution-lease-v1 / editorial-v1，generation 484，packetHash 625379a8e88c73e84e72147cd01cc526ca2f2bc752406967d1851f689b34b7d4，固定 deadlineAt 2026-11-10T20:52:16.642Z；报价取本轮冻结采集包（20:32:1x–20:32:2xZ）71项观测，其中主要指数与个股为延时盘中快照，罗素2000 与 VIX 为20:17Z、10Y 为19:59Z、DXY 与 WTI 为20:22Z，时点不统一已逐项标注；均为盘中延时价，不是收盘价。ENERGY:BRENT 采集 HTTP 404、RATE:US2Y 为 partial（无数值无时点），两者均不参与推断。文档侧 12 份请求取得 10 份正文：财政部 par、H.15、BLS CPI 原文、BLS 11月日程、BEA 日程、EIA 周报日程、FOMC 日历、SEC NVDA 申报索引，以及每经2篇（标普日内低点、俄外长停火表态）；NBD-4644278 与 NBD-4644292 抓取失败，失败 URL 不进入任何 sourceUrls。抓取成功只证明取得 URL 与哈希，本轮已逐篇阅读原始 URL 后才写分析。SEC 索引最近披露仍为常规 Form 4，无对应治理事件的 8-K/10-Q 原文，故 researchRecords 保持空数组并在 researchChecks 写明缺口。成交量、成交额、涨跌家数与板块资金流在本轮 packet 中完全缺失，相关结论标 partial，不补0、不用旧值换时间。A股、港股已收盘，沿用其原 asOf（A股 2026-11-10T07:00:29Z 起的收盘快照、港股 2026-11-10T08:08:58Z）；BTC/黄金/原油为本轮 packet 新观测，未沿用旧值。上一版为 2026-11-11-0417（analysisAsOf 2026-11-10T20:16:51Z），本版所有价格均取本轮 packet。",
+   "coreAnalysis": {
+    "mainTheme": "同一份CPI读数，被两类资产读成两个故事：利率市场读成「加息在即」，股票市场读成「只有AI龙头要付账」。指数跌幅收窄而VIX下行，说明系统性风险定价没有升级；NVDA 独自-5.78%说明这是单一公司的治理与估值重定价。",
+    "expectationGap": "预期差集中在前端：核心环比0.3%对预期0.2%，市场把12月加息从「可能」推到「完全定价」，并开始给50bp定价（媒体口径13.6%，本轮未取得官方概率原文，故仅作二手引用并标注）。",
+    "divergence": "本轮最硬的分歧不是股债，而是半导体内部：AVGO（+4.08%）、TSM（+1.97%）、AMD（+1.51%）与NVDA（-5.78%）、ARM（-3.02%）、MU（-2.11%）方向相反，同一算力链内部完成换仓。",
+    "regime": "状态判断：通胀黏性 + 加息尾部风险 + AI资本开支仍在扩张，三者并存。既不是衰退交易，也不是流动性宽松交易，而是「高名义利率下的结构性成长」。",
+    "priceIn": "已定价：12月加息25bp（完全定价）、10月CPI超预期本身、AI龙头治理折价。未充分定价：若11-13 PPI同样超预期，50bp尾部会从13.6%继续上移。",
+    "bullCase": "多头情形：PPI回落证伪通胀加速，前端收益率回落，被压制的半导体二线与资管板块继续修复，指数在7000-7600区间震荡消化。",
+    "bullInvalidation": "证伪条件：11-13 PPI环比≥0.4%或核心PPI重新加速；或2年期收益率单日再上15bp以上。",
+    "bearCase": "空头情形：50bp定价从13.6%升向30%以上，长端不跌、曲线继续熊平，成长股估值二次压缩，NVDA的治理折价扩散到整条AI链。",
+    "bearInvalidation": "证伪条件：VIX回落至18以下且标普收复7600；或10年期回落至4.85%以下。"
+   },
+   "plainLanguage": {
+    "verdict": "今天的关键不是「美股跌了多少」，而是「通胀又超预期，市场开始认真讨论12月加息」。指数只是小幅回落，跌的主要是英伟达这一家公司。",
+    "bottomLine": "物价环比涨得比预期快，尤其是剔除食品能源之后的核心项连续三个月0.3%。这意味着美联储12月不但可能不降息，还可能加息。对股票：利率敏感的高估值成长股压力最大；对黄金：实际利率上行直接压价；对原油：需求叙事暂时压过地缘溢价。",
+    "whyNow": "因为13:30Z刚公布的10月CPI是本周唯一的硬数据，而下一个硬数据（10月PPI）要到11-13才出，中间两天市场只能靠预期交易。",
+    "horizon": "观察窗口：11-11 退伍军人节债券休市、BLS无发布，流动性偏薄；真正的检验点在11-13 13:30Z 的PPI。",
+    "confidence": "中。指数与利率方向清楚，但量能数据（成交额、涨跌家数）本轮完全缺失，无法判断是普跌还是结构性换仓。",
+    "invalidation": "若11-13 PPI明显低于预期，且10年期回落到4.85%以下，本轮「加息定价」的判断需下修。",
+    "impacts": [
+     {
+      "asset": "A股",
+      "effect": "中性偏多",
+      "reason": "11-10 沪指+0.40%、创业板+1.46%、中证500+0.91%，内需与中小盘强于沪深300的+0.07%；外部利率上行未传导为风险偏好下降。",
+      "takeaway": "结构性行情延续，指数弹性小于板块弹性。",
+      "horizon": "1-3个交易日",
+      "invalidation": "若北向与两融同步转为净流出、且创业板单日跌幅超1.5%，则结构性判断作废。",
+      "risk": "缺少成交额与涨跌家数，无法确认是增量资金还是存量轮动。",
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
+      ],
+      "impact": "A股11-10已收盘，沪指3663.723（+0.40%）、创业板指2494.3975（+1.46%），本轮未重开交易；隔夜美股AI龙头走弱与美债收益率上行，会通过外资风险偏好与成长股估值两条渠道影响11-11开盘，但11-11本身无国内数据。"
+     },
+     {
+      "asset": "港股",
+      "effect": "偏多但脆弱",
+      "reason": "恒指+0.31%、恒生科技+1.08%，科技强于国企指数(-0.10%)，说明驱动来自成长而非价值；港股对美债利率最敏感，10Y停在5.00%是压制项。",
+      "takeaway": "港股的弹性来自科技，风险也来自科技。",
+      "horizon": "1-3个交易日",
+      "invalidation": "若10Y升破5.10%且恒生科技单日跌超2%，则判断作废。",
+      "risk": "港交所站点本轮仍不可程序化取数，缺南向资金与沽空数据。",
+      "sourceUrls": [
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
+      ],
+      "impact": "港股11-10收于恒指24557.04（+0.31%）、恒生科技4084.45（+1.08%），本轮无新增交易；美债前端上行对港股高估值成长的压制，需看南向资金是否延续上一轮的净卖出。"
+     },
+     {
+      "asset": "美股",
+      "effect": "分层，指数偏空、个股分化",
+      "reason": "标普-0.46%、纳指-0.86%，但AVGO+4.08%、TSM+1.97%逆势；NVDA-5.78%是单票折价而非板块坍塌。",
+      "takeaway": "买确定性、卖高估值，指数层面别追反弹。",
+      "horizon": "1-3个交易日",
+      "invalidation": "若NVDA收复175且AVGO/TSM同步回落，说明是纯轮动而非确定性溢价。",
+      "risk": "缺成交量与广度，无法判断修复的资金质量。",
+      "sourceUrls": [
+       "https://www.bls.gov/news.release/cpi.nr0.htm",
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
+      ],
+      "impact": "标普将连续第二个交易日收跌但幅度收敛；真正的看点是收盘前最后28分钟NVDA能否守住168一线，以及AVGO/TSM的逆势能否延续到收盘。"
+     },
+     {
+      "asset": "BTC",
+      "effect": "跟随风险资产，弱相关于通胀",
+      "reason": "73531.07，较上一版72961.41小幅上行，同期纳指下跌1.05%，说明BTC本轮未放大科技股跌幅。",
+      "takeaway": "按风险资产的高贝塔看待，不按「数字黄金」看待。",
+      "horizon": "1-3个交易日",
+      "invalidation": "若纳指再跌1%而BTC跌破71000，则「抗跌」判断作废。",
+      "risk": "无资金费率、无ETF流、无链上数据，只能做价格层面描述。",
+      "sourceUrls": [
+       "https://www.bls.gov/news.release/cpi.nr0.htm"
+      ],
+      "impact": "BTC 73531.07，在风险资产走弱时未出现独立行情，说明它当前仍被当作高β风险资产而非避险资产定价；缺乏资金费率与ETF流数据，不能判断是现货抛压还是杠杆出清。"
+     },
+     {
+      "asset": "黄金",
+      "effect": "偏多但受实际利率压制",
+      "reason": "现货金4036.70，仅比上一版4024.10高7美元；CPI超预期后未创新高，说明实际利率上行抵消了避险需求。",
+      "takeaway": "黄金现在是「抗跌」不是「领涨」。",
+      "horizon": "1-3个交易日",
+      "invalidation": "若10Y升破5.10%而金价跌破3980，则抗跌判断作废。",
+      "risk": "无持仓与ETF流量数据，金银比78.3仅作相对强弱参考。",
+      "sourceUrls": [
+       "https://www.bls.gov/news.release/cpi.nr0.htm",
+       "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
+      ],
+      "impact": "现货金4036.70、现货银51.73，金银比78.0。CPI超预期→实际利率上行→无息资产承压，这是最直接的传导；地缘（俄方称不会同意再次停火）只提供了弱支撑。"
+     },
+     {
+      "asset": "原油",
+      "effect": "偏空",
+      "reason": "WTI 86.40(-0.88%)，在通胀超预期、能源分项+0.7%的背景下反而下跌，说明市场交易的是需求走弱而非供给风险。",
+      "takeaway": "油价与通胀叙事脱钩，是本轮最值得注意的背离。",
+      "horizon": "至11-12 EIA周报",
+      "invalidation": "若11-12周报显示原油与汽油库存双降、WTI重上88，则需求走弱判断作废。",
+      "risk": "布伦特本轮HTTP 404、无月差与裂解价差、无库存数据，只能用WTI单点描述。",
+      "sourceUrls": [
+       "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+      ],
+      "impact": "WTI 86.40（-0.52%），未跟随通胀恐慌走高，说明需求端叙事仍占上风；布伦特采集仍404，无法计算价差，相关结论 partial。"
+     }
+    ]
+   },
+   "marketCoverage": [
+    {
+     "market": "A股",
+     "asOf": "2026-11-10T07:00:29Z",
+     "coverage": "沪深两市与创业板、科创50、沪深300、中证500六项指数收盘价齐全",
+     "status": "partial",
+     "gaps": "缺成交额、涨跌家数、板块资金流（本轮未取）"
+    },
+    {
+     "market": "港股",
+     "asOf": "2026-11-10T08:08:58Z",
+     "coverage": "恒指、恒生科技、国企指数收盘齐全",
+     "status": "partial",
+     "gaps": "港交所站点不可程序化取数，缺南向资金、沽空与成交结构"
+    },
+    {
+     "market": "美股",
+     "asOf": "2026-11-10T20:32:21Z",
+     "coverage": "五大指数盘中延时报价与十只重点个股",
+     "status": "partial",
+     "gaps": "延时报价非收盘；缺成交量、涨跌家数与板块指数"
+    },
+    {
+     "market": "BTC",
+     "asOf": "2026-11-10T20:32:21Z",
+     "coverage": "BTC/ETH/SOL/HYPE单一时刻快照",
+     "status": "partial",
+     "gaps": "无资金费率、无ETF流、无链上数据、无成交深度"
+    },
+    {
+     "market": "黄金",
+     "asOf": "2026-11-10T20:31:58Z",
+     "coverage": "现货金4036.70、现货银51.729，可算金银比78.3",
+     "status": "partial",
+     "gaps": "无COMEX持仓、无ETF流量、无实际利率衍生品"
+    },
+    {
+     "market": "原油",
+     "asOf": "2026-11-10T20:22:13Z",
+     "coverage": "WTI 86.40(-0.88%)延时报价与EIA周报页及发布日程",
+     "status": "partial",
+     "gaps": "布伦特HTTP 404不可用；无库存周值、无月差、无裂解价差"
+    }
+   ],
+   "assets": [
+    {
+     "asset": "A股",
+     "asOf": "2026-11-10T07:00:29Z",
+     "status": "收盘",
+     "judgement": "中小盘强于大盘，结构行情",
+     "evidence": "沪指3663.723(+0.40%)、创业板2494.3975(+1.46%)、沪深300 4059.1106(+0.07%)"
+    },
+    {
+     "asset": "港股",
+     "asOf": "2026-11-10T08:08:58Z",
+     "status": "收盘",
+     "judgement": "科技驱动，对利率敏感",
+     "evidence": "恒指24557.04(+0.31%)、恒生科技4084.45(+1.08%)、国企指数8265.81(-0.10%)"
+    },
+    {
+     "asset": "美股",
+     "asOf": "2026-11-10T20:32:21Z",
+     "status": "盘中延时",
+     "judgement": "盘中末段：标普7515.29（-0.46%）、纳指25036.51（-0.86%）、道指52201.27（-0.36%）。指数跌幅较上一版收窄，但NVDA独自走弱至168.34（-5.78%），资金转向AVGO/TSM/AMD。状态 partial：无成交额与涨跌家数。",
+     "evidence": "标普7515.29(-0.46%)、纳指25036.514(-0.86%)、AVGO+4.08%、NVDA-5.78%"
+    },
+    {
+     "asset": "BTC",
+     "asOf": "2026-11-10T20:32:22Z",
+     "status": "快照",
+     "judgement": "BTC 73531.07，较上一版73313.02小幅回升；ETH 2047.78、SOL 83.06、HYPE 71.94。风险资产走弱时未出现独立行情，仍按高β定价。",
+     "evidence": "73531.07，上一版72961.41"
+    },
+    {
+     "asset": "黄金",
+     "asOf": "2026-11-10T20:31:58Z",
+     "status": "快照",
+     "judgement": "现货金4036.70、现货银51.73，金银比78.0。CPI超预期推高实际利率，无息资产承压；本轮XAU/XAG均为packet新观测，非沿用。",
+     "evidence": "4036.70，上一版4024.10，银51.729"
+    },
+    {
+     "asset": "原油",
+     "asOf": "2026-11-10T20:22:13Z",
+     "status": "延时",
+     "judgement": "WTI 86.40（-0.52%），小幅回落，未跟随通胀恐慌走高；布伦特仍404，无法计算Brent-WTI价差与裂解。状态 partial。",
+     "evidence": "WTI 86.40(-0.88%)"
+    }
+   ],
+   "deepDive": [
+    {
+     "asset": "A股",
+     "title": "A股：外部利率冲击未传导，内需与中小盘占优",
+     "analysis": "11-10收盘沪指3663.723(+0.40%)、深成指11241.536(+0.59%)、创业板2494.3975(+1.46%)、科创50 1265.0217(+0.64%)、沪深300 4059.1106(+0.07%)、中证500 6645.8867(+0.91%)。美国10月CPI在13:30Z才发布，A股收盘早于该时点，因此A股并未对本轮通胀读数定价；创业板与中证500明显强于沪深300，说明资金偏好成长与中小盘。",
+     "mechanism": "A股当前由国内流动性与产业主题驱动，外需与美债利率通过汇率与风险偏好间接传导。USDCNH 6.6772、USDCNY 6.6703，人民币未出现贬值压力，外部利率上行尚未通过汇率渠道压制A股。",
+     "risk": "没有成交额与涨跌家数，无法区分增量资金入场与存量板块轮动；若美债10Y突破5.10%并带动人民币走弱，成长风格会先受压。",
+     "invalidation": "若下一交易日创业板跌幅超1.5%、中证500同步走弱且USDCNH升破6.72，则外部冲击未传导判断作废。",
+     "horizon": "1-3个交易日",
+     "evidenceFactIds": [
+      "INDEX:CN:SSE",
+      "INDEX:CN:CHINEXT",
+      "INDEX:CN:CSI300",
+      "INDEX:CN:CSI500",
+      "FX:USDCNH"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
+     ]
+    },
+    {
+     "asset": "港股",
+     "title": "港股：科技领涨，但10Y 5.00%是头顶的盖子",
+     "analysis": "恒指24557.04(+0.31%)、恒生科技4084.45(+1.08%)、国企指数8265.81(-0.10%)。科技显著强于国企指数，说明当日驱动来自成长风格而非价值修复。港股是主要权益市场中对美元利率最敏感者之一，10Y停在5.00%意味着估值端没有顺风。",
+     "mechanism": "港股定价等于分子端中国盈利、分母端美元无风险利率与风险溢价之和。本轮分子端无新数据，分母端因CPI超预期变差，但恒生科技仍上涨，说明短期由个股与主题驱动，压过了宏观分母。",
+     "risk": "单日科技领涨若缺乏南向资金配合，容易在利率再上行时快速回吐；本轮缺南向净买卖与沽空比例，无法验证资金质量。",
+     "invalidation": "若10Y升破5.10%、恒生科技单日跌超2%且恒指跌破24200，则科技驱动逻辑作废。",
+     "horizon": "1-3个交易日",
+     "evidenceFactIds": [
+      "INDEX:HK:HSI",
+      "INDEX:HK:HSTECH",
+      "INDEX:HK:HSCEI",
+      "RATE:US10Y"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
+      "https://www.federalreserve.gov/releases/h15/"
+     ]
+    },
+    {
+     "asset": "美股",
+     "title": "美股：CPI一次性定价后的链内分层",
+     "analysis": "末段28分钟的结构比指数重要。标普7515.29、纳指25036.51，跌幅均较20:09Z的上一版收窄约0.2个百分点，VIX从19.91回落到19.96；与此同时NVDA跌至168.34（-5.78%），AVGO 332.52（+4.08%）、TSM 396.26（+1.97%）、AMD 516.26（+1.51%）逆势。把两者放在一起看，本轮不是「AI叙事破裂」，而是「AI叙事内部的定价权重从单一龙头向定制芯片/代工迁移」。金融与资管侧GS 909.225（+0.33%）、MS 187.14（+0.02%）、BLK 1216.29（+0.13%）走平，说明利率上行尚未转成信用担忧。软件侧NOW -4.01%、CRM -1.12%、ADBE -0.91%，加密高β COIN -3.11%、MSTR -3.85%，说明高久期资产仍在承压。",
+     "mechanism": "传导链：CPI核心0.3%→前端收益率上行约14bp→实际利率抬升→高久期资产折现率上升；同时NVDA的治理事件提供个股特有的折价，两者叠加而不是互相替代。指数跌幅收窄的原因是指数权重之外的半导体二线与资管承接了资金，而不是抛压消失。",
+     "risk": "风险：一是末段流动性薄，最后半小时容易出现方向性放大；二是11-11债券市场休市，若隔夜出现新的通胀叙事，股票与商品会在缺乏国债锚的情况下单边反应；三是本轮无成交额与涨跌家数，无法识别是普跌还是换仓。",
+     "invalidation": "证伪：若收盘标普回到7530以上且NVDA跌幅收窄至3%以内，则「AI龙头单边杀」的判断需撤销；若VIX反而升破21，则「波动率下行」的判断需撤销。",
+     "horizon": "T+2（至11-13 PPI发布）",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:NDX",
+      "INDEX:US:DOW",
+      "VOL:VIX",
+      "RATE:US10Y",
+      "EQUITY:US:NVDA",
+      "EQUITY:US:AVGO",
+      "EQUITY:US:TSM",
+      "EQUITY:US:AMD",
+      "PROP:US:SEMI-DIVERGENCE-2026-11-10-EOD",
+      "MACRO:US:CPI-OCT-2026-CORE-MOM"
+     ],
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
+      "https://www.federalreserve.gov/releases/h15/",
+      "https://www.nbd.com.cn/articles/2026-11-10/4644282.html"
+     ]
+    },
+    {
+     "asset": "BTC",
+     "title": "BTC：这次没有放大科技股跌幅",
+     "analysis": "BTC 73531.07，ETH 2047.78、SOL 83.06、HYPE 71.94。相较上一版17:12Z的72961.41，BTC在纳指下跌1.05%的同一时段小幅上行，未按高贝塔放大跌幅。",
+     "mechanism": "BTC短期相关性在风险资产与流动性资产之间摇摆：当冲击来自贴现率而非信用或流动性枯竭时，BTC跌幅通常小于高估值科技股，因为它没有现金流久期。本轮表现符合这一机制。",
+     "risk": "只有单点快照，无资金费率、无ETF申赎、无链上数据；一旦冲击从利率转向流动性，例如美元融资紧张，BTC会迅速转为高贝塔。",
+     "invalidation": "若纳指再跌1%而BTC跌破71000，或DXY升破103，则抗跌判断作废。",
+     "horizon": "1-3个交易日",
+     "evidenceFactIds": [
+      "CRYPTO:BTC:USD",
+      "CRYPTO:ETH:USD",
+      "CRYPTO:SOL:USD",
+      "CRYPTO:HYPE:USD",
+      "FX:DXY"
+     ],
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ]
+    },
+    {
+     "asset": "黄金",
+     "title": "黄金：抗跌但不领涨，实际利率仍是主变量",
+     "analysis": "现货金4036.70、现货银51.729，金银比78.3。上一版17:12Z为4024.10与51.456。CPI超预期、通胀黏性确认的背景下，金价仅微升7美元，未创新高。",
+     "mechanism": "黄金同时受实际利率与避险及通胀对冲需求驱动。本轮通胀数据推高名义利率与加息预期，实际利率上行压制金价；通胀黏性带来的对冲需求只够抵消、不足推动。白银跌幅更明显，金银比走阔，说明工业属性在需求走弱叙事下拖累更大。",
+     "risk": "无ETF持仓与COMEX持仓数据，无法区分是投资需求减弱还是实物需求支撑；若美元继续走强，金价可能补跌。",
+     "invalidation": "若10Y升破5.10%而金价跌破3980，则抗跌判断作废；反之若金价站上4080且金银比回落至76，则避险需求重新主导。",
+     "horizon": "1-3个交易日",
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD",
+      "RATE:US10Y",
+      "FX:DXY"
+     ],
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
+     ]
+    },
+    {
+     "asset": "原油",
+     "title": "原油：通胀超预期下的反常下跌，需求叙事占上风",
+     "analysis": "WTI 86.40(-0.88%)，上一版17:12Z为86.73。CPI能源分项环比+0.7%，9月为+5.2%，汽油季调+1.0%；但盘中原油并未跟随通胀走高，反而回落。",
+     "mechanism": "油价短期取决于供需边际而非通胀读数。CPI能源分项反映的是过去一个月的涨价，当市场对未来需求的定价转弱时，油价会与通胀叙事脱钩。本轮正是这种背离：通胀数据里的能源是已发生，盘面交易的是将发生。",
+     "risk": "布伦特本轮HTTP 404，无法交叉验证；无库存周值、无月差、无裂解价差，单点WTI不足以判断是供给还是需求驱动；若11-12 EIA周报显示大幅去库，判断需反转。",
+     "invalidation": "若WTI重回88上方且EIA周报显示原油与汽油库存双降，则需求走弱判断作废。",
+     "horizon": "至11-12 17:00Z EIA周报",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "FX:DXY",
+      "MACRO:US:CPI-OCT-2026-ENERGY-MOM",
+      "MACRO:US:EIA-WPSR-NEXT-2026-11-12"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ]
+    }
+   ],
+   "frameworkAnalysis": [
+    {
+     "framework": "实际利率—贴现率框架",
+     "concept": "长期资产价格等于未来现金流按实际利率贴现，通胀黏性推高名义利率并抬升实际利率预期。",
+     "observed": "10月核心CPI连续第三月+0.3%，财政部par 10Y 4.88%（11/09）、20Y 5.29%高于30Y 5.26%；盘中10Y延时报价5.00%。纳指-0.86%弱于道指-0.36%。",
+     "conclusion": "贴现率上行仍是压制长久期资产的主渠道，且压制是选择性的：只打在估值最贵的标的上。",
+     "applicability": "适用于以现金流久期解释板块间相对表现。",
+     "mechanism": "实际利率上行提高远期现金流贴现分母，久期越长、估值越依赖远期盈利的资产跌幅越大。",
+     "assumptions": "通胀预期未失控、无信用事件。",
+     "counterEvidence": "VIX从21.02回落到19.96，未出现波动率驱动的被动去杠杆。",
+     "horizon": "1-3个交易日",
+     "invalidation": "若10Y回落至4.85%以下而纳指仍弱于道指，则贴现率解释不成立。",
+     "evidenceFactIds": [
+      "RATE:US10Y",
+      "MACRO:US:CPI-OCT-2026-CORE-MOM",
+      "MACRO:US:PAR-20Y-2026-11-09",
+      "INDEX:US:NASDAQ",
+      "INDEX:US:DOW"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ]
+    },
+    {
+     "framework": "期限结构与政策路径定价",
+     "concept": "短端定价政策路径，长端定价增长与通胀风险溢价，两者之差反映市场对紧缩周期的预期。",
+     "observed": "11/09 par：2Y 4.56%、5Y 4.67%、10Y 4.88%、20Y 5.29%、30Y 5.26%；2s10s +32bp、10s30s +38bp，20Y高于30Y 3bp。",
+     "conclusion": "曲线呈中段凸起、长端局部倒挂，说明市场预期短端还有上行空间，但对更长期增长并不乐观，是典型的政策紧缩后段形态。",
+     "applicability": "适用于判断政策预期是否已被价格吸收。",
+     "mechanism": "加息预期推升2Y，长端受增长预期约束上行较慢，导致2s10s走阔而10s30s维持正值、20Y相对30Y倒挂。",
+     "assumptions": "财政部日度par曲线代表整条无风险曲线。",
+     "counterEvidence": "11/10当日财政部尚未发布新一行，2Y盘中报价本轮缺失，无法验证当日短端变化。",
+     "horizon": "至12-08/09 FOMC",
+     "invalidation": "若2s10s收窄至20bp以内且10Y跌破4.75%，则紧缩后段判断需改写为宽松预期回归。",
+     "evidenceFactIds": [
+      "MACRO:US:PAR-2S10S-2026-11-09",
+      "MACRO:US:PAR-10S30S-2026-11-09",
+      "MACRO:US:PAR-20Y-2026-11-09",
+      "MACRO:US:FOMC-DEC-2026-DATES"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
+      "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+     ]
+    },
+    {
+     "framework": "板块内部相对强弱（横截面）",
+     "concept": "同一产业链内部，资金按盈利确定性与估值拥挤度重新排序，而非整体买入或卖出。",
+     "observed": "AVGO+4.08%、TSM+1.97%、AMD+1.51% 对 NVDA-5.78%、MU-2.11%、ARM-3.02%，同属AI硬件链。",
+     "conclusion": "这是链内换仓而非板块坍塌：确定性溢价上升，拥挤度溢价下降。",
+     "applicability": "适用于判断单一板块下跌是系统性还是结构性。",
+     "mechanism": "当外部冲击来自贴现率时，投资者在同等成长性下偏好现金流更近、订单可见度更高的环节，减仓估值最贵与叙事最拥挤的龙头。",
+     "assumptions": "个股报价可靠、无重大个别公司事件未被纳入。",
+     "counterEvidence": "NVDA的下跌也可能包含公司治理调查等个股因素，本轮未取得公司公告原文，无法剔除。",
+     "horizon": "1-3个交易日",
+     "invalidation": "若AVGO、TSM、AMD与NVDA同向下跌且幅度接近，则链内分层判断作废。",
+     "evidenceFactIds": [
+      "FLOW:US:SEMI-DIVERGENCE-2026-11-10",
+      "EQUITY:US:AVGO",
+      "EQUITY:US:TSM",
+      "EQUITY:US:AMD",
+      "EQUITY:US:NVDA",
+      "EQUITY:US:MU",
+      "EQUITY:US:ARM"
+     ],
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "https://data.sec.gov/submissions/CIK0001045810.json"
+     ]
+    },
+    {
+     "framework": "通胀分项结构分解",
+     "concept": "整体CPI由住房、能源、核心商品与核心服务分项加权构成，分项结构决定通胀的持续性。",
+     "observed": "10月住房+0.3%（贡献三成以上）、食品+0.5%、能源+0.7%（9月+5.2%）、二手车-1.2%、通信-0.1%；核心+0.3%连续第三月。",
+     "conclusion": "住房黏性是核心通胀无法回落的主因，能源已从推动项转为温和项，商品通缩仍在但不足以抵消服务价格。",
+     "applicability": "适用于判断通胀是需求驱动还是结构性黏性。",
+     "mechanism": "住房在CPI中权重高、更新滞后，租金与OER的0.2-0.3%月度涨幅会被机械放大为核心通胀的下限。",
+     "assumptions": "BLS季调方法与权重未变。",
+     "counterEvidence": "因2025年10月拨款中断缺基期，BLS本轮不发布同比，无法判断同比层面的方向。",
+     "horizon": "至12-10下一期CPI",
+     "invalidation": "若11月住房分项回落至0.1%且核心降至0.2%，则黏性判断作废。",
+     "evidenceFactIds": [
+      "MACRO:US:CPI-OCT-2026-MOM",
+      "MACRO:US:CPI-OCT-2026-CORE-MOM",
+      "MACRO:US:CPI-OCT-2026-SHELTER-MOM",
+      "MACRO:US:CPI-OCT-2026-ENERGY-MOM",
+      "MACRO:US:CPI-YOY-MISSING-OCT-2026",
+      "MACRO:US:CPI-NEXT-2026-12-10"
+     ],
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ]
+    },
+    {
+     "framework": "商品与金融资产的叙事脱钩",
+     "concept": "商品价格定价供需边际，金融资产定价贴现率；当两者驱动不同时会出现方向背离。",
+     "observed": "CPI能源分项+0.7%、汽油季调+1.0%，而WTI当日-0.88%至86.40；黄金仅微升7美元未创新高。",
+     "conclusion": "商品端在交易需求走弱，金融端在交易贴现率上行，两者共同指向三季度末以来的紧缩后段。",
+     "applicability": "适用于解释通胀数据与商品盘面方向不一致。",
+     "mechanism": "CPI是回溯指标，盘面是前瞻定价；当需求预期下修快于供给收缩时，油价与通胀读数反向。",
+     "assumptions": "无突发地缘供给中断。",
+     "counterEvidence": "本轮无库存、月差与裂解数据，无法确认是需求还是供给驱动，判断只能停留在方向层面。",
+     "horizon": "至11-12 EIA周报",
+     "invalidation": "若EIA周报显示原油与汽油库存双降且WTI重回88，则需求走弱解释作废。",
+     "evidenceFactIds": [
+      "ENERGY:WTI",
+      "METAL:XAUUSD",
+      "MACRO:US:CPI-OCT-2026-ENERGY-MOM",
+      "MACRO:US:EIA-WPSR-NEXT-2026-11-12"
+     ],
+     "sourceUrls": [
+      "https://www.eia.gov/petroleum/supply/weekly/schedule.php",
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ]
+    }
+   ],
+   "frameworkSynthesis": {
+    "verdict": "通胀黏性主导，加息尾部风险上移，权益端进入结构性换仓而非系统性下跌。",
+    "agreement": "利率（前端上行、曲线熊平）、贵金属（实际利率压制）、股票（高久期资产承压）三者在「实际利率上行」这一机制上方向一致。",
+    "disagreement": "分歧在股票内部：指数跌幅收窄与NVDA单边下跌并存，半导体二线与龙头方向相反，说明个股事件与宏观折现同时在起作用。",
+    "weighting": "权重上更看重利率与官方原文（CPI分项、par、H.15），其次是个股报价，最后是媒体转述的概率数据（50bp定价为二手引用）。",
+    "invalidation": "若11-13 PPI环比低于0.2%且10年期回落至4.85%以下，本框架的加息主线上修结论需撤回。"
+   },
+   "recentChanges": [
+    {
+     "title": "CPI后指数跌幅收窄、波动率下行",
+     "detail": "标普由7506.72回到7515.29、纳指由24983.8回到25036.51，VIX 19.91→19.96。",
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ],
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "VOL:VIX"
+     ]
+    },
+    {
+     "title": "NVDA继续单边下行",
+     "detail": "168.34（-5.78%），而AVGO/TSM/AMD逆势，半导体内部完成换仓。",
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-10/4644282.html"
+     ],
+     "evidenceFactIds": [
+      "EQUITY:US:NVDA",
+      "PROP:US:SEMI-DIVERGENCE-2026-11-10-EOD"
+     ]
+    },
+    {
+     "title": "贵金属同步走弱",
+     "detail": "现货金4036.70、现货银51.73，金银比78.0，实际利率上行压过避险需求。",
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ],
+     "evidenceFactIds": [
+      "METAL:XAUUSD",
+      "METAL:XAGUSD"
+     ]
+    },
+    {
+     "title": "地缘：俄方称不会同意再次停火",
+     "detail": "俄外长表示在俄乌局势不明情况下不会同意再次停火，并称欧洲试图以停火为援助争取时间；同日三方会谈在阿布扎比重启。",
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-10/4644274.html"
+     ],
+     "evidenceFactIds": [
+      "ENERGY:WTI"
+     ]
+    },
+    {
+     "title": "官方日历确认11-11无数据、11-13发PPI",
+     "detail": "BLS 11月日程：11-11退伍军人节、11-12无发布、11-13 08:30 ET PPI；EIA周报顺延至11-12 12:00 ET。",
+     "sourceUrls": [
+      "https://www.bls.gov/schedule/2026/11_sched.htm",
+      "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+     ],
+     "evidenceFactIds": [
+      "MACRO:US:BLS-PPI-OCT-2026-DUE",
+      "MACRO:US:EIA-WPSR-2026-11-12"
+     ]
+    }
+   ],
+   "changes": [
+    {
+     "title": "波动率与指数方向背离",
+     "detail": "标普小幅下跌而VIX回落至19.96，说明本轮不是系统性风险定价。"
+    },
+    {
+     "title": "AI链内部换仓",
+     "detail": "NVDA单边下跌，AVGO/TSM/AMD上行，同一主题内部权重迁移。"
+    },
+    {
+     "title": "贵金属与实际利率重新挂钩",
+     "detail": "金价4036.70、银价51.73同步走弱，实际利率成为主导变量。"
+    }
+   ],
+   "evolution24h": [
+    {
+     "at": "2026-11-10T13:30:00Z",
+     "title": "10月CPI公布：整体+0.4%、核心+0.3%",
+     "detail": "双双高于预期，且不发布同比（缺2025年10月基期）。",
+     "evidenceFactIds": [
+      "MACRO:US:CPI-OCT-2026-MOM",
+      "MACRO:US:CPI-OCT-2026-CORE-MOM"
+     ],
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ]
+    },
+    {
+     "at": "2026-11-10T14:30:00Z",
+     "title": "加息与50bp定价上移",
+     "detail": "12月加息25bp完全定价，50bp概率升至13.6%（媒体转述CME FedWatch）。",
+     "evidenceFactIds": [
+      "PROP:US:CPI-50BP-ODDS"
+     ],
+     "sourceUrls": [
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
+     ]
+    },
+    {
+     "at": "2026-11-10T15:55:00Z",
+     "title": "标普触及日内低点，跌幅达0.9%",
+     "detail": "每经快讯记录标普500盘中跌幅扩大至0.9%并触及日内低点。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500"
+     ],
+     "sourceUrls": [
+      "https://www.nbd.com.cn/articles/2026-11-10/4644282.html"
+     ]
+    },
+    {
+     "at": "2026-11-10T20:09:00Z",
+     "title": "上一版：跌幅未再扩大，NVDA折价加深",
+     "detail": "标普7506.72、VIX 19.91、NVDA 167.27；申报为 2026-11-11-0417。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "VOL:VIX",
+      "EQUITY:US:NVDA"
+     ],
+     "sourceUrls": [
+      "https://data.sec.gov/submissions/CIK0001045810.json"
+     ]
+    },
+    {
+     "at": "2026-11-10T20:32:00Z",
+     "title": "本轮：指数回到平盘附近，VIX下行",
+     "detail": "标普7515.29、纳指25036.51、VIX 19.96、NVDA 168.34。",
+     "evidenceFactIds": [
+      "INDEX:US:SP500",
+      "INDEX:US:NASDAQ",
+      "VOL:VIX",
+      "EQUITY:US:NVDA"
+     ],
+     "sourceUrls": [
+      "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
+      "https://www.federalreserve.gov/releases/h15/"
+     ]
+    }
+   ],
+   "watch": [
+    {
+     "point": "NVDA 168 一线",
+     "detail": "本轮168.34，若收盘失守168并伴随成交放大，治理折价会向整条算力链扩散；若收复172，则视为个股事件。"
+    },
+    {
+     "point": "2年期美债与50bp定价",
+     "detail": "媒体口径50bp概率升至13.6%（二手引用）。若11-13 PPI超预期，该概率上移是二次杀估值的前置信号。"
+    },
+    {
+     "point": "金银比与金价",
+     "detail": "金银比78.0。若金价跌破4000而银价同步走弱，说明实际利率主导；若金强银弱，则避险成分回升。"
+    },
+    {
+     "point": "WTI 与布伦特价差",
+     "detail": "WTI 86.40，布伦特采集404，价差与裂解无法计算。若下期EIA（11-12 17:00Z）库存大幅累积，油价下行压力加大。"
+    },
+    {
+     "point": "A股11-11开盘的外资反应",
+     "detail": "隔夜美股AI龙头走弱＋美债前端上行，需看北向是否延续流出；本轮无成交额数据，只能以指数表现近似。"
+    },
+    {
+     "point": "港股南向资金",
+     "detail": "上一轮南向净卖出超27亿港元，本轮无新数据；若11-11延续净卖出，恒生科技的高估值部分压力更大。"
+    }
+   ],
+   "dataDefinitions": [
+    {
+     "term": "par 收益率",
+     "definition": "按面值交易时的到期收益率，由美国财政部每日发布，用于构造无风险曲线；本轮最新一行为11/09。"
+    },
+    {
+     "term": "2s10s / 10s30s",
+     "definition": "2年期与10年期、10年期与30年期par收益率之差，正值代表正常陡峭，负值代表倒挂。"
+    },
+    {
+     "term": "核心CPI",
+     "definition": "剔除食品与能源的CPI，反映服务与核心商品价格，是判断通胀黏性的主指标。"
+    },
+    {
+     "term": "VIX",
+     "definition": "标普500期权隐含波动率指数，衡量市场对未来30天波动的定价，本轮19.96。"
+    },
+    {
+     "term": "金银比",
+     "definition": "每盎司金价除以银价，本轮4036.70/51.729约78.3，比值上升说明工业属性拖累白银更多。"
+    },
+    {
+     "term": "退伍军人节休市",
+     "definition": "2026-11-11美国联邦假日，债券市场休市、BLS无数据发布，股票市场正常交易。"
+    }
+   ],
+   "narrativeTriggers": [
+    {
+     "title": "PPI超预期上行",
+     "effect": "若11-13 PPI环比≥0.4%，10Y可能上探5.10-5.20%，成长股承压、价值相对占优。",
+     "why": "PPI是CPI之后唯一的通胀补充证据，且领先核心商品。"
+    },
+    {
+     "title": "EIA库存大幅累积",
+     "effect": "若11-12周报原油与汽油双增，WTI可能下探83，能源股与通胀预期同步回落。",
+     "why": "库存是需求侧最直接的高频证据。"
+    },
+    {
+     "title": "NVDA跌破165",
+     "effect": "趋势资金被动减仓，半导体由链内分层转为板块级回撤，纳指可能下探24000。",
+     "why": "单一权重股的流动性外溢效应。"
+    },
+    {
+     "title": "黄金突破4080",
+     "effect": "说明避险需求重新压过实际利率，金银比回落，贵金属板块走强。",
+     "why": "黄金是实际利率与避险的相对强弱计。"
+    }
+   ],
+   "analysisTheses": [
+    {
+     "title": "通胀黏性未解，加息未被完全定价",
+     "detail": "核心连续三月0.3%，住房贡献三成以上；权益端目前只定价了不降息与25bp，50bp仅在尾部。",
+     "confidence": "中"
+    },
+    {
+     "title": "AI链内部权重迁移而非叙事破裂",
+     "detail": "NVDA独跌而AVGO/TSM/AMD/ NET上行，资金在算力链内换仓，指数层面的「AI折价」被高估。",
+     "confidence": "中高"
+    },
+    {
+     "title": "实际利率重新主导贵金属",
+     "detail": "金价4036.7、银价51.73同步走弱，金银比78.1，避险需求未能对冲实际利率上行。",
+     "confidence": "中"
+    }
+   ],
+   "judgmentRevisions": [
+    {
+     "title": "从「不降息」改为「可能加息」",
+     "detail": "上一版仍以不降息为基准，本轮核心CPI连续第三月0.3%后，把12月加息25bp纳入基准情形。",
+     "at": "2026-11-10T20:32:00Z"
+    },
+    {
+     "title": "波动率判断下修",
+     "detail": "原判断认为CPI会带来持续波动率抬升，本轮VIX回落至19.96，下修该判断。",
+     "at": "2026-11-10T20:32:00Z"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "标普500",
+     "value": 7515.29,
+     "unit": "点",
+     "changePct": -0.46
+    },
+    {
+     "name": "纳指综合",
+     "value": 25036.51,
+     "unit": "点",
+     "changePct": -0.86
+    },
+    {
+     "name": "VIX",
+     "value": 19.96,
+     "unit": "点",
+     "changePct": 0.2
+    },
+    {
+     "name": "美国10年期国债收益率",
+     "value": 4.983,
+     "unit": "%",
+     "changePct": null
+    }
+   ],
+   "sectionGaps": {
+    "aShareLiquidity": {
+     "reason": "本轮未取A股成交额与涨跌家数，A股模块沿用收盘快照，量能与广度缺失。"
+    },
+    "hkConnect": {
+     "reason": "本轮无南向资金数据，港股流动性判断缺依据。"
+    },
+    "brentAndCracks": {
+     "reason": "ENERGY:BRENT 采集HTTP 404（连续多轮），Brent-WTI价差与裂解价差无法计算。"
+    },
+    "cryptoFlows": {
+     "reason": "无资金费率、未平仓与ETF流量数据，BTC仅能按价格序列描述。"
+    },
+    "companyResearch": {
+     "reason": "本轮取得SEC NVDA申报索引，但无对应治理事件的8-K/10-Q原文，researchRecords为空。"
+    },
+    "newsBreadth": {
+     "reason": "本轮每经2篇抓取失败，CN地区缺稿，WORLD仅1条地缘，newsCoverage记partial。"
+    }
+   },
+   "worldEvents": []
+  },
+  "newsItems": [
+   {
+    "eventId": "US-SP500-INTRADAY-LOW-2026-11-10",
+    "title": "标普500指数盘中跌幅达0.9%，触及日内低点",
+    "kind": "market",
+    "publishedAt": "2026-11-10T15:55:00Z",
+    "plainImpact": "盘中一度跌得更多，尾盘又收回来一部分，说明抛压没有一路放大，更像是一次性重定价。",
+    "assessment": "这是本轮唯一可引用的盘中路径证据（每经快讯），它把「日内低点」锚定在15:55Z前后；与末段指数回升对照，可判断CPI冲击在早盘一次性释放，而非全天持续抛售。",
+    "summary": "每经快讯记录美股早盘标普跌幅扩大至0.9%并触及日内低点；随后指数在末段收复大部分跌幅。本条仅作盘中路径证据，不构成收盘结论。",
+    "regions": [
+     "US"
+    ],
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-10/4644282.html"
+    ],
+    "evidenceFactIds": [
+     "INDEX:US:SP500"
+    ]
+   },
+   {
+    "eventId": "RU-UA-NO-CEASEFIRE-2026-11-10",
+    "title": "俄外长：俄乌局势不明情况下不会同意再次停火",
+    "kind": "general",
+    "publishedAt": "2026-11-10T16:00:00Z",
+    "plainImpact": "地缘上暂时看不到停火，理论上对油价偏支撑；但本轮WTI仍小幅回落，说明需求与库存叙事暂时压过地缘溢价。",
+    "assessment": "该表态与同日阿布扎比三方会谈重启并存，属于「谈而不停」的僵持状态；对原油的实际定价权重低于EIA库存与全球需求预期，故本轮油价的回落不能解读为地缘缓和。",
+    "summary": "俄方称在局势不明时不会同意再次停火，并指责欧洲以停火为援助争取时间；同日俄美乌三方在阿布扎比重启面对面磋商。对油价的影响偏支撑，但本轮WTI仍小幅回落，说明需求叙事暂时占上风。",
+    "regions": [
+     "WORLD"
+    ],
+    "sourceUrls": [
+     "https://www.nbd.com.cn/articles/2026-11-10/4644274.html"
+    ],
+    "evidenceFactIds": [
+     "ENERGY:WTI"
+    ]
+   }
+  ],
+  "newsCoverage": {
+   "status": "partial",
+   "note": "本轮12份文档取得10份正文：官方8份（财政部par、H.15、BLS CPI、BLS日程、BEA日程、EIA日程、FOMC日历、SEC NVDA索引）与每经2份。NBD两篇（NVDA盘中-5.5%、002855处罚）抓取失败，失败URL不进入证据。地区覆盖不足：CN缺、WORLD仅1条地缘、US以行情为主；无成交量/涨跌家数等市场宽度数据。",
+   "regions": {
+    "CN": 0,
+    "US": 1,
+    "WORLD": 1
+   }
+  },
+  "macroFacts": [
+   {
+    "id": "MACRO:US:CPI-OCT-2026-NO-YOY",
+    "label": "美国10月CPI是否发布同比",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "2025年10月拨款中断缺基期，BLS本轮不发布同比。"
+   },
+   {
+    "id": "MACRO:US:FOMC-DEC-2026",
+    "label": "2026年12月FOMC日期与SEP",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T20:32:22Z",
+    "note": "官方日历：12-08/09，附经济预测摘要；2026年11月无议息会议。"
+   },
+   {
+    "id": "MACRO:US:H15-LATEST-ROW-2026-11-06",
+    "label": "H.15最新数据行",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-09T21:15:00Z",
+    "note": "11-09发布，表列止于11/06：EFFR 3.88、2Y 4.51、10Y 4.86、30Y 5.26、TIPS10 2.63、prime 7.00、贴现窗口4.00。"
+   },
+   {
+    "id": "MACRO:US:CPI-REACTION-10Y-BP",
+    "label": "CPI后10年期美债收益率上行（盘中）",
+    "value": 8.4,
+    "unit": "bp",
+    "asOf": "2026-11-10T20:32:21Z",
+    "note": "本轮packet RATE:US10Y 4.983，较11/09 par 4.88 高约10bp；媒体口径日内+8.4bp，两者口径不同不可混用。"
+   },
+   {
+    "id": "PROP:US:SEMI-DIVERGENCE-2026-11-10-EOD",
+    "label": "美股半导体内部分化（本轮快照）",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T20:32:21Z",
+    "note": "AVGO+4.08%、NET+4.10%、TSM+1.97%、AMD+1.51% 与 NVDA-5.78%、ARM-3.02%、MU-2.11%、INTC-2.26% 同向背离，资金在AI链内部换仓。"
+   },
+   {
+    "id": "PROP:US:CPI-50BP-ODDS",
+    "label": "市场对12月加息50bp的定价",
+    "value": 13.6,
+    "unit": "%",
+    "asOf": "2026-11-10T14:30:00Z",
+    "note": "CME FedWatch口径（媒体转述，非官方原文）：50bp概率由1.1%升至13.6%，12月加息25bp已被完全定价。"
+   },
+   {
+    "id": "PROP:US:VIX-TERM-2026-11-10",
+    "label": "VIX与本轮指数跌幅的背离",
+    "value": 19.96,
+    "unit": "index",
+    "asOf": "2026-11-10T20:17:16Z",
+    "note": "标普-0.46%而VIX回落至19.96附近，说明本轮下跌是龙头个股事件驱动，非系统性风险定价。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-2026-MOM",
+    "label": "美国10月CPI环比（季调）",
+    "value": 0.4,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "BLS USDL-26-1685：整体环比+0.4%，9月+0.6%。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-2026-CORE-MOM",
+    "label": "美国10月核心CPI环比（季调）",
+    "value": 0.3,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "连续第三个月0.3%（8/9/10月）。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-2026-CPIU-LEVEL",
+    "label": "美国10月CPI-U指数（1982-84=100）",
+    "value": 337.511,
+    "unit": "index",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "未季调环比+0.2%。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-2026-CPIW-LEVEL",
+    "label": "美国10月CPI-W指数（1982-84=100）",
+    "value": 331.147,
+    "unit": "index",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "未季调环比+0.1%。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-2026-SHELTER-MOM",
+    "label": "美国10月住房分项环比",
+    "value": 0.3,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "贡献整体涨幅三成以上；OER+0.3%、租金+0.2%。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-2026-ENERGY-MOM",
+    "label": "美国10月能源分项环比",
+    "value": 0.7,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "9月为+5.2%；汽油季调+1.0%、未季调-0.7%。"
+   },
+   {
+    "id": "MACRO:US:CPI-YOY-MISSING-OCT-2026",
+    "label": "美国10月CPI同比是否可发布",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "因2025年10月拨款中断缺基期，BLS 不发布10月同比；表A同比列为空。"
+   },
+   {
+    "id": "MACRO:US:PAR-2S10S-2026-11-09",
+    "label": "美国2s10s 期限利差（par，11/09）",
+    "value": 0.32,
+    "unit": "%",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "10Y 4.88 - 2Y 4.56；11/09 为财政部最新一行，11/10 尚未发布。"
+   },
+   {
+    "id": "MACRO:US:PAR-10S30S-2026-11-09",
+    "label": "美国10s30s 期限利差（par，11/09）",
+    "value": 0.38,
+    "unit": "%",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "30Y 5.26 - 10Y 4.88。"
+   },
+   {
+    "id": "MACRO:US:PAR-20Y-2026-11-09",
+    "label": "美国20年期par收益率（11/09）",
+    "value": 5.29,
+    "unit": "%",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "20Y 高于 30Y 3bp，长端仍倒挂。"
+   },
+   {
+    "id": "MACRO:US:BLS-PPI-OCT-2026-DUE",
+    "label": "美国10月PPI发布时点",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T19:00:00Z",
+    "note": "BLS 日程：11-13 08:30 ET（13:30Z）；11-11 退伍军人节、11-12 无发布。"
+   },
+   {
+    "id": "MACRO:US:FOMC-DEC-2026-DATES",
+    "label": "2026年12月FOMC会议日期",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T19:00:00Z",
+    "note": "12-08/09，且带经济预测摘要（SEP）；11月无议息会议。"
+   },
+   {
+    "id": "MACRO:US:BEA-GDP2-2026-11-25",
+    "label": "美国三季度GDP二次估计发布时点",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T19:00:00Z",
+    "note": "11-25 08:30 ET，同日发布10月个人收入与支出（PIO）。"
+   },
+   {
+    "id": "RESEARCH:US:NVDA-SEC-NO-NEW-MATERIAL-2026-11-10",
+    "label": "英伟达SEC申报本轮检查结论",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T19:08:48Z",
+    "note": "data.sec.gov 申报索引本轮成功取得，未见与治理调查对应的8-K/10-Q新增原文，仅常规Form 4；不足以构成公司原文研究。"
+   },
+   {
+    "id": "FLOW:US:SEMI-DIVERGENCE-2026-11-10",
+    "label": "美股半导体内部分化（本轮快照）",
+    "value": null,
+    "unit": "text",
+    "asOf": "2026-11-10T19:08:47Z",
+    "note": "AVGO+3.46%、AMD+0.97%、TSM+1.07% 与 NVDA-5.61%、MU-2.70%、ARM-3.95% 同向背离，属资金在AI链条内部换仓。"
+   },
+   {
+    "id": "MACRO:US:PAR-2Y-2026-11-09",
+    "label": "美国2年期国债par收益率",
+    "value": 4.56,
+    "unit": "%",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "财政部par曲线本轮已取得，最新行为11/09（11-10尚未发布）。"
+   },
+   {
+    "id": "MACRO:US:PAR-10Y-2026-11-09",
+    "label": "美国10年期国债par收益率",
+    "value": 4.88,
+    "unit": "%",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "财政部par曲线11/09行；与上一版一致，曲线未更新。"
+   },
+   {
+    "id": "MACRO:US:EIA-WPSR-NEXT-2026-11-12",
+    "label": "EIA周度石油库存下一期发布日",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T13:08:35Z",
+    "note": "EIA周报日程本轮已取得，下一期列于2026年11月12日（因退伍军人节顺延），具体时点以EIA页面披露为准。"
+   },
+   {
+    "id": "MACRO:US:BEA-NEXT-RELEASES-2026-11",
+    "label": "BEA 11月下旬发布日程",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T13:08:35Z",
+    "note": "BEA日程本轮已取得：11月17、18、20、25日与12月2、8、10、18、23日均有发布；11月25日含个人收入与支出。"
+   },
+   {
+    "id": "MACRO:HK:HSI-CLOSE-2026-11-10",
+    "label": "恒生指数收盘",
+    "value": 24557.04,
+    "unit": "点",
+    "asOf": "2026-11-10T08:00:00Z",
+    "note": "每经港股收盘稿：恒指报24557.04点，上涨108.09点、涨幅0.44%；与行情快照点位一致，涨幅以原文为准。"
+   },
+   {
+    "id": "MACRO:HK:HSTECH-CLOSE-2026-11-10",
+    "label": "恒生科技指数收盘",
+    "value": 4084.45,
+    "unit": "点",
+    "asOf": "2026-11-10T08:00:00Z",
+    "note": "每经原文：恒生科技指数收4084.45点，上涨43.72点、涨幅1.08%。"
+   },
+   {
+    "id": "MACRO:HK:SOUTHBOUND-NET-2026-11-10",
+    "label": "南向资金当日净卖出",
+    "value": -27,
+    "unit": "亿港元",
+    "asOf": "2026-11-10T08:00:00Z",
+    "note": "原文表述为“净卖出港股超27亿港元”，取-27为下限值，非精确点值。"
+   },
+   {
+    "id": "PROP:HK:FOUNDER-PRIVATIZATION-2026-11-10",
+    "label": "方达控股私有化注销价",
+    "value": 2.37,
+    "unit": "港元/股",
+    "asOf": "2026-11-09T14:00:00Z",
+    "note": "方达控股与要约人SanRex于11月9日晚公告实施协议，按开曼公司法第86条以计划安排私有化；注销价2.370港元，较停牌前1.490港元溢价约59.1%。当日股价涨超42%。"
+   },
+   {
+    "id": "RESEARCH:HK:AI-MODEL-CHINAMOBILE-2026-11-10",
+    "label": "智谱与中国移动合作",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T08:00:00Z",
+    "note": "原文：中国移动与智谱签署合作协议，围绕国产算力适配、Token生产效率、AI Coding及金融政务行业应用联合创新，GLM系列接入中国移动模型服务体系；智谱与MiniMax当日均涨超10%。合作金额与收入贡献未披露。"
+   },
+   {
+    "id": "MACRO:CN:BANK-GOLD-ORDER-2026-11-16",
+    "label": "积存金挂单功能上线日",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T12:14:53Z",
+    "note": "每经：中信银行公告预计自11月16日起上线积存金挂单功能（支持买入与赎回委托），此前建行、兴业、南京银行已推出；多家银行已把积存金夜盘交易延至凌晨02:00。"
+   },
+   {
+    "id": "MACRO:HK:IPO-DEBUT-2026-11-10",
+    "label": "港股两只新股首日表现",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T08:00:00Z",
+    "note": "原文：芯德半导体首日涨超28%，登临科技跌超7%。仅为当日首日表现，不构成后续定价判断。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-2026-SCHED",
+    "label": "美国10月CPI发布时点",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T10:29:10Z",
+    "note": "BLS日程页（本轮已取得）列示：10月CPI于2026年11月10日08:30 ET发布，即13:30Z／北京21:30；11月CPI排在12月10日。本轮该数据尚未发布。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:EFFR-2026-11-09",
+    "label": "联邦基金有效利率EFFR",
+    "value": 3.88,
+    "unit": "%",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "H.15（发布日期2026-11-09）联邦基金有效利率五列同为3.88；银行最优贷款利率7.00，贴现窗口一级信贷4.00。列序仍不确定，仅取EFFR单值。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:CURVE-2S10S-2026-11-09",
+    "label": "2年与10年美债利差",
+    "value": 32,
+    "unit": "bp",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "财政部par曲线11/09：2Y 4.56、10Y 4.88，2s10s=32bp。11-10曲线尚未更新。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:CURVE-10S30S-2026-11-09",
+    "label": "10年与30年美债利差",
+    "value": 38,
+    "unit": "bp",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "par曲线11/09：10Y 4.88、30Y 5.26，10s30s=38bp；20Y 5.29高于30Y，长端仍倒挂。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:ENERGY:BRENT-2026-11-10",
+    "label": "布伦特原油盘中跌破90美元",
+    "value": 89.99,
+    "unit": "USD/bbl",
+    "asOf": "2026-11-10T09:10:00Z",
+    "note": "每经11-10 17:10（北京）稿：布伦特期货跌破90关口报89.99美元/桶，WTI期货跌2.63%报84.57美元/桶，两者均创8月底以来最低。为媒体口径盘中价，非本轮报价接口值（BRENT接口仍404）。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:ENERGY:WTI-CHG-2026-11-10",
+    "label": "WTI单日跌幅",
+    "value": -2.63,
+    "unit": "%",
+    "asOf": "2026-11-10T09:10:00Z",
+    "note": "同上每经稿口径；本轮报价接口ENERGY:WTI为84.54美元、-2.66%，与媒体口径方向一致、幅度接近。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:GEO:IRAN-2026-11-10-DEESCALATION",
+    "label": "美伊局势出现缓和迹象",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T09:38:00Z",
+    "note": "每经11-10 17:38稿引市场分析：美伊局势出现缓和迹象、国际油价大幅跳水，提振科技股情绪。属媒体转述的定性判断，未取得双方官方文件。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "RESEARCH:US:NVDA-2026-11-10-PREMARKET",
+    "label": "英伟达盘前反弹幅度",
+    "value": 1.8,
+    "unit": "%",
+    "asOf": "2026-11-10T09:38:00Z",
+    "note": "每经稿：11-10英伟达盘前涨1.8%，此前连续9个交易日收阴。无公司公告，属行情报道，不构成基本面研究。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "RESEARCH:TW:TSMC-2026-11-10-RESULT",
+    "label": "台积电最新业绩大幅增长",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T09:38:00Z",
+    "note": "每经稿称台积电最新披露业绩大幅增长、显示AI芯片需求强劲；未给出具体营收与增速数值，未取得台积电IR原文，故只作定性引用。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:EIA-WPSR-2026-11-12",
+    "label": "EIA周度石油库存报告顺延时点",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T10:29:09Z",
+    "note": "EIA日程页：2026年11月12日星期四12:00 ET（17:00Z）发布，因退伍军人节顺延；本期报告因此晚于今晚CPI。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:BEA-NEXT-2026-11-17",
+    "label": "BEA下一批发布日程",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T10:29:09Z",
+    "note": "BEA日程页：11-17 10:00 ET试验性统计、11-18 10:00 ET户外休闲经济统计、11-20 08:30 ET跨国公司活动、11-25 08:30 ET GDP二次估计与10月个人收入支出。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:PAR-10Y-2026-11-06",
+    "label": "美国财政部par曲线10年期收益率（最新已发布日）",
+    "value": 4.86,
+    "unit": "%",
+    "asOf": "2026-11-06T21:00:00Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:PAR-2S10S-2026-11-06",
+    "label": "par曲线2s10s期限利差",
+    "value": 35,
+    "unit": "bp",
+    "asOf": "2026-11-06T21:00:00Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:H15-EFFR-2026-11-06",
+    "label": "联邦基金有效利率EFFR（H.15）",
+    "value": 3.88,
+    "unit": "%",
+    "asOf": "2026-11-10T07:45:00Z",
+    "note": "H.15发布日11月9日，表列数据止于11月6日，五个交易日EFFR恒为3.88。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:H15-10Y-2026-11-06",
+    "label": "H.15口径10年期国债收益率（与par曲线口径不同）",
+    "value": 4.94,
+    "unit": "%",
+    "asOf": "2026-11-06T21:00:00Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:NYFED-1Y-INFL-EXP-2026-10",
+    "label": "美国10月纽约联储1年期通胀预期",
+    "value": 3.9,
+    "unit": "%",
+    "asOf": "2026-11-09T16:05:00Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:US:SOX-REBOUND-2026-11-09",
+    "label": "费城半导体指数反弹高点",
+    "value": 9958.16,
+    "unit": "index",
+    "asOf": "2026-11-09T15:55:00Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:US:SOX-REBOUND-PCT-2026-11-09",
+    "label": "费城半导体指数较11月5日暴跌收盘反弹幅度",
+    "value": 10,
+    "unit": "%",
+    "asOf": "2026-11-09T15:55:00Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:US:QDII-NVDA-HEAVY-COUNT-2026Q3",
+    "label": "重仓英伟达的QDII产品数量",
+    "value": 60,
+    "unit": "只",
+    "asOf": "2026-11-09T16:30:00Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:A50-FUT-2026-11-10",
+    "label": "富时中国A50指数期货最新报价",
+    "value": 13031,
+    "unit": "点",
+    "asOf": "2026-11-09T16:05:43Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:CN:SFISF-BATCH3-2026-11-09",
+    "label": "央行第三批互换便利操作落地，券商完成首批股票买入",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T05:03:00Z",
+    "note": "央行11月3日开展证券、基金、保险公司互换便利(SFISF)第三批操作；中信建投、国信、中泰、浙商等11月9日完成回购融资交易并完成首批股票买入，中信证券、国泰海通、中金、银河、东方、招商、申万宏源等近日也已开展同类操作。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:SSE-REPO-2026-11-09",
+    "label": "上交所协议回购出资人由22家扩容至28家",
+    "value": 28,
+    "unit": "家",
+    "asOf": "2026-11-09T08:00:00Z",
+    "note": "上交所11月9日更新债券质押式协议回购出资人信息展示，出资人22家扩至28家，并首次集中展示可接受机构间REITs质押出资的机构名单（广发资管、万联资管、招银理财、云南信托、中信信托）；沪市机构间REITs 66只、存量1176亿元、占全市场95%。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:CN:T-SHARE-2026-11",
+    "label": "中基协发布基金投顾份额(T类)设立通知",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T05:03:00Z",
+    "note": "T类份额不设申购费与客户维护费，管理费原则上按原管理费60%收取；存量基金拟设立的须在2026年11月30日前完成。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:AUTO-2026-10",
+    "label": "10月广义乘用车零售165.3万辆，新能源零售渗透率67.5%",
+    "value": 165.3,
+    "unit": "万辆",
+    "asOf": "2026-11-10T01:00:00Z",
+    "note": "10月广义乘用车零售约165.3万辆，环比增1.4%、同比降27.3%；狭义乘用车164.3万辆，环比增1.5%、同比降27.1%；新能源乘用车零售渗透率67.5%、批发67.3%，均创历史新高。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:SOX-2026-11-09",
+    "label": "费城半导体指数11月9日涨6.85%",
+    "value": 6.85,
+    "unit": "%",
+    "asOf": "2026-11-09T21:00:00Z",
+    "note": "费半涨6.85%，AMD涨超13%、应用材料涨超11%、拉姆研究涨超10%、希捷与西部数据涨超9%、博通涨超8%、Cerebras涨超7%、ARM/阿斯麦/闪迪涨超6%、英特尔涨超5%；英伟达跌4.22%并创近七个月收盘新低。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:ME:HORMUZ-2026-11-09",
+    "label": "霍尔木兹海峡仍对伊朗关闭，美方称军事行动并非十分必要",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-09T16:00:00Z",
+    "note": "特朗普11月9日称对伊军事行动在现阶段并非十分必要、冲突很快结束，同时称霍尔木兹海峡对伊朗关闭；伊朗总统称最高领袖已下令结束非战非和状态、愿谈判但不屈服于胁迫。UKMTO通报11月7日19时20分阿曼哈萨卜西北约8海里一艘油轮起火、船员撤离。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:ETF-WEEKLY-2026-11-06",
+    "label": "本周股票型+跨境ETF净流入",
+    "value": 1918.18,
+    "unit": "亿元",
+    "asOf": "2026-11-06T07:00:00Z",
+    "note": "宽基+2035亿、行业主题-30.6亿、跨境-28.97亿、沪深300 +688亿。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:ETF-SEMI-2026-11-06",
+    "label": "3只科创板半导体材料设备ETF合计净流入",
+    "value": 115.39,
+    "unit": "亿元",
+    "asOf": "2026-11-06T07:00:00Z",
+    "note": "科创半导体ETF华夏+86.66亿、机器人ETF易方达+17.27亿。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:GOLD:PEAK-DRAWDOWN-2026",
+    "label": "金价自1月29日峰值最大回撤（10月单月-6.8%）",
+    "value": 30,
+    "unit": "%",
+    "asOf": "2026-11-07T13:33:51Z",
+    "note": "1月29日伦敦现货盘中逼近5600美元/盎司创高，此后震荡下行。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:GOLD-JEWELRY-Q3-2026",
+    "label": "三季度金饰消费量（环比+30%）",
+    "value": 66,
+    "unit": "吨",
+    "asOf": "2026-11-07T13:33:51Z",
+    "note": "。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:GOLD-RETAIL-2026-10",
+    "label": "10月黄金零售订单环比（转转口径）",
+    "value": 26,
+    "unit": "%",
+    "asOf": "2026-11-07T13:33:51Z",
+    "note": "。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "RESEARCH:CN:SH603920-BUYBACK-CAP-20261108",
+    "label": "世运电路（603920）第二期回购金额上限",
+    "value": 3,
+    "unit": "亿元",
+    "asOf": "2026-11-08T13:00:00Z",
+    "note": "公司 11-08 晚间公告第二期集中竞价回购方案：金额不低于 2 亿元、不超过 3 亿元，价格上限 55 元/股（不高于前 30 个交易日均价 150%），期限不超过 6 个月，全部用于员工持股或股权激励；按上限测算回购 363.64 万—545.45 万股，占总股本 0.50%—0.76%。公告日股价 30.53 元、市值 219.99 亿元，年内跌逾三成。时点为公告披露日晚间，非精确分钟。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:FX-RESERVE-OCT-2026",
+    "label": "10月末外汇储备规模",
+    "value": 34052,
+    "unit": "亿美元",
+    "asOf": "2026-10-31T00:00:00Z",
+    "note": "国家外汇管理局11月7日披露，较9月末上升49亿美元、升幅0.14%，连续第7个月站在3.4万亿美元上方。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:GOLD-RESERVE-OCT-2026",
+    "label": "10月末官方黄金储备",
+    "value": 7830,
+    "unit": "万盎司",
+    "asOf": "2026-10-31T00:00:00Z",
+    "note": "较9月末增加83万盎司，为连续第24个月增持。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:GOLD-RESERVE-STREAK",
+    "label": "官方黄金储备连续增持月数",
+    "value": 24,
+    "unit": "个月",
+    "asOf": "2026-10-31T00:00:00Z",
+    "note": "连续24个月增持，说明购金是跨季度的持续性配置而非单月事件。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:FX-RESERVE-ABOVE-3T4-MONTHS",
+    "label": "外储连续高于3.4万亿美元的月数",
+    "value": 7,
+    "unit": "个月",
+    "asOf": "2026-10-31T00:00:00Z",
+    "note": "连续第7个月，规模稳定区间未被打破。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:CNY-FIXING-STREAK",
+    "label": "人民币中间价连续升值月数",
+    "value": 13,
+    "unit": "个月",
+    "asOf": "2026-10-31T00:00:00Z",
+    "note": "10月中间价涨幅由上月0.7%收窄至0.3%，升值斜率放缓。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:FX-SPOT-DAILY-TURNOVER-OCT",
+    "label": "银行间市场即期询价日均成交量",
+    "value": 396,
+    "unit": "亿美元",
+    "asOf": "2026-10-31T00:00:00Z",
+    "note": "环比减少2.9%，刷新年内次低，报道解读为市场预期稳定的表现。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:CFETS-INDEX-OCT-CHG",
+    "label": "10月CFETS人民币汇率指数涨幅",
+    "value": 0.6,
+    "unit": "%",
+    "asOf": "2026-10-31T00:00:00Z",
+    "note": "同期参考BIS与SDR篮子指数分别上涨0.9%与0.8%，三大指数同向。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:FX-RESERVES-2026-10",
+    "label": "中国 10 月末外汇储备",
+    "value": 34052,
+    "unit": "亿美元",
+    "asOf": "2026-10-31T00:00:00+08:00",
+    "note": "。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:GOLD-RESERVE-2026-10",
+    "label": "中国10月末官方黄金储备",
+    "value": 7830,
+    "unit": "万盎司",
+    "asOf": "2026-10-31T00:00:00+08:00",
+    "note": "连续第24个月增持。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:GOLD-SHARE-2026-10",
+    "label": "黄金储备占中国官方国际储备比重（%）",
+    "value": 7.9,
+    "unit": "%",
+    "asOf": "2026-11-07T16:15:26Z",
+    "note": "受国际金价下跌影响较上月下行0.5个百分点。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:GOLD:DRAWDOWN-2026-10",
+    "label": "2026年10月国际金价月度跌幅（%）",
+    "value": -7.2,
+    "unit": "%",
+    "asOf": "2026-11-07T16:15:26Z",
+    "note": "连续第二个月大幅下降，媒体引述机构口径。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:CREDITCARD-CENTERS-20261107",
+    "label": "年内终止营业的信用卡中心及分中心数量",
+    "value": 16,
+    "unit": "家",
+    "asOf": "2026-11-07T15:45:00Z",
+    "note": "截至11/7经金融监管局批复同意。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:CREDITCARD-STOCK-2026Q2",
+    "label": "中国信用卡和借贷合一卡在用发卡量",
+    "value": 6.77,
+    "unit": "亿张",
+    "asOf": "2026-06-30T00:00:00Z",
+    "note": "央行2026年二季度支付体系数据，较一季度减1000万张。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:CREDITCARD-STOCK-2025",
+    "label": "中国信用卡和借贷合一卡2025年末发卡量",
+    "value": 6.96,
+    "unit": "亿张",
+    "asOf": "2025-12-31T00:00:00Z",
+    "note": "2024年末为7.27亿张，连续两年下降。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:IR:HORMUZ-MINE-20261108",
+    "label": "伊朗革命卫队称两艘油轮在霍尔木兹触雷起火",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-07T22:17:00Z",
+    "note": "伊方单方口径，船名与船旗未公布。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:ENERGY:HORMUZ-TANKER-20261108",
+    "label": "本轮通报的霍尔木兹触雷油轮数量",
+    "value": 2,
+    "unit": "艘",
+    "asOf": "2026-11-07T22:17:00Z",
+    "note": "一艘在海峡东部、一艘在中部。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:US:GULF-HUDA-20261108",
+    "label": "美军称使胡达号货轮失去航行能力",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-07T22:12:00Z",
+    "note": "圣基茨和尼维斯旗，美方称其试图突破海上封锁。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:IL:HERZOG-MANDATE-20261108",
+    "label": "以色列总统授权埃森科特组阁",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-07T22:11:00Z",
+    "note": "11/8 17时（当地）授权，28天组阁期可延14天。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:CN:PLA-SELF-MEDIA-20261108",
+    "label": "军地部门关闭一批涉军违法违规账号",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-07T22:17:00Z",
+    "note": "含AI批量生成负面涉军动漫、虚假军考培训等。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:IR:SOUTH-BLASTS-20261108",
+    "label": "伊朗南部多地传出爆炸巨响",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-07T21:00:00Z",
+    "note": "格什姆岛、锡里克、贾斯克、阿巴斯港；原因未公布，另有消息称格什姆岛两声与袭击无关。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:ENERGY:HORMUZ-ISLAND-BLASTS-20261108",
+    "label": "海峡内岛屿通报的爆炸声次数",
+    "value": 2,
+    "unit": "声",
+    "asOf": "2026-11-07T21:00:00Z",
+    "note": "格什姆岛两声；伊方未确认与航运或袭击相关。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:BH:IRAQ-AMBASSADOR-20261108",
+    "label": "巴林恢复驻伊拉克大使履职",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-07T22:43:00Z",
+    "note": "伊拉克外长与巴林外交大臣通话后确认，属海湾关系修复。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:CO:ARMY-BASE-DRONE-20261108",
+    "label": "哥伦比亚军营遭无人机袭击伤亡",
+    "value": 3,
+    "unit": "人死亡",
+    "asOf": "2026-11-07T17:00:00Z",
+    "note": "玻利瓦尔省圣罗莎德尔苏尔，另有8人受伤；总统下令加强执法。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:SA:ARAMCO-BUILDING-20261108",
+    "label": "沙特阿美石油公司大楼在利雅得金融区遭袭中受损",
+    "value": 1,
+    "unit": "处",
+    "asOf": "2026-11-08T06:58:52Z",
+    "note": "每经 11-08 14:58（北京）快讯引法新社援目击者、经新华社转述：沙特首都利雅得金融区遭袭击，沙特阿美石油公司大楼受损。袭击手段、损毁程度与是否影响生产本轮未获官方说明。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:CSI300-DOWNWEEKS-2026-11",
+    "label": "沪深300 指数反弹前连续下跌周数",
+    "value": 12,
+    "unit": "周",
+    "asOf": "2026-11-06T07:00:00Z",
+    "note": "每经原文：沪深300 此前连续下跌 12 周，本轮反弹属超跌修复的第一周。该数值来自媒体复盘，未用交易所数据二次核对。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:Q3-NETPROFIT-2026",
+    "label": "沪深两市 2026 年前三季度净利润合计",
+    "value": 51000,
+    "unit": "亿元",
+    "asOf": "2026-11-08T07:26:35Z",
+    "note": "每经 11-08 15:26 稿件引研报：沪深两市前三季度净利润 5.1 万亿元，创 2022 年以来新高，同比增长 8.5%。属研报汇总口径，非交易所原始统计。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:SSE-PE-2026-11-06",
+    "label": "上证综指平均市盈率（研报口径）",
+    "value": 16.16,
+    "unit": "倍",
+    "asOf": "2026-11-06T07:00:00Z",
+    "note": "每经引研报：上证综指与创业板指平均市盈率分别为 16.16 倍、37.08 倍，处于近三年中位数平均水平上方。口径为整体法平均市盈率，非中位数。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:SSE-WEEKLY-2026-11-06",
+    "label": "上证指数当周涨幅",
+    "value": 1.39,
+    "unit": "%",
+    "asOf": "2026-11-06T07:00:00Z",
+    "note": "每经：上证周涨 1.39%，收 3649.18 点。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:FR:PROTEST-4TH-WEEKEND-20261107",
+    "label": "法国连续第 4 个周末抗议的生活成本示威人数（内政部口径）",
+    "value": 14.6,
+    "unit": "万人",
+    "asOf": "2026-11-07T21:00:00Z",
+    "note": "每经引 CCTV 国际时讯：11-07 法国多地连续第 4 个周末游行，法国内政部称全法 14.6 万人、巴黎 4.6 万人；工会口径为全国 25 万人、巴黎 7.5 万人。两套口径并列保留，不取平均。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:SSE-MKTCAP-2026-11-08",
+    "label": "沪市上市公司总市值",
+    "value": 65,
+    "unit": "万亿元",
+    "asOf": "2026-11-08T08:10:38Z",
+    "note": "每经转央视新闻 11-08 16:10（北京）快讯：上交所最新数据显示，沪市合计上市公司总市值超 65 万亿元。为“超”口径的整数下限，非精确余额。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:SSE-LISTED-2026-11-08",
+    "label": "沪市上市公司家数",
+    "value": 2300,
+    "unit": "家",
+    "asOf": "2026-11-08T08:10:38Z",
+    "note": "同一快讯：沪市合计上市公司超 2300 家。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:SSE-MEGACAP-2026-11-08",
+    "label": "沪市千亿市值公司合计市值",
+    "value": 34.8,
+    "unit": "万亿元",
+    "asOf": "2026-11-08T08:10:38Z",
+    "note": "同一快讯：A 股市值超千亿的头部上市公司近百家，合计市值超 34.8 万亿元；其中科技制造分布于人工智能、集成电路、先进制造。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "RESEARCH:US:AI-CAPEX-DOUBT-2026-11-08",
+    "label": "美股 AI 硬件链因数据中心资本开支疑虑集中回调",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-08T08:56:17Z",
+    "note": "每经 11-08 16:56 稿件：本周四市场担忧美国大量 AI 数据中心建设踩刹车，美股 AI 硬件股暴跌；周五反弹但冲高回落；A 股光模块、PCB 继续领跌，资金转向银行、水电、高速公路、水务等高股息。属媒体与参赛选手的归因表述，非公司或官方披露。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:CN:GRID-INVEST-15TH-2026",
+    "label": "“十五五”全国电网固定资产投资规模",
+    "value": 5,
+    "unit": "万亿元",
+    "asOf": "2026-11-08T08:56:17Z",
+    "note": "每经 11-08 16:56 稿件引市场消息面：“十五五”全国电网固定资产投资达到 5 万亿元以上，较“十四五”同期增长超 80%。属媒体转述的规划口径，本轮未见发改委或电网公司原文。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:GRID-INVEST-GROWTH-15TH-2026",
+    "label": "“十五五”电网投资较“十四五”同期增幅",
+    "value": 80,
+    "unit": "%",
+    "asOf": "2026-11-08T08:56:17Z",
+    "note": "同一条媒体转述口径的增幅部分；为“超 80%”的下限表述，非精确统计值。 沿用自上一版已发布报告 2026-11-08-1948 的同一事实，保留原时点与原值，本轮未重新核验。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:TREASURY-QUARTERLY-REFUNDING-2026-11",
+    "label": "下周美国季度再融资国债发行规模",
+    "value": 1250,
+    "unit": "亿美元",
+    "asOf": "2026-11-08T10:38:39Z",
+    "note": "沿用上一版已发布报告（reportId 2026-11-09-1840）的同一事实，保留原 id、原 asOf 与原数值，本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:CN:HOTMONEY-YEAREND-SPECULATION-2026-11-08",
+    "label": "被媒体列为年末投机风向标的个股数",
+    "value": 1,
+    "unit": "只",
+    "asOf": "2026-11-08T10:38:39Z",
+    "note": "沿用上一版已发布报告（reportId 2026-11-09-1840）的同一事实，保留原 id、原 asOf 与原数值，本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:IRAN:HORMUZ-TANKER-EXPLOSIONS-20261108",
+    "label": "2026年11月8日当天在霍尔木兹海峡爆炸起火的油轮数",
+    "value": 3,
+    "unit": "艘",
+    "asOf": "2026-11-08T11:10:39Z",
+    "note": "沿用上一版已发布报告（reportId 2026-11-09-1840）的同一事实，保留原 id、原 asOf 与原数值，本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:STATE-COUNCIL-MARKET-STABILIZATION-2026-11-06",
+    "label": "2026年11月6日国务院常务会议关于资本市场的部署项数",
+    "value": 1,
+    "unit": "项",
+    "asOf": "2026-11-08T11:25:38Z",
+    "note": "沿用上一版已发布报告（reportId 2026-11-09-1840）的同一事实，保留原 id、原 asOf 与原数值，本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:SFISF-TRANCHE3-2026-11-03",
+    "label": "央行第三批证券基金保险公司互换便利操作规模",
+    "value": 1000,
+    "unit": "亿元",
+    "asOf": "2026-11-08T11:25:38Z",
+    "note": "沿用上一版已发布报告（reportId 2026-11-09-1840）的同一事实，保留原 id、原 asOf 与原数值，本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "FLOW:CN:EQUITY-ETF-NET-INFLOW-2026-11-05",
+    "label": "股票型ETF连续净流入期间合计净流入额",
+    "value": 6100,
+    "unit": "亿元",
+    "asOf": "2026-11-08T11:25:38Z",
+    "note": "沿用上一版已发布报告（reportId 2026-11-09-1840）的同一事实，保留原 id、原 asOf 与原数值，本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:CN:CSRC-BUYBACK-RULE-REVISION-2026-11",
+    "label": "证监会拟修订回购规则新增的回购触发情形数",
+    "value": 1,
+    "unit": "项",
+    "asOf": "2026-11-08T11:25:38Z",
+    "note": "沿用上一版已发布报告（reportId 2026-11-09-1840）的同一事实，保留原 id、原 asOf 与原数值，本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:ENERGY:HORMUZ-PROJECTILE-HIT-20261107",
+    "label": "英国海上贸易行动办公室通报的霍尔木兹海峡遭不明发射物击中油轮数",
+    "value": 1,
+    "unit": "艘",
+    "asOf": "2026-11-08T12:45:43Z",
+    "note": "每经转央视新闻：英国海上贸易行动办公室（UKMTO）8 日通报，一艘油轮当地时间 7 日 20 时 20 分（北京 8 日 4 时 20 分）在驶离霍尔木兹海峡过程中遭不明发射物击中；通报依据油轮所属公司安全负责人事后提交的报告，船上船员全部安全，暂无环境影响报告，有关部门正在调查，UKMTO 提醒过往船舶谨慎航行。与 7 日两艘触雷起火、8 日凌晨起三艘爆炸起火属不同通报口径，本条是英方海事机构的独立记录。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:IL:DEFMIN-IRAN-MISSION-2026-11-08",
+    "label": "以色列国防部长称对伊朗任务尚未完成的表态次数",
+    "value": 1,
+    "unit": "次",
+    "asOf": "2026-11-08T12:04:32Z",
+    "note": "每经转新华社：以色列国防部长卡茨 8 日称以色列“对伊朗的任务尚未完成”，指伊朗试图“重启获取核武器的进程”，以方将对威胁采取“先发制人”的行动；并称以军不会从加沙地带、黎巴嫩和叙利亚部分地区撤军，若黎巴嫩真主党与伊朗联手袭击以色列将面临“严厉打击”。属官员公开表态，不是已发生的军事行动。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:ME:HOUTHI-4ROUNDS-20261108",
+    "label": "胡塞武装 11-08 宣称对沙特境内目标发动的军事行动轮次",
+    "value": 4,
+    "unit": "轮",
+    "asOf": "2026-11-08T14:35:46Z",
+    "note": "每经引央视：胡塞称使用弹道导弹、巡航导弹与无人机发动四轮行动，第一轮称打击利雅得哈立德国王国际机场、沙特阿美储油罐与金融中心；第二轮称打击阿美布盖格设施并引发火灾；第三、四轮称打击焦夫省东部、马里卜省与拉赫季省穆达拉巴的联军集结点。沙特方面暂无回应，属武装方单方面声明，未获独立核实。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:ENERGY:ABQAIQ-STRIKE-CLAIM-20261108",
+    "label": "布盖格（Abqaiq）设施遭打击并起火的声明状态",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-08T14:35:46Z",
+    "note": "胡塞声明称布盖格设施被命中并引发火灾。布盖格为沙特阿美核心原油处理与稳定设施，若属实即从商业资产受损升级为处理能力受扰；但沙特未确认，也无装船、出口或产量口径的第三方证据，本报告按未证实处理，不作为供应中断定价。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "PROP:EU:ABUDHABI-TALKS-PARTICIPATION-20261108",
+    "label": "欧洲参加阿布扎比美俄乌三方会谈的表态",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-08T14:13:34Z",
+    "note": "每经引央视：法国外长巴罗 8 日称欧洲将参加在阿布扎比举行的美、俄、乌三方会谈，并称法国将派出代表、传递欧洲声音。会谈的日程、层级与议程未公布，属计划性表态而非结果。 沿用上一版、本轮未重新核验。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "RESEARCH:US:NVDA-GOVERNANCE-2026-11-08",
+    "label": "英伟达CEO治理事件：11月8日公开信承认对婚姻不忠",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-08T12:00:00Z",
+    "note": "（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:CN:CPI-2026-10",
+    "label": "中国10月CPI同比",
+    "value": 0.7,
+    "unit": "%",
+    "asOf": "2026-11-10T07:45:00Z",
+    "note": "国家统计局11月9日发布；涨幅比上月回落0.2个百分点，本轮由每经11月10日午盘稿复述核对。（沿用上一版已发布事实，保留原asOf与数值，本轮未重新核验）"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-MOM",
+    "label": "美国10月CPI季调后环比",
+    "value": 0.4,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "BLS 11-10 发布 USDL-26-1685，整体CPI环比0.4%，9月为0.6%｡ 沿用上一版已发布事实，原 asOf 未刷新，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:US:CPI-CORE-OCT-MOM",
+    "label": "美国10月核心CPI季调后环比",
+    "value": 0.3,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "核心CPI环比0.3%，与9月、8月持平，未如预期回落至0.2%｡ 沿用上一版已发布事实，原 asOf 未刷新，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-ENERGY-MOM",
+    "label": "美国10月能源分项环比",
+    "value": 0.7,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "9月为+5.2%，10月放缓至+0.7%；汽油季调后+1.0%、未季调-0.7%｡ 沿用上一版已发布事实，原 asOf 未刷新，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-SHELTER-MOM",
+    "label": "美国10月住房分项环比",
+    "value": 0.3,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "住房项贡献当月整体涨幅三成以上；业主等价租金+0.3%、租金+0.2%｡ 沿用上一版已发布事实，原 asOf 未刷新，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-FOOD-MOM",
+    "label": "美国10月食品分项环比",
+    "value": 0.5,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "家庭食品+0.4%、外出就餐+0.5%，食品由9月的持平转为上涨｡ 沿用上一版已发布事实，原 asOf 未刷新，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:US:CPI-U-INDEX-OCT",
+    "label": "美国10月CPI-U指数水平（1982-84=100）",
+    "value": 337.511,
+    "unit": "index",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "未季调环比+0.2%；CPI-W 331.147、C-CPI-U未季调+0.2%｡ 沿用上一版已发布事实，原 asOf 未刷新，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-NO-YOY",
+    "label": "美国10月CPI同比读数可用性",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "2025年10月拨款中断导致BLS未采集基期数据，本次不发布12个月同比；同比缺口是统计口径问题，不是零通胀｡ 沿用上一版已发布事实，原 asOf 未刷新，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:US:CPI-NEXT-2026-12-10",
+    "label": "美国下一期CPI发布日",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "BLS新闻稿载明11月CPI将于2026年12月10日8:30 ET（13:30Z）发布｡ 沿用上一版已发布事实，原 asOf 未刷新，本轮未重新核验。"
+   },
+   {
+    "id": "MACRO:CN:EXPORTS-OCT-2026",
+    "label": "中国10月出口同比（美元计价）",
+    "value": 35.2,
+    "unit": "%",
+    "asOf": "2026-11-10T13:41:00Z",
+    "note": "海关总署11-10发布。10月出口同比+35.2%，较9月小幅回落仍处高位；10月机电产品出口2779.82亿美元、同比+46.06%。"
+   },
+   {
+    "id": "MACRO:CN:IC-EXPORTS-OCT-2026",
+    "label": "中国10月集成电路出口同比",
+    "value": 137.11,
+    "unit": "%",
+    "asOf": "2026-11-10T13:41:00Z",
+    "note": "海关总署10月数据：集成电路出口金额同比+137.11%，自动数据处理设备及零部件+114.77%，汽车（含底盘）+37.62%。"
+   },
+   {
+    "id": "MACRO:CN:TRADE-JAN-OCT-2026",
+    "label": "中国前10个月进出口总值",
+    "value": 44.81,
+    "unit": "万亿元",
+    "asOf": "2026-11-10T13:41:00Z",
+    "note": "海关总署：前10个月进出口44.81万亿元、同比+20%，出口25.99万亿元+17.6%、进口18.82万亿元+23.6%；规模已超2024年全年。"
+   },
+   {
+    "id": "MACRO:US:CPI-OCT-2026-CORE",
+    "label": "美国10月核心CPI环比",
+    "value": 0.3,
+    "unit": "%",
+    "asOf": "2026-11-10T13:30:00Z",
+    "note": "BLS 11-10 08:30ET发布：核心CPI环比+0.3%，预期+0.2%，前值+0.3%；整体环比+0.4%，预期+0.3%、前值+0.6%。"
+   },
+   {
+    "id": "FLOW:US:UST10Y-BREAK-5-2026-11-10",
+    "label": "10年期美债收益率盘中站上5%",
+    "value": 5.01,
+    "unit": "%",
+    "asOf": "2026-11-10T16:57:54Z",
+    "note": "行情快照10Y=5.01%，较财政部11/09 par 4.88%高约13bp；收益率上行由CPI超预期触发。"
+   },
+   {
+    "id": "PROP:CN:ALIBABA-PINGTOUCH-SPINOFF-2026-11-10",
+    "label": "阿里拟分拆平头哥赴港独立上市",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T14:00:00Z",
+    "note": "阿里巴巴11-10在港交所公告，拟分拆全资子公司平头哥（上海）技术股份有限公司于港交所主板独立上市；方案细节与时间表未披露。"
+   },
+   {
+    "id": "PROP:CN:COMPUTE-SCALE-2026-11-10",
+    "label": "中国算力总规模",
+    "value": 310,
+    "unit": "万PFLOPS",
+    "asOf": "2026-11-10T09:00:00Z",
+    "note": "国家数据局11-10数据：算力总规模达310万PFLOPS，位居世界第二。"
+   },
+   {
+    "id": "RESEARCH:TSLA:CN-RETAIL-2026-10",
+    "label": "特斯拉10月在华零售销量",
+    "value": 8817,
+    "unit": "辆",
+    "asOf": "2026-11-10T11:00:00Z",
+    "note": "懂车帝排行榜：特斯拉10月在华零售合计8817辆，同比-66.1%，连续第5个月同比下滑。"
+   },
+   {
+    "id": "PROP:CN:GOLD-COIN-RISKWARN-2026-11-10",
+    "label": "中国金币集团贵金属风险提示",
+    "value": null,
+    "unit": null,
+    "asOf": "2026-11-10T10:00:00Z",
+    "note": "中国金币集团11-10提示：贵金属价格震荡加剧，投资者应理性参与、审慎操作，避免盲目追涨杀跌。"
+   },
+   {
+    "id": "MACRO:CN:INSURANCE-PREMIUM-9M-2026",
+    "label": "中国保险业前三季度原保费收入",
+    "value": 5.26,
+    "unit": "万亿元",
+    "asOf": "2026-11-10T10:00:00Z",
+    "note": "前三季度原保费5.26万亿元、同比+0.9%；赔款与给付1.94万亿元、同比+3.9%。"
+   }
+  ],
+  "macroEvents": [
+   {
+    "title": "美国10月PPI发布",
+    "at": "2026-11-13T13:30:00Z",
+    "detail": "BLS官方日程：11-13 08:30 ET（13:30Z）发布10月PPI；11-11为退伍军人节、11-12无发布。这是CPI之后第一个通胀硬数据。",
+    "sourceUrls": [
+     "https://www.bls.gov/schedule/2026/11_sched.htm"
+    ]
+   },
+   {
+    "title": "EIA周度石油库存（截至11-06当周）",
+    "at": "2026-11-12T17:00:00Z",
+    "detail": "官方日程表明确：因退伍军人节顺延，改在11-12（周四）12:00 ET / 17:00Z发布。",
+    "sourceUrls": [
+     "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+    ]
+   },
+   {
+    "title": "FOMC 12月会议（含SEP）",
+    "at": "2026-12-08T19:00:00Z",
+    "detail": "官方日历确认12-08/09两日会议并附经济预测摘要；2026年11月无议息会议。具体声明时点为惯例推定，以官方后续公告为准。",
+    "sourceUrls": [
+     "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    ]
+   },
+   {
+    "title": "美国退伍军人节：债券市场休市、BLS无发布",
+    "at": "2026-11-11T00:00:00Z",
+    "detail": "BLS 11月日程将该日标为Holiday；国债现货市场休市，股票市场正常交易。",
+    "sourceUrls": [
+     "https://www.bls.gov/schedule/2026/11_sched.htm"
+    ]
+   }
+  ],
+  "events": [
+   {
+    "title": "美国10月CPI已发布（本日已发生）",
+    "at": "2026-11-10T13:30:00Z",
+    "detail": "整体环比+0.4%、核心+0.3%，均高于预期；因缺基期不发布同比。属已发布结果，不是未来日历。",
+    "sourceUrls": [
+     "https://www.bls.gov/news.release/cpi.nr0.htm"
+    ]
+   },
+   {
+    "title": "BEA 11-25 发布三季度GDP二次估计与10月个人收入支出",
+    "at": "2026-11-25T13:30:00Z",
+    "detail": "BEA日程页确认11-25 08:30 ET 同时发布GDP二次估计与10月PIO。",
+    "sourceUrls": [
+     "https://www.bea.gov/news/schedule"
+    ]
+   }
+  ],
+  "researchRecords": [],
+  "researchChecks": [
+   {
+    "instrumentId": "EQUITY:US:NVDA",
+    "checkedAt": "2026-11-10T20:31:50Z",
+    "status": "no-new-material",
+    "note": "本轮成功取得 data.sec.gov NVDA 申报索引（CIK0001045810），未见与董事会治理调查对应的8-K/10-Q新原文，最近披露仍为常规Form 4；因此不生成researchRecords，仅记录检查结论。",
+    "sourceUrls": [
+     "https://data.sec.gov/submissions/CIK0001045810.json"
+    ]
+   }
+  ]
+ }
+}
