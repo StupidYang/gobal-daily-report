@@ -1,14 +1,17 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.researchChecks[0].instrumentId: 公司研究必须使用真实EQUITY:US/CN/HK证券身份；宏观活动不是公司 [company-identity]\neditorial.researchChecks[0].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]",
+  "issues": [
+    "editorial.researchChecks[0].instrumentId: 公司研究必须使用真实EQUITY:US/CN/HK证券身份；宏观活动不是公司 [company-identity]",
+    "editorial.researchChecks[0].sourceUrls: 必须提供本轮实际取得的具体sourceUrls [required]"
+  ],
   "execution": {
     "executionId": "20261111T0352Z-asia-session",
     "generation": 490
   },
   "deadlineAt": "2026-11-11T04:13:05.076Z",
   "requestId": "20261111T0352Z-asia-session",
-  "at": "2026-11-11T03:53:17.810Z",
+  "at": "2026-11-11T04:10:17.527Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +22,34 @@
       "status": "ready-for-analysis",
       "at": "2026-11-11T03:53:17.810Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-11T04:10:17.527Z",
+      "revision": 0
     }
   ],
   "packetHash": "f67c4f878d608ee8ff01974e8ae042f5b9a6c2190d5166f6ab495251595a36d2",
-  "collectionDurationMs": 5330
+  "collectionDurationMs": 5330,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "3e0c5e70b02f8d3d62ad6732b3d1a00c58b1cc3e19c3047dbe0aa770922affbb",
+  "validationIssues": [
+    {
+      "path": "editorial.researchChecks[0].instrumentId",
+      "code": "company-identity",
+      "message": "公司研究必须使用真实EQUITY:US/CN/HK证券身份；宏观活动不是公司"
+    },
+    {
+      "path": "editorial.researchChecks[0].sourceUrls",
+      "code": "required",
+      "message": "必须提供本轮实际取得的具体sourceUrls"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261111T0352Z-asia-session--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
