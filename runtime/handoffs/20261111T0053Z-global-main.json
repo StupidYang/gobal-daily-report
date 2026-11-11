@@ -1,0 +1,603 @@
+{
+  "version": 1,
+  "requestId": "20261111T0053Z-global-main",
+  "taskGroup": "global-main",
+  "execution": {
+    "executionId": "20261111T0053Z-global-main",
+    "generation": 487
+  },
+  "packetHash": "cb4dcf8389d7ab611d633693d5b3109d08f5fbbbc8f4157aae8fd69823e9c0ac",
+  "deadlineAt": "2026-11-11T01:13:15.082Z",
+  "generatedAt": "2026-11-11T00:54:04.614Z",
+  "nextAction": "READ_EVIDENCE_AND_SUBMIT",
+  "submissionPath": "runtime/submissions/20261111T0053Z-global-main.json",
+  "resultPath": "runtime/results/20261111T0053Z-global-main.json",
+  "editorialContract": {
+    "version": "editorial-v1",
+    "path": "docs/editorial-input.md",
+    "frameworkNameField": "framework",
+    "documentLimit": 32,
+    "documentKinds": [
+      "news",
+      "market",
+      "macro",
+      "calendar",
+      "research",
+      "official",
+      "general"
+    ],
+    "newsFields": [
+      "eventId",
+      "title",
+      "regions",
+      "kind",
+      "summary",
+      "plainImpact",
+      "assessment",
+      "sourceUrls"
+    ],
+    "revisionPath": "runtime/submissions/20261111T0053Z-global-main--r1.json",
+    "maxSubmissions": 2
+  },
+  "scope": "Code-derived inventory only. Read source documents before analysis. HTTP success does not prove full-text review. Raw packet and publisher checks remain authoritative.",
+  "observations": [
+    {
+      "instrumentId": "METAL:XAUUSD",
+      "price": 4034,
+      "changePct": null,
+      "asOf": "2026-11-11T00:53:29.000Z",
+      "currency": "USD/oz",
+      "status": "snapshot",
+      "sourceUrl": "https://api.gold-api.com/price/XAU",
+      "sourceHash": "28d9bcc767dda941742151f89751cfeeb34acd092217b6ff3f7a28daed2bf292",
+      "retrievedAt": "2026-11-11T00:53:47.179Z"
+    },
+    {
+      "instrumentId": "METAL:XAGUSD",
+      "price": 51.587002,
+      "changePct": null,
+      "asOf": "2026-11-11T00:53:28.000Z",
+      "currency": "USD/oz",
+      "status": "snapshot",
+      "sourceUrl": "https://api.gold-api.com/price/XAG",
+      "sourceHash": "6f78bf5f09572403a528641c63bed59b07def504f50e9310a1f9c29b39bc05ff",
+      "retrievedAt": "2026-11-11T00:53:47.187Z"
+    },
+    {
+      "instrumentId": "RATE:US2Y",
+      "price": null,
+      "displayValue": "4.73%（2026-11-10 日度）",
+      "changePct": null,
+      "asOf": null,
+      "currency": "%",
+      "status": "partial",
+      "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+      "sourceHash": "cfb3262ac4f410cd6c524f2bcbf91868f8ab0c67044b73d56bf7b77fded9ab2d",
+      "retrievedAt": "2026-11-11T00:53:49.879Z"
+    }
+  ],
+  "documents": [
+    {
+      "id": "TREAS-PAR-20261110",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=202611",
+      "title": "Daily Treasury Par Yield Curve Rates 2026-11",
+      "kind": "macro",
+      "sourceHash": "3a09ed8ce038d25ff65f6ad1aa35ad8125827fc8d0d2eaebe2f282c86d318e08",
+      "retrievedAt": "2026-11-11T00:53:22.261Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "FED-H15-20261110",
+      "url": "https://www.federalreserve.gov/releases/h15/",
+      "title": "H.15 Selected Interest Rates",
+      "kind": "macro",
+      "sourceHash": "79494be94d7e36211178104962c4c4be209de52cedd6bdce878ed8a078273ee8",
+      "retrievedAt": "2026-11-11T00:53:22.867Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "FED-FOMC-CAL-2026",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "title": "FOMC Meeting Calendar 2026",
+      "kind": "calendar",
+      "sourceHash": "35ad907d295c0a84f55af8ba03d54e25649638c91fd3bf937ac5f9729401e2b6",
+      "retrievedAt": "2026-11-11T00:53:21.865Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "BEA-SCHEDULE-2026-11",
+      "url": "https://www.bea.gov/news/schedule",
+      "title": "BEA Release Schedule",
+      "kind": "calendar",
+      "sourceHash": "2788afe40c8cdbbbb7335df79acd8699a40ed07766ce9d3f8367a138fd4a35f0",
+      "retrievedAt": "2026-11-11T00:53:23.630Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "EIA-WPSR-SCHEDULE",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/",
+      "title": "EIA Weekly Petroleum Status Report",
+      "kind": "calendar",
+      "sourceHash": "b2823288c8e5e2a40697dd329552c0c57bde0b1700ea433ac68f3ec658da3a08",
+      "retrievedAt": "2026-11-11T00:53:24.189Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "EIA-STEO-2026-11",
+      "url": "https://www.eia.gov/outlooks/steo/",
+      "title": "EIA Short-Term Energy Outlook",
+      "kind": "macro",
+      "sourceHash": "dc7ae24f6ad76f50b9c974dafd1fac4768734c09aff7291cc7a6cccd7c8dd4ee",
+      "retrievedAt": "2026-11-11T00:53:24.041Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "SEC-NVDA-SUBMISSIONS",
+      "url": "https://data.sec.gov/submissions/CIK0001045810.json",
+      "title": "NVIDIA SEC submissions index",
+      "kind": "research",
+      "sourceHash": "db787ea656392c0442099ee6498a978e5b0bfba2c14e47a68dda393ddaff0375",
+      "retrievedAt": "2026-11-11T00:53:22.450Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "NBS-CPI-OCT2026",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202611/t20261109_1965795.html",
+      "title": "2026年10月份居民消费价格同比上涨0.7%",
+      "kind": "macro",
+      "sourceHash": "a3ce277182141a1947fc5e22475c8b2a36b353bb83573dd9c92a3a947d56f11c",
+      "retrievedAt": "2026-11-11T00:53:24.776Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "NBS-CPI-PPI-INTERPRET",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202611/t20261109_1965796.html",
+      "title": "国家统计局解读2026年10月份CPI和PPI数据",
+      "kind": "macro",
+      "sourceHash": "bcf48b0e24e2909658f2efa1764a5b38943bcf7566e83ade866660bd2a1e6533",
+      "retrievedAt": "2026-11-11T00:53:25.044Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "NBD-4644361-MORNING",
+      "url": "https://www.nbd.com.cn/articles/2026-11-11/4644361.html",
+      "title": "每经早参：霍尔木兹海峡三艘油轮爆炸 英伟达市值一夜蒸发1.59万亿元",
+      "kind": "news",
+      "sourceHash": "a509cc9b17d0fccf591f2571dfd16dc267406a88754c390e0054b6ff249a9540",
+      "retrievedAt": "2026-11-11T00:53:21.717Z",
+      "contentRetrieved": true
+    },
+    {
+      "id": "NBD-4644333-API-STOCKS",
+      "url": "https://www.nbd.com.cn/articles/2026-11-11/4644333.html",
+      "title": "美国上周API原油库存增加896.8万桶",
+      "kind": "market",
+      "sourceHash": "0d239cf40e572636c1b08cf536e39b5d9dc8e63914fc1654fd62cb75bdb0d7da",
+      "retrievedAt": "2026-11-11T00:53:23.705Z",
+      "contentRetrieved": true
+    }
+  ],
+  "errors": [
+    {
+      "instrumentId": "INDEX:CN:SSE",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:22.515Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:AAPL",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:22.544Z"
+    },
+    {
+      "instrumentId": "INDEX:CN:SZSE",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:23.092Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:MSFT",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:23.528Z"
+    },
+    {
+      "instrumentId": "INDEX:CN:CHINEXT",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:23.726Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:NVDA",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:24.455Z"
+    },
+    {
+      "instrumentId": "INDEX:CN:STAR50",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:24.509Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:GOOGL",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:25.002Z"
+    },
+    {
+      "instrumentId": "INDEX:CN:CSI300",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:25.277Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:AMZN",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:25.602Z"
+    },
+    {
+      "instrumentId": "INDEX:CN:CSI500",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:25.834Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:META",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:25.884Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:TSLA",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:26.665Z"
+    },
+    {
+      "instrumentId": "INDEX:HK:HSI",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:26.902Z"
+    },
+    {
+      "instrumentId": "INDEX:HK:HSTECH",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:27.428Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:AVGO",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:27.471Z"
+    },
+    {
+      "instrumentId": "INDEX:HK:HSCEI",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:27.721Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:AMD",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:28.489Z"
+    },
+    {
+      "instrumentId": "INDEX:US:SP500",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:29.025Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:INTC",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:29.098Z"
+    },
+    {
+      "instrumentId": "INDEX:US:NASDAQ",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:29.311Z"
+    },
+    {
+      "instrumentId": "INDEX:US:NDX",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:29.829Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:MU",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:30.100Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:ARM",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:30.719Z"
+    },
+    {
+      "instrumentId": "INDEX:US:DOW",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:30.900Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:TSM",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:31.438Z"
+    },
+    {
+      "instrumentId": "INDEX:US:RUSSELL2000",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:31.714Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:ASML",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:32.331Z"
+    },
+    {
+      "instrumentId": "INDEX:JP:NIKKEI225",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:32.507Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:ORCL",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:33.077Z"
+    },
+    {
+      "instrumentId": "INDEX:EU:STOXX50",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:33.323Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:CRM",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:33.933Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:ADBE",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:34.688Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:NOW",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:34.744Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:PLTR",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:36.360Z"
+    },
+    {
+      "instrumentId": "CRYPTO:BTC:USD",
+      "sourceUrl": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
+      "error": "Request deadline reached",
+      "checkedAt": "2026-11-11T00:53:40.513Z"
+    },
+    {
+      "instrumentId": "CRYPTO:ETH:USD",
+      "sourceUrl": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
+      "error": "Request deadline reached",
+      "checkedAt": "2026-11-11T00:53:41.336Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:SNOW",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:41.576Z"
+    },
+    {
+      "instrumentId": "CRYPTO:SOL:USD",
+      "sourceUrl": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
+      "error": "Request deadline reached",
+      "checkedAt": "2026-11-11T00:53:42.698Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:NET",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:43.168Z"
+    },
+    {
+      "instrumentId": "FX:DXY",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:44.297Z"
+    },
+    {
+      "instrumentId": "CRYPTO:PEPE:USD",
+      "sourceUrl": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
+      "error": "Request deadline reached",
+      "checkedAt": "2026-11-11T00:53:44.368Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:CRWD",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:44.793Z"
+    },
+    {
+      "instrumentId": "FX:USDCNY",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:45.357Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:DDOG",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:45.982Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:COIN",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:46.166Z"
+    },
+    {
+      "instrumentId": "FX:USDCNH",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:46.429Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:MSTR",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:47.770Z"
+    },
+    {
+      "instrumentId": "ENERGY:WTI",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:48.809Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:BRK.B",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BRK-B?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:48.816Z"
+    },
+    {
+      "instrumentId": "CRYPTO:HYPE:USD",
+      "sourceUrl": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
+      "error": "Request deadline reached",
+      "checkedAt": "2026-11-11T00:53:49.343Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:BLK",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:49.404Z"
+    },
+    {
+      "instrumentId": "ENERGY:BRENT",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BZX26.NYM?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:50.418Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:BX",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:50.422Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:KKR",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:50.465Z"
+    },
+    {
+      "instrumentId": "RATE:US10Y",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:51.490Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:ARES",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:51.527Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:APO",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:52.037Z"
+    },
+    {
+      "instrumentId": "VOL:VIX",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:52.043Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:OWL",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:53.083Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:BN",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:53.128Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:CG",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:53.660Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:BAM",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:53.664Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:TROW",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:53.931Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:BEN",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:54.730Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:IBKR",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:55.256Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:SCHW",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:55.262Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:GS",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:55.539Z"
+    },
+    {
+      "instrumentId": "EQUITY:US:MS",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
+      "error": "HTTP 403",
+      "checkedAt": "2026-11-11T00:53:56.334Z"
+    },
+    {
+      "documentId": "BLS-SCHEDULE-2026-11",
+      "sourceUrl": "https://www.bls.gov/schedule/2026/11_sched.htm",
+      "error": "HTTP 403: document host denied automated retrieval; further calls stopped",
+      "checkedAt": "2026-11-11T00:53:22.719Z"
+    }
+  ],
+  "blockedDocuments": []
+}
