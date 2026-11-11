@@ -1,14 +1,14 @@
 {
   "moduleVersion": 1,
   "module": "macro",
-  "runId": "20261111T1722Z-global-main-macro",
-  "generatedAt": "2026-11-12T01:27:39.412+08:00",
+  "runId": "20261111T1843Z-global-main-macro",
+  "generatedAt": "2026-11-12T02:48:18.926+08:00",
   "dataAsOf": null,
   "status": "partial",
   "dataMode": "production",
   "validationOnly": false,
   "execution": {
-    "batchId": "20261111T1722Z-global-main",
+    "batchId": "20261111T1843Z-global-main",
     "mode": "scheduled-batch",
     "role": "macro"
   },
@@ -16,310 +16,80 @@
     "laneRetention": {},
     "canonicalFacts": [
       {
-        "id": "MACRO:US:PAR-CURVE-2026-11-11T1722",
-        "label": "财政部par曲线最新行（11-10）与期限利差",
+        "id": "MACRO:US:PAR-ROW-2026-11-10",
+        "label": "财政部par曲线最新行（11/10）：2Y 4.73、10Y 4.98、30Y 5.35，2s10s 25bp",
         "value": 4.98,
         "unit": "%",
         "asOf": "2026-11-10T20:00:00Z",
         "sourceIds": [
           "src-79c4a943c45bb34e464abc77"
         ],
-        "note": "本轮重读CSV：最新一行11/10/2026，2Y 4.73、3Y 4.74、5Y 4.81、7Y 4.89、10Y 4.98、20Y 5.39、30Y 5.35；2s10s 25bp、10s30s 37bp。无11/11行（退伍军人节现券休市）。"
+        "note": "本轮重读CSV：最新一行11/10/2026，2Y 4.73、3Y 4.74、5Y 4.81、7Y 4.89、10Y 4.98、20Y 5.39、30Y 5.35；2s10s 25bp、10s30s 37bp。无11/11行（11-11退伍军人节现券休市）。"
       },
       {
-        "id": "MACRO:US:CPI-OCT-2026-1111",
-        "label": "美国10月CPI：环比0.4%、核心环比0.3%（连续第三个月）",
-        "value": 0.4,
+        "id": "FLOW:US:SEMIS-SQUEEZE-2026-11-11",
+        "label": "11-11美股盘中存储与算力链涨幅（ARM +14.08%为最大弹性）",
+        "value": 14.08,
         "unit": "%",
-        "asOf": "2026-11-10T13:30:00Z",
+        "asOf": "2026-11-11T18:44:00Z",
         "sourceIds": [
-          "src-79c4a943c45bb34e464abc77"
+          "src-884cb2cd1476b952e97b6532",
+          "src-57fb99e1de4aefff6b811bc5"
         ],
-        "note": "10-10发布口径沿用：整体环比0.4%（9月0.6%）、核心环比0.3%；2025年10月拨款中断缺基期，故不发布同比。本轮未重新取得BLS原文（本机403），只作背景，不写同比。"
+        "note": "本轮packet快照18:44Z：ARM +14.08%、MU +14.00%、ORCL +10.41%、AMD +10.10%、INTC +8.80%、AVGO +6.41%、NVDA +5.05%、TSM +5.05%、ASML +3.34%。"
       },
       {
-        "id": "PROP:US:DEC-HIKE-PRICING-1111",
-        "label": "市场对12月FOMC加息的定价（媒体转述CME口径）",
-        "value": 13.6,
+        "id": "FLOW:US:PLATFORM-DRAG-2026-11-11",
+        "label": "11-11美股盘中平台股逆势下跌（MSFT -2.10%、AMZN -1.43%）",
+        "value": -2.1,
         "unit": "%",
-        "asOf": "2026-11-11T17:22:00Z",
+        "asOf": "2026-11-11T18:44:00Z",
         "sourceIds": [
-          "src-fe3255ea546db4b012c0272c"
+          "src-884cb2cd1476b952e97b6532",
+          "src-57fb99e1de4aefff6b811bc5"
         ],
-        "note": "12月加息25bp已被完全定价，50bp概率由1.1%升至13.6%；CME原始页面本轮未取得，属转述口径，不作量化推断依据。FOMC日历本轮复核：11月无会议、12月8-9日含SEP。"
+        "note": "同一快照META -0.27%；AAPL +1.88%、GOOGL +2.74%、TSLA +3.76%。指数由硬件权重拉动，平台股失血。"
       },
       {
-        "id": "FLOW:US:SOX-INTRADAY-2026-11-11",
-        "label": "11-11美股盘中算力链涨幅（本轮packet快照17:23Z）",
-        "value": 2.92,
+        "id": "RESEARCH:US:CRWV-CALL-2026-11-11",
+        "label": "CoreWeave财报电话会：2027年前可售算力基本售罄、未来三个月约90亿美元预付款",
+        "value": 90,
+        "unit": "USD bn",
+        "asOf": "2026-11-11T13:30:00Z",
+        "sourceIds": [
+          "src-57fb99e1de4aefff6b811bc5"
+        ],
+        "note": "每经美股盘前稿：CEO称2027年前可供销售算力基本已被预订、2028年投放产能同样供不应求；未来三个月预计收取约90亿美元客户预付款及押金，称无需依赖母公司层面无担保债务；2027年超13万张GPU合同到期、2028年约17万张，按现价续约可带来近40亿与累计近100亿美元增量年化收入；预计2028年上半年调整后净利润转正。"
+      },
+      {
+        "id": "RESEARCH:US:ANTHROPIC-IPO-ROADSHOW-2026-11-11",
+        "label": "Anthropic启动IPO路演，公开目标为35%长期经营利润率",
+        "value": 35,
         "unit": "%",
-        "asOf": "2026-11-11T17:23:18Z",
+        "asOf": "2026-11-11T13:30:00Z",
         "sourceIds": [
-          "src-a1ae1ee1f9832d31e6330ce3"
+          "src-57fb99e1de4aefff6b811bc5"
         ],
-        "note": "NDX +2.92%、纳指 +2.18%、标普500 +1.49%；MU +13.74%、ARM +13.76%、INTC +9.41%、ORCL +10.32%、AMD +8.31%、AVGO +7.20%、TSM +4.90%、NVDA +4.59%。为盘中快照，非收盘。"
+        "note": "每经美股盘前稿标题与正文披露：Anthropic启动IPO路演并给出35%长期经营利润率目标。本轮未取得其招股书原文，发行价、估值区间不作为本轮结论。"
       },
       {
-        "id": "FLOW:US:MEGA-DIVERGENCE-2026-11-11",
-        "label": "11-11盘中平台股与算力链背离",
-        "value": -2.24,
-        "unit": "%",
-        "asOf": "2026-11-11T17:23:16Z",
-        "sourceIds": [
-          "src-a1ae1ee1f9832d31e6330ce3"
-        ],
-        "note": "MSFT -2.24%、AMZN -1.46%，同日NVDA +4.59%、ORCL +10.32%；VIX 17.85（-8.27%）同时下行，说明是结构换仓而非全面risk-on。"
-      },
-      {
-        "id": "MACRO:US:WPSR-DUE-2026-11-11T1722",
-        "label": "EIA周度石油库存报告：数据仍止10-30当周、下一期11-12",
-        "value": 409760,
-        "unit": "千桶",
-        "asOf": "2026-11-04T15:30:00Z",
-        "sourceIds": [
-          "src-51a80160388a414f153d42eb"
-        ],
-        "note": "本轮EIA周报页只给“Next Release Date”标签、具体日期由脚本渲染，静态页无数值；数据仍止10-30当周，商业原油（不含SPR）409,760千桶。发布日期沿用上一轮已核结论（11-12，因联邦假日顺延），本轮未取得新数值。"
-      },
-      {
-        "id": "RESEARCH:US:NVDA-SEC-CHECK-1111",
-        "label": "英伟达SEC申报索引本轮核验（11-11）",
-        "value": 0,
+        "id": "RESEARCH:US:CRWV-SEC-CHECK-2026-11-11",
+        "label": "CoreWeave SEC申报索引本轮核验：最新为11-10 8-K（2.02/9.01）与Form 4，11-11无新申报",
+        "value": null,
         "unit": "count",
-        "asOf": "2026-11-11T17:30:00Z",
-        "sourceIds": [
-          "src-67b767aac259adf10f9cb865"
-        ],
-        "note": "submissions索引最新为2026-11-06 Form 4；11-01后无8-K，最近8-K仍为09-03季度业绩。第10轮同结论，无新增重大披露。"
-      },
-      {
-        "id": "RESEARCH:US:CRWV-SEC-CHECK-1111",
-        "label": "CoreWeave最新申报（11-11核验）",
-        "value": 0,
-        "unit": "count",
-        "asOf": "2026-11-11T17:30:00Z",
+        "asOf": "2026-11-11T18:44:00Z",
         "sourceIds": [
           "src-a1ae1ee1f9832d31e6330ce3"
         ],
-        "note": "最新为2026-11-10 8-K（accession 0001769628-26-000461）与同日Form 4，11-11无新申报；财报正文已在上一轮读取，本轮只做索引核验。"
+        "note": "data.sec.gov submissions索引本轮实读：11-10 8-K accession 0001769628-26-000461（items 2.02、9.01）；11-09/11-10 Form 4；11-11无8-K/10-Q等新申报。8-K正文本轮未取得，故不建研究记录。"
       },
       {
-        "id": "MACRO:CN:FIN-DATA-PENDING-2026-11-11",
-        "label": "10月金融数据仍未发布（11-11核验）",
-        "value": null,
-        "unit": null,
-        "asOf": "2026-11-11T17:22:00Z",
-        "sourceIds": [
-          "src-fd4e4b2ac67cbbe5507866a6"
-        ],
-        "note": "本轮官方来源仅覆盖美方日历，中国10月M2/社融/新增贷款仍未见到发布；属待发布事项，不是结果，也不补0。"
-      },
-      {
-        "id": "MACRO:US:PAR-2Y-2026-11-10",
-        "label": "美国2年期国债par收益率（11/10）",
-        "value": 4.73,
-        "unit": "pct",
-        "asOf": "2026-11-10T21:30:00Z",
-        "note": "财政部Daily Par Yield Curve 11/10首度发布，较11/09的4.56上行17bp。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:PAR-10Y-2026-11-10",
-        "label": "美国10年期国债par收益率（11/10）",
-        "value": 4.98,
-        "unit": "pct",
-        "asOf": "2026-11-10T21:30:00Z",
-        "note": "财政部par 11/10为4.98%，较11/09的4.88上行10bp。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:PAR-30Y-2026-11-10",
-        "label": "美国30年期国债par收益率（11/10）",
-        "value": 5.35,
-        "unit": "pct",
-        "asOf": "2026-11-10T21:30:00Z",
-        "note": "财政部par 11/10为5.35%，较11/09的5.26上行9bp；20Y 5.39%仍高于30Y。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:PAR-2S10S-2026-11-10",
-        "label": "美国2s10s期限利差（11/10 par）",
-        "value": 25,
-        "unit": "bp",
-        "asOf": "2026-11-10T21:30:00Z",
-        "note": "计算值：10Y 4.98%减2Y 4.73%，较11/09的32bp收窄7bp，呈熊平。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:PAR-CURVE-2026-11-11",
-        "label": "美债par曲线最新可得（11-10收盘，11-11休市无新行）",
-        "value": 4.98,
-        "unit": "%",
-        "asOf": "2026-11-10T20:00:00Z",
-        "note": "财政部日度par曲线最新一行为11/10/2026：2Y 4.73、3Y 4.74、5Y 4.81、7Y 4.89、10Y 4.98、20Y 5.39、30Y 5.35；2s10s 25bp（11/09为32bp，熊平）、10s30s 37bp。11-11为退伍军人节，现券债市休市，CSV中无11/11行。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "PROP:US:DEC-HIKE-25BP-FULLY-PRICED-2026-11-10",
-        "label": "市场对12月加息25bp的定价状态",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-10T21:00:00Z",
-        "note": "媒体口径称12月加息25bp已被完全定价；CME原始概率未取得，不作量化引用。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "PROP:US:WALLER-DEC-HIKE-2026-11-10",
-        "label": "美联储理事沃勒对12月加息的表态",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-10T21:00:00Z",
-        "note": "媒体转述：支持12月加息、不排除50bp；本轮未取得Fed官方讲话原文，作为待核表态记录。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:CPI-REACTION-10Y-BP",
-        "label": "CPI后10年期美债收益率上行（盘中）",
-        "value": 8.4,
-        "unit": "bp",
-        "asOf": "2026-11-10T20:32:21Z",
-        "note": "本轮packet RATE:US10Y 4.983，较11/09 par 4.88 高约10bp；媒体口径日内+8.4bp，两者口径不同不可混用。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:BEA-NOV-SCHED-2026",
-        "label": "BEA 11月至12月初发布日程",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-11T05:40:00Z",
-        "note": "均为美东时间：11-17 10:00 实验性超级智能经济统计、11-18 10:00 户外休闲卫星账户、11-20 08:30 跨国公司活动、11-25 08:30 GDP二次估计与企业利润+10月个人收入与支出、12-02 08:30 县级GDP、12-08 08:30 10月国际贸易、12-18 08:30 国际交易与投资头寸、12-23 08:30 GDP三次估计。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:FOMC-NEXT-2026-12",
-        "label": "FOMC下一次会议（2026-12-08/09，含经济预测摘要）",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-11T13:26:28Z",
-        "note": "FOMC日历页本轮复核：2026年11月无会议，12月8-9日会议带经济预测摘要标记。",
-        "sourceIds": [
-          "macro-retained-59334854136da18a94c65dab"
-        ],
-        "retention": {
-          "runId": "20261111T1325Z-global-main-macro",
-          "generatedAt": "2026-11-11T21:30:43.406+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:BLS-PPI-OCT-2026-DUE",
-        "label": "美国10月PPI发布时点",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-10T19:00:00Z",
-        "note": "BLS 日程：11-13 08:30 ET（13:30Z）；11-11 退伍军人节、11-12 无发布。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:STEO-OIL-2026-11-10",
-        "label": "EIA STEO 油价与库存路径",
-        "value": 100,
-        "unit": "美元/桶",
-        "asOf": "2026-11-10T18:00:00Z",
-        "note": "STEO于11-10发布、11-05定稿、下次12-08：年内布伦特现货维持约100美元/桶，假设明年年中前伊朗以外中东产量恢复至冲突前均值，2027Q4布伦特均价回落至77美元；2027年美国原油产量创14.3百万桶/日纪录；2027年美国零售柴油均价5.03美元/加仑。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:CN:FIN-DATA-SCHED-2026-11",
-        "label": "中国10月金融数据发布窗口",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-11T00:00:00Z",
-        "note": "10月M2、M1、社融增量与新增人民币贷款本周内公布，本轮未见官方发布，属待发布事项而非结果。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "PROP:CN:PBOC-MPR-Q3-2026-11-11",
-        "label": "央行2026年三季度货币政策执行报告（11-11 18:00 发布）",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-11T10:00:16Z",
-        "note": "报告摘要确认：前三季度GDP同比增4.6%；继续实施适度宽松货币政策；前三季度DR001均值1.34%；9月末社融存量同比7.1%、M2同比7.2%；9月新发放企业贷款利率略低于3.0%（同比低约0.2个百分点）、新发放个人住房贷款利率约3.1%；9月末人民币对美元收盘6.7053、较上年末升值4.1%，CFETS指数103.20、升值5.3%。工具侧：PSL利率下调0.25个百分点，科技创新和技术改造再贷款额度增加2000亿元、支持比例由60%上调至100%，支农支小再贷款额度增加5000亿元（其中民营企业再贷款额度增加3000亿元），并将\"六张网\"建设纳入PSL支持范围。政策取向写明\"加大逆周期调节力度、加力扩大内需\"与\"推动贷款利率定价基准多元化\"。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:SESSION-HOLIDAY-2026-11-11",
-        "label": "11-11美国现券债市休市、股市正常交易",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-11T10:55:00Z",
-        "note": "11月11日为美国退伍军人节：美国国债现货市场休市，财政部日度par曲线CSV最新一行仍为11/10/2026（无11/11行）；纽约证交所与纳斯达克正常开市交易。因此当日全球风险资产缺少10年期现券收益率锚，只有国债期货与通胀预期可参考。",
+        "id": "FLOW:CN:BREADTH-2026-11-11",
+        "label": "A股11-11涨跌家数与涨停结构",
+        "value": 3381,
+        "unit": "家",
+        "asOf": "2026-11-11T07:59:56Z",
+        "note": "全市场3381只个股上涨、1647只下跌，84只涨停、1只跌停、19只炸板（炸板率18%）；沪深两市成交1.68万亿元，较上一交易日放量1715亿元。指数涨幅与个股广度同向，但涨停结构高度集中在算力硬件（源杰科技、致尚科技20%涨停，光迅科技、东山精密、剑桥科技、长飞光纤等10%涨停，中际旭创、新易盛、天孚通信均涨超13%）。",
         "retention": {
           "runId": "20261111T1208Z-global-main-macro",
           "generatedAt": "2026-11-11T20:13:45.050+08:00",
@@ -342,12 +112,29 @@
         }
       },
       {
-        "id": "MACRO:CN:ASHARE-CLOSE-2026-11-11",
-        "label": "A股11-11收盘与全市场量能",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-11T07:00:24Z",
-        "note": "沪指收3680.64点（较11-10收盘3663.72涨0.46%）、深证成指11389.74（+1.32%）、创业板指2572.07（+3.11%）、科创50 1300.38（+2.80%）；沪深京三市成交1.69万亿元，较上一交易日放量约1719亿元；全市场3538只个股上涨、1827只下跌，85只涨停、3只跌停。",
+        "id": "MACRO:US:CPI-OCT-2026-1111",
+        "label": "美国10月CPI：环比0.4%、核心环比0.3%（连续第三个月）",
+        "value": 0.4,
+        "unit": "%",
+        "asOf": "2026-11-10T13:30:00Z",
+        "sourceIds": [
+          "macro-retained-40098f8e7c56d9845f8169ee"
+        ],
+        "note": "10-10发布口径沿用：整体环比0.4%（9月0.6%）、核心环比0.3%；2025年10月拨款中断缺基期，故不发布同比。本轮未重新取得BLS原文（本机403），只作背景，不写同比。",
+        "retention": {
+          "runId": "20261111T1722Z-global-main-macro",
+          "generatedAt": "2026-11-12T01:27:39.412+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "MACRO:US:EIA-WPSR-2026-10-30-WEEK",
+        "label": "美国商业原油库存（截至2026-10-30当周）",
+        "value": 409760,
+        "unit": "千桶",
+        "asOf": "2026-11-04T15:30:00Z",
+        "note": "EIA周报：商业原油库存（不含SPR）409,760千桶，周环比-865千桶，同比-11,408千桶；下期发布2026-11-12。",
         "retention": {
           "runId": "20261111T1208Z-global-main-macro",
           "generatedAt": "2026-11-11T20:13:45.050+08:00",
@@ -356,12 +143,85 @@
         }
       },
       {
-        "id": "MACRO:HK:HSI-CLOSE-2026-11-11",
-        "label": "港股11-11收盘",
-        "value": 24315.92,
-        "unit": "点",
-        "asOf": "2026-11-11T08:08:28Z",
-        "note": "恒生指数收24315.92点，较11-10收盘24557.04回落1.06%（按两日收盘自算；供应商当日涨跌幅字段为-0.54%，与自算不一致，以自算为准）；恒生科技4027.06（较4084.45约-1.41%）、国企指数8171.45（约-1.14%）。港股与A股同日方向相反。",
+        "id": "MACRO:US:PAR-2S10S-2026-11-10",
+        "label": "美国2s10s期限利差（11/10 par）",
+        "value": 25,
+        "unit": "bp",
+        "asOf": "2026-11-10T21:30:00Z",
+        "note": "计算值：10Y 4.98%减2Y 4.73%，较11/09的32bp收窄7bp，呈熊平。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "MACRO:US:STEO-BRENT-2026",
+        "label": "EIA STEO对2026年布伦特均价预测",
+        "value": 97,
+        "unit": "美元/桶",
+        "asOf": "2026-11-10T17:00:00Z",
+        "note": "STEO 11-10发布、11-05完成预测、下次12-08：2026年布伦特均价97美元/桶、2027年86美元/桶；年内剩余时间维持约100美元，2027Q4回落至77美元。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "MACRO:WORLD:HORMUZ-TANKER-2026-11-10",
+        "label": "霍尔木兹海峡第三艘油轮触雷",
+        "value": null,
+        "unit": "text",
+        "asOf": "2026-11-10T15:30:00Z",
+        "note": "伊朗革命卫队海军称当天下午第三艘油轮在未经授权航线触雷爆炸(央视新闻转述)。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "PROP:CN:PBOC-MPR-Q3-2026-11-11",
+        "label": "央行2026年三季度货币政策执行报告（11-11 18:00 发布）",
+        "value": null,
+        "unit": "text",
+        "asOf": "2026-11-11T10:00:16Z",
+        "note": "报告摘要确认：前三季度GDP同比增4.6%；继续实施适度宽松货币政策；前三季度DR001均值1.34%；9月末社融存量同比7.1%、M2同比7.2%；9月新发放企业贷款利率略低于3.0%（同比低约0.2个百分点）、新发放个人住房贷款利率约3.1%；9月末人民币对美元收盘6.7053、较上年末升值4.1%，CFETS指数103.20、升值5.3%。工具侧：PSL利率下调0.25个百分点，科技创新和技术改造再贷款额度增加2000亿元、支持比例由60%上调至100%，支农支小再贷款额度增加5000亿元（其中民营企业再贷款额度增加3000亿元），并将\"六张网\"建设纳入PSL支持范围。政策取向写明\"加大逆周期调节力度、加力扩大内需\"与\"推动贷款利率定价基准多元化\"。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "PROP:US:DEC-HIKE-PRICING-1111",
+        "label": "市场对12月FOMC加息的定价（媒体转述CME口径）",
+        "value": 13.6,
+        "unit": "%",
+        "asOf": "2026-11-11T17:22:00Z",
+        "sourceIds": [
+          "macro-retained-73182a5de6af1490c43443bf"
+        ],
+        "note": "12月加息25bp已被完全定价，50bp概率由1.1%升至13.6%；CME原始页面本轮未取得，属转述口径，不作量化推断依据。FOMC日历本轮复核：11月无会议、12月8-9日含SEP。",
+        "retention": {
+          "runId": "20261111T1722Z-global-main-macro",
+          "generatedAt": "2026-11-12T01:27:39.412+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "RESEARCH:CN:CPO-SQUEEZE-2026-11-11",
+        "label": "A股光模块逼空的触发与次日风险统计",
+        "value": null,
+        "unit": "text",
+        "asOf": "2026-11-11T07:59:56Z",
+        "note": "导火索为外媒报道微软等企业及行业组织游说美方放弃对中国光收发器的进口限制（FCC 拟限制对象含 3.2Tbps 下一代产品），市场解读为政策折价修复；叠加产业侧否认砍单：剑桥科技披露截至2026年9月初高速光模块月设计产能约100万支、拟2027年底前再扩至少1000万支年产能（中国嘉善、马来西亚、墨西哥、美国），新易盛11-11午间在深交所互动易称原材料与产能准备充分、成都与泰国工厂大规模扩产、订单交付正常。每经据Wind统计：2026年下半年“易中天”（新易盛、中际旭创、天孚通信）单日平均涨幅超7%时，次日收涨概率为0；上半年同日涨超5%的23个交易日次日平均+0.06%、超7%的次日平均+1.6%。",
         "retention": {
           "runId": "20261111T1208Z-global-main-macro",
           "generatedAt": "2026-11-11T20:13:45.050+08:00",
@@ -418,20 +278,6 @@
         "unit": "text",
         "asOf": "2026-11-11T02:00:00Z",
         "note": "独立董事聘请纽约南区前代理联邦检察官Joon H. Kim及Wachtell Lipton开展独立调查；加州股东集体诉讼；两日累跌逾9.5%、市值约4.07万亿美元。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:WORLD:HORMUZ-TANKER-2026-11-10",
-        "label": "霍尔木兹海峡第三艘油轮触雷",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-10T15:30:00Z",
-        "note": "伊朗革命卫队海军称当天下午第三艘油轮在未经授权航线触雷爆炸(央视新闻转述)。",
         "retention": {
           "runId": "20261111T1208Z-global-main-macro",
           "generatedAt": "2026-11-11T20:13:45.050+08:00",
@@ -580,12 +426,54 @@
         }
       },
       {
+        "id": "MACRO:US:PAR-2Y-2026-11-10",
+        "label": "美国2年期国债par收益率（11/10）",
+        "value": 4.73,
+        "unit": "pct",
+        "asOf": "2026-11-10T21:30:00Z",
+        "note": "财政部Daily Par Yield Curve 11/10首度发布，较11/09的4.56上行17bp。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
         "id": "FLOW:CN:CPO-CLOSE-2026-11-11",
         "label": "A股CPO概念板块11-11涨幅",
         "value": 4.7,
         "unit": "%",
         "asOf": "2026-11-11T07:00:00Z",
         "note": "11-11收盘CPO概念板块平均涨幅4.70%，东数西算/算力板块1.76%；每经报道宇特光电、东山精密封涨停，剑桥科技、天洋新材、青山纸业此前涨停，太辰光、源杰科技、中际旭创、新易盛均涨超12%。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "MACRO:US:PAR-10Y-2026-11-10",
+        "label": "美国10年期国债par收益率（11/10）",
+        "value": 4.98,
+        "unit": "pct",
+        "asOf": "2026-11-10T21:30:00Z",
+        "note": "财政部par 11/10为4.98%，较11/09的4.88上行10bp。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "MACRO:CN:ASHARE-CLOSE-2026-11-11",
+        "label": "A股11-11收盘与全市场量能",
+        "value": null,
+        "unit": "text",
+        "asOf": "2026-11-11T07:00:24Z",
+        "note": "沪指收3680.64点（较11-10收盘3663.72涨0.46%）、深证成指11389.74（+1.32%）、创业板指2572.07（+3.11%）、科创50 1300.38（+2.80%）；沪深京三市成交1.69万亿元，较上一交易日放量约1719亿元；全市场3538只个股上涨、1827只下跌，85只涨停、3只跌停。",
         "retention": {
           "runId": "20261111T1208Z-global-main-macro",
           "generatedAt": "2026-11-11T20:13:45.050+08:00",
@@ -614,34 +502,6 @@
         "unit": "亿元",
         "asOf": "2026-11-11T01:10:00Z",
         "note": "央行11月11日开展1870亿元隔夜期逆回购操作，操作利率1.25%，为政策利率换锚后连续第二个交易日的隔夜投放；11-10为1900亿元、当日净投放80亿元。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "FLOW:CN:BREADTH-2026-11-11",
-        "label": "A股11-11涨跌家数与涨停结构",
-        "value": 3381,
-        "unit": "家",
-        "asOf": "2026-11-11T07:59:56Z",
-        "note": "全市场3381只个股上涨、1647只下跌，84只涨停、1只跌停、19只炸板（炸板率18%）；沪深两市成交1.68万亿元，较上一交易日放量1715亿元。指数涨幅与个股广度同向，但涨停结构高度集中在算力硬件（源杰科技、致尚科技20%涨停，光迅科技、东山精密、剑桥科技、长飞光纤等10%涨停，中际旭创、新易盛、天孚通信均涨超13%）。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "RESEARCH:CN:CPO-SQUEEZE-2026-11-11",
-        "label": "A股光模块逼空的触发与次日风险统计",
-        "value": null,
-        "unit": "text",
-        "asOf": "2026-11-11T07:59:56Z",
-        "note": "导火索为外媒报道微软等企业及行业组织游说美方放弃对中国光收发器的进口限制（FCC 拟限制对象含 3.2Tbps 下一代产品），市场解读为政策折价修复；叠加产业侧否认砍单：剑桥科技披露截至2026年9月初高速光模块月设计产能约100万支、拟2027年底前再扩至少1000万支年产能（中国嘉善、马来西亚、墨西哥、美国），新易盛11-11午间在深交所互动易称原材料与产能准备充分、成都与泰国工厂大规模扩产、订单交付正常。每经据Wind统计：2026年下半年“易中天”（新易盛、中际旭创、天孚通信）单日平均涨幅超7%时，次日收涨概率为0；上半年同日涨超5%的23个交易日次日平均+0.06%、超7%的次日平均+1.6%。",
         "retention": {
           "runId": "20261111T1208Z-global-main-macro",
           "generatedAt": "2026-11-11T20:13:45.050+08:00",
@@ -883,6 +743,48 @@
         }
       },
       {
+        "id": "MACRO:US:STEO-OIL-2026-11-10",
+        "label": "EIA STEO 油价与库存路径",
+        "value": 100,
+        "unit": "美元/桶",
+        "asOf": "2026-11-10T18:00:00Z",
+        "note": "STEO于11-10发布、11-05定稿、下次12-08：年内布伦特现货维持约100美元/桶，假设明年年中前伊朗以外中东产量恢复至冲突前均值，2027Q4布伦特均价回落至77美元；2027年美国原油产量创14.3百万桶/日纪录；2027年美国零售柴油均价5.03美元/加仑。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "MACRO:US:SESSION-HOLIDAY-2026-11-11",
+        "label": "11-11美国现券债市休市、股市正常交易",
+        "value": null,
+        "unit": "text",
+        "asOf": "2026-11-11T10:55:00Z",
+        "note": "11月11日为美国退伍军人节：美国国债现货市场休市，财政部日度par曲线CSV最新一行仍为11/10/2026（无11/11行）；纽约证交所与纳斯达克正常开市交易。因此当日全球风险资产缺少10年期现券收益率锚，只有国债期货与通胀预期可参考。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
+        "id": "MACRO:US:PAR-CURVE-2026-11-11",
+        "label": "美债par曲线最新可得（11-10收盘，11-11休市无新行）",
+        "value": 4.98,
+        "unit": "%",
+        "asOf": "2026-11-10T20:00:00Z",
+        "note": "财政部日度par曲线最新一行为11/10/2026：2Y 4.73、3Y 4.74、5Y 4.81、7Y 4.89、10Y 4.98、20Y 5.39、30Y 5.35；2s10s 25bp（11/09为32bp，熊平）、10s30s 37bp。11-11为退伍军人节，现券债市休市，CSV中无11/11行。",
+        "retention": {
+          "runId": "20261111T1208Z-global-main-macro",
+          "generatedAt": "2026-11-11T20:13:45.050+08:00",
+          "dataAsOf": null,
+          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
+        }
+      },
+      {
         "id": "MACRO:US:PAR-2026-11-10-2Y",
         "label": "美国2年期par收益率（11/10）",
         "value": 4.73,
@@ -911,40 +813,12 @@
         }
       },
       {
-        "id": "MACRO:US:EIA-WPSR-2026-10-30-WEEK",
-        "label": "美国商业原油库存（截至2026-10-30当周）",
-        "value": 409760,
-        "unit": "千桶",
-        "asOf": "2026-11-04T15:30:00Z",
-        "note": "EIA周报：商业原油库存（不含SPR）409,760千桶，周环比-865千桶，同比-11,408千桶；下期发布2026-11-12。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
         "id": "FLOW:US:API-CRUDE-2026-11-06-WEEK",
         "label": "美国API原油库存周度变化",
         "value": 896.8,
         "unit": "万桶",
         "asOf": "2026-11-11T00:30:00Z",
         "note": "每经引API：上周美国原油库存增加896.8万桶，预期减少32.7万桶，前值减少526.7万桶；与EIA官方周报口径不同，不可混用。",
-        "retention": {
-          "runId": "20261111T1208Z-global-main-macro",
-          "generatedAt": "2026-11-11T20:13:45.050+08:00",
-          "dataAsOf": null,
-          "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
-        }
-      },
-      {
-        "id": "MACRO:US:STEO-BRENT-2026",
-        "label": "EIA STEO对2026年布伦特均价预测",
-        "value": 97,
-        "unit": "美元/桶",
-        "asOf": "2026-11-10T17:00:00Z",
-        "note": "STEO 11-10发布、11-05完成预测、下次12-08：2026年布伦特均价97美元/桶、2027年86美元/桶；年内剩余时间维持约100美元，2027Q4回落至77美元。",
         "retention": {
           "runId": "20261111T1208Z-global-main-macro",
           "generatedAt": "2026-11-11T20:13:45.050+08:00",
@@ -1009,64 +883,55 @@
         }
       },
       {
-        "id": "RESEARCH:US:TSM-2026-10-REV",
-        "label": "台积电2026年10月合并营收（NT$十亿元）",
-        "value": 586.89,
-        "unit": "NT$bn",
-        "asOf": "2026-11-10T13:00:00Z",
-        "note": "6-K 原文：10月营收5868.9亿元新台币，月增14.7%、年增59.7%；1-10月累计4兆4856.2亿元、年增43.3%。",
+        "id": "MACRO:US:PAR-CURVE-2026-11-11T1722",
+        "label": "财政部par曲线最新行（11-10）与期限利差",
+        "value": 4.98,
+        "unit": "%",
+        "asOf": "2026-11-10T20:00:00Z",
         "sourceIds": [
-          "macro-retained-67f2a1d68b4e8e5c8e788823"
+          "macro-retained-40098f8e7c56d9845f8169ee"
         ],
+        "note": "本轮重读CSV：最新一行11/10/2026，2Y 4.73、3Y 4.74、5Y 4.81、7Y 4.89、10Y 4.98、20Y 5.39、30Y 5.35；2s10s 25bp、10s30s 37bp。无11/11行（退伍军人节现券休市）。",
         "retention": {
-          "runId": "20261111T1325Z-global-main-macro",
-          "generatedAt": "2026-11-11T21:30:43.406+08:00",
+          "runId": "20261111T1722Z-global-main-macro",
+          "generatedAt": "2026-11-12T01:27:39.412+08:00",
           "dataAsOf": null,
           "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
         }
       },
       {
-        "id": "MACRO:US:UST10Y-PAR-2026-11-10",
-        "label": "美国10年期国债平价收益率（11-10）",
-        "value": 4.98,
-        "unit": "%",
-        "asOf": "2026-11-10T20:00:00Z",
-        "note": "同表 11-10 行，较 11-09 的 4.88 上行 10bp。",
+        "id": "MACRO:US:WPSR-DUE-2026-11-11T1722",
+        "label": "EIA周度石油库存报告：数据仍止10-30当周、下一期11-12",
+        "value": 409760,
+        "unit": "千桶",
+        "asOf": "2026-11-04T15:30:00Z",
         "sourceIds": [
-          "macro-retained-7ba4bea6c8809769f4af62aa"
+          "macro-retained-5512ffc04b8b51cbdbd15b4c"
         ],
+        "note": "本轮EIA周报页只给“Next Release Date”标签、具体日期由脚本渲染，静态页无数值；数据仍止10-30当周，商业原油（不含SPR）409,760千桶。发布日期沿用上一轮已核结论（11-12，因联邦假日顺延），本轮未取得新数值。",
         "retention": {
-          "runId": "20261111T1325Z-global-main-macro",
-          "generatedAt": "2026-11-11T21:30:43.406+08:00",
+          "runId": "20261111T1722Z-global-main-macro",
+          "generatedAt": "2026-11-12T01:27:39.412+08:00",
           "dataAsOf": null,
           "reason": "本轮未取得该类新的合格宏观/资金证据，保留24小时内来源支持的旧项目，所有原时点保持不变。"
         }
       }
     ],
     "retainedFactIds": [
-      "MACRO:US:PAR-2Y-2026-11-10",
-      "MACRO:US:PAR-10Y-2026-11-10",
-      "MACRO:US:PAR-30Y-2026-11-10",
-      "MACRO:US:PAR-2S10S-2026-11-10",
-      "MACRO:US:PAR-CURVE-2026-11-11",
-      "PROP:US:DEC-HIKE-25BP-FULLY-PRICED-2026-11-10",
-      "PROP:US:WALLER-DEC-HIKE-2026-11-10",
-      "MACRO:US:CPI-REACTION-10Y-BP",
-      "MACRO:US:BEA-NOV-SCHED-2026",
-      "MACRO:US:FOMC-NEXT-2026-12",
-      "MACRO:US:BLS-PPI-OCT-2026-DUE",
-      "MACRO:US:STEO-OIL-2026-11-10",
-      "MACRO:CN:FIN-DATA-SCHED-2026-11",
-      "PROP:CN:PBOC-MPR-Q3-2026-11-11",
-      "MACRO:US:SESSION-HOLIDAY-2026-11-11",
+      "FLOW:CN:BREADTH-2026-11-11",
       "FLOW:CN:TURNOVER-2026-11-11",
-      "MACRO:CN:ASHARE-CLOSE-2026-11-11",
-      "MACRO:HK:HSI-CLOSE-2026-11-11",
+      "MACRO:US:CPI-OCT-2026-1111",
+      "MACRO:US:EIA-WPSR-2026-10-30-WEEK",
+      "MACRO:US:PAR-2S10S-2026-11-10",
+      "MACRO:US:STEO-BRENT-2026",
+      "MACRO:WORLD:HORMUZ-TANKER-2026-11-10",
+      "PROP:CN:PBOC-MPR-Q3-2026-11-11",
+      "PROP:US:DEC-HIKE-PRICING-1111",
+      "RESEARCH:CN:CPO-SQUEEZE-2026-11-11",
       "RESEARCH:US:CRWV-Q3-2026-11-10",
       "RESEARCH:US:NVDA-2DAY-DRAWDOWN-2026-11-10",
       "FLOW:CN:CPO-2026-11-11",
       "RESEARCH:US:NVDA-GOV-2026-11-11",
-      "MACRO:WORLD:HORMUZ-TANKER-2026-11-10",
       "MACRO:WORLD:SAUDI-HOUTHI-2026-11-10",
       "MACRO:CN:TRADE-2026-10-TOTAL-YOY",
       "FLOW:CN:COMM-AI-2026-11-11",
@@ -1077,11 +942,12 @@
       "PROP:CN:PBOC-OMO-2026-11-11",
       "PROP:CN:NDRC-BRI-2026-11-11",
       "MACRO:US:PAR-1111-CLOSED-2026-11-11",
+      "MACRO:US:PAR-2Y-2026-11-10",
       "FLOW:CN:CPO-CLOSE-2026-11-11",
+      "MACRO:US:PAR-10Y-2026-11-10",
+      "MACRO:CN:ASHARE-CLOSE-2026-11-11",
       "RESEARCH:CN:CPO-HARDWARE-2026-11-11",
       "MACRO:CN:PBOC-REPO-2026-11-11",
-      "FLOW:CN:BREADTH-2026-11-11",
-      "RESEARCH:CN:CPO-SQUEEZE-2026-11-11",
       "FLOW:CN:BREADTH-2026-11-11-PM",
       "RESEARCH:CN:AI-OPTICAL-CATALYST-2026-11-11-PM",
       "MACRO:CN:RAIL-BRI-2026-11-11",
@@ -1098,40 +964,40 @@
       "PROP:CN:DATA-STANDARD-WEEK-2026-11-10",
       "PROP:CN:FOUNDATION-REG-2026-11-10",
       "MACRO:US:EIA-WPSR-STATUS-2026-11-11",
+      "MACRO:US:STEO-OIL-2026-11-10",
+      "MACRO:US:SESSION-HOLIDAY-2026-11-11",
+      "MACRO:US:PAR-CURVE-2026-11-11",
       "MACRO:US:PAR-2026-11-10-2Y",
       "RESEARCH:US:FED-HIKE-PRICING-2026-11-11",
-      "MACRO:US:EIA-WPSR-2026-10-30-WEEK",
       "FLOW:US:API-CRUDE-2026-11-06-WEEK",
-      "MACRO:US:STEO-BRENT-2026",
       "MACRO:US:STEO-BRENT-2027",
       "MACRO:US:EIA-CRUDE-STOCK-2026-10-30",
       "MACRO:US:STEO-CRUDE-INV-OCT",
       "MACRO:US:EIA-WPSR-NEXT-2026-11-12",
-      "RESEARCH:US:TSM-2026-10-REV",
-      "MACRO:US:UST10Y-PAR-2026-11-10"
+      "MACRO:US:PAR-CURVE-2026-11-11T1722",
+      "MACRO:US:WPSR-DUE-2026-11-11T1722"
     ],
     "macroEvents": [
       {
-        "id": "ME-US-PAR-1111",
-        "title": "财政部par曲线11-10行发布，11-11现券休市无新行",
+        "title": "美国财政部par收益率曲线（11/10行）",
         "at": "2026-11-10T20:00:00Z",
-        "detail": "2Y 4.73、10Y 4.98、30Y 5.35，2s10s 25bp、10s30s 37bp",
-        "evidenceFactIds": [
-          "MACRO:US:PAR-CURVE-2026-11-11T1722"
-        ],
+        "detail": "2Y 4.73、10Y 4.98、30Y 5.35，2s10s 25bp、10s30s 37bp；11-11退伍军人节现券休市，无新行。",
         "sourceIds": [
           "src-79c4a943c45bb34e464abc77"
         ]
       },
       {
-        "id": "ME-US-CPI-1110",
-        "title": "美国10月CPI环比0.4%、核心0.3%（10-10发布，本轮为背景沿用）",
-        "at": "2026-11-10T13:30:00Z",
-        "detail": "2025年10月拨款中断缺基期，BLS不发布同比；市场据此把12月加息定价为完全确定",
-        "evidenceFactIds": [
-          "MACRO:US:CPI-OCT-2026-1111",
-          "PROP:US:DEC-HIKE-PRICING-1111"
-        ],
+        "title": "BEA下一批发布日程",
+        "at": "2026-11-17T15:00:00Z",
+        "detail": "本轮实读日程页：11-17 10:00实验性统计、11-18 10:00户外休闲、11-20 08:30跨国公司、11-25 08:30 GDP二次+企业利润与10月PIO、12-02县级GDP、12-08贸易、12-10州级PCE、12-18国际交易、12-23 GDP三次。",
+        "sourceIds": [
+          "src-fd4e4b2ac67cbbe5507866a6"
+        ]
+      },
+      {
+        "title": "FOMC下一次会议",
+        "at": "2026-12-08T19:00:00Z",
+        "detail": "12-08/09会议含经济预测摘要；11月无会议。",
         "sourceIds": [
           "src-fe3255ea546db4b012c0272c"
         ]
@@ -1139,16 +1005,19 @@
     ],
     "events": [
       {
-        "id": "EV-EIA-WPSR-1112",
-        "title": "EIA周度石油状况报告（顺延至11-12发布）",
+        "title": "EIA周度石油库存报告（顺延）",
         "at": null,
-        "atNote": "EIA页面只给“Next Release Date”标签、具体钟点由脚本渲染，静态页无数值，故不写死时刻",
-        "detail": "数据目前仍止10-30当周，商业原油409,760千桶；本次将首次披露11月首周库存",
-        "evidenceFactIds": [
-          "MACRO:US:WPSR-DUE-2026-11-11T1722"
-        ],
+        "detail": "11-12美东时间发布（此前顺延至12:00与14:00两次），数据将首次覆盖11月首周；EIA页面的Next Release为JS渲染，静态页无可读时点，故at留空。",
         "sourceIds": [
           "src-51a80160388a414f153d42eb"
+        ]
+      },
+      {
+        "title": "中国10月金融数据",
+        "at": null,
+        "detail": "本轮核验仍未见官方发布，窗口在11月中旬；具体时点未公布，at留空，不作整点推断。",
+        "sourceIds": [
+          "src-79c4a943c45bb34e464abc77"
         ]
       }
     ],
@@ -1164,715 +1033,715 @@
   },
   "sources": [
     {
-      "id": "src-fe3255ea546db4b012c0272c",
-      "name": "Federal Reserve FOMC Meeting Calendar",
-      "short": "FOMC-CAL-20261111",
-      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-      "sourceHash": "1436662bc035f728df2292151d5eec47e8ade53fcb6d58f48efa99fb1decd455",
-      "retrievedAt": "2026-11-11T17:23:10.258Z",
-      "evidenceKind": "calendar"
-    },
-    {
       "id": "src-4f174cda8a9a92d7a9da2bdd",
       "name": "INDEX:CN:SSE",
       "short": "INDEX:CN:SSE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:10.288Z",
-      "checkedAt": "2026-11-11T17:23:10.288Z",
-      "sourceHash": "bbe6f54fe1572a0c31bd74cf85305186ca49d557e88db6820192b9d5e36e3460"
+      "retrievedAt": "2026-11-11T18:44:04.863Z",
+      "checkedAt": "2026-11-11T18:44:04.863Z",
+      "sourceHash": "20e4dd53f472a5e400800103dc4d95fe8b7276ca1eeeca8cece9b5d106fb20cb"
+    },
+    {
+      "id": "src-fd4e4b2ac67cbbe5507866a6",
+      "name": "BEA Release Schedule",
+      "short": "BEA-SCHEDULE",
+      "url": "https://www.bea.gov/news/schedule",
+      "sourceHash": "d2ad2dc02c10055afaec7607c61749ce5fec6b4553a727eb4ea4000912227678",
+      "retrievedAt": "2026-11-11T18:44:06.073Z",
+      "evidenceKind": "calendar"
     },
     {
       "id": "src-79c4a943c45bb34e464abc77",
       "name": "Daily Treasury Par Yield Curve Rates 2026 (CSV)",
-      "short": "TREAS-PAR-CSV-20261111",
+      "short": "TRSY-PAR-2026",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
       "sourceHash": "782e0953ac34dd4c9751bc061feae3b1a2e18f0be8c7c181a3d2a472d1bdcbe5",
-      "retrievedAt": "2026-11-11T17:23:10.628Z",
+      "retrievedAt": "2026-11-11T18:44:06.112Z",
       "evidenceKind": "macro"
-    },
-    {
-      "id": "src-56f8b6cf9289eb812069329d",
-      "name": "INDEX:CN:SZSE",
-      "short": "INDEX:CN:SZSE",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:10.739Z",
-      "checkedAt": "2026-11-11T17:23:10.739Z",
-      "sourceHash": "46cf199c96ec3b089de9c9994751a00aad0dbf9379c8eefcdf662fb6e18938a4"
     },
     {
       "id": "src-43a3f5dcc80ebd4231e735b1",
       "name": "EQUITY:US:AAPL",
       "short": "EQUITY:US:AAPL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:10.820Z",
-      "checkedAt": "2026-11-11T17:23:10.820Z",
-      "sourceHash": "164ce57132a962bcfce27f94a62a45b03c6fc76187fc60680487f34d56b97f5e"
+      "retrievedAt": "2026-11-11T18:44:06.120Z",
+      "checkedAt": "2026-11-11T18:44:06.120Z",
+      "sourceHash": "fc8c72701275abc28ec356db996aac2501731bf1dc7ad8e8c9a7170e4f39a6ec"
     },
     {
-      "id": "src-fd4e4b2ac67cbbe5507866a6",
-      "name": "BEA Release Schedule",
-      "short": "BEA-SCHED-20261111",
-      "url": "https://www.bea.gov/news/schedule",
-      "sourceHash": "d2ad2dc02c10055afaec7607c61749ce5fec6b4553a727eb4ea4000912227678",
-      "retrievedAt": "2026-11-11T17:23:10.905Z",
+      "id": "src-56f8b6cf9289eb812069329d",
+      "name": "INDEX:CN:SZSE",
+      "short": "INDEX:CN:SZSE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:06.229Z",
+      "checkedAt": "2026-11-11T18:44:06.229Z",
+      "sourceHash": "f3be6d6a5360704cc05407ccb070af5dc39e140e9e38679488d14004ce595704"
+    },
+    {
+      "id": "src-a1ae1ee1f9832d31e6330ce3",
+      "name": "CoreWeave SEC submissions index",
+      "short": "SEC-CRWV-SUB",
+      "url": "https://data.sec.gov/submissions/CIK0001769628.json",
+      "sourceHash": "9de3ce48bd30c8496285bfc1f31329a982247278f0bc141a905befec529e01c1",
+      "retrievedAt": "2026-11-11T18:44:06.295Z",
+      "evidenceKind": "research"
+    },
+    {
+      "id": "src-fe3255ea546db4b012c0272c",
+      "name": "FOMC Meeting Calendar",
+      "short": "FED-FOMC-CAL-2026",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "sourceHash": "a917549c44b0f7dc75f74bbef4760d616b9329fe2de5e28e74974b0bb0fa883e",
+      "retrievedAt": "2026-11-11T18:44:06.402Z",
       "evidenceKind": "calendar"
     },
     {
-      "id": "src-4b917282a1356cc82407a7e5",
-      "name": "EIA Short-Term Energy Outlook",
-      "short": "EIA-STEO-20261111",
-      "url": "https://www.eia.gov/outlooks/steo/",
-      "sourceHash": "dc7ae24f6ad76f50b9c974dafd1fac4768734c09aff7291cc7a6cccd7c8dd4ee",
-      "retrievedAt": "2026-11-11T17:23:10.956Z",
-      "evidenceKind": "research"
+      "id": "src-51a80160388a414f153d42eb",
+      "name": "Weekly Petroleum Status Report",
+      "short": "EIA-WPSR",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/",
+      "sourceHash": "b2823288c8e5e2a40697dd329552c0c57bde0b1700ea433ac68f3ec658da3a08",
+      "retrievedAt": "2026-11-11T18:44:06.451Z",
+      "evidenceKind": "official"
     },
     {
       "id": "src-d842e972a4aec4350bb2cdef",
       "name": "EQUITY:US:MSFT",
       "short": "EQUITY:US:MSFT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:11.069Z",
-      "checkedAt": "2026-11-11T17:23:11.069Z",
-      "sourceHash": "37bf9adfaf45cfc413a0ca0d43836ea35bfe6d8126107336d73fd560063cc2d4"
+      "retrievedAt": "2026-11-11T18:44:06.458Z",
+      "checkedAt": "2026-11-11T18:44:06.458Z",
+      "sourceHash": "dc80ccda823e635c75c7a36b57d83ed5dbfecdca87c9b7e532b7b2c0a288123e"
     },
     {
       "id": "src-d710626606bba04bd08ad849",
       "name": "INDEX:CN:CHINEXT",
       "short": "INDEX:CN:CHINEXT",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/399006.SZ?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:11.177Z",
-      "checkedAt": "2026-11-11T17:23:11.177Z",
-      "sourceHash": "335f0a67d5ef39e6676f68733ded09a63b0f2ddbf79ac1714b13deff503353ac"
+      "retrievedAt": "2026-11-11T18:44:06.556Z",
+      "checkedAt": "2026-11-11T18:44:06.556Z",
+      "sourceHash": "e0876d2d3b64b70b1457494cf72b32f8e18eb0abe08240d45402c4db893e1616"
     },
     {
-      "id": "src-51a80160388a414f153d42eb",
-      "name": "EIA Weekly Petroleum Status Report",
-      "short": "EIA-WPSR-20261111",
-      "url": "https://www.eia.gov/petroleum/supply/weekly/",
-      "sourceHash": "b2823288c8e5e2a40697dd329552c0c57bde0b1700ea433ac68f3ec658da3a08",
-      "retrievedAt": "2026-11-11T17:23:11.532Z",
-      "evidenceKind": "macro"
-    },
-    {
-      "id": "src-8740577e8c7803f27f0171ca",
-      "name": "Federal Reserve H.15 Selected Interest Rates",
-      "short": "FRB-H15-20261111",
-      "url": "https://www.federalreserve.gov/releases/h15/",
-      "sourceHash": "2d19dc0d56aa55303152d7d06f43ff098874257bbf3f0103726c8ef3d9477194",
-      "retrievedAt": "2026-11-11T17:23:11.680Z",
-      "evidenceKind": "macro"
+      "id": "src-4b917282a1356cc82407a7e5",
+      "name": "Short-Term Energy Outlook",
+      "short": "EIA-STEO",
+      "url": "https://www.eia.gov/outlooks/steo/",
+      "sourceHash": "dc7ae24f6ad76f50b9c974dafd1fac4768734c09aff7291cc7a6cccd7c8dd4ee",
+      "retrievedAt": "2026-11-11T18:44:06.710Z",
+      "evidenceKind": "official"
     },
     {
       "id": "src-34668c6d731a57ed1c1023dc",
       "name": "EQUITY:US:NVDA",
       "short": "EQUITY:US:NVDA",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:11.783Z",
-      "checkedAt": "2026-11-11T17:23:11.783Z",
-      "sourceHash": "39c274ed39e752cfd8cb29a06bb0350cd13cf93056eac140bb6d883565b9ede9"
+      "retrievedAt": "2026-11-11T18:44:06.766Z",
+      "checkedAt": "2026-11-11T18:44:06.766Z",
+      "sourceHash": "f3afcd12d8232cd5112dc41badefd613114727e7f673319601166884fd0a73f8"
     },
     {
       "id": "src-9940126ea964d09e7fafaaff",
       "name": "INDEX:CN:STAR50",
       "short": "INDEX:CN:STAR50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000688.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:12.011Z",
-      "checkedAt": "2026-11-11T17:23:12.011Z",
-      "sourceHash": "7bcb7693bf7ba0a606e35622260aff9a8cbed21b833c3b6b73811e0bd8e72221"
+      "retrievedAt": "2026-11-11T18:44:06.822Z",
+      "checkedAt": "2026-11-11T18:44:06.822Z",
+      "sourceHash": "0d43063fbe3e6fe588df21ce721ec3d8098fa99afbaf9d802a7bc965712d8022"
     },
     {
-      "id": "src-67b767aac259adf10f9cb865",
-      "name": "SEC EDGAR filing index - NVIDIA (CIK 1045810)",
-      "short": "SEC-NVDA-SUB-20261111",
-      "url": "https://data.sec.gov/submissions/CIK0001045810.json",
-      "sourceHash": "db787ea656392c0442099ee6498a978e5b0bfba2c14e47a68dda393ddaff0375",
-      "retrievedAt": "2026-11-11T17:23:18.197Z",
-      "evidenceKind": "official"
+      "id": "src-57fb99e1de4aefff6b811bc5",
+      "name": "【美股盘前】英伟达涨超3%；存储、光通信、AI芯片股上涨；Anthropic启动IPO路演，瞄准35%长期经营利润率目标；CoreWeave涨超14%，预计2028年上半年扭亏",
+      "short": "NBD-CORE-4644934",
+      "url": "https://www.nbd.com.cn/articles/2026-11-11/4644934.html",
+      "sourceHash": "5fd928021446eaddb602f6823b23f642150d45cd36331f2de35664764b7c70c9",
+      "retrievedAt": "2026-11-11T18:44:07.055Z",
+      "evidenceKind": "news"
     },
     {
       "id": "src-184a3aed61d874af1cc937af",
       "name": "EQUITY:US:GOOGL",
       "short": "EQUITY:US:GOOGL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:18.356Z",
-      "checkedAt": "2026-11-11T17:23:18.356Z",
-      "sourceHash": "a725622d1a9c6fb1653306b3e3b34a094d04da6a311d609fbabdba64951389af"
+      "retrievedAt": "2026-11-11T18:44:07.158Z",
+      "checkedAt": "2026-11-11T18:44:07.158Z",
+      "sourceHash": "d433899e2c853b13210c2cb8b4c1b937097349a069485aff9f49a93775c8fb9d"
     },
     {
       "id": "src-c7ebed6429fdab05af3d4e37",
       "name": "INDEX:CN:CSI300",
       "short": "INDEX:CN:CSI300",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000300.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:18.454Z",
-      "checkedAt": "2026-11-11T17:23:18.454Z",
-      "sourceHash": "ed6c4e3faefa843623f728f99c4312c5743a5452a9610faa112586ba17157508"
-    },
-    {
-      "id": "src-a1ae1ee1f9832d31e6330ce3",
-      "name": "SEC EDGAR filing index - CoreWeave (CIK 1769628)",
-      "short": "SEC-CRWV-SUB-20261111",
-      "url": "https://data.sec.gov/submissions/CIK0001769628.json",
-      "sourceHash": "9de3ce48bd30c8496285bfc1f31329a982247278f0bc141a905befec529e01c1",
-      "retrievedAt": "2026-11-11T17:23:18.676Z",
-      "evidenceKind": "official"
+      "retrievedAt": "2026-11-11T18:44:07.260Z",
+      "checkedAt": "2026-11-11T18:44:07.260Z",
+      "sourceHash": "4d809b80c9282504148b8d8919cde4990998ee9f5bec4dc400b76cf8cededcb9"
     },
     {
       "id": "src-04b8bdcf2a7320327379db05",
       "name": "EQUITY:US:AMZN",
       "short": "EQUITY:US:AMZN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:18.773Z",
-      "checkedAt": "2026-11-11T17:23:18.773Z",
-      "sourceHash": "894ffdda813867856af20a023adfeedcff987a364951c049cb1f76a6e027f4fb"
+      "retrievedAt": "2026-11-11T18:44:07.537Z",
+      "checkedAt": "2026-11-11T18:44:07.537Z",
+      "sourceHash": "a876101ce4e257fa85f21857868894d320f1741c8df75f8eef6c915c88bf421f"
     },
     {
       "id": "src-eaadd6d97d93eb6207a16fc2",
       "name": "INDEX:CN:CSI500",
       "short": "INDEX:CN:CSI500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/000905.SS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:18.878Z",
-      "checkedAt": "2026-11-11T17:23:18.878Z",
-      "sourceHash": "5d6b890ee06af6b00213386e71954ae3ffbdffee8c7dd93caaa505f43132ff9b"
+      "retrievedAt": "2026-11-11T18:44:07.571Z",
+      "checkedAt": "2026-11-11T18:44:07.571Z",
+      "sourceHash": "22a072dfc7ec1defda88a4c8a5c1d210211a794344dca0317ca6101f0f71e721"
     },
     {
       "id": "src-78e6f09e34616fdc208b1d39",
       "name": "EQUITY:US:META",
       "short": "EQUITY:US:META",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:18.954Z",
-      "checkedAt": "2026-11-11T17:23:18.954Z",
-      "sourceHash": "0005db1e9c13945e71baac75e9538afcf98cbedb80fc4aa95b392d8eccec3154"
+      "retrievedAt": "2026-11-11T18:44:07.589Z",
+      "checkedAt": "2026-11-11T18:44:07.589Z",
+      "sourceHash": "715415a4ceb0a3cb23d76a947215b8c47bcbf6b382bac0f0d96b750ae425be29"
     },
     {
       "id": "src-34bca50b53334f82f208d557",
       "name": "INDEX:HK:HSI",
       "short": "INDEX:HK:HSI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:18.972Z",
-      "checkedAt": "2026-11-11T17:23:18.972Z",
-      "sourceHash": "040f9d6f1727ce25e68176f97d54a25a1d45b8978749335405fd2f4e8ddf26b1"
+      "retrievedAt": "2026-11-11T18:44:07.624Z",
+      "checkedAt": "2026-11-11T18:44:07.624Z",
+      "sourceHash": "638624fa90aee4221f31b445ee8ff899ef24486ac4c8d7407e7eb17f1a09125e"
     },
     {
       "id": "src-6296613e58b80d5a2541b2bc",
       "name": "EQUITY:US:TSLA",
       "short": "EQUITY:US:TSLA",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.050Z",
-      "checkedAt": "2026-11-11T17:23:19.050Z",
-      "sourceHash": "3dfca6ba7cc0ec39c2664b281e6c0e209c1467ad097308d5b4cad4ac712756e5"
+      "retrievedAt": "2026-11-11T18:44:07.646Z",
+      "checkedAt": "2026-11-11T18:44:07.646Z",
+      "sourceHash": "f9fed6c8acf1fa750b33263512bd897874d6f0f7f923d2aaba1c4b4f05e25f3c"
     },
     {
       "id": "src-977e21a36fbe85aa82e451f4",
       "name": "INDEX:HK:HSTECH",
       "short": "INDEX:HK:HSTECH",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.069Z",
-      "checkedAt": "2026-11-11T17:23:19.069Z",
-      "sourceHash": "f216b6ab69ea02fd6a863355c91acf8a4761be12945d9ddc80c2d23541668df6"
-    },
-    {
-      "id": "src-c0124b191492ac42ab36d935",
-      "name": "INDEX:HK:HSCEI",
-      "short": "INDEX:HK:HSCEI",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.170Z",
-      "checkedAt": "2026-11-11T17:23:19.170Z",
-      "sourceHash": "20808b510d8f5963be64022c16eeba728f712b2182c7cebb0b5351e0ff9a462d"
+      "retrievedAt": "2026-11-11T18:44:07.681Z",
+      "checkedAt": "2026-11-11T18:44:07.681Z",
+      "sourceHash": "0659d1c01f659163a5d5d72840737c49d7f542c05fff96b976170542b0cc7fcb"
     },
     {
       "id": "src-2330b34d03dae5a96933f1cd",
       "name": "EQUITY:US:AVGO",
       "short": "EQUITY:US:AVGO",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.182Z",
-      "checkedAt": "2026-11-11T17:23:19.182Z",
-      "sourceHash": "5f826e33a5d739341a48838b27e4dcf66c56a0f63c4b082a09c69ff1011e2df8"
+      "retrievedAt": "2026-11-11T18:44:07.747Z",
+      "checkedAt": "2026-11-11T18:44:07.747Z",
+      "sourceHash": "970463b2dde6ee0cd5e759e130e55280da16443a16f7e9d43dfe8beabb0989b7"
+    },
+    {
+      "id": "src-c0124b191492ac42ab36d935",
+      "name": "INDEX:HK:HSCEI",
+      "short": "INDEX:HK:HSCEI",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSCE?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:07.784Z",
+      "checkedAt": "2026-11-11T18:44:07.784Z",
+      "sourceHash": "16b15e30e0f784ec5e6e17e262d5e5712240a4cee5552e26268f2d4c951b50da"
     },
     {
       "id": "src-6c0e86c9d9d00b20a083c934",
       "name": "EQUITY:US:AMD",
       "short": "EQUITY:US:AMD",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.275Z",
-      "checkedAt": "2026-11-11T17:23:19.275Z",
-      "sourceHash": "82ca3e436e32cd21d916c04cf2509e4a446f14c94cfdaae45bd255b44e4b5324"
+      "retrievedAt": "2026-11-11T18:44:07.811Z",
+      "checkedAt": "2026-11-11T18:44:07.811Z",
+      "sourceHash": "95c4a543ce0b1cded9085941231e05f59c3407b4e16400c266b2f83c0c9ee730"
     },
     {
       "id": "src-d72e220f5f535c1245072385",
       "name": "INDEX:US:SP500",
       "short": "INDEX:US:SP500",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.279Z",
-      "checkedAt": "2026-11-11T17:23:19.279Z",
-      "sourceHash": "85126bfb3707ec6b3de7cdf97cf9d1218c290574c64d3096d31206ca18fef32b"
+      "retrievedAt": "2026-11-11T18:44:07.822Z",
+      "checkedAt": "2026-11-11T18:44:07.822Z",
+      "sourceHash": "b4d6fcc59999a2aeeef3599dadfc4b08350d4d19c614713d7ceecd050407ec5e"
     },
     {
       "id": "src-a5c669eb8928b350011058da",
       "name": "EQUITY:US:INTC",
       "short": "EQUITY:US:INTC",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.368Z",
-      "checkedAt": "2026-11-11T17:23:19.368Z",
-      "sourceHash": "b6b84a71b44ffdea45011e116e6797f6f8e8983aa2236b9fd2b245c620bdfecd"
-    },
-    {
-      "id": "src-772408f27845565f1128d60a",
-      "name": "EQUITY:US:MU",
-      "short": "EQUITY:US:MU",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.369Z",
-      "checkedAt": "2026-11-11T17:23:19.369Z",
-      "sourceHash": "82731cac246ddaea1c059f734a4d941760c9d5a27a335f04cba5840565684210"
+      "retrievedAt": "2026-11-11T18:44:07.837Z",
+      "checkedAt": "2026-11-11T18:44:07.837Z",
+      "sourceHash": "b255142932a460803a3474349413a26f1e48d39e3f02d3b3fc0d14273cd229fe"
     },
     {
       "id": "src-4a57b5e12b1c7830f0336dc8",
       "name": "INDEX:US:NASDAQ",
       "short": "INDEX:US:NASDAQ",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.378Z",
-      "checkedAt": "2026-11-11T17:23:19.378Z",
-      "sourceHash": "037b32cf79d700ce8f03ab8db02a86b46fa9bbc6c9ecc3195109a5785cfb45d6"
+      "retrievedAt": "2026-11-11T18:44:07.866Z",
+      "checkedAt": "2026-11-11T18:44:07.866Z",
+      "sourceHash": "be8ea8517bdf23fd6af5e0c3d2e40478e6ad29be64e0a162e19e5a97f0e8ffdc"
+    },
+    {
+      "id": "src-772408f27845565f1128d60a",
+      "name": "EQUITY:US:MU",
+      "short": "EQUITY:US:MU",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:07.876Z",
+      "checkedAt": "2026-11-11T18:44:07.876Z",
+      "sourceHash": "27b04a6fa286093617f9b7c76728ce38fef0ade239f9cbfde2b054426e5d3bc6"
     },
     {
       "id": "src-e0bb5fd1bca46282849a8b5f",
       "name": "INDEX:US:NDX",
       "short": "INDEX:US:NDX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.460Z",
-      "checkedAt": "2026-11-11T17:23:19.460Z",
-      "sourceHash": "a4e046685b7e624abdc5dcd567e782d128b0cd232563ad67d97e2c0de1fb4259"
-    },
-    {
-      "id": "src-4c2724acd20f3bf712e1b9a9",
-      "name": "INDEX:US:DOW",
-      "short": "INDEX:US:DOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.475Z",
-      "checkedAt": "2026-11-11T17:23:19.475Z",
-      "sourceHash": "19b1df3e4272a89473369da89f14e8e8b65df6bfe32072ac0a7d0b487863cec2"
+      "retrievedAt": "2026-11-11T18:44:07.889Z",
+      "checkedAt": "2026-11-11T18:44:07.889Z",
+      "sourceHash": "d27ba29386f09c3a223bdde218cad0875163a6855583c02a37b09b7ea6b57949"
     },
     {
       "id": "src-2c82f404902c9e27e70a5709",
       "name": "EQUITY:US:ARM",
       "short": "EQUITY:US:ARM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.485Z",
-      "checkedAt": "2026-11-11T17:23:19.485Z",
-      "sourceHash": "67fb5f922a66b8a27e73f9c27925dde70d7aa93bf4671abe9fc18ca4776fa509"
+      "retrievedAt": "2026-11-11T18:44:07.923Z",
+      "checkedAt": "2026-11-11T18:44:07.923Z",
+      "sourceHash": "329a78bebbb6396b175744dafa317ea0741af9f079243519cc296463c4d726d7"
+    },
+    {
+      "id": "src-4c2724acd20f3bf712e1b9a9",
+      "name": "INDEX:US:DOW",
+      "short": "INDEX:US:DOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:07.932Z",
+      "checkedAt": "2026-11-11T18:44:07.932Z",
+      "sourceHash": "79eefd44de21ebfd9488aa043f811c61ce1712b60ab237f5181bb1fefadab37c"
     },
     {
       "id": "src-a1855a700abc50828e0dbe10",
       "name": "EQUITY:US:TSM",
       "short": "EQUITY:US:TSM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.555Z",
-      "checkedAt": "2026-11-11T17:23:19.555Z",
-      "sourceHash": "6fc6251a9ee526555e7e99086c2278de4a375aab3f7845ef327516bafd9e9d84"
-    },
-    {
-      "id": "src-8793bfe1c682ddb7a690b48f",
-      "name": "EQUITY:US:ASML",
-      "short": "EQUITY:US:ASML",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.601Z",
-      "checkedAt": "2026-11-11T17:23:19.601Z",
-      "sourceHash": "dce0f7662b9698a78226a8b590e8fc2d62494054b332d030683ccbc9dac11873"
+      "retrievedAt": "2026-11-11T18:44:07.943Z",
+      "checkedAt": "2026-11-11T18:44:07.943Z",
+      "sourceHash": "80d4d17091e9b6b01ce2ca44bb5ddb88adb3f603f197c9dfad101e8fd8abd00b"
     },
     {
       "id": "src-3f3171fa7d078be4fc2861fa",
       "name": "INDEX:US:RUSSELL2000",
       "short": "INDEX:US:RUSSELL2000",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ERUT?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.631Z",
-      "checkedAt": "2026-11-11T17:23:19.631Z",
-      "sourceHash": "a656716fb358465537c5ae8c249f2bafa2e746fc0f03bc3824fc1df8dd4fa24a"
+      "retrievedAt": "2026-11-11T18:44:07.977Z",
+      "checkedAt": "2026-11-11T18:44:07.977Z",
+      "sourceHash": "353d7e0433fcfeedc2a9709e1c819d2d9ee07baee3736e57df52bef668641e21"
+    },
+    {
+      "id": "src-8793bfe1c682ddb7a690b48f",
+      "name": "EQUITY:US:ASML",
+      "short": "EQUITY:US:ASML",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:07.997Z",
+      "checkedAt": "2026-11-11T18:44:07.997Z",
+      "sourceHash": "bbaf152ac95a98bb2dd7be5ca934142718e6f881d7f1c7640373dbbe867106df"
     },
     {
       "id": "src-db321b256a90919f12e35781",
       "name": "INDEX:JP:NIKKEI225",
       "short": "INDEX:JP:NIKKEI225",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EN225?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.647Z",
-      "checkedAt": "2026-11-11T17:23:19.647Z",
-      "sourceHash": "c6124fce1bc8ea9cd47d6c543ca272b003fddbee2eca11c9e7d253ed83f5166a"
+      "retrievedAt": "2026-11-11T18:44:07.999Z",
+      "checkedAt": "2026-11-11T18:44:07.999Z",
+      "sourceHash": "0c11f6752243170d05e5c60415892642bfaed234bee0a6ddded59e2d6dc2b2d4"
     },
     {
       "id": "src-38299ba2f9df25e3bf2df111",
       "name": "EQUITY:US:ORCL",
       "short": "EQUITY:US:ORCL",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORCL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.692Z",
-      "checkedAt": "2026-11-11T17:23:19.692Z",
-      "sourceHash": "f1b659a7624aec809ffaf4c053adf396539aedf5bf610004d6b51c37e07b3bf0"
+      "retrievedAt": "2026-11-11T18:44:08.037Z",
+      "checkedAt": "2026-11-11T18:44:08.037Z",
+      "sourceHash": "733ad6abd897090ca0836a4bfe03f3f71e26b26b9daeb72a8f3982760251cd56"
     },
     {
       "id": "src-a9fc80df8ffb235e6cd0d757",
       "name": "EQUITY:US:CRM",
       "short": "EQUITY:US:CRM",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.739Z",
-      "checkedAt": "2026-11-11T17:23:19.739Z",
-      "sourceHash": "c071f202919c8c2db8e132289d97e04b0893b6aec1eb5699b9b71ca24e3f48de"
-    },
-    {
-      "id": "src-d0f06544a61c10ea97899aa0",
-      "name": "CRYPTO:BTC:USD",
-      "short": "CRYPTO:BTC:USD",
-      "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
-      "retrievedAt": "2026-11-11T17:23:19.770Z",
-      "checkedAt": "2026-11-11T17:23:19.770Z",
-      "sourceHash": "6a30846bbcd40898e6628083da6eb3cee0130cdfc37389abea229af541b1186c"
+      "retrievedAt": "2026-11-11T18:44:08.056Z",
+      "checkedAt": "2026-11-11T18:44:08.056Z",
+      "sourceHash": "5a3e8cb52d6c1cf199cdbd66e1098c4f917e05c86fc881cc530c33f330bec2e6"
     },
     {
       "id": "src-440d8c358ccf2eb5de026ded",
       "name": "INDEX:EU:STOXX50",
       "short": "INDEX:EU:STOXX50",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.794Z",
-      "checkedAt": "2026-11-11T17:23:19.794Z",
-      "sourceHash": "61b7ac2cdd669bc1760cce51b3858e7c2deaa1ffc85ecd3780a0449ff920ceb9"
-    },
-    {
-      "id": "src-61b7dcccf93560ea56eb3187",
-      "name": "CRYPTO:ETH:USD",
-      "short": "CRYPTO:ETH:USD",
-      "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
-      "retrievedAt": "2026-11-11T17:23:19.799Z",
-      "checkedAt": "2026-11-11T17:23:19.799Z",
-      "sourceHash": "bae5a8168a89feb1d3261f8ca688330e70fea403efd441ca7631f247aea8565d"
-    },
-    {
-      "id": "src-ff3513c8c5dcb5dca0085f61",
-      "name": "CRYPTO:SOL:USD",
-      "short": "CRYPTO:SOL:USD",
-      "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
-      "retrievedAt": "2026-11-11T17:23:19.823Z",
-      "checkedAt": "2026-11-11T17:23:19.823Z",
-      "sourceHash": "947621cd4a3b3437d1fea0949c021c55716cfd119e9cf3c803b6dda7dd7db68c"
+      "retrievedAt": "2026-11-11T18:44:08.064Z",
+      "checkedAt": "2026-11-11T18:44:08.064Z",
+      "sourceHash": "75f8fb8bbefc7f5df7e2c0f79cde4f9d68a7393a223e6ea07534123a3be123ad"
     },
     {
       "id": "src-5022e6cea2b9157cf6b11a77",
       "name": "EQUITY:US:ADBE",
       "short": "EQUITY:US:ADBE",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.826Z",
-      "checkedAt": "2026-11-11T17:23:19.826Z",
-      "sourceHash": "e072b3de713d85c9824a0049fbcfca06cf4e4c2b8889920f88bcaf6948d29f55"
+      "retrievedAt": "2026-11-11T18:44:08.113Z",
+      "checkedAt": "2026-11-11T18:44:08.113Z",
+      "sourceHash": "b5269a10071f8d8ed9be0da9dca7196de3a0c4b136074c353632baafe54c7ce6"
     },
     {
-      "id": "src-e73683bca4f7778e43d2f1e8",
-      "name": "CRYPTO:PEPE:USD",
-      "short": "CRYPTO:PEPE:USD",
-      "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
-      "retrievedAt": "2026-11-11T17:23:19.851Z",
-      "checkedAt": "2026-11-11T17:23:19.851Z",
-      "sourceHash": "65048ac8f13897275932e4d825c59cc756e08b8d7b441dc532bc8906b6b59bae"
+      "id": "src-d0f06544a61c10ea97899aa0",
+      "name": "CRYPTO:BTC:USD",
+      "short": "CRYPTO:BTC:USD",
+      "url": "https://api.exchange.coinbase.com/products/BTC-USD/ticker",
+      "retrievedAt": "2026-11-11T18:44:08.125Z",
+      "checkedAt": "2026-11-11T18:44:08.125Z",
+      "sourceHash": "4d7e7c4b350b89f1785db6a08a479bcb690ed771ffa89f4c30bf4a747e2ceb1e"
     },
     {
-      "id": "src-a9cf54901e28ec9b25fe355d",
-      "name": "EQUITY:US:PLTR",
-      "short": "EQUITY:US:PLTR",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.928Z",
-      "checkedAt": "2026-11-11T17:23:19.928Z",
-      "sourceHash": "0c4cae07163c5f1ca4065de5319965a52eecbb2606cd6dd73868fc8a67376b1a"
+      "id": "src-ff3513c8c5dcb5dca0085f61",
+      "name": "CRYPTO:SOL:USD",
+      "short": "CRYPTO:SOL:USD",
+      "url": "https://api.exchange.coinbase.com/products/SOL-USD/ticker",
+      "retrievedAt": "2026-11-11T18:44:08.158Z",
+      "checkedAt": "2026-11-11T18:44:08.158Z",
+      "sourceHash": "363731e18647c64e35102f145c14a3f2770e69033e4126ca3d0586ef8c9e383a"
     },
     {
       "id": "src-620ca0f9ff9da68ab66b8b1c",
       "name": "EQUITY:US:NOW",
       "short": "EQUITY:US:NOW",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.978Z",
-      "checkedAt": "2026-11-11T17:23:19.978Z",
-      "sourceHash": "7373498e6d3c5c9da37c1156764cfeec3ec76b99c1495d7ec21e7e76e09025bc"
+      "retrievedAt": "2026-11-11T18:44:08.168Z",
+      "checkedAt": "2026-11-11T18:44:08.168Z",
+      "sourceHash": "02021690786b8fd618f08b39e6600b97d75ea9bca2f3a9afdd7c4369903189c5"
     },
     {
-      "id": "src-15f5b79b32cba97e05e23d60",
-      "name": "EQUITY:US:SNOW",
-      "short": "EQUITY:US:SNOW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:19.993Z",
-      "checkedAt": "2026-11-11T17:23:19.993Z",
-      "sourceHash": "043e83b294d6880e9e294f2118cf28bb08971e3aa39e6f2ed9ec981f95d84ea7"
+      "id": "src-61b7dcccf93560ea56eb3187",
+      "name": "CRYPTO:ETH:USD",
+      "short": "CRYPTO:ETH:USD",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/ticker",
+      "retrievedAt": "2026-11-11T18:44:08.183Z",
+      "checkedAt": "2026-11-11T18:44:08.183Z",
+      "sourceHash": "c8df67876a0abe49f4a3a0b5ca99a110e505672d33f64063c022c19d4048763c"
+    },
+    {
+      "id": "src-e73683bca4f7778e43d2f1e8",
+      "name": "CRYPTO:PEPE:USD",
+      "short": "CRYPTO:PEPE:USD",
+      "url": "https://api.exchange.coinbase.com/products/PEPE-USD/ticker",
+      "retrievedAt": "2026-11-11T18:44:08.192Z",
+      "checkedAt": "2026-11-11T18:44:08.192Z",
+      "sourceHash": "4195e57d9cdc7c99eadd99cae50ac276713d798a85880ca05f42c8a432bf75c7"
+    },
+    {
+      "id": "src-a9cf54901e28ec9b25fe355d",
+      "name": "EQUITY:US:PLTR",
+      "short": "EQUITY:US:PLTR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:08.213Z",
+      "checkedAt": "2026-11-11T18:44:08.213Z",
+      "sourceHash": "11dc4ae6aaeee201671f00301a8170ea43de80516121f8b0c54773f77fb348e8"
     },
     {
       "id": "src-219ba892243f0871c11511b2",
       "name": "CRYPTO:HYPE:USD",
       "short": "CRYPTO:HYPE:USD",
       "url": "https://api.exchange.coinbase.com/products/HYPE-USD/ticker",
-      "retrievedAt": "2026-11-11T17:23:19.994Z",
-      "checkedAt": "2026-11-11T17:23:19.994Z",
-      "sourceHash": "c4b1a38885b287a0641d0898c2712a0f853f3acf34df663b93a4a08fcff8e2dc"
+      "retrievedAt": "2026-11-11T18:44:08.215Z",
+      "checkedAt": "2026-11-11T18:44:08.215Z",
+      "sourceHash": "3f6cd6641ad5871dc26a29b2230a2e49fdff7949ea88cbf06ef8a2548be43d50"
+    },
+    {
+      "id": "src-15f5b79b32cba97e05e23d60",
+      "name": "EQUITY:US:SNOW",
+      "short": "EQUITY:US:SNOW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNOW?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:08.240Z",
+      "checkedAt": "2026-11-11T18:44:08.240Z",
+      "sourceHash": "f878219098bc7dc18295fbff9fc0c77f030f723518991c7126784f20363917b4"
     },
     {
       "id": "src-c3ce3ea19c5e3ff913bc8e44",
       "name": "EQUITY:US:NET",
       "short": "EQUITY:US:NET",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.076Z",
-      "checkedAt": "2026-11-11T17:23:20.076Z",
-      "sourceHash": "723e68c8c5df4b4914f9ea42469447fb81107dede4fb9d762712bbca6bc976e7"
-    },
-    {
-      "id": "src-dee9c47e788eb3b5e9957de0",
-      "name": "FX:DXY",
-      "short": "FX:DXY",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.086Z",
-      "checkedAt": "2026-11-11T17:23:20.086Z",
-      "sourceHash": "646677d4a981ef9ccbb4fe56ca4cb022219ce599b408e58cae404f9b7ccfe92d"
+      "retrievedAt": "2026-11-11T18:44:08.264Z",
+      "checkedAt": "2026-11-11T18:44:08.264Z",
+      "sourceHash": "84877518328012adba32c69869ce620d88ad574f8bea303f4d64c1cebf34bd19"
     },
     {
       "id": "src-ff2cf19ea64f05b5a5a53285",
       "name": "EQUITY:US:CRWD",
       "short": "EQUITY:US:CRWD",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.092Z",
-      "checkedAt": "2026-11-11T17:23:20.092Z",
-      "sourceHash": "cbc56783767f1fe58445cb8ec66bf378b0f9364945958252c2aca4dd84ed5b79"
-    },
-    {
-      "id": "src-b9c9b43f7a4ebde198fdf0e4",
-      "name": "EQUITY:US:DDOG",
-      "short": "EQUITY:US:DDOG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.169Z",
-      "checkedAt": "2026-11-11T17:23:20.169Z",
-      "sourceHash": "09248ba3aefccdc16bb824208bb4a17b028872d5e308a897d814c374cdc8facf"
+      "retrievedAt": "2026-11-11T18:44:08.296Z",
+      "checkedAt": "2026-11-11T18:44:08.296Z",
+      "sourceHash": "c33a85b1d9bb6008fbeec5c4b1a10a5ecf920332c819cb958cb30c38196f7d1a"
     },
     {
       "id": "src-8d5d7352d4aa06cef2c4c9c8",
       "name": "FX:USDCNY",
       "short": "FX:USDCNY",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.189Z",
-      "checkedAt": "2026-11-11T17:23:20.189Z",
-      "sourceHash": "fa3727a7d43eb2e60e92819d8b89c8398bf661facac4218928f6ece740957013"
+      "retrievedAt": "2026-11-11T18:44:08.324Z",
+      "checkedAt": "2026-11-11T18:44:08.324Z",
+      "sourceHash": "3253b77eac0c6217dd5b7676dad1cd0239ac5d48655793aaa848ac6a1bb46247"
     },
     {
-      "id": "src-3d44a550fc9b64a2d1f171c2",
-      "name": "FX:USDCNH",
-      "short": "FX:USDCNH",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.239Z",
-      "checkedAt": "2026-11-11T17:23:20.239Z",
-      "sourceHash": "2114ae6d989ec47cddebb79654f2ff97363ce9a139b47eb45fa4282cc7dc0d6a"
+      "id": "src-dee9c47e788eb3b5e9957de0",
+      "name": "FX:DXY",
+      "short": "FX:DXY",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:08.343Z",
+      "checkedAt": "2026-11-11T18:44:08.343Z",
+      "sourceHash": "3c9511576bf0f8425de658f82e6b9425e5a58d0497d11fbf065efa5240a77aa1"
+    },
+    {
+      "id": "src-b9c9b43f7a4ebde198fdf0e4",
+      "name": "EQUITY:US:DDOG",
+      "short": "EQUITY:US:DDOG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:08.350Z",
+      "checkedAt": "2026-11-11T18:44:08.350Z",
+      "sourceHash": "bea1ff3d24a536ca354b6cd80d2cb1d860dfd8efb6f9d7ed7c7caefa62ad5ba4"
     },
     {
       "id": "src-326f0b6e68e52c485af15110",
       "name": "EQUITY:US:COIN",
       "short": "EQUITY:US:COIN",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/COIN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.265Z",
-      "checkedAt": "2026-11-11T17:23:20.265Z",
-      "sourceHash": "4926b4177a99416c67299905a2ac5c702584026be7a1482d3d8267a16ab35437"
+      "retrievedAt": "2026-11-11T18:44:08.398Z",
+      "checkedAt": "2026-11-11T18:44:08.398Z",
+      "sourceHash": "7a4cb14a5396f344858d6f9842ea161da7539be80ef95b553c952a5a75f97e58"
+    },
+    {
+      "id": "src-3d44a550fc9b64a2d1f171c2",
+      "name": "FX:USDCNH",
+      "short": "FX:USDCNH",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CNH%3DX?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:08.405Z",
+      "checkedAt": "2026-11-11T18:44:08.405Z",
+      "sourceHash": "b6a0e93715bb25f816956da633d0c329ab78092524db235cd4546b01e951fb4c"
     },
     {
       "id": "src-65479f4ce02fa594db0ce3a7",
       "name": "EQUITY:US:MSTR",
       "short": "EQUITY:US:MSTR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.306Z",
-      "checkedAt": "2026-11-11T17:23:20.306Z",
-      "sourceHash": "f62435dc496d377351788af991181fff5c53b854f8fde42a2a4722967b8b3ad1"
+      "retrievedAt": "2026-11-11T18:44:08.484Z",
+      "checkedAt": "2026-11-11T18:44:08.484Z",
+      "sourceHash": "0878a703378019e92e4656b160d1944713cd5249097abeb342de38388b2d08f8"
     },
     {
       "id": "src-f870632d144ef25b5d81e0d5",
       "name": "EQUITY:US:BRK.B",
       "short": "EQUITY:US:BRK.B",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BRK-B?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.361Z",
-      "checkedAt": "2026-11-11T17:23:20.361Z",
-      "sourceHash": "ab462cf5fbb990d0883d1c59e146b470a49a1235f3bde7be979f63459d1f091d"
+      "retrievedAt": "2026-11-11T18:44:08.536Z",
+      "checkedAt": "2026-11-11T18:44:08.536Z",
+      "sourceHash": "3827276434a47ca1441c270a07462f91dd4fc144cc3c05e6f06af8f1339a2997"
     },
     {
       "id": "src-d9a47ba66192b3c04bc8f3f6",
       "name": "ENERGY:WTI",
       "short": "ENERGY:WTI",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/CL%3DF?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.418Z",
-      "checkedAt": "2026-11-11T17:23:20.418Z",
-      "sourceHash": "dd4d74d2ca2b78ce76b10445d1ba95e6e49a79b7dc299b225786e26cd0ca15d8"
+      "retrievedAt": "2026-11-11T18:44:08.595Z",
+      "checkedAt": "2026-11-11T18:44:08.595Z",
+      "sourceHash": "4de0a26cefe2ca036c812025617abe7ae6d6e483a8145321b196b5ad8e0af87c"
     },
     {
       "id": "src-b4c33f217cb4617da7b6dc01",
       "name": "EQUITY:US:BLK",
       "short": "EQUITY:US:BLK",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLK?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.450Z",
-      "checkedAt": "2026-11-11T17:23:20.450Z",
-      "sourceHash": "876f3c2b6b34c73c2db3a08657470236f223c4d1ae349746051f417a9eef364c"
-    },
-    {
-      "id": "src-8ada3bfad620c0aaad97dfef",
-      "name": "METAL:XAGUSD",
-      "short": "METAL:XAGUSD",
-      "url": "https://api.gold-api.com/price/XAG",
-      "retrievedAt": "2026-11-11T17:23:20.500Z",
-      "checkedAt": "2026-11-11T17:23:20.500Z",
-      "sourceHash": "69757818ca83a7c026cf0511d31822d588d8cf376294d4a3851c14719d00fa3f"
-    },
-    {
-      "id": "src-395e439b7112bf85673a6beb",
-      "name": "METAL:XAUUSD",
-      "short": "METAL:XAUUSD",
-      "url": "https://api.gold-api.com/price/XAU",
-      "retrievedAt": "2026-11-11T17:23:20.502Z",
-      "checkedAt": "2026-11-11T17:23:20.502Z",
-      "sourceHash": "9a37e995c0b2f73e8b651cb883943aae54d927cff7e04ae19e4730409076ea7c"
+      "retrievedAt": "2026-11-11T18:44:08.658Z",
+      "checkedAt": "2026-11-11T18:44:08.658Z",
+      "sourceHash": "36199101cc3a9c0151cf97fbdf0c858d77aee1fa961570954a0b3ba7c9d286b1"
     },
     {
       "id": "src-9df907448534d3354922f821",
       "name": "EQUITY:US:BX",
       "short": "EQUITY:US:BX",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.533Z",
-      "checkedAt": "2026-11-11T17:23:20.533Z",
-      "sourceHash": "86335e6aa06f50b6735a12e0a1ad81fde309d93224b42fbd64adc814258489dc"
+      "retrievedAt": "2026-11-11T18:44:08.764Z",
+      "checkedAt": "2026-11-11T18:44:08.764Z",
+      "sourceHash": "104cdf0263168c18a6f87c4e9b8c296ab2764a660cf3bcf660fd5dc895cb3726"
     },
     {
-      "id": "src-7169e336e7f73bbd1e2d1f54",
-      "name": "EQUITY:US:KKR",
-      "short": "EQUITY:US:KKR",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.606Z",
-      "checkedAt": "2026-11-11T17:23:20.606Z",
-      "sourceHash": "d02c60a5c17fa894f7b64eab5afbe9d2433ed4326ee457381eb37756b6870bb1"
+      "id": "src-395e439b7112bf85673a6beb",
+      "name": "METAL:XAUUSD",
+      "short": "METAL:XAUUSD",
+      "url": "https://api.gold-api.com/price/XAU",
+      "retrievedAt": "2026-11-11T18:44:08.988Z",
+      "checkedAt": "2026-11-11T18:44:08.988Z",
+      "sourceHash": "4d4e0b6331285e06329b489ff5cf1edee43886b5d0afe28b5cf84d4db2ffd9de"
     },
     {
-      "id": "src-9641ed6e3e9256c44410b13f",
-      "name": "EQUITY:US:APO",
-      "short": "EQUITY:US:APO",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.632Z",
-      "checkedAt": "2026-11-11T17:23:20.632Z",
-      "sourceHash": "527a06868442722b05c8b1e5397a8463dc4f2e50061ddd7308ef10884f6d2d37"
+      "id": "src-8ada3bfad620c0aaad97dfef",
+      "name": "METAL:XAGUSD",
+      "short": "METAL:XAGUSD",
+      "url": "https://api.gold-api.com/price/XAG",
+      "retrievedAt": "2026-11-11T18:44:08.992Z",
+      "checkedAt": "2026-11-11T18:44:08.992Z",
+      "sourceHash": "f6f35d96b2195db4e9ac7fa7219c00d85f4eddc45d517fa254a5d1e083992f8f"
     },
     {
-      "id": "src-483e50fe4cc003e84c411bec",
-      "name": "RATE:US10Y",
-      "short": "RATE:US10Y",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.669Z",
-      "checkedAt": "2026-11-11T17:23:20.669Z",
-      "sourceHash": "f0fd53dfbec809ef28e59d5957ab2b16c228b37950edd14d3ebc9c1429534873"
-    },
-    {
-      "id": "src-a7554f3c5fd773eea8743645",
-      "name": "VOL:VIX",
-      "short": "VOL:VIX",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.703Z",
-      "checkedAt": "2026-11-11T17:23:20.703Z",
-      "sourceHash": "714b7916c0ebadb1ec2655981ed0e60014ab3ef8ab7dc880bfb686538ca6aca8"
-    },
-    {
-      "id": "src-177a579934a7c61da3eda551",
-      "name": "EQUITY:US:ARES",
-      "short": "EQUITY:US:ARES",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.737Z",
-      "checkedAt": "2026-11-11T17:23:20.737Z",
-      "sourceHash": "22bab1bb23a34d320c62b9a1039fb55cf18991bcac9f18f7d37f25b2f000e43a"
-    },
-    {
-      "id": "src-3f9155e9bb026d51e16a0b29",
-      "name": "EQUITY:US:OWL",
-      "short": "EQUITY:US:OWL",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.769Z",
-      "checkedAt": "2026-11-11T17:23:20.769Z",
-      "sourceHash": "09842027234722aa8ed8327d2e468ba41f6d3014ba7b93ca425d8b9280744255"
-    },
-    {
-      "id": "src-cea9af858dc05581bdc0e5e5",
-      "name": "EQUITY:US:BN",
-      "short": "EQUITY:US:BN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.793Z",
-      "checkedAt": "2026-11-11T17:23:20.793Z",
-      "sourceHash": "bbaf6a073c615e2314b915e02fac441415cb22ed27482c8207ca42bc189afdd4"
-    },
-    {
-      "id": "src-eb442cf33996fa78a3fa09c9",
-      "name": "EQUITY:US:BAM",
-      "short": "EQUITY:US:BAM",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.839Z",
-      "checkedAt": "2026-11-11T17:23:20.839Z",
-      "sourceHash": "60e91c9d284df2bf9eb2815ed4a6445197c5708131081e5e561e87279009b8be"
-    },
-    {
-      "id": "src-921d9df8692f2f48f9e01166",
-      "name": "EQUITY:US:CG",
-      "short": "EQUITY:US:CG",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.881Z",
-      "checkedAt": "2026-11-11T17:23:20.881Z",
-      "sourceHash": "64c75c0f6ee455e1bff3993e1054430f89f394974f06bda05eb49e54a29debb1"
-    },
-    {
-      "id": "src-237d29e211c4e002af0208a6",
-      "name": "EQUITY:US:BEN",
-      "short": "EQUITY:US:BEN",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.933Z",
-      "checkedAt": "2026-11-11T17:23:20.933Z",
-      "sourceHash": "8654be6cda44c2f340bf4cbb92412bb54abaf86956a2f39a615983a6ddb8a20b"
-    },
-    {
-      "id": "src-6facdc12d1f68f042abf8250",
-      "name": "EQUITY:US:TROW",
-      "short": "EQUITY:US:TROW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.943Z",
-      "checkedAt": "2026-11-11T17:23:20.943Z",
-      "sourceHash": "9f7a0bb8f4f25764a5fa8df89b2465168a48d99aefa473021cfd182274b264c2"
-    },
-    {
-      "id": "src-b9801499a70677bb015b218e",
-      "name": "EQUITY:US:SCHW",
-      "short": "EQUITY:US:SCHW",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:20.984Z",
-      "checkedAt": "2026-11-11T17:23:20.984Z",
-      "sourceHash": "dac2c2d51e3b4a5ed22a1942b5ba75d21e4601d4836b5e83a02b37f2ca472d9a"
+      "id": "src-884cb2cd1476b952e97b6532",
+      "name": "纳斯达克指数高开1.5% 资金重返AI板块 芯片半导体股票明显上涨",
+      "short": "NBD-USOPEN-4645228",
+      "url": "https://www.nbd.com.cn/articles/2026-11-11/4645228.html",
+      "sourceHash": "c5ce1e15d139ec177d3658b51c78aec5357a5f1eba2d4ffb2e21482d5083483a",
+      "retrievedAt": "2026-11-11T18:44:09.015Z",
+      "evidenceKind": "market"
     },
     {
       "id": "src-f8ad213db7dcf4e934830d3f",
       "name": "RATE:US2Y",
       "short": "RATE:US2Y",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
-      "retrievedAt": "2026-11-11T17:23:21.001Z",
-      "checkedAt": "2026-11-11T17:23:21.001Z",
+      "retrievedAt": "2026-11-11T18:44:09.036Z",
+      "checkedAt": "2026-11-11T18:44:09.036Z",
       "sourceHash": "00d9d53c760f38cdad1c5e55772bbeab42a279586ab56a6e5ced030fa5cb5a2c"
+    },
+    {
+      "id": "src-9641ed6e3e9256c44410b13f",
+      "name": "EQUITY:US:APO",
+      "short": "EQUITY:US:APO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APO?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.086Z",
+      "checkedAt": "2026-11-11T18:44:09.086Z",
+      "sourceHash": "e97eabf963bf69d6c7750d0ab0ecf52badb38b3cd73c84b8c4eaf483fded3050"
+    },
+    {
+      "id": "src-7169e336e7f73bbd1e2d1f54",
+      "name": "EQUITY:US:KKR",
+      "short": "EQUITY:US:KKR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KKR?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.089Z",
+      "checkedAt": "2026-11-11T18:44:09.089Z",
+      "sourceHash": "21efe30dd4404523a5d3e3f485bcbcfc304bcebe650a560955a98366fcc76996"
+    },
+    {
+      "id": "src-483e50fe4cc003e84c411bec",
+      "name": "RATE:US10Y",
+      "short": "RATE:US10Y",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.093Z",
+      "checkedAt": "2026-11-11T18:44:09.093Z",
+      "sourceHash": "44b74bd0d50237d742f78bdf92004ddc6a96c344ce6016f173858020db895c63"
+    },
+    {
+      "id": "src-a7554f3c5fd773eea8743645",
+      "name": "VOL:VIX",
+      "short": "VOL:VIX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.109Z",
+      "checkedAt": "2026-11-11T18:44:09.109Z",
+      "sourceHash": "e4309f9c1f7e71e25b1b38209a08b3403c029116dc3cf7f2e86641b10f3cea35"
+    },
+    {
+      "id": "src-177a579934a7c61da3eda551",
+      "name": "EQUITY:US:ARES",
+      "short": "EQUITY:US:ARES",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARES?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.140Z",
+      "checkedAt": "2026-11-11T18:44:09.140Z",
+      "sourceHash": "5ebdffb36915974df2cc41e7e97632d0d20300a13d855de79521a93287afc398"
+    },
+    {
+      "id": "src-3f9155e9bb026d51e16a0b29",
+      "name": "EQUITY:US:OWL",
+      "short": "EQUITY:US:OWL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OWL?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.144Z",
+      "checkedAt": "2026-11-11T18:44:09.144Z",
+      "sourceHash": "c6f5737f02c2351dd24075799229e6a22da8b265f1957ab8c63e924cf1472dca"
+    },
+    {
+      "id": "src-cea9af858dc05581bdc0e5e5",
+      "name": "EQUITY:US:BN",
+      "short": "EQUITY:US:BN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BN?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.148Z",
+      "checkedAt": "2026-11-11T18:44:09.148Z",
+      "sourceHash": "169b3e43e68e75954925cdd35e6fc8bcd41c674c347a87ef58d1a371966f0cbd"
+    },
+    {
+      "id": "src-eb442cf33996fa78a3fa09c9",
+      "name": "EQUITY:US:BAM",
+      "short": "EQUITY:US:BAM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAM?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.165Z",
+      "checkedAt": "2026-11-11T18:44:09.165Z",
+      "sourceHash": "d973aa358c5954da5328752e0344cafb28ddc369c2fe9820ceb5a6dfd2975b36"
+    },
+    {
+      "id": "src-921d9df8692f2f48f9e01166",
+      "name": "EQUITY:US:CG",
+      "short": "EQUITY:US:CG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CG?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.193Z",
+      "checkedAt": "2026-11-11T18:44:09.193Z",
+      "sourceHash": "091ed3a2c7610f2c632741aec9930ee26dbf25aba2752392507eecbe757ba0a5"
+    },
+    {
+      "id": "src-6facdc12d1f68f042abf8250",
+      "name": "EQUITY:US:TROW",
+      "short": "EQUITY:US:TROW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TROW?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.196Z",
+      "checkedAt": "2026-11-11T18:44:09.196Z",
+      "sourceHash": "9141f4537f2300778dc10904e224c704e1daf9329a59774bc63e89bed44f5304"
+    },
+    {
+      "id": "src-237d29e211c4e002af0208a6",
+      "name": "EQUITY:US:BEN",
+      "short": "EQUITY:US:BEN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BEN?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.199Z",
+      "checkedAt": "2026-11-11T18:44:09.199Z",
+      "sourceHash": "7d5d849e6e5f1fd875970335384cd7a925ebb98db725bfc6ca40a3640f329670"
+    },
+    {
+      "id": "src-b9801499a70677bb015b218e",
+      "name": "EQUITY:US:SCHW",
+      "short": "EQUITY:US:SCHW",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCHW?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T18:44:09.220Z",
+      "checkedAt": "2026-11-11T18:44:09.220Z",
+      "sourceHash": "1c4526ec6b8f3e5c994ce7ab0122088e0564cecbb8dfbc95ab57a489b0e00ae8"
     },
     {
       "id": "src-65538695782361cfffb29020",
       "name": "EQUITY:US:IBKR",
       "short": "EQUITY:US:IBKR",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/IBKR?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:21.104Z",
-      "checkedAt": "2026-11-11T17:23:21.104Z",
-      "sourceHash": "e5e048034088565f6745474f8eecb6b3cf8b973730641d62c4b6787859837114"
+      "retrievedAt": "2026-11-11T18:44:09.247Z",
+      "checkedAt": "2026-11-11T18:44:09.247Z",
+      "sourceHash": "02f8d5cb9225e9ecf0356805c944f1dc7c9c92123e5433210f0635188ced2528"
     },
     {
       "id": "src-563aa0dacd1aa03dcee1ad85",
       "name": "EQUITY:US:GS",
       "short": "EQUITY:US:GS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/GS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:21.105Z",
-      "checkedAt": "2026-11-11T17:23:21.105Z",
-      "sourceHash": "ad617272d26d35132e44a35e99159c76fece2832571f02bdcfb5f139f796f188"
+      "retrievedAt": "2026-11-11T18:44:09.248Z",
+      "checkedAt": "2026-11-11T18:44:09.248Z",
+      "sourceHash": "e2846e823a59c3d141a5376e5b58544bc1a55ac0c5031fd3df34c02ea35a8230"
     },
     {
       "id": "src-81b168263e538041e104ad36",
       "name": "EQUITY:US:MS",
       "short": "EQUITY:US:MS",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/MS?range=1d&interval=1m",
-      "retrievedAt": "2026-11-11T17:23:21.107Z",
-      "checkedAt": "2026-11-11T17:23:21.107Z",
-      "sourceHash": "faf24a6874c64d2479913b635c5ad3c8a8faac1ad8539a4c3e28365ef53915e6"
+      "retrievedAt": "2026-11-11T18:44:09.254Z",
+      "checkedAt": "2026-11-11T18:44:09.254Z",
+      "sourceHash": "a77601cba77eb63fec1c02736ad584cb00998235c0071667925bf23c6a08750d"
     },
     {
       "name": "INDEX:CN:SSE",
@@ -1963,6 +1832,15 @@
       "checkedAt": "2026-11-11T07:08:22.631Z",
       "sourceHash": "a911140ef108b898789a9572439499d7aa9d429e93d83652d879aa087beddc8a",
       "id": "retained-6797be5107d03307150cb5eb"
+    },
+    {
+      "name": "INDEX:EU:STOXX50",
+      "short": "INDEX:EU:STOXX50",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?range=1d&interval=1m",
+      "retrievedAt": "2026-11-11T17:23:19.794Z",
+      "checkedAt": "2026-11-11T17:23:19.794Z",
+      "sourceHash": "61b7ac2cdd669bc1760cce51b3858e7c2deaa1ffc85ecd3780a0449ff920ceb9",
+      "id": "retained-7f65a8b95ff732421539f4ae"
     },
     {
       "name": "ENERGY:BRENT",
@@ -2098,24 +1976,6 @@
       "id": "news-retained-71086cf3244d2c1aa18e3866"
     },
     {
-      "name": "EIA Short-Term Energy Outlook",
-      "short": "EIA-STEO",
-      "url": "https://www.eia.gov/outlooks/steo/",
-      "sourceHash": "dc7ae24f6ad76f50b9c974dafd1fac4768734c09aff7291cc7a6cccd7c8dd4ee",
-      "retrievedAt": "2026-11-11T07:08:21.816Z",
-      "evidenceKind": "research",
-      "id": "news-retained-ad0d05392e4957d5adaac08c"
-    },
-    {
-      "name": "EIA Weekly Petroleum Status Report",
-      "short": "EIA-WPSR",
-      "url": "https://www.eia.gov/petroleum/supply/weekly/",
-      "sourceHash": "b2823288c8e5e2a40697dd329552c0c57bde0b1700ea433ac68f3ec658da3a08",
-      "retrievedAt": "2026-11-11T07:08:22.085Z",
-      "evidenceKind": "macro",
-      "id": "news-retained-32036df851af3d59df7f01d3"
-    },
-    {
       "name": "收评：创业板指震荡反弹涨超3% CPO、PCB等算力硬件股集体爆发",
       "short": "NBD-ASHARE-CLOSE-1111",
       "url": "https://www.nbd.com.cn/articles/2026-11-11/4644772.html",
@@ -2197,24 +2057,6 @@
       "id": "news-retained-417d5467e7e24a83702b84c8"
     },
     {
-      "name": "Short-Term Energy Outlook",
-      "short": "EIA-STEO",
-      "url": "https://www.eia.gov/outlooks/steo/",
-      "sourceHash": "dc7ae24f6ad76f50b9c974dafd1fac4768734c09aff7291cc7a6cccd7c8dd4ee",
-      "retrievedAt": "2026-11-11T12:08:54.966Z",
-      "evidenceKind": "research",
-      "id": "news-retained-783a45d9aa81dffc823faa6c"
-    },
-    {
-      "name": "Weekly Petroleum Status Report",
-      "short": "EIA-WPSR",
-      "url": "https://www.eia.gov/petroleum/supply/weekly/",
-      "sourceHash": "b2823288c8e5e2a40697dd329552c0c57bde0b1700ea433ac68f3ec658da3a08",
-      "retrievedAt": "2026-11-11T12:08:55.548Z",
-      "evidenceKind": "official",
-      "id": "news-retained-7a2c3f83b47972017b640ffc"
-    },
-    {
       "name": "被英伟达撤单？PCB龙头紧急回应",
       "short": "NBD-SY-M9",
       "url": "https://www.nbd.com.cn/articles/2026-11-11/4645159.html",
@@ -2231,6 +2073,42 @@
       "retrievedAt": "2026-11-11T13:26:28.302Z",
       "evidenceKind": "news",
       "id": "news-retained-903419e4f2adf1acbd64fe53"
+    },
+    {
+      "name": "CoreWeave Form 8-K dated November 10 2026",
+      "short": "SEC-CRWV-8K-20261110",
+      "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000461/crwv-20261110.htm",
+      "sourceHash": "db550c57daae6a7ca5b80b3d6809a538c57ebd09a673494bd3b41efef4d127aa",
+      "retrievedAt": "2026-11-11T17:55:42.658Z",
+      "evidenceKind": "research",
+      "id": "news-retained-c38ca6546876ca7b1a217645"
+    },
+    {
+      "name": "CoreWeave Q3 2026 earnings press release Exhibit 99.1",
+      "short": "SEC-CRWV-EX991-20261110",
+      "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000461/coreweave3q26earningspress.htm",
+      "sourceHash": "2e376624003cdf0194c59b9cb59e833189091857195efb76f54b2f9405cea0ad",
+      "retrievedAt": "2026-11-11T17:55:42.812Z",
+      "evidenceKind": "research",
+      "id": "news-retained-0f21ca91e212dd544bece3b2"
+    },
+    {
+      "name": "美股半导体普涨，SK海力士涨超7%｜每经晚参",
+      "short": "NBD-US-EVENING-4645315",
+      "url": "https://www.nbd.com.cn/articles/2026-11-11/4645315.html",
+      "sourceHash": "9f748c02fddc9a9ef56f28042e2b19255dd4c57465e58c58201bb243f0fb6fb9",
+      "retrievedAt": "2026-11-11T17:55:48.285Z",
+      "evidenceKind": "market",
+      "id": "news-retained-f0d0e6a5ed09a5576525bdc8"
+    },
+    {
+      "name": "美股盘前：英伟达涨5%，存储光通信AI芯片股上涨",
+      "short": "NBD-US-PREMKT-4645087",
+      "url": "https://www.nbd.com.cn/articles/2026-11-11/4645087.html",
+      "sourceHash": "07b014d0c01522e52f576bab20be32105e2ae6c130cbbcb86b2db97359191244",
+      "retrievedAt": "2026-11-11T17:55:46.227Z",
+      "evidenceKind": "market",
+      "id": "news-retained-dc9c1e244837f061ee38ea28"
     },
     {
       "name": "2026年10月份居民消费价格同比上涨0.7%",
@@ -2323,13 +2201,76 @@
       "id": "news-retained-3e67eb2c6c7c09a7e358b117"
     },
     {
-      "name": "Federal Open Market Committee meeting calendar",
-      "short": "FED-FOMC-CAL-2026",
+      "name": "EIA Short-Term Energy Outlook",
+      "short": "EIA-STEO",
+      "url": "https://www.eia.gov/outlooks/steo/",
+      "sourceHash": "dc7ae24f6ad76f50b9c974dafd1fac4768734c09aff7291cc7a6cccd7c8dd4ee",
+      "retrievedAt": "2026-11-11T07:08:21.816Z",
+      "evidenceKind": "research",
+      "id": "news-retained-ad0d05392e4957d5adaac08c"
+    },
+    {
+      "name": "EIA Weekly Petroleum Status Report",
+      "short": "EIA-WPSR",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/",
+      "sourceHash": "b2823288c8e5e2a40697dd329552c0c57bde0b1700ea433ac68f3ec658da3a08",
+      "retrievedAt": "2026-11-11T07:08:22.085Z",
+      "evidenceKind": "macro",
+      "id": "news-retained-32036df851af3d59df7f01d3"
+    },
+    {
+      "name": "Short-Term Energy Outlook",
+      "short": "EIA-STEO",
+      "url": "https://www.eia.gov/outlooks/steo/",
+      "sourceHash": "dc7ae24f6ad76f50b9c974dafd1fac4768734c09aff7291cc7a6cccd7c8dd4ee",
+      "retrievedAt": "2026-11-11T12:08:54.966Z",
+      "evidenceKind": "research",
+      "id": "news-retained-783a45d9aa81dffc823faa6c"
+    },
+    {
+      "name": "Weekly Petroleum Status Report",
+      "short": "EIA-WPSR",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/",
+      "sourceHash": "b2823288c8e5e2a40697dd329552c0c57bde0b1700ea433ac68f3ec658da3a08",
+      "retrievedAt": "2026-11-11T12:08:55.548Z",
+      "evidenceKind": "official",
+      "id": "news-retained-7a2c3f83b47972017b640ffc"
+    },
+    {
+      "name": "Consumer Price Index Summary October 2026",
+      "short": "BLS-CPI-OCT-2026-NR",
+      "url": "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "sourceHash": "fc859c530169bef2423a227cb2791420bbc84b892960ad12ba298866acb93f90",
+      "retrievedAt": "2026-11-11T17:55:42.290Z",
+      "evidenceKind": "official",
+      "id": "news-retained-67624ac769cf386c6e635657"
+    },
+    {
+      "name": "Federal Reserve speeches 2026",
+      "short": "FED-SPEECHES-2026",
+      "url": "https://www.federalreserve.gov/newsevents/speech/2026-speeches.htm",
+      "sourceHash": "969b47e4d95face9f355519763f76c0e83a7c85159b5e6e02ab9c6a3697b01ca",
+      "retrievedAt": "2026-11-11T17:55:46.302Z",
+      "evidenceKind": "official",
+      "id": "news-retained-fe1975f47b0425837b6bc564"
+    },
+    {
+      "name": "Daily Treasury Par Yield Curve Rates 2026 (CSV)",
+      "short": "TREAS-PAR-CSV-20261111",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
+      "sourceHash": "782e0953ac34dd4c9751bc061feae3b1a2e18f0be8c7c181a3d2a472d1bdcbe5",
+      "retrievedAt": "2026-11-11T17:23:10.628Z",
+      "evidenceKind": "macro",
+      "id": "macro-retained-40098f8e7c56d9845f8169ee"
+    },
+    {
+      "name": "Federal Reserve FOMC Meeting Calendar",
+      "short": "FOMC-CAL-20261111",
       "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-      "sourceHash": "db9d35560dac7d7c3a49e537f8d039a210ab835c999df8e742bbff7253090445",
-      "retrievedAt": "2026-11-11T13:26:24.311Z",
+      "sourceHash": "1436662bc035f728df2292151d5eec47e8ade53fcb6d58f48efa99fb1decd455",
+      "retrievedAt": "2026-11-11T17:23:10.258Z",
       "evidenceKind": "calendar",
-      "id": "macro-retained-59334854136da18a94c65dab"
+      "id": "macro-retained-73182a5de6af1490c43443bf"
     },
     {
       "name": "被英伟达撤单？PCB龙头紧急回应",
@@ -2350,23 +2291,14 @@
       "id": "macro-retained-903419e4f2adf1acbd64fe53"
     },
     {
-      "name": "TSMC 6-K monthly revenue November 10 2026",
-      "short": "SEC-TSM-6K-REV",
-      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000796/tsm-revenue20261110.htm",
-      "sourceHash": "8b8a7ea93cd1ee5052102e44707bbd712d92c85fc0ddf84429120dcd4a8a6bef",
-      "retrievedAt": "2026-11-11T13:26:25.351Z",
-      "evidenceKind": "research",
-      "id": "macro-retained-67f2a1d68b4e8e5c8e788823"
-    },
-    {
-      "name": "Daily Treasury Par Yield Curve Rates 2026",
-      "short": "TRSY-PAR-2026",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv",
-      "sourceHash": "782e0953ac34dd4c9751bc061feae3b1a2e18f0be8c7c181a3d2a472d1bdcbe5",
-      "retrievedAt": "2026-11-11T13:26:24.744Z",
+      "name": "EIA Weekly Petroleum Status Report",
+      "short": "EIA-WPSR-20261111",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/",
+      "sourceHash": "b2823288c8e5e2a40697dd329552c0c57bde0b1700ea433ac68f3ec658da3a08",
+      "retrievedAt": "2026-11-11T17:23:11.532Z",
       "evidenceKind": "macro",
-      "id": "macro-retained-7ba4bea6c8809769f4af62aa"
+      "id": "macro-retained-5512ffc04b8b51cbdbd15b4c"
     }
   ],
-  "_inputHash": "e94640bc6318a4fa19ecd548a02ee5216df616eec62312871277f8d9880c4ea6"
+  "_inputHash": "2e00ec3ee6a1c157482e4464555b2605e1465b1530ae44e590796acf8204a335"
 }
