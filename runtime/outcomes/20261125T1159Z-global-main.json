@@ -1,14 +1,17 @@
 {
-  "status": "ready-for-analysis",
-  "error": null,
-  "issues": [],
+  "status": "needs-revision",
+  "error": "editorial.analyzedAt: 时间不能位于未来 [future-time]\neditorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]",
+  "issues": [
+    "editorial.analyzedAt: 时间不能位于未来 [future-time]",
+    "editorial.analyzedAt: 分析结束时点必须在实际采集开始之后且不晚于当前时间 [analysis-time]"
+  ],
   "execution": {
     "executionId": "20261125T1159Z-global-main",
     "generation": 519
   },
   "deadlineAt": "2026-11-25T12:20:09.237Z",
   "requestId": "20261125T1159Z-global-main",
-  "at": "2026-11-25T12:00:24.075Z",
+  "at": "2026-11-25T12:05:05.464Z",
   "history": [
     {
       "status": "collecting",
@@ -19,8 +22,34 @@
       "status": "ready-for-analysis",
       "at": "2026-11-25T12:00:24.075Z",
       "revision": null
+    },
+    {
+      "status": "needs-revision",
+      "at": "2026-11-25T12:05:05.464Z",
+      "revision": 0
     }
   ],
   "packetHash": "95dd9b13623ac6f9c376bd11ae4647f27b6b2f02d1c115d15159ed866f81be90",
-  "collectionDurationMs": 5289
+  "collectionDurationMs": 5289,
+  "reasonCode": "EDITORIAL_VALIDATION_FAILED",
+  "revision": 0,
+  "submissionHash": "9b9cea0c8ab268edf62a529515a1bbdd93a512e47d62c33e692fa1d9657b021a",
+  "validationIssues": [
+    {
+      "path": "editorial.analyzedAt",
+      "code": "future-time",
+      "message": "时间不能位于未来"
+    },
+    {
+      "path": "editorial.analyzedAt",
+      "code": "analysis-time",
+      "message": "分析结束时点必须在实际采集开始之后且不晚于当前时间"
+    }
+  ],
+  "validationStage": "editorial-input",
+  "terminal": false,
+  "revisionPath": "runtime/submissions/20261125T1159Z-global-main--r1.json",
+  "published": false,
+  "repositoryPublished": false,
+  "deployed": false
 }
