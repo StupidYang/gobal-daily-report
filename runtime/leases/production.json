@@ -4,11 +4,18 @@
   "executionId": "20261125T1610Z-us-session",
   "taskGroup": "us-session",
   "slot": "us-session:2026-11-25T16",
-  "phase": "collecting",
+  "phase": "failed",
   "startedAt": "2026-11-25T16:12:07.702Z",
   "deadlineAt": "2026-11-25T16:32:07.702Z",
-  "updatedAt": "2026-11-25T16:12:07.702Z",
-  "stages": [],
+  "updatedAt": "2026-11-25T16:13:08.450Z",
+  "stages": [
+    {
+      "phase": "collecting",
+      "startedAt": "2026-11-25T16:12:07.702Z",
+      "finishedAt": "2026-11-25T16:13:08.450Z",
+      "durationMs": 60748
+    }
+  ],
   "recentSlots": [
     {
       "slot": "asia-session:2026-11-25T03",
@@ -72,9 +79,12 @@
     },
     {
       "slot": "us-session:2026-11-25T16",
-      "status": "started",
+      "status": "failed",
       "at": "2026-11-25T16:12:07.702Z",
       "executionId": "20261125T1610Z-us-session"
     }
-  ]
+  ],
+  "reason": "GitHub request failed: PUT /contents/runtime/leases/production.json [branch=gdr-runtime] HTTP 500",
+  "finishedAt": "2026-11-25T16:13:08.450Z",
+  "totalDurationMs": 60748
 }
