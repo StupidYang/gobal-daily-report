@@ -2,23 +2,13 @@
   "version": 1,
   "tasks": {
     "global-main": {
-      "requestId": "20261125T1436Z-global-main",
-      "status": "deployed",
-      "at": "2026-11-25T14:59:56.994Z",
-      "reportId": "2026-11-25-2242",
-      "error": null,
-      "deadlineAt": "2026-11-25T14:56:27.177Z",
-      "executionStartedAt": "2026-11-25T14:36:27.177Z",
-      "executionFinishedAt": "2026-11-25T14:59:56.994Z",
-      "repositoryPublished": true,
-      "deployed": true,
-      "deployment": {
-        "status": "verified",
-        "workflowRunId": 45637074693,
-        "buildId": "b18bf4bcaee7ae111b46354e19535b22105ccf937362891b842ef871782f365e",
-        "checkedAt": "2026-11-25T14:59:56.036Z",
-        "jobStatus": "success"
-      }
+      "requestId": "20261125T1556Z-global-main",
+      "status": "failed",
+      "at": "2026-11-25T15:56:23.261Z",
+      "deadlineAt": "2026-11-25T16:16:03.308Z",
+      "error": "GitHub request failed: PUT /contents/runtime/health.json [branch=gdr-runtime] HTTP 500",
+      "reasonCode": "GITHUB_HTTP_500",
+      "reportId": null
     },
     "asia-session": {
       "requestId": "20261125T0557Z-asia-session",
@@ -59,28 +49,8 @@
       }
     }
   },
-  "updatedAt": "2026-11-25T14:59:56.994Z",
+  "updatedAt": "2026-11-25T15:56:23.261Z",
   "attempts": [
-    {
-      "requestId": "20261105T0232Z-global-main",
-      "status": "deployment-failed",
-      "at": "2026-11-05T02:42:51.636Z",
-      "reportId": "2026-11-05-1036",
-      "error": "仓库报告已提交，但本次公网部署或页面验收失败",
-      "deadlineAt": "2026-11-05T02:52:55.581Z",
-      "executionStartedAt": "2026-11-05T02:32:55.581Z",
-      "executionFinishedAt": "2026-11-05T02:42:51.636Z",
-      "repositoryPublished": true,
-      "deployed": false,
-      "deployment": {
-        "status": "failed",
-        "workflowRunId": 41956364485,
-        "buildId": null,
-        "checkedAt": null,
-        "jobStatus": "failure"
-      },
-      "taskGroup": "global-main"
-    },
     {
       "requestId": "20261105T0329Z-asia-session",
       "status": "submitted-not-published",
@@ -2629,6 +2599,16 @@
         "checkedAt": "2026-11-25T14:59:56.036Z",
         "jobStatus": "success"
       },
+      "taskGroup": "global-main"
+    },
+    {
+      "requestId": "20261125T1556Z-global-main",
+      "status": "failed",
+      "at": "2026-11-25T15:56:23.261Z",
+      "deadlineAt": "2026-11-25T16:16:03.308Z",
+      "error": "GitHub request failed: PUT /contents/runtime/health.json [branch=gdr-runtime] HTTP 500",
+      "reasonCode": "GITHUB_HTTP_500",
+      "reportId": null,
       "taskGroup": "global-main"
     }
   ]
